@@ -7,8 +7,12 @@
     A open-access textbook to support a two-course sequence in linear
     algebra that does not require calculus as a prerequisite.  The text
     includes many activities designed to facilitate an active learning
-    environment, embedded Sage cells to develop
-    computational proficiency, and numerous realistic applications.
+    environment and numerous realistic applications. Dr. Austin's original 
+    version of this text used embedded sage math cells to facilitate 
+    computational approaches. This version uses Python for that purpose.
+    The only changes between Austin's version and this one are to convert 
+    discussions around sage math into discussions around Python and to 
+    convert embedded sage math cells into Python cells.
   </blurb>
   <macros>
     \newcommand{\avec}{{\mathbf a}}
