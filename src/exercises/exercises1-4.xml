@@ -135,7 +135,7 @@
 	For each of the following linear systems, determine whether
 	the system is consistent, and, if so, determine whether there
 	are infinitely many solutions.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -977,20 +977,20 @@
 	  points above. </p></li>
 
 	  <li> <p> Write the augmented matrix corresponding to this
-	  system of equations and use the Sage cell below to solve for
+	  system of equations and use the Python cell below to solve for
 	  the coefficients.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	  </p></li>
 
 	  <li> <p> Write the polynomial <m>p(x)</m> that you found and
-	  check your work by graphing it in the Sage cell below and
+	  check your work by graphing it in the Python cell below and
 	  verifying that it passes through the four points.  To plot a
 	  function over a range, you may use a command like
 	  <c> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</c>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -1007,7 +1007,7 @@
 	      Solve the linear system for the coefficients.
 	      What can you say about the existence and uniqueness of
 	      a degree two polynomial passing through these four points?
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -1024,7 +1024,7 @@
 	      Solve the linear system for the coefficients.
 	      What can you say about the existence and uniqueness of
 	      a degree four polynomial passing through these four points?
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>

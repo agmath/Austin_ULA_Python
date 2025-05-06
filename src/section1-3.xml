@@ -4,7 +4,7 @@
 	 xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <title>
-    Computation with Sage
+    Computation with Python
   </title>
 
   <introduction>
@@ -23,34 +23,35 @@
     <p>
       It is therefore important for any student of linear algebra to
       become comfortable solving linear algebraic problems on a
-      computer.  This section will introduce you to a program called
-      Sage that can help.  While you may be able to do much of this
+      computer.  This section will introduce you to a programming language 
+	  called Python that can help.  While you may be able to do much of this
       work on a graphing calculator, you are encouraged to become
-      comfortable with Sage as we will use increasingly powerful
-      features as we encounter their need.
+      comfortable with Python since we will use increasingly powerful
+      features as we encounter their need. 
+
     </p>
   </introduction>
     
   <subsection>
-    <title> Introduction to Sage </title>
+    <title> Introduction to Python </title>
     
     <p>
-      There are several ways to access Sage.
+      There are several ways to access Python.
 	<ul>
 	  <li>
 	    <p> If you are reading this book online, there will be
-	    embedded <q>Sage cells</q> at appropriate places in the
-	    text.  You have the opportunity to type Sage commands into
+	    embedded <q>Python cells</q> at appropriate places in the
+	    text.  You have the opportunity to type Python commands into
 	    these cells and execute them, provided you are connected to
-	    the Internet.  Please be aware that your
-	    work will be lost if you reload the page.  
+	    the Internet.  Please be aware that your work will be lost if 
+		you reload the page.  
 	    </p>
 
-	    <p> Here is a Sage cell containing a command
-	    that asks Sage to multiply 5 and 3.  You may execute the
+	    <p> Here is a Python cell containing a command
+	    that asks Python to multiply 5 and 3.  You may execute the
 	    command by pressing the <em>Evaluate</em> button.
 	    
-	    <sage>
+	    <sage language="python">
 	      <input>
 		5 * 3
 	      </input>
@@ -61,49 +62,58 @@
 	  <li>
 	    <p>
 	      You may also go to 
-	      <url href="https://cocalc.com" visual="cocalc.com"/>,
-	      sign up for an account, 
-	      open a new project, and create a <q>Sage worksheet.</q>
-	      Once inside the worksheet, you may enter commands as
-	      shown here, and
-	      evaluate them by pressing <em>Enter</em> on your keyboard
-	      while holding down the <em>Shift</em> key.
+	      <url href="https://colab.research.google.com" visual="Google Colab"/>,
+	      either sign up or sign-in to your Google account, 
+	      and create a <q>New Notebook.</q> For those familiar with Python, 
+		  Colab Notebooks are Jupyter Notebooks which can be run from your 
+		  web-browser, inside of your Google Drive.
+	      Once inside the notebook, you may enter commands into code cells as
+	      shown here, and evaluate them by pressing <em>Enter</em> on your 
+		  keyboard while holding down the <em>Shift</em> key.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
-	      There is a page of Sage cells at
-	      <url href="http://gvsu.edu/s/0Ng"
-		   visual="gsvu.edu/s/0Ng"/>.  Any results obtained by
-	      evaluating one cell are available in other cells.
-	      However, your work will be lost when the page is
-	      reloaded.
+	      You may also elect to use an online Python interpreter rather
+		  than the Jupyter Notebook environment provided by Google Colab. 
+		  There are many options for online Python interpreters, but one 
+		  such option can be found at <url href="https://www.online-python.com/" visual="Online Python"/>.
+		</p>
+		<p>
+	      If using Google Colab, any results obtained by
+	      evaluating one cell are available in other cells and your work 
+		  may be saved as Jupyter Notebooks (<c>*.ipynb</c> files) to be 
+		  revisited later. Another advantage to using Colab is the ability to 
+		  mix text cells among your code cells, documenting and narrating your 
+		  work. If you work with an online Python interpreter, however, your 
+		  work will likely be lost when the page is reloaded.
 	    </p>
 	  </li>
 	</ul>
     </p>
 
     <p>
-      Throughout the text, we will introduce new Sage commands that
+      Throughout the text, we will introduce new Python commands that
       allow us to explore linear algebraic concepts.  These commands
       are collected and summarized in the reference found in <xref
       ref="app-sage-reference" text="custom"> Appendix A</xref>.
     </p>
 
     <activity>
-      <title> Basic Sage commands </title>
+      <title> Basic Python commands </title>
 
       <statement>
 	<p>
 	  <ol marker="a.">
 	    <li>
-	      <p> Sage uses the standard operators +, -, *, /, and ^
-	      for the usual arithmetic operations.  By entering text in
-	      the cell below, ask Sage to evaluate
+	      <p> Python uses the standard operators +, -, *, /
+	      for the usual arithmetic operations. However, it uses ** for 
+		  exponentiation. By entering text in
+	      the cell below, ask Python to evaluate
 	      <me>
 		3 + 4(2^4 - 1)
 	      </me>
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -111,10 +121,10 @@
 	    </li>
 	    <li>
 	      <p>
-		Notice that we can create new lines by pressing
-		<em>Enter</em> and entering additional commands on
-		them. 	What happens when you evaluate this Sage cell?
-		<sage>
+		Notice that we can create new lines in a Python cell 
+		by pressing <em>Enter</em> and writing additional 
+		commands on them. What happens when you evaluate this Python cell?
+		<sage language="python">
 		  <input>
 		    5 * 3
 		    10 - 4
@@ -124,9 +134,9 @@
 	      
 	      <p>
 		Notice that we only see the result from the last command.
-		With the <c>print</c> command, we may see earlier results,
-		if we wish. 
-		<sage>
+		By explicitly using the <c>print()</c> function, we may see 
+		results from additional lines, if we wish. 
+		<sage language="python">
 		  <input>
 		    print(5 * 3)
 		    print(10 - 4)
@@ -138,7 +148,7 @@
 	    <li>
 	      <p> We may give a name to the result of one command and
 	      refer to it in a later command.
-	      <sage>
+	      <sage language="python">
 		<input>
 		  income = 1500 * 12
 		  taxes = income * 0.15
@@ -148,27 +158,12 @@
 	      </p>
 	      
 	      <p> Suppose you have three tests in your linear algebra
-	      class and your scores are 90, 100, and 98.  In the Sage cell
+	      class and your scores are 90, 100, and 98.  In the Python cell
 	      below, add your scores together and call the result
 	      <c>total</c>.  On the next line, find the average of your
 	      test scores and print it.
-	      <sage>
+	      <sage language="python">
 		<input>
-		</input>
-	      </sage>
-	      </p>
-	    </li>
-	    
-	    <li>
-	      <p> If you are not a programmer, you may ignore this part.
-	      If you are an experienced programmer, however, you should
-	      know that Sage is written in the Python programming
-	      language and that you may enter Python code into a Sage
-	      cell.
-	      <sage>
-		<input>
-for i in range(10):
-    print(i)
 		</input>
 	      </sage>
 	      </p>
@@ -181,7 +176,7 @@ for i in range(10):
 	  <li>
 	    <p>
 	      <cd>
-3 + 4*(2^4 - 1)
+3 + 4*(2**4 - 1)
 	      </cd>
 	    </p>
 	  </li>
@@ -198,11 +193,6 @@ total = 90 + 100 + 98
 average = total / 3
 print(average)
 	      </cd>
-	    </p>
-	  </li>
-	  <li>
-	    <p>
-	      This cells print the integers from 0 to 9.
 	    </p>
 	  </li>
 	</ol>
@@ -212,7 +202,7 @@ print(average)
 	  <li>
 	    <p>
 	      <cd>
-3 + 4*(2^4 - 1)
+3 + 4*(2**4 - 1)
 	      </cd>
 	    </p>
 	  </li>
@@ -231,11 +221,6 @@ print(average)
 	      </cd>
 	    </p>
 	  </li>
-	  <li>
-	    <p>
-	      This cells print the integers from 0 to 9.
-	    </p>
-	  </li>
 	</ol>
       </answer>
 
@@ -243,8 +228,42 @@ print(average)
   </subsection>
 
   <subsection>
-    <title> Sage and matrices </title>
+    <title> Importing and using Python modules </title>
 
+	<p>
+		Python is a <em>general purpose</em> programming language. This 
+		means that Python is designed to do lots of things, not just 
+		mathematics -- you can build websites, design databases, construct
+		and deploy machine learning models, and much more with Python. 
+	</p>
+	<p>
+		To keep Python lightweight, not all of Python's functionality is 
+		made available to you by default. You'll need to import <em>modules</em>
+		in order to complete many specialized tasks. For the most part, we'll 
+		be making use of two modules -- <c>{numpy}</c> (numerical python) and 
+		<c>{sympy}</c> (symbolic mathematics in python). I'll use these curly-braces 
+		<c>{}</c> to indicate that I'm referencing a full <em>module</em>
+		rather than just a Python <em>function/method</em>. When importing modules, we 
+		can either load the entire module (ie. <c>import numpy</c>) or we can just load 
+		a single function from that module (ie. <c>from numpy.linalg import inv</c>).  
+	</p>
+	<p>
+		With <c>{numpy}</c> imported, we can call and utilize functionality from that 
+		module. For example, <c>{numpy}</c> includes a <c>mean()</c> function which can be 
+		called using <c>numpy.mean()</c>, which tells Python to go to the <c>{numpy}</c> 
+		module and find the <c>mean()</c> function. Because we need to reference the module 
+		name when calling functionality from it, Python users often <em>alias</em> their 
+		module names when importing in order to reduce typing. We can see this below. 
+	</p>
+	<sage language="python">
+		<input>
+		  import numpy as np
+		  np.mean([1, 5, 9, 22])
+		</input>
+	</sage>
+</subsection>
+<subsection>
+	<title> Working with Matrices in Python </title>
     <p>
       When we encounter a matrix, <xref
       ref="thm-rref-is-unique" /> tells us that there 
@@ -264,9 +283,9 @@ print(average)
 
     <p>
       An added benefit is that we can ask a computer program, like
-      Sage, to find reduced row echelon matrices for us.  We will
+      Python, to find reduced row echelon matrices for us.  We will
       learn how to do this now that we have a little familiarity with
-      Sage.
+      Python.
     </p>
 
     <p> 
@@ -286,7 +305,7 @@ print(average)
     <m>3\times 5</m> matrix.
     </p>
 
-    <p> We may ask Sage to create the <m>2\times4</m> matrix
+    <p> We may ask Python to create the <m>2\times4</m> matrix
     <me>
       \left[
       \begin{array}{rrrr}
@@ -296,27 +315,82 @@ print(average)
       \right]
     </me>
     by entering
-    <sage>
+    <sage language="python">
       <input>
-	matrix(2, 4, [-1, 0, 2, 7, 2, 1, -3, -1])
+		import numpy as np
+		
+		A = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+		A
       </input>
     </sage>
-    When evaluated, Sage will confirm the matrix by writing out the
-    rows of the matrix, each inside square brackets.
+    When evaluated, Python will confirm that we've defined the matrix by 
+	writing out its rows, each inside square brackets.  Notice that there 
+	the entire matrix is defined as a list (indicated by the use of the 
+	square brackets <c>[]</c>), and the elements of the list are also lists! 
+	These are the rows of the matrix. If we think about this, what we are 
+	declaring is quite intuitive -- a matrix is a list of rows. Items passed 
+	to a Python function are called <em>arguments</em> and the <c>np.array()</c>
+	function takes just a single argument; the matrix in list form. Later, we'll 
+	encounter functions taking multiple arguments. In these cases, we'll separate
+	the arguments by commas.
+	</p>
+	<p>
+	A very important thing to notice about our matrix definition above is 
+	that we wrote the top-left element of the matrix as <c>-1.0</c> rather 
+	than <c>-1</c>. This is to clarify to Python that we expect to be working 
+	within the realm of <em>real numbers</em> (approximated in computers using 
+	<em>floats</em>). Without explicitly indicating that decimal values are 
+	permissible, Python would store the matrix as an <em>integer</em> array/matrix, 
+	which would damage our calculations, resuling in incorrect conclusions. 
+	This is something we'll need to pay careful attention to!
     </p>
+	<p>
+		If we intend to just do numeric computatons like adding, subtracting, 
+		multiplying, finding inverses or determinants, etc. with our matrices, 
+		then using <c>{numpy}</c> will be perfect. If, however, we want to 
+		perform manipulations like <em>row-reduction</em>, then we'll need to 
+		use <c>{sympy}</c> instead. We define a matrix in <c>{sympy}</c> 
+		slightly differently from the way we defined one using <c>{numpy}</c>.
+	</p>
+	<sage language="python">
+		<input>
+			import sympy
 
-    <p>
-    Notice that there are three separate things (we call them
-    <em>arguments</em>) inside the
-    parentheses: the number of rows, the number of columns, and the
-    entries of the matrix listed by row inside square brackets.  These three
-    arguments are separated by commas.  Notice that there is no way of
-    specifying whether this is an augmented or coefficient matrix so
-    it will be up to us to interpret our results appropriately.
-    </p>
+			A = sympy.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+			A
+		</input>
+	</sage>
+
+	<p>
+	Regardless of whether we are using <c>{numpy}</c> or <c>{sympy}</c>, 
+	there is no way of specifying whether our matrix is an augmented or 
+	coefficient matrix so it will be up to us to use our objects and 
+	interpret our results appropriately.
+	</p>
+
+	<p>
+		One additional item worth pointing out is the difference between
+		<em>functions</em> and <em>methods</em> in Python. Having completed
+		previous math coursework, you are familiar with the notion of <em>functions</em>
+		and their arguments. For example, if <m>f(x) = x^2 - 5x</m>, then the 
+		expression <m>f(5)</m> asks us to use <m>5</m> as an input for the 
+		function <m>f</m> and then to evaluate it. In Python, some types of 
+		objects have special functions, called <em>methods</em>, which can be 
+		applied directly to them. In this case, the format for calling the 
+		method on the object is <c>object.method()</c>. For example, we defined
+		the matrix <c>A</c> above as a <c>{sympy}</c> matrix. These matrices have 
+		a <c>.rref()</c> method which can be applied to them in order to transform
+		the matrix into its <em>reduced row-echelon</em> form. We apply that method
+		to our matrix below to illustrate this point.
+	</p>
+	<sage language="python">
+		<input>
+			A.rref()
+		</input>
+	</sage>
 
     <assemblage>
-      <title> Sage syntax </title>
+      <title> Python syntax </title>
       <p> Some common mistakes are
       <ul>
 	<li> <p>
@@ -328,36 +402,41 @@ print(average)
 	</p></li>
 	<li> <p>
 	  to forget to separate the rows, columns, and
-	  entries by commas, and
+	  entries by commas,
 	</p></li>
 	<li> <p>
 	  to omit the parentheses around
-	  the arguments after <c>matrix</c>.
+	  the arguments after <c>np.array</c> or 
+	  <c>sympy.Matrix()</c>,
+	</p></li>
+	<li> <p>
+		spelling or capitalization errors like using a capital
+		<q><c>A</c></q> in <c>np.array</c> or a lowercase <q><c>m</c></q>
+		in <c>sympy.Matrix()</c>,
+	</p></li>
+	<li> <p>
+		forgetting to include the function <em>namespace</em>, for example
+		using <c>array()</c> instead of <c>np.array()</c>, and
+	</p></li>
+	<li> <p>
+		attempting to apply a <em>function</em> like a <em>method</em> 
+		and vice-versa.
 	</p></li>
       </ul>
       If you see an error message, carefully proofread your input and
       try again.
       </p>
     </assemblage>
-
-    <p>
-      Alternatively, you can create a matrix by simply listing its
-      rows, like this
-      <cd>
-matrix([ [-1, 0, 2, 7],	
-	 [ 2, 1,-3,-1] ])
-      </cd>
-    </p>
     
     <activity>
-      <title> Using Sage to find row reduced echelon matrices </title>
+      <title> Using Python to find row reduced echelon matrices </title>
 
       <statement>
 	<p>
 	  <ol marker="a.">
 	    <li xml:id = "li-example-rref">
 	      <p>
-		Enter the following matrix into Sage.
+		Enter the following matrix into Python.
 		<me>
 		  \left[
 		  \begin{array}{rrrr}
@@ -367,7 +446,7 @@ matrix([ [-1, 0, 2, 7],
 		  \end{array}
 		  \right]
 		</me>
-		<sage>
+		<sage language="python">
 		  <input> 
 		  </input>
 		</sage>
@@ -376,23 +455,25 @@ matrix([ [-1, 0, 2, 7],
 	    </li>
 	    
 	    <li>
-	      <p> Give the matrix the name <m>A</m> by entering
+	      <p> Don't forget to import the library/libraries you want to use, 
+			and give the matrix the name <m>A</m> by entering
 	      <cd>
-A = matrix( ..., ..., [ ... ])
+			import sympy
+			A = sympy.Matrix([ ... ])
 	      </cd>
 	      We may then find its reduced row echelon form by
 	      entering 
 	      <cd>
-A = matrix( ..., ..., [ ... ])
-A.rref()
+			A_rref = A.rref()
+			A_rref
 	      </cd>
 	      A common mistake is to forget the parentheses after
-	      <c>rref</c>.
+	      <c>.rref</c>.
 	      </p>
 	      
-	      <p> Use Sage to find the reduced row echelon form of the
+	      <p> Use Python to find the reduced row echelon form of the
 	      matrix from <xref ref="li-example-rref" /> of this activity.
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -400,7 +481,7 @@ A.rref()
 	    </li>
 	    
 	    <li xml:id = "li-rref-solve">
-	      <p> Use Sage to describe the
+	      <p> Use Python to help you describe the
 	      solution space of the system 
 	      of linear equations
 	      <me>
@@ -415,7 +496,7 @@ A.rref()
 		\amp  {}={}  \amp 1 \\ 
 		\end{alignedat}
 	      </me>
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -443,12 +524,12 @@ A.rref()
 	      because it is obtained from <m>A</m> by adding some more
 	      columns.  
 	      </p>
-	      <p> Using Sage, define the matrices and compare their reduced
+	      <p> Using Python, define the matrices and compare their reduced
 	      row echelon forms.  What do you notice about the relationship
 	      between the two reduced row echelon forms?
 	      </p>
 	      <p>
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -476,9 +557,9 @@ A.rref()
 	    <li>
 	      <p>
 		<cd>
-matrix(3, 4, [-1,-2, 2,-1,
-               2, 4,-1, 5,
-               1, 2, 0, 3])
+sympy.Matrix([[-1.0,-2, 2,-1],
+               [2, 4,-1, 5],
+               [1, 2, 0, 3]])
 		</cd>
 	      </p>
 	    </li>
@@ -497,7 +578,7 @@ matrix(3, 4, [-1,-2, 2,-1,
 
 	    <li>
 	      <p>
-		Sage tells us that the reduced row echelon form of the
+		Python tells us that the reduced row echelon form of the
 		corresponding augmented matrix is
 		<me>
 		  \begin{bmatrix}
@@ -541,9 +622,9 @@ matrix(3, 4, [-1,-2, 2,-1,
 	    <li>
 	      <p>
 		<cd>
-matrix(3, 4, [-1,-2, 2,-1,
-               2, 4,-1, 5,
-               1, 2, 0, 3])
+sympy.Matrix([[-1.0,-2, 2,-1],
+               [2, 4,-1, 5],
+               [1, 2, 0, 3]])
 		</cd>
 	      </p>
 	    </li>
@@ -593,23 +674,27 @@ matrix(3, 4, [-1,-2, 2,-1,
     </activity>
 
     <assemblage>
-      <title> Sage practices </title>
+      <title> Python practices </title>
       <p> Here are some practices that you may find helpful when
-      working with matrices in Sage.
+      working with matrices in Python.
       <ul>
 	<li> <p> Break the matrix entries across lines, one for each row,
 	for better readability by pressing <em>Enter</em> between rows.
 	<cd>
-A = matrix(2, 4, [ 1, 2, -1, 0,
-                  -3, 0,  4, 3 ])
+		#A = sympy.Matrix([[1.0, 2, -1, 0],
+        #    			[-3, 0,  4, 3 ]])
+		A = np.array([[1.0, 2, -1, 0],
+					[-3, 0,  4, 3 ]])
 	</cd>
 	</p></li>
 	<li> <p> Print your original matrix to check that you have
 	entered it correctly.  You may want to also print a dividing
 	line to separate matrices.
 	<cd>
-A = matrix(2, 2, [ 1, 2,
-                   2, 2])
+#A = sympy.Matrix([[ 1.0, 2],
+#                   [2, 2]])
+A = np.array([[ 1.0, 2],
+            [2, 2]])
 print (A)
 print ("---------")
 A.rref()
@@ -709,8 +794,7 @@ A.rref()
       We will assume that our matrix has the same number of rows
       as columns, which we call <m>n</m>.  We are mainly interested in
       the case when <m>n</m> is very large, which is when we need to
-      worry about how
-      much effort is required.
+      worry about how much effort is required.
     </p>
 
     <p> Let's first consider the effort required for each of our row 
@@ -821,16 +905,24 @@ A.rref()
   <subsection>
     <title> Summary </title>
 
-    <p> We learned some basic features of Sage with an emphasis on
+    <p> We learned some basic features of Python with an emphasis on
     finding the reduced row echelon form of a matrix.
     <ul>
-      <li> <p> Sage can perform basic arithmetic using standard
-      operators.  Sage can also save results from one command to be
+      <li> <p> Python can perform basic arithmetic using standard
+      operators.  Python can also save results from one command to be
       reused in a later command.
       </p></li>
 
-      <li> <p> We may define matrices in Sage and find the reduced row
-      echelon form using the <c>rref</c> command.
+	  <li> <p> In order to do specialized analyses (such as working with
+		matrices), we'll need to extend Python's base functionality with 
+		modules like <c>{numpy}</c> and <c>{sympy}</c>. We load these modules
+		with the command <c>import MODULE_NAME</c>.
+	  </p></li>
+
+      <li> <p> We may define matrices in Python using either <c>np.array()</c> or 
+		<c>sympy.Matrix()</c>, and can find the reduced row
+      echelon form of a <c>{sympy}</c> matrix using the <c>.rref()</c> method. Note 
+	  that <c>.rref()</c> will <em>not</em> work with a <c>{numpy}</c> array.
       </p></li>
       
       <li> <p> We saw an example of the
@@ -846,7 +938,7 @@ A.rref()
       </p></li>
     </ul>
     <xref ref="app-sage-reference" text="custom"> Appendix A</xref>
-    contains a reference outlining the Sage commands that we have
+    contains a reference outlining the Python commands that we have
     encountered. 
     </p>
   </subsection>

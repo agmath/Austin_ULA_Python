@@ -16,31 +16,35 @@
 
     <p>
       <!--
-      The online version of this book has many embedded Sage cells
+      The online version of this book has many embedded Python cells
       that allow readers to perform computations from within the
       book.
       -->
-      Print readers may access Sage online using either
-      <url href="https://sagecell.sagemath.org/">the Sage cell
-      server</url> or a provided <url href="https:gvsu.edu/s/0Ng">
-      page of Sage cells.</url>
+      Print readers may access Python online using either
+      <url href="https://colab.research.google.com/">Google Colab</url> 
+      or an online Python interpreter such as <url href="https://www.online-python.com/">
+      Online Python.</url>
     </p>
 
     <p>
-      Throughout the book, Sage cells appear in various places to
-      encourage readers to use Sage to complete some relevant
+      Throughout the book, Python cells appear in various places to
+      encourage readers to use Python to complete some relevant
       computation.  In the print version, these may appear with some
       pre-populated code, such as the one below, that you will want to
-      copy into an online Sage cell.
-      <sage>
+      copy into an online Python cell.
+      <sage language="python">
 	<input>
-A = matrix([[1,2], [2,1]])
+    import numpy as np
+    A = np.array([[1,2], [2,1]])
+    print(A)
 	</input>
-      </sage>
-      Empty cells appear as shown below and are included to indicate
-      part of an exercise or activity that is meant to be completed in
-      Sage. 
-      <sage>
+      </sage> 
+      We'll talk more about the Python code in that cell in later sections of 
+      the textbook. For now, note that you can run the code, make changes, and 
+      experiment directly within the text. Sometimes we'll share empty cells,
+      like the one below, which are generally intended to indicate that part of 
+      an exercise or activity that is meant to be completed with Python. 
+      <sage language="python">
 	<input>
 
 	</input>
