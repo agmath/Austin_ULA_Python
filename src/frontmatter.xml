@@ -10,6 +10,24 @@
       <email> austind@gvsu.edu </email>
     </author>
 
+    <editor>
+      <personname>Adam Gilbert</personname>
+      <institution>
+        <line><i>Python Conversion</i></line>
+        <line>Southern New Hampshire University</line>
+      </institution>
+      <email>a.gilbert1@snhu.edu</email>
+    </editor>
+  
+    <editor>
+      <personname>Corrie Spaulding</personname>
+      <institution>
+        <line><i>Embedded MyOpenMath Exercises</i></line>
+        <line>Southern New Hampshire University</line>
+      </institution>
+      <email>c.spaulding1@snhu.edu</email>
+    </editor>
+
     <date> <today /> </date>
   </titlepage>
 
@@ -21,7 +39,7 @@
 
   <colophon>
     <edition>
-      2023 Update
+      2025 Python and Embedded MyOpen Math Update
     </edition>
     <website>
       <name>http://gvsu.edu/s/0Ck</name>
