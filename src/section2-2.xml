@@ -12,12 +12,12 @@
       The previous section introduced vectors and linear combinations
       and demonstrated how they provide a way to think about linear
       systems geometrically.  In particular, we saw that the vector
-      <m>\bvec</m> is a linear combination of the vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> precisely when the linear
+      <m>\vec{b}</m> is a linear combination of the vectors
+      <m>\vec{v_1},~\vec{v_2},\ldots,~\vec{v_n}</m> precisely when the linear
       system corresponding to the augmented matrix
       <me>
 	\left[\begin{array}{rrrr|r}
-	\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \amp \bvec
+	\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \amp \vec{b}
 	\end{array}\right]
       </me>
       is consistent.
@@ -58,16 +58,16 @@
       <me>
 	\left[
 	\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
+	\vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
 	\end{array}
 	\right]
       </me>
       where
       <me>
-	\vvec_1=\left[\begin{array}{r}0\\3\\2\\ \end{array}\right],
-	\vvec_2=\left[\begin{array}{r}4\\-1\\0\\ \end{array}\right],
-	\vvec_3=\left[\begin{array}{r}-3\\2\\-1\\ \end{array}\right],
-	\vvec_4=\left[\begin{array}{r}1\\0\\1\\ \end{array}\right]
+	\vec{v_1}=\left[\begin{array}{r}0\\3\\2\\ \end{array}\right],
+	\vec{v_2}=\left[\begin{array}{r}4\\-1\\0\\ \end{array}\right],
+	\vec{v_3}=\left[\begin{array}{r}-3\\2\\-1\\ \end{array}\right],
+	\vec{v_4}=\left[\begin{array}{r}1\\0\\1\\ \end{array}\right]
       </me>.
 	In this way, we see that the <m>3\times 4</m> matrix is
 	equivalent to an ordered set of 4 vectors in <m>\real^3</m>.
@@ -83,28 +83,28 @@
       <me>
 	\begin{aligned}
 	c\left[\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+	\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
 	\end{array}
 	\right]
 	{}={} \amp
 	\left[\begin{array}{rrrr}
-	c\vvec_1 \amp c\vvec_2 \amp \cdots \amp c\vvec_n
+	c\vec{v_1} \amp c\vec{v_2} \amp \cdots \amp c\vec{v_n}
 	\end{array}
 	\right] \\
 	\left[\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+	\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
 	\end{array}
 	\right]
 	{}+{} \amp
 	\left[\begin{array}{rrrr}
-	\wvec_1 \amp \wvec_2 \amp \cdots \amp \wvec_n
+	\vec{w_1} \amp \vec{w_2} \amp \cdots \amp \vec{w_n}
 	\end{array}
 	\right]
 	 \\
 	{}={} \amp
 	\left[\begin{array}{rrrr}
-	\vvec_1+\wvec_1 \amp \vvec_2+\wvec_2 \amp \cdots \amp
-	\vvec_n+\wvec_n 
+	\vec{v_1}+\vec{w_1} \amp \vec{v_2}+\vec{w_2} \amp \cdots \amp
+	\vec{v_n}+\vec{w_n} 
 	\end{array}
 	\right]. \\
 	\end{aligned}
@@ -290,22 +290,22 @@
       <title> Matrix-vector multiplication </title>
       <statement>
 	<p>
-	Suppose we have the matrix <m>A</m> and vector <m>\xvec</m>:
+	Suppose we have the matrix <m>A</m> and vector <m>\vec{x}</m>:
 	<me>
 	  A = \left[\begin{array}{rr}
 	  -2 \amp 3 \\
 	  0 \amp 2 \\
 	  3 \amp 1 \\
 	  \end{array}\right],~~~
-	  \xvec = \left[\begin{array}{r}
+	  \vec{x} = \left[\begin{array}{r}
 	  2 \\ 3 \\ \end{array}\right]
 	</me>.
 	Their product will be defined to be the linear combination of
-	the columns of <m>A</m> using the components of <m>\xvec</m>
+	the columns of <m>A</m> using the components of <m>\vec{x}</m>
 	as weights.  This means that
 	<me>
 	  \begin{aligned}
-	  A\xvec = 
+	  A\vec{x} = 
 	  \left[\begin{array}{rr}
 	  -2 \amp 3 \\
 	  0 \amp 2 \\
@@ -328,22 +328,22 @@
 	<p>
 	  Because <m>A</m> has two columns, we
 	  need two weights to form a linear combination of those
-	  columns, which means that <m>\xvec</m> must have two
+	  columns, which means that <m>\vec{x}</m> must have two
 	  components.  
 	  In other words, the number of columns of <m>A</m> must equal
-	  the dimension of the vector <m>\xvec</m>.
+	  the dimension of the vector <m>\vec{x}</m>.
 	</p>
 
 	<p>
 	  Similarly, the columns of <m>A</m> are 3-dimensional
 	  so any linear combination of them is 3-dimensional as well.
-	  Therefore, <m> A\xvec</m> will be 3-dimensional.
+	  Therefore, <m> A\vec{x}</m> will be 3-dimensional.
 	</p>
 
 	<p>
 	  We then see that if <m>A</m> is a <m>3\times2</m> matrix,
-	  <m>\xvec</m> must be a 2-dimensional vector and
-	  <m>A\xvec</m> will be 3-dimensional.
+	  <m>\vec{x}</m> must be a 2-dimensional vector and
+	  <m>A\vec{x}</m> will be 3-dimensional.
 	</p>
       </statement>
     </example>
@@ -358,26 +358,26 @@
       <statement>
 	<p>
 	  The product of a matrix <m>A</m> by a vector
-	  <m>\xvec</m> will be the linear combination of the columns of
-	  <m>A</m> using the components of <m>\xvec</m> as weights.
+	  <m>\vec{x}</m> will be the linear combination of the columns of
+	  <m>A</m> using the components of <m>\vec{x}</m> as weights.
 	  More specifically, if
 	  <me>
 	    A=\left[\begin{array}{rrrr}
-	    \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+	    \vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n}
 	    \end{array}\right],~~~
-	    \xvec = \left[\begin{array}{r}
+	    \vec{x} = \left[\begin{array}{r}
 	    c_1 \\ c_2 \\ \vdots \\ c_n \end{array}\right],
 	  </me>
 	  then
 	  <me>
-	    A\xvec = c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n
+	    A\vec{x} = c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}
 	    </me>.
 	</p>
 	
 	<p>
-	  If <m>A</m> is an <m>m\times n</m> matrix, then <m>\xvec</m>
+	  If <m>A</m> is an <m>m\times n</m> matrix, then <m>\vec{x}</m>
 	  must be an <m>n</m>-dimensional vector, and the product
-	  <m>A\xvec</m> will be an <m>m</m>-dimensional vector.
+	  <m>A\vec{x}</m> will be an <m>m</m>-dimensional vector.
 	</p>
       </statement>
     </definition>
@@ -422,15 +422,15 @@
 	    \end{array}
 	    \right]
 	  </me>.
-	  If <m>A\xvec</m> is defined, what is the dimension of the
-	  vector <m>\xvec</m> and what is the dimension of
-	  <m>A\xvec</m>?  
+	  If <m>A\vec{x}</m> is defined, what is the dimension of the
+	  vector <m>\vec{x}</m> and what is the dimension of
+	  <m>A\vec{x}</m>?  
 	</p></li>
 
 	<li> <p>
 	  A vector whose entries are all zero is denoted by
-	  <m>\zerovec</m>.  If <m>A</m> is a matrix, what is the
-	  product <m>A\zerovec</m>?  
+	  <m>\vec{0}</m>.  If <m>A</m> is a matrix, what is the
+	  product <m>A\vec{0}</m>?  
 	</p> </li>
 
 	<li><p>
@@ -440,8 +440,8 @@
 	  0 \amp 0 \amp 1 \\
 	  \end{array}\right]
 	  </m> is the identity matrix and
-	  <m>\xvec=\threevec{x_1}{x_2}{x_3}</m>.  Find the product
-	  <m>I\xvec</m> and explain why <m>I</m> is called the
+	  <m>\vec{x}=\threevec{x_1}{x_2}{x_3}</m>.  Find the product
+	  <m>I\vec{x}</m> and explain why <m>I</m> is called the
 	  identity matrix.
 	</p></li>
 
@@ -451,13 +451,13 @@
 	  <me>
 	    A = \left[
 	    \begin{array}{rrrr}
-	    \vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \\
+	    \vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \\
 	    \end{array}
 	    \right]
 	  </me>.
-	  If the vector <m>\evec_1 = \left[\begin{array}{c} 1 \\ 0 \\
+	  If the vector <m>\vec{e_1} = \left[\begin{array}{c} 1 \\ 0 \\
 	  \vdots \\ 0 \end{array}\right]</m>, what is the product
-	  <m>A\evec_1</m>?
+	  <m>A\vec{e_1}</m>?
 	</p> </li>
 
 	<li> <p>
@@ -469,13 +469,13 @@
 	    -1 \amp 1 \\
 	    \end{array}
 	    \right],
-	    \bvec = \left[
+	    \vec{b} = \left[
 	    \begin{array}{r}
 	    6 \\ 0
 	    \end{array}
 	    \right]
 	  </me>.
-	  Is there a vector <m>\xvec</m> such that <m>A\xvec = \bvec</m>?
+	  Is there a vector <m>\vec{x}</m> such that <m>A\vec{x} = \vec{b}</m>?
 	</p> </li>
       </ol>
       </p></statement>
@@ -503,27 +503,27 @@
 	  </p></li>
 
 	  <li><p>
-	    The dimension of <m>\xvec</m> must be the same as the
-	    number of columns of <m>A</m> so <m>\xvec</m> is
-	    three-dimensional.  The dimension of <m>A\xvec</m> equals
-	    the number of rows of <m>A</m> so <m>A\xvec</m> is
+	    The dimension of <m>\vec{x}</m> must be the same as the
+	    number of columns of <m>A</m> so <m>\vec{x}</m> is
+	    three-dimensional.  The dimension of <m>A\vec{x}</m> equals
+	    the number of rows of <m>A</m> so <m>A\vec{x}</m> is
 	    four-dimensional.
 	  </p></li>
 
-	  <li><p> We have <m>A\zerovec = \zerovec</m>. </p></li>
+	  <li><p> We have <m>A\vec{0} = \vec{0}</m>. </p></li>
 
-	  <li><p> We have <m>I\xvec=\xvec</m>;  that is, multiplying a
+	  <li><p> We have <m>I\vec{x}=\vec{x}</m>;  that is, multiplying a
 	  vector by <m>I</m> produces the same vector.
 	  </p></li>
 
 	  <li><p>
 	    The product
-	    <m> A\evec_1 = 1\vvec_1+0\vvec_2+\ldots+0\vvec_n =
-	    \vvec_1</m>.
+	    <m> A\vec{e_1} = 1\vec{v_1}+0\vec{v_2}+\ldots+0\vec{v_n} =
+	    \vec{v_1}</m>.
 	  </p></li>
 
 	  <li><p>
-	    If <m>A\xvec=\bvec</m>, then we have
+	    If <m>A\vec{x}=\vec{b}</m>, then we have
 	    <me>
 	      \begin{alignedat}{3}
 	      x_1 \amp {}+{} \amp 2x_2 \amp {}={} \amp 6 \\
@@ -542,8 +542,8 @@
 	      0 \amp 1 \amp 2
 	      \end{array}\right]\text{.}
 	    </me>
-	    This means that <m>\xvec=\twovec{2}{2}</m> is the unique
-	    solution to the equation <m>A\xvec=\bvec</m>.
+	    This means that <m>\vec{x}=\twovec{2}{2}</m> is the unique
+	    solution to the equation <m>A\vec{x}=\vec{b}</m>.
 	  </p></li>
 	</ol></p>
       </solution>
@@ -556,21 +556,21 @@
 	  </p></li>
 
 	  <li><p>
-	    The dimension of <m>\xvec</m> must three, and the
-	    dimension of <m>A\xvec</m> must be four.
+	    The dimension of <m>\vec{x}</m> must three, and the
+	    dimension of <m>A\vec{x}</m> must be four.
 	  </p></li>
 
-	  <li><p> <m>A\zerovec = \zerovec</m>. </p></li>
+	  <li><p> <m>A\vec{0} = \vec{0}</m>. </p></li>
 
-	  <li><p> <m>I\xvec = \xvec</m>. </p></li>
+	  <li><p> <m>I\vec{x} = \vec{x}</m>. </p></li>
 
 	  <li><p>
-	    <m> A\evec_1 = 1\vvec_1+0\vvec_2+\ldots+0\vvec_n =
-	    \vvec_1</m>.
+	    <m> A\vec{e_1} = 1\vec{v_1}+0\vec{v_2}+\ldots+0\vec{v_n} =
+	    \vec{v_1}</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>\xvec=\twovec{2}{2}</m> is the unique
+	    <m>\vec{x}=\twovec{2}{2}</m> is the unique
 	    solution.
 	  </p></li>
 	</ol></p>
@@ -622,17 +622,21 @@
     <activity>
       <statement>
       <p>
-	Sage can find the product of a matrix and vector
-	using the <c>*</c> operator.  For example,
-	<sage>
+	In Python we can use <c>{numpy}</c>'s <c>matmul()</c> function 
+	to find the product of a matrix and vector.  For 
+	example, we can compute the product <m>\left[\begin{array}{ll} 1 \amp 2\\ 2 \amp 1\end{array}\right]\left[\begin{array}{l} 3\\ -1\end{array}\right]</m>
+	as follows.
+	<sage language="python">
 	  <input>
-	    A = matrix(2,2,[1,2,2,1])
-	    v = vector([3,-1])
-	    A*v
+import numpy as np
+
+A = np.array([[1.0,2], [2,1]])
+v = np.array([[3.0], [-1]])
+np.matmul(A, v)
 	  </input>
 	</sage>
 	<ol marker="a.">
-	  <li> <p> Use Sage to evaluate the product
+	  <li> <p> Use Python to evaluate the product
 	  <me>
 	    \left[
 	    \begin{array}{rrrr}
@@ -648,13 +652,13 @@
 	    \right]
 	  </me>
 	  from <xref ref="li-example-product" /> of the previous activity.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	  </p></li>
 
-	  <li> <p> In Sage, define the matrix and vectors
+	  <li> <p> In Python, define the matrix and vectors
 	  <me>
 	    A = \left[
 	    \begin{array}{rrr}
@@ -663,31 +667,31 @@
 	    4 \amp 2 \\
 	    \end{array}
 	    \right],
-	    \zerovec = \left[
+	    \vec{0} = \left[
 	    \begin{array}{r} 0 \\ 0 \end{array}
 	    \right],
-	    \vvec = \left[
+	    \vec{v} = \left[
 	    \begin{array}{r} -2 \\ 3 \end{array}
 	    \right],
-	    \wvec = \left[
+	    \vec{w} = \left[
 	    \begin{array}{r} 1 \\ 2 \end{array}
 	    \right]
 	  </me>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	  </p></li>
 
-	  <li><p> What do you find when you evaluate <m>A\zerovec</m>?
+	  <li><p> What do you find when you evaluate <m>A\vec{0}</m>?
 	  </p></li>
 
 	  <li><p> What do you find when you evaluate
-	  <m>A(3\vvec)</m> and <m>3(A\vvec)</m> 
+	  <m>A(3\vec{v})</m> and <m>3(A\vec{v})</m> 
 	  and compare your results? </p></li>
 	  
 	  <li><p> What do you find when you evaluate
-	  <m>A(\vvec+\wvec)</m> and <m>A\vvec + A\wvec</m> 
+	  <m>A(\vec{v}+\vec{w})</m> and <m>A\vec{v} + A\vec{w}</m> 
 	  and compare your results? </p></li>
 
 	</ol>
@@ -698,33 +702,33 @@
 	<p><ol marker="a.">
 	  <li><p> We define
 	    <cd>
-A = matrix(3, 4, [1, 2, 0, -1,
-                  2, 4, -3, -2,
-                  -1, -2, 6, 1])
-v = vector([3, 1, -1, 1])
+A = np.array([[1.0, 2, 0, -1],
+            [2, 4, -3, -2],
+            [-1, -2, 6, 1]])
+v = np.array([[3.0], [1], [-1], [1]])
 A*v		  
 	    </cd>
 	  </p></li>
 
 	  <li><p> We define
 	    <cd>
-A = matrix(2, 3, [-2, 0, 3, 1, 4, 2])
-zero = vector([0, 0])
-v = vector([-2, 3])
-w = vector([1, 2])
+A = np.array([[-2.0, 0, 3], [1, 4, 2]])
+zero = np.array([[0.0], [0]])
+v = np.array([[-2.0], [3]])
+w = np.array([[1.0], [2]])
 	    </cd>
 	  </p></li>
 
 	  <li><p>
-	    <m>A\zerovec = \zerovec</m>.
+	    <m>A\vec{0} = \vec{0}</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>A(3\vvec) = 3(A\vvec)</m>.
+	    <m>A(3\vec{v}) = 3(A\vec{v})</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>A(\vvec+\wvec) = A\vvec + A\wvec</m>
+	    <m>A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}</m>
 	  </p></li>
 
 	</ol></p>
@@ -734,33 +738,33 @@ w = vector([1, 2])
 	<p><ol marker="a.">
 	  <li><p> We define
 	    <cd>
-A = matrix(3, 4, [1, 2, 0, -1,
-                  2, 4, -3, -2,
-                  -1, -2, 6, 1])
-v = vector([3, 1, -1, 1])
-A*v		  
+A = np.array([[1.0, 2, 0, -1],
+            [2, 4, -3, -2],
+            [-1, -2, 6, 1]])
+v = np.array([[3.0], [1], [-1], [1]])
+np.matmul(A, v)		  
 	    </cd>
 	  </p></li>
 
 	  <li><p> We define
 	    <cd>
-A = matrix(2, 3, [-2, 0, 3, 1, 4, 2])
-zero = vector([0, 0])
-v = vector([-2, 3])
-w = vector([1, 2])
+A = np.array([[-2.0, 0, 3], [1, 4, 2]])
+zero = np.array([[0.0], [0]])
+v = np.array([[-2.0], [3]])
+w = np.array([[1.0], [2]])
 	    </cd>
 	  </p></li>
 
 	  <li><p>
-	    <m>A\zerovec = \zerovec</m>.
+	    <m>A\vec{0} = \vec{0}</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>A(3\vvec) = 3(A\vvec)</m>.
+	    <m>A(3\vec{v}) = 3(A\vec{v})</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>A(\vvec+\wvec) = A\vvec + A\wvec</m>
+	    <m>A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}</m>
 	  </p></li>
 
 	</ol></p>
@@ -776,12 +780,12 @@ w = vector([1, 2])
     <proposition xml:id = "prop-matrix-mult-prop">
       <title> Linearity of matrix multiplication </title>
       <statement>
-	<p> If <m>A</m> is a matrix, <m>\vvec</m> and <m>\wvec</m>
+	<p> If <m>A</m> is a matrix, <m>\vec{v}</m> and <m>\vec{w}</m>
 	vectors of the appropriate dimensions, and <m>c</m> a scalar, then
 	<ul>
-	  <li> <p> <m>A\zerovec = \zerovec</m>. </p></li>
-	  <li> <p> <m>A(c\vvec) = cA\vvec</m>. </p></li>
-	  <li> <p> <m>A(\vvec+\wvec) = A\vvec + A\wvec</m>. </p></li>
+	  <li> <p> <m>A\vec{0} = \vec{0}</m>. </p></li>
+	  <li> <p> <m>A(c\vec{v}) = cA\vec{v}</m>. </p></li>
+	  <li> <p> <m>A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}</m>. </p></li>
 	</ul>
 	</p>
       </statement>
@@ -794,26 +798,26 @@ w = vector([1, 2])
 
     <p>
       So far, we have begun
-      with a matrix <m>A</m> and a vector <m>\xvec</m> and formed
-      their product <m>A\xvec = \bvec</m>.  We would now like to turn
+      with a matrix <m>A</m> and a vector <m>\vec{x}</m> and formed
+      their product <m>A\vec{x} = \vec{b}</m>.  We would now like to turn
       this around:  beginning with a matrix <m>A</m> and a vector
-      <m>\bvec</m>, we will ask if we can find a vector <m>\xvec</m> such
-      that <m>A\xvec = \bvec</m>.  This will naturally lead back to
+      <m>\vec{b}</m>, we will ask if we can find a vector <m>\vec{x}</m> such
+      that <m>A\vec{x} = \vec{b}</m>.  This will naturally lead back to
       linear systems.
     </p>
 
     <p>
-      To see the connection between the matrix equation <m>A\xvec =
-      \bvec</m> and linear systems, let's write the matrix <m>A</m> in
-      terms of its columns <m>\vvec_i</m> and <m>\xvec</m> in terms of
+      To see the connection between the matrix equation <m>A\vec{x} =
+      \vec{b}</m> and linear systems, let's write the matrix <m>A</m> in
+      terms of its columns <m>\vec{v_i}</m> and <m>\vec{x}</m> in terms of
       its components.
       <me>
 	A = \left[
 	\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \ldots \vvec_n
+	\vec{v_1} \amp \vec{v_2} \amp \ldots \vec{v_n}
 	\end{array}
 	\right],
-	\xvec = \left[
+	\vec{x} = \left[
 	\begin{array}{c}
 	c_1 \\ c_2 \\ \vdots \\ c_n \\
 	\end{array}
@@ -822,12 +826,12 @@ w = vector([1, 2])
     </p>
 
     <p>
-      We know that the matrix product <m>A\xvec</m> forms a linear
+      We know that the matrix product <m>A\vec{x}</m> forms a linear
       combination of the columns of <m>A</m>.  Therefore, the equation
-      <m>A\xvec = \bvec</m> is merely a compact way of writing the
+      <m>A\vec{x} = \vec{b}</m> is merely a compact way of writing the
       equation for the weights <m>c_i</m>:
       <me>
-	c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \bvec
+	c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{b}
       </me>.
       We have seen this equation before:  Remember that
       <xref ref="prop-system-comb" /> says that the solutions of this
@@ -835,7 +839,7 @@ w = vector([1, 2])
       whose augmented matrix is
       <me>
 	\left[\begin{array}{rrrr|r}
-	\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n \amp \bvec
+	\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n} \amp \vec{b}
 	\end{array}\right]
       </me>.
     </p>
@@ -848,27 +852,27 @@ w = vector([1, 2])
     <proposition xml:id="prop-matrix-eq-solution">
       <statement>
 	<p> If <m>A=\left[\begin{array}{rrrr}
-	\vvec_1\amp\vvec_2\amp\ldots\vvec_n
-	\end{array}\right]</m> and <m>\xvec=\left[
+	\vec{v_1}\amp\vec{v_2}\amp\ldots\vec{v_n}
+	\end{array}\right]</m> and <m>\vec{x}=\left[
 	\begin{array}{c}
 	x_1 \\ x_2 \\ \vdots \\ x_n \\
 	\end{array}\right]
 	</m>, then the following statements are equivalent.
 	<ul>
-	  <li> <p> The vector <m>\xvec</m> satisfies the equation <m>A\xvec = \bvec
+	  <li> <p> The vector <m>\vec{x}</m> satisfies the equation <m>A\vec{x} = \vec{b}
 	  </m>. </p></li> 
 
-	  <li> <p> The vector <m>\bvec</m> is a linear combination of
+	  <li> <p> The vector <m>\vec{b}</m> is a linear combination of
 	  the columns of <m>A</m> with weights <m>x_j</m>:
 	    <me>
-	      x_1\vvec_1 + x_2\vvec_2 + \ldots + x_n\vvec_n = \bvec
+	      x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}
 	  </me>. </p></li>
 
-	  <li> <p> The components of <m>\xvec</m> form a solution to
+	  <li> <p> The components of <m>\vec{x}</m> form a solution to
 	  the linear system corresponding to the augmented matrix
 	    <me>
 	    \left[\begin{array}{rrrr|r}
-	    \vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \amp \bvec
+	    \vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \amp \vec{b}
 	    \end{array}\right]\text{.}
 	    </me>
 	  </p></li>
@@ -879,19 +883,19 @@ w = vector([1, 2])
 
     <p>
       When the matrix <m>A = \left[\begin{array}{rrrr}
-      \vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n\end{array}\right]</m>,
+      \vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{_n}\end{array}\right]</m>,
       we will frequently write
       <me>
 	\left[\begin{array}{rrrr|r}
-	\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n\amp\bvec\end{array}\right]
-	= \left[ \begin{array}{r|r} A \amp \bvec \end{array}\right]
+	\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}\amp\vec{b}\end{array}\right]
+	= \left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]
       </me>
       and say that the matrix <m>A</m> is augmented by the
-      vector <m>\bvec</m>.
+      vector <m>\vec{b}</m>.
     </p>
 
     <p>
-      The equation <m>A\xvec = \bvec</m> gives a notationally compact
+      The equation <m>A\vec{x} = \vec{b}</m> gives a notationally compact
       way to write a linear system.  Moreover, this notation will
       allow us to focus on important features of the system that
       determine its solution space.
@@ -906,7 +910,7 @@ w = vector([1, 2])
 	  4 \amp -1 \amp 6 \\
 	  1 \amp 3 \amp -5 \\
 	  \end{array}\right]
-	  \xvec
+	  \vec{x}
 	  =
 	  \left[\begin{array}{r}
 	  0 \\ -5 \\ 15
@@ -965,10 +969,10 @@ w = vector([1, 2])
 
 	<p>
 	  Since we originally asked to describe the solutions to
-	  the equation <m>A\xvec = \bvec</m>, we will express the
-	  solution in terms of the vector <m>\xvec</m>:
+	  the equation <m>A\vec{x} = \vec{b}</m>, we will express the
+	  solution in terms of the vector <m>\vec{x}</m>:
 	  <me>
-	    \xvec
+	    \vec{x}
 	    =\left[
 	    \begin{array}{r}
 	    x_1 \\ x_2 \\ x_3
@@ -987,18 +991,18 @@ w = vector([1, 2])
 	  solution space.
 	</p>
 	<p>
-	  This shows that the solutions <m>\xvec</m> may be written in
-	  the form <m>\vvec + x_3\wvec</m>, for appropriate vectors
-	  <m>\vvec</m> and <m>\wvec</m>.  Geometrically, the solution
-	  space is a line in <m>\real^3</m> through <m>\vvec</m>
-	  moving parallel to <m>\wvec</m>.
+	  This shows that the solutions <m>\vec{x}</m> may be written in
+	  the form <m>\vec{v} + x_3\vec{w}</m>, for appropriate vectors
+	  <m>\vec{v}</m> and <m>\vec{w}</m>.  Geometrically, the solution
+	  space is a line in <m>\real^3</m> through <m>\vec{v}</m>
+	  moving parallel to <m>\vec{w}</m>.
 	</p>
 	  
 	</statement>
     </example>
 
     <activity>
-      <title> The equation <m>A\xvec = \bvec</m> </title>
+      <title> The equation <m>A\vec{x} = \vec{b}</m> </title>
       <statement><p>
       <ol marker="a.">
 	<li> <p> Consider the linear system
@@ -1009,13 +1013,13 @@ w = vector([1, 2])
 	  3x \amp {}-{} \amp y \amp \amp \amp {}={} \amp -4. \\
 	  \end{alignedat}
 	</me>
-	Identify the matrix <m>A</m> and vector <m>\bvec</m> to
-	express this system in the form <m>A\xvec = \bvec</m>.
+	Identify the matrix <m>A</m> and vector <m>\vec{b}</m> to
+	express this system in the form <m>A\vec{x} = \vec{b}</m>.
 	</p></li>
 
-	<li> <p> If <m>A</m> and <m>\bvec</m> are as below, write the
+	<li> <p> If <m>A</m> and <m>\vec{b}</m> are as below, write the
 	linear system corresponding to the equation
-	<m>A\xvec=\bvec</m> and describe its solution space, using a
+	<m>A\vec{x}=\vec{b}</m> and describe its solution space, using a
 	parametric description if appropriate:
 	<me>
 	  A = \left[\begin{array}{rrr}
@@ -1023,12 +1027,12 @@ w = vector([1, 2])
 	  -2 \amp 0 \amp 6
 	  \end{array}
 	  \right],~~~
-	  \bvec = \left[\begin{array}{r}
+	  \vec{b} = \left[\begin{array}{r}
 	  -6 \\ 2
 	  \end{array}
 	  \right].
 	</me>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1044,22 +1048,22 @@ w = vector([1, 2])
 	    -1 \amp -2 \amp 6 \amp 1 \\
 	    \end{array}
 	    \right]
-	    \xvec
+	    \vec{x}
 	    = 
 	    \left[\begin{array}{r}
 	    -1 \\ 1 \\ 5
 	    \end{array}
 	    \right]
 	  </me>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	</p></li>
 
 	<li><p> Suppose <m>A</m> is an <m>m\times n</m> matrix.  What
-	can you guarantee about the solution space of the equation <m>A\xvec
-	= \zerovec</m>?  </p></li>
+	can you guarantee about the solution space of the equation <m>A\vec{x}
+	= \vec{0}</m>?  </p></li>
       </ol>
       </p></statement>
 
@@ -1072,7 +1076,7 @@ w = vector([1, 2])
 	    3 \amp -1 \amp 0 \\
 	    \end{array}\right]
 	    </m>
-	    and <m>\bvec=\threevec{4}{3}{-4}</m>.
+	    and <m>\vec{b}=\threevec{4}{3}{-4}</m>.
 	  </p></li>
 
 	  <li><p>
@@ -1090,7 +1094,7 @@ w = vector([1, 2])
 	    </me>
 	    so that
 	    <me>
-	      \xvec = \threevec{x_1}{x_2}{x_3} =
+	      \vec{x} = \threevec{x_1}{x_2}{x_3} =
 	      \threevec{-1+3x_3}{3+9x_3}{x_3} =
 	      \threevec{-1}{3}{0}+x_3\threevec{3}{9}{1}\text{.}
 	    </me>
@@ -1117,7 +1121,7 @@ w = vector([1, 2])
 
 	  <li><p>
 	    We know that there is at least one solution, namely,
-	    <m>\xvec=\zerovec</m>.
+	    <m>\vec{x}=\vec{0}</m>.
 	  </p></li>
 
 	</ol></p>
@@ -1132,12 +1136,12 @@ w = vector([1, 2])
 	    3 \amp -1 \amp 0 \\
 	    \end{array}\right]
 	    </m>
-	    and <m>\bvec=\threevec{4}{3}{-4}</m>.
+	    and <m>\vec{b}=\threevec{4}{3}{-4}</m>.
 	  </p></li>
 
 	  <li><p>
 	    <m>
-	      \xvec = \threevec{x_1}{x_2}{x_3} =
+	      \vec{x} = \threevec{x_1}{x_2}{x_3} =
 	      \threevec{-1}{3}{0}+x_3\threevec{3}{9}{1}\text{.}
 	    </m>
 	  </p></li>
@@ -1148,7 +1152,7 @@ w = vector([1, 2])
 
 	  <li><p>
 	    There is at least one solution, namely,
-	    <m>\xvec=\zerovec</m>.
+	    <m>\vec{x}=\vec{0}</m>.
 	  </p></li>
 
 	</ol></p>
@@ -1175,13 +1179,13 @@ w = vector([1, 2])
 	columns
 	<me>
 	  B = \left[\begin{array}{rrrr}
-	  \vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_p
+	  \vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_p}
 	  \end{array}\right]
 	</me>
 	and then defining
 	<me>
 	  AB = \left[\begin{array}{rrrr}
-	  A\vvec_1 \amp A\vvec_2 \amp \cdots \amp A\vvec_p
+	  A\vec{v_1} \amp A\vec{v_2} \amp \cdots \amp A\vec{v_p}
 	  \end{array}\right].
 	</me>
 	</p>
@@ -1262,18 +1266,19 @@ w = vector([1, 2])
 
 	  <li><p> Compute the product <m>AB</m>. </p></li>
 
-	  <li><p> Sage can multiply matrices using the <c>*</c>
-	  operator.  Define the matrices <m>A</m> and <m>B</m> in the
-	  Sage cell below and
+	  <li><p> Like with matrix-vector multiplication, we can use 
+		<c>{numpy}</c>'s <c>matmul()</c> function 
+		to find the product of two compatible matrices. Define the 
+		matrices <m>A</m> and <m>B</m> in the Python cell below and
 	  check your work by computing <m>AB</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	  </p></li>
 	  
 	  <li><p> Are we able to form the matrix product <m>BA</m>?  If
-	  so, use the Sage cell above to find <m>BA</m>.  Is it
+	  so, use the Python cell above to find <m>BA</m>.  Is it
 	  generally true that <m>AB = BA</m>?
 	  </p></li>
 	  
@@ -1294,7 +1299,7 @@ w = vector([1, 2])
 	    </me>.
 	    Compare what happens when you compute <m>A(B+C)</m> and <m>AB
 	    + AC</m>.  State your finding as a general principle.
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
@@ -1323,7 +1328,7 @@ w = vector([1, 2])
 	    \end{array}\right]
 	  </me>
 	  and compute <m>AB</m> and <m>AC</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -1343,7 +1348,7 @@ w = vector([1, 2])
 	    \end{array}\right]
 	  </me>
 	  and compute <m>AB</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -1519,15 +1524,15 @@ A*B
     express linear systems using matrix multiplication.
     <ul>
       <li> <p> If <m>A</m> is an <m>m\times n</m> matrix and
-      <m>\xvec</m> an <m>n</m>-dimensional vector, then <m>A\xvec</m>
+      <m>\vec{x}</m> an <m>n</m>-dimensional vector, then <m>A\vec{x}</m>
       is the linear combination of the columns of <m>A</m> using the
-      components of <m>\xvec</m> as weights. The vector <m>A\xvec</m>
+      components of <m>\vec{x}</m> as weights. The vector <m>A\vec{x}</m>
       is <m>m</m>-dimensional. </p></li>
 
-      <li> <p> The solution space to the equation <m>A\xvec =
-      \bvec</m> is the same as the solution space to the linear system
+      <li> <p> The solution space to the equation <m>A\vec{x} =
+      \vec{b}</m> is the same as the solution space to the linear system
       corresponding to the augmented matrix
-      <m>\left[ \begin{array}{r|r} A \amp \bvec \end{array}\right]</m>.
+      <m>\left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]</m>.
       </p></li>
 
       <li><p> If <m>A</m> is an <m>m\times n</m> matrix and <m>B</m>

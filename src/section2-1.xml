@@ -314,8 +314,9 @@
     <p>
       We can perform scalar multiplication and vector addition with 
 	  <c>{numpy}</c> arrays.  We define a vector using <c>np.array()</c> 
-	  with either a single row or a single column;  then <c>*</c>
-      and <c>+</c> denote scalar multiplication and vector addition.
+	  with either a single row or a single column (our choice will matter!);  
+	  then <c>*</c> and <c>+</c> denote scalar multiplication and vector 
+	  addition.
       <sage language="python">
 	<input>
 	  import numpy as np
