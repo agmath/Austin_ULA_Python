@@ -12,7 +12,7 @@
       The past few sections introduced us to matrix-vector
       multiplication as a means of thinking geometrically about the
       solutions to a linear system.  In particular, we rewrote a
-      linear system as a matrix equation <m>A\xvec = \bvec</m> and
+      linear system as a matrix equation <m>A\vec{x} = \vec{b}</m> and
       developed the concepts of span and linear independence in
       response to our
       <xref ref="fundamental-questions" text="custom">
@@ -137,9 +137,9 @@
       In this section, we will consider functions whose inputs are
       vectors and whose outputs are vectors defined through
       matrix-vector multiplication.  That is, if
-      <m>A</m> is a matrix and <m>\xvec</m> is a vector, 
-      the function <m>T(\xvec) = A\xvec</m> forms the product
-      <m>A\xvec</m> as its output.  Such a function is called a
+      <m>A</m> is a matrix and <m>\vec{x}</m> is a vector, 
+      the function <m>T(\vec{x}) = A\vec{x}</m> forms the product
+      <m>A\vec{x}</m> as its output.  Such a function is called a
       matrix transformation.  
     </p>
 
@@ -149,8 +149,8 @@
 	<p>
 	  The <term> matrix transformation</term> associated to the
 	  matrix <m>A</m> is the function that assigns to the vector
-	  <m>\xvec</m> the vector <m>A\xvec</m>; that is,
-	  <m>T(\xvec) = A\xvec</m>.
+	  <m>\vec{x}</m> the vector <m>A\vec{x}</m>; that is,
+	  <m>T(\vec{x}) = A\vec{x}</m>.
 	</p>
       </statement>
     </definition>
@@ -165,8 +165,8 @@
 	  0 \amp 3
 	  \end{bmatrix}
 	  </m>
-	  defines a matrix transformation <m>T(\xvec) =
-	  A\xvec</m> in the following way:
+	  defines a matrix transformation <m>T(\vec{x}) =
+	  A\vec{x}</m> in the following way:
 	  <me>
 	    T\left(\twovec{x_1}{x_2}\right) =
 	    \begin{bmatrix} 3 \amp -2 \\
@@ -226,7 +226,7 @@
 	    \end{aligned}
 	  </me>
 	  This shows that <m>T</m> is a matrix transformation
-	  <m>T(\xvec) = A\xvec</m> associated to the matrix
+	  <m>T(\vec{x}) = A\vec{x}</m> associated to the matrix
 	  <m>A = 
 	  \begin{bmatrix}
 	  -4 \amp -1 \amp 2 \\
@@ -249,8 +249,8 @@
 	    1 \amp 2 \\
 	    \end{array}\right].
 	    </me>
-	    with associated matrix transformation <m>T(\xvec) =
-	    A\xvec</m>.
+	    with associated matrix transformation <m>T(\vec{x}) =
+	    A\vec{x}</m>.
 
 	    <ol marker="1.">
 	      <li><p>What is
@@ -262,8 +262,8 @@
 	      <li><p>What is
 	      <m>T\left(\twovec{0}{1}\right)</m>?</p></li>
 
-	      <li><p> Is there a vector <m>\xvec</m> such that
-	      <m>T(\xvec) = \twovec{3}{0}</m>? </p></li>
+	      <li><p> Is there a vector <m>\vec{x}</m> such that
+	      <m>T(\vec{x}) = \twovec{3}{0}</m>? </p></li>
 
 	      <li><p>
 		Write <m>T\left(\twovec xy\right)</m> as a
@@ -273,7 +273,7 @@
 	    </ol></p>
 	  </li>
 
-	  <li> <p> Suppose that <m>T(\xvec) = A\xvec</m> where
+	  <li> <p> Suppose that <m>T(\vec{x}) = A\vec{x}</m> where
 	  <me>
 	    A=\left[\begin{array}{rrrr}
 	    3 \amp 3 \amp -2 \amp 1 \\
@@ -283,31 +283,31 @@
 	    </me>.
 	    <ol marker="1.">  
 	      <li><p> What is the dimension of the vectors
-	      <m>\xvec</m> that are inputs for <m>T</m>?  </p></li>
+	      <m>\vec{x}</m> that are inputs for <m>T</m>?  </p></li>
 
 	      <li><p> What is the dimension of the vectors
-	      <m>T(\xvec)=A\xvec</m> that are outputs? </p></li>
+	      <m>T(\vec{x})=A\vec{x}</m> that are outputs? </p></li>
 
 	      <li><p> If we describe this transformation as
 	      <m>T:\real^n\to\real^m</m>, what are the values of
 	      <m>n</m> and <m>m</m> and how do they relate to the
 	      shape of <m>A</m>? </p></li>
 
-	      <li><p> Describe the vectors <m>\xvec</m> for which
-	      <m>T(\xvec) = \zerovec</m>. </p></li>
+	      <li><p> Describe the vectors <m>\vec{x}</m> for which
+	      <m>T(\vec{x}) = \zerovec</m>. </p></li>
 	  </ol></p></li>
 
 	  <li><p> If <m>A</m> is the matrix
-	  <m>A=\left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+	  <m>A=\left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
 	  \end{array}\right]</m>,
 	  what is <m>T\left(\twovec10\right)</m> in terms of the
-	  vectors <m>\vvec_1</m> and <m>\vvec_2</m>?
+	  vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m>?
 	  What about
 	  <m>T\left(\twovec{0}{1}\right)</m>?
 	  </p></li>
 
 	  <li><p> Suppose that <m>A</m> is a <m>3\times 2</m> matrix
-	  and that <m>T(\xvec)=A\xvec</m>.  If
+	  and that <m>T(\vec{x})=A\vec{x}</m>.  If
 	  <me>
 	    T\left(\twovec{1}{0}\right) = \threevec{3}{-1}{1},
 	    T\left(\twovec{0}{1}\right) = \threevec{2}{2}{-1}
@@ -339,10 +339,10 @@
 	    \twovec{2x+y}{x+2y}</m>.
 	    </p></li>
 
-	    <li><p> We seek a vector <m>\xvec</m> such that
-	    <m>T(\xvec) = A\xvec=\twovec{3}{0}</m>.  We can solve
+	    <li><p> We seek a vector <m>\vec{x}</m> such that
+	    <m>T(\vec{x}) = A\vec{x}=\twovec{3}{0}</m>.  We can solve
 	    this equation to find the unique solution
-	    <m>\xvec=\twovec{2}{-1}</m>.
+	    <m>\vec{x}=\twovec{2}{-1}</m>.
 	    </p></li>
 	  </ol>
 	  </p></li>
@@ -357,10 +357,10 @@
 	  </me>
 	  the matrix has dimensions <m>3\times4</m>.
 	  <ol marker="1.">
-	    <li><p> <m>\xvec</m> must be a four-dimensional
+	    <li><p> <m>\vec{x}</m> must be a four-dimensional
 	    vector. </p></li>
 
-	    <li><p> <m>A\xvec</m> must be a three-dimensional
+	    <li><p> <m>A\vec{x}</m> must be a three-dimensional
 	    vector. </p></li>
 
 	    <li><p> For this matrix, we have
@@ -370,13 +370,13 @@
 	    </p></li>
 
 	    <li><p> If we solve the homogeneous equation
-	    <m>A\xvec=\zerovec</m>, we find that
-	    <m>\xvec=x_4\fourvec{-3}{2}{-1}{1}</m>.
+	    <m>A\vec{x}=\zerovec</m>, we find that
+	    <m>\vec{x}=x_4\fourvec{-3}{2}{-1}{1}</m>.
 	    </p></li>
 	  </ol>
 	  </p></li>
 
-	  <li><p> <m>T\left(\twovec{1}{0}\right) = \vvec_1</m>, the
+	  <li><p> <m>T\left(\twovec{1}{0}\right) = \vec{v_1}</m>, the
 	  first column of the matrix.  Similarly,
 	  <m>T\left(\twovec{0}{1}\right)</m> gives the second column
 	  of the matrix.  </p></li>
@@ -398,11 +398,11 @@
     <p>
       Let's discuss a few of the issues that appear in this
       activity.  First, notice that the shape of the matrix <m>A</m>
-      and the dimension of the input vector <m>\xvec</m> must be
-      compatible if the product <m>A\xvec</m> is to be defined.  In
+      and the dimension of the input vector <m>\vec{x}</m> must be
+      compatible if the product <m>A\vec{x}</m> is to be defined.  In
       particular, if <m>A</m> is an <m>m\times n</m> matrix,
-      <m>\xvec</m> needs to be an <m>n</m>-dimensional vector, and
-      the resulting product <m>A\xvec</m> will be an
+      <m>\vec{x}</m> needs to be an <m>n</m>-dimensional vector, and
+      the resulting product <m>A\vec{x}</m> will be an
       <m>m</m>-dimensional vector.  For the associated matrix
       transformation, we
       therefore write <m>T:\real^n\to\real^m</m> meaning <m>T</m>
@@ -423,14 +423,14 @@
       transformation <m>T</m> by remembering that matrix-vector
       multiplication constructs linear combinations.
       For instance, if <m>A</m> is an
-      <m>m\times2</m> matrix <m>A=\left[\begin{array}{rr} \vvec_1
-      \amp \vvec_2 \end{array}\right]</m>, then
+      <m>m\times2</m> matrix <m>A=\left[\begin{array}{rr} \vec{v_1}
+      \amp \vec{v_2} \end{array}\right]</m>, then
       <me>
 	T\left(\twovec{1}{0}\right) =
 	\left[\begin{array}{rr}
-	\vvec_1 \amp \vvec_2
-	\end{array}\right]\twovec{1}{0} = 1\vvec_1 + 0\vvec_2 =
-	\vvec_1
+	\vec{v_1} \amp \vec{v_2}
+	\end{array}\right]\twovec{1}{0} = 1\vec{v_1} + 0\vec{v_2} =
+	\vec{v_1}
 	</me>.
 	That is, we can find the first column of <m>A</m> by
 	evaluating <m>T\left(\twovec{1}{0}\right)</m>.  Similarly,
@@ -442,35 +442,35 @@
       More generally, we will write the columns of the <m>n\times
       n</m> identity matrix as
       <me>
-	\evec_1 = \left[\begin{array}{c}
+	\vec{e_1} = \left[\begin{array}{c}
 	1 \\ 0 \\ \vdots \\ 0 \end{array}\right],~~~
-	\evec_2 = \left[\begin{array}{c}
+	\vec{e_2} = \left[\begin{array}{c}
 	0 \\ 1 \\ \vdots \\ 0 \end{array}\right],~~~
 	\ldots,~~~
-	\evec_n = \left[\begin{array}{c}
+	\vec{e_n} = \left[\begin{array}{c}
 	0 \\ 0 \\ \vdots \\ 1 \end{array}\right]
       </me>
       so that
       <me>
-	T(\evec_j) = \left[\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+	T(\vec{e_j}) = \left[\begin{array}{rrrr}
+	\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n}
 	\end{array}\right]
-	~\evec_j = \vvec_j
+	~\vec{e_j} = \vec{v_j}
 	</me>.
 	This means that the <m>j^{th}</m> column of <m>A</m> is found
-	by evaluating <m>T(\evec_j)</m>.  We record this fact in the
+	by evaluating <m>T(\vec{e_j})</m>.  We record this fact in the
 	following proposition.
     </p>
 
     <proposition xml:id="prop-linear-trans-columns">
       <statement>
 	<p> If <m>T:\real^n\to\real^m</m> is a matrix
-	transformation given by <m>T(\xvec) = A\xvec</m>,
-	then the matrix <m>A</m> has columns <m>T(\evec_j)</m>;
+	transformation given by <m>T(\vec{x}) = A\vec{x}</m>,
+	then the matrix <m>A</m> has columns <m>T(\vec{e_j})</m>;
 	that is,
 	<me>
 	  A = \left[\begin{array}{rrrr}
-	  T(\evec_1) \amp T(\evec_2) \amp \cdots \amp T(\evec_n)
+	  T(\vec{e_1}) \amp T(\vec{e_2}) \amp \cdots \amp T(\vec{e_n})
 	  \end{array}\right]
 	  </me>.
 	</p>
@@ -486,9 +486,9 @@
 	      <p>
 		To begin, suppose that <m>T</m> is the matrix
 		transformation that takes a two-dimensional vector
-		<m>\xvec</m> as an input and outputs
-		<m>T(\xvec)</m>, the two-dimensional vector
-		obtained by rotating <m>\xvec</m> counterclockwise by
+		<m>\vec{x}</m> as an input and outputs
+		<m>T(\vec{x})</m>, the two-dimensional vector
+		obtained by rotating <m>\vec{x}</m> counterclockwise by
 		<m>90^\circ</m>, as shown in <xref
 		ref="fig-mt-rotate"/>.
 	      </p>
@@ -524,17 +524,17 @@
 		  </li>
 		  <li>
 		    <p>
-		      If <m>\vvec=\twovec{-2}{-1}</m> as shown on the left
+		      If <m>\vec{v}=\twovec{-2}{-1}</m> as shown on the left
 		      in <xref ref="fig-mt-rotate"/>, use your matrix to
-		      determine <m>T(\vvec)</m> and verify that it agrees
+		      determine <m>T(\vec{v})</m> and verify that it agrees
 		      with that shown on the right of <xref
 		      ref="fig-mt-rotate"/>.
 		    </p>
 		  </li>
 		  <li>
 		    <p>
-		      If <m>\xvec=\twovec xy</m>, determine the vector
-		      <m>T(\xvec)</m> obtained by rotating <m>\xvec</m>
+		      If <m>\vec{x}=\twovec xy</m>, determine the vector
+		      <m>T(\vec{x})</m> obtained by rotating <m>\vec{x}</m>
 		      counterclockwise by <m>90^\circ</m>.
 		    </p>
 		  </li>
@@ -556,16 +556,16 @@
 		</ul>
 		If Bakery 1 operates for <m>x_1</m> hours and
 		Bakery 2 for <m>x_2</m> hours, we will use the
-		vector <m>\xvec=\twovec{x_1}{x_2}</m> to describe
+		vector <m>\vec{x}=\twovec{x_1}{x_2}</m> to describe
 		the operation of the two bakeries.
 	      </p>
 	      <p>
 		We would like to describe a matrix transformation
-		<m>T</m> where <m>\xvec</m> describes the number of
-		hours the bakeries operate and <m>T(\xvec)</m>
+		<m>T</m> where <m>\vec{x}</m> describes the number of
+		hours the bakeries operate and <m>T(\vec{x})</m>
 		describes the total number of cakes, doughnuts, and
 		eclairs produced.  That is,
-		<m>T(\xvec) = \threevec{y_1}{y_2}{y_3}</m> where
+		<m>T(\vec{x}) = \threevec{y_1}{y_2}{y_3}</m> where
 		<m>y_1</m> is the number of cakes, <m>y_2</m> is the
 		number of doughnuts, and <m>y_3</m> is the number of
 		eclairs produced.
@@ -600,7 +600,7 @@
 		      If Bakery 1 operates for 120 hours and Bakery
 		      2 for 180 hours, what is the total number of
 		      cakes, doughnuts, and eclairs produced?
-		      <sage>
+		      <sage language="python">
 			<input>
 			</input>
 		      </sage>
@@ -657,7 +657,7 @@
 		  </li>
 		  <li>
 		    <p>
-		      Multiplying <m>T(\vvec) = A\vvec =
+		      Multiplying <m>T(\vec{v}) = A\vec{v} =
 		      \twovec{1}{-2}</m>, 
 		      which agrees with the vector shown in the
 		      figure.
@@ -705,9 +705,9 @@
 		  </li>
 		  <li>
 		    <p>
-		      We solve the equation <m>T(\xvec) = A\xvec =
+		      We solve the equation <m>T(\vec{x}) = A\vec{x} =
 		      \threevec{5060}{14310}{10470}</m> to obtain
-		      <m>\xvec = \twovec{192}{157}.
+		      <m>\vec{x} = \twovec{192}{157}.
 		      </m>
 		    </p>
 		  </li>
@@ -717,14 +717,14 @@
 		      columns of <m>A</m> cannot span
 		      <m>\real^3</m>.  If we view an 
 		      order received as a three-dimensional vector
-		      <m>\bvec</m>, then a solution to the equation
-		      <m>A\xvec = \bvec</m> tells us how long to
+		      <m>\vec{b}</m>, then a solution to the equation
+		      <m>A\vec{x} = \vec{b}</m> tells us how long to
 		      operate the two bakeries to produce this
 		      order.  However, since <m>A</m> is a
 		      <m>3\times 2</m> matrix, it must have a row
 		      without a pivot position, which means that
-		      the equation <m>A\xvec = \bvec</m> will be
-		      inconsistent for some vectors <m>\bvec</m>.
+		      the equation <m>A\vec{x} = \vec{b}</m> will be
+		      inconsistent for some vectors <m>\vec{b}</m>.
 		    </p>
 		  </li>
 		</ol>
@@ -751,12 +751,12 @@
       It sometimes happens that we want to combine matrix
       transformations by performing one and then another.  In the last
       activity, for instance, we considered the matrix transformation
-      where <m>T(\xvec)</m> is the result of rotating the
-      two-dimensional vector <m>\xvec</m> by <m>90^\circ</m>. 
+      where <m>T(\vec{x})</m> is the result of rotating the
+      two-dimensional vector <m>\vec{x}</m> by <m>90^\circ</m>. 
       Now suppose we are interested in rotating that vector twice;  that is,
-      we take a vector <m>\xvec</m>, rotate it by <m>90^\circ</m> to
-      obtain <m>T(\xvec)</m>, and then rotate the result by
-      <m>90^\circ</m> again to obtain <m>T(T(\xvec))</m>.
+      we take a vector <m>\vec{x}</m>, rotate it by <m>90^\circ</m> to
+      obtain <m>T(\vec{x})</m>, and then rotate the result by
+      <m>90^\circ</m> again to obtain <m>T(T(\vec{x}))</m>.
     </p>
 
     <p>
@@ -774,13 +774,13 @@
       Composing matrix transformations is similar.  Suppose that we
       have two matrix transformations, <m>T:\real^n\to\real^m</m> and
       <m>S:\real^m\to\real^p</m>.  Their associated matrices will be
-      denoted by <m>A</m> and <m>B</m> so that <m>T(\xvec) =
-      A\xvec</m> and <m>S(\xvec) = B\xvec</m>.  If we apply <m>T</m>
-      to a vector <m>\xvec</m> to obtain <m>T(\xvec)</m> and then
+      denoted by <m>A</m> and <m>B</m> so that <m>T(\vec{x}) =
+      A\vec{x}</m> and <m>S(\vec{x}) = B\vec{x}</m>.  If we apply <m>T</m>
+      to a vector <m>\vec{x}</m> to obtain <m>T(\vec{x})</m> and then
       apply <m>S</m> to the result, we have
       <me>
-	(S\circ T)(\xvec) = S(T(\xvec)) = S(A\xvec) = BA\xvec =
-	(BA)\xvec.
+	(S\circ T)(\vec{x}) = S(T(\vec{x})) = S(A\vec{x}) = BA\vec{x} =
+	(BA)\vec{x}.
       </me>
       Notice that this implies that the composition <m>(S\circ T)</m>
       is itself a matrix transformation and that the associated matrix
@@ -800,7 +800,7 @@
     <p>
       Notice that the matrix transformations must be compatible if
       they are to be composed.  In particular, 
-      the vector <m>T(\xvec)</m>, an <m>m</m>-dimensional
+      the vector <m>T(\vec{x})</m>, an <m>m</m>-dimensional
       vector, must be a suitable input vector for <m>S</m>, which
       means that the inputs to <m>S</m> must be <m>m</m>-dimensional.
       In fact, this is the same condition we need to form the product
@@ -821,8 +821,8 @@
 	      <p>
 		Let's begin with the matrix transformation
 		<m>T:\real^2\to\real^2</m> that rotates a
-		two-dimensional vector <m>\xvec</m> by <m>90^\circ</m>
-		to produce <m>T(\xvec)</m>.  We saw in the earlier
+		two-dimensional vector <m>\vec{x}</m> by <m>90^\circ</m>
+		to produce <m>T(\vec{x})</m>.  We saw in the earlier
 		activity that the associated matrix is
 		<m>A = \begin{bmatrix}
 		0 \amp -1 \\
@@ -830,9 +830,9 @@
 		\end{bmatrix}
 		</m>.
 		Suppose that we compose this matrix transformation
-		with itself to obtain <m>(T\circ T)(\xvec) =
-		T(T(\xvec))</m>, which is the result of rotating
-		<m>\xvec</m> by <m>90^\circ</m> twice.
+		with itself to obtain <m>(T\circ T)(\vec{x}) =
+		T(T(\vec{x}))</m>, which is the result of rotating
+		<m>\vec{x}</m> by <m>90^\circ</m> twice.
 		<ol marker="1.">
 		  <li>
 		    <p>
@@ -843,7 +843,7 @@
 		  <li>
 		    <p>
 		      What is the result of rotating
-		      <m>\vvec=\twovec{-2}{-1}</m> twice?
+		      <m>\vec{v}=\twovec{-2}{-1}</m> twice?
 		    </p>
 		  </li>
 		  <li>
@@ -932,7 +932,7 @@
 		    If we make 1200 cakes, 2850 doughnuts, and 2250
 		    eclairs, how many cups of flour and sugar are
 		    required?
-		    <sage>
+		    <sage language="python">
 		      <input>
 		      </input>
 		    </sage>
@@ -984,7 +984,7 @@
 		  </li>
 		  <li>
 		    <p>
-		      <m>(T\circ T)(\vvec) = A^2\vvec = \twovec21</m>.
+		      <m>(T\circ T)(\vec{v}) = A^2\vec{v} = \twovec21</m>.
 		    </p>
 		  </li>
 		  <li>
@@ -997,7 +997,7 @@
 		  </li>
 		  <li>
 		    <p>
-		      <m>(T\circ T)(\xvec) = R(\xvec) = -\xvec</m>,
+		      <m>(T\circ T)(\vec{x}) = R(\vec{x}) = -\vec{x}</m>,
 		      which makes sense because multiplying a vector
 		      by <m>-1</m> simply changes its direction.
 		    </p>
@@ -1035,9 +1035,9 @@
 		  <li>
 		    <p>
 		      <m>(S\circ T)</m> takes as input a vector
-		      <m>\xvec</m> that records the number of hours
+		      <m>\vec{x}</m> that records the number of hours
 		      both bakeries operate and outputs a vector
-		      <m>(S\circ T)(\xvec)</m> that tells us the total
+		      <m>(S\circ T)(\vec{x})</m> that tells us the total
 		      number of cups of flour and sugar used.  The
 		      associated matrix is
 		      <m>BA=\begin{bmatrix}
@@ -1048,11 +1048,11 @@
 		  </li>
 		  <li>
 		    <p>
-		      We want to find the vector <m>\xvec</m> for
+		      We want to find the vector <m>\vec{x}</m> for
 		      which
-		      <m>(S\circ T)(\xvec) = BA\xvec =
+		      <m>(S\circ T)(\vec{x}) = BA\vec{x} =
 		      \twovec{5800}{5980}</m>.  Solving this equation
-		      gives <m>\xvec=\twovec{32}{14}</m>.
+		      gives <m>\vec{x}=\twovec{32}{14}</m>.
 		    </p>
 		  </li>
 		</ol>
@@ -1090,14 +1090,14 @@
 	</ul></p>
 	
 	<p> The distribution of trucks is represented by the
-	vector <m>\xvec=\twovec{x_1}{x_2}</m> when there are
+	vector <m>\vec{x}=\twovec{x_1}{x_2}</m> when there are
 	<m>x_1</m> trucks at location <m>P</m> and <m>x_2</m> trucks
-	at <m>Q</m>.  If <m>\xvec</m> describes the distribution of
+	at <m>Q</m>.  If <m>\vec{x}</m> describes the distribution of
 	trucks in the morning, then the matrix transformation
-	<m>T(\xvec)</m> will describe the distribution in the
+	<m>T(\vec{x})</m> will describe the distribution in the
 	evening. 
 	
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1119,8 +1119,8 @@
 	  and what is <m>T\left(\twovec01\right)</m>?
 	  </p></li>
 
-	  <li><p> Find the matrix <m>A</m> such that <m>T(\xvec) =
-	  A\xvec</m>.  </p></li>
+	  <li><p> Find the matrix <m>A</m> such that <m>T(\vec{x}) =
+	  A\vec{x}</m>.  </p></li>
 
 	  <li><p> Suppose that there are 100 trucks at <m>P</m> and
 	  900 at <m>Q</m> in the morning.  How many are
@@ -1145,7 +1145,7 @@
 	  </ol></p></li>
 
 	  <li><p> Suppose that <m>S</m> is the matrix transformation
-	  that transforms the distribution of trucks <m>\xvec</m> one
+	  that transforms the distribution of trucks <m>\vec{x}</m> one
 	  morning into the distribution of trucks in the morning one
 	  week (seven days) later.  What is the matrix that defines
 	  the transformation <m>S</m>?  </p></li>
@@ -1187,25 +1187,25 @@
 	  </p></li>
 
 	  <li><p>
-	    We solve <m>T(\xvec) = A\xvec = \twovec{550}{450}</m> to
-	    find <m>\xvec=\twovec{250}{750}</m>.
+	    We solve <m>T(\vec{x}) = A\vec{x} = \twovec{550}{450}</m> to
+	    find <m>\vec{x}=\twovec{250}{750}</m>.
 	  </p></li>
 
 	  <li><p> We denote the distribution of trucks Monday
 	  morning by
-	  <m>\xvec_0 = \ctwovec{0}{1000}</m>.
+	  <m>\vec{x_0} = \ctwovec{0}{1000}</m>.
 	  <ol marker="i.">
-	    <li><p> Monday evening, we have <m>\xvec_1=A\xvec_0 =
+	    <li><p> Monday evening, we have <m>\vec{x_1}=A\vec{x_0} =
 	    \twovec{500}{500}</m>.
 	    </p></li>
 
 	    <li><p> Tuesday evening, we have 
-	    <m>\xvec_2=A\xvec_1 =
+	    <m>\vec{x_2}=A\vec{x_1} =
 	    \twovec{600}{400}</m>.
 	    </p></li>
 
 	    <li><p> Wednesday evening, we have 
-	    <m>\xvec_3=A\xvec_2 =
+	    <m>\vec{x_3}=A\vec{x_2} =
 	    \twovec{620}{380}</m>.
 	    </p></li>
 	  </ol>
@@ -1225,24 +1225,24 @@
 
     <p> As we will see later, this type of situation occurs
     frequently.  We have a vector 
-    <m>\xvec</m> that describes the state of some system; in this
-    case, <m>\xvec</m> describes the distribution of trucks between
+    <m>\vec{x}</m> that describes the state of some system; in this
+    case, <m>\vec{x}</m> describes the distribution of trucks between
     the two locations at a particular time.  Then there is a matrix
-    transformation  <m>T(\xvec) = A\xvec</m> that describes the
-    state at some later time.  We call <m>\xvec</m> the
+    transformation  <m>T(\vec{x}) = A\vec{x}</m> that describes the
+    state at some later time.  We call <m>\vec{x}</m> the
     <em>state</em> vector and <m>T</m> the <em>transition</em>
     function, as it describes the transition of the state vector
     from one time to the next.  <idx> state vector </idx> <idx>
     transition function </idx>
     </p>
 
-    <p> Beginning with an initial state <m>\xvec_0</m>,
+    <p> Beginning with an initial state <m>\vec{x_0}</m>,
     we would like to know how the state evolves over time.  For instance,
     <me>
       \begin{aligned}
-      \xvec_1 \amp = T(\xvec_0)=A\xvec_0 \\
-      \xvec_2 \amp = T(\xvec_1) = (T\circ T)(\xvec_0)= A^2\xvec_0 \\
-      \xvec_3 \amp = T(\xvec_2) = A^3\xvec_0
+      \vec{x_1} \amp = T(\vec{x_0})=A\vec{x_0} \\
+      \vec{x_2} \amp = T(\vec{x_1}) = (T\circ T)(\vec{x_0})= A^2\vec{x_0} \\
+      \vec{x_3} \amp = T(\vec{x_2}) = A^3\vec{x_0}
       \end{aligned}
     </me>
     and so on.
@@ -1251,7 +1251,7 @@
     <p>
       <idx> discrete dynamical system </idx> We call this situation
       where the state of a system evolves from one time to the
-      next according to the rule <m>\xvec_{k+1}=A\xvec_k</m> a
+      next according to the rule <m>\vec{x_{k+1}}=A\vec{x_k}</m> a
       <em>discrete dynamical system</em>.  In <xref ref="chap4" />,
       we will develop a theory that enables us to make
       long-term predictions about the evolution of the state vector.
@@ -1266,7 +1266,7 @@
 
     <p>This section introduced matrix transformations, 
     functions that are defined by matrix-vector multiplication, such
-    as <m>T(\xvec) = A\xvec</m> for some matrix <m>A</m>.
+    as <m>T(\vec{x}) = A\vec{x}</m> for some matrix <m>A</m>.
 
     <ul>
       <li><p> If <m>A</m> is an <m>m\times n</m> matrix, then
@@ -1274,10 +1274,10 @@
 
       <li><p> The columns of the matrix <m>A</m> are given by
       evaluating the transformation <m>T</m> on the vectors
-      <m>\evec_j</m>;  that is,
+      <m>\vec{e_j}</m>;  that is,
       <me>
 	A=\left[\begin{array}{rrrr}
-	T(\evec_1) \amp T(\evec_2) \amp \cdots \amp T(\evec_n)
+	T(\vec{e_1}) \amp T(\vec{e_2}) \amp \cdots \amp T(\vec{e_n})
 	\end{array}\right]
       </me>. </p></li>
 
@@ -1285,8 +1285,8 @@
       matrix multiplication.</p></li>
 
       <li><p> A discrete dynamical system consists of a state vector
-      <m>\xvec</m> along with a transition function <m>T(\xvec) =
-      A\xvec</m> that describes how the state vector evolves from one
+      <m>\vec{x}</m> along with a transition function <m>T(\vec{x}) =
+      A\vec{x}</m> that describes how the state vector evolves from one
       time to the next.  Powers of the matrix <m>A</m> determine the
       long-term behavior of the state vector. </p></li>
     </ul>

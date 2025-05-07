@@ -247,8 +247,8 @@
   <exercise>
     <statement>
       <p> Suppose <m>T:\real^3\to\real^2</m> is a matrix
-      transformation with <m>T(\evec_j) = \vvec_j</m> where
-      <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> are as shown
+      transformation with <m>T(\vec{e_j}) = \vec{v_j}</m> where
+      <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m> are as shown
       in <xref ref="fig-ex-linear-trans" />.
       </p>
 
@@ -257,7 +257,7 @@
 	  <image source="images/ex-linear-trans" />
 	</sidebyside>
 	<caption>
-	  The vectors <m>T(\evec_j)=\vvec_j</m>.
+	  The vectors <m>T(\vec{e_j})=\vec{v_j}</m>.
 	</caption>
       </figure>
 
@@ -276,16 +276,16 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> <m>T\left(\threevec{2}{1}{2}\right) =
-	2\vvec_1+\vvec_2+2\vvec_3 = \twovec{1}{-1}</m>.
+	2\vec{v_1}+\vec{v_2}+2\vec{v_3} = \twovec{1}{-1}</m>.
 	</p></li>
 
-	<li><p> <m>T\left(\threevec{0}{1}{0}\right) = \vvec_2</m>.
+	<li><p> <m>T\left(\threevec{0}{1}{0}\right) = \vec{v_2}</m>.
 	</p></li>
 
 	<li><p> The matrix that defines <m>T</m> is
 	<me>
 	  A = \left[\begin{array}{rrr}
-	  \vvec_1 \amp \vvec_2 \amp \vvec_3 \\
+	  \vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \\
 	  \end{array}\right]
 	  = \left[\begin{array}{rrr}
 	  2 \amp -1 \amp -1 \\
@@ -308,7 +308,7 @@
 	<li><p> <m>\twovec{1}{-1}</m>.
 	</p></li>
 
-	<li><p> <m>\vvec_2</m>.
+	<li><p> <m>\vec{v_2}</m>.
 	</p></li>
 
 	<li><p>
@@ -608,8 +608,8 @@
 
 	<li><p> If <m>T:\real^2\to\real^3</m> is a matrix
 	transformation, then it is possible that every equation
-	<m>T(\xvec) = \bvec</m> has a solution for every vector
-	<m>\bvec</m>. </p></li>
+	<m>T(\xvec) = \vec{b}</m> has a solution for every vector
+	<m>\vec{b}</m>. </p></li>
 
 	<li><p>
 	  If <m>T:\real^n\to\real^m</m> is a matrix
@@ -875,7 +875,7 @@
       describing how the state vector evolves from month to month.  We
       also observe that, at the beginning of July, the populations are
       described by the state vector <m>\xvec=\twovec{1}{2}</m>.
-      <sage>
+      <sage language="python">
 	<input>
 	</input>
       </sage>
@@ -896,23 +896,23 @@
     </statement>
 
     <solution>
-      <p> The initial state is the vector <m>\xvec_0=\twovec{1}{2}</m>.
+      <p> The initial state is the vector <m>\vec{x_0}=\twovec{1}{2}</m>.
       <ol marker="a.">
-	<li><p> At the beginning of August, we have <m>\xvec_1 =
-	A\xvec_0 = \twovec{1.4}{3.1}</m>.
+	<li><p> At the beginning of August, we have <m>\vec{x_1} =
+	A\vec{x_0} = \twovec{1.4}{3.1}</m>.
 	</p></li>
 
-	<li><p> At the beginning of June, we have <m>A\xvec_{-1} =
-	\xvec_0</m>.  Solving this equation gives
-	<m>\xvec_{-1}=\twovec{0.8}{1.2}</m>.
+	<li><p> At the beginning of June, we have <m>A\vec{x_{-1}} =
+	\vec{x_0}</m>.  Solving this equation gives
+	<m>\vec{x_{-1}}=\twovec{0.8}{1.2}</m>.
 	</p></li>
 
 	<li><p> At the beginning of December, we have
-	<m>\xvec_5=A^5\xvec_0 = \twovec{6.8}{15.9}</m>.
+	<m>\vec{x_5}=A^5\vec{x_0} = \twovec{6.8}{15.9}</m>.
 	</p></li>
 
 	<li><p> At the beginning of July in the following year, we
-	have <m>\xvec_{12} = A^{12}\xvec_0 = \twovec{116.8}{272.5}</m>.
+	have <m>\vec{x_{12}} = A^{12}\vec{x_0} = \twovec{116.8}{272.5}</m>.
 	</p></li>
       </ol></p>
     </solution>
@@ -956,7 +956,7 @@
       <m>T:\real^2\to\real^2</m>. 
       On Tuesday, the state vector is
       <m>\xvec=\ctwovec{1700}{100}</m>.
-      <sage>
+      <sage language="python">
 	<input>
 	</input>
       </sage>
