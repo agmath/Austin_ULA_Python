@@ -312,13 +312,16 @@
     </observation>
 
     <p>
-      Sage can perform scalar multiplication and vector addition.  We
-      define a vector using the <c>vector</c> command;  then <c>*</c>
+      We can perform scalar multiplication and vector addition with 
+	  <c>{numpy}</c> arrays.  We define a vector using <c>np.array()</c> 
+	  with either a single row or a single column;  then <c>*</c>
       and <c>+</c> denote scalar multiplication and vector addition.
-      <sage>
+      <sage language="python">
 	<input>
-	  v = vector([3,1])
-	  w = vector([-1,2])
+	  import numpy as np
+	  
+	  v = np.array([3,1])
+	  w = np.array([-1,2])
 	  print (2*v)
 	  print (v + w)
 	</input>
@@ -736,9 +739,9 @@
 	linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>, and
 	<m>\vvec_3</m>?  Rephrase this question by writing a linear
 	system for the weights 
-	<m>c_1</m>, <m>c_2</m>, and <m>c_3</m> and use the Sage
+	<m>c_1</m>, <m>c_2</m>, and <m>c_3</m> and use the Python
 	cell below to answer this question.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -776,7 +779,7 @@
 	<m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?  If so,
 	can <m>\bvec</m> be written as a linear combination of these
 	vectors in more than one way?
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -808,7 +811,7 @@
 	<m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?  If so,
 	can <m>\bvec</m> be written as a linear combination of these
 	vectors in more than one way?
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
