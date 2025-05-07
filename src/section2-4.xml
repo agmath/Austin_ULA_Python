@@ -12,11 +12,11 @@
       In the previous section, questions about the existence of
       solutions of a linear system led to the concept of the span of
       a set of vectors.  In particular, the span of a set of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is the set of vectors
-      <m>\bvec</m> for which a solution to the linear system <m>
+      <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is the set of vectors
+      <m>\vec{v_b}</m> for which a solution to the linear system <m>
       \left[\begin{array}{rrrr}
-      \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n \end{array}\right] ~\xvec
-      = \bvec </m> exists.
+      \vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n} \end{array}\right] ~\vec{x}
+      = \vec{v_b} </m> exists.
     </p>
 
     <p>
@@ -38,14 +38,14 @@
 	<li> <p>
 	  Consider the following vectors in <m>\real^3</m>:
 	  <me>
-	    \vvec_1=\threevec{0}{-1}{2},
-	    \vvec_2=\threevec{3}{1}{-1},
-	    \vvec_3=\threevec{2}{0}{1}
+	    \vec{v_1}=\threevec{0}{-1}{2},
+	    \vec{v_2}=\threevec{3}{1}{-1},
+	    \vec{v_3}=\threevec{2}{0}{1}
 	  </me>.
 	  Describe the span of these vectors,
-	  <m>\laspan{\vvec_1,\vvec_2,\vvec_3}</m>, as a line, a plane,
+	  <m>\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}</m>, as a line, a plane,
 	  or <m>\real^3</m>. 
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -54,42 +54,42 @@
 	<li><p>
 	  Now consider the set of vectors:
 	  <me>
-	    \wvec_1=\threevec{0}{-1}{2},
-	    \wvec_2=\threevec{3}{1}{-1},
-	    \wvec_3=\threevec{3}{0}{1}
+	    \vec{w_1}=\threevec{0}{-1}{2},
+	    \vec{w_2}=\threevec{3}{1}{-1},
+	    \vec{w_3}=\threevec{3}{0}{1}
 	  </me>.
 	  Describe the span of these vectors,
-	  <m>\laspan{\wvec_1,\wvec_2,\wvec_3}</m>, as a line, a plane,
+	  <m>\laspan{\vec{w_1},\vec{w_2},\vec{w_3}}</m>, as a line, a plane,
 	  or <m>\real^3</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	</p></li>
 
 	<li><p> 
-	  Show that the vector <m>\wvec_3</m> is a linear combination
-	  of <m>\wvec_1</m> and <m>\wvec_2</m> by finding weights such
+	  Show that the vector <m>\vec{w_3}</m> is a linear combination
+	  of <m>\vec{w_1}</m> and <m>\vec{w_2}</m> by finding weights such
 	  that
 	  <me>
-	    \wvec_3 = c\wvec_1 + d\wvec_2
+	    \vec{w_3} = c\vec{w_1} + d\vec{w_2}
 	  </me>.
 	</p></li>
 
 	<li><p>
-	  Explain why any linear combination of <m>\wvec_1</m>,
-	  <m>\wvec_2</m>, and <m>\wvec_3</m>,
+	  Explain why any linear combination of <m>\vec{w_1}</m>,
+	  <m>\vec{w_2}</m>, and <m>\vec{w_3}</m>,
 	  <me>
-	    c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
+	    c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3}
 	  </me>
-	  can be written as a linear combination of <m>\wvec_1</m> and
-	  <m>\wvec_2</m>. 
+	  can be written as a linear combination of <m>\vec{w_1}</m> and
+	  <m>\vec{w_2}</m>. 
 	</p></li>
 
 	<li><p>
 	  Explain why
 	  <me>
-	    \laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}
+	    \laspan{\vec{w_1},\vec{w_2},\vec{w_3}} = \laspan{\vec{w_1},\vec{w_2}}
 	  </me>.
 	</p></li>
 
@@ -103,7 +103,7 @@
 	    <li>
 	      <p>
 		We will construct the matrix whose columns are
-		<m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>:
+		<m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m>:
 		<me>
 		  \begin{bmatrix}
 		  0 \amp 3 \amp 2 \\
@@ -119,7 +119,7 @@
 		</me>
 		Because there is a pivot in every row, <xref
 		ref="prop-pivot-row" /> tells us that
-		<m>\laspan{\vvec_1,\vvec_2,\vvec_3} = \real^3</m>.
+		<m>\laspan{\vec{v_1},\vec{v_2},\vec{v_3}} = \real^3</m>.
 	      </p>
 	    </li>
 	    <li>
@@ -139,7 +139,7 @@
 		  \end{bmatrix}.
 		</me>
 		As there are two pivot positions, we see that
-		<m>\laspan{\wvec_1, \wvec_2, \wvec_3}</m> is a plane
+		<m>\laspan{\vec{w_1}, \vec{w_2}, \vec{w_3}}</m> is a plane
 		in <m>\real^3</m>.
 	      </p>
 	    </li>
@@ -163,25 +163,25 @@
 		  \end{array}
 		  \right],
 		</me>
-		which tells us that <m>\wvec_3 = \wvec_1 +
-		\wvec_2</m>.
+		which tells us that <m>\vec{w_3} = \vec{w_1} +
+		\vec{w_2}</m>.
 	      </p>
 	    </li>
 	    <li>
 	      <p>
 		We have
 		<me>
-		  c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3 =
-		  c_1\wvec_1 + c_2\wvec_2 + c_3(\wvec_1+\wvec_2)=
-		  (c_1+c_3)\wvec_1 + (c_2+c_3)\wvec_2.
+		  c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3} =
+		  c_1\vec{w_1} + c_2\vec{w_2} + c_3(\vec{w_1}+\vec{w_2})=
+		  (c_1+c_3)\vec{w_1} + (c_2+c_3)\vec{w_2}.
 		</me>
 	      </p>
 	    </li>
 	    <li>
 	      <p>
-		Any linear combination of <m>\wvec_1</m>,
-		<m>\wvec_2</m>, and <m>\wvec_3</m> is itself a linear
-		combination of <m>\wvec_1</m> and <m>\wvec_2</m>.
+		Any linear combination of <m>\vec{w_1}</m>,
+		<m>\vec{w_2}</m>, and <m>\vec{w_3}</m> is itself a linear
+		combination of <m>\vec{w_1}</m> and <m>\vec{w_2}</m>.
 	      </p>
 	    </li>
 	  </ol>
@@ -205,13 +205,13 @@
 	<p>
 	  Let's consider the set of three vectors in <m>\real^3</m>:
 	  <me>
-	    \vvec_1 = \threevec220,~~~
-	    \vvec_2 = \threevec11{-1},~~~
-	    \vvec_3 = \threevec{-1}01.
+	    \vec{v_1} = \threevec220,~~~
+	    \vec{v_2} = \threevec11{-1},~~~
+	    \vec{v_3} = \threevec{-1}01.
 	  </me>
 	  Forming the associated matrix gives
 	  <me>
-	    \begin{bmatrix}\vvec_1\amp\vvec_2\amp\vvec_3\end{bmatrix}
+	    \begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\end{bmatrix}
 	    = 
 	    \begin{bmatrix}
 	    2 \amp 1 \amp -1 \\
@@ -227,7 +227,7 @@
 	  </me>
 	  Because there is a pivot position in every row, 
 	  <xref ref="prop-pivot-row" /> tells us that
-	  <m>\laspan{\vvec_1, \vvec_2, \vvec_3} = \real^3</m>.
+	  <m>\laspan{\vec{v_1}, \vec{v_2}, \vec{v_3}} = \real^3</m>.
 	</p>
       </statement>
     </example>
@@ -237,13 +237,13 @@
 	<p>
 	  Now let's consider the set of three vectors:
 	  <me>
-	    \wvec_1 = \threevec220,~~~
-	    \wvec_2 = \threevec11{-1},~~~
-	    \wvec_3 = \threevec{-5}{-5}{1}.
+	    \vec{w_1} = \threevec220,~~~
+	    \vec{w_2} = \threevec11{-1},~~~
+	    \vec{w_3} = \threevec{-5}{-5}{1}.
 	  </me>
 	  Forming the associated matrix gives
 	  <me>
-	    \begin{bmatrix}\wvec_1\amp\wvec_2\amp\wvec_3\end{bmatrix}
+	    \begin{bmatrix}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}\end{bmatrix}
 	    = 
 	    \begin{bmatrix}
 	    2 \amp 1 \amp -5 \\
@@ -267,7 +267,7 @@
 	  slightly and view this as an augmented matrix:
 	  <me>
 	    \left[
-	    \begin{array}{rr|r}\wvec_1\amp\wvec_2\amp\wvec_3
+	    \begin{array}{rr|r}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}
 	    \end{array}
 	    \right]
 	    =
@@ -287,31 +287,31 @@
 	    \end{array}
 	    \right].
 	  </me>
-	  In this way, we see that <m>\wvec_3 = -2\wvec_1 -
-	  \wvec_2</m>, which enables us to rewrite any linear
+	  In this way, we see that <m>\vec{w_3} = -2\vec{w_1} -
+	  \vec{w_2}</m>, which enables us to rewrite any linear
 	  combination of these three vectors:
 	  <me>
 	    \begin{aligned}
-	    c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3 \amp
+	    c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3} \amp
 	    {}={}
-	    c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
+	    c_1\vec{w_1} + c_2\vec{w_2} + c_3(-2\vec{w_1}-\vec{w_2}) \\
 	    \amp {}={}
-	    (c_1-2c_3)\wvec_1 + (c_2-c_3)\wvec_2. \\
+	    (c_1-2c_3)\vec{w_1} + (c_2-c_3)\vec{w_2}. \\
 	    \end{aligned}
 	  </me>
 	</p>
 	  
 	<p>
-	  In other words, any linear combination of <m>\wvec_1</m>,
-	  <m>\wvec_2</m>, and <m>\wvec_3</m> may be written as a linear
-	  combination using only the vectors <m>\wvec_1</m> and
-	  <m>\wvec_2</m>.  Since the span of a set of vectors is simply
+	  In other words, any linear combination of <m>\vec{w_1}</m>,
+	  <m>\vec{w_2}</m>, and <m>\vec{w_3}</m> may be written as a linear
+	  combination using only the vectors <m>\vec{w_1}</m> and
+	  <m>\vec{w_2}</m>.  Since the span of a set of vectors is simply
 	  the set of their linear combinations, this shows that
 	  <me>
-	    \laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}.
+	    \laspan{\vec{w_1},\vec{w_2},\vec{w_3}} = \laspan{\vec{w_1},\vec{w_2}}.
 	  </me>
-	  As a result, adding the vector <m>\wvec_3</m> to the set of
-	  vectors <m>\wvec_1</m> and <m>\wvec_2</m> does not change the
+	  As a result, adding the vector <m>\vec{w_3}</m> to the set of
+	  vectors <m>\vec{w_1}</m> and <m>\vec{w_2}</m> does not change the
 	  span.
 	</p>
 
@@ -321,16 +321,16 @@
     <p>
       Before exploring this type of behavior more generally,
       let's think about it from a geometric point of view.  Suppose
-      that we begin with the two vectors <m>\vvec_1</m> and
-      <m>\vvec_2</m> in <xref ref="example-span-r3"/>.  The span of
+      that we begin with the two vectors <m>\vec{v_1}</m> and
+      <m>\vec{v_2}</m> in <xref ref="example-span-r3"/>.  The span of
       these two vectors is a plane in <m>\real^3</m>, as seen on the
       left of <xref ref="figure-span-r3"/>.
     </p>
     
     <figure xml:id="figure-span-r3">
       <caption>
-	The span of the vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	<m>\vvec_3</m>.
+	The span of the vectors <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	<m>\vec{v_3}</m>.
       </caption>
       <sidebyside widths="45% 45%">
 	<image source="images/3d-plane-nonstd" />
@@ -339,33 +339,33 @@
     </figure>
 
     <p>
-      Because the vector <m>\vvec_3</m> is not a linear combination of
-      <m>\vvec_1</m> and <m>\vvec_2</m>, it provides a direction to move
+      Because the vector <m>\vec{v_3}</m> is not a linear combination of
+      <m>\vec{v_1}</m> and <m>\vec{v_2}</m>, it provides a direction to move
       that is independent of
-      <m>\vvec_1</m> and <m>\vvec_2</m>.  Adding this third vector
-      <m>\vvec_3</m> therefore forms a set whose span is
+      <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  Adding this third vector
+      <m>\vec{v_3}</m> therefore forms a set whose span is
       <m>\real^3</m>, as seen on the right of <xref
       ref="figure-span-r3"/>. 
     </p>
     
     <p>
-      Similarly, the span of the vectors <m>\wvec_1</m> and
-      <m>\wvec_2</m> in <xref ref="example-span-plane"/> is also a
-      plane.  However, the third vector <m>\wvec_3</m> is a linear
-      combination of <m>\wvec_1</m> and <m>\wvec_2</m>, which means
-      that it already lies in the plane formed by <m>\wvec_1</m> and
-      <m>\wvec_2</m>, as seen in <xref
+      Similarly, the span of the vectors <m>\vec{w_1}</m> and
+      <m>\vec{w_2}</m> in <xref ref="example-span-plane"/> is also a
+      plane.  However, the third vector <m>\vec{w_3}</m> is a linear
+      combination of <m>\vec{w_1}</m> and <m>\vec{w_2}</m>, which means
+      that it already lies in the plane formed by <m>\vec{w_1}</m> and
+      <m>\vec{w_2}</m>, as seen in <xref
       ref="figure-span-plane"/>.
       Since we can already move in this direction using just 
-      <m>\wvec_1</m> and <m>\wvec_2</m>, adding
-      <m>\wvec_3</m> to the set does not change the span.  As a
+      <m>\vec{w_1}</m> and <m>\vec{w_2}</m>, adding
+      <m>\vec{w_3}</m> to the set does not change the span.  As a
       result, it remains a plane.
     </p>
 
     <figure xml:id="figure-span-plane">
       <caption>
-	The span of the vectors <m>\wvec_1</m>, <m>\wvec_2</m>, and
-	<m>\wvec_3</m>.
+	The span of the vectors <m>\vec{w_1}</m>, <m>\vec{w_2}</m>, and
+	<m>\vec{w_3}</m>.
       </caption>
       <sidebyside widths="45% 45%">
 	<image source="images/3d-plane-nonstd-w" />
@@ -410,8 +410,8 @@
 	form the columns of a matrix having reduced row echelon form
 	<me>
 	  \left[\begin{array}{rrrrr}
-	  \vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 \amp
-	  \vvec_4 \amp	  \vvec_5 
+	  \vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} \amp
+	  \vec{v_4} \amp	  \vec{v_5} 
 	  \end{array}\right]
 	  \sim
 	  \left[\begin{array}{rrrrr}
@@ -422,7 +422,7 @@
 	  \end{array}\right]
 	</me>.
 	Is it possible to write one of the vectors
-	<m>\vvec_1,\vvec_2,\ldots,\vvec_5</m> as a linear
+	<m>\vec{v_1},\vec{v_2},\ldots,\vec{v_5}</m> as a linear
 	combination of the others?  If so, show explicitly how one
 	vector appears as a linear combination of some of the other
 	vectors.  Is this set of vectors linearly dependent or
@@ -434,7 +434,7 @@
 	reduced row echelon form
 	<me>
 	  \left[\begin{array}{rrr}
-	  \wvec_1 \amp 	  \wvec_2 \amp 	  \wvec_3 \\
+	  \vec{w_1} \amp 	  \vec{w_2} \amp 	  \vec{w_3} \\
 	  \end{array}\right]
 	  \sim
 	  \left[\begin{array}{rrr}
@@ -444,8 +444,8 @@
 	  0 \amp 0 \amp 0 \\
 	  \end{array}\right]
 	</me>.
-	Is it possible to write one of these vectors <m>\wvec_1</m>,
-	<m>\wvec_2</m>, <m>\wvec_3</m> as a linear
+	Is it possible to write one of these vectors <m>\vec{w_1}</m>,
+	<m>\vec{w_2}</m>, <m>\vec{w_3}</m> as a linear
 	combination of the others?  If so, show explicitly how one
 	vector appears as a linear combination of some of the other
 	vectors.  Is this set of vectors linearly dependent or
@@ -478,7 +478,7 @@
 	    as an augmented one:
 	    <me>
 	      \left[\begin{array}{rr|r}
-	      \vvec_1 \amp \vvec_2 \amp \vvec_3
+	      \vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 	      \end{array}\right]
 	      \sim
 	      \left[\begin{array}{rr|r}
@@ -488,7 +488,7 @@
 	      0 \amp 0 \amp 0 \\
 	      \end{array}\right]\text{.}
 	    </me>
-	    This shows that <m>\vvec_3=-\vvec_1+2\vvec_2</m> so it is
+	    This shows that <m>\vec{v_3}=-\vec{v_1}+2\vec{v_2}</m> so it is
 	    possible to write one of the vectors as a linear
 	    combination of the others.  
 	    Therefore, the set is linearly dependent.
@@ -510,7 +510,7 @@
 	  <li><p>
 	    No, because we can write the zero vector <m>\zerovec</m>
 	    as a linear combination of the other vectors: <m>\zerovec
-	    = 0\vvec_2 + \ldots + 0\vvec_n</m>.
+	    = 0\vec{v_2} + \ldots + 0\vec{v_n}</m>.
 	  </p></li>
 
 	  <li><p>
@@ -530,8 +530,8 @@
       four vectors and their associated matrix
       <me>
 	\left[\begin{array}{rrrr}
-	\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 \amp
-	\vvec_4 
+	\vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} \amp
+	\vec{v_4} 
 	\end{array}\right]
 	\sim
 	\left[\begin{array}{rrrrr}
@@ -546,7 +546,7 @@
       as an augmented matrix:
       <me>
 	\left[\begin{array}{rr|r}
-	\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 
+	\vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} 
 	\end{array}\right]
 	\sim
 	\left[\begin{array}{rr|r}
@@ -558,14 +558,14 @@
       </me>
       This says that 
       <me>
-	\vvec_3 = 2\vvec_1 -3\vvec_2,
+	\vec{v_3} = 2\vec{v_1} -3\vec{v_2},
       </me>
       which tells us that the set of vectors
-      <m>\vvec_1,\vvec_2,\vvec_3,\vvec_4</m> is linearly dependent.
+      <m>\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}</m> is linearly dependent.
       Moreover, we see that
       <me>
-	\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4} =
-	\laspan{\vvec_1,\vvec_2,\vvec_4}.
+	\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}} =
+	\laspan{\vec{v_1},\vec{v_2},\vec{v_4}}.
       </me>
     </p>
     
@@ -583,7 +583,7 @@
       has a pivot position in every column.
       <me>
 	\left[\begin{array}{rrrr}
-	\wvec_1 \amp 	  \wvec_2 \amp 	  \wvec_3 \amp \wvec_4 \\
+	\vec{w_1} \amp 	  \vec{w_2} \amp 	  \vec{w_3} \amp \vec{w_4} \\
 	\end{array}\right]
 	\sim
 	\left[\begin{array}{rrrr}
@@ -596,10 +596,10 @@
       </me>
       Viewing this as an augmented matrix again, we see
       that the linear system is inconsistent since there is a pivot in
-      the rightmost column, which means that <m>\wvec_4</m> cannot be
+      the rightmost column, which means that <m>\vec{w_4}</m> cannot be
       expressed as a linear combination of the other vectors.
-      Similarly, <m>\wvec_3</m> cannot be expressed as a linear
-      combination of <m>\wvec_1</m> and <m>\wvec_2</m>. In
+      Similarly, <m>\vec{w_3}</m> cannot be expressed as a linear
+      combination of <m>\vec{w_1}</m> and <m>\vec{w_2}</m>. In
       fact, none of the vectors can be written as a linear
       combination of the others so this set of vectors is linearly
       independent. 
@@ -636,7 +636,7 @@
 
     <p>
       More generally, if
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is a 
+      <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is a 
       linearly independent set of vectors in <m>\real^m</m>,
       the associated matrix must have a
       pivot position in every column.  Since every row
@@ -678,7 +678,7 @@
     <title> Homogeneous equations </title>
 
     <p>
-      If <m>A</m> is a matrix, we call the equation <m>A\xvec =
+      If <m>A</m> is a matrix, we call the equation <m>A\vec{x} =
       \zerovec</m> a <em>homogeneous</em> equation.  As we'll see, the
       uniqueness of solutions to this equation reflects on the
       linear independence of the columns of <m>A</m>.
@@ -689,7 +689,7 @@
 
       <statement>
       <p><ol marker="a.">
-	<li><p> Explain why the homogeneous equation <m>A\xvec =
+	<li><p> Explain why the homogeneous equation <m>A\vec{x} =
 	\zerovec</m> is consistent no matter the matrix <m>A</m>.
 	</p></li>
 
@@ -701,12 +701,12 @@
 	2 \amp 1 \amp 1
 	\end{array}\right]
 	</me>
-	whose columns we denote by <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	<m>\vvec_3</m>.
+	whose columns we denote by <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	<m>\vec{v_3}</m>.
 	Describe the solution space of
-	the homogeneous equation <m>A\xvec = \zerovec</m> using a
+	the homogeneous equation <m>A\vec{x} = \zerovec</m> using a
 	parametric description, if appropriate.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -717,7 +717,7 @@
 	  and use it to find weights 
 	  <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> such that
 	  <me>
-	    c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec
+	    c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \zerovec
 	  </me>.
 	</p></li>
 
@@ -726,8 +726,8 @@
 	  one of the vectors as a linear combination of the others.
 	</p></li>
 	<li><p>
-	Are the vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	<m>\vvec_3</m> linearly dependent or independent?
+	Are the vectors <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	<m>\vec{v_3}</m> linearly dependent or independent?
 	</p></li>
 
       </ol></p>
@@ -764,29 +764,29 @@
 	    </me>
 	    The solution space is then written parametrically as
 	    <me>
-	      \xvec=\threevec{x_1}{x_2}{x_3} = x_3\threevec{-2}{3}{1}\text{.}
+	      \vec{x}=\threevec{x_1}{x_2}{x_3} = x_3\threevec{-2}{3}{1}\text{.}
 	    </me>
 	  </p></li>
 
 	  <li><p>
 	    If we set <m>x_3=1</m>, then we have the solution
-	    <m>\xvec=\threevec{-2}{3}{1}</m>, which says that
+	    <m>\vec{x}=\threevec{-2}{3}{1}</m>, which says that
 	    <me>
-	      -2\vvec_1+3\vvec_2+\vvec_3 = \zerovec\text{.}
+	      -2\vec{v_1}+3\vec{v_2}+\vec{v_3} = \zerovec\text{.}
 	    </me>
 	  </p></li>
 
 	  <li><p>
 	    We may rewrite this expression as
-	    <m>\vvec_3=2\vvec_1-3\vvec_2</m>, showing that
-	    <m>\vvec_3</m> is a linear combination of <m>\vvec_1</m>
-	    and <m>\vvec_2</m>.
+	    <m>\vec{v_3}=2\vec{v_1}-3\vec{v_2}</m>, showing that
+	    <m>\vec{v_3}</m> is a linear combination of <m>\vec{v_1}</m>
+	    and <m>\vec{v_2}</m>.
 	  </p></li>
 
 	  <li>
 	    <p>
-	      The vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	      <m>\vvec_3</m> are linearly dependent, and we know this
+	      The vectors <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	      <m>\vec{v_3}</m> are linearly dependent, and we know this
 	      in two ways.  We have seen how to express one vector as
 	      a linear combination of the others.  Also, we have seen
 	      that the associated matrix has a column without a pivot
@@ -800,11 +800,11 @@
 
     <p>
       This activity shows how the solution space of the homogeneous
-      equation <m>A\xvec = \zerovec</m> indicates whether the columns
+      equation <m>A\vec{x} = \zerovec</m> indicates whether the columns
       of <m>A</m> are linearly dependent or independent.  First, we
-      know that the equation <m>A\xvec = \zerovec</m> always has at
+      know that the equation <m>A\vec{x} = \zerovec</m> always has at
       least 
-      one solution, the vector <m>\xvec = \zerovec</m>.  Any
+      one solution, the vector <m>\vec{x} = \zerovec</m>.  Any
       other solution is a nonzero solution.
     </p>
 
@@ -813,19 +813,19 @@
 	<p>
 	  Let's consider the vectors
 	  <me>
-	    \vvec_1 = \fourvec2{-4}10,~~~
-	    \vvec_2 = \fourvec113{-2},~~~
-	    \vvec_3 = \fourvec3{-3}4{-2}
+	    \vec{v_1} = \fourvec2{-4}10,~~~
+	    \vec{v_2} = \fourvec113{-2},~~~
+	    \vec{v_3} = \fourvec3{-3}4{-2}
 	  </me>
 	  and their associated matrix
 	  <m>A = \begin{bmatrix}
-	  \vvec_1 \amp \vvec_2 \amp \vvec_3
+	  \vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 	  \end{bmatrix}
 	  </m>.
 	</p>
 
 	<p>
-	  The homogeneous equation <m>A\xvec = \zerovec</m> has the
+	  The homogeneous equation <m>A\vec{x} = \zerovec</m> has the
 	  associated augmented matrix
 	  <me>
 	    \left[
@@ -848,7 +848,7 @@
 	  </me>
 	  Therefore, <m>A</m> has a column without a
 	  pivot position, which tells us that the vectors
-	  <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> are
+	  <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m> are
 	  linearly dependent.  However, we can also see this fact in
 	  another way.
 	</p>
@@ -865,35 +865,35 @@
 	  </me>
 	  so the solutions have the form
 	  <me>
-	    \xvec = \threevec{x_1}{x_2}{x_3} =
+	    \vec{x} = \threevec{x_1}{x_2}{x_3} =
 	    \threevec{-x_3}{-x_3}{x_3} = x_3\threevec{-1}{-1}1.
 	  </me>
 	</p>
 
 	<p>
 	  If we choose <m>x_3=1</m>, then we obtain the nonzero
-	  solution to the homogeneous equation <m>\xvec =
+	  solution to the homogeneous equation <m>\vec{x} =
 	  \threevec{-1}{-1}1</m>, which implies that
 	  <me>
 	    A\threevec{-1}{-1}1 =
 	    \begin{bmatrix}
-	    \vvec_1\amp\vvec_2\amp\vvec_3
+	    \vec{v_1}\amp\vec{v_2}\amp\vec{v_3}
 	    \end{bmatrix}
 	    \threevec{-1}{-1}1 =
-	    -\vvec_1 -\vvec_2 + \vvec_3 = \zerovec.
+	    -\vec{v_1} -\vec{v_2} + \vec{v_3} = \zerovec.
 	  </me>
 	  In other words,
 	  <me>
 	    \begin{aligned}
-	    -\vvec_1 -\vvec_2 + \vvec_3 \amp{}={} \zerovec \\
-	    \vvec_3 \amp{}={} \vvec_1 + \vvec_2. \\
+	    -\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \zerovec \\
+	    \vec{v_3} \amp{}={} \vec{v_1} + \vec{v_2}. \\
 	    \end{aligned}
 	  </me>
 	</p>
 
 	<p>
-	  Because <m>\vvec_3</m> is a linear combination of
-	  <m>\vvec_1</m> and <m>\vvec_2</m>, we know that this set of
+	  Because <m>\vec{v_3}</m> is a linear combination of
+	  <m>\vec{v_1}</m> and <m>\vec{v_2}</m>, we know that this set of
 	  vectors is linearly dependent.
 	</p>
       </statement>
@@ -908,7 +908,7 @@
     <proposition>
       <statement>
 	<p> For a matrix <m>A = \left[\begin{array}{rrrr}
-	\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+	\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n}
 	\end{array}\right]
 	</m>,
 	the following statements are equivalent:
@@ -917,20 +917,20 @@
 	  dependent. </p></li>
 
 	  <li> <p> One of the vectors in the set
-	  <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is a linear
+	  <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is a linear
 	  combination of the others. </p></li>
 
 	  <li> <p> The matrix <m>A</m> has a column without a pivot
 	  position. </p></li>
 
-	  <li> <p> The homogeneous equation <m>A\xvec = \zerovec</m>
+	  <li> <p> The homogeneous equation <m>A\vec{x} = \zerovec</m>
 	  has infinitely many solutions and hence a nonzero
 	  solution. </p></li> 
 
 	  <li> <p> There are weights <m>c_1,c_2,\ldots,c_n</m>, not
 	  all of which are zero, such that
 	  <me>
-	    c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec
+	    c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec
 	  </me>. </p></li>
 	</ul>
 	</p>
@@ -958,14 +958,14 @@
       contains no more than <m>m</m> vectors. </p></li>
 
       <li><p> The columns of the matrix <m>A</m> are linearly
-      dependent if the homogeneous equation <m>A\xvec = \zerovec</m>
+      dependent if the homogeneous equation <m>A\vec{x} = \zerovec</m>
       has a nonzero solution. </p></li>
 
-      <li><p> A set of vectors <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m>
+      <li><p> A set of vectors <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m>
       is linearly dependent if there are weights
       <m>c_1,c_2,\ldots,c_n</m>, not all of which are zero, such that
       <me>
-	c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec
+	c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec
       </me>.
       </p></li>
     </ul></p>
@@ -984,8 +984,8 @@
     <p>
       As usual, we will write a matrix as a collection
       of vectors,
-      <me>A=\left[\begin{array}{rrrr} \vvec_1\amp\vvec_2 \amp
-      \ldots \amp \vvec_n \end{array}\right].
+      <me>A=\left[\begin{array}{rrrr} \vec{v_1}\amp\vec{v_2} \amp
+      \ldots \amp \vec{v_n} \end{array}\right].
       </me>
     </p>
 
@@ -1001,7 +1001,7 @@
 	<row>
 	  <cell valign="top">
 	    <p>
-	      A vector <m>\bvec</m> is in the span of a set of vectors 
+	      A vector <m>\vec{v_b}</m> is in the span of a set of vectors 
 	      if it is a linear combination of those vectors.
 	    </p>
 	  </cell>
@@ -1015,16 +1015,16 @@
 	<row>
 	  <cell valign="top">
 	    <p>
-	      A vector <m>\bvec</m> is in the span of <m>\vvec_1,
-	      \vvec_2, \ldots, \vvec_n</m> if there exists a solution
-	      to <m>A\xvec = \bvec</m>.
+	      A vector <m>\vec{v_b}</m> is in the span of <m>\vec{v_1},
+	      \vec{v_2}, \ldots, \vec{v_n}</m> if there exists a solution
+	      to <m>A\vec{x} = \vec{v_b}</m>.
 	    </p>
 	  </cell>
 	  <cell valign="top">
 	    <p>
-	      The vectors <m>\vvec_1, \vvec_2, \ldots, \vvec_n</m> are
-	      linearly independent if <m>\xvec=\zerovec</m> is the
-	      unique solution to <m>A\xvec = \zerovec</m>.
+	      The vectors <m>\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}</m> are
+	      linearly independent if <m>\vec{x}=\zerovec</m> is the
+	      unique solution to <m>A\vec{x} = \zerovec</m>.
 	    </p>
 	  </cell>
 	</row>
