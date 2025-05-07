@@ -10,7 +10,7 @@
   <introduction>
     <p>
       Matrix multiplication allows us to rewrite a linear system
-      in the form <m>A\xvec = \bvec</m>.  Besides being a more compact
+      in the form <m>A\vec{x} = \vec{b}</m>.  Besides being a more compact
       way of expressing a linear system, this form allows us to think
       about linear systems geometrically since matrix multiplication
       is defined in terms of linear combinations of vectors.
@@ -24,11 +24,11 @@
       rephrased here in terms of matrix multiplication.
       <ul>
 	<li><p> <em>Existence:</em> Is there a solution to the
-	equation <m>A\xvec=\bvec</m>?
+	equation <m>A\vec{x}=\vec{b}</m>?
 	</p> </li>
 
 	<li><p> <em> Uniqueness:</em> If there is a solution to the
-	equation <m>A\xvec=\bvec</m>, is it unique? </p></li>
+	equation <m>A\vec{x}=\vec{b}</m>, is it unique? </p></li>
 
       </ul>
       In this section, we focus on the existence question and
@@ -40,10 +40,10 @@
       <title> The existence of solutions </title>
       <statement>
       <p> <ol marker="a.">
-	<li> <p> If the equation <m>A\xvec = \bvec</m> is
+	<li> <p> If the equation <m>A\vec{x} = \vec{b}</m> is
 	inconsistent, what can we say about the pivot positions of the 
 	augmented matrix 
-	<m>\left[\begin{array}{r|r} A \amp \bvec
+	<m>\left[\begin{array}{r|r} A \amp \vec{b}
 	\end{array}\right]</m>?
 	</p> </li>
 
@@ -57,17 +57,17 @@
 	    1 \amp 1 \amp -3
 	    \end{array}\right]
 	  </me>.
-	  If <m>\bvec=\threevec{2}{2}{5}</m>, is the equation
-	  <m>A\xvec = \bvec</m> consistent?  If so, find a solution.
-	  <sage>
+	  If <m>\vec{b}=\threevec{2}{2}{5}</m>, is the equation
+	  <m>A\vec{x} = \vec{b}</m> consistent?  If so, find a solution.
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	</p></li>
 
-	<li> <p> If <m>\bvec=\threevec{2}{2}{6}</m>, is the equation
-	<m>A\xvec = \bvec</m> consistent?  If so, find a solution.
-	<sage>
+	<li> <p> If <m>\vec{b}=\threevec{2}{2}{6}</m>, is the equation
+	<m>A\vec{x} = \vec{b}</m> consistent?  If so, find a solution.
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -75,8 +75,8 @@
 
 	<li> <p> Identify the pivot positions of <m>A</m>. </p></li>
 
-	<li> <p> For our two choices of the vector <m>\bvec</m>, one
-	equation <m>A\xvec = \bvec</m> has a solution and the other
+	<li> <p> For our two choices of the vector <m>\vec{b}</m>, one
+	equation <m>A\vec{x} = \vec{b}</m> has a solution and the other
 	does not.  What feature of the pivot positions of the
 	matrix <m>A</m> tells us to expect this? </p></li>
       </ol>
@@ -107,7 +107,7 @@
 	    which shows that the system is consistent.  The solution
 	    space is described parametrically as
 	    <me>
-	      \xvec=\threevec{2}{3}{0}+x_3\threevec{2}{1}{1}\text{.}
+	      \vec{x}=\threevec{2}{3}{0}+x_3\threevec{2}{1}{1}\text{.}
 	    </me>
 	  </p></li>
 
@@ -126,7 +126,7 @@
 	      0 \amp 0 \amp 0 \amp 1
 	      \end{array}\right]
 	    </me>
-	    showing that the equation <m>A\xvec=\bvec</m> is
+	    showing that the equation <m>A\vec{x}=\vec{b}</m> is
 	    inconsistent.
 	  </p></li>
 
@@ -150,7 +150,7 @@
 	  <li><p>
 	    Since there is a row of <m>A</m> that does not have a
 	    pivot position, it is possible to augment <m>A</m> by a
-	    vector <m>\bvec</m> so that we obtain a pivot position in
+	    vector <m>\vec{b}</m> so that we obtain a pivot position in
 	    the rightmost column of the augmented matrix.  In this
 	    case, we have an inconsistent system.
 	  </p></li>
@@ -163,10 +163,10 @@
     <title> The span of a set of vectors </title>
 
     <p>  In the preview activity, we considered a <m>3\times3</m>
-    matrix <m>A</m> and found that the equation <m>A\xvec = \bvec</m>
-    has a solution for some vectors <m>\bvec</m> in <m>\real^3</m> and
+    matrix <m>A</m> and found that the equation <m>A\vec{x} = \vec{b}</m>
+    has a solution for some vectors <m>\vec{b}</m> in <m>\real^3</m> and
     has no solution for others.  We will introduce a concept called
-    <em>span</em> that describes the vectors <m>\bvec</m> for which
+    <em>span</em> that describes the vectors <m>\vec{b}</m> for which
     there is a solution.
     </p>
 
@@ -174,28 +174,28 @@
     its columns 
     <me>
       A = \left[\begin{array}{rrrr}
-      \vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n
+      \vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}
       \end{array}\right]
     </me>.
     Remember that <xref ref="prop-matrix-eq-solution" /> says that the
-    equation <m>A\xvec = \bvec</m> is consistent if and only if we can
+    equation <m>A\vec{x} = \vec{b}</m> is consistent if and only if we can
     express 
-    <m>\bvec</m> as a linear combination of
-    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m>.  
+    <m>\vec{b}</m> as a linear combination of
+    <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m>.  
     </p>
     
     <definition>
       <idx> span </idx>
       <p> The <term>span</term> of a set of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is the set of all linear
+      <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is the set of all linear
       combinations that can be formed from the vectors.
       </p>
       <p>
 	Alternatively, if
-	<m>A = \begin{bmatrix} \vvec_1 \amp \vvec_2 \amp \cdots \amp
-	\vvec_n \end{bmatrix}</m>, then the span of the vectors
+	<m>A = \begin{bmatrix} \vec{v_1} \amp \vec{v_2} \amp \cdots \amp
+	\vec{v_n} \end{bmatrix}</m>, then the span of the vectors
 	consists of all 
-	vectors <m>\bvec</m> for which the equation <m>A\xvec = \bvec</m>
+	vectors <m>\vec{b}</m> for which the equation <m>A\vec{x} = \vec{b}</m>
 	is consistent.
       </p>
     </definition>
@@ -204,27 +204,27 @@
       <statement>
 	<p>
 	  Considering the set of vectors <m>\vvec=\twovec{-2}{1}</m> and
-	  <m>\wvec = \twovec{8}{-4}</m>, we see that the vector
+	  <m>\vec{w} = \twovec{8}{-4}</m>, we see that the vector
 	  <me>
-	    \bvec = 3\vvec + \wvec = \twovec2{-1}
+	    \vec{b} = 3\vec{v} + \vec{w} = \twovec2{-1}
 	  </me>
-	  is one vector in the span of the vectors <m>\vvec</m> and
-	  <m>\wvec</m> because it is a linear combination of
-	  <m>\vvec</m> and <m>\wvec</m>.
+	  is one vector in the span of the vectors <m>\vec{v}</m> and
+	  <m>\vec{w}</m> because it is a linear combination of
+	  <m>\vec{v}</m> and <m>\vec{w}</m>.
 	</p>
 
 	<p>
-	  To determine whether the vector <m>\bvec=\twovec{5}{2}</m>
-	  is in the span of <m>\vvec</m> and <m>\wvec</m>, we form the
+	  To determine whether the vector <m>\vec{b}=\twovec{5}{2}</m>
+	  is in the span of <m>\vec{v}</m> and <m>\vec{w}</m>, we form the
 	  matrix
 	  <me>
-	    A = \begin{bmatrix} \vvec \amp \wvec \end{bmatrix} = 
+	    A = \begin{bmatrix} \vec{v} \amp \vec{w} \end{bmatrix} = 
 	    \begin{bmatrix}
 	    -2 \amp 8 \\
 	    1 \amp -4 \\
 	    \end{bmatrix}
 	  </me>
-	  and consider the equation <m>A\xvec=\bvec</m>.  We have
+	  and consider the equation <m>A\vec{x}=\vec{b}</m>.  We have
 	  <me>
 	    \left[
 	    \begin{array}{rr|r}
@@ -240,10 +240,10 @@
 	    \end{array}
 	    \right],
 	  </me>
-	  which shows that the equation <m>A\xvec = \bvec</m> is
-	  inconsistent.  Therefore, <m>\bvec=\twovec52</m> is one
-	  vector that is not in the span of <m>\vvec</m> and
-	  <m>\wvec</m>.
+	  which shows that the equation <m>A\vec{x} = \vec{b}</m> is
+	  inconsistent.  Therefore, <m>\vec{b}=\twovec52</m> is one
+	  vector that is not in the span of <m>\vec{v}</m> and
+	  <m>\vec{w}</m>.
 	</p>
       </statement>
     </example>
@@ -255,14 +255,14 @@
       <ol marker="a.">
 	<li><p> First, we will consider the set of vectors
 	<me>
-	  \vvec = \twovec{1}{2}, ~~~\wvec = \twovec{-2}{-4}
+	  \vec{v} = \twovec{1}{2}, ~~~\vec{w} = \twovec{-2}{-4}
 	</me>.
       </p>
 
       <figure xml:id="js-span-1">
 	<caption>
 	  An interactive diagram for constructing linear combinations
-	  of the vectors <m>\vvec</m> and <m>\wvec</m>. 
+	  of the vectors <m>\vec{v}</m> and <m>\vec{w}</m>. 
 	</caption>
 
 	<interactive xml:id="interactive-span1"
@@ -289,10 +289,10 @@
 	      The diagram below can be used to construct linear
 	      combinations whose weights <m>c</m> and <m>d</m> may be
 	      varied using the sliders at the top.  The vectors
-	      <m>\vvec</m> and <m>\wvec</m> are outlined while
+	      <m>\vec{v}</m> and <m>\vec{w}</m> are outlined while
 	      the linear combination
 	      <me>
-		c\vvec + d\wvec
+		c\vec{v} + d\vec{w}
 	      </me>
 	      is shaded in red.
 	    </p>
@@ -316,8 +316,8 @@
       </figure>
 
       <p> <ol marker="1.">
-	<li><p> What vector is the linear combination of <m>\vvec</m>
-	and <m>\wvec</m> with weights:
+	<li><p> What vector is the linear combination of <m>\vec{v}</m>
+	and <m>\vec{w}</m> with weights:
 	<ul>
 	  <li> <p> <m> c = 2</m> and <m>d=0</m>? </p></li>
 	  <li> <p> <m> c = 1</m> and <m>d=1</m>? </p></li>
@@ -327,27 +327,27 @@
 
 	<li> <p>
 	  Can the vector <m> \twovec{2}{4}</m> be expressed as a
-	  linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
-	  vector <m> \twovec{2}{4}</m> in the span of <m>\vvec</m> and
-	  <m>\wvec</m>?  
+	  linear combination of <m>\vec{v}</m> and <m>\vec{w}</m>?  Is the
+	  vector <m> \twovec{2}{4}</m> in the span of <m>\vec{v}</m> and
+	  <m>\vec{w}</m>?  
 	</p></li>
 
 	<li> <p>
 	  Can the vector <m> \twovec{3}{0}</m> be expressed as a
-	  linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
-	  vector <m> \twovec{3}{0}</m> in the span of <m>\vvec</m> and
-	  <m>\wvec</m>?  
+	  linear combination of <m>\vec{v}</m> and <m>\vec{w}</m>?  Is the
+	  vector <m> \twovec{3}{0}</m> in the span of <m>\vec{v}</m> and
+	  <m>\vec{w}</m>?  
 	</p></li>
 
 	<li> <p>
 	  Describe the set of vectors in the span of <m>\vvec</m> and
-	  <m>\wvec</m>.
+	  <m>\vec{w}</m>.
 	</p></li>
 
-	<li> <p> For what vectors <m>\bvec</m> does the equation
+	<li> <p> For what vectors <m>\vec{b}</m> does the equation
 	<me>
 	  \left[\begin{array}{rr} 1 \amp -2 \\ 2 \amp -4
-	  \end{array}\right] \xvec = \bvec
+	  \end{array}\right] \vec{x} = \vec{b}
 	</me>
 	have a solution?
 	</p></li>
@@ -357,14 +357,14 @@
       <li> <p>
 	We will now look at an example where
 	<me>
-	  \vvec = \twovec{2}{1}, ~~~\wvec = \twovec{1}{2}
+	  \vvec = \twovec{2}{1}, ~~~\vec{w} = \twovec{1}{2}
 	</me>.
       </p>
 
       <figure xml:id="js-span-2">
 	<caption>
 	  An interactive diagram for constructing linear combinations
-	  of the vectors <m>\vvec</m> and <m>\wvec</m>. 
+	  of the vectors <m>\vvec</m> and <m>\vec{w}</m>. 
 	</caption>
 
 	<interactive xml:id="interactive-span2"
@@ -390,7 +390,7 @@
 	      In a similar way, the diagram below can be used to construct
 	      linear combinations 
 	      <me>
-		c\vvec + d\wvec.
+		c\vvec + d\vec{w}.
 	      </me>
 	    </p>
 	  </instructions>
@@ -414,7 +414,7 @@
 
       <p> <ol marker="1.">
 	<li><p> What vector is the linear combination of <m>\vvec</m>
-	and <m>\wvec</m> with weights:
+	and <m>\vec{w}</m> with weights:
 	<ul>
 	  <li> <p> <m> c = 2</m> and <m>d=0</m>? </p></li>
 	  <li> <p> <m> c = 1</m> and <m>d=1</m>? </p></li>
@@ -424,27 +424,27 @@
 
 	<li> <p>
 	  Can the vector <m> \twovec{-2}{2}</m> be expressed as a
-	  linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
+	  linear combination of <m>\vvec</m> and <m>\vec{w}</m>?  Is the
 	  vector <m> \twovec{-2}{2}</m> in the span of <m>\vvec</m> and
-	  <m>\wvec</m>?  
+	  <m>\vec{w}</m>?  
 	</p></li>
 
 	<li> <p>
 	  Can the vector <m> \twovec{3}{0}</m> be expressed as a
-	  linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
+	  linear combination of <m>\vvec</m> and <m>\vec{w}</m>?  Is the
 	  vector <m> \twovec{3}{0}</m> in the span of <m>\vvec</m> and
-	  <m>\wvec</m>?  
+	  <m>\vec{w}</m>?  
 	</p></li>
 
 	<li> <p>
 	  Describe the set of vectors in the span of <m>\vvec</m> and
-	  <m>\wvec</m>.
+	  <m>\vec{w}</m>.
 	</p></li>
 
-	<li> <p> For what vectors <m>\bvec</m> does the equation
+	<li> <p> For what vectors <m>\vec{b}</m> does the equation
 	<me>
 	  \left[\begin{array}{rr} 2 \amp 1 \\ 1 \amp 2
-	  \end{array}\right] \xvec = \bvec
+	  \end{array}\right] \vec{x} = \vec{b}
 	</me>
 	have a solution?
 	</p></li>
@@ -475,23 +475,23 @@
 	    <li><p> Yes, we saw that there are at least two ways.
 	    For instance, when the weights are <m>c=2</m> and
 	    <m>d=0</m>.  This means that <m>\twovec24</m> is in
-	    the span of <m>\vvec</m> and <m>\wvec</m>.
+	    the span of <m>\vvec</m> and <m>\vec{w}</m>.
 	    </p></li>
 
 	    <li><p>
 	      No.  No matter how we change the weights, the linear
 	      combination lies on the line through <m>\vvec</m> and
-	      <m>\wvec</m>.  This means that <m>\twovec{3}{0}</m> is
-	      not in the span of <m>\vvec</m> and <m>\wvec</m>.
+	      <m>\vec{w}</m>.  This means that <m>\twovec{3}{0}</m> is
+	      not in the span of <m>\vvec</m> and <m>\vec{w}</m>.
 	    </p></li>
 
 	    <li><p>
-	      The span of <m>\vvec</m> and <m>\wvec</m> is the set of
+	      The span of <m>\vvec</m> and <m>\vec{w}</m> is the set of
 	      all vectors on the line through <m>\vvec</m>.
 	    </p></li>
 
 	    <li><p>
-	      If the equation has a solution, <m>\bvec</m> must lie on
+	      If the equation has a solution, <m>\vec{b}</m> must lie on
 	      the line defined by <m>\vvec</m>.
 	    </p></li>
 
@@ -515,25 +515,25 @@
 
 	      <li><p>
 		Yes.  Using the diagram, we see that
-		<m>\twovec{-2}{2}=-2\vvec + 2\wvec</m>.  This means
+		<m>\twovec{-2}{2}=-2\vvec + 2\vec{w}</m>.  This means
 		that <m>\twovec{-2}{2}</m> is in the span of
-		<m>\vvec</m> and <m>\wvec</m>.
+		<m>\vvec</m> and <m>\vec{w}</m>.
 	      </p></li>
 
 	      <li><p>
 		Yes.  Using the diagram, we see that
-		<m>\twovec{3}{0}=2\vvec-1\wvec</m>.  This means that
+		<m>\twovec{3}{0}=2\vvec-1\vec{w}</m>.  This means that
 		<m>\twovec{3}{0}</m> is in the span of <m>\vvec</m>
-		and <m>\wvec</m>.
+		and <m>\vec{w}</m>.
 	      </p></li>
 
 	      <li><p>
 		Every two-dimensional vector is in the span of
-		<m>\vvec</m> and <m>\wvec</m>.
+		<m>\vvec</m> and <m>\vec{w}</m>.
 	      </p></li>
 
 	      <li><p>
-		The equation has a solution for every <m>\bvec</m>.
+		The equation has a solution for every <m>\vec{b}</m>.
 	      </p></li>
 	    </ol></p></li>
 	</ol></p>
@@ -543,10 +543,10 @@
     <p>
       This activity aims to convey the geometric meaning of span.
       Remember that we can think of a linear combination of the two
-      vectors <m>\vvec</m> and <m>\wvec</m> as a recipe for walking in
+      vectors <m>\vvec</m> and <m>\vec{w}</m> as a recipe for walking in
       the plane <m>\real^2</m>.  We first move a prescribed amount in
       the direction of <m>\vvec</m> and then a prescribed amount in the
-      direction of <m>\wvec</m>.  The span consists of all the places
+      direction of <m>\vec{w}</m>.  The span consists of all the places
       we can walk to.
     </p>
 
@@ -554,11 +554,11 @@
       <statement>
 	<p>
 	  Let's consider the vectors <m>\vvec=\twovec20</m> and
-	  <m>\wvec=\twovec{-1}1</m> as shown in <xref
+	  <m>\vec{w}=\twovec{-1}1</m> as shown in <xref
 	  ref="fig-span-linear-indep"/>.
 	  <sidebyside width="50%">
 	    <figure xml:id="fig-span-linear-indep">
-	      <caption> The vectors <m>\vvec</m> and <m>\wvec</m> and
+	      <caption> The vectors <m>\vvec</m> and <m>\vec{w}</m> and
 	      some linear combinations they create.
 	      </caption>
 	      <image source="images/span-linear-indep"/>
@@ -567,13 +567,13 @@
 	</p>
 
 	<p>
-	  The figure shows us that <m>\bvec = \vvec + 2\wvec =
+	  The figure shows us that <m>\vec{b} = \vvec + 2\vec{w} =
 	  \twovec02</m> is a linear combination of <m>\vvec</m> and
-	  <m>\wvec</m>.  Indeed, we can verify this algebraically by
+	  <m>\vec{w}</m>.  Indeed, we can verify this algebraically by
 	  constructing the linear system
 	  <me>
-	    \begin{bmatrix}\vvec \amp \wvec \end{bmatrix} ~
-	    \xvec = \twovec02,
+	    \begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix} ~
+	    \vec{x} = \twovec02,
 	  </me>
 	  whose corresponding augmented matrix has the reduced row
 	  echelon form 
@@ -593,8 +593,8 @@
 	    \right].
 	  </me>
 	  Because this system is consistent, we know that
-	  <m>\bvec=\twovec02</m> is in the span of <m>\vvec</m> and
-	  <m>\wvec</m>.
+	  <m>\vec{b}=\twovec02</m> is in the span of <m>\vvec</m> and
+	  <m>\vec{w}</m>.
 	</p>
 	<p>
 	  In fact, we can say more.  Notice that the coefficient
@@ -611,10 +611,10 @@
 	    \end{bmatrix}
 	  </me>
 	  has a pivot position in every row.  This means that for any
-	  other vector <m>\bvec</m>, the augmented matrix
+	  other vector <m>\vec{b}</m>, the augmented matrix
 	  corresponding to the
-	  equation <m>\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-	  ~\xvec = \bvec</m> cannot have a pivot position in its
+	  equation <m>\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+	  ~\vec{x} = \vec{b}</m> cannot have a pivot position in its
 	  rightmost column:
 	  <me>
 	    \left[
@@ -632,19 +632,19 @@
 	    \right].
 	  </me>
 	  Therefore, the equation
-	  <m>\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-	  ~\xvec = \bvec</m>
+	  <m>\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+	  ~\vec{x} = \vec{b}</m>
 	  is consistent for every two-dimensional vector
-	  <m>\bvec</m>, which tells us that every two-dimensional
-	  vector is in the span of <m>\vvec</m> and <m>\wvec</m>.
+	  <m>\vec{b}</m>, which tells us that every two-dimensional
+	  vector is in the span of <m>\vvec</m> and <m>\vec{w}</m>.
 	  In this case, we say that the span of <m>\vvec</m> and
-	  <m>\wvec</m> is <m>\real^2</m>.
+	  <m>\vec{w}</m> is <m>\real^2</m>.
 	</p>
 
 	<p>
 	  The intuitive meaning is that we can walk to any point in
 	  the plane by moving an appropriate distance in the
-	  <m>\vvec</m> and <m>\wvec</m> directions.
+	  <m>\vvec</m> and <m>\vec{w}</m> directions.
 	</p>
       </statement>
     </example>
@@ -654,11 +654,11 @@
       <statement>
 	<p>
 	  Now let's consider the vectors <m>\vvec=\twovec{-1}1</m> and
-	  <m>\wvec=\twovec2{-2}</m> as shown in <xref
+	  <m>\vec{w}=\twovec2{-2}</m> as shown in <xref
 	  ref="fig-span-linear-dep"/>.
 	  <sidebyside width="50%">
 	    <figure xml:id="fig-span-linear-dep">
-	      <caption> The vectors <m>\vvec</m> and <m>\wvec</m> and
+	      <caption> The vectors <m>\vvec</m> and <m>\vec{w}</m> and
 	      some linear combinations they create.
 	      </caption>
 	      <image source="images/span-linear-dep"/>
@@ -668,13 +668,13 @@
 
 	<p>
 	  From the figure, we expect that 
-	  <m>\bvec = \twovec02</m> is not a linear combination of
+	  <m>\vec{b} = \twovec02</m> is not a linear combination of
 	  <m>\vvec</m> and 
-	  <m>\wvec</m>.  Once again, we can verify this algebraically by
+	  <m>\vec{w}</m>.  Once again, we can verify this algebraically by
 	  constructing the linear system
 	  <me>
-	    \begin{bmatrix}\vvec \amp \wvec \end{bmatrix} ~
-	    \xvec = \twovec02.
+	    \begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix} ~
+	    \vec{x} = \twovec02.
 	  </me>
 	  The augmented matrix has the reduced row echelon form
 	  <me>
@@ -693,8 +693,8 @@
 	    \right],
 	  </me>
 	  from which we see that the system is inconsistent.
-	  Therefore, <m>\bvec=\twovec02</m> is not in the span of
-	  <m>\vvec</m> and <m>\wvec</m>.
+	  Therefore, <m>\vec{b}=\twovec02</m> is not in the span of
+	  <m>\vvec</m> and <m>\vec{w}</m>.
 	</p>
 	<p>
 	  We should expect this behavior from the coefficient
@@ -713,8 +713,8 @@
 	  Because the second row of the coefficient matrix does not
 	  have a pivot position, it is 
 	  possible for a linear system
-	  <m>\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-	  ~\xvec = \bvec</m> to have a pivot position in its
+	  <m>\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+	  ~\vec{x} = \vec{b}</m> to have a pivot position in its
 	  rightmost column:
 	  <me>
 	    \left[
@@ -734,14 +734,14 @@
 	</p>
 
 	<p>
-	  If we notice that <m>\wvec = -2\vvec</m>, we see that any
-	  linear combination of <m>\vvec</m> and <m>\wvec</m>,
+	  If we notice that <m>\vec{w} = -2\vvec</m>, we see that any
+	  linear combination of <m>\vvec</m> and <m>\vec{w}</m>,
 	  <me>
-	    c\vvec + d\wvec =
+	    c\vvec + d\vec{w} =
 	    c\vvec -2d\vvec = (c-2d)\vvec,
 	  </me>
 	  is actually a scalar multiple of <m>\vvec</m>.  Therefore,
-	  the span of <m>\vvec</m> and <m>\wvec</m> is the line
+	  the span of <m>\vvec</m> and <m>\vec{w}</m> is the line
 	  defined by the vector <m>\vvec</m>.
 	  Intuitively, this means that we can only walk to points on
 	  this line using these two vectors.
@@ -751,16 +751,16 @@
 
     <convention>
       <p> We will denote the span of the set of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> by
-      <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}</m>.
+      <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> by
+      <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}</m>.
       </p>
     </convention>
 
     <p>
       In <xref ref="example-span-linear-indep"/>, we saw that
-      <m>\laspan{\vvec,\wvec} = \real^2</m>.  However, for the vectors
+      <m>\laspan{\vvec,\vec{w}} = \real^2</m>.  However, for the vectors
       in <xref ref="example-span-linear-dep"/>, we saw that
-      <m>\laspan{\vvec,\wvec}</m> is simply a line.
+      <m>\laspan{\vvec,\vec{w}}</m> is simply a line.
     </p>
 
   </subsection>
@@ -769,13 +769,13 @@
     <title> Pivot positions and span </title>
     
     <p>
-      A set of vectors <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> naturally
+      A set of vectors <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> naturally
       defines a matrix <m>A =
-      \begin{bmatrix}\vvec_1\amp\vvec_2\amp\cdots\vvec_n\end{bmatrix}
+      \begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\cdots\vvec_n\end{bmatrix}
       </m> whose columns are the given vectors.  As we've seen, a
-      vector <m>\bvec</m> is in
-      <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}</m> precisely when
-      the linear system <m>A\xvec=\bvec</m> is consistent.
+      vector <m>\vec{b}</m> is in
+      <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}</m> precisely when
+      the linear system <m>A\vec{x}=\vec{b}</m> is consistent.
     </p>
 
     <p>
@@ -831,17 +831,17 @@
 	</li>
 
 	<li><p> Let's now look at this situation algebraically by
-	writing write <m>\bvec = \threevec{b_1}{b_2}{b_3}</m>.
+	writing write <m>\vec{b} = \threevec{b_1}{b_2}{b_3}</m>.
 	Determine the conditions on <m>b_1</m>, <m>b_2</m>, and
-	<m>b_3</m> so that <m>\bvec</m> is in
+	<m>b_3</m> so that <m>\vec{b}</m> is in
 	<m>\laspan{\evec_1,\evec_2}</m> by considering the linear
 	system
 	<me>
 	  \left[\begin{array}{rr}
 	  \evec_1 \amp \evec_2 \\
 	  \end{array}\right]
-	  ~\xvec =
-	  \bvec
+	  ~\vec{x} =
+	  \vec{b}
 	</me>
 	or
 	<me>
@@ -850,7 +850,7 @@
 	  0 \amp 1 \\
 	  0 \amp 0 \\
 	  \end{array}\right]
-	  \xvec =
+	  \vec{x} =
 	  \threevec{b_1}{b_2}{b_3}
 	</me>.
 	Explain how this relates to your sketch of
@@ -860,29 +860,29 @@
 
 	<li> <p> Consider the vectors
 	<me>
-	  \vvec_1 = \threevec{1}{1}{-1},~~
-	  \vvec_2 = \threevec{0}{2}{1}.
+	  \vec{v_1} = \threevec{1}{1}{-1},~~
+	  \vec{v_2} = \threevec{0}{2}{1}.
 	</me>
 	  <ol marker="1.">
-	    <li> <p> Is the vector <m>\bvec=\threevec{1}{-2}{4}</m> in
-	    <m>\laspan{\vvec_1,\vvec_2}</m>?
+	    <li> <p> Is the vector <m>\vec{b}=\threevec{1}{-2}{4}</m> in
+	    <m>\laspan{\vec{v_1},\vec{v_2}}</m>?
 
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
 	    </p></li>
 
-	    <li> <p> Is the vector <m>\bvec=\threevec{-2}{0}{3}</m> in
-	    <m>\laspan{\vvec_1,\vvec_2}</m>?
-	    <sage>
+	    <li> <p> Is the vector <m>\vec{b}=\threevec{-2}{0}{3}</m> in
+	    <m>\laspan{\vec{v_1},\vec{v_2}}</m>?
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
 	    </p></li>
 
 	    <li><p> Give a geometric description of 
-	    <m>\laspan{\vvec_1,\vvec_2}</m>.
+	    <m>\laspan{\vec{v_1},\vec{v_2}}</m>.
 	    </p></li>
 
 	  </ol></p>
@@ -890,31 +890,31 @@
 
 	  <li><p> Consider the vectors
 	  <me>
-	    \vvec_1 = \threevec{1}{1}{-1},
-	    \vvec_2 = \threevec{0}{2}{1},
-	    \vvec_3 = \threevec{1}{-2}{4}
+	    \vec{v_1} = \threevec{1}{1}{-1},
+	    \vec{v_2} = \threevec{0}{2}{1},
+	    \vec{v_3} = \threevec{1}{-2}{4}
 	  </me>.
-	  Form the matrix <m>\left[\begin{array}{rrrr} \vvec_1 \amp \vvec_2
-	  \amp \vvec_3 \end{array}\right]</m> and find its reduced row
+	  Form the matrix <m>\left[\begin{array}{rrrr} \vec{v_1} \amp \vec{v_2}
+	  \amp \vec{v_3} \end{array}\right]</m> and find its reduced row
 	  echelon form.
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
 	    What does this tell you about
-	    <m>\laspan{\vvec_1,\vvec_2,\vvec_3}</m>? 
+	    <m>\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}</m>? 
 	  </p></li>
 
 	  <li> <p> If the span of a set of vectors
-	  <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is <m>\real^3</m>,
+	  <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> is <m>\real^3</m>,
 	  what can you say about the pivot positions of the matrix
 	  <m>\left[\begin{array}{rrrr}
-	  \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+	  \vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vvec_n
 	  \end{array}\right]</m>?
 	  </p></li>
 
 	  <li><p> What is the smallest number of vectors such that
-	  <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^3</m>?
+	  <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} = \real^3</m>?
 	  </p></li>	  
 	</ol></p>
       </statement>
@@ -934,9 +934,9 @@
 	    <p>
 	      For the linear system to be consistent, we need
 	      <m>b_3=0</m>, which means that the third coordinate of
-	      the vector <m>\bvec</m> must be 0 for <m>\bvec</m> to be
+	      the vector <m>\vec{b}</m> must be 0 for <m>\vec{b}</m> to be
 	      in <m>\laspan{\evec_1,\evec_2}</m>.  In other words,
-	      <m>\bvec</m> must lie in the <m>xy</m>-plane.
+	      <m>\vec{b}</m> must lie in the <m>xy</m>-plane.
 	    </p>
 	  </li>
 	  
@@ -958,7 +958,7 @@
 		\end{array}\right]\text{,}
 	      </me>
 	      which shows that the system is inconsistent.  Therefore,
-	      <m>\bvec</m> is not in <m>\laspan{\vvec_1, \vvec_2}</m>.
+	      <m>\vec{b}</m> is not in <m>\laspan{\vec{v_1}, \vec{v_2}}</m>.
 	    </p></li>
 	    
 	    <li><p>
@@ -977,11 +977,11 @@
 		\end{array}\right]\text{,}
 	      </me>
 	      which shows that the system is consistent.  Therefore,
-	      <m>\bvec</m> is in <m>\laspan{\vvec_1, \vvec_2}</m>.
+	      <m>\vec{b}</m> is in <m>\laspan{\vec{v_1}, \vec{v_2}}</m>.
 	    </p></li>
 	    
 	    <li><p> The span is the plane in <m>\real^3</m>
-		defined by <m>\vvec_1</m> and <m>\vvec_2</m>.
+		defined by <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.
 	    </p></li>
 	    
 	  </ol></p></li>
@@ -1002,8 +1002,8 @@
 	      \end{array}\right]\text{.}
 	    </me>
 	    Since there is a pivot position in every row, this says
-	    that every equation <m>A\xvec=\bvec</m> is consistent.
-	    The <m>\laspan{\vvec_1, \vvec_2, \vvec_3}</m> is therefore
+	    that every equation <m>A\vec{x}=\vec{b}</m> is consistent.
+	    The <m>\laspan{\vec{v_1}, \vec{v_2}, \vec{v_3}}</m> is therefore
 	    <m>\real^3</m>.
 	  </p></li>
 	  
@@ -1067,8 +1067,8 @@
 	<p>
 	  For example, the vectors 
 	  <me>
-	    \vvec_1=\threevec{-2}{3}{1},~~~
-	    \vvec_2=\threevec{1}{-1}{3}
+	    \vec{v_1}=\threevec{-2}{3}{1},~~~
+	    \vec{v_2}=\threevec{1}{-1}{3}
 	  </me>
 	  lead to the matrix
 	  <me>
@@ -1090,14 +1090,14 @@
 	<li> <p>
 	  Finally, a set of three vectors, such as
 	  <me>
-	    \vvec_1=\threevec12{-1},~~~
-	    \vvec_2=\threevec201,~~~
-	    \vvec_3=\threevec{-2}20
+	    \vec{v_1}=\threevec12{-1},~~~
+	    \vec{v_2}=\threevec201,~~~
+	    \vec{v_3}=\threevec{-2}20
 	  </me>
 	  may form a matrix having three pivot positions
 	  <me>
 	    \left[\begin{array}{rrr}
-	    \vvec_1 \amp \vvec_2 \amp \vvec_3
+	    \vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 	    \end{array}\right]
 	    = \left[\begin{array}{rrr}
 	    1 \amp 2 \amp -2 \\
@@ -1128,17 +1128,17 @@
 	    \end{array}\right].
 	  </me>
 	  Therefore, any linear system
-	  <m>\begin{bmatrix}\vvec_1\amp\vvec_2\amp\vvec_3\end{bmatrix}
-	  ~\xvec = \bvec</m> is consistent,
+	  <m>\begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\end{bmatrix}
+	  ~\vec{x} = \vec{b}</m> is consistent,
 	  which tells us that
-	  <m>\laspan{\vvec_1,\vvec_2,\vvec_3} = \real^3</m>.
+	  <m>\laspan{\vec{v_1},\vec{v_2},\vec{v_3}} = \real^3</m>.
 	</p></li>
       </ul>
     </p>
 
     <p> To summarize, we looked at the pivot positions in a matrix
     whose columns are the three-dimensional vectors
-    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m>.  We found that with
+    <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m>.  We found that with
     <ul>
       <li> <p> one pivot position, the span was a line. </p> </li>
       <li> <p> two pivot positions, the span was a plane. </p></li>
@@ -1160,11 +1160,11 @@
     <proposition xml:id="prop-pivot-row">
       <statement>
 	<p> Suppose we have vectors
-	<m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> in <m>\real^m</m>.
-	Then <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}=\real^m</m>
+	<m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> in <m>\real^m</m>.
+	Then <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}=\real^m</m>
 	if and only if the matrix
 	<m>\left[\begin{array}{rrrr}
-	\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n
+	\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vvec_n
 	\end{array}\right]
 	</m> has a pivot position in every row.
 	</p>
@@ -1174,10 +1174,10 @@
     <p>
       This tells us something important about the number of vectors
       needed to span <m>\real^m</m>.  Suppose we have <m>n</m> vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> that span
+      <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> that span
       <m>\real^m</m>.  The proposition tells us that the matrix
       <m> A = \left[\begin{array}{rrrr}
-      \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+      \vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vvec_n
       \end{array}\right]
       </m> has a pivot position in every row, such as in this
       reduced row echelon matrix.
@@ -1207,13 +1207,13 @@
     <p>
       We have thought about a linear
       combination of a set of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> as the result of walking
-      a certain distance in the direction of <m>\vvec_1</m>,
+      <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> as the result of walking
+      a certain distance in the direction of <m>\vec{v_1}</m>,
       followed by walking a certain distance in the direction of
-      <m>\vvec_2</m>, and so on.  If
-      <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^m</m>, this
+      <m>\vec{v_2}</m>, and so on.  If
+      <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} = \real^m</m>, this
       means that we can walk to every point in <m>\real^m</m> using the
-      directions <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m>.  Intuitively,
+      directions <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m>.  Intuitively,
       this proposition is telling us that we need at least <m>m</m>
       directions to have the flexibility needed to reach every point in
       <m>\real^m</m>. 
@@ -1223,8 +1223,8 @@
       <title> Terminology </title>
       <p>
 	Because span is a concept that is connected to a set of
-	vectors, we say, <q>The span of the set of vectors <m>\vvec_1,
-	\vvec_2, \ldots, \vvec_n</m> is ....</q> While it may be
+	vectors, we say, <q>The span of the set of vectors <m>\vec{v_1},
+	\vec{v_2}, \ldots, \vvec_n</m> is ....</q> While it may be
 	tempting to say, <q>The span of the matrix <m>A</m> is
 	...,</q> we should instead say <q> The span of the columns of
 	the matrix <m>A</m> is ....</q>
@@ -1243,31 +1243,31 @@
 
     <ul>
       <li> <p> The span of a set of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is the set of linear
+      <m>\vec{v_1},\vec{v_2},\ldots,\vvec_n</m> is the set of linear
       combinations of the vectors.  We denote the span by
-      <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}</m>.
+      <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}</m>.
       </p></li>
 
-      <li> <p> A vector <m>\bvec</m> is in
-      <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}</m> if and only if the
+      <li> <p> A vector <m>\vec{b}</m> is in
+      <m>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}</m> if and only if the
       linear system
       <me>
 	\left[\begin{array}{rrrr}
-	\vvec_1\amp\vvec_2\amp\ldots\vvec_n
+	\vec{v_1}\amp\vec{v_2}\amp\ldots\vvec_n
 	\end{array}\right]
-	~\xvec = \bvec
+	~\vec{x} = \vec{b}
       </me>
       is consistent. </p></li>
 
       <li> <p> If the <m>m\times n</m> matrix
       <me>
 	\left[\begin{array}{rrrr}
-	\vvec_1\amp\vvec_2\amp\ldots\vvec_n
+	\vec{v_1}\amp\vec{v_2}\amp\ldots\vvec_n
 	\end{array}\right]
       </me>
       has a pivot position in every row, then the span of these vectors is
       <m>\real^m</m>;  that is,
-      <me>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} =
+      <me>\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} =
       \real^m.</me>
       </p></li>
 
