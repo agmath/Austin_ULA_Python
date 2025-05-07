@@ -21,30 +21,30 @@
       <p> We will describe the matrix transformation <m>T</m> that
       reflects 2-dimensional vectors across the horizontal axis.  For
       instance, <xref ref="fig-reflect-intro" /> illustrates how a
-      vector <m>\xvec</m> is reflected onto the vector
-      <m>T(\xvec)</m>. </p>
+      vector <m>\vec{x}</m> is reflected onto the vector
+      <m>T(\vec{x})</m>. </p>
 
       <figure xml:id="fig-reflect-intro">
 	<sidebyside width="45%">
 	  <image source="images/reflect-intro" />
 	</sidebyside>
-	<caption> A vector <m>\xvec</m> and its reflection
-	<m>T(\xvec)</m> across the horizontal axis. </caption>
+	<caption> A vector <m>\vec{x}</m> and its reflection
+	<m>T(\vec{x})</m> across the horizontal axis. </caption>
       </figure>
 
       <p><ol marker="a.">
-	<li><p> If <m>\xvec = \twovec{2}{4}</m>, what is the vector
-	<m>T(\xvec)</m>?  Sketch the vectors
-	<m>\xvec</m> and <m>T(\xvec)</m>. </p></li>
+	<li><p> If <m>\vec{x} = \twovec{2}{4}</m>, what is the vector
+	<m>T(\vec{x})</m>?  Sketch the vectors
+	<m>\vec{x}</m> and <m>T(\vec{x})</m>. </p></li>
 
-	<li><p> More generally, if <m>\xvec=\twovec{x}{y}</m>, what is
-	<m>T(\xvec)</m>?  </p></li>
+	<li><p> More generally, if <m>\vec{x}=\twovec{x}{y}</m>, what is
+	<m>T(\vec{x})</m>?  </p></li>
 
 	<li><p> Find the vectors <m>T\left(\twovec{1}{0}\right)</m>
 	and <m>T\left(\twovec{0}{1}\right)</m>. </p></li>
 
 	<li><p> Use your results to
-	write the matrix <m>A</m> so that <m>T(\xvec) = A\xvec</m>.
+	write the matrix <m>A</m> so that <m>T(\vec{x}) = A\vec{x}</m>.
 	Then verify that <m>T\left(\twovec{x}{y}\right)</m> agrees
 	with what you found in part b. </p></li>
 
@@ -58,11 +58,11 @@
       <solution>
 	<p><ol marker="a.">
 	  <li><p>
-	    <m>T(\xvec) = \twovec{2}{-4}</m>.
+	    <m>T(\vec{x}) = \twovec{2}{-4}</m>.
 	  </p></li>
 
 	  <li><p>
-	    <m>T(\xvec) = \twovec{x}{-y}</m>.
+	    <m>T(\vec{x}) = \twovec{x}{-y}</m>.
 	  </p></li>
 
 	  <li><p>
@@ -170,8 +170,8 @@
 	<p>
 	  For the following <m>2\times2</m> matrices <m>A</m>,
 	  use the diagram to study the effect of the
-	  corresponding matrix transformation <m>T(\xvec) =
-	  A\xvec</m>.  For each transformation, describe the geometric
+	  corresponding matrix transformation <m>T(\vec{x}) =
+	  A\vec{x}</m>.  For each transformation, describe the geometric
 	  effect the transformation has on the plane.
 	  <ol marker="a.">
 	    <li><p>
@@ -290,23 +290,23 @@
       </xref>
       provides the key to answering
       this question.  Remember that
-      if <m>A</m> is a matrix, <m>\vvec</m> and <m>\wvec</m> vectors,
+      if <m>A</m> is a matrix, <m>\vec{v}</m> and <m>\vec{w}</m> vectors,
       and <m>c</m> a scalar, then
       <me>
 	\begin{aligned}
-	A(c\vvec) \amp {}={} cA\vvec \\
-	A(\vvec + \wvec) \amp {}={} A\vvec + A\wvec\text{.}
+	A(c\vec{v}) \amp {}={} cA\vec{v} \\
+	A(\vec{v} + \vec{w}) \amp {}={} A\vec{v} + A\vec{w}\text{.}
 	\end{aligned}
       </me>.
-      This means that a matrix transformation <m>T(\xvec) = A\xvec</m>
+      This means that a matrix transformation <m>T(\vec{x}) = A\vec{x}</m>
       satisfies the corresponding linearity property:
       <assemblage xml:id="linearity-of-linear-transformations">
 	<title> Linearity of Matrix Transformations </title>
 	<p>
 	  <me>
 	    \begin{aligned}
-	    T(c\vvec) \amp {}={} cT(\vvec) \\
-	    T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+	    T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+	    T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 	    \end{aligned}
 	  </me>
 	</p>
@@ -316,31 +316,31 @@
     <p>
       It turns out that, if <m>T:\real^n\to\real^m</m> satisfies these
       two linearity properties, then we can find a matrix <m>A</m>
-      such that <m>T(\xvec) = A\xvec</m>.  In fact, <xref
+      such that <m>T(\vec{x}) = A\vec{x}</m>.  In fact, <xref
       ref="prop-linear-trans-columns" /> tells us how to form
       <m>A</m>; we simply write
       <me>
 	A = \left[\begin{array}{rrrr}
-	T(\evec_1) \amp T(\evec_2) \amp \ldots T(\evec_n)
+	T(\vec{e_1}) \amp T(\vec{e_2}) \amp \ldots T(\vec{e_n})
 	\end{array}\right]
       </me>.
-      We will now check that <m>T(\xvec) = A\xvec</m> using the
+      We will now check that <m>T(\vec{x}) = A\vec{x}</m> using the
       linearity of <m>T</m>:
       <me>
 	\begin{aligned}
-	T(\xvec) = T\left(\fourvec{x_1}{x_2}{\vdots}{x_n}\right)
+	T(\vec{x}) = T\left(\fourvec{x_1}{x_2}{\vdots}{x_n}\right)
 	\amp {}={}
-	T(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+	T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_n\vec{e_n}) \\ \\
 	\amp {}={}
-	x_1T(\evec_1) + x_2T(\evec_2) + \ldots + x_nT(\evec_n) \\ \\
+	x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_nT(\vec{e_n}) \\ \\
 	\amp {}={}
-	x_1A\evec_1 + x_2A\evec_2 + \ldots + x_nA\evec_n \\ \\
+	x_1A\vec{e_1} + x_2A\vec{e_2} + \ldots + x_nA\vec{e_n} \\ \\
 	\amp {}={}
-	A(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+	A(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_n\vec{e_n}) \\ \\
 	\amp {}={}
 	A\fourvec{x_1}{x_2}{\vdots}{x_n} \\ \\
 	\amp {}={}
-	A\xvec
+	A\vec{x}
 	\end{aligned}
       </me>.
     </p>
@@ -352,19 +352,19 @@
     <proposition xml:id="prop-linear-trans-characterization">
       <statement>
 	<p> The function <m>T:\real^n\to\real^m</m> is a matrix
-	transformation where <m>T(\xvec) = A\xvec</m> for some
+	transformation where <m>T(\vec{x}) = A\vec{x}</m> for some
 	<m>m\times n</m> matrix <m>A</m> if and only if
 	<me>
 	  \begin{aligned}
-	  T(c\vvec) \amp {}={} cT(\vvec) \\
-	  T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+	  T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+	  T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 	  \end{aligned}
 	</me>.
 	In this case, <m>A</m> is the matrix whose columns are
-	<m>T(\evec_j)</m>;  that is,
+	<m>T(\vec{e_j})</m>;  that is,
 	<me>
 	  A=\left[\begin{array}{rrrr}
-	  T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
+	  T(\vec{e_1}) \amp T(\vec{e_2}) \amp \ldots \amp T(\vec{e_n})
 	  \end{array}\right]
 	</me>.
 	</p>
@@ -383,8 +383,8 @@
       <statement>
 	<p>
 	  We will consider the function <m>T:\real^2\to\real^2</m>
-	  that rotates a vector <m>\xvec</m> by <m>45^\circ</m> in the
-	  counterclockwise direction to obtain <m>T(\xvec)</m> as seen
+	  that rotates a vector <m>\vec{x}</m> by <m>45^\circ</m> in the
+	  counterclockwise direction to obtain <m>T(\vec{x})</m> as seen
 	  in <xref ref="fig-45-rotation"/>.
 	</p>
 
@@ -406,19 +406,19 @@
 	  need to verify the linearity properties:
 	  <me>
 	    \begin{aligned}
-	    T(c\vvec) \amp {}={} cT(\vvec) \\
-	    T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+	    T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+	    T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 	    \end{aligned}
 	  </me>
 	</p>
 	<p>
 	  The next two figures illustrate why these properties hold.
 	  For instance, <xref ref="fig-45-rotation-linear-mult" />
-	  shows the relationship between <m>T(\vvec)</m> and
-	  <m>T(c\vvec)</m> when <m>c</m> is a scalar.  In particular,
+	  shows the relationship between <m>T(\vec{v})</m> and
+	  <m>T(c\vec{v})</m> when <m>c</m> is a scalar.  In particular,
 	  scaling a vector and then rotating it is the same as
-	  rotating and then scaling it, which means that <m>T(c\vvec)
-	  = cT(\vvec)</m>.
+	  rotating and then scaling it, which means that <m>T(c\vec{v})
+	  = cT(\vec{v})</m>.
 	</p>
 
 	<figure xml:id="fig-45-rotation-linear-mult">
@@ -426,23 +426,23 @@
 	    <image source="images/45-rotation-linear-a" />
 	  </sidebyside>
 	  <caption>
-	    We see that the vector <m>T(c\vvec)</m> is a scalar
-	    multiple to <m>T(\vvec)</m> so that <m>T(c\vvec) =
-	    cT(\vvec)</m>.
+	    We see that the vector <m>T(c\vec{v})</m> is a scalar
+	    multiple to <m>T(\vec{v})</m> so that <m>T(c\vec{v}) =
+	    cT(\vec{v})</m>.
 	  </caption>
 	</figure>
 
 	<p>
 	  Similarly, <xref ref="fig-45-rotation-linear-add" /> shows the
-	  relationship between <m>T(\vvec+\wvec)</m>,
-	  <m>T(\vvec)</m>, and <m>T(\wvec)</m>.  Remember that the
+	  relationship between <m>T(\vec{v}+\vec{w})</m>,
+	  <m>T(\vec{v})</m>, and <m>T(\vec{w})</m>.  Remember that the
 	  sum of two vectors is represented by the diagonal of the
 	  parallelogram defined by the two vectors.  The rotation
 	  <m>T</m> has the effect of rotating the parallelogram
-	  defined by <m>\vvec</m> and <m>\wvec</m> into the
-	  parallelogram defined by <m>T(\vvec)</m> and
-	  <m>T(\wvec)</m>, explaining why
-	  <m>T(\vvec+\wvec) = T(\vvec) + T(\wvec)</m>.
+	  defined by <m>\vec{v}</m> and <m>\vec{w}</m> into the
+	  parallelogram defined by <m>T(\vec{v})</m> and
+	  <m>T(\vec{w})</m>, explaining why
+	  <m>T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w})</m>.
 	</p>
 	
 	<figure xml:id="fig-45-rotation-linear-add">
@@ -450,9 +450,9 @@
 	    <image source="images/45-rotation-linear-b" />
 	  </sidebyside>
 	  <caption>
-	    We see that the vector <m>T(\vvec+\wvec)</m> is the
-	    sum of <m>T(\vvec)</m> and <m>T(\wvec)</m> so that 
-	    <m>T(\vvec + \wvec) = T(\vvec) + T(\wvec)</m>.
+	    We see that the vector <m>T(\vec{v}+\vec{w})</m> is the
+	    sum of <m>T(\vec{v})</m> and <m>T(\vec{w})</m> so that 
+	    <m>T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})</m>.
 	  </caption>
 	</figure>
 
@@ -460,11 +460,11 @@
 	  Having verified these two properties, we now know that the
 	  function <m>T</m> that rotates vectors 
 	  by <m>45^\circ</m> is a matrix transformation.  We may
-	  therefore write it as <m>T(\xvec) = A\xvec</m> where
+	  therefore write it as <m>T(\vec{x}) = A\vec{x}</m> where
 	  <m>A</m> is the <m>2\times2</m> matrix
-	  <m>A=\left[\begin{array}{rr} T(\evec_1) \amp T(\evec_2)
+	  <m>A=\left[\begin{array}{rr} T(\vec{e_1}) \amp T(\vec{e_2})
 	  \end{array}\right]</m>.  The columns of this matrix,
-	  <m>T(\evec_1)</m> and <m>T(\evec_2)</m>, 
+	  <m>T(\vec{e_1})</m> and <m>T(\vec{e_2})</m>, 
 	  are shown on the right of <xref ref="fig-45-rotation-basis" />.
 	</p>
 
@@ -473,15 +473,15 @@
 	    <image source="images/45-rotation-basis" />
 	  </sidebyside>
 	  <caption>
-	    The matrix transformation <m>T</m> rotates <m>\evec_1</m>
-	    and <m>\evec_2</m> by <m>45^\circ</m>.
+	    The matrix transformation <m>T</m> rotates <m>\vec{e_1}</m>
+	    and <m>\vec{e_2}</m> by <m>45^\circ</m>.
 	  </caption>
 	</figure>
 
-	<p> Notice that <m>T(\evec_1)</m> forms an isosceles right
+	<p> Notice that <m>T(\vec{e_1})</m> forms an isosceles right
 	triangle, as shown in <xref ref="fig-45-rotation-e1" />.
-	Since the length of <m>\evec_1</m> is 1, the length of
-	<m>T(\evec_1)</m>, the hypotenuse of the triangle, is also 1,
+	Since the length of <m>\vec{e_1}</m> is 1, the length of
+	<m>T(\vec{e_1})</m>, the hypotenuse of the triangle, is also 1,
 	and by Pythagoras' theorem, the lengths of its legs are
 	<m>1/\sqrt{2}</m>.
 	</p>
@@ -491,7 +491,7 @@
 	    <image source="images/45-rotation-e1" />
 	  </sidebyside>
 	  <caption>
-	    The vector <m>T(\evec_1)</m> has length 1 and is the
+	    The vector <m>T(\vec{e_1})</m> has length 1 and is the
 	    hypotenuse of a right isosceles
 	    triangle.
 	  </caption>
@@ -499,10 +499,10 @@
 
 	<p>
 	  This leads to
-	  <m>T(\evec_1) = \twovec{\frac1{\sqrt{2}}}
+	  <m>T(\vec{e_1}) = \twovec{\frac1{\sqrt{2}}}
 	  {\frac1{\sqrt{2}}}</m>.
 	  In the same way, we find that
-	  <m>T(\evec_2) = \twovec{-\frac1{\sqrt{2}}}
+	  <m>T(\vec{e_2}) = \twovec{-\frac1{\sqrt{2}}}
 	  {\frac1{\sqrt{2}}}</m> so that
 	  the matrix <m>A</m> is
 	  <me>
@@ -527,8 +527,8 @@
       by checking that
       <me>
 	\begin{aligned}
-	T(c\vvec) \amp {}={} cT(\vvec) \\
-	T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+	T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+	T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 	\end{aligned}.
       </me>
       The same kind of thinking applies more generally to show that
@@ -546,7 +546,7 @@
       have the form <m>T:\real^2\to\real^2</m>.
       <ol marker="a.">
 	<li><p> Find the matrix of the transformation that has no
-	effect on vectors;  that is, <m>T(\xvec) = \xvec</m>.
+	effect on vectors;  that is, <m>T(\vec{x}) = \vec{x}</m>.
 	</p></li>
 
 	<li><p> Find the matrix of the transformation that reflects
@@ -589,8 +589,8 @@
 
       <solution>
 	<p> We use the fact that the columns of the requested matrices
-	have the form <m>\left[\begin{array}{rr} T(\evec_1) \amp
-	T(\evec_2) \end{array}\right]</m>.
+	have the form <m>\left[\begin{array}{rr} T(\vec{e_1}) \amp
+	T(\vec{e_2}) \end{array}\right]</m>.
 	<ol marker="a.">
 	  <li><p>
 	    <m>\left[\begin{array}{rr}
@@ -1172,8 +1172,8 @@
 	transformation if and only if these properties are satisfied:
 	<me>
 	  \begin{aligned}
-	  T(c\vvec) \amp = cT(\vvec) \\
-	  T(\vvec+\wvec) \amp = T(\vvec)+T(\wvec). \\
+	  T(c\vec{v}) \amp = cT(\vec{v}) \\
+	  T(\vec{v}+\vec{w}) \amp = T(\vec{v})+T(\vec{w}). \\
 	  \end{aligned}
 	</me>
       </p></li>

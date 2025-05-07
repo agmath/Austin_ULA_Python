@@ -812,17 +812,17 @@
 
 	  <li> <p> Now consider the two vectors
 	  <me>
-	    \evec_1 = \threevec{1}{0}{0},~~~
-	    \evec_2 = \threevec{0}{1}{0}
+	    \vec{e_1} = \threevec{1}{0}{0},~~~
+	    \vec{e_2} = \threevec{0}{1}{0}
 	  </me>.
 	  Sketch the vectors below.  Then give a geometric description of
-	  <m>\laspan{\evec_1,\evec_2}</m> and a rough sketch of  the
+	  <m>\laspan{\vec{e_1},\vec{e_2}}</m> and a rough sketch of  the
 	  span in <xref ref = "fig-3d-span-2"/>.
 	</p>
 	<figure xml:id="fig-3d-span-2">
 	  <caption>
-	    A coordinate system for sketching <m>\evec_1</m>,
-	    <m>\evec_2</m>, and <m>\laspan{\evec_1,\evec_2}</m>.
+	    A coordinate system for sketching <m>\vec{e_1}</m>,
+	    <m>\vec{e_2}</m>, and <m>\laspan{\vec{e_1},\vec{e_2}}</m>.
 	  </caption>
 	  <sidebyside width="50%">
 	    <image source ="images/coordinates-3d" />
@@ -834,11 +834,11 @@
 	writing write <m>\vec{b} = \threevec{b_1}{b_2}{b_3}</m>.
 	Determine the conditions on <m>b_1</m>, <m>b_2</m>, and
 	<m>b_3</m> so that <m>\vec{b}</m> is in
-	<m>\laspan{\evec_1,\evec_2}</m> by considering the linear
+	<m>\laspan{\vec{e_1},\vec{e_2}}</m> by considering the linear
 	system
 	<me>
 	  \left[\begin{array}{rr}
-	  \evec_1 \amp \evec_2 \\
+	  \vec{e_1} \amp \vec{e_2} \\
 	  \end{array}\right]
 	  ~\vec{x} =
 	  \vec{b}
@@ -854,7 +854,7 @@
 	  \threevec{b_1}{b_2}{b_3}
 	</me>.
 	Explain how this relates to your sketch of
-	<m>\laspan{\evec_1,\evec_2}</m>. 
+	<m>\laspan{\vec{e_1},\vec{e_2}}</m>. 
 	  
 	</p></li>
 
@@ -926,7 +926,7 @@
 	  </p></li>
 	  
 	  <li><p>
-	    <m>\laspan{\evec_1,\evec_2}</m> is the
+	    <m>\laspan{\vec{e_1},\vec{e_2}}</m> is the
 	    <m>xy</m>-plane.
 	  </p></li>
 
@@ -935,7 +935,7 @@
 	      For the linear system to be consistent, we need
 	      <m>b_3=0</m>, which means that the third coordinate of
 	      the vector <m>\vec{b}</m> must be 0 for <m>\vec{b}</m> to be
-	      in <m>\laspan{\evec_1,\evec_2}</m>.  In other words,
+	      in <m>\laspan{\vec{e_1},\vec{e_2}}</m>.  In other words,
 	      <m>\vec{b}</m> must lie in the <m>xy</m>-plane.
 	    </p>
 	  </li>

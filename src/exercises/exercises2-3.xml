@@ -535,9 +535,9 @@
 	<li><p>
 	  Do the vectors
 	  <me>
-	    \evec_1=\threevec{1}{0}{0},
-	    \evec_2=\threevec{0}{1}{0},
-	    \evec_3=\threevec{0}{0}{1}
+	    \vec{e_1}=\threevec{1}{0}{0},
+	    \vec{e_2}=\threevec{0}{1}{0},
+	    \vec{e_3}=\threevec{0}{0}{1}
 	  </me>
 	  span <m>\real^3</m>?
 	</p></li>

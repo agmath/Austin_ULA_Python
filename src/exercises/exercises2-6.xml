@@ -26,7 +26,7 @@
 
     <solution>
       <p> We create the following matrices as <m>\left[\begin{array}{rr}
-      T(\evec_1) \amp T(\evec_2) \\ \end{array}\right]</m>.
+      T(\vec{e_1}) \amp T(\vec{e_2}) \\ \end{array}\right]</m>.
 	<ol marker="a.">
 	  <li><p>
 	    <m>
@@ -276,8 +276,8 @@
   <exercise>
     <statement>
       <p> Shown below in <xref ref="fig-3d-basis" /> are the vectors
-      <m>\evec_1</m>, <m>\evec_2</m>, and 
-      <m>\evec_3</m> in <m>\real^3</m>.
+      <m>\vec{e_1}</m>, <m>\vec{e_2}</m>, and 
+      <m>\vec{e_3}</m> in <m>\real^3</m>.
       </p>
 
       <figure xml:id="fig-3d-basis">
@@ -286,15 +286,15 @@
 	</sidebyside>
 	<caption>
 	  The vectors 
-	  <m>\evec_1</m>, <m>\evec_2</m>, and 
-	  <m>\evec_3</m> in <m>\real^3</m>.
+	  <m>\vec{e_1}</m>, <m>\vec{e_2}</m>, and 
+	  <m>\vec{e_3}</m> in <m>\real^3</m>.
 	</caption>
       </figure>
       
       <p>
 	<ol marker="a.">
 	  <li><p> Imagine that the thumb of your right hand points
-	  in the direction of <m>\evec_1</m>.  A positive rotation
+	  in the direction of <m>\vec{e_1}</m>.  A positive rotation
 	  about the <m>x</m> axis corresponds to a rotation in the
 	  direction in which your fingers point.  
 	  Find the matrix definining the matrix transformation
@@ -312,7 +312,7 @@
 	  <m>90^\circ</m> about the <m>x</m>-axis, followed by a
 	  <m>90^\circ</m> rotation about the <m>y</m>-axis, followed
 	  by a <m>-90^\circ</m> rotation about the <m>x</m>-axis.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -323,8 +323,8 @@
 
     <solution>
       <p> We construct the matrices as
-      <m>\left[\begin{array}{rrr} T(\evec_1) \amp
-      T(\evec_2) \amp T(\evec_3) \\ \end{array}\right]</m>.
+      <m>\left[\begin{array}{rrr} T(\vec{e_1}) \amp
+      T(\vec{e_2}) \amp T(\vec{e_3}) \\ \end{array}\right]</m>.
       <ol marker="a.">
 	<li><p>
 	  <m>\left[\begin{array}{rrr}
@@ -435,8 +435,8 @@
 	    transformation that rotates vectors by <m>90^\circ</m>.
 	    Find a matrix transformation <m>S:\real^2\to\real^2</m>
 	    that undoes the rotation;  that is, <m>S</m> takes
-	    <m>T(\xvec)</m> back into <m>\xvec</m> so that
-	    <m>(S\circ T)(\xvec) = \xvec</m>.  Think geometrically about
+	    <m>T(\vec{x})</m> back into <m>\vec{x}</m> so that
+	    <m>(S\circ T)(\vec{x}) = \vec{x}</m>.  Think geometrically about
 	    what the transformation <m>S</m> should be and then verify
 	    it algebraically.
 	  </p>
@@ -770,11 +770,11 @@
     <statement>
       <p> Consider the matrix transformation
       <m>T:\real^2\to\real^2</m> that assigns to a vector
-      <m>\xvec</m> the closest vector on horizontal axis as
+      <m>\vec{x}</m> the closest vector on horizontal axis as
       illustrated in <xref ref="fig-ex-projection" />.  This
       transformation is called the <em> projection</em> onto the
-      horizontal axis.  You may imagine <m>T(\xvec)</m> as the
-      shadow cast by <m>\xvec</m> from a flashlight far up on the
+      horizontal axis.  You may imagine <m>T(\vec{x})</m> as the
+      shadow cast by <m>\vec{x}</m> from a flashlight far up on the
       positive <m>y</m>-axis.
       </p>
       
@@ -1194,12 +1194,12 @@
 	<li><p> To do this, notice that this reflection can be
 	obtained by composing three separate transformations as shown
 	in <xref ref="fig-ex-reflection-compose" />.  Beginning with
-	the vector <m>\xvec</m>, we apply the transformation <m>R</m>
+	the vector <m>\vec{x}</m>, we apply the transformation <m>R</m>
 	to rotate by <m>-\theta</m> and obtain
-	<m>R(\xvec)</m>.  Next, we apply <m>S</m>, a reflection in the
+	<m>R(\vec{x})</m>.  Next, we apply <m>S</m>, a reflection in the
 	horizontal axis, followed by <m>T</m>, a rotation by
-	<m>\theta</m>.  We see that <m>T(S(R(\xvec)))</m> is the same
-	as the reflection of <m>\xvec</m> in the original line
+	<m>\theta</m>.  We see that <m>T(S(R(\vec{x})))</m> is the same
+	as the reflection of <m>\vec{x}</m> in the original line
 	<m>L_\theta</m>. 
       </p>     
       <figure xml:id="fig-ex-reflection-compose">
