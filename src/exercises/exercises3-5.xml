@@ -61,7 +61,7 @@
 	<li><p> We can write a parametric description for the solution
 	space to the homogeneous equation as
 	<me>
-	  \xvec =
+	  \vec{x} =
 	  \left[\begin{array}{r}
 	  x_1 \\ 2x_4 - 3x_6 \\ -x_4-4x_6 \\ x_4 \\ x_6 \\ x_6
 	  \end{array}\right]
@@ -219,8 +219,8 @@
 	<m>\real^{341}</m>. </p></li>
 
 	<li><p> True.  In this case, the only solution to the
-	homogeneous equation <m>A\xvec=\zerovec</m> is the zero
-	solution <m>\xvec=\zerovec</m>.  This means that every column
+	homogeneous equation <m>A\vec{x}=\zerovec</m> is the zero
+	solution <m>\vec{x}=\zerovec</m>.  This means that every column
 	has a pivot position so the columns are linearly
 	independent. </p></li>
 
@@ -268,14 +268,14 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> If <m>BA\xvec=\zerovec</m>, then
-	<m>A\xvec=\zerovec</m> if <m>B</m> is invertible. </p></li>
+	<li><p> If <m>BA\vec{x}=\zerovec</m>, then
+	<m>A\vec{x}=\zerovec</m> if <m>B</m> is invertible. </p></li>
 
 	<li><p> The column space consists of all the vectors
-	<m>\bvec</m> for which <m>A\xvec=\bvec</m> is consistent.  We
-	can rewrite this condition as <m>AB(B^{-1}\xvec)=\bvec</m>,
-	which means that <m>A\xvec=\bvec</m> is consistent exactly
-	when <m>AB\xvec=\bvec</m> is. </p></li>
+	<m>\vec{b}</m> for which <m>A\vec{x}=\vec{b}</m> is consistent.  We
+	can rewrite this condition as <m>AB(B^{-1}\vec{x})=\vec{b}</m>,
+	which means that <m>A\vec{x}=\vec{b}</m> is consistent exactly
+	when <m>AB\vec{x}=\vec{b}</m> is. </p></li>
 
 	<li><p> If <m>A\sim A'</m>, then <m>A</m> and <m>A'</m>
 	have the same reduced row echelon form, which determines
@@ -285,14 +285,14 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> If <m>BA\xvec=\zerovec</m>, then
-	<m>A\xvec=\zerovec</m> if <m>B</m> is invertible. </p></li>
+	<li><p> If <m>BA\vec{x}=\zerovec</m>, then
+	<m>A\vec{x}=\zerovec</m> if <m>B</m> is invertible. </p></li>
 
 	<li><p> The column space consists of all the vectors
-	<m>\bvec</m> for which <m>A\xvec=\bvec</m> is consistent.  We
-	can rewrite this condition as <m>AB(B^{-1}\xvec)=\bvec</m>,
-	which means that <m>A\xvec=\bvec</m> is consistent exactly
-	when <m>AB\xvec=\bvec</m> is. </p></li>
+	<m>\vec{b}</m> for which <m>A\vec{x}=\vec{b}</m> is consistent.  We
+	can rewrite this condition as <m>AB(B^{-1}\vec{x})=\vec{b}</m>,
+	which means that <m>A\vec{x}=\vec{b}</m> is consistent exactly
+	when <m>AB\vec{x}=\vec{b}</m> is. </p></li>
 
 	<li><p> If <m>A\sim A'</m>, then <m>A</m> and <m>A'</m>
 	have the same reduced row echelon form, which determines
@@ -454,14 +454,14 @@
     <statement>
       <p> Suppose we have the vectors
       <me>
-	\vvec_1 = \threevec{2}{3}{-1},~
-	\vvec_2 = \threevec{-1}{2}{4},~
-	\wvec_1 = \fourvec{3}{-1}{1}{0},~
-	\wvec_2 = \fourvec{-2}{4}{0}{1}
+	\vec{v_1} = \threevec{2}{3}{-1},~
+	\vec{v_2} = \threevec{-1}{2}{4},~
+	\vec{w_1} = \fourvec{3}{-1}{1}{0},~
+	\vec{w_2} = \fourvec{-2}{4}{0}{1}
       </me>
       and that <m>A</m> is a matrix such that
-      <m>\col(A)=\laspan{\vvec_1,\vvec_2}</m> and <m>\nul(A) = 
-      \laspan{\wvec_1,\wvec_2}</m>.  
+      <m>\col(A)=\laspan{\vec{v_1},\vec{v_2}}</m> and <m>\nul(A) = 
+      \laspan{\vec{w_1},\vec{w_2}}</m>.  
 
       <ol marker="a.">
 	<li><p> What are the dimensions of <m>A</m>?
@@ -474,25 +474,25 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> Since <m>\vvec_1</m> and <m>\vvec_2</m> are
+	<li><p> Since <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are
 	three-dimensional vectors, <m>A</m> must have three rows.
-	Since <m>\wvec_1</m> and <m>\wvec_2</m> are 4-dimensional,
+	Since <m>\vec{w_1}</m> and <m>\vec{w_2}</m> are 4-dimensional,
 	<m>A</m> must have four columns.  Alternatively, we know that
 	<m>\dim~\nul(A) = 2</m> and <m>\dim~\col(A) = 2</m>.
 	Therefore, the number of columns is <m>n=\dim~\nul(A) +
 	\dim~\col(A) = 4</m>. Hence, <m>A</m> is a <m>3\times4</m>
 	matrix.  </p></li>
 
-	<li><p> We can use <m>\vvec_1</m> and <m>\vvec_2</m> as the
+	<li><p> We can use <m>\vec{v_1}</m> and <m>\vec{v_2}</m> as the
 	first two columns of <m>A</m>.  We also know that
-	<m>A\wvec_1=\zerovec</m> and <m>A\wvec_2=\zerovec</m>.  
+	<m>A\vec{w_1}=\zerovec</m> and <m>A\vec{w_2}=\zerovec</m>.  
 	If we call the other two columns
-	<m>\vvec_3</m> and <m>\vvec_4</m>, then
-	<m>A\wvec_1=\zerovec</m> implies that
-	<m>3\vvec_1-\vvec_2+\vvec_3 = \zerovec</m> so that <m>\vvec_3
-	= \threevec{-7}{-7}{7}</m>.  Since <m>A\wvec_2 = \zerovec</m>,
-	we have <m>-2\vvec_1+4\vvec_2 + \vvec_4=\zerovec</m>, which
-	says that <m>\vvec_4=\threevec{8}{-2}{-18}</m>.  This gives
+	<m>\vec{v_3}</m> and <m>\vec{v_4}</m>, then
+	<m>A\vec{w_1}=\zerovec</m> implies that
+	<m>3\vec{v_1}-\vec{v_2}+\vec{v_3} = \zerovec</m> so that <m>\vec{v_3}
+	= \threevec{-7}{-7}{7}</m>.  Since <m>A\vec{w_2} = \zerovec</m>,
+	we have <m>-2\vec{v_1}+4\vec{v_2} + \vec{v_4}=\zerovec</m>, which
+	says that <m>\vec{v_4}=\threevec{8}{-2}{-18}</m>.  This gives
 	<me>
 	  A = \left[\begin{array}{rrrr}
 	  2 \amp -1 \amp -7 \amp 8 \\
@@ -583,10 +583,10 @@
     <statement>
       <p>
 	In this section, we saw that the solution space to the
-	homogeneous equation <m>A\xvec = \zerovec</m> is a subspace of
+	homogeneous equation <m>A\vec{x} = \zerovec</m> is a subspace of
 	<m>\real^p</m> for some <m>p</m>.  In this exercise, we will
 	investigate whether the solution space to another equation
-	<m>A\xvec = \bvec</m> can form a subspace.
+	<m>A\vec{x} = \vec{b}</m> can form a subspace.
       </p>
 
       <p> Let's consider the matrix
@@ -598,7 +598,7 @@
       </me>.
       <ol marker="a.">
 	<li><p> Find a parametric description of the solution space to
-	the homogeneous equation <m>A\xvec = \zerovec</m>. </p></li>
+	the homogeneous equation <m>A\vec{x} = \zerovec</m>. </p></li>
 
 	<li><sidebyside widths="45% 50%">
 	  <p> Graph the solution space to the homogeneous equation to
@@ -609,23 +609,23 @@
 	</li>
 
 	<li><p> Find a parametric description of the solution
-	space to the equation <m>A\xvec = \twovec{4}{-2}</m> and graph
+	space to the equation <m>A\vec{x} = \twovec{4}{-2}</m> and graph
 	it above. </p></li>
 
-	<li><p> Is the solution space to the equation <m>A\xvec =
+	<li><p> Is the solution space to the equation <m>A\vec{x} =
 	\twovec{4}{-2}</m> a subspace of <m>\real^2</m>?  </p></li>
 
 	<li><p> Find a parametric description of the solution space to
-	the equation <m>A\xvec=\twovec{-8}{4}</m> and graph it
+	the equation <m>A\vec{x}=\twovec{-8}{4}</m> and graph it
 	above. </p></li>
 
 	<li><p> What can you say about all the solution spaces to
-	equations of the form <m>A\xvec = \bvec</m> when <m>\bvec</m>
+	equations of the form <m>A\vec{x} = \vec{b}</m> when <m>\vec{b}</m>
 	is a vector in <m>\col(A)</m>? </p></li>
 
 	<li><p> Suppose that the solution space to the equation
-	<m>A\xvec = \bvec</m> forms a subspace.  Explain why it must
-	be true that <m>\bvec = \zerovec</m>. </p></li>
+	<m>A\vec{x} = \vec{b}</m> forms a subspace.  Explain why it must
+	be true that <m>\vec{b} = \zerovec</m>. </p></li>
       </ol>
       </p>
     </statement>
@@ -644,14 +644,14 @@
 	0 \amp 0 \\
 	\end{array}\right]\text{,}
 	</me>
-	which shows that <m>\xvec=x_2\twovec{2}{1}</m> describes the
+	which shows that <m>\vec{x}=x_2\twovec{2}{1}</m> describes the
 	solution space to the homogeneous equation. </p></li>
 
 	<li><p> The solution space forms a line through the
 	origin. </p></li>
 
 	<li><p> The solution space has the parametric description
-	<m>\xvec=\twovec{2}{0}+x_2\twovec{2}{1}</m>, which is a line
+	<m>\vec{x}=\twovec{2}{0}+x_2\twovec{2}{1}</m>, which is a line
 	parallel to the solution space to the homogeneous
 	equation. </p></li>
 
@@ -659,7 +659,7 @@
 	the vector <m>\zerovec</m>. </p></li>
 
 	<li><p> The solution space has the parametric description
-	<m>\xvec=\twovec{-4}{0}+x_2\twovec{2}{1}</m>, which is a line
+	<m>\vec{x}=\twovec{-4}{0}+x_2\twovec{2}{1}</m>, which is a line
 	parallel to the solution space to the homogeneous
 	equation.  The graph of the solution spaces is shown below.
 	<sidebyside width="50%">
@@ -671,24 +671,24 @@
 	homogeneous equation. </p></li>
 
 	<li><p> If the solution space is a subspace, then
-	<m>\xvec=\zerovec</m> must be in the solution space.  This
-	means that <m>A\xvec = A\zerovec = \zerovec =
-	\bvec</m>. </p></li>
+	<m>\vec{x}=\zerovec</m> must be in the solution space.  This
+	means that <m>A\vec{x} = A\zerovec = \zerovec =
+	\vec{b}</m>. </p></li>
       </ol></p>
     </solution>
 	  
     <answer>
       <p><ol marker="a.">
-	<li><p> <m>\xvec=x_2\twovec{2}{1}</m></p></li>
+	<li><p> <m>\vec{x}=x_2\twovec{2}{1}</m></p></li>
 
 	<li><p> The solution space forms a line through the
 	origin. </p></li>
 
-	<li><p> <m>\xvec=\twovec{2}{0}+x_2\twovec{2}{1}</m> </p></li>
+	<li><p> <m>\vec{x}=\twovec{2}{0}+x_2\twovec{2}{1}</m> </p></li>
 
 	<li><p> No </p></li>
 
-	<li><p> <m>\xvec=\twovec{-4}{0}+x_2\twovec{2}{1}</m>.
+	<li><p> <m>\vec{x}=\twovec{-4}{0}+x_2\twovec{2}{1}</m>.
 	The graph of the solution spaces is shown below.
 	<sidebyside width="50%">
 	  <image source="images/ex-3-5" />
@@ -698,7 +698,7 @@
 	<li><p> They are all parallel to the solution space to the
 	homogeneous equation. </p></li>
 
-	<li><p> <m>\xvec=\zerovec</m> must be in the solution space.
+	<li><p> <m>\vec{x}=\zerovec</m> must be in the solution space.
 	</p></li>
       </ol></p>
     </answer>
