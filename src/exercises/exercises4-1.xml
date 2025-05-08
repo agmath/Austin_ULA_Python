@@ -10,45 +10,45 @@
 	8 \amp -10 \\
 	5 \amp -7 \\
 	\end{array}\right],\qquad
-	\vvec_1=\twovec{2}{1},~~~
-	\vvec_2=\twovec{1}{1}
+	\vec{v_1}=\twovec{2}{1},~~~
+	\vec{v_2}=\twovec{1}{1}
       </me>.
       <ol marker="a.">
-	<li><p> Show that <m>\vvec_1</m> and
-	<m>\vvec_2</m> are eigenvectors of <m>A</m> and find their
+	<li><p> Show that <m>\vec{v_1}</m> and
+	<m>\vec{v_2}</m> are eigenvectors of <m>A</m> and find their
 	associated eigenvalues. </p>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
 	</li>
 
-	<li><p> Express the vector <m>\xvec = \twovec{-4}{-1}</m> as a
-	linear combination of <m>\vvec_1</m> and
-	<m>\vvec_2</m>. </p></li>
+	<li><p> Express the vector <m>\vec{x} = \twovec{-4}{-1}</m> as a
+	linear combination of <m>\vec{v_1}</m> and
+	<m>\vec{v_2}</m>. </p></li>
 
-	<li><p> Use this expression to compute <m>A\xvec</m>,
-	<m>A^2\xvec</m>, and <m>A^{-1}\xvec</m> as a linear
+	<li><p> Use this expression to compute <m>A\vec{x}</m>,
+	<m>A^2\vec{x}</m>, and <m>A^{-1}\vec{x}</m> as a linear
 	combination of eigenvectors. </p></li>
       </ol></p>
     </statement>
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We find that <m>A\vvec_1 = 3\vvec_1</m> and
-	<m>A\vvec_2=-2\vvec_2</m> so the associated eigenvalues are
+	<li><p> We find that <m>A\vec{v_1} = 3\vec{v_1}</m> and
+	<m>A\vec{v_2}=-2\vec{v_2}</m> so the associated eigenvalues are
 	<m>\lambda_1 = 3</m> and <m>\lambda_2=-2</m>. </p></li>
 
 	<li><p> Setting up an augmented matrix and row reducing shows
-	us that <m>\xvec=\twovec{-4}{-1} = -3\vvec_1 +
-	2\vvec_2</m>. </p></li>
+	us that <m>\vec{x}=\twovec{-4}{-1} = -3\vec{v_1} +
+	2\vec{v_2}</m>. </p></li>
 
 	<li><p> We then have
 	<me>
 	  \begin{alignedat}{3}
-	  A\xvec\amp{}={}\amp -9\vvec_1 \amp{}-{}\amp 4\vvec_2\\
-	  A^2\xvec\amp{}={}\amp -27\vvec_1\amp{}+{}\amp8\vvec_2 \\
-	  A^{-1}\xvec\amp{}={}\amp -\vvec_1 \amp{}-{}\amp \vvec_2\text{.} \\
+	  A\vec{x}\amp{}={}\amp -9\vec{v_1} \amp{}-{}\amp 4\vec{v_2}\\
+	  A^2\vec{x}\amp{}={}\amp -27\vec{v_1}\amp{}+{}\amp8\vec{v_2} \\
+	  A^{-1}\vec{x}\amp{}={}\amp -\vec{v_1} \amp{}-{}\amp \vec{v_2}\text{.} \\
 	  \end{alignedat}
 	</me>
 	</p></li>
@@ -57,19 +57,19 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> We find that <m>A\vvec_1 = 3\vvec_1</m> and
-	<m>A\vvec_2=-2\vvec_2</m> so the associated eigenvalues are
+	<li><p> We find that <m>A\vec{v_1} = 3\vec{v_1}</m> and
+	<m>A\vec{v_2}=-2\vec{v_2}</m> so the associated eigenvalues are
 	<m>\lambda_1 = 3</m> and <m>\lambda_2=-2</m>. </p></li>
 
-	<li><p> <m>\xvec=\twovec{-4}{-1} = -3\vvec_1 +
-	2\vvec_2</m>. </p></li>
+	<li><p> <m>\vec{x}=\twovec{-4}{-1} = -3\vec{v_1} +
+	2\vec{v_2}</m>. </p></li>
 
 	<li><p> We find
 	<me>
 	  \begin{alignedat}{3}
-	  A\xvec\amp{}={}\amp -9\vvec_1 \amp{}-{}\amp 4\vvec_2\\
-	  A^2\xvec\amp{}={}\amp -27\vvec_1\amp{}+{}\amp8\vvec_2 \\
-	  A^{-1}\xvec\amp{}={}\amp -\vvec_1 \amp{}-{}\amp \vvec_2\text{.} \\
+	  A\vec{x}\amp{}={}\amp -9\vec{v_1} \amp{}-{}\amp 4\vec{v_2}\\
+	  A^2\vec{x}\amp{}={}\amp -27\vec{v_1}\amp{}+{}\amp8\vec{v_2} \\
+	  A^{-1}\vec{x}\amp{}={}\amp -\vec{v_1} \amp{}-{}\amp \vec{v_2}\text{.} \\
 	  \end{alignedat}
 	</me>
 	</p></li>
@@ -86,49 +86,49 @@
 	24 \amp 14 \amp -10 \\
 	21 \amp 14 \amp -10 \\
 	\end{array}\right],\qquad
-	\vvec_1=\threevec{1}{-2}{-1},
-	\vvec_2=\threevec{2}{-3}{0},
-	\vvec_3=\threevec{0}{-1}{-1}
+	\vec{v_1}=\threevec{1}{-2}{-1},
+	\vec{v_2}=\threevec{2}{-3}{0},
+	\vec{v_3}=\threevec{0}{-1}{-1}
       </me>
       <ol marker="a.">
-	<li><p> Show that the vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	<m>\vvec_3</m> are eigenvectors of <m>A</m> and find their
+	<li><p> Show that the vectors <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	<m>\vec{v_3}</m> are eigenvectors of <m>A</m> and find their
 	associated eigenvalues.
       </p>
-      <sage>
+      <sage language="python">
 	<input>
 	</input>
       </sage>
 	</li>
 
-	<li><p> Express the vector <m>\xvec = \threevec{0}{-3}{-4}</m>
+	<li><p> Express the vector <m>\vec{x} = \threevec{0}{-3}{-4}</m>
 	as a linear combination of the eigenvectors. </p></li>
 
-	<li><p> Use this expression to compute <m>A\xvec</m>,
-	<m>A^2\xvec</m>, and <m>A^{-1}\xvec</m> as a linear
+	<li><p> Use this expression to compute <m>A\vec{x}</m>,
+	<m>A^2\vec{x}</m>, and <m>A^{-1}\vec{x}</m> as a linear
 	combination of eigenvectors. </p></li>
       </ol></p>
     </statement>
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We see that <m>A\vvec_1=-3\vvec_1</m>, <m>A\vvec_2 =
-	-2\vvec_2</m>, and <m>A\vvec_3=4\vvec_3</m>.  The associated
+	<li><p> We see that <m>A\vec{v_1}=-3\vec{v_1}</m>, <m>A\vec{v_2} =
+	-2\vec{v_2}</m>, and <m>A\vec{v_3}=4\vec{v_3}</m>.  The associated
 	eigenvalues are <m>\lambda_1 = -3</m>, <m>\lambda_2=-2</m>,
 	and <m>\lambda_3=4</m>. </p></li>
 
 	<li><p> After forming an augmented matrix, we find
-	<m>\xvec=2\vvec_1 -\vvec_2+2\vvec_3</m>. </p></li>
+	<m>\vec{x}=2\vec{v_1} -\vec{v_2}+2\vec{v_3}</m>. </p></li>
 
 	<li><p> We then have
 	<me>
 	  \begin{alignedat}{4}
-	  A\xvec\amp{}={}\amp -6\vvec_1 \amp{}+{}\amp
-	  2\vvec_2\amp{}+{} \amp 8\vvec_3\\
-	  A^2\xvec\amp{}={}\amp 18\vvec_1\amp{}-{}\amp
-	  4\vvec_2\amp{}+{}\amp 32\vvec_3\\
-	  A^{-1}\xvec\amp{}={}\amp -\frac23\vvec_1\amp
-	  {}+{}\amp\frac12\vvec_2\amp{}+{}\amp\frac12\vvec_3\text{.} \\ 
+	  A\vec{x}\amp{}={}\amp -6\vec{v_1} \amp{}+{}\amp
+	  2\vec{v_2}\amp{}+{} \amp 8\vec{v_3}\\
+	  A^2\vec{x}\amp{}={}\amp 18\vec{v_1}\amp{}-{}\amp
+	  4\vec{v_2}\amp{}+{}\amp 32\vec{v_3}\\
+	  A^{-1}\vec{x}\amp{}={}\amp -\frac23\vec{v_1}\amp
+	  {}+{}\amp\frac12\vec{v_2}\amp{}+{}\amp\frac12\vec{v_3}\text{.} \\ 
 	  \end{alignedat}
 	</me>
 	</p></li>
@@ -137,23 +137,23 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> We see that <m>A\vvec_1=-3\vvec_1</m>, <m>A\vvec_2 =
-	-2\vvec_2</m>, and <m>A\vvec_3=4\vvec_3</m>.  The associated
+	<li><p> We see that <m>A\vec{v_1}=-3\vec{v_1}</m>, <m>A\vec{v_2} =
+	-2\vec{v_2}</m>, and <m>A\vec{v_3}=4\vec{v_3}</m>.  The associated
 	eigenvalues are <m>\lambda_1 = -3</m>, <m>\lambda_2=-2</m>,
 	and <m>\lambda_3=4</m>. </p></li>
 
 	<li><p> 
-	<m>\xvec=2\vvec_1 -\vvec_2+2\vvec_3</m>. </p></li>
+	<m>\vec{x}=2\vec{v_1} -\vec{v_2}+2\vec{v_3}</m>. </p></li>
 
 	<li><p> We find
 	<me>
 	  \begin{alignedat}{4}
-	  A\xvec\amp{}={}\amp -6\vvec_1 \amp{}+{}\amp
-	  2\vvec_2\amp{}+{} \amp 8\vvec_3\\
-	  A^2\xvec\amp{}={}\amp 18\vvec_1\amp{}-{}\amp
-	  4\vvec_2\amp{}+{}\amp 32\vvec_3\\
-	  A^{-1}\xvec\amp{}={}\amp -\frac23\vvec_1\amp
-	  {}+{}\amp\frac12\vvec_2\amp{}+{}\amp\frac12\vvec_3\text{.} \\ 
+	  A\vec{x}\amp{}={}\amp -6\vec{v_1} \amp{}+{}\amp
+	  2\vec{v_2}\amp{}+{} \amp 8\vec{v_3}\\
+	  A^2\vec{x}\amp{}={}\amp 18\vec{v_1}\amp{}-{}\amp
+	  4\vec{v_2}\amp{}+{}\amp 32\vec{v_3}\\
+	  A^{-1}\vec{x}\amp{}={}\amp -\frac23\vec{v_1}\amp
+	  {}+{}\amp\frac12\vec{v_2}\amp{}+{}\amp\frac12\vec{v_3}\text{.} \\ 
 	  \end{alignedat}
 	</me>
 	</p></li>
@@ -168,20 +168,20 @@
       <ol marker="a.">
 	<li><p> Explain why <m>\lambda = 0</m> is an eigenvalue of
 	<m>A</m> if and only if there is a nonzero solution to the
-	homogeneous equation <m>A\xvec = 0</m>. </p></li>
+	homogeneous equation <m>A\vec{x} = 0</m>. </p></li>
 
 	<li><p> Explain why <m>A</m> is not invertible
 	if and only if <m>\lambda=0</m> is an eigenvalue.</p></li>
 
-	<li><p> If <m>\vvec</m> is an 
+	<li><p> If <m>\vec{v}</m> is an 
 	eigenvector of <m>A</m> having associated eigenvalue
-	<m>\lambda</m>, explain why <m>\vvec</m> is also an
+	<m>\lambda</m>, explain why <m>\vec{v}</m> is also an
 	eigenvector of <m>A^2</m> with associated eigenvalue
 	<m>\lambda^2</m>.  </p></li>
 
-	<li><p> If <m>A</m> is invertible and <m>\vvec</m> is
+	<li><p> If <m>A</m> is invertible and <m>\vec{v}</m> is
 	eigenvector of <m>A</m> having associated eigenvalue
-	<m>\lambda</m>, explain why <m>\vvec</m> is also an
+	<m>\lambda</m>, explain why <m>\vec{v}</m> is also an
 	eigenvector of <m>A^{-1}</m> with associated eigenvalue
 	<m>\lambda^{-1}</m>. </p></li>
 
@@ -193,8 +193,8 @@
 	  2 \amp 1 \\
 	  \end{array}\right]
 	</m>
-	has eigenvectors <m>\vvec_1=\twovec{1}{1}</m> and
-	<m>\vvec_2=\twovec{-1}{1}</m> and associated eigenvalues <m>\lambda_1
+	has eigenvectors <m>\vec{v_1}=\twovec{1}{1}</m> and
+	<m>\vec{v_2}=\twovec{-1}{1}</m> and associated eigenvalues <m>\lambda_1
 	= 3</m> and <m>\lambda=-1</m>.  What are some eigenvectors and
 	associated eigenvalues for <m>A^5</m>? </p></li>
       </ol>
@@ -204,32 +204,32 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> If <m>\lambda=0</m> is an eigenvalue, then there is a
-	nonzero vector <m>\vvec</m> such that <m>A\vvec=\lambda\vvec =
-	\zerovec</m>.  This means that an associated eigenvector is a
+	nonzero vector <m>\vec{v}</m> such that <m>A\vec{v}=\lambda\vec{v} =
+	\vec{0}</m>.  This means that an associated eigenvector is a
 	nonzero solution to the homogeneous equation
-	<m>A\xvec=\zerovec</m>.  </p></li>
+	<m>A\vec{x}=\vec{0}</m>.  </p></li>
 
 	<li><p> If <m>\lambda =0</m> is an eigenvalue of <m>A</m>,
 	then there is a nonzero solution to the homogeneous
-	equation <m>A\xvec=\zerovec</m>, which happens exactly when
+	equation <m>A\vec{x}=\vec{0}</m>, which happens exactly when
 	<m>A</m> is not 
 	invertible. </p></li>
 
-	<li><p> If <m>\vvec</m> is an eigenvector of <m>A</m> with
+	<li><p> If <m>\vec{v}</m> is an eigenvector of <m>A</m> with
 	associated eigenvalue <m>\lambda</m>, then
-	<m>A\vvec=\lambda\vvec</m>.  Therefore, <m>A^2\vvec =
-	A(A\vvec) = \lambda A\vvec = \lambda^2\vvec</m>, which means
-	that <m>\vvec</m> is an eigenvector with associated eigenvalue
+	<m>A\vec{v}=\lambda\vec{v}</m>.  Therefore, <m>A^2\vec{v} =
+	A(A\vec{v}) = \lambda A\vec{v} = \lambda^2\vec{v}</m>, which means
+	that <m>\vec{v}</m> is an eigenvector with associated eigenvalue
 	<m>\lambda^2</m>. </p></li>
 
-	<li><p> If <m>A\vvec=\lambda\vvec</m>, we can multiply both
+	<li><p> If <m>A\vec{v}=\lambda\vec{v}</m>, we can multiply both
 	sides by <m>A^{-1}</m> and <m>\frac1\lambda</m> to obtain
-	<m>\frac1\lambda\vvec=A^{-1}\vvec</m>.  This shows that
-	<m>\vvec</m> is an eigenvector of <m>A^{-1}</m> with
+	<m>\frac1\lambda\vec{v}=A^{-1}\vec{v}</m>.  This shows that
+	<m>\vec{v}</m> is an eigenvector of <m>A^{-1}</m> with
 	associated eigenvalue <m>\frac1\lambda</m>.
 	</p></li>
 
-	<li><p> The vectors <m>\vvec_1</m> and <m>\vvec_2</m> are
+	<li><p> The vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are
 	eigenvectors of <m>A^5</m> with associated eigenvalues
 	<m>\lambda_1^5 = 3^5=243</m> and <m>\lambda_2^5 = (-1)^5 =
 	-1</m>. </p></li>
@@ -239,24 +239,24 @@
     <answer>
       <p><ol marker="a.">
 	<li><p> If <m>\lambda=0</m> is an eigenvalue, then there is a
-	nonzero vector <m>\vvec</m> such that <m>A\vvec=\lambda\vvec =
-	\zerovec</m>.  </p></li>
+	nonzero vector <m>\vec{v}</m> such that <m>A\vec{v}=\lambda\vec{v} =
+	\vec{0}</m>.  </p></li>
 
 	<li><p> If <m>\lambda =0</m> is an eigenvalue of <m>A</m>,
 	then there is a nonzero solution to the homogeneous
-	equation <m>A\xvec=\zerovec</m>.</p></li>
+	equation <m>A\vec{x}=\vec{0}</m>.</p></li>
 
-	<li><p> If <m>A\vvec=\lambda\vvec</m>, we can multiply both
+	<li><p> If <m>A\vec{v}=\lambda\vec{v}</m>, we can multiply both
 	sides by <m>A^{-1}</m> and <m>\frac1\lambda</m> to obtain
-	<m>\frac1\lambda\vvec=A^{-1}\vvec</m>.  
+	<m>\frac1\lambda\vec{v}=A^{-1}\vec{v}</m>.  
 	</p></li>
 
-	<li><p> Notice that <m>A^2\vvec =
-	A(A\vvec) = \lambda A\vvec = \lambda^2\vvec</m>, which means
-	that <m>\vvec</m> is an eigenvector with associated eigenvalue
+	<li><p> Notice that <m>A^2\vec{v} =
+	A(A\vec{v}) = \lambda A\vec{v} = \lambda^2\vec{v}</m>, which means
+	that <m>\vec{v}</m> is an eigenvector with associated eigenvalue
 	<m>\lambda^2</m>. </p></li>
 
-	<li><p> The vectors <m>\vvec_1</m> and <m>\vvec_2</m> are
+	<li><p> The vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are
 	eigenvectors of <m>A^5</m> with associated eigenvalues
 	<m>\lambda_1^5 = 3^5=243</m> and <m>\lambda_2^5 = (-1)^5 =
 	-1</m>. </p></li>
@@ -270,13 +270,13 @@
     <statement>
       <p>
 	Suppose that <m>A</m> is a matrix with eigenvectors
-	<m>\vvec_1</m> and <m>\vvec_2</m> and eigenvalues <m>\lambda_1 =
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m> and eigenvalues <m>\lambda_1 =
 	-1</m> and <m>\lambda_2=2</m> as shown in <xref
 	ref="figure-eigen-exercise"/>.  
       </p>
       <figure xml:id="figure-eigen-exercise">
 	<caption>
-	  The vectors <m>\vvec_1</m> and <m>\vvec_2</m> are
+	  The vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are
 	  eigenvectors of <m>A</m>.
 	</caption>
 	<sidebyside widths="45%">
@@ -284,8 +284,8 @@
 	</sidebyside>
       </figure>
       <p>
-	Sketch the vectors <m>A\xvec</m>, <m>A^2\xvec</m>, and
-	<m>A^{-1}\xvec</m>.
+	Sketch the vectors <m>A\vec{x}</m>, <m>A^2\vec{x}</m>, and
+	<m>A^{-1}\vec{x}</m>.
       </p>
     </statement>
 
@@ -344,17 +344,17 @@
 	<li><p> The corresponding matrix transformation stretches
 	vectors horizontally by a factor of <m>2</m> and reflects them
 	while stretching by a factor of <m>4</m> vertically.  We have
-	eigenvectors <m>\vvec_1=\twovec{1}{0}</m> with associated
+	eigenvectors <m>\vec{v_1}=\twovec{1}{0}</m> with associated
 	eigenvalue <m>\lambda_1=-2</m> and
-	<m>\vvec_2=\twovec{0}{1}</m> with
+	<m>\vec{v_2}=\twovec{0}{1}</m> with
 	<m>\lambda_2=4</m>. </p></li>
 
-	<li><p> For any vector <m>\vvec</m>, we have
-	<m>I\vvec=\vvec</m>.  Therefore, every vector is an
+	<li><p> For any vector <m>\vec{v}</m>, we have
+	<m>I\vec{v}=\vec{v}</m>.  Therefore, every vector is an
 	eigenvector of the identity matrix with associated eigenvalue
 	<m>\lambda=1</m>. </p></li>
 
-	<li><p> The standard basis vectors <m>\evec_j</m> are
+	<li><p> The standard basis vectors <m>\vec{e_j}</m> are
 	eigenvectors and the associated eigenvalues are the
 	corresponding diagonal entries. </p></li>
       </ol></p>
@@ -368,16 +368,16 @@
 	</p></li>
 
 	<li><p> We have
-	eigenvectors <m>\vvec_1=\twovec{1}{0}</m> with associated
+	eigenvectors <m>\vec{v_1}=\twovec{1}{0}</m> with associated
 	eigenvalue <m>\lambda_1=-2</m> and
-	<m>\vvec_2=\twovec{0}{1}</m> with
+	<m>\vec{v_2}=\twovec{0}{1}</m> with
 	<m>\lambda_2=4</m>. </p></li>
 
 	<li><p> Every vector is an
 	eigenvector of the identity matrix with associated eigenvalue
 	<m>\lambda=1</m>. </p></li>
 
-	<li><p> The standard basis vectors <m>\evec_j</m> are
+	<li><p> The standard basis vectors <m>\vec{e_j}</m> are
 	eigenvectors and the associated eigenvalues are the
 	corresponding diagonal entries. </p></li>
       </ol></p>
@@ -390,16 +390,16 @@
       <p> Suppose that <m>A</m> is a <m>2\times2</m> matrix having
       eigenvectors
       <me>
-	\vvec_1=\twovec{2}{1}, \qquad
-	\vvec_2=\twovec{-1}{2}
+	\vec{v_1}=\twovec{2}{1}, \qquad
+	\vec{v_2}=\twovec{-1}{2}
       </me>
       and associated eigenvalues <m>\lambda_1=2</m> and
       <m>\lambda_2=-3</m>.
       <ol marker="a.">
 	<li>
 	  <p>
-	    If <m>\xvec=\twovec{5}{0}</m>, find the
-	    vector <m>A^4\xvec</m>.
+	    If <m>\vec{x}=\twovec{5}{0}</m>, find the
+	    vector <m>A^4\vec{x}</m>.
 	  </p>
 	</li>
 	<li>
@@ -422,22 +422,22 @@
 	<ol marker="a.">
 	  <li>
 	    <p>
-	      We have <m>\xvec = 2\vvec_1-\vvec_2</m>.  Therefore,
-	      <m>A^4\xvec = 2\lambda_1^4\vvec_1-\lambda_2^4\vvec_2 =
-	      32\vvec_1-81\vvec_2=\twovec{145}{-130}</m>.
+	      We have <m>\vec{x} = 2\vec{v_1}-\vec{v_2}</m>.  Therefore,
+	      <m>A^4\vec{x} = 2\lambda_1^4\vec{v_1}-\lambda_2^4\vec{v_2} =
+	      32\vec{v_1}-81\vec{v_2}=\twovec{145}{-130}</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
 	      We have
 	      <me>
-		\twovec10 = \frac25 \vvec_1 - \frac15 \vvec2,~~~
-		\twovec01 = \frac15 \vvec_1 + \frac25 \vvec2,
+		\twovec10 = \frac25 \vec{v_1} - \frac15 \vec{v}2,~~~
+		\twovec01 = \frac15 \vec{v_1} + \frac25 \vec{v}2,
 	      </me>
 	      and so
 	      <me>
-		A\twovec10 = \frac45 \vvec_1 + \frac35 \vvec2 = \twovec12,~~~
-		A\twovec01 = \frac25 \vvec_1 - \frac65 \vvec2 = \twovec2{-2}.
+		A\twovec10 = \frac45 \vec{v_1} + \frac35 \vec{v}2 = \twovec12,~~~
+		A\twovec01 = \frac25 \vec{v_1} - \frac65 \vec{v}2 = \twovec2{-2}.
 	      </me>
 	    </p>
 	  </li>
@@ -490,8 +490,8 @@
 	<li><p> The eigenvalues of a diagonal matrix are equal to the
 	entries on the diagonal. </p></li>
 
-	<li><p> If <m>A\vvec=\lambda\vvec</m>, then
-	<m>A^2\vvec=\lambda\vvec</m> as well. </p></li>
+	<li><p> If <m>A\vec{v}=\lambda\vec{v}</m>, then
+	<m>A^2\vec{v}=\lambda\vec{v}</m> as well. </p></li>
 
 	<li><p> Every vector is an eigenvector of the identity
 	matrix. </p></li>
@@ -508,11 +508,11 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> True.  The associated eigenvectors are the standard
-	basis vectors <m>\evec_j</m>. </p></li>
+	basis vectors <m>\vec{e_j}</m>. </p></li>
 
-	<li><p> False.  <m>A^2\vvec=\lambda^2\vvec</m>. </p></li>
+	<li><p> False.  <m>A^2\vec{v}=\lambda^2\vec{v}</m>. </p></li>
 
-	<li><p> True, because <m>I\vvec = \vvec</m>. </p></li>
+	<li><p> True, because <m>I\vec{v} = \vec{v}</m>. </p></li>
 
 	<li><p> False.  If <m>\lambda=0</m> is an eigenvalue of
 	<m>A</m>, then there is a nonzero solution to the
@@ -545,16 +545,16 @@
 	<ol marker="a.">
 	  <li>
 	    <p>
-	      Assuming that <m>\vvec</m> is an eigenvector of
+	      Assuming that <m>\vec{v}</m> is an eigenvector of
 	      <m>A</m> whose associated eigenvector is nonzero,
-	      explain why <m>\vvec</m> is in <m>\col(A)</m>.
+	      explain why <m>\vec{v}</m> is in <m>\col(A)</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
-	      Assuming that <m>\vvec</m> is an eigenvector of
+	      Assuming that <m>\vec{v}</m> is an eigenvector of
 	      <m>A</m> whose associated eigenvector is zero,
-	      explain why <m>\vvec</m> is in <m>\nul(A)</m>.
+	      explain why <m>\vec{v}</m> is in <m>\nul(A)</m>.
 	    </p>
 	  </li>
 	  <li>
@@ -582,38 +582,38 @@
       <p><ol marker="a.">
 	<li>
 	  <p>
-	    In this case, we have <m>A\vvec = \lambda\vvec</m> or
-	    <m>A\left(\frac1\lambda\vvec\right) = \vvec</m>, which
+	    In this case, we have <m>A\vec{v} = \lambda\vec{v}</m> or
+	    <m>A\left(\frac1\lambda\vec{v}\right) = \vec{v}</m>, which
 	    says that 
-	    the equation <m>A\xvec = \vvec</m> is consistent.
+	    the equation <m>A\vec{x} = \vec{v}</m> is consistent.
 	  </p>
 	</li>
 	<li>
 	  <p>
-	    With this assumption, <m>A\vvec = 0\vvec = \zerovec</m>,
-	    which means that <m>\vvec</m> is a solution to the
-	    homogeneous equation <m>A\xvec = \zerovec</m>.
+	    With this assumption, <m>A\vec{v} = 0\vec{v} = \vec{0}</m>,
+	    which means that <m>\vec{v}</m> is a solution to the
+	    homogeneous equation <m>A\vec{x} = \vec{0}</m>.
 	  </p>
 	</li>
 	<li>
 	  <p>
 	    The column space of <m>A</m>
-	    is spanned by <m>\vvec_1=\threevec{1}{1}{1}</m> and we notice
-	    that <m>A\vvec_1 = 3\vvec_1</m>.  Therefore, <m>\vvec_1</m> is
+	    is spanned by <m>\vec{v_1}=\threevec{1}{1}{1}</m> and we notice
+	    that <m>A\vec{v_1} = 3\vec{v_1}</m>.  Therefore, <m>\vec{v_1}</m> is
 	    an eigenvector with associated eigenvalue <m>\lambda_1=3</m>.
 	  </p>
 
 	  <p> We also know that that the rank of this matrix is 1 so
 	  <m>\nul(A)</m> is two-dimensional.  A basis for the null space
-	  is <m>\vvec_2=\threevec{-1}{1}{0}</m> and
-	  <m>\vvec_3=\threevec{-1}{0}{1}</m> so these vectors are
+	  is <m>\vec{v_2}=\threevec{-1}{1}{0}</m> and
+	  <m>\vec{v_3}=\threevec{-1}{0}{1}</m> so these vectors are
 	  eigenvectors with associated eigenvalue <m>\lambda_2=\lambda_3 =
 	  0</m>. 
 
-	  In the same way, <m>\vvec_1=\threevec{1}{2}{3}</m> is an
+	  In the same way, <m>\vec{v_1}=\threevec{1}{2}{3}</m> is an
 	  eigenvector of <m>B</m> with associated eigenvalue
-	  <m>\lambda_1=6</m> and <m>\vvec_2=\threevec{-1}{1}{0}</m>
-	  and <m>\vvec_3=\threevec{-1}{0}{1}</m> are eigenvectors with
+	  <m>\lambda_1=6</m> and <m>\vec{v_2}=\threevec{-1}{1}{0}</m>
+	  and <m>\vec{v_3}=\threevec{-1}{0}{1}</m> are eigenvectors with
 	  associated eigenvalue
 	  <m>\lambda_2=\lambda_3=0</m>. </p></li>
       </ol></p>
@@ -622,27 +622,27 @@
     <answer>
       <p><ol marker="a.">
 	<li><p>
-	  Because <m>A\vvec = \lambda\vvec</m>.
+	  Because <m>A\vec{v} = \lambda\vec{v}</m>.
 	</p></li>
 
 	<li><p>
-	  Because <m>A\vvec = 0\vvec = \zerovec</m>.
+	  Because <m>A\vec{v} = 0\vec{v} = \vec{0}</m>.
 	</p></li>
 
 	<li><p>
 	  For the matrix <m>A</m>,
-	  <m>\vvec_1=\threevec{1}{1}{1}</m> with associated eigenvalue
+	  <m>\vec{v_1}=\threevec{1}{1}{1}</m> with associated eigenvalue
 	  <m>\lambda_1=3</m>, and
-	  <m>\vvec_2=\threevec{-1}{1}{0}</m> and
-	  <m>\vvec_3=\threevec{-1}{0}{1}</m>  with
+	  <m>\vec{v_2}=\threevec{-1}{1}{0}</m> and
+	  <m>\vec{v_3}=\threevec{-1}{0}{1}</m>  with
 	  associated eigenvalue <m>\lambda_2=\lambda_3 =
 	  0</m>.
 	</p>
 	<p> For <m>B</m>,
-	<m>\vvec_1=\threevec{1}{2}{3}</m> 
+	<m>\vec{v_1}=\threevec{1}{2}{3}</m> 
 	with associated eigenvalue <m>\lambda_1=6</m> and
-	<m>\vvec_2=\threevec{-1}{1}{0}</m> and
-	<m>\vvec_3=\threevec{-1}{0}{1}</m> with
+	<m>\vec{v_2}=\threevec{-1}{1}{0}</m> and
+	<m>\vec{v_3}=\threevec{-1}{0}{1}</m> with
 	associated eigenvalue <m>\lambda_2=\lambda_3=0</m>. </p></li>
       </ol></p>
     </answer>
@@ -678,8 +678,8 @@
 	<m>\twovec{1}{-1}</m> is an eigenvector with associated
 	eigenvalue <m>\lambda=-1</m>. </p></li>
 
-	<li><p> Every vector <m>\vvec</m> satisfies
-	<m>A\vvec=-\vvec</m> so every two-dimensional vector is an
+	<li><p> Every vector <m>\vec{v}</m> satisfies
+	<m>A\vec{v}=-\vec{v}</m> so every two-dimensional vector is an
 	eigenvector with associated eigenvalue
 	<m>\lambda=-1</m>. </p></li>
 
@@ -737,32 +737,32 @@
 	\end{aligned}
       </me>.
       We will keep track of the populations in year <m>k</m> using the
-      vector <m>\xvec_k=\twovec{P_k}{Q_k}</m> so that
+      vector <m>\vec{x_k}=\twovec{P_k}{Q_k}</m> so that
       <me>
-	\xvec_{k+1} = A\xvec_k =
+	\vec{x_{k+1}} = A\vec{x_k} =
 	\left[\begin{array}{rr}
 	0.8 \amp 0.2 \\
 	-0.3 \amp 1.5 \\
 	\end{array}\right]
-	\xvec_k
+	\vec{x_k}
       </me>.
       <ol marker="a.">
-	<li><p> Show that <m>\vvec_1=\twovec{1}{3}</m> and
-	<m>\vvec_2=\twovec{2}{1}</m> are eigenvectors of <m>A</m> and
+	<li><p> Show that <m>\vec{v_1}=\twovec{1}{3}</m> and
+	<m>\vec{v_2}=\twovec{2}{1}</m> are eigenvectors of <m>A</m> and
 	find their associated eigenvalues. </p></li>
 
 	<li><p> Suppose that the initial populations are described by
 	the vector
-	<m>\xvec_0 = \twovec{38}{44}</m>.  Express <m>\xvec_0</m> as a
-	linear combination of <m>\vvec_1</m> and
-	<m>\vvec_2</m>. </p></li>
+	<m>\vec{x_0} = \twovec{38}{44}</m>.  Express <m>\vec{x_0}</m> as a
+	linear combination of <m>\vec{v_1}</m> and
+	<m>\vec{v_2}</m>. </p></li>
 
 	<li><p> Find the populations after one year, two years, and
-	three years by writing the vectors <m>\xvec_1</m>,
-	<m>\xvec_2</m>, and <m>\xvec_3</m> as linear combinations of
-	<m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+	three years by writing the vectors <m>\vec{x_1}</m>,
+	<m>\vec{x_2}</m>, and <m>\vec{x_3}</m> as linear combinations of
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m>. </p></li>
 
-	<li><p> What is the general form for <m>\xvec_k</m>?</p></li>
+	<li><p> What is the general form for <m>\vec{x_k}</m>?</p></li>
 
 	<li><p> After a very long time, what is the ratio of
 	<m>P_k</m> to <m>Q_k</m>? </p></li>
@@ -771,34 +771,34 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We can compute <m>A\vvec_1 = 1.4\vvec_1</m> and
-	<m>A\vvec_2=0.9\vvec_2</m>.  This means that <m>\vvec_1</m> is
+	<li><p> We can compute <m>A\vec{v_1} = 1.4\vec{v_1}</m> and
+	<m>A\vec{v_2}=0.9\vec{v_2}</m>.  This means that <m>\vec{v_1}</m> is
 	an eigenvector with associated eigenvalue <m>\lambda_1=1.4</m>
-	and <m>\vvec_2</m> is an eigenvector with associated
+	and <m>\vec{v_2}</m> is an eigenvector with associated
 	eigenvalue <m>\lambda_2=0.9</m>. </p></li>
 
 	<li><p> Setting up an augmented matrix and row reducing shows
-	that <m>\xvec_0=10\vvec_1+14\vvec_2</m>. </p></li>
+	that <m>\vec{x_0}=10\vec{v_1}+14\vec{v_2}</m>. </p></li>
 
 	<li><p> We have
 	<me>
 	  \begin{alignedat}{4}
-	  \xvec_1\amp{}={}\amp A\xvec_0 \amp {}={} 10(1.4)\vvec_1 \amp
-	  {}+{} \amp 14(0.9)\vvec_2 \\
-	  \xvec_2\amp{}={}\amp A\xvec_1 \amp {}={} 10(1.4)^2\vvec_1 \amp
-	  {}+{} \amp 14(0.9)^2\vvec_2 \\
-	  \xvec_3\amp{}={}\amp A\xvec_2 \amp {}={} 10(1.4)^3\vvec_1 \amp
-	  {}+{} \amp 14(0.9)^3\vvec_2\text{.} \\
+	  \vec{x_1}\amp{}={}\amp A\vec{x_0} \amp {}={} 10(1.4)\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)\vec{v_2} \\
+	  \vec{x_2}\amp{}={}\amp A\vec{x_1} \amp {}={} 10(1.4)^2\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)^2\vec{v_2} \\
+	  \vec{x_3}\amp{}={}\amp A\vec{x_2} \amp {}={} 10(1.4)^3\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)^3\vec{v_2}\text{.} \\
 	  \end{alignedat}
 	</me>
 	</p></li>
 
-	<li><p> In general, <m>\xvec_k = 10(1.4)^k\vvec_1 +
-	14(0.9)^k\vvec_2</m>. </p></li>
+	<li><p> In general, <m>\vec{x_k} = 10(1.4)^k\vec{v_1} +
+	14(0.9)^k\vec{v_2}</m>. </p></li>
 
 	<li><p> After a long time, <m>k</m> becomes large so that
 	<m>0.9^k</m> becomes very close to zero.  This means that
-	<m>\xvec_k\approx 10(1.4)^k\vvec_1</m>.  So
+	<m>\vec{x_k}\approx 10(1.4)^k\vec{v_1}</m>.  So
 	<m>P_k\approx10(1.4)^k</m> and <m>Q_k\approx30(1.4)^k</m>.
 	This means the ratio of <m>P_k</m> to <m>Q_k</m> is
 	1:3.</p></li> 
@@ -807,28 +807,28 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> <m>\vvec_1</m> 
+	<li><p> <m>\vec{v_1}</m> 
 	with associated eigenvalue <m>\lambda_1=1.4</m>
-	and <m>\vvec_2</m> with associated
+	and <m>\vec{v_2}</m> with associated
 	eigenvalue <m>\lambda_2=0.9</m>. </p></li>
 
-	<li><p> <m>\xvec_0=10\vvec_1+14\vvec_2</m>. </p></li>
+	<li><p> <m>\vec{x_0}=10\vec{v_1}+14\vec{v_2}</m>. </p></li>
 
 	<li><p> We have
 	<me>
 	  \begin{alignedat}{4}
-	  \xvec_1\amp{}={}\amp A\xvec_0 \amp {}={} 10(1.4)\vvec_1 \amp
-	  {}+{} \amp 14(0.9)\vvec_2 \\
-	  \xvec_2\amp{}={}\amp A\xvec_1 \amp {}={} 10(1.4)^2\vvec_1 \amp
-	  {}+{} \amp 14(0.9)^2\vvec_2 \\
-	  \xvec_3\amp{}={}\amp A\xvec_2 \amp {}={} 10(1.4)^3\vvec_1 \amp
-	  {}+{} \amp 14(0.9)^3\vvec_2\text{.} \\
+	  \vec{x_1}\amp{}={}\amp A\vec{x_0} \amp {}={} 10(1.4)\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)\vec{v_2} \\
+	  \vec{x_2}\amp{}={}\amp A\vec{x_1} \amp {}={} 10(1.4)^2\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)^2\vec{v_2} \\
+	  \vec{x_3}\amp{}={}\amp A\vec{x_2} \amp {}={} 10(1.4)^3\vec{v_1} \amp
+	  {}+{} \amp 14(0.9)^3\vec{v_2}\text{.} \\
 	  \end{alignedat}
 	</me>
 	</p></li>
 
-	<li><p> In general, <m>\xvec_k = 10(1.4)^k\vvec_1 +
-	14(0.9)^k\vvec_2</m>. </p></li>
+	<li><p> In general, <m>\vec{x_k} = 10(1.4)^k\vec{v_1} +
+	14(0.9)^k\vec{v_2}</m>. </p></li>
 
 	<li><p> The ratio of <m>P_k</m> to <m>Q_k</m> is
 	1:3.</p></li> 
