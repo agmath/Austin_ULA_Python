@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -597,9 +597,9 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-linear-dep"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.4</span><span class="space"> </span><span class="title">Linear independence</span>
 </h2>
-<section class="introduction" id="sec-linear-dep-2"><div class="para" id="sec-linear-dep-2-1">In the previous section, questions about the existence of solutions of a linear system led to the concept of the span of a set of vectors.  In particular, the span of a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is the set of vectors <span class="process-math">\(\bvec\)</span> for which a solution to the linear system <span class="process-math">\(\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n \end{array}\right] ~\xvec
-= \bvec \)</span> exists.</div>
+<section class="introduction" id="sec-linear-dep-2"><div class="para" id="sec-linear-dep-2-1">In the previous section, questions about the existence of solutions of a linear system led to the concept of the span of a set of vectors.  In particular, the span of a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is the set of vectors <span class="process-math">\(\vec{v_b}\)</span> for which a solution to the linear system <span class="process-math">\(\left[\begin{array}{rrrr}
+\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n} \end{array}\right] ~\vec{x}
+= \vec{v_b} \)</span> exists.</div>
 <div class="para" id="sec-linear-dep-2-2">In this section, we turn to the uniqueness of solutions of a linear system, the second of our <a href="sec-pivots.html#fundamental-questions" class="xref" data-knowl="./knowl/xref/fundamental-questions.html" data-reveal-label="Reveal" data-close-label="Close" title="Question 1.4.2: Two Fundamental Questions">two fundamental questions</a>.  This will lead us to the concept of linear independence.</div>
 <article class="exploration project-like" id="sec-linear-dep-2-3"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
@@ -612,12 +612,12 @@ sagecell.makeSagecell({
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec{0}{-1}{2},
-\vvec_2=\threevec{3}{1}{-1},
-\vvec_3=\threevec{2}{0}{1}\text{.}
+\vec{v_1}=\threevec{0}{-1}{2},
+\vec{v_2}=\threevec{3}{1}{-1},
+\vec{v_3}=\threevec{2}{0}{1}\text{.}
 \end{equation*}
 </div>
-<div class="para">Describe the span of these vectors, <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{,}\)</span> as a line, a plane, or <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-linear-dep-2-3-1-1-4-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Describe the span of these vectors, <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{,}\)</span> as a line, a plane, or <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-linear-dep-2-3-1-1-4-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -625,39 +625,39 @@ sagecell.makeSagecell({
 <div class="para">Now consider the set of vectors:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\wvec_1=\threevec{0}{-1}{2},
-\wvec_2=\threevec{3}{1}{-1},
-\wvec_3=\threevec{3}{0}{1}\text{.}
+\vec{w_1}=\threevec{0}{-1}{2},
+\vec{w_2}=\threevec{3}{1}{-1},
+\vec{w_3}=\threevec{3}{0}{1}\text{.}
 \end{equation*}
 </div>
-<div class="para">Describe the span of these vectors, <span class="process-math">\(\laspan{\wvec_1,\wvec_2,\wvec_3}\text{,}\)</span> as a line, a plane, or <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-linear-dep-2-3-1-1-4-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Describe the span of these vectors, <span class="process-math">\(\laspan{\vec{w_1},\vec{w_2},\vec{w_3}}\text{,}\)</span> as a line, a plane, or <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-linear-dep-2-3-1-1-4-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
 <li id="sec-linear-dep-2-3-1-1-4-3"><div class="para logical" id="sec-linear-dep-2-3-1-1-4-3-1">
-<div class="para">Show that the vector <span class="process-math">\(\wvec_3\)</span> is a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> by finding weights such that</div>
+<div class="para">Show that the vector <span class="process-math">\(\vec{w_3}\)</span> is a linear combination of <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\)</span> by finding weights such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\wvec_3 = c\wvec_1 + d\wvec_2\text{.}
+\vec{w_3} = c\vec{w_1} + d\vec{w_2}\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="sec-linear-dep-2-3-1-1-4-4"><div class="para logical" id="sec-linear-dep-2-3-1-1-4-4-1">
-<div class="para">Explain why any linear combination of <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> and <span class="process-math">\(\wvec_3\text{,}\)</span>
+<div class="para">Explain why any linear combination of <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> and <span class="process-math">\(\vec{w_3}\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
+c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3}
 \end{equation*}
 </div>
-<div class="para">can be written as a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span>
+<div class="para">can be written as a linear combination of <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{.}\)</span>
 </div>
 </div></li>
 <li id="sec-linear-dep-2-3-1-1-4-5"><div class="para logical" id="sec-linear-dep-2-3-1-1-4-5-1">
 <div class="para">Explain why</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}\text{.}
+\laspan{\vec{w_1},\vec{w_2},\vec{w_3}} = \laspan{\vec{w_1},\vec{w_2}}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -674,15 +674,15 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pivot-row.html">
 \begin{equation*}
-\vvec_1 = \threevec220,~~~
-\vvec_2 = \threevec11{-1},~~~
-\vvec_3 = \threevec{-1}01.
+\vec{v_1} = \threevec220,~~~
+\vec{v_2} = \threevec11{-1},~~~
+\vec{v_3} = \threevec{-1}01.
 \end{equation*}
 </div>
 <div class="para">Forming the associated matrix gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-pivot-row.html">
 \begin{equation*}
-\begin{bmatrix}\vvec_1\amp\vvec_2\amp\vvec_3\end{bmatrix}
+\begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\end{bmatrix}
 = 
 \begin{bmatrix}
 2 \amp 1 \amp -1 \\
@@ -697,7 +697,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="para">Because there is a pivot position in every row, <a href="sec-span.html#prop-pivot-row" class="xref" data-knowl="./knowl/xref/prop-pivot-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.3.14">Proposition 2.3.14</a> tells us that <span class="process-math">\(\laspan{\vvec_1, \vvec_2, \vvec_3} = \real^3\text{.}\)</span>
+<div class="para">Because there is a pivot position in every row, <a href="sec-span.html#prop-pivot-row" class="xref" data-knowl="./knowl/xref/prop-pivot-row.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.3.14">Proposition 2.3.14</a> tells us that <span class="process-math">\(\laspan{\vec{v_1}, \vec{v_2}, \vec{v_3}} = \real^3\text{.}\)</span>
 </div>
 </div></article><article class="example example-like" id="example-span-plane"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
@@ -706,15 +706,15 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 <div class="para">Now let’s consider the set of three vectors:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\wvec_1 = \threevec220,~~~
-\wvec_2 = \threevec11{-1},~~~
-\wvec_3 = \threevec{-5}{-5}{1}.
+\vec{w_1} = \threevec220,~~~
+\vec{w_2} = \threevec11{-1},~~~
+\vec{w_3} = \threevec{-5}{-5}{1}.
 \end{equation*}
 </div>
 <div class="para">Forming the associated matrix gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix}\wvec_1\amp\wvec_2\amp\wvec_3\end{bmatrix}
+\begin{bmatrix}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}\end{bmatrix}
 = 
 \begin{bmatrix}
 2 \amp 1 \amp -5 \\
@@ -735,7 +735,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
-\begin{array}{rr|r}\wvec_1\amp\wvec_2\amp\wvec_3
+\begin{array}{rr|r}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}
 \end{array}
 \right]
 =
@@ -756,39 +756,39 @@ c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
 \right].
 \end{equation*}
 </div>
-<div class="para">In this way, we see that <span class="process-math">\(\wvec_3 = -2\wvec_1 -
-\wvec_2\text{,}\)</span> which enables us to rewrite any linear combination of these three vectors:</div>
+<div class="para">In this way, we see that <span class="process-math">\(\vec{w_3} = -2\vec{w_1} -
+\vec{w_2}\text{,}\)</span> which enables us to rewrite any linear combination of these three vectors:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3 \amp
+c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3} \amp
 {}={}
-c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
+c_1\vec{w_1} + c_2\vec{w_2} + c_3(-2\vec{w_1}-\vec{w_2}) \\
 \amp {}={}
-(c_1-2c_3)\wvec_1 + (c_2-c_3)\wvec_2. \\
+(c_1-2c_3)\vec{w_1} + (c_2-c_3)\vec{w_2}. \\
 \end{aligned}
 \end{equation*}
 </div>
 </div> <div class="para logical" id="example-span-plane-1-3">
-<div class="para">In other words, any linear combination of <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> and <span class="process-math">\(\wvec_3\)</span> may be written as a linear combination using only the vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span>  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</div>
+<div class="para">In other words, any linear combination of <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> and <span class="process-math">\(\vec{w_3}\)</span> may be written as a linear combination using only the vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{.}\)</span>  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}.
+\laspan{\vec{w_1},\vec{w_2},\vec{w_3}} = \laspan{\vec{w_1},\vec{w_2}}.
 \end{equation*}
 </div>
-<div class="para">As a result, adding the vector <span class="process-math">\(\wvec_3\)</span> to the set of vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> does not change the span.</div>
-</div></article><div class="para" id="sec-linear-dep-3-5">Before exploring this type of behavior more generally, let’s think about it from a geometric point of view.  Suppose that we begin with the two vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> in <a href="sec-linear-dep.html#example-span-r3" class="xref" data-knowl="./knowl/xref/example-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.4.1">Example 2.4.1</a>.  The span of these two vectors is a plane in <span class="process-math">\(\real^3\text{,}\)</span> as seen on the left of <a href="sec-linear-dep.html#figure-span-r3" class="xref" data-knowl="./knowl/xref/figure-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.3">Figure 2.4.3</a>.</div>
+<div class="para">As a result, adding the vector <span class="process-math">\(\vec{w_3}\)</span> to the set of vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\)</span> does not change the span.</div>
+</div></article><div class="para" id="sec-linear-dep-3-5">Before exploring this type of behavior more generally, let’s think about it from a geometric point of view.  Suppose that we begin with the two vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> in <a href="sec-linear-dep.html#example-span-r3" class="xref" data-knowl="./knowl/xref/example-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.4.1">Example 2.4.1</a>.  The span of these two vectors is a plane in <span class="process-math">\(\real^3\text{,}\)</span> as seen on the left of <a href="sec-linear-dep.html#figure-span-r3" class="xref" data-knowl="./knowl/xref/figure-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.3">Figure 2.4.3</a>.</div>
 <figure class="figure figure-like" id="figure-span-r3"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/3d-plane-nonstd.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/3d-plane-span-no-w.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span>The span of the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span></figcaption></figure><div class="para" id="sec-linear-dep-3-7">Because the vector <span class="process-math">\(\vvec_3\)</span> is not a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> it provides a direction to move that is independent of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  Adding this third vector <span class="process-math">\(\vvec_3\)</span> therefore forms a set whose span is <span class="process-math">\(\real^3\text{,}\)</span> as seen on the right of <a href="sec-linear-dep.html#figure-span-r3" class="xref" data-knowl="./knowl/xref/figure-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.3">Figure 2.4.3</a>.</div>
-<div class="para" id="sec-linear-dep-3-8">Similarly, the span of the vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> in <a href="sec-linear-dep.html#example-span-plane" class="xref" data-knowl="./knowl/xref/example-span-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.4.2">Example 2.4.2</a> is also a plane.  However, the third vector <span class="process-math">\(\wvec_3\)</span> is a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{,}\)</span> which means that it already lies in the plane formed by <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{,}\)</span> as seen in <a href="sec-linear-dep.html#figure-span-plane" class="xref" data-knowl="./knowl/xref/figure-span-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.4">Figure 2.4.4</a>. Since we can already move in this direction using just <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{,}\)</span> adding <span class="process-math">\(\wvec_3\)</span> to the set does not change the span.  As a result, it remains a plane.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span>The span of the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span></figcaption></figure><div class="para" id="sec-linear-dep-3-7">Because the vector <span class="process-math">\(\vec{v_3}\)</span> is not a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{,}\)</span> it provides a direction to move that is independent of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>  Adding this third vector <span class="process-math">\(\vec{v_3}\)</span> therefore forms a set whose span is <span class="process-math">\(\real^3\text{,}\)</span> as seen on the right of <a href="sec-linear-dep.html#figure-span-r3" class="xref" data-knowl="./knowl/xref/figure-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.3">Figure 2.4.3</a>.</div>
+<div class="para" id="sec-linear-dep-3-8">Similarly, the span of the vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\)</span> in <a href="sec-linear-dep.html#example-span-plane" class="xref" data-knowl="./knowl/xref/example-span-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.4.2">Example 2.4.2</a> is also a plane.  However, the third vector <span class="process-math">\(\vec{w_3}\)</span> is a linear combination of <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{,}\)</span> which means that it already lies in the plane formed by <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{,}\)</span> as seen in <a href="sec-linear-dep.html#figure-span-plane" class="xref" data-knowl="./knowl/xref/figure-span-plane.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.4.4">Figure 2.4.4</a>. Since we can already move in this direction using just <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{,}\)</span> adding <span class="process-math">\(\vec{w_3}\)</span> to the set does not change the span.  As a result, it remains a plane.</div>
 <figure class="figure figure-like" id="figure-span-plane"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/3d-plane-nonstd-w.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/3d-plane-span-yes-w.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.4<span class="period">.</span></span><span class="space"> </span>The span of the vectors <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> and <span class="process-math">\(\wvec_3\text{.}\)</span></figcaption></figure><div class="para" id="sec-linear-dep-3-10">What distinguishes these two examples is whether one of the vectors is a linear combination of the others, an observation that leads to the following definition.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.4<span class="period">.</span></span><span class="space"> </span>The span of the vectors <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> and <span class="process-math">\(\vec{w_3}\text{.}\)</span></figcaption></figure><div class="para" id="sec-linear-dep-3-10">What distinguishes these two examples is whether one of the vectors is a linear combination of the others, an observation that leads to the following definition.</div>
 <article class="definition definition-like" id="sec-linear-dep-3-11"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
 </h4>
@@ -806,8 +806,8 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrrr}
-\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 \amp
-\vvec_4 \amp	  \vvec_5 
+\vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} \amp
+\vec{v_4} \amp	  \vec{v_5} 
 \end{array}\right]
 \sim
 \left[\begin{array}{rrrrr}
@@ -818,14 +818,14 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Is it possible to write one of the vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_5\)</span> as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</div>
+<div class="para">Is it possible to write one of the vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_5}\)</span> as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</div>
 </div></li>
 <li id="sec-linear-dep-4-2-1-1-1-2"><div class="para logical" id="sec-linear-dep-4-2-1-1-1-2-1">
 <div class="para">Suppose we have another set of three vectors in <span class="process-math">\(\real^4\)</span> that form the columns of a matrix having reduced row echelon form</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr}
-\wvec_1 \amp 	  \wvec_2 \amp 	  \wvec_3 \\
+\vec{w_1} \amp 	  \vec{w_2} \amp 	  \vec{w_3} \\
 \end{array}\right]
 \sim
 \left[\begin{array}{rrr}
@@ -836,7 +836,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Is it possible to write one of these vectors <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> <span class="process-math">\(\wvec_3\)</span> as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</div>
+<div class="para">Is it possible to write one of these vectors <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> <span class="process-math">\(\vec{w_3}\)</span> as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</div>
 </div></li>
 <li id="sec-linear-dep-4-2-1-1-1-3"><div class="para" id="sec-linear-dep-4-2-1-1-1-3-1">By looking at the pivot positions, how can you determine whether the columns of a matrix are linearly dependent or independent?</div></li>
 <li id="sec-linear-dep-4-2-1-1-1-4"><div class="para" id="sec-linear-dep-4-2-1-1-1-4-1">If one vector in a set is the zero vector <span class="process-math">\(\zerovec\text{,}\)</span> can the set of vectors be linearly independent?</div></li>
@@ -847,8 +847,8 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr}
-\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 \amp
-\vvec_4 
+\vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} \amp
+\vec{v_4} 
 \end{array}\right]
 \sim
 \left[\begin{array}{rrrrr}
@@ -863,7 +863,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr|r}
-\vvec_1 \amp 	  \vvec_2 \amp 	  \vvec_3 
+\vec{v_1} \amp 	  \vec{v_2} \amp 	  \vec{v_3} 
 \end{array}\right]
 \sim
 \left[\begin{array}{rr|r}
@@ -877,14 +877,14 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="para">This says that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_3 = 2\vvec_1 -3\vvec_2,
+\vec{v_3} = 2\vec{v_1} -3\vec{v_2},
 \end{equation*}
 </div>
-<div class="para">which tells us that the set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\vvec_3,\vvec_4\)</span> is linearly dependent. Moreover, we see that</div>
+<div class="para">which tells us that the set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}\)</span> is linearly dependent. Moreover, we see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4} =
-\laspan{\vvec_1,\vvec_2,\vvec_4}.
+\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}} =
+\laspan{\vec{v_1},\vec{v_2},\vec{v_4}}.
 \end{equation*}
 </div>
 </div>
@@ -894,7 +894,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr}
-\wvec_1 \amp 	  \wvec_2 \amp 	  \wvec_3 \amp \wvec_4 \\
+\vec{w_1} \amp 	  \vec{w_2} \amp 	  \vec{w_3} \amp \vec{w_4} \\
 \end{array}\right]
 \sim
 \left[\begin{array}{rrrr}
@@ -906,7 +906,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 \end{array}\right].
 \end{equation*}
 </div>
-<div class="para">Viewing this as an augmented matrix again, we see that the linear system is inconsistent since there is a pivot in the rightmost column, which means that <span class="process-math">\(\wvec_4\)</span> cannot be expressed as a linear combination of the other vectors. Similarly, <span class="process-math">\(\wvec_3\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span> In fact, none of the vectors can be written as a linear combination of the others so this set of vectors is linearly independent.</div>
+<div class="para">Viewing this as an augmented matrix again, we see that the linear system is inconsistent since there is a pivot in the rightmost column, which means that <span class="process-math">\(\vec{w_4}\)</span> cannot be expressed as a linear combination of the other vectors. Similarly, <span class="process-math">\(\vec{w_3}\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{.}\)</span> In fact, none of the vectors can be written as a linear combination of the others so this set of vectors is linearly independent.</div>
 </div>
 <div class="para" id="sec-linear-dep-4-6">The following proposition summarizes these findings.</div>
 <article class="proposition theorem-like" id="sec-linear-dep-4-7"><h4 class="heading">
@@ -928,7 +928,7 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 </div>
 <div class="para">Notice that there are at least as many rows as columns, which must be the case if every column is to have a pivot position.</div>
 </div>
-<div class="para" id="sec-linear-dep-4-9">More generally, if <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is a linearly independent set of vectors in <span class="process-math">\(\real^m\text{,}\)</span> the associated matrix must have a pivot position in every column.  Since every row contains at most one pivot position, the number of columns can be no greater than the number of rows. This means that the number of vectors in a linearly independent set can be no greater than the number of dimensions.</div>
+<div class="para" id="sec-linear-dep-4-9">More generally, if <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a linearly independent set of vectors in <span class="process-math">\(\real^m\text{,}\)</span> the associated matrix must have a pivot position in every column.  Since every row contains at most one pivot position, the number of columns can be no greater than the number of rows. This means that the number of vectors in a linearly independent set can be no greater than the number of dimensions.</div>
 <article class="proposition theorem-like" id="prop-linear-indep-bound"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span>
 </h4>
@@ -936,14 +936,14 @@ c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
 <div class="para" id="sec-linear-dep-4-12">The proposition above says that a set of vectors in <span class="process-math">\(\real^m\)</span> that is linear independent has at most <span class="process-math">\(m\)</span> vectors.  By comparison, <a href="sec-span.html#prop-span-bound" class="xref" data-knowl="./knowl/xref/prop-span-bound.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.3.15">Proposition 2.3.15</a> says that a set of vectors whose span is <span class="process-math">\(\real^m\)</span> has at least <span class="process-math">\(m\)</span> vectors.</div></section><section class="subsection" id="sec-linear-dep-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Homogeneous equations</span>
 </h3>
-<div class="para" id="sec-linear-dep-5-2">If <span class="process-math">\(A\)</span> is a matrix, we call the equation <span class="process-math">\(A\xvec =
+<div class="para" id="sec-linear-dep-5-2">If <span class="process-math">\(A\)</span> is a matrix, we call the equation <span class="process-math">\(A\vec{x} =
 \zerovec\)</span> a <em class="emphasis">homogeneous</em> equation.  As we’ll see, the uniqueness of solutions to this equation reflects on the linear independence of the columns of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <article class="activity project-like" id="sec-linear-dep-5-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linear independence and homogeneous equations.</span>
 </h4>
 <div class="para logical" id="sec-linear-dep-5-3-2-1"><ol class="lower-alpha ol-marker-1" id="sec-linear-dep-5-3-2-1-1">
-<li id="sec-linear-dep-5-3-2-1-1-1"><div class="para" id="sec-linear-dep-5-3-2-1-1-1-1">Explain why the homogeneous equation <span class="process-math">\(A\xvec =
+<li id="sec-linear-dep-5-3-2-1-1-1"><div class="para" id="sec-linear-dep-5-3-2-1-1-1-1">Explain why the homogeneous equation <span class="process-math">\(A\vec{x} =
 \zerovec\)</span> is consistent no matter the matrix <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-linear-dep-5-3-2-1-1-2"><div class="para logical" id="sec-linear-dep-5-3-2-1-1-2-1">
@@ -957,7 +957,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">whose columns we denote by <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span> Describe the solution space of the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> using a parametric description, if appropriate. <div id="sec-linear-dep-5-3-2-1-1-2-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">whose columns we denote by <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span> Describe the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> using a parametric description, if appropriate. <div id="sec-linear-dep-5-3-2-1-1-2-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -965,13 +965,13 @@ A = \left[\begin{array}{rrr}
 <div class="para">Find a nonzero solution to the homogeneous equation and use it to find weights <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \zerovec\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="sec-linear-dep-5-3-2-1-1-4"><div class="para" id="sec-linear-dep-5-3-2-1-1-4-1">Use the equation you found in the previous part to write one of the vectors as a linear combination of the others.</div></li>
-<li id="sec-linear-dep-5-3-2-1-1-5"><div class="para" id="sec-linear-dep-5-3-2-1-1-5-1">Are the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> linearly dependent or independent?</div></li>
-</ol></div></article><div class="para" id="sec-linear-dep-5-4">This activity shows how the solution space of the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> indicates whether the columns of <span class="process-math">\(A\)</span> are linearly dependent or independent.  First, we know that the equation <span class="process-math">\(A\xvec = \zerovec\)</span> always has at least one solution, the vector <span class="process-math">\(\xvec = \zerovec\text{.}\)</span>  Any other solution is a nonzero solution.</div>
+<li id="sec-linear-dep-5-3-2-1-1-5"><div class="para" id="sec-linear-dep-5-3-2-1-1-5-1">Are the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> linearly dependent or independent?</div></li>
+</ol></div></article><div class="para" id="sec-linear-dep-5-4">This activity shows how the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> indicates whether the columns of <span class="process-math">\(A\)</span> are linearly dependent or independent.  First, we know that the equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> always has at least one solution, the vector <span class="process-math">\(\vec{x} = \zerovec\text{.}\)</span>  Any other solution is a nonzero solution.</div>
 <article class="example example-like" id="sec-linear-dep-5-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
 </h4>
@@ -979,18 +979,18 @@ c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec\text{.}
 <div class="para">Let’s consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \fourvec2{-4}10,~~~
-\vvec_2 = \fourvec113{-2},~~~
-\vvec_3 = \fourvec3{-3}4{-2}
+\vec{v_1} = \fourvec2{-4}10,~~~
+\vec{v_2} = \fourvec113{-2},~~~
+\vec{v_3} = \fourvec3{-3}4{-2}
 \end{equation*}
 </div>
 <div class="para">and their associated matrix <span class="process-math">\(A = \begin{bmatrix}
-\vvec_1 \amp \vvec_2 \amp \vvec_3
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 \end{bmatrix}
 \text{.}\)</span>
 </div>
 </div> <div class="para logical" id="sec-linear-dep-5-5-1-2">
-<div class="para">The homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> has the associated augmented matrix</div>
+<div class="para">The homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has the associated augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -1012,7 +1012,7 @@ c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec\text{.}
 \right].
 \end{equation*}
 </div>
-<div class="para">Therefore, <span class="process-math">\(A\)</span> has a column without a pivot position, which tells us that the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> are linearly dependent.  However, we can also see this fact in another way.</div>
+<div class="para">Therefore, <span class="process-math">\(A\)</span> has a column without a pivot position, which tells us that the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> are linearly dependent.  However, we can also see this fact in another way.</div>
 </div> <div class="para logical" id="sec-linear-dep-5-5-1-3">
 <div class="para">The reduced row echelon matrix tells us that the homogeneous equation has a free variable so that there must be infinitely many solutions.  In particular, we have</div>
 <div class="displaymath process-math">
@@ -1026,51 +1026,51 @@ x_2 \amp {}={} -x_3 \\
 <div class="para">so the solutions have the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec = \threevec{x_1}{x_2}{x_3} =
+\vec{x} = \threevec{x_1}{x_2}{x_3} =
 \threevec{-x_3}{-x_3}{x_3} = x_3\threevec{-1}{-1}1.
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-linear-dep-5-5-1-4">
-<div class="para">If we choose <span class="process-math">\(x_3=1\text{,}\)</span> then we obtain the nonzero solution to the homogeneous equation <span class="process-math">\(\xvec =
+<div class="para">If we choose <span class="process-math">\(x_3=1\text{,}\)</span> then we obtain the nonzero solution to the homogeneous equation <span class="process-math">\(\vec{x} =
 \threevec{-1}{-1}1\text{,}\)</span> which implies that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A\threevec{-1}{-1}1 =
 \begin{bmatrix}
-\vvec_1\amp\vvec_2\amp\vvec_3
+\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}
 \end{bmatrix}
 \threevec{-1}{-1}1 =
--\vvec_1 -\vvec_2 + \vvec_3 = \zerovec.
+-\vec{v_1} -\vec{v_2} + \vec{v_3} = \zerovec.
 \end{equation*}
 </div>
 <div class="para">In other words,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
--\vvec_1 -\vvec_2 + \vvec_3 \amp{}={} \zerovec \\
-\vvec_3 \amp{}={} \vvec_1 + \vvec_2. \\
+-\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \zerovec \\
+\vec{v_3} \amp{}={} \vec{v_1} + \vec{v_2}. \\
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-linear-dep-5-5-1-5">Because <span class="process-math">\(\vvec_3\)</span> is a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> we know that this set of vectors is linearly dependent.</div></article><div class="para" id="sec-linear-dep-5-6">As this example demonstrates, there are many ways we can view the question of linear independence, some of which are recorded in the following proposition.</div>
+</div> <div class="para" id="sec-linear-dep-5-5-1-5">Because <span class="process-math">\(\vec{v_3}\)</span> is a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{,}\)</span> we know that this set of vectors is linearly dependent.</div></article><div class="para" id="sec-linear-dep-5-6">As this example demonstrates, there are many ways we can view the question of linear independence, some of which are recorded in the following proposition.</div>
 <article class="proposition theorem-like" id="sec-linear-dep-5-7"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-linear-dep-5-7-1-1">
 <div class="para">For a matrix <span class="process-math">\(A = \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n}
 \end{array}\right]
 \text{,}\)</span> the following statements are equivalent:</div>
 <ul class="disc" id="sec-linear-dep-5-7-1-1-2">
 <li id="sec-linear-dep-5-7-1-1-2-1"><div class="para" id="sec-linear-dep-5-7-1-1-2-1-1">The columns of <span class="process-math">\(A\)</span> are linearly dependent.</div></li>
-<li id="sec-linear-dep-5-7-1-1-2-2"><div class="para" id="sec-linear-dep-5-7-1-1-2-2-1">One of the vectors in the set <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is a linear combination of the others.</div></li>
+<li id="sec-linear-dep-5-7-1-1-2-2"><div class="para" id="sec-linear-dep-5-7-1-1-2-2-1">One of the vectors in the set <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a linear combination of the others.</div></li>
 <li id="sec-linear-dep-5-7-1-1-2-3"><div class="para" id="sec-linear-dep-5-7-1-1-2-3-1">The matrix <span class="process-math">\(A\)</span> has a column without a pivot position.</div></li>
-<li id="sec-linear-dep-5-7-1-1-2-4"><div class="para" id="sec-linear-dep-5-7-1-1-2-4-1">The homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> has infinitely many solutions and hence a nonzero solution.</div></li>
+<li id="sec-linear-dep-5-7-1-1-2-4"><div class="para" id="sec-linear-dep-5-7-1-1-2-4-1">The homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has infinitely many solutions and hence a nonzero solution.</div></li>
 <li id="sec-linear-dep-5-7-1-1-2-5"><div class="para logical" id="sec-linear-dep-5-7-1-1-2-5-1">
 <div class="para">There are weights <span class="process-math">\(c_1,c_2,\ldots,c_n\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1084,12 +1084,12 @@ c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
 <li id="sec-linear-dep-6-2-1-1"><div class="para" id="sec-linear-dep-6-2-1-1-1">A set of vectors is linearly dependent if one of the vectors is a linear combination of the others.</div></li>
 <li id="sec-linear-dep-6-2-1-2"><div class="para" id="sec-linear-dep-6-2-1-2-1">A set of vectors is linearly independent if and only if the vectors form a matrix that has a pivot position in every column.</div></li>
 <li id="sec-linear-dep-6-2-1-3"><div class="para" id="sec-linear-dep-6-2-1-3-1">A set of linearly independent vectors in <span class="process-math">\(\real^m\)</span> contains no more than <span class="process-math">\(m\)</span> vectors.</div></li>
-<li id="sec-linear-dep-6-2-1-4"><div class="para" id="sec-linear-dep-6-2-1-4-1">The columns of the matrix <span class="process-math">\(A\)</span> are linearly dependent if the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> has a nonzero solution.</div></li>
+<li id="sec-linear-dep-6-2-1-4"><div class="para" id="sec-linear-dep-6-2-1-4-1">The columns of the matrix <span class="process-math">\(A\)</span> are linearly dependent if the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has a nonzero solution.</div></li>
 <li id="sec-linear-dep-6-2-1-5"><div class="para logical" id="sec-linear-dep-6-2-1-5-1">
-<div class="para">A set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is linearly dependent if there are weights <span class="process-math">\(c_1,c_2,\ldots,c_n\text{,}\)</span> not all of which are zero, such that</div>
+<div class="para">A set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is linearly dependent if there are weights <span class="process-math">\(c_1,c_2,\ldots,c_n\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1100,8 +1100,8 @@ c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \zerovec\text{.}
 <div class="para">As usual, we will write a matrix as a collection of vectors,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A=\left[\begin{array}{rrrr} \vvec_1\amp\vvec_2 \amp
-\ldots \amp \vvec_n \end{array}\right].
+A=\left[\begin{array}{rrrr} \vec{v_1}\amp\vec{v_2} \amp
+\ldots \amp \vec{v_n} \end{array}\right].
 \end{equation*}
 </div>
 </div>
@@ -1111,14 +1111,14 @@ A=\left[\begin{array}{rrrr} \vvec_1\amp\vvec_2 \amp
 <th scope="col" class="c t b2 r0 l0 t0 lines">Linear independence</th>
 </tr>
 <tr>
-<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-4-1-1">A vector <span class="process-math">\(\bvec\)</span> is in the span of a set of vectors if it is a linear combination of those vectors.</div></td>
+<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-4-1-1">A vector <span class="process-math">\(\vec{v_b}\)</span> is in the span of a set of vectors if it is a linear combination of those vectors.</div></td>
 <td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-4-2-1">A set of vectors is linearly dependent if one of the vectors is a linear combination of the others.</div></td>
 </tr>
 <tr>
-<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-1-1">A vector <span class="process-math">\(\bvec\)</span> is in the span of <span class="process-math">\(\vvec_1,
-\vvec_2, \ldots, \vvec_n\)</span> if there exists a solution to <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>
+<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-1-1">A vector <span class="process-math">\(\vec{v_b}\)</span> is in the span of <span class="process-math">\(\vec{v_1},
+\vec{v_2}, \ldots, \vec{v_n}\)</span> if there exists a solution to <span class="process-math">\(A\vec{x} = \vec{v_b}\text{.}\)</span>
 </div></td>
-<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-2-1">The vectors <span class="process-math">\(\vvec_1, \vvec_2, \ldots, \vvec_n\)</span> are linearly independent if <span class="process-math">\(\xvec=\zerovec\)</span> is the unique solution to <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>
+<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-2-1">The vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}\)</span> are linearly independent if <span class="process-math">\(\vec{x}=\zerovec\)</span> is the unique solution to <span class="process-math">\(A\vec{x} = \zerovec\text{.}\)</span>
 </div></td>
 </tr>
 <tr>
@@ -1137,29 +1137,29 @@ A=\left[\begin{array}{rrrr} \vvec_1\amp\vvec_2 \amp
 <div class="para">Consider the set of vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{1}{2}{1},
-\vvec_2 = \threevec{0}{1}{3},
-\vvec_3 = \threevec{2}{3}{-1},
-\vvec_4 = \threevec{-2}{4}{-1}\text{.}
+\vec{v_1} = \threevec{1}{2}{1},
+\vec{v_2} = \threevec{0}{1}{3},
+\vec{v_3} = \threevec{2}{3}{-1},
+\vec{v_4} = \threevec{-2}{4}{-1}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-1-1-1-2">
 <li id="sec-linear-dep-7-1-1-1-2-1"><div class="para" id="sec-linear-dep-7-1-1-1-2-1-1">Explain why this set of vectors is linearly dependent.</div></li>
-<li id="sec-linear-dep-7-1-1-1-2-2"><div class="para" id="sec-linear-dep-7-1-1-1-2-2-1">Write one of the vectors as a linear combination of the others. <div id="sec-linear-dep-7-1-1-1-2-2-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-linear-dep-7-1-1-1-2-2"><div class="para" id="sec-linear-dep-7-1-1-1-2-2-1">Write one of the vectors as a linear combination of the others. <div id="sec-linear-dep-7-1-1-1-2-2-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-linear-dep-7-1-1-1-2-3"><div class="para logical" id="sec-linear-dep-7-1-1-1-2-3-1">
 <div class="para">Find weights <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> <span class="process-math">\(c_3\text{,}\)</span> and <span class="process-math">\(c_4\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
-+ c_4 \vvec_4 = \zerovec\text{.}
+c_1\vec{v_1} + c_2 \vec{v_2} + c_3 \vec{v_3}
++ c_4 \vec{v_4} = \zerovec\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="sec-linear-dep-7-1-1-1-2-4"><div class="para" id="sec-linear-dep-7-1-1-1-2-4-1">Suppose <span class="process-math">\(A=\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\vvec_3\amp\vvec_4
-\end{array}\right]\text{.}\)</span>  Find a nonzero solution to the homogenous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>
+\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\amp\vec{v_4}
+\end{array}\right]\text{.}\)</span>  Find a nonzero solution to the homogenous equation <span class="process-math">\(A\vec{x} = \zerovec\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
@@ -1167,56 +1167,56 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{2}{-1}{0},
-\vvec_2 = \threevec{1}{2}{1},
-\vvec_3 = \threevec{2}{-2}{3}\text{.}
+\vec{v_1} = \threevec{2}{-1}{0},
+\vec{v_2} = \threevec{1}{2}{1},
+\vec{v_3} = \threevec{2}{-2}{3}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-2-1-1-2">
-<li id="sec-linear-dep-7-2-1-1-2-1"><div class="para" id="sec-linear-dep-7-2-1-1-2-1-1">Are these vectors linearly independent or linearly dependent? <div id="sec-linear-dep-7-2-1-1-2-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-linear-dep-7-2-1-1-2-1"><div class="para" id="sec-linear-dep-7-2-1-1-2-1-1">Are these vectors linearly independent or linearly dependent? <div id="sec-linear-dep-7-2-1-1-2-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-linear-dep-7-2-1-1-2-2"><div class="para" id="sec-linear-dep-7-2-1-1-2-2-1">Describe the <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</span>
+<li id="sec-linear-dep-7-2-1-1-2-2"><div class="para" id="sec-linear-dep-7-2-1-1-2-2-1">Describe the <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{.}\)</span>
 </div></li>
-<li id="sec-linear-dep-7-2-1-1-2-3"><div class="para" id="sec-linear-dep-7-2-1-1-2-3-1">Suppose that <span class="process-math">\(\bvec\)</span> is a vector in <span class="process-math">\(\real^3\text{.}\)</span>  Explain why we can guarantee that <span class="process-math">\(\bvec\)</span> may be written as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>
+<li id="sec-linear-dep-7-2-1-1-2-3"><div class="para" id="sec-linear-dep-7-2-1-1-2-3-1">Suppose that <span class="process-math">\(\vec{b}\)</span> is a vector in <span class="process-math">\(\real^3\text{.}\)</span>  Explain why we can guarantee that <span class="process-math">\(\vec{b}\)</span> may be written as a linear combination of <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span>
 </div></li>
-<li id="sec-linear-dep-7-2-1-1-2-4"><div class="para" id="sec-linear-dep-7-2-1-1-2-4-1">Suppose that <span class="process-math">\(\bvec\)</span> is a vector in <span class="process-math">\(\real^3\text{.}\)</span>  In how many ways can <span class="process-math">\(\bvec\)</span> be written as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{?}\)</span>
+<li id="sec-linear-dep-7-2-1-1-2-4"><div class="para" id="sec-linear-dep-7-2-1-1-2-4-1">Suppose that <span class="process-math">\(\vec{b}\)</span> is a vector in <span class="process-math">\(\real^3\text{.}\)</span>  In how many ways can <span class="process-math">\(\vec{b}\)</span> be written as a linear combination of <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-dep-7-3-1-1">
 <div class="para">Respond to the following questions and provide a justification for your responses.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-3-1-1-1">
-<li id="sec-linear-dep-7-3-1-1-1-1"><div class="para" id="sec-linear-dep-7-3-1-1-1-1-1">If the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a linearly dependent set, must one vector be a scalar multiple of the other?</div></li>
-<li id="sec-linear-dep-7-3-1-1-1-2"><div class="para" id="sec-linear-dep-7-3-1-1-1-2-1">Suppose that <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is a linearly independent set of vectors.  What can you say about the linear independence or dependence of a subset of these vectors?</div></li>
-<li id="sec-linear-dep-7-3-1-1-1-3"><div class="para" id="sec-linear-dep-7-3-1-1-1-3-1">Suppose <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is a linearly independent set of vectors that form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>  If the equation <span class="process-math">\(A\xvec = \bvec\)</span> is inconsistent, what can you say about the linear independence or dependence of the set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n,\bvec\text{?}\)</span>
+<li id="sec-linear-dep-7-3-1-1-1-1"><div class="para" id="sec-linear-dep-7-3-1-1-1-1-1">If the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> form a linearly dependent set, must one vector be a scalar multiple of the other?</div></li>
+<li id="sec-linear-dep-7-3-1-1-1-2"><div class="para" id="sec-linear-dep-7-3-1-1-1-2-1">Suppose that <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a linearly independent set of vectors.  What can you say about the linear independence or dependence of a subset of these vectors?</div></li>
+<li id="sec-linear-dep-7-3-1-1-1-3"><div class="para" id="sec-linear-dep-7-3-1-1-1-3-1">Suppose <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a linearly independent set of vectors that form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>  If the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is inconsistent, what can you say about the linear independence or dependence of the set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n},\vec{b}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-dep-7-4-1-1">
 <div class="para">Determine whether the following statements are true or false and provide a justification for your response.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-4-1-1-1">
-<li id="sec-linear-dep-7-4-1-1-1-1"><div class="para" id="sec-linear-dep-7-4-1-1-1-1-1">If <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> are linearly dependent, then one vector is a scalar multiple of one of the others.</div></li>
-<li id="sec-linear-dep-7-4-1-1-1-2"><div class="para" id="sec-linear-dep-7-4-1-1-1-2-1">If <span class="process-math">\(\vvec_1, \vvec_2, \ldots, \vvec_{10}\)</span> are vectors in <span class="process-math">\(\real^5\text{,}\)</span> then the set of vectors is linearly dependent.</div></li>
-<li id="sec-linear-dep-7-4-1-1-1-3"><div class="para" id="sec-linear-dep-7-4-1-1-1-3-1">If <span class="process-math">\(\vvec_1, \vvec_2, \ldots, \vvec_{5}\)</span> are vectors in <span class="process-math">\(\real^{10}\text{,}\)</span> then the set of vectors is linearly independent.</div></li>
-<li id="sec-linear-dep-7-4-1-1-1-4"><div class="para" id="sec-linear-dep-7-4-1-1-1-4-1">Suppose we have a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> and that <span class="process-math">\(\vvec_2\)</span> is a scalar multiple of <span class="process-math">\(\vvec_1\text{.}\)</span>  Then the set is linearly dependent.</div></li>
-<li id="sec-linear-dep-7-4-1-1-1-5"><div class="para" id="sec-linear-dep-7-4-1-1-1-5-1">Suppose that <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> are linearly independent and form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>  If <span class="process-math">\(A\xvec = \bvec\)</span> is consistent, then there is exactly one solution.</div></li>
+<li id="sec-linear-dep-7-4-1-1-1-1"><div class="para" id="sec-linear-dep-7-4-1-1-1-1-1">If <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> are linearly dependent, then one vector is a scalar multiple of one of the others.</div></li>
+<li id="sec-linear-dep-7-4-1-1-1-2"><div class="para" id="sec-linear-dep-7-4-1-1-1-2-1">If <span class="process-math">\(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_{10}}\)</span> are vectors in <span class="process-math">\(\real^5\text{,}\)</span> then the set of vectors is linearly dependent.</div></li>
+<li id="sec-linear-dep-7-4-1-1-1-3"><div class="para" id="sec-linear-dep-7-4-1-1-1-3-1">If <span class="process-math">\(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_5}\)</span> are vectors in <span class="process-math">\(\real^{10}\text{,}\)</span> then the set of vectors is linearly independent.</div></li>
+<li id="sec-linear-dep-7-4-1-1-1-4"><div class="para" id="sec-linear-dep-7-4-1-1-1-4-1">Suppose we have a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> and that <span class="process-math">\(\vec{v_2}\)</span> is a scalar multiple of <span class="process-math">\(\vec{v_1}\text{.}\)</span>  Then the set is linearly dependent.</div></li>
+<li id="sec-linear-dep-7-4-1-1-1-5"><div class="para" id="sec-linear-dep-7-4-1-1-1-5-1">Suppose that <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> are linearly independent and form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>  If <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent, then there is exactly one solution.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-dep-7-5-1-1">
-<div class="para">Suppose we have a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\vvec_3,\vvec_4\)</span> in <span class="process-math">\(\real^5\)</span> that satisfy the relationship:</div>
+<div class="para">Suppose we have a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}\)</span> in <span class="process-math">\(\real^5\)</span> that satisfy the relationship:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-2\vvec_1 - \vvec_2 + 3\vvec_3 + \vvec_4 = \zerovec
+2\vec{v_1} - \vec{v_2} + 3\vec{v_3} + \vec{v_4} = \zerovec
 \end{equation*}
 </div>
 <div class="para">and suppose that <span class="process-math">\(A\)</span> is the matrix <span class="process-math">\(A=\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\vvec_3\amp\vvec_4
+\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\amp\vec{v_4}
 \end{array}\right]
 \text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-5-1-1-6">
-<li id="sec-linear-dep-7-5-1-1-6-1"><div class="para" id="sec-linear-dep-7-5-1-1-6-1-1">Find a nonzero solution to the equation <span class="process-math">\(A\xvec =
+<li id="sec-linear-dep-7-5-1-1-6-1"><div class="para" id="sec-linear-dep-7-5-1-1-6-1-1">Find a nonzero solution to the equation <span class="process-math">\(A\vec{x} =
 \zerovec\text{.}\)</span>
 </div></li>
 <li id="sec-linear-dep-7-5-1-1-6-2"><div class="para" id="sec-linear-dep-7-5-1-1-6-2-1">Explain why the matrix <span class="process-math">\(A\)</span> has a column without a pivot position.</div></li>
@@ -1225,13 +1225,13 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-linear-dep-7-6-1-1">
-<div class="para">Suppose that <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is a set of vectors in <span class="process-math">\(\real^{27}\)</span> that form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>
+<div class="para">Suppose that <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a set of vectors in <span class="process-math">\(\real^{27}\)</span> that form the columns of a matrix <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-6-1-1-4">
 <li id="sec-linear-dep-7-6-1-1-4-1"><div class="para" id="sec-linear-dep-7-6-1-1-4-1-1">Suppose that the vectors span <span class="process-math">\(\real^{27}\text{.}\)</span>  What can you say about the number of vectors <span class="process-math">\(n\)</span> in this set?</div></li>
 <li id="sec-linear-dep-7-6-1-1-4-2"><div class="para" id="sec-linear-dep-7-6-1-1-4-2-1">Suppose instead that the vectors are linearly independent.  What can you say about the number of vectors <span class="process-math">\(n\)</span> in this set?</div></li>
 <li id="sec-linear-dep-7-6-1-1-4-3"><div class="para" id="sec-linear-dep-7-6-1-1-4-3-1">Suppose that the vectors are both linearly independent and span <span class="process-math">\(\real^{27}\text{.}\)</span>  What can you say about the number of vectors in the set?</div></li>
-<li id="sec-linear-dep-7-6-1-1-4-4"><div class="para" id="sec-linear-dep-7-6-1-1-4-4-1">Assume that the vectors are both linearly independent and span <span class="process-math">\(\real^{27}\text{.}\)</span>  Given a vector <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^{27}\text{,}\)</span> what can you say about the solution space to the equation <span class="process-math">\(A\xvec = \bvec\text{?}\)</span>
+<li id="sec-linear-dep-7-6-1-1-4-4"><div class="para" id="sec-linear-dep-7-6-1-1-4-4-1">Assume that the vectors are both linearly independent and span <span class="process-math">\(\real^{27}\text{.}\)</span>  Given a vector <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^{27}\text{,}\)</span> what can you say about the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-linear-dep-7-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
@@ -1263,9 +1263,9 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <div class="para">Suppose that <span class="process-math">\(k\)</span> is an unknown parameter and consider the set of vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{2}{0}{1}, 
-\vvec_2 = \threevec{4}{-2}{-1}, 
-\vvec_3 = \threevec{0}{2}{k}\text{.}
+\vec{v_1} = \threevec{2}{0}{1}, 
+\vec{v_2} = \threevec{4}{-2}{-1}, 
+\vec{v_3} = \threevec{0}{2}{k}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-9-1-1-3">
@@ -1277,25 +1277,25 @@ c_1\vvec_1 + c_2 \vvec_2 + c_3 \vvec_3
 <div class="para logical" id="sec-linear-dep-7-10-1-1">
 <div class="para">Given a set of linearly dependent vectors, we can eliminate some of the vectors to create a smaller, linearly independent set of vectors.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-linear-dep-7-10-1-1-1">
-<li id="sec-linear-dep-7-10-1-1-1-1"><div class="para" id="sec-linear-dep-7-10-1-1-1-1-1">Suppose that <span class="process-math">\(\wvec\)</span> is a linear combination of the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span> Explain why <span class="process-math">\(\laspan{\vvec_1,\vvec_2, \wvec} =
-\laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<li id="sec-linear-dep-7-10-1-1-1-1"><div class="para" id="sec-linear-dep-7-10-1-1-1-1-1">Suppose that <span class="process-math">\(\vec{w}\)</span> is a linear combination of the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span> Explain why <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}, \vec{w}} =
+\laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div></li>
 <li id="sec-linear-dep-7-10-1-1-1-2"><div class="para logical" id="sec-linear-dep-7-10-1-1-1-2-1">
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{2}{-1}{0},
-\vvec_2 = \threevec{1}{2}{1},
-\vvec_3 = \threevec{-2}{6}{2},
-\vvec_4 = \threevec{7}{-1}{1}\text{.}
+\vec{v_1} = \threevec{2}{-1}{0},
+\vec{v_2} = \threevec{1}{2}{1},
+\vec{v_3} = \threevec{-2}{6}{2},
+\vec{v_4} = \threevec{7}{-1}{1}\text{.}
 \end{equation*}
 </div>
-<div class="para">Write one of the vectors as a linear combination of the others.  Find a set of three vectors whose span is the same as <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</span>
+<div class="para">Write one of the vectors as a linear combination of the others.  Find a set of three vectors whose span is the same as <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}}\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-linear-dep-7-10-1-1-1-3"><div class="para" id="sec-linear-dep-7-10-1-1-1-3-1">Are the three vectors you are left with linearly independent?  If not, express one of the vectors as a linear combination of the others and find a set of two vectors whose span is the same as <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\text{.}\)</span>
+<li id="sec-linear-dep-7-10-1-1-1-3"><div class="para" id="sec-linear-dep-7-10-1-1-1-3-1">Are the three vectors you are left with linearly independent?  If not, express one of the vectors as a linear combination of the others and find a set of two vectors whose span is the same as <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}}\text{.}\)</span>
 </div></li>
-<li id="sec-linear-dep-7-10-1-1-1-4"><div class="para" id="sec-linear-dep-7-10-1-1-1-4-1">Give a geometric description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\)</span> in <span class="process-math">\(\real^3\)</span> as we did in <a href="sec-span.html" class="internal" title="Section 2.3: The span of a set of vectors">Section 2.3</a>.</div></li>
+<li id="sec-linear-dep-7-10-1-1-1-4"><div class="para" id="sec-linear-dep-7-10-1-1-1-4-1">Give a geometric description of <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}}\)</span> in <span class="process-math">\(\real^3\)</span> as we did in <a href="sec-span.html" class="internal" title="Section 2.3: The span of a set of vectors">Section 2.3</a>.</div></li>
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">

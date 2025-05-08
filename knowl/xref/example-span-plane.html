@@ -18,15 +18,15 @@
 <div class="para">Now let’s consider the set of three vectors:</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\wvec_1 = \threevec220,~~~
-\wvec_2 = \threevec11{-1},~~~
-\wvec_3 = \threevec{-5}{-5}{1}.
+\vec{w_1} = \threevec220,~~~
+\vec{w_2} = \threevec11{-1},~~~
+\vec{w_3} = \threevec{-5}{-5}{1}.
 \end{equation*}
 </div>
 <div class="para">Forming the associated matrix gives</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix}\wvec_1\amp\wvec_2\amp\wvec_3\end{bmatrix}
+\begin{bmatrix}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}\end{bmatrix}
 = 
 \begin{bmatrix}
 2 \amp 1 \amp -5 \\
@@ -47,7 +47,7 @@
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
-\begin{array}{rr|r}\wvec_1\amp\wvec_2\amp\wvec_3
+\begin{array}{rr|r}\vec{w_1}\amp\vec{w_2}\amp\vec{w_3}
 \end{array}
 \right]
 =
@@ -68,27 +68,27 @@
 \right].
 \end{equation*}
 </div>
-<div class="para">In this way, we see that <span class="process-math">\(\wvec_3 = -2\wvec_1 -
-\wvec_2\text{,}\)</span> which enables us to rewrite any linear combination of these three vectors:</div>
+<div class="para">In this way, we see that <span class="process-math">\(\vec{w_3} = -2\vec{w_1} -
+\vec{w_2}\text{,}\)</span> which enables us to rewrite any linear combination of these three vectors:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3 \amp
+c_1\vec{w_1} + c_2\vec{w_2} + c_3\vec{w_3} \amp
 {}={}
-c_1\wvec_1 + c_2\wvec_2 + c_3(-2\wvec_1-\wvec_2) \\
+c_1\vec{w_1} + c_2\vec{w_2} + c_3(-2\vec{w_1}-\vec{w_2}) \\
 \amp {}={}
-(c_1-2c_3)\wvec_1 + (c_2-c_3)\wvec_2. \\
+(c_1-2c_3)\vec{w_1} + (c_2-c_3)\vec{w_2}. \\
 \end{aligned}
 \end{equation*}
 </div>
 </div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">In other words, any linear combination of <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> and <span class="process-math">\(\wvec_3\)</span> may be written as a linear combination using only the vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span>  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</div>
+<div class="para">In other words, any linear combination of <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> and <span class="process-math">\(\vec{w_3}\)</span> may be written as a linear combination using only the vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{.}\)</span>  Since the span of a set of vectors is simply the set of their linear combinations, this shows that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}.
+\laspan{\vec{w_1},\vec{w_2},\vec{w_3}} = \laspan{\vec{w_1},\vec{w_2}}.
 \end{equation*}
 </div>
-<div class="para">As a result, adding the vector <span class="process-math">\(\wvec_3\)</span> to the set of vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> does not change the span.</div>
+<div class="para">As a result, adding the vector <span class="process-math">\(\vec{w_3}\)</span> to the set of vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\)</span> does not change the span.</div>
 </div></article><span class="incontext"><a class="internal" href="sec-linear-dep.html#example-span-plane">in-context</a></span>
 </body>
 </html>

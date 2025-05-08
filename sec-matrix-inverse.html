@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -597,7 +597,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-matrix-inverse"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Invertibility</span>
 </h2>
-<section class="introduction" id="sec-matrix-inverse-2"><div class="para" id="sec-matrix-inverse-2-1">Up to this point, we have used the Gaussian elimination algorithm to find solutions to linear systems.  We now investigate another way to find solutions to the equation <span class="process-math">\(A\xvec=\bvec\)</span> when the matrix <span class="process-math">\(A\)</span> has the same number of rows and columns.  To get started, let’s look at some familiar examples.</div>
+<section class="introduction" id="sec-matrix-inverse-2"><div class="para" id="sec-matrix-inverse-2-1">Up to this point, we have used the Gaussian elimination algorithm to find solutions to linear systems.  We now investigate another way to find solutions to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> when the matrix <span class="process-math">\(A\)</span> has the same number of rows and columns.  To get started, let’s look at some familiar examples.</div>
 <article class="exploration project-like" id="sec-matrix-inverse-2-2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h3>
@@ -609,17 +609,17 @@ sagecell.makeSagecell({
 <li id="sec-matrix-inverse-2-2-1-1-1-3"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-3-1">Find the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(B\)</span> that rotates vectors <em class="emphasis">clockwise</em> by <span class="process-math">\(90^\circ\text{.}\)</span>
 </div></li>
 <li id="sec-matrix-inverse-2-2-1-1-1-4"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-4-1">What do you expect the product <span class="process-math">\(AB\)</span> to be? Explain the reasoning behind your expectation and then compute <span class="process-math">\(AB\)</span> to verify it.</div></li>
-<li id="sec-matrix-inverse-2-2-1-1-1-5"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-5-1">Solve the equation <span class="process-math">\(A\xvec = \twovec{3}{-2}\)</span> using Gaussian elimination. <div id="sec-matrix-inverse-2-2-1-1-1-5-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrix-inverse-2-2-1-1-1-5"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-5-1">Solve the equation <span class="process-math">\(A\vec{x} = \twovec{3}{-2}\)</span> using Gaussian elimination. <div id="sec-matrix-inverse-2-2-1-1-1-5-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-matrix-inverse-2-2-1-1-1-6"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-6-1">Explain why your solution may also be found by computing <span class="process-math">\(\xvec = B\twovec{3}{-2}\text{.}\)</span>
+<li id="sec-matrix-inverse-2-2-1-1-1-6"><div class="para" id="sec-matrix-inverse-2-2-1-1-1-6-1">Explain why your solution may also be found by computing <span class="process-math">\(\vec{x} = B\twovec{3}{-2}\text{.}\)</span>
 </div></li>
 </ol></div></article></section><section class="subsection" id="sec-matrix-inverse-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Invertible matrices</span>
 </h3>
 <div class="para" id="sec-matrix-inverse-3-2">The preview activity began with a familiar type of equation, <span class="process-math">\(3x = 5\text{,}\)</span> and asked for a strategy to solve it. One possible response is to divide both sides by 3. Instead, let’s rephrase this as multiplying by <span class="process-math">\(3^{-1} = \frac
 13\text{,}\)</span> the multiplicative inverse of 3.</div>
-<div class="para" id="sec-matrix-inverse-3-3">Now that we are interested in solving equations of the form <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we might try to find a similar approach. Is there a matrix <span class="process-math">\(A^{-1}\)</span> that plays the role of the multiplicative inverse of <span class="process-math">\(A\text{?}\)</span>  Of course, the real number <span class="process-math">\(0\)</span> does not have a multiplicative inverse so we probably shouldn’t expect every matrix to have a multiplicative inverse. We will see, however, that many do.</div>
+<div class="para" id="sec-matrix-inverse-3-3">Now that we are interested in solving equations of the form <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we might try to find a similar approach. Is there a matrix <span class="process-math">\(A^{-1}\)</span> that plays the role of the multiplicative inverse of <span class="process-math">\(A\text{?}\)</span>  Of course, the real number <span class="process-math">\(0\)</span> does not have a multiplicative inverse so we probably shouldn’t expect every matrix to have a multiplicative inverse. We will see, however, that many do.</div>
 <article class="definition definition-like" id="sec-matrix-inverse-3-4"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h4> <div class="para" id="sec-matrix-inverse-3-4-1-3">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is called <em class="emphasis">invertible</em> if there is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB = I_n\text{,}\)</span> where <span class="process-math">\(I_n\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix.  The matrix <span class="process-math">\(B\)</span> is called the <em class="emphasis">inverse</em> of <span class="process-math">\(A\)</span> and denoted <span class="process-math">\(A^{-1}\text{.}\)</span>
@@ -673,14 +673,14 @@ AB = \begin{bmatrix}
 3 \amp -2 \\
 1 \amp -1 \\
 \end{bmatrix}
-\text{.}\)</span>  To find an inverse <span class="process-math">\(B\text{,}\)</span> we write its columns as <span class="process-math">\(B = \begin{bmatrix}\bvec_1 \amp \bvec_2
+\text{.}\)</span>  To find an inverse <span class="process-math">\(B\text{,}\)</span> we write its columns as <span class="process-math">\(B = \begin{bmatrix}\vec{b_1} \amp \vec{b_2}
 \end{bmatrix}\)</span> and require that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 AB \amp = I \\
 \begin{bmatrix}
-A\bvec_1 \amp A\bvec_2
+A\vec{b_1} \amp A\vec{b_2}
 \end{bmatrix}
 \amp = 
 \begin{bmatrix}
@@ -693,15 +693,15 @@ A\bvec_1 \amp A\bvec_2
 <div class="para">In other words, we can find the columns of <span class="process-math">\(B\)</span> by solving the equations</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A\bvec_1 = \twovec10,~~~
-A\bvec_2 = \twovec01.
+A\vec{b_1} = \twovec10,~~~
+A\vec{b_2} = \twovec01.
 \end{equation*}
 </div>
-<div class="para">Solve these equations to find <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\text{.}\)</span>  Then write the matrix <span class="process-math">\(B\)</span> and verify that <span class="process-math">\(AB=I\text{.}\)</span>  This is enough for us to conclude that <span class="process-math">\(B\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span> <div id="sec-matrix-inverse-3-7-1-1-2-1-1-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Solve these equations to find <span class="process-math">\(\vec{b_1}\)</span> and <span class="process-math">\(\vec{b_2}\text{.}\)</span>  Then write the matrix <span class="process-math">\(B\)</span> and verify that <span class="process-math">\(AB=I\text{.}\)</span>  This is enough for us to conclude that <span class="process-math">\(B\)</span> is the inverse of <span class="process-math">\(A\text{.}\)</span> <div id="sec-matrix-inverse-3-7-1-1-2-1-1-13" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-matrix-inverse-3-7-1-1-2-2"><div class="para" id="sec-matrix-inverse-3-7-1-1-2-2-1">Find the product <span class="process-math">\(BA\)</span> and explain why we now know that <span class="process-math">\(B\)</span> is invertible and <span class="process-math">\(B^{-1}=A\text{.}\)</span> <div id="sec-matrix-inverse-3-7-1-1-2-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrix-inverse-3-7-1-1-2-2"><div class="para" id="sec-matrix-inverse-3-7-1-1-2-2-1">Find the product <span class="process-math">\(BA\)</span> and explain why we now know that <span class="process-math">\(B\)</span> is invertible and <span class="process-math">\(B^{-1}=A\text{.}\)</span> <div id="sec-matrix-inverse-3-7-1-1-2-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrix-inverse-3-7-1-1-2-3"><div class="para" id="sec-matrix-inverse-3-7-1-1-2-3-1">What happens when you try to find the inverse of <span class="process-math">\(C = \begin{bmatrix}
@@ -711,15 +711,15 @@ A\bvec_2 = \twovec01.
 </div></li>
 <li id="sec-matrix-inverse-3-7-1-1-2-4">
 <div class="para logical" id="sec-matrix-inverse-3-7-1-1-2-4-1">
-<div class="para">We now develop a condition that must be satisfied by an invertible matrix. Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\)</span> and suppose that <span class="process-math">\(\bvec\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector. Since <span class="process-math">\(AB=I\text{,}\)</span> we have</div>
+<div class="para">We now develop a condition that must be satisfied by an invertible matrix. Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\)</span> and suppose that <span class="process-math">\(\vec{b}\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector. Since <span class="process-math">\(AB=I\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A(B\bvec) = (AB)\bvec = I\bvec = \bvec.
+A(B\vec{b}) = (AB)\vec{b} = I\vec{b} = \vec{b}.
 \end{equation*}
 </div>
-<div class="para">This says that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent and that <span class="process-math">\(\xvec=B\bvec\)</span> is a solution.</div>
+<div class="para">This says that the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent and that <span class="process-math">\(\vec{x}=B\vec{b}\)</span> is a solution.</div>
 </div>
-<div class="para" id="sec-matrix-inverse-3-7-1-1-2-4-2">Since we know that <span class="process-math">\(A\xvec = \bvec\)</span> is consistent for any vector <span class="process-math">\(\bvec\text{,}\)</span> what does this say about the span of the columns of <span class="process-math">\(A\text{?}\)</span>
+<div class="para" id="sec-matrix-inverse-3-7-1-1-2-4-2">Since we know that <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent for any vector <span class="process-math">\(\vec{b}\text{,}\)</span> what does this say about the span of the columns of <span class="process-math">\(A\text{?}\)</span>
 </div>
 </li>
 <li id="sec-matrix-inverse-3-7-1-1-2-5"><div class="para" id="sec-matrix-inverse-3-7-1-1-2-5-1">Since <span class="process-math">\(A\)</span> is a square matrix, what does this say about the pivot positions of <span class="process-math">\(A\text{?}\)</span> What is the reduced row echelon form of <span class="process-math">\(A\text{?}\)</span>
@@ -745,11 +745,11 @@ C = \begin{bmatrix}
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="example-inverse-augment-I-1-1">
-<div class="para">We can reformulate this procedure for finding the inverse of a matrix.  For the sake of convenience, suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> invertible matrix with inverse <span class="process-math">\(B=\begin{bmatrix} \bvec_1 \amp \bvec_2 \end{bmatrix}\text{.}\)</span> Rather than solving the equations</div>
+<div class="para">We can reformulate this procedure for finding the inverse of a matrix.  For the sake of convenience, suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> invertible matrix with inverse <span class="process-math">\(B=\begin{bmatrix} \vec{b_1} \amp \vec{b_2} \end{bmatrix}\text{.}\)</span> Rather than solving the equations</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A\bvec_1 = \twovec10,~~~
-A\bvec_2 = \twovec01
+A\vec{b_1} = \twovec10,~~~
+A\vec{b_2} = \twovec01
 \end{equation*}
 </div>
 <div class="para">separately, we can solve them at the same time by augmenting <span class="process-math">\(A\)</span> by both vectors <span class="process-math">\(\twovec10\)</span> and <span class="process-math">\(\twovec01\)</span> and finding the reduced row echelon form.</div>
@@ -800,15 +800,15 @@ I \amp A^{-1} \\
 \right].
 \end{equation*}
 </div>
-</div></article><div class="para" id="sec-matrix-inverse-3-9">In fact, this reformulation will always work.  Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\text{.}\)</span>  Suppose furthermore that <span class="process-math">\(\bvec\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector and consider the equation <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  We know that <span class="process-math">\(x=B\bvec\)</span> is a solution because <span class="process-math">\(A(B\bvec) = (AB)\bvec = I\bvec = \bvec.\)</span>
+</div></article><div class="para" id="sec-matrix-inverse-3-9">In fact, this reformulation will always work.  Suppose that <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix with inverse <span class="process-math">\(B\text{.}\)</span>  Suppose furthermore that <span class="process-math">\(\vec{b}\)</span> is any <span class="process-math">\(n\)</span>-dimensional vector and consider the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  We know that <span class="process-math">\(x=B\vec{b}\)</span> is a solution because <span class="process-math">\(A(B\vec{b}) = (AB)\vec{b} = I\vec{b} = \vec{b}.\)</span>
 </div>
 <article class="proposition theorem-like" id="proposition-inverse-solve"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="proposition-inverse-solve-1-1">If <span class="process-math">\(A\)</span> is an invertible matrix with inverse <span class="process-math">\(B\text{,}\)</span> then any equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent and <span class="process-math">\(\xvec = B\bvec\)</span> is a solution.  In other words, the solution to <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
-A^{-1}\bvec\text{.}\)</span>
+<div class="para" id="proposition-inverse-solve-1-1">If <span class="process-math">\(A\)</span> is an invertible matrix with inverse <span class="process-math">\(B\text{,}\)</span> then any equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent and <span class="process-math">\(\vec{x} = B\vec{b}\)</span> is a solution.  In other words, the solution to <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(\vec{x} =
+A^{-1}\vec{b}\text{.}\)</span>
 </div></article><div class="para" id="sec-matrix-inverse-3-11">Notice that this is similar to saying that the solution to <span class="process-math">\(3x=5\)</span> is <span class="process-math">\(x = \frac13\cdot 5\text{,}\)</span> as we saw in the preview activity.</div>
-<div class="para" id="sec-matrix-inverse-3-12">Now since <span class="process-math">\(A\xvec=\bvec\)</span> is consistent for every vector <span class="process-math">\(\bvec\text{,}\)</span> the columns of <span class="process-math">\(A\)</span> must span <span class="process-math">\(\real^n\)</span> so there is a pivot position in every row.  Since <span class="process-math">\(A\)</span> is also square, this means that the reduced row echelon form of <span class="process-math">\(A\)</span> is the identity matrix.</div>
+<div class="para" id="sec-matrix-inverse-3-12">Now since <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is consistent for every vector <span class="process-math">\(\vec{b}\text{,}\)</span> the columns of <span class="process-math">\(A\)</span> must span <span class="process-math">\(\real^n\)</span> so there is a pivot position in every row.  Since <span class="process-math">\(A\)</span> is also square, this means that the reduced row echelon form of <span class="process-math">\(A\)</span> is the identity matrix.</div>
 <article class="proposition theorem-like" id="proposition-invertible-rref"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h4>
@@ -829,8 +829,8 @@ I \amp A^{-1} \\
 \right].
 \end{equation*}
 </div>
-</div></article><div class="para" id="sec-matrix-inverse-3-14">You may have noticed that <a href="sec-matrix-inverse.html#proposition-inverse-solve" class="xref" data-knowl="./knowl/xref/proposition-inverse-solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.4">Proposition 3.1.4</a> says that <em class="emphasis">the</em> solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
-A^{-1}\bvec\text{.}\)</span>  Indeed, we know that this equation has a unique solution because <span class="process-math">\(A\)</span> has a pivot position in every column.</div>
+</div></article><div class="para" id="sec-matrix-inverse-3-14">You may have noticed that <a href="sec-matrix-inverse.html#proposition-inverse-solve" class="xref" data-knowl="./knowl/xref/proposition-inverse-solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.4">Proposition 3.1.4</a> says that <em class="emphasis">the</em> solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(\vec{x} =
+A^{-1}\vec{b}\text{.}\)</span>  Indeed, we know that this equation has a unique solution because <span class="process-math">\(A\)</span> has a pivot position in every column.</div>
 <div class="para" id="sec-matrix-inverse-3-15">It is important to remember that the product of two matrices depends on the order in which they are multiplied.  That is, if <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are matrices, then it sometimes happens that <span class="process-math">\(CD \neq DC\text{.}\)</span>  However, something fortunate happens when we consider invertibility.  It turns out that if <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and that <span class="process-math">\(AB=I\text{,}\)</span> then it is also true that <span class="process-math">\(BA=I\text{.}\)</span>  We have verified this in a few examples so far, and <a href="sec-matrix-inverse.html#ex-right-inverse" class="xref" data-knowl="./knowl/xref/ex-right-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 3.1.5.12">Exercise 3.1.5.12</a> explains why it always happens.  This leads to the following proposition.</div>
 <article class="proposition theorem-like" id="proposition-inverse-inverse"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
@@ -845,7 +845,7 @@ A^{-1}\bvec\text{.}\)</span>  Indeed, we know that this equation has a unique so
 </div></article></section><section class="subsection" id="sec-matrix-inverse-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Solving equations with an inverse</span>
 </h3>
-<div class="para" id="sec-matrix-inverse-4-2">If <span class="process-math">\(A\)</span> is an invertible matrix, then <a href="sec-matrix-inverse.html#proposition-inverse-solve" class="xref" data-knowl="./knowl/xref/proposition-inverse-solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.4">Proposition 3.1.4</a> shows us how to use <span class="process-math">\(A^{-1}\)</span> to solve equations involving <span class="process-math">\(A\text{.}\)</span>  In particular, the solution to <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec = A^{-1}\bvec\text{.}\)</span>
+<div class="para" id="sec-matrix-inverse-4-2">If <span class="process-math">\(A\)</span> is an invertible matrix, then <a href="sec-matrix-inverse.html#proposition-inverse-solve" class="xref" data-knowl="./knowl/xref/proposition-inverse-solve.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.4">Proposition 3.1.4</a> shows us how to use <span class="process-math">\(A^{-1}\)</span> to solve equations involving <span class="process-math">\(A\text{.}\)</span>  In particular, the solution to <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(\vec{x} = A^{-1}\vec{b}\text{.}\)</span>
 </div>
 <article class="activity project-like" id="sec-matrix-inverse-4-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
@@ -862,15 +862,15 @@ A = \begin{bmatrix}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrix-inverse-4-3-1-1-2">
-<li id="sec-matrix-inverse-4-3-1-1-2-1"><div class="para" id="sec-matrix-inverse-4-3-1-1-2-1-1">Describe the solution space to the equation <span class="process-math">\(A\xvec
-= \threevec343\)</span> by augmenting <span class="process-math">\(A\)</span> and finding the reduced row echelon form. <div id="sec-matrix-inverse-4-3-1-1-2-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrix-inverse-4-3-1-1-2-1"><div class="para" id="sec-matrix-inverse-4-3-1-1-2-1-1">Describe the solution space to the equation <span class="process-math">\(A\vec{x}
+= \threevec343\)</span> by augmenting <span class="process-math">\(A\)</span> and finding the reduced row echelon form. <div id="sec-matrix-inverse-4-3-1-1-2-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrix-inverse-4-3-1-1-2-2"><div class="para" id="sec-matrix-inverse-4-3-1-1-2-2-1">Using <a href="sec-matrix-inverse.html#proposition-invertible-rref" class="xref" data-knowl="./knowl/xref/proposition-invertible-rref.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.5">Proposition 3.1.5</a>, explain why <span class="process-math">\(A\)</span> is invertible and find its inverse.</div></li>
-<li id="sec-matrix-inverse-4-3-1-1-2-3"><div class="para" id="sec-matrix-inverse-4-3-1-1-2-3-1">Now use the inverse to solve the equation <span class="process-math">\(A\xvec =
+<li id="sec-matrix-inverse-4-3-1-1-2-3"><div class="para" id="sec-matrix-inverse-4-3-1-1-2-3-1">Now use the inverse to solve the equation <span class="process-math">\(A\vec{x} =
 \threevec343\)</span> and verify that your result agrees with what you found in part a.</div></li>
 <li id="sec-matrix-inverse-4-3-1-1-2-4"><div class="para logical" id="sec-matrix-inverse-4-3-1-1-2-4-1">
-<div class="para">If you have defined a matrix <code class="code-inline tex2jax_ignore">B</code> in Sage, you can find it’s inverse as <code class="code-inline tex2jax_ignore">B.inverse()</code> or <code class="code-inline tex2jax_ignore">B^-1</code>.  Use Sage to find the inverse of the matrix</div>
+<div class="para">If you have defined a matrix <code class="code-inline tex2jax_ignore">B</code> using <code class="code-inline tex2jax_ignore">{sympy}</code>’s , <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>, you can find it’s inverse using <code class="code-inline tex2jax_ignore">B.inv()</code>. If you are using <code class="code-inline tex2jax_ignore">{numpy}</code> instead, then you can define the matrix <span class="process-math">\(B\)</span> using <code class="code-inline tex2jax_ignore">np.array()</code> and then use <code class="code-inline tex2jax_ignore">np.linalg.inv(B)</code> to find the inverse of <span class="process-math">\(B\text{,}\)</span> provided that it exists. Use Python to find the inverse of the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 B = \left[\begin{array}{rrr}
@@ -880,8 +880,8 @@ B = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and use it to solve the equation <span class="process-math">\(B\xvec =
-\threevec83{36}\text{.}\)</span> <div id="sec-matrix-inverse-4-3-1-1-2-4-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Try it using <code class="code-inline tex2jax_ignore">{sympy}</code> and then again using <code class="code-inline tex2jax_ignore">{numpy}</code>. What do you notice about the results? Now that you’ve found <span class="process-math">\(B^{-1}\text{,}\)</span> use it to solve the equation <span class="process-math">\(B\vec{x} =
+\threevec83{36}\text{.}\)</span> <div id="sec-matrix-inverse-4-3-1-1-2-4-1-15" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -905,8 +905,8 @@ B = \left[\begin{array}{rrr}
 <div class="para logical" id="proposition-invertible-properties-2-1"><ul class="disc" id="proposition-invertible-properties-2-1-1">
 <li id="proposition-invertible-properties-2-1-1-1"><div class="para" id="proposition-invertible-properties-2-1-1-1-1">An <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(A\sim I\text{.}\)</span>
 </div></li>
-<li id="proposition-invertible-properties-2-1-1-2"><div class="para" id="proposition-invertible-properties-2-1-1-2-1">If <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is given by <span class="process-math">\(\xvec =
-A^{-1}\bvec\text{.}\)</span>
+<li id="proposition-invertible-properties-2-1-1-2"><div class="para" id="proposition-invertible-properties-2-1-1-2-1">If <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is given by <span class="process-math">\(\vec{x} =
+A^{-1}\vec{b}\text{.}\)</span>
 </div></li>
 <li id="proposition-invertible-properties-2-1-1-3"><div class="para logical" id="proposition-invertible-properties-2-1-1-3-1">
 <div class="para">We can find <span class="process-math">\(A^{-1}\)</span> by finding the reduced row echelon form of <span class="process-math">\(\left[\begin{array}{r|r} A \amp I
@@ -1063,13 +1063,13 @@ R = \begin{bmatrix}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="subsec-triangular-invertible-8-2-2-6">
-<li id="subsec-triangular-invertible-8-2-2-6-1"><div class="para" id="subsec-triangular-invertible-8-2-2-6-1-1">Show that the product <span class="process-math">\(RA\)</span> is the result of applying the replacement operation to <span class="process-math">\(A\text{.}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="subsec-triangular-invertible-8-2-2-6-1"><div class="para" id="subsec-triangular-invertible-8-2-2-6-1-1">Show that the product <span class="process-math">\(RA\)</span> is the result of applying the replacement operation to <span class="process-math">\(A\text{.}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="subsec-triangular-invertible-8-2-2-6-2"><div class="para" id="subsec-triangular-invertible-8-2-2-6-2-1">Explain why <span class="process-math">\(R\)</span> is invertible and find its inverse <span class="process-math">\(R^{-1}\text{.}\)</span>
 </div></li>
 <li id="subsec-triangular-invertible-8-2-2-6-3"><div class="para" id="subsec-triangular-invertible-8-2-2-6-3-1">Describe the relationship between <span class="process-math">\(R\)</span> and <span class="process-math">\(R^{-1}\)</span> and use the connection to replacement operations to explain why it holds.</div></li>
-<li id="subsec-triangular-invertible-8-2-2-6-4"><div class="para" id="subsec-triangular-invertible-8-2-2-6-4-1">Other row operations can be performed using a similar procedure.  For instance, suppose we want to scale the second row of <span class="process-math">\(A\)</span> by <span class="process-math">\(4\text{.}\)</span>  Find a matrix <span class="process-math">\(S\)</span> so that <span class="process-math">\(SA\)</span> is the same as that obtained from the scaling operation.  Why is <span class="process-math">\(S\)</span> invertible and what is <span class="process-math">\(S^{-1}\text{?}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-4-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="subsec-triangular-invertible-8-2-2-6-4"><div class="para" id="subsec-triangular-invertible-8-2-2-6-4-1">Other row operations can be performed using a similar procedure.  For instance, suppose we want to scale the second row of <span class="process-math">\(A\)</span> by <span class="process-math">\(4\text{.}\)</span>  Find a matrix <span class="process-math">\(S\)</span> so that <span class="process-math">\(SA\)</span> is the same as that obtained from the scaling operation.  Why is <span class="process-math">\(S\)</span> invertible and what is <span class="process-math">\(S^{-1}\text{?}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-4-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="subsec-triangular-invertible-8-2-2-6-5"><div class="para" id="subsec-triangular-invertible-8-2-2-6-5-1">Finally, suppose we want to interchange the first and third rows of <span class="process-math">\(A\text{.}\)</span>  Find a matrix <span class="process-math">\(P\text{,}\)</span> usually called a <em class="emphasis">permutation matrix</em> that performs this operation.  What is <span class="process-math">\(P^{-1}\text{?}\)</span>
@@ -1095,7 +1095,7 @@ A = \left[\begin{array}{rrr}
 <div class="para">Find the matrices <span class="process-math">\(L_1\text{,}\)</span> <span class="process-math">\(L_2\text{,}\)</span> and <span class="process-math">\(L_3\)</span> that perform these row replacement operations so that <span class="process-math">\(L_3L_2L_1 A = U\text{.}\)</span>
 </div>
 </div></li>
-<li id="subsec-triangular-invertible-8-2-2-6-7"><div class="para" id="subsec-triangular-invertible-8-2-2-6-7-1">Explain why the matrix product <span class="process-math">\(L_3L_2L_1\)</span> is invertible and use this fact to write <span class="process-math">\(A = LU\text{.}\)</span>  What is the matrix <span class="process-math">\(L\)</span> that you find?  Why do you think we denote it by <span class="process-math">\(L\text{?}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-7-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="subsec-triangular-invertible-8-2-2-6-7"><div class="para" id="subsec-triangular-invertible-8-2-2-6-7-1">Explain why the matrix product <span class="process-math">\(L_3L_2L_1\)</span> is invertible and use this fact to write <span class="process-math">\(A = LU\text{.}\)</span>  What is the matrix <span class="process-math">\(L\)</span> that you find?  Why do you think we denote it by <span class="process-math">\(L\text{?}\)</span> <div id="subsec-triangular-invertible-8-2-2-6-7-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol>
@@ -1268,8 +1268,8 @@ I\text{.}\)</span>  We usually write <span class="process-math">\(A^{-1} = B\tex
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-matrix-inverse-6-2-1-4"><div class="para" id="sec-matrix-inverse-6-2-1-4-1">If a matrix <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(\xvec =
-A^{-1}\bvec\text{.}\)</span>
+<li id="sec-matrix-inverse-6-2-1-4"><div class="para" id="sec-matrix-inverse-6-2-1-4-1">If a matrix <span class="process-math">\(A\)</span> is invertible, then the solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(\vec{x} =
+A^{-1}\vec{b}\text{.}\)</span>
 </div></li>
 <li id="sec-matrix-inverse-6-2-1-5"><div class="para" id="sec-matrix-inverse-6-2-1-5-1">The row operations of replacement, scaling, and interchange can be performed by multiplying by elementary matrices.</div></li>
 </ul>
@@ -1289,14 +1289,14 @@ A = \left[\begin{array}{rrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrix-inverse-7-1-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrix-inverse-7-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrix-inverse-7-1-1-1-3">
 <li id="sec-matrix-inverse-7-1-1-1-3-1"><div class="para" id="sec-matrix-inverse-7-1-1-1-3-1-1">Explain why <span class="process-math">\(A\)</span> has an inverse.</div></li>
 <li id="sec-matrix-inverse-7-1-1-1-3-2"><div class="para" id="sec-matrix-inverse-7-1-1-1-3-2-1">Find the inverse of <span class="process-math">\(A\)</span> by augmenting by the identity <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}A \amp
 I \end{array}\right]\text{.}\)</span>
 </div></li>
-<li id="sec-matrix-inverse-7-1-1-1-3-3"><div class="para" id="sec-matrix-inverse-7-1-1-1-3-3-1">Use your inverse to solve the equation <span class="process-math">\(A\xvec =
+<li id="sec-matrix-inverse-7-1-1-1-3-3"><div class="para" id="sec-matrix-inverse-7-1-1-1-3-3-1">Use your inverse to solve the equation <span class="process-math">\(A\vec{x} =
 \fourvec{3}{2}{-3}{-1}\text{.}\)</span>
 </div></li>
 </ol>
@@ -1360,13 +1360,13 @@ B = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrix-inverse-7-4-1-1-5">
-<li id="sec-matrix-inverse-7-4-1-1-5-1"><div class="para" id="sec-matrix-inverse-7-4-1-1-5-1-1">Verify that <span class="process-math">\(BA = I_2\text{.}\)</span>  In this case, we say that <span class="process-math">\(B\)</span> is a <em class="emphasis">left</em> inverse of <span class="process-math">\(A\text{.}\)</span> <div id="sec-matrix-inverse-7-4-1-1-5-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrix-inverse-7-4-1-1-5-1"><div class="para" id="sec-matrix-inverse-7-4-1-1-5-1-1">Verify that <span class="process-math">\(BA = I_2\text{.}\)</span>  In this case, we say that <span class="process-math">\(B\)</span> is a <em class="emphasis">left</em> inverse of <span class="process-math">\(A\text{.}\)</span> <div id="sec-matrix-inverse-7-4-1-1-5-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrix-inverse-7-4-1-1-5-2">
-<div class="para" id="sec-matrix-inverse-7-4-1-1-5-2-1">If <span class="process-math">\(A\)</span> has a left inverse <span class="process-math">\(B\text{,}\)</span> we can still use it to find solutions to linear equations.  If we know there is a solution to the equation <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we can multiply both sides of the equation by <span class="process-math">\(B\)</span> to find <span class="process-math">\(\xvec = B\bvec\text{.}\)</span>
+<div class="para" id="sec-matrix-inverse-7-4-1-1-5-2-1">If <span class="process-math">\(A\)</span> has a left inverse <span class="process-math">\(B\text{,}\)</span> we can still use it to find solutions to linear equations.  If we know there is a solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we can multiply both sides of the equation by <span class="process-math">\(B\)</span> to find <span class="process-math">\(\vec{x} = B\vec{b}\text{.}\)</span>
 </div>
-<div class="para" id="sec-matrix-inverse-7-4-1-1-5-2-2">Suppose you know there is a solution to the equation <span class="process-math">\(A\xvec = \threevec{-1}{-3}{6}\text{.}\)</span>  Use the left inverse <span class="process-math">\(B\)</span> to find <span class="process-math">\(\xvec\)</span> and verify that it is a solution.</div>
+<div class="para" id="sec-matrix-inverse-7-4-1-1-5-2-2">Suppose you know there is a solution to the equation <span class="process-math">\(A\vec{x} = \threevec{-1}{-3}{6}\text{.}\)</span>  Use the left inverse <span class="process-math">\(B\)</span> to find <span class="process-math">\(\vec{x}\)</span> and verify that it is a solution.</div>
 </li>
 <li id="sec-matrix-inverse-7-4-1-1-5-3"><div class="para logical" id="sec-matrix-inverse-7-4-1-1-5-3-1">
 <div class="para">Now consider the matrix</div>
@@ -1444,10 +1444,10 @@ A = \left[\begin{array}{rrr}
 <li id="sec-matrix-inverse-7-7-1-1-1-2"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-2-1">If <span class="process-math">\(A\)</span> is a square matrix whose diagonal entries are all nonzero, then <span class="process-math">\(A\)</span> is invertible.</div></li>
 <li id="sec-matrix-inverse-7-7-1-1-1-3"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-3-1">If <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(n\times n\)</span> matrix, then span of the columns of <span class="process-math">\(A\)</span> is <span class="process-math">\(\real^n\text{.}\)</span>
 </div></li>
-<li id="sec-matrix-inverse-7-7-1-1-1-4"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-4-1">If <span class="process-math">\(A\)</span> is invertible, then there is a nonzero solution to the homogeneous equation <span class="process-math">\(A\xvec =
-\zerovec\text{.}\)</span>
+<li id="sec-matrix-inverse-7-7-1-1-1-4"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-4-1">If <span class="process-math">\(A\)</span> is invertible, then there is a nonzero solution to the homogeneous equation <span class="process-math">\(A\vec{x} =
+\vec{0}\text{.}\)</span>
 </div></li>
-<li id="sec-matrix-inverse-7-7-1-1-1-5"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-5-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and the equation <span class="process-math">\(A\xvec = \bvec\)</span> has a solution for every vector <span class="process-math">\(\bvec\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</div></li>
+<li id="sec-matrix-inverse-7-7-1-1-1-5"><div class="para" id="sec-matrix-inverse-7-7-1-1-1-5-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> has a solution for every vector <span class="process-math">\(\vec{b}\text{,}\)</span> then <span class="process-math">\(A\)</span> is invertible.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrix-inverse-7-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrix-inverse-7-8-1-1">
@@ -1482,7 +1482,7 @@ U = \left[\begin{array}{rrr}
 \end{array}\right].
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrix-inverse-7-9-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrix-inverse-7-9-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrix-inverse-7-9-1-1-6">
 <li id="sec-matrix-inverse-7-9-1-1-6-1"><div class="para" id="sec-matrix-inverse-7-9-1-1-6-1-1">Write the matrices <span class="process-math">\(E_1\text{,}\)</span> <span class="process-math">\(E_2\text{,}\)</span> <span class="process-math">\(E_3\text{,}\)</span> and <span class="process-math">\(E_4\)</span> that perform the four row operations.</div></li>
@@ -1512,9 +1512,9 @@ PAP^{-1}\)</span> and <span class="process-math">\(C = QBQ^{-1}\text{.}\)</span>
 <li id="sec-matrix-inverse-7-11-1-1-7-1"><div class="para logical" id="sec-matrix-inverse-7-11-1-1-7-1-1">
 <div class="para">We first explain why <span class="process-math">\(B\)</span> is invertible.</div>
 <ol class="decimal ol-marker-2" id="sec-matrix-inverse-7-11-1-1-7-1-1-2">
-<li id="sec-matrix-inverse-7-11-1-1-7-1-1-2-1"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-1-1-2-1-1">Since <span class="process-math">\(AB\)</span> is invertible, explain why any solution to the homogeneous equation <span class="process-math">\(AB\xvec = \zerovec\)</span> is <span class="process-math">\(\xvec=\zerovec\text{.}\)</span>
+<li id="sec-matrix-inverse-7-11-1-1-7-1-1-2-1"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-1-1-2-1-1">Since <span class="process-math">\(AB\)</span> is invertible, explain why any solution to the homogeneous equation <span class="process-math">\(AB\vec{x} = \vec{0}\)</span> is <span class="process-math">\(\vec{x}=\vec{0}\text{.}\)</span>
 </div></li>
-<li id="sec-matrix-inverse-7-11-1-1-7-1-1-2-2"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-1-1-2-2-1">Use this fact to explain why any solution to <span class="process-math">\(B\xvec = \zerovec\)</span> must be <span class="process-math">\(\xvec=\zerovec\text{.}\)</span>
+<li id="sec-matrix-inverse-7-11-1-1-7-1-1-2-2"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-1-1-2-2-1">Use this fact to explain why any solution to <span class="process-math">\(B\vec{x} = \vec{0}\)</span> must be <span class="process-math">\(\vec{x}=\vec{0}\text{.}\)</span>
 </div></li>
 <li id="sec-matrix-inverse-7-11-1-1-7-1-1-2-3"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-1-1-2-3-1">Explain why <span class="process-math">\(B\)</span> must be invertible.</div></li>
 </ol>
@@ -1522,10 +1522,10 @@ PAP^{-1}\)</span> and <span class="process-math">\(C = QBQ^{-1}\text{.}\)</span>
 <li id="sec-matrix-inverse-7-11-1-1-7-2"><div class="para logical" id="sec-matrix-inverse-7-11-1-1-7-2-1">
 <div class="para">Now we explain why <span class="process-math">\(A\)</span> is invertible.</div>
 <ol class="decimal ol-marker-2" id="sec-matrix-inverse-7-11-1-1-7-2-1-2">
-<li id="sec-matrix-inverse-7-11-1-1-7-2-1-2-1"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-2-1-2-1-1">Since <span class="process-math">\(AB\)</span> is invertible, explain why the equation <span class="process-math">\(AB\xvec=\bvec\)</span> is consistent for every vector <span class="process-math">\(\bvec\text{.}\)</span>
+<li id="sec-matrix-inverse-7-11-1-1-7-2-1-2-1"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-2-1-2-1-1">Since <span class="process-math">\(AB\)</span> is invertible, explain why the equation <span class="process-math">\(AB\vec{x}=\vec{b}\)</span> is consistent for every vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div></li>
-<li id="sec-matrix-inverse-7-11-1-1-7-2-1-2-2"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-2-1-2-2-1">Using the fact that <span class="process-math">\(AB\xvec = A(B\xvec) =
-\bvec\)</span> is consistent for every <span class="process-math">\(\bvec\text{,}\)</span> explain why every equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent.</div></li>
+<li id="sec-matrix-inverse-7-11-1-1-7-2-1-2-2"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-2-1-2-2-1">Using the fact that <span class="process-math">\(AB\vec{x} = A(B\vec{x}) =
+\vec{b}\)</span> is consistent for every <span class="process-math">\(\vec{b}\text{,}\)</span> explain why every equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent.</div></li>
 <li id="sec-matrix-inverse-7-11-1-1-7-2-1-2-3"><div class="para" id="sec-matrix-inverse-7-11-1-1-7-2-1-2-3-1">Explain why <span class="process-math">\(A\)</span> must be invertible.</div></li>
 </ol>
 </div></li>
@@ -1535,8 +1535,8 @@ PAP^{-1}\)</span> and <span class="process-math">\(C = QBQ^{-1}\text{.}\)</span>
 <div class="para">We defined an <span class="process-math">\(n\times n\)</span> matrix to be invertible if there is a matrix <span class="process-math">\(B\)</span> such that <span class="process-math">\(AB=I_n\text{.}\)</span>  In this exercise, we will explain why it is also true that <span class="process-math">\(BA = I\text{,}\)</span> which is the statement of <a href="sec-matrix-inverse.html#proposition-inverse-inverse" class="xref" data-knowl="./knowl/xref/proposition-inverse-inverse.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 3.1.6">Proposition 3.1.6</a>. This means that, if <span class="process-math">\(B=A^{-1}\text{,}\)</span> then <span class="process-math">\(A = B^{-1}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="ex-right-inverse-1-1-8">
-<li id="ex-right-inverse-1-1-8-1"><div class="para" id="ex-right-inverse-1-1-8-1-1">Suppose that <span class="process-math">\(\xvec\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector.  Since <span class="process-math">\(AB=I\text{,}\)</span> explain why <span class="process-math">\(AB\xvec =
-\xvec\)</span> and use this to explain why the only vector for which <span class="process-math">\(B\xvec = \zerovec\)</span> is <span class="process-math">\(\xvec = \zerovec\text{.}\)</span>
+<li id="ex-right-inverse-1-1-8-1"><div class="para" id="ex-right-inverse-1-1-8-1-1">Suppose that <span class="process-math">\(\vec{x}\)</span> is an <span class="process-math">\(n\)</span>-dimensional vector.  Since <span class="process-math">\(AB=I\text{,}\)</span> explain why <span class="process-math">\(AB\vec{x} =
+\vec{x}\)</span> and use this to explain why the only vector for which <span class="process-math">\(B\vec{x} = \vec{0}\)</span> is <span class="process-math">\(\vec{x} = \vec{0}\text{.}\)</span>
 </div></li>
 <li id="ex-right-inverse-1-1-8-2"><div class="para" id="ex-right-inverse-1-1-8-2-1">Explain why this implies that <span class="process-math">\(B\)</span> must be invertible.  We will call the inverse <span class="process-math">\(C\)</span> so that <span class="process-math">\(BC =
 I\text{.}\)</span>

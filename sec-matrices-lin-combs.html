@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -135,12 +135,24 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-python",
+  "linked": true,
+  "linkKey": "linked-python",
+  "autoeval": false,
+  "languages": [
+    "python"
+  ],
+  "evalButtonText": "Evaluate (Python)"
+});
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -598,11 +610,11 @@ sagecell.makeSagecell({
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Matrix multiplication and linear combinations</span>
 </h2>
 <section class="introduction" id="sec-matrices-lin-combs-2"><div class="para logical" id="sec-matrices-lin-combs-2-1">
-<div class="para">The previous section introduced vectors and linear combinations and demonstrated how they provide a way to think about linear systems geometrically.  In particular, we saw that the vector <span class="process-math">\(\bvec\)</span> is a linear combination of the vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> precisely when the linear system corresponding to the augmented matrix</div>
+<div class="para">The previous section introduced vectors and linear combinations and demonstrated how they provide a way to think about linear systems geometrically.  In particular, we saw that the vector <span class="process-math">\(\vec{b}\)</span> is a linear combination of the vectors <span class="process-math">\(\vec{v_1},~\vec{v_2},\ldots,~\vec{v_n}\)</span> precisely when the linear system corresponding to the augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr|r}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \amp \bvec
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \amp \vec{b}
 \end{array}\right]
 \end{equation*}
 </div>
@@ -633,7 +645,7 @@ n\text{,}\)</span> we mean that it has <span class="process-math">\(m\)</span> r
 \begin{equation*}
 \left[
 \begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
 \end{array}
 \right]
 \end{equation*}
@@ -641,10 +653,10 @@ n\text{,}\)</span> we mean that it has <span class="process-math">\(m\)</span> r
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\left[\begin{array}{r}0\\3\\2\\ \end{array}\right],
-\vvec_2=\left[\begin{array}{r}4\\-1\\0\\ \end{array}\right],
-\vvec_3=\left[\begin{array}{r}-3\\2\\-1\\ \end{array}\right],
-\vvec_4=\left[\begin{array}{r}1\\0\\1\\ \end{array}\right]\text{.}
+\vec{v_1}=\left[\begin{array}{r}0\\3\\2\\ \end{array}\right],
+\vec{v_2}=\left[\begin{array}{r}4\\-1\\0\\ \end{array}\right],
+\vec{v_3}=\left[\begin{array}{r}-3\\2\\-1\\ \end{array}\right],
+\vec{v_4}=\left[\begin{array}{r}1\\0\\1\\ \end{array}\right]\text{.}
 \end{equation*}
 </div>
 <div class="para">In this way, we see that the <span class="process-math">\(3\times 4\)</span> matrix is equivalent to an ordered set of 4 vectors in <span class="process-math">\(\real^3\text{.}\)</span>
@@ -656,28 +668,28 @@ n\text{,}\)</span> we mean that it has <span class="process-math">\(m\)</span> r
 \begin{equation*}
 \begin{aligned}
 c\left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
 \end{array}
 \right]
 {}={} \amp
 \left[\begin{array}{rrrr}
-c\vvec_1 \amp c\vvec_2 \amp \cdots \amp c\vvec_n
+c\vec{v_1} \amp c\vec{v_2} \amp \cdots \amp c\vec{v_n}
 \end{array}
 \right] \\
 \left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
 \end{array}
 \right]
 {}+{} \amp
 \left[\begin{array}{rrrr}
-\wvec_1 \amp \wvec_2 \amp \cdots \amp \wvec_n
+\vec{w_1} \amp \vec{w_2} \amp \cdots \amp \vec{w_n}
 \end{array}
 \right]
 \\
 {}={} \amp
 \left[\begin{array}{rrrr}
-\vvec_1+\wvec_1 \amp \vvec_2+\wvec_2 \amp \cdots \amp
-\vvec_n+\wvec_n 
+\vec{v_1}+\vec{w_1} \amp \vec{v_2}+\vec{w_2} \amp \cdots \amp
+\vec{v_n}+\vec{w_n} 
 \end{array}
 \right]. \\
 \end{aligned}
@@ -765,7 +777,7 @@ A =
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-4-3-2-1">
-<div class="para">Suppose we have the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\xvec\text{:}\)</span>
+<div class="para">Suppose we have the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{x}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -774,15 +786,15 @@ A = \left[\begin{array}{rr}
 0 \amp 2 \\
 3 \amp 1 \\
 \end{array}\right],~~~
-\xvec = \left[\begin{array}{r}
+\vec{x} = \left[\begin{array}{r}
 2 \\ 3 \\ \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Their product will be defined to be the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\xvec\)</span> as weights.  This means that</div>
+<div class="para">Their product will be defined to be the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\vec{x}\)</span> as weights.  This means that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-A\xvec = 
+A\vec{x} = 
 \left[\begin{array}{rr}
 -2 \amp 3 \\
 0 \amp 2 \\
@@ -801,29 +813,29 @@ A\xvec =
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-2">Because <span class="process-math">\(A\)</span> has two columns, we need two weights to form a linear combination of those columns, which means that <span class="process-math">\(\xvec\)</span> must have two components. In other words, the number of columns of <span class="process-math">\(A\)</span> must equal the dimension of the vector <span class="process-math">\(\xvec\text{.}\)</span>
-</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-3">Similarly, the columns of <span class="process-math">\(A\)</span> are 3-dimensional so any linear combination of them is 3-dimensional as well. Therefore, <span class="process-math">\(A\xvec\)</span> will be 3-dimensional.</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-4">We then see that if <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times2\)</span> matrix, <span class="process-math">\(\xvec\)</span> must be a 2-dimensional vector and <span class="process-math">\(A\xvec\)</span> will be 3-dimensional.</div></article><div class="para" id="sec-matrices-lin-combs-4-4">More generally, we have the following definition.</div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-2">Because <span class="process-math">\(A\)</span> has two columns, we need two weights to form a linear combination of those columns, which means that <span class="process-math">\(\vec{x}\)</span> must have two components. In other words, the number of columns of <span class="process-math">\(A\)</span> must equal the dimension of the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
+</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-3">Similarly, the columns of <span class="process-math">\(A\)</span> are 3-dimensional so any linear combination of them is 3-dimensional as well. Therefore, <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-4">We then see that if <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times2\)</span> matrix, <span class="process-math">\(\vec{x}\)</span> must be a 2-dimensional vector and <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.</div></article><div class="para" id="sec-matrices-lin-combs-4-4">More generally, we have the following definition.</div>
 <article class="definition definition-like" id="sec-matrices-lin-combs-4-5"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-4-5-3-1">
-<div class="para">The product of a matrix <span class="process-math">\(A\)</span> by a vector <span class="process-math">\(\xvec\)</span> will be the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\xvec\)</span> as weights. More specifically, if</div>
+<div class="para">The product of a matrix <span class="process-math">\(A\)</span> by a vector <span class="process-math">\(\vec{x}\)</span> will be the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\vec{x}\)</span> as weights. More specifically, if</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A=\left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n}
 \end{array}\right],~~~
-\xvec = \left[\begin{array}{r}
+\vec{x} = \left[\begin{array}{r}
 c_1 \\ c_2 \\ \vdots \\ c_n \end{array}\right],
 \end{equation*}
 </div>
 <div class="para">then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A\xvec = c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n\text{.}
+A\vec{x} = c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-matrices-lin-combs-4-5-3-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then <span class="process-math">\(\xvec\)</span> must be an <span class="process-math">\(n\)</span>-dimensional vector, and the product <span class="process-math">\(A\xvec\)</span> will be an <span class="process-math">\(m\)</span>-dimensional vector.</div></article><div class="para" id="sec-matrices-lin-combs-4-6">The next activity explores some properties of matrix multiplication.</div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-5-3-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then <span class="process-math">\(\vec{x}\)</span> must be an <span class="process-math">\(n\)</span>-dimensional vector, and the product <span class="process-math">\(A\vec{x}\)</span> will be an <span class="process-math">\(m\)</span>-dimensional vector.</div></article><div class="para" id="sec-matrices-lin-combs-4-6">The next activity explores some properties of matrix multiplication.</div>
 <article class="activity project-like" id="sec-matrices-lin-combs-4-7"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
@@ -861,29 +873,29 @@ A\xvec = c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n\text{.}
 \right]\text{.}
 \end{equation*}
 </div>
-<div class="para">If <span class="process-math">\(A\xvec\)</span> is defined, what is the dimension of the vector <span class="process-math">\(\xvec\)</span> and what is the dimension of <span class="process-math">\(A\xvec\text{?}\)</span>
+<div class="para">If <span class="process-math">\(A\vec{x}\)</span> is defined, what is the dimension of the vector <span class="process-math">\(\vec{x}\)</span> and what is the dimension of <span class="process-math">\(A\vec{x}\text{?}\)</span>
 </div>
 </div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-3"><div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-3-1">A vector whose entries are all zero is denoted by <span class="process-math">\(\zerovec\text{.}\)</span>  If <span class="process-math">\(A\)</span> is a matrix, what is the product <span class="process-math">\(A\zerovec\text{?}\)</span>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-3"><div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-3-1">A vector whose entries are all zero is denoted by <span class="process-math">\(\vec{0}\text{.}\)</span>  If <span class="process-math">\(A\)</span> is a matrix, what is the product <span class="process-math">\(A\vec{0}\text{?}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-4-7-2-1-1-4"><div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-4-1">Suppose that <span class="process-math">\(I = \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
 0 \amp 1 \amp 0 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right]\)</span> is the identity matrix and <span class="process-math">\(\xvec=\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find the product <span class="process-math">\(I\xvec\)</span> and explain why <span class="process-math">\(I\)</span> is called the identity matrix.</div></li>
+\end{array}\right]\)</span> is the identity matrix and <span class="process-math">\(\vec{x}=\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find the product <span class="process-math">\(I\vec{x}\)</span> and explain why <span class="process-math">\(I\)</span> is called the identity matrix.</div></li>
 <li id="sec-matrices-lin-combs-4-7-2-1-1-5"><div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-5-1">
 <div class="para">Suppose we write the matrix <span class="process-math">\(A\)</span> in terms of its columns as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \left[
 \begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \\
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \\
 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
-<div class="para">If the vector <span class="process-math">\(\evec_1 = \left[\begin{array}{c} 1 \\ 0 \\
-\vdots \\ 0 \end{array}\right]\text{,}\)</span> what is the product <span class="process-math">\(A\evec_1\text{?}\)</span>
+<div class="para">If the vector <span class="process-math">\(\vec{e_1} = \left[\begin{array}{c} 1 \\ 0 \\
+\vdots \\ 0 \end{array}\right]\text{,}\)</span> what is the product <span class="process-math">\(A\vec{e_1}\text{?}\)</span>
 </div>
 </div></li>
 <li id="sec-matrices-lin-combs-4-7-2-1-1-6"><div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-6-1">
@@ -896,14 +908,14 @@ A = \left[
 -1 \amp 1 \\
 \end{array}
 \right],
-\bvec = \left[
+\vec{b} = \left[
 \begin{array}{r}
 6 \\ 0
 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Is there a vector <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(A\xvec = \bvec\text{?}\)</span>
+<div class="para">Is there a vector <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span>
 </div>
 </div></li>
 </ol></div></article><div class="para logical" id="sec-matrices-lin-combs-4-8">
@@ -933,14 +945,16 @@ A = \left[
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-4-11-1-1">
-<div class="para">Sage can find the product of a matrix and vector using the <code class="code-inline tex2jax_ignore">*</code> operator.  For example, <div id="sec-matrices-lin-combs-4-11-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[1,2,2,1])
-v = vector([3,-1])
-A*v
+<div class="para">In Python we can use <code class="code-inline tex2jax_ignore">{numpy}</code>’s <code class="code-inline tex2jax_ignore">matmul()</code> function to find the product of a matrix and vector.  For example, we can compute the product <span class="process-math">\(\left[\begin{array}{ll} 1 \amp 2\\ 2 \amp 1\end{array}\right]\left[\begin{array}{l} 3\\ -1\end{array}\right]\)</span> as follows. <div id="sec-matrices-lin-combs-4-11-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+
+A = np.array([[1.0,2], [2,1]])
+v = np.array([[3.0], [-1]])
+np.matmul(A, v)
 </script></div>
 </div>
-<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-11-1-1-3">
-<li id="sec-matrices-lin-combs-4-11-1-1-3-1"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-3-1-1">
-<div class="para">Use Sage to evaluate the product</div>
+<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-11-1-1-5">
+<li id="sec-matrices-lin-combs-4-11-1-1-5-1"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-5-1-1">
+<div class="para">Use Python to evaluate the product</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-example-product.html">
 \begin{equation*}
 \left[
@@ -957,12 +971,12 @@ A*v
 \right]
 \end{equation*}
 </div>
-<div class="para">from <a href="sec-matrices-lin-combs.html#li-example-product" class="xref" data-knowl="./knowl/xref/li-example-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a> of the previous activity. <div id="sec-matrices-lin-combs-4-11-1-1-3-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">from <a href="sec-matrices-lin-combs.html#li-example-product" class="xref" data-knowl="./knowl/xref/li-example-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a> of the previous activity. <div id="sec-matrices-lin-combs-4-11-1-1-5-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-3-2"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-3-2-1">
-<div class="para">In Sage, define the matrix and vectors</div>
+<li id="sec-matrices-lin-combs-4-11-1-1-5-2"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-5-2-1">
+<div class="para">In Python, define the matrix and vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \left[
@@ -972,51 +986,51 @@ A = \left[
 4 \amp 2 \\
 \end{array}
 \right],
-\zerovec = \left[
+\vec{0} = \left[
 \begin{array}{r} 0 \\ 0 \end{array}
 \right],
-\vvec = \left[
+\vec{v} = \left[
 \begin{array}{r} -2 \\ 3 \end{array}
 \right],
-\wvec = \left[
+\vec{w} = \left[
 \begin{array}{r} 1 \\ 2 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-4-11-1-1-3-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-4-11-1-1-5-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-3-3"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-3-3-1">What do you find when you evaluate <span class="process-math">\(A\zerovec\text{?}\)</span>
+<li id="sec-matrices-lin-combs-4-11-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-5-3-1">What do you find when you evaluate <span class="process-math">\(A\vec{0}\text{?}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-3-4"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-3-4-1">What do you find when you evaluate <span class="process-math">\(A(3\vvec)\)</span> and <span class="process-math">\(3(A\vvec)\)</span> and compare your results?</div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-3-5"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-3-5-1">What do you find when you evaluate <span class="process-math">\(A(\vvec+\wvec)\)</span> and <span class="process-math">\(A\vvec + A\wvec\)</span> and compare your results?</div></li>
+<li id="sec-matrices-lin-combs-4-11-1-1-5-4"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-5-4-1">What do you find when you evaluate <span class="process-math">\(A(3\vec{v})\)</span> and <span class="process-math">\(3(A\vec{v})\)</span> and compare your results?</div></li>
+<li id="sec-matrices-lin-combs-4-11-1-1-5-5"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-5-5-1">What do you find when you evaluate <span class="process-math">\(A(\vec{v}+\vec{w})\)</span> and <span class="process-math">\(A\vec{v} + A\vec{w}\)</span> and compare your results?</div></li>
 </ol>
 </div></article><div class="para" id="sec-matrices-lin-combs-4-12">This activity demonstrates several general properties satisfied by matrix multiplication that we record here.</div>
 <article class="proposition theorem-like" id="prop-matrix-mult-prop"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of matrix multiplication.</span>
 </h4>
 <div class="para logical" id="prop-matrix-mult-prop-2-1">
-<div class="para">If <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> vectors of the appropriate dimensions, and <span class="process-math">\(c\)</span> a scalar, then</div>
+<div class="para">If <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> vectors of the appropriate dimensions, and <span class="process-math">\(c\)</span> a scalar, then</div>
 <ul class="disc" id="prop-matrix-mult-prop-2-1-5">
-<li id="prop-matrix-mult-prop-2-1-5-1"><div class="para" id="prop-matrix-mult-prop-2-1-5-1-1"><span class="process-math">\(A\zerovec = \zerovec\text{.}\)</span></div></li>
-<li id="prop-matrix-mult-prop-2-1-5-2"><div class="para" id="prop-matrix-mult-prop-2-1-5-2-1"><span class="process-math">\(A(c\vvec) = cA\vvec\text{.}\)</span></div></li>
-<li id="prop-matrix-mult-prop-2-1-5-3"><div class="para" id="prop-matrix-mult-prop-2-1-5-3-1"><span class="process-math">\(A(\vvec+\wvec) = A\vvec + A\wvec\text{.}\)</span></div></li>
+<li id="prop-matrix-mult-prop-2-1-5-1"><div class="para" id="prop-matrix-mult-prop-2-1-5-1-1"><span class="process-math">\(A\vec{0} = \vec{0}\text{.}\)</span></div></li>
+<li id="prop-matrix-mult-prop-2-1-5-2"><div class="para" id="prop-matrix-mult-prop-2-1-5-2-1"><span class="process-math">\(A(c\vec{v}) = cA\vec{v}\text{.}\)</span></div></li>
+<li id="prop-matrix-mult-prop-2-1-5-3"><div class="para" id="prop-matrix-mult-prop-2-1-5-3-1"><span class="process-math">\(A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}\text{.}\)</span></div></li>
 </ul>
 </div></article></section><section class="subsection" id="sec-matrices-lin-combs-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Matrix-vector multiplication and linear systems</span>
 </h3>
-<div class="para" id="sec-matrices-lin-combs-5-2">So far, we have begun with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\xvec\)</span> and formed their product <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  We would now like to turn this around:  beginning with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\bvec\text{,}\)</span> we will ask if we can find a vector <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  This will naturally lead back to linear systems.</div>
+<div class="para" id="sec-matrices-lin-combs-5-2">So far, we have begun with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{x}\)</span> and formed their product <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  We would now like to turn this around:  beginning with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{b}\text{,}\)</span> we will ask if we can find a vector <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  This will naturally lead back to linear systems.</div>
 <div class="para logical" id="sec-matrices-lin-combs-5-3">
-<div class="para">To see the connection between the matrix equation <span class="process-math">\(A\xvec =
-\bvec\)</span> and linear systems, let’s write the matrix <span class="process-math">\(A\)</span> in terms of its columns <span class="process-math">\(\vvec_i\)</span> and <span class="process-math">\(\xvec\)</span> in terms of its components.</div>
+<div class="para">To see the connection between the matrix equation <span class="process-math">\(A\vec{x} =
+\vec{b}\)</span> and linear systems, let’s write the matrix <span class="process-math">\(A\)</span> in terms of its columns <span class="process-math">\(\vec{v_i}\)</span> and <span class="process-math">\(\vec{x}\)</span> in terms of its components.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \left[
 \begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \ldots \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \ldots \vec{v_n}
 \end{array}
 \right],
-\xvec = \left[
+\vec{x} = \left[
 \begin{array}{c}
 c_1 \\ c_2 \\ \vdots \\ c_n \\
 \end{array}
@@ -1025,18 +1039,18 @@ c_1 \\ c_2 \\ \vdots \\ c_n \\
 </div>
 </div>
 <div class="para logical" id="sec-matrices-lin-combs-5-4">
-<div class="para">We know that the matrix product <span class="process-math">\(A\xvec\)</span> forms a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span>  Therefore, the equation <span class="process-math">\(A\xvec = \bvec\)</span> is merely a compact way of writing the equation for the weights <span class="process-math">\(c_i\text{:}\)</span>
+<div class="para">We know that the matrix product <span class="process-math">\(A\vec{x}\)</span> forms a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span>  Therefore, the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is merely a compact way of writing the equation for the weights <span class="process-math">\(c_i\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-system-comb.html">
 \begin{equation*}
-c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \bvec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{b}\text{.}
 \end{equation*}
 </div>
 <div class="para">We have seen this equation before:  Remember that <a href="sec-vectors-lin-combs.html#prop-system-comb" class="xref" data-knowl="./knowl/xref/prop-system-comb.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.1.12">Proposition 2.1.12</a> says that the solutions of this equation are the same as the solutions to the linear system whose augmented matrix is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-system-comb.html">
 \begin{equation*}
 \left[\begin{array}{rrrr|r}
-\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n \amp \bvec
+\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n} \amp \vec{b}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
@@ -1047,31 +1061,31 @@ c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \bvec\text{.}
 </h4>
 <div class="para logical" id="prop-matrix-eq-solution-1-1">
 <div class="para">If <span class="process-math">\(A=\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\vvec_n
-\end{array}\right]\)</span> and <span class="process-math">\(\xvec=\left[
+\vec{v_1}\amp\vec{v_2}\amp\ldots\vec{v_n}
+\end{array}\right]\)</span> and <span class="process-math">\(\vec{x}=\left[
 \begin{array}{c}
 x_1 \\ x_2 \\ \vdots \\ x_n \\
 \end{array}\right]
 \text{,}\)</span> then the following statements are equivalent.</div>
 <ul class="disc" id="prop-matrix-eq-solution-1-1-3">
-<li id="prop-matrix-eq-solution-1-1-3-1"><div class="para" id="prop-matrix-eq-solution-1-1-3-1-1">The vector <span class="process-math">\(\xvec\)</span> satisfies the equation <span class="process-math">\(A\xvec = \bvec
+<li id="prop-matrix-eq-solution-1-1-3-1"><div class="para" id="prop-matrix-eq-solution-1-1-3-1-1">The vector <span class="process-math">\(\vec{x}\)</span> satisfies the equation <span class="process-math">\(A\vec{x} = \vec{b}
 \text{.}\)</span>
 </div></li>
 <li id="prop-matrix-eq-solution-1-1-3-2"><div class="para logical" id="prop-matrix-eq-solution-1-1-3-2-1">
-<div class="para">The vector <span class="process-math">\(\bvec\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights <span class="process-math">\(x_j\text{:}\)</span>
+<div class="para">The vector <span class="process-math">\(\vec{b}\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights <span class="process-math">\(x_j\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-x_1\vvec_1 + x_2\vvec_2 + \ldots + x_n\vvec_n = \bvec\text{.}
+x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="prop-matrix-eq-solution-1-1-3-3"><div class="para logical" id="prop-matrix-eq-solution-1-1-3-3-1">
-<div class="para">The components of <span class="process-math">\(\xvec\)</span> form a solution to the linear system corresponding to the augmented matrix</div>
+<div class="para">The components of <span class="process-math">\(\vec{x}\)</span> form a solution to the linear system corresponding to the augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr|r}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n \amp \bvec
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n} \amp \vec{b}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
@@ -1079,18 +1093,18 @@ x_1\vvec_1 + x_2\vvec_2 + \ldots + x_n\vvec_n = \bvec\text{.}
 </ul>
 </div></article><div class="para logical" id="sec-matrices-lin-combs-5-7">
 <div class="para">When the matrix <span class="process-math">\(A = \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n\end{array}\right]\text{,}\)</span> we will frequently write</div>
+\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{_n}\end{array}\right]\text{,}\)</span> we will frequently write</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr|r}
-\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n\amp\bvec\end{array}\right]
-= \left[ \begin{array}{r|r} A \amp \bvec \end{array}\right]
+\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}\amp\vec{b}\end{array}\right]
+= \left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and say that the matrix <span class="process-math">\(A\)</span> is augmented by the vector <span class="process-math">\(\bvec\text{.}\)</span>
+<div class="para">and say that the matrix <span class="process-math">\(A\)</span> is augmented by the vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-5-8">The equation <span class="process-math">\(A\xvec = \bvec\)</span> gives a notationally compact way to write a linear system.  Moreover, this notation will allow us to focus on important features of the system that determine its solution space.</div>
+<div class="para" id="sec-matrices-lin-combs-5-8">The equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> gives a notationally compact way to write a linear system.  Moreover, this notation will allow us to focus on important features of the system that determine its solution space.</div>
 <article class="example example-like" id="sec-matrices-lin-combs-5-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h4>
@@ -1103,7 +1117,7 @@ x_1\vvec_1 + x_2\vvec_2 + \ldots + x_n\vvec_n = \bvec\text{.}
 4 \amp -1 \amp 6 \\
 1 \amp 3 \amp -5 \\
 \end{array}\right]
-\xvec
+\vec{x}
 =
 \left[\begin{array}{r}
 0 \\ -5 \\ 15
@@ -1165,11 +1179,11 @@ x_2 \amp {}={} 5+2x_3. \\
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-matrices-lin-combs-5-9-1-3">
-<div class="para">Since we originally asked to describe the solutions to the equation <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we will express the solution in terms of the vector <span class="process-math">\(\xvec\text{:}\)</span>
+<div class="para">Since we originally asked to describe the solutions to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we will express the solution in terms of the vector <span class="process-math">\(\vec{x}\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec
+\vec{x}
 =\left[
 \begin{array}{r}
 x_1 \\ x_2 \\ x_3
@@ -1186,9 +1200,9 @@ x_1 \\ x_2 \\ x_3
 \end{equation*}
 </div>
 <div class="para">As before, we call this a parametric description of the solution space.</div>
-</div> <div class="para" id="sec-matrices-lin-combs-5-9-1-4">This shows that the solutions <span class="process-math">\(\xvec\)</span> may be written in the form <span class="process-math">\(\vvec + x_3\wvec\text{,}\)</span> for appropriate vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  Geometrically, the solution space is a line in <span class="process-math">\(\real^3\)</span> through <span class="process-math">\(\vvec\)</span> moving parallel to <span class="process-math">\(\wvec\text{.}\)</span>
+</div> <div class="para" id="sec-matrices-lin-combs-5-9-1-4">This shows that the solutions <span class="process-math">\(\vec{x}\)</span> may be written in the form <span class="process-math">\(\vec{v} + x_3\vec{w}\text{,}\)</span> for appropriate vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>  Geometrically, the solution space is a line in <span class="process-math">\(\real^3\)</span> through <span class="process-math">\(\vec{v}\)</span> moving parallel to <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div></article><article class="activity project-like" id="sec-matrices-lin-combs-5-10"><h4 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">The equation <span class="process-math">\(A\xvec = \bvec\)</span>.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">The equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span>.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-5-10-2-1"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-5-10-2-1-1">
 <li id="sec-matrices-lin-combs-5-10-2-1-1-1"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-1-1">
@@ -1202,11 +1216,11 @@ x_1 \\ x_2 \\ x_3
 \end{alignedat}
 \end{equation*}
 </div>
-<div class="para">Identify the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\bvec\)</span> to express this system in the form <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>
+<div class="para">Identify the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{b}\)</span> to express this system in the form <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>
 </div>
 </div></li>
 <li id="sec-matrices-lin-combs-5-10-2-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-2-1">
-<div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(\bvec\)</span> are as below, write the linear system corresponding to the equation <span class="process-math">\(A\xvec=\bvec\)</span> and describe its solution space, using a parametric description if appropriate:</div>
+<div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(\vec{b}\)</span> are as below, write the linear system corresponding to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> and describe its solution space, using a parametric description if appropriate:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \left[\begin{array}{rrr}
@@ -1214,13 +1228,13 @@ A = \left[\begin{array}{rrr}
 -2 \amp 0 \amp 6
 \end{array}
 \right],~~~
-\bvec = \left[\begin{array}{r}
+\vec{b} = \left[\begin{array}{r}
 -6 \\ 2
 \end{array}
 \right].
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
 <li id="sec-matrices-lin-combs-5-10-2-1-1-3"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-3-1">
@@ -1234,7 +1248,7 @@ A = \left[\begin{array}{rrr}
 -1 \amp -2 \amp 6 \amp 1 \\
 \end{array}
 \right]
-\xvec
+\vec{x}
 = 
 \left[\begin{array}{r}
 -1 \\ 1 \\ 5
@@ -1242,11 +1256,11 @@ A = \left[\begin{array}{rrr}
 \right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-3-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-3-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
-<li id="sec-matrices-lin-combs-5-10-2-1-1-4"><div class="para" id="sec-matrices-lin-combs-5-10-2-1-1-4-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix.  What can you guarantee about the solution space of the equation <span class="process-math">\(A\xvec
-= \zerovec\text{?}\)</span>
+<li id="sec-matrices-lin-combs-5-10-2-1-1-4"><div class="para" id="sec-matrices-lin-combs-5-10-2-1-1-4-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix.  What can you guarantee about the solution space of the equation <span class="process-math">\(A\vec{x}
+= \vec{0}\text{?}\)</span>
 </div></li>
 </ol></div></article></section><section class="subsection" id="sec-matrices-lin-combs-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="space"> </span><span class="title">Matrix-matrix products</span>
@@ -1260,7 +1274,7 @@ A = \left[\begin{array}{rrr}
 <div class="displaymath process-math">
 \begin{equation*}
 B = \left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_p
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_p}
 \end{array}\right]
 \end{equation*}
 </div>
@@ -1268,7 +1282,7 @@ B = \left[\begin{array}{rrrr}
 <div class="displaymath process-math">
 \begin{equation*}
 AB = \left[\begin{array}{rrrr}
-A\vvec_1 \amp A\vvec_2 \amp \cdots \amp A\vvec_p
+A\vec{v_1} \amp A\vec{v_2} \amp \cdots \amp A\vec{v_p}
 \end{array}\right].
 \end{equation*}
 </div>
@@ -1334,10 +1348,10 @@ B = \left[\begin{array}{rr}
 </div></li>
 <li id="sec-matrices-lin-combs-6-6-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-2-1">Compute the product <span class="process-math">\(AB\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Sage can multiply matrices using the <code class="code-inline tex2jax_ignore">*</code> operator.  Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Sage cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-6-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Like with matrix-vector multiplication, we can use <code class="code-inline tex2jax_ignore">{numpy}</code>’s <code class="code-inline tex2jax_ignore">matmul()</code> function to find the product of two compatible matrices. Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Python cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-4-1">Are we able to form the matrix product <span class="process-math">\(BA\text{?}\)</span>  If so, use the Sage cell above to find <span class="process-math">\(BA\text{.}\)</span>  Is it generally true that <span class="process-math">\(AB = BA\text{?}\)</span>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-4-1">Are we able to form the matrix product <span class="process-math">\(BA\text{?}\)</span>  If so, use the Python cell above to find <span class="process-math">\(BA\text{.}\)</span>  Is it generally true that <span class="process-math">\(AB = BA\text{?}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-6-6-1-1-2-5"><div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-5-1">
 <div class="para">Suppose we form the three matrices.</div>
@@ -1358,7 +1372,7 @@ C = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">Compare what happens when you compute <span class="process-math">\(A(B+C)\)</span> and <span class="process-math">\(AB
-+ AC\text{.}\)</span>  State your finding as a general principle. <div id="sec-matrices-lin-combs-6-6-1-1-2-5-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
++ AC\text{.}\)</span>  State your finding as a general principle. <div id="sec-matrices-lin-combs-6-6-1-1-2-5-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -1381,7 +1395,7 @@ C = \left[\begin{array}{rr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and compute <span class="process-math">\(AB\)</span> and <span class="process-math">\(AC\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-7-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and compute <span class="process-math">\(AB\)</span> and <span class="process-math">\(AC\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-7-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> If <span class="process-math">\(AB = AC\text{,}\)</span> is it necessarily true that <span class="process-math">\(B = C\text{?}\)</span>
 </div>
 </div></li>
@@ -1400,7 +1414,7 @@ B = \left[\begin{array}{rr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and compute <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-8-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and compute <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-8-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> If <span class="process-math">\(AB = 0\text{,}\)</span> is it necessarily true that either <span class="process-math">\(A=0\)</span> or <span class="process-math">\(B=0\text{?}\)</span>
 </div>
 </div></li>
@@ -1439,9 +1453,9 @@ B = \left[\begin{array}{rr}
 <div class="para logical" id="sec-matrices-lin-combs-7-2">
 <div class="para">In this section, we have found an especially simple way to express linear systems using matrix multiplication.</div>
 <ul class="disc" id="sec-matrices-lin-combs-7-2-1">
-<li id="sec-matrices-lin-combs-7-2-1-1"><div class="para" id="sec-matrices-lin-combs-7-2-1-1-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(\xvec\)</span> an <span class="process-math">\(n\)</span>-dimensional vector, then <span class="process-math">\(A\xvec\)</span> is the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\xvec\)</span> as weights. The vector <span class="process-math">\(A\xvec\)</span> is <span class="process-math">\(m\)</span>-dimensional.</div></li>
-<li id="sec-matrices-lin-combs-7-2-1-2"><div class="para" id="sec-matrices-lin-combs-7-2-1-2-1">The solution space to the equation <span class="process-math">\(A\xvec =
-\bvec\)</span> is the same as the solution space to the linear system corresponding to the augmented matrix <span class="process-math">\(\left[ \begin{array}{r|r} A \amp \bvec \end{array}\right]\text{.}\)</span>
+<li id="sec-matrices-lin-combs-7-2-1-1"><div class="para" id="sec-matrices-lin-combs-7-2-1-1-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(\vec{x}\)</span> an <span class="process-math">\(n\)</span>-dimensional vector, then <span class="process-math">\(A\vec{x}\)</span> is the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\vec{x}\)</span> as weights. The vector <span class="process-math">\(A\vec{x}\)</span> is <span class="process-math">\(m\)</span>-dimensional.</div></li>
+<li id="sec-matrices-lin-combs-7-2-1-2"><div class="para" id="sec-matrices-lin-combs-7-2-1-2-1">The solution space to the equation <span class="process-math">\(A\vec{x} =
+\vec{b}\)</span> is the same as the solution space to the linear system corresponding to the augmented matrix <span class="process-math">\(\left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]\text{.}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-7-2-1-3"><div class="para" id="sec-matrices-lin-combs-7-2-1-3-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(B\)</span> is an <span class="process-math">\(n\times p\)</span> matrix, we can form the product <span class="process-math">\(AB\text{,}\)</span> which is an <span class="process-math">\(m\times p\)</span> matrix whose columns are the products of <span class="process-math">\(A\)</span> and the columns of <span class="process-math">\(B\text{.}\)</span>
 </div></li>
@@ -1462,9 +1476,9 @@ x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp 1 \\
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-1-1-1-2">
-<li id="sec-matrices-lin-combs-8-1-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\bvec\)</span> that expresses this linear system in the form <span class="process-math">\(A\xvec=\bvec\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-1-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{b}\)</span> that expresses this linear system in the form <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-1-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-2-1">Give a description of the solution space to the equation <span class="process-math">\(A\xvec = \bvec\text{.}\)</span> <div id="sec-matrices-lin-combs-8-1-1-1-2-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-1-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-2-1">Give a description of the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span> <div id="sec-matrices-lin-combs-8-1-1-1-2-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol>
@@ -1472,18 +1486,18 @@ x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp 1 \\
 <div class="para" id="sec-matrices-lin-combs-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(135\times2201\)</span> matrix, and that <span class="process-math">\(\xvec\)</span> is a vector.  If <span class="process-math">\(A\xvec\)</span> is defined, what is the dimension of <span class="process-math">\(\xvec\text{?}\)</span> What is the dimension of <span class="process-math">\(A\xvec\text{?}\)</span>
 </div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-3-1-1">
-<div class="para">Suppose that <span class="process-math">\(A \)</span> is a <span class="process-math">\(3\times2\)</span> matrix whose columns are <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{;}\)</span>  that is,</div>
+<div class="para">Suppose that <span class="process-math">\(A \)</span> is a <span class="process-math">\(3\times2\)</span> matrix whose columns are <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{;}\)</span>  that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+A = \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
 \end{array}
 \right]\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-3-1-1-6">
-<li id="sec-matrices-lin-combs-8-3-1-1-6-1"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-1-1">What is the dimension of the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span>
+<li id="sec-matrices-lin-combs-8-3-1-1-6-1"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-1-1">What is the dimension of the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-3-1-1-6-2"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-2-1">What is the product <span class="process-math">\(A\twovec{1}{0}\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span>  What is the product <span class="process-math">\(A\twovec{0}{1}\text{?}\)</span> What is the product <span class="process-math">\(A\twovec{2}{3}\text{?}\)</span>
+<li id="sec-matrices-lin-combs-8-3-1-1-6-2"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-2-1">What is the product <span class="process-math">\(A\twovec{1}{0}\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>  What is the product <span class="process-math">\(A\twovec{0}{1}\text{?}\)</span> What is the product <span class="process-math">\(A\twovec{2}{3}\text{?}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-3-1-1-6-3"><div class="para logical" id="sec-matrices-lin-combs-8-3-1-1-6-3-1">
 <div class="para">If we know that</div>
@@ -1500,9 +1514,9 @@ A\twovec{0}{1} =
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="sec-matrices-lin-combs-8-4-1-1">Suppose that the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
-\vvec_1 \amp \vvec_2
-\end{array}\right]\)</span> where <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are shown in <a href="sec-matrices-lin-combs.html#ex-eq-graphical" class="xref" data-knowl="./knowl/xref/ex-eq-graphical.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.9">Figure 2.2.9</a>.</div> <figure class="figure figure-like" id="ex-eq-graphical"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-matrix-cols.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Two vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> that form the columns of the matrix <span class="process-math">\(A\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-matrices-lin-combs-8-4-1-3"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-4-1-3-1">
+\vec{v_1} \amp \vec{v_2}
+\end{array}\right]\)</span> where <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> are shown in <a href="sec-matrices-lin-combs.html#ex-eq-graphical" class="xref" data-knowl="./knowl/xref/ex-eq-graphical.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.9">Figure 2.2.9</a>.</div> <figure class="figure figure-like" id="ex-eq-graphical"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-matrix-cols.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Two vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> that form the columns of the matrix <span class="process-math">\(A\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-matrices-lin-combs-8-4-1-3"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-4-1-3-1">
 <li id="sec-matrices-lin-combs-8-4-1-3-1-1"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-1-1">What is the shape of the matrix <span class="process-math">\(A\text{?}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-4-1-3-1-2"><div class="para logical" id="sec-matrices-lin-combs-8-4-1-3-1-2-1">
@@ -1513,10 +1527,10 @@ A\twovec{1}{0}, ~~~A\twovec{2}{3}, ~~~A\twovec{0}{-3}\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-matrices-lin-combs-8-4-1-3-1-3"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-3-1">Find all vectors <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(A\xvec=\bvec\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-4-1-3-1-3"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-3-1">Find all vectors <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(A\xvec=\vec{b}\text{.}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-4-1-3-1-4"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-4-1">Find all vectors <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(A\xvec =
-\zerovec\text{.}\)</span>
+\vec{0}\text{.}\)</span>
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-5-1-1">
@@ -1532,7 +1546,7 @@ A=\left[\begin{array}{rrr}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-5-1-1-2">
 <li id="sec-matrices-lin-combs-8-5-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-1-1">Describe the solution space to the equation <span class="process-math">\(A\xvec
-= \zerovec\text{.}\)</span>
+= \vec{0}\text{.}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-5-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-2-1">Find a <span class="process-math">\(3\times2\)</span> matrix <span class="process-math">\(B\)</span> with no zero entries such that <span class="process-math">\(AB = 0\text{.}\)</span>
 </div></li>
@@ -1565,12 +1579,12 @@ A=\left[\begin{array}{rrrr}
 A\xvec = \threevec{-1}{15}{17}\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-8-6-1-1-2-2-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-8-6-1-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
 <li id="sec-matrices-lin-combs-8-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-3-1">Find the reduced row echelon form of <span class="process-math">\(A\)</span> and identify the pivot positions.</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-4-1">Can you find a vector <span class="process-math">\(\bvec\)</span> such that <span class="process-math">\(A\xvec=\bvec\)</span> is inconsistent?</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-5"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-5-1">For a general 3-dimensional vector <span class="process-math">\(\bvec\text{,}\)</span> what can you say about the solution space of the equation <span class="process-math">\(A\xvec = \bvec\text{?}\)</span>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-4-1">Can you find a vector <span class="process-math">\(\vec{b}\)</span> such that <span class="process-math">\(A\xvec=\vec{b}\)</span> is inconsistent?</div></li>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-5"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-5-1">For a general 3-dimensional vector <span class="process-math">\(\vec{b}\text{,}\)</span> what can you say about the solution space of the equation <span class="process-math">\(A\xvec = \vec{b}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
@@ -1625,7 +1639,7 @@ L_1 = \left[\begin{array}{rrr}
 </div>
 <div class="para">Verify that <span class="process-math">\(L_1A\)</span> is the matrix that results from multiplying the first row of <span class="process-math">\(A\)</span> by <span class="process-math">\(-2\)</span> and adding it to the second row.  What matrix <span class="process-math">\(L_2\)</span> would multiply the first row by 3 and add it to the third row?</div>
 </div></li>
-<li id="sec-matrices-lin-combs-8-7-1-2-2-4"><div class="para" id="sec-matrices-lin-combs-8-7-1-2-2-4-1">When we performed Gaussian elimination, our first goal was to perform row operations that brought the matrix into a triangular form.  For our matrix <span class="process-math">\(A\text{,}\)</span> find the row operations needed to find a row equivalent matrix <span class="process-math">\(U\)</span> in triangular form.  By expressing these row operations in terms of matrix multiplication, find a matrix <span class="process-math">\(L\)</span> such that <span class="process-math">\(LA = U\text{.}\)</span> <div id="sec-matrices-lin-combs-8-7-1-2-2-4-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-7-1-2-2-4"><div class="para" id="sec-matrices-lin-combs-8-7-1-2-2-4-1">When we performed Gaussian elimination, our first goal was to perform row operations that brought the matrix into a triangular form.  For our matrix <span class="process-math">\(A\text{,}\)</span> find the row operations needed to find a row equivalent matrix <span class="process-math">\(U\)</span> in triangular form.  By expressing these row operations in terms of matrix multiplication, find a matrix <span class="process-math">\(L\)</span> such that <span class="process-math">\(LA = U\text{.}\)</span> <div id="sec-matrices-lin-combs-8-7-1-2-2-4-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol>
@@ -1642,7 +1656,7 @@ A = \left[\begin{array}{rr}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-8-1-1-5">
 <li id="sec-matrices-lin-combs-8-8-1-1-5-1"><div class="para logical" id="sec-matrices-lin-combs-8-8-1-1-5-1-1">
-<div class="para">Find the vectors <span class="process-math">\(\bvec_1\)</span> and <span class="process-math">\(\bvec_2\)</span> such that the matrix <span class="process-math">\(B=\left[\begin{array}{rr} \bvec_1 \amp \bvec_2
+<div class="para">Find the vectors <span class="process-math">\(\vec{b}_1\)</span> and <span class="process-math">\(\vec{b}_2\)</span> such that the matrix <span class="process-math">\(B=\left[\begin{array}{rr} \vec{b}_1 \amp \vec{b}_2
 \end{array}\right]\)</span> satisfies</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1656,7 +1670,7 @@ AB = I =
 <div class="para"><div id="sec-matrices-lin-combs-8-8-1-1-5-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
 </script></div></div>
 </div></li>
-<li id="sec-matrices-lin-combs-8-8-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-2-1">In general, it is not true that <span class="process-math">\(AB = BA\text{.}\)</span>  Check that it is true, however, for the specific <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> that appear in this problem. <div id="sec-matrices-lin-combs-8-8-1-1-5-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-8-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-2-1">In general, it is not true that <span class="process-math">\(AB = BA\text{.}\)</span>  Check that it is true, however, for the specific <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> that appear in this problem. <div id="sec-matrices-lin-combs-8-8-1-1-5-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrices-lin-combs-8-8-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-3-1">Suppose that <span class="process-math">\(\xvec = \twovec{x_1}{x_2}\text{.}\)</span>  What do you find when you evaluate <span class="process-math">\(I\xvec\text{?}\)</span>
@@ -1664,23 +1678,23 @@ AB = I =
 <li id="sec-matrices-lin-combs-8-8-1-1-5-4">
 <div class="para logical" id="sec-matrices-lin-combs-8-8-1-1-5-4-1">
 <div class="para">Suppose that we want to solve the equation <span class="process-math">\(A\xvec =
-\bvec\text{.}\)</span>  We know how to do this using Gaussian elimination; let’s use our matrix <span class="process-math">\(B\)</span> to find a different way:</div>
+\vec{b}\text{.}\)</span>  We know how to do this using Gaussian elimination; let’s use our matrix <span class="process-math">\(B\)</span> to find a different way:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-A\xvec \amp {}={} \bvec \\
-B(A\xvec) \amp {}={} B\bvec \\
-(BA)\xvec \amp {}={} B\bvec \\
-I\xvec \amp {}={} B\bvec \\
-\xvec \amp {}={} B\bvec \\
+A\xvec \amp {}={} \vec{b} \\
+B(A\xvec) \amp {}={} B\vec{b} \\
+(BA)\xvec \amp {}={} B\vec{b} \\
+I\xvec \amp {}={} B\vec{b} \\
+\xvec \amp {}={} B\vec{b} \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">In other words, the solution to the equation <span class="process-math">\(A\xvec=\bvec\)</span> is <span class="process-math">\(\xvec = B\bvec\text{.}\)</span>
+<div class="para">In other words, the solution to the equation <span class="process-math">\(A\xvec=\vec{b}\)</span> is <span class="process-math">\(\xvec = B\vec{b}\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-4-2">Consider the equation <span class="process-math">\(A\xvec = \twovec{5}{-2}\text{.}\)</span> Find the solution in two different ways, first using Gaussian elimination and then as <span class="process-math">\(\xvec = B\bvec\text{,}\)</span> and verify that you have found the same result.</div>
-<div id="sec-matrices-lin-combs-8-8-1-1-5-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-4-2">Consider the equation <span class="process-math">\(A\xvec = \twovec{5}{-2}\text{.}\)</span> Find the solution in two different ways, first using Gaussian elimination and then as <span class="process-math">\(\xvec = B\vec{b}\text{,}\)</span> and verify that you have found the same result.</div>
+<div id="sec-matrices-lin-combs-8-8-1-1-5-4-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </li>
 </ol>
@@ -1690,28 +1704,28 @@ I\xvec \amp {}={} B\bvec \\
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-9-1-1-1">
 <li id="sec-matrices-lin-combs-8-9-1-1-1-1"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-1-1">If <span class="process-math">\(A\xvec\)</span> is defined, then the number of components of <span class="process-math">\(\xvec\)</span> equals the number of rows of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-2"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-2-1">The solution space to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is equivalent to the solution space to the linear system whose augmented matrix is <span class="process-math">\(\left[\begin{array}{r|r} A \amp \bvec
+<li id="sec-matrices-lin-combs-8-9-1-1-1-2"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-2-1">The solution space to the equation <span class="process-math">\(A\xvec = \vec{b}\)</span> is equivalent to the solution space to the linear system whose augmented matrix is <span class="process-math">\(\left[\begin{array}{r|r} A \amp \vec{b}
 \end{array}\right]\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-3"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-3-1">If a linear system of equations has 8 equations and 5 unknowns, then the shape of the matrix <span class="process-math">\(A\)</span> in the corresponding equation <span class="process-math">\(A\xvec = \bvec\)</span> is <span class="process-math">\(5\times8\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-3"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-3-1">If a linear system of equations has 8 equations and 5 unknowns, then the shape of the matrix <span class="process-math">\(A\)</span> in the corresponding equation <span class="process-math">\(A\xvec = \vec{b}\)</span> is <span class="process-math">\(5\times8\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-4-1">If <span class="process-math">\(A\)</span> has a pivot position in every row, then every equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent.</div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(9\times5\)</span> matrix, then <span class="process-math">\(A\xvec=\bvec\)</span> is inconsistent for some vector <span class="process-math">\(\bvec\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-4-1">If <span class="process-math">\(A\)</span> has a pivot position in every row, then every equation <span class="process-math">\(A\xvec = \vec{b}\)</span> is consistent.</div></li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(9\times5\)</span> matrix, then <span class="process-math">\(A\xvec=\vec{b}\)</span> is inconsistent for some vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-10-1-1">
-<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(4\times4\)</span> matrix and that the equation <span class="process-math">\(A\xvec = \bvec\)</span> has a unique solution for some vector <span class="process-math">\(\bvec\text{.}\)</span>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(4\times4\)</span> matrix and that the equation <span class="process-math">\(A\xvec = \vec{b}\)</span> has a unique solution for some vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-10-1-1-5">
 <li id="sec-matrices-lin-combs-8-10-1-1-5-1"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-1-1">What does this say about the pivot positions of the matrix <span class="process-math">\(A\text{?}\)</span>  Write the reduced row echelon form of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-10-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-2-1">Can you find another vector <span class="process-math">\(\cvec\)</span> such that <span class="process-math">\(A\xvec = \cvec\)</span> is inconsistent?</div></li>
-<li id="sec-matrices-lin-combs-8-10-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-3-1">What can you say about the solution space to the equation <span class="process-math">\(A\xvec = \zerovec\text{?}\)</span>
+<li id="sec-matrices-lin-combs-8-10-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-3-1">What can you say about the solution space to the equation <span class="process-math">\(A\xvec = \vec{0}\text{?}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-10-1-1-5-4"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-4-1">Suppose <span class="process-math">\(A=\left[\begin{array}{rrrr}
-\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
-\end{array}\right]\text{.}\)</span>  Explain why every four-dimensional vector can be written as a linear combination of the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> in exactly one way.</div></li>
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
+\end{array}\right]\text{.}\)</span>  Explain why every four-dimensional vector can be written as a linear combination of the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> in exactly one way.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-11-1-1">
@@ -1726,20 +1740,20 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-11-1-1-2">
-<li id="sec-matrices-lin-combs-8-11-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-1-1">Describe the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> using a parametric description, if appropriate.  What does this solution space represent geometrically? <div id="sec-matrices-lin-combs-8-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-11-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-1-1">Describe the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> using a parametric description, if appropriate.  What does this solution space represent geometrically? <div id="sec-matrices-lin-combs-8-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-matrices-lin-combs-8-11-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-2-1">Describe the solution space to the equation <span class="process-math">\(A\xvec=\bvec\)</span> where <span class="process-math">\(\bvec = \threevec{-3}{-4}{1}\text{.}\)</span> What does this solution space represent geometrically and how does it compare to the previous solution space? <div id="sec-matrices-lin-combs-8-11-1-1-2-2-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-11-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-2-1">Describe the solution space to the equation <span class="process-math">\(A\xvec=\vec{b}\)</span> where <span class="process-math">\(\vec{b} = \threevec{-3}{-4}{1}\text{.}\)</span> What does this solution space represent geometrically and how does it compare to the previous solution space? <div id="sec-matrices-lin-combs-8-11-1-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrices-lin-combs-8-11-1-1-2-3">
-<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-1">We will now explain the relationship between the previous two solution spaces.  Suppose that <span class="process-math">\(\xvec_h\)</span> is a solution to the homogeneous equation;  that is <span class="process-math">\(A\xvec_h=\zerovec\text{.}\)</span>  Suppose also that <span class="process-math">\(\xvec_p\)</span> is a solution to the equation <span class="process-math">\(A\xvec =
-\bvec\text{;}\)</span>  that is, <span class="process-math">\(A\xvec_p=\bvec\text{.}\)</span>
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-1">We will now explain the relationship between the previous two solution spaces.  Suppose that <span class="process-math">\(\vec{x_h}\)</span> is a solution to the homogeneous equation;  that is <span class="process-math">\(A\vec{x_h}=\vec{0}\text{.}\)</span>  Suppose also that <span class="process-math">\(\vec{x_p}\)</span> is a solution to the equation <span class="process-math">\(A\vec{x} =
+\vec{b}\text{;}\)</span>  that is, <span class="process-math">\(A\vec{x_p}=\vec{b}\text{.}\)</span>
 </div>
-<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-2">Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why <span class="process-math">\(\xvec_h+\xvec_p\)</span> is a solution to the equation <span class="process-math">\(A\xvec
-= \bvec\text{.}\)</span>  You may do this by evaluating <span class="process-math">\(A(\xvec_h+\xvec_p)\text{.}\)</span>
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-2">Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why <span class="process-math">\(\vec{x_h}+\vec{x_p}\)</span> is a solution to the equation <span class="process-math">\(A\vec{x}
+= \vec{b}\text{.}\)</span>  You may do this by evaluating <span class="process-math">\(A(\vec{x_h}+\vec{x_p})\text{.}\)</span>
 </div>
-<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-3">That is, if we find one solution <span class="process-math">\(\xvec_p\)</span> to an equation <span class="process-math">\(A\xvec = \bvec\text{,}\)</span> we may add any solution to the homogeneous equation to <span class="process-math">\(\xvec_p\)</span> and still have a solution to the equation <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  In other words, the solution space to the equation <span class="process-math">\(A\xvec = \bvec\)</span> is given by translating the solution space to the homogeneous equation by the vector <span class="process-math">\(\xvec_p\text{.}\)</span>
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-3">That is, if we find one solution <span class="process-math">\(\vec{x_p}\)</span> to an equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we may add any solution to the homogeneous equation to <span class="process-math">\(\vec{x_p}\)</span> and still have a solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  In other words, the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is given by translating the solution space to the homogeneous equation by the vector <span class="process-math">\(\vec{x_p}\text{.}\)</span>
 </div>
 </li>
 </ol>
@@ -1799,22 +1813,22 @@ A = \left[\begin{array}{rr}
 <div class="para">Let us define vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \twovec{5}{2}, ~~~
-\vvec_2 = \twovec{-1}{1}\text{.}
+\vec{v_1} = \twovec{5}{2}, ~~~
+\vec{v_2} = \twovec{-1}{1}\text{.}
 \end{equation*}
 </div>
 <div class="para">Show that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A\vvec_1 = \vvec_1, ~~~A\vvec_2 = 0.3\vvec_2\text{.}
+A\vec{v_1} = \vec{v_1}, ~~~A\vec{v_2} = 0.3\vec{v_2}\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="sec-matrices-lin-combs-8-13-1-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-2-1">
-<div class="para">Suppose that <span class="process-math">\(\xvec_1 = c_1 \vvec_1 + c_2 \vvec_2\)</span> where <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> are scalars.  Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why</div>
+<div class="para">Suppose that <span class="process-math">\(\vec{x_1} = c_1 \vec{v_1} + c_2 \vec{v_2}\)</span> where <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> are scalars.  Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-mult-prop.html">
 \begin{equation*}
-\xvec_{2} = A\xvec_1 = c_1\vvec_1 + 0.3c_2\vvec_2\text{.}
+\vec{x_2} = A\vec{x_1} = c_1\vec{v_1} + 0.3c_2\vec{v_2}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1823,16 +1837,16 @@ A\vvec_1 = \vvec_1, ~~~A\vvec_2 = 0.3\vvec_2\text{.}
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\xvec_{3} = A\xvec_2 \amp {}={} c_1\vvec_1 +0.3^2c_2\vvec_2 \\
-\xvec_{4} = A\xvec_3 \amp {}={} c_1\vvec_1 +0.3^3c_2\vvec_2 \\
-\xvec_{5} = A\xvec_4 \amp {}={} c_1\vvec_1 +0.3^4c_2\vvec_2 \\
+\vec{x_3} = A\vec{x_2} \amp {}={} c_1\vec{v_1} +0.3^2c_2\vec{v_2} \\
+\vec{x_4} = A\vec{x_3} \amp {}={} c_1\vec{v_1} +0.3^3c_2\vec{v_2} \\
+\vec{x_5} = A\vec{x_4} \amp {}={} c_1\vec{v_1} +0.3^4c_2\vec{v_2} \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-4-1">Suppose that there are initially 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\text{.}\)</span>  Write the vector <span class="process-math">\(\xvec_1\)</span> and find the scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> such that <span class="process-math">\(\xvec_1=c_1\vvec_1 + c_2\vvec_2\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-4-1">Suppose that there are initially 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\text{.}\)</span>  Write the vector <span class="process-math">\(\vec{x_1}\)</span> and find the scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> such that <span class="process-math">\(\vec{x_1}=c_1\vec{v_1} + c_2\vec{v_2}\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-5-1">Use the previous part of this problem to determine <span class="process-math">\(\xvec_2\text{,}\)</span> <span class="process-math">\(\xvec_3\)</span> and <span class="process-math">\(\xvec_4\text{.}\)</span>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-5-1">Use the previous part of this problem to determine <span class="process-math">\(\vec{x_2}\text{,}\)</span> <span class="process-math">\(\vec{x_3}\)</span> and <span class="process-math">\(\vec{x_4}\text{.}\)</span>
 </div></li>
 <li id="sec-matrices-lin-combs-8-13-1-1-1-6"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-6-1">After a very long time, how are all the bicycles distributed?</div></li>
 </ol>

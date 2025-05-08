@@ -9,17 +9,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+<script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -31,7 +31,7 @@ sagecell.makeSagecell({
 <div class="para">Let’s look at some examples and apply these observations.</div>
 <ol class="lower-alpha ol-marker-1" id="activity-mt-intro-1-1-1">
 <li>
-<div class="para">To begin, suppose that <span class="process-math">\(T\)</span> is the matrix transformation that takes a two-dimensional vector <span class="process-math">\(\xvec\)</span> as an input and outputs <span class="process-math">\(T(\xvec)\text{,}\)</span> the two-dimensional vector obtained by rotating <span class="process-math">\(\xvec\)</span> counterclockwise by <span class="process-math">\(90^\circ\text{,}\)</span> as shown in <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>.</div>
+<div class="para">To begin, suppose that <span class="process-math">\(T\)</span> is the matrix transformation that takes a two-dimensional vector <span class="process-math">\(\vec{x}\)</span> as an input and outputs <span class="process-math">\(T(\vec{x})\text{,}\)</span> the two-dimensional vector obtained by rotating <span class="process-math">\(\vec{x}\)</span> counterclockwise by <span class="process-math">\(90^\circ\text{,}\)</span> as shown in <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>.</div>
 <figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2%;margin-right:2%;">
 <div class="sbspanel top" style="width:46.875%;"><img src="external/images/two-dim-basis.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:46.875%;"><img src="external/images/two-dim-basis-rotate.svg" role="img" class="contained"></div>
@@ -42,8 +42,8 @@ sagecell.makeSagecell({
 <li><div class="para">If we write <span class="process-math">\(T:\real^n\to\real^m\text{,}\)</span> what are the values of <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> and what is the shape of the associated matrix <span class="process-math">\(A\text{?}\)</span>
 </div></li>
 <li><div class="para">Determine the matrix <span class="process-math">\(A\)</span> by applying <a href="sec-linear-trans.html#prop-linear-trans-columns" class="xref" data-knowl="./knowl/xref/prop-linear-trans-columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.6">Proposition 2.5.6</a>.</div></li>
-<li><div class="para">If <span class="process-math">\(\vvec=\twovec{-2}{-1}\)</span> as shown on the left in <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>, use your matrix to determine <span class="process-math">\(T(\vvec)\)</span> and verify that it agrees with that shown on the right of <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>.</div></li>
-<li><div class="para">If <span class="process-math">\(\xvec=\twovec xy\text{,}\)</span> determine the vector <span class="process-math">\(T(\xvec)\)</span> obtained by rotating <span class="process-math">\(\xvec\)</span> counterclockwise by <span class="process-math">\(90^\circ\text{.}\)</span>
+<li><div class="para">If <span class="process-math">\(\vec{v}=\twovec{-2}{-1}\)</span> as shown on the left in <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>, use your matrix to determine <span class="process-math">\(T(\vec{v})\)</span> and verify that it agrees with that shown on the right of <a href="sec-linear-trans.html#fig-mt-rotate" class="xref" data-knowl="./knowl/xref/fig-mt-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.5.7">Figure 2.5.7</a>.</div></li>
+<li><div class="para">If <span class="process-math">\(\vec{x}=\twovec xy\text{,}\)</span> determine the vector <span class="process-math">\(T(\vec{x})\)</span> obtained by rotating <span class="process-math">\(\vec{x}\)</span> counterclockwise by <span class="process-math">\(90^\circ\text{.}\)</span>
 </div></li>
 </ol>
 </div>
@@ -55,17 +55,17 @@ sagecell.makeSagecell({
 <li><div class="para">Bakery 1 produces 10 cakes, 50 doughnuts, and 30 eclairs.</div></li>
 <li><div class="para">Bakery 2 produces 20 cakes, 30 doughnuts, and 30 eclairs.</div></li>
 </ul>
-<div class="para">If Bakery 1 operates for <span class="process-math">\(x_1\)</span> hours and Bakery 2 for <span class="process-math">\(x_2\)</span> hours, we will use the vector <span class="process-math">\(\xvec=\twovec{x_1}{x_2}\)</span> to describe the operation of the two bakeries.</div>
+<div class="para">If Bakery 1 operates for <span class="process-math">\(x_1\)</span> hours and Bakery 2 for <span class="process-math">\(x_2\)</span> hours, we will use the vector <span class="process-math">\(\vec{x}=\twovec{x_1}{x_2}\)</span> to describe the operation of the two bakeries.</div>
 </div>
 <div class="para logical">
-<div class="para">We would like to describe a matrix transformation <span class="process-math">\(T\)</span> where <span class="process-math">\(\xvec\)</span> describes the number of hours the bakeries operate and <span class="process-math">\(T(\xvec)\)</span> describes the total number of cakes, doughnuts, and eclairs produced.  That is, <span class="process-math">\(T(\xvec) = \threevec{y_1}{y_2}{y_3}\)</span> where <span class="process-math">\(y_1\)</span> is the number of cakes, <span class="process-math">\(y_2\)</span> is the number of doughnuts, and <span class="process-math">\(y_3\)</span> is the number of eclairs produced.</div>
+<div class="para">We would like to describe a matrix transformation <span class="process-math">\(T\)</span> where <span class="process-math">\(\vec{x}\)</span> describes the number of hours the bakeries operate and <span class="process-math">\(T(\vec{x})\)</span> describes the total number of cakes, doughnuts, and eclairs produced.  That is, <span class="process-math">\(T(\vec{x}) = \threevec{y_1}{y_2}{y_3}\)</span> where <span class="process-math">\(y_1\)</span> is the number of cakes, <span class="process-math">\(y_2\)</span> is the number of doughnuts, and <span class="process-math">\(y_3\)</span> is the number of eclairs produced.</div>
 <ol class="decimal ol-marker-2" id="activity-mt-intro-1-1-1-2-2-8">
 <li><div class="para">If <span class="process-math">\(T:\real^n\to\real^m\text{,}\)</span> what are the values of <span class="process-math">\(m\)</span> and <span class="process-math">\(n\text{,}\)</span> and what is the shape of the associated matrix <span class="process-math">\(A\text{?}\)</span>
 </div></li>
 <li><div class="para">We can determine the matrix <span class="process-math">\(A\)</span> using <a href="sec-linear-trans.html#prop-linear-trans-columns" class="xref" data-knowl="./knowl/xref/prop-linear-trans-columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.6">Proposition 2.5.6</a>.  For instance, <span class="process-math">\(T\left(\twovec10\right)\)</span> will describe the number of cakes, doughnuts, and eclairs produced when Bakery 1 operates for one hour and Bakery 2 sits idle.  What is this vector?</div></li>
 <li><div class="para">In the same way, determine <span class="process-math">\(T\left(\twovec01\right)\text{.}\)</span>  What is the matrix <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li><div class="para">If Bakery 1 operates for 120 hours and Bakery 2 for 180 hours, what is the total number of cakes, doughnuts, and eclairs produced? <div id="activity-mt-intro-1-1-1-2-2-8-4-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li><div class="para">If Bakery 1 operates for 120 hours and Bakery 2 for 180 hours, what is the total number of cakes, doughnuts, and eclairs produced? <div id="activity-mt-intro-1-1-1-2-2-8-4-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li><div class="para">Suppose that in one period of time, the company produces 5060 cakes, 14310 doughnuts, and 10470 eclairs.  How long did each bakery operate?</div></li>

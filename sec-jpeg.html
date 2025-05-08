@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -611,11 +611,11 @@ sagecell.makeSagecell({
 <div class="para logical" id="sec-jpeg-2-6-1-1">
 <div class="para">Since we will be using various bases and the coordinate systems they define, let’s review how to translate between coordinate systems.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-jpeg-2-6-1-1-1">
-<li id="sec-jpeg-2-6-1-1-1-1"><div class="para" id="sec-jpeg-2-6-1-1-1-1-1">Suppose that we have a basis <span class="process-math">\(\bcal=\{\vvec_1,\vvec_2,\ldots,\vvec_m\}\)</span> for <span class="process-math">\(\real^m\text{.}\)</span>  Explain what we mean by the representation <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> of a vector <span class="process-math">\(\xvec\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span>
+<li id="sec-jpeg-2-6-1-1-1-1"><div class="para" id="sec-jpeg-2-6-1-1-1-1-1">Suppose that we have a basis <span class="process-math">\(\bcal=\{\vec{v_1},\vec{v_2},\ldots,\vec{v_m}\}\)</span> for <span class="process-math">\(\real^m\text{.}\)</span>  Explain what we mean by the representation <span class="process-math">\(\coords{\vec{x}}{\bcal}\)</span> of a vector <span class="process-math">\(\vec{x}\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span>
 </div></li>
-<li id="sec-jpeg-2-6-1-1-1-2"><div class="para" id="sec-jpeg-2-6-1-1-1-2-1">If we are given the representation <span class="process-math">\(\coords{\xvec}{\bcal}\text{,}\)</span> how can we recover the vector <span class="process-math">\(\xvec\text{?}\)</span>
+<li id="sec-jpeg-2-6-1-1-1-2"><div class="para" id="sec-jpeg-2-6-1-1-1-2-1">If we are given the representation <span class="process-math">\(\coords{\vec{x}}{\bcal}\text{,}\)</span> how can we recover the vector <span class="process-math">\(\vec{x}\text{?}\)</span>
 </div></li>
-<li id="sec-jpeg-2-6-1-1-1-3"><div class="para" id="sec-jpeg-2-6-1-1-1-3-1">If we are given the vector <span class="process-math">\(\xvec\text{,}\)</span> how can we find <span class="process-math">\(\coords{\xvec}{\bcal}\text{?}\)</span>
+<li id="sec-jpeg-2-6-1-1-1-3"><div class="para" id="sec-jpeg-2-6-1-1-1-3-1">If we are given the vector <span class="process-math">\(\vec{x}\text{,}\)</span> how can we find <span class="process-math">\(\coords{\vec{x}}{\bcal}\text{?}\)</span>
 </div></li>
 <li id="sec-jpeg-2-6-1-1-1-4"><div class="para logical" id="sec-jpeg-2-6-1-1-1-4-1">
 <div class="para">Suppose that</div>
@@ -624,11 +624,11 @@ sagecell.makeSagecell({
 \bcal=\left\{\twovec{1}{3},\twovec{1}{1}\right\}
 \end{equation*}
 </div>
-<div class="para">is a basis for <span class="process-math">\(\real^2\text{.}\)</span>  If <span class="process-math">\(\coords{\xvec}{\bcal} = \twovec{1}{-2}\text{,}\)</span> find the vector <span class="process-math">\(\xvec\text{.}\)</span> <div id="sec-jpeg-2-6-1-1-1-4-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">is a basis for <span class="process-math">\(\real^2\text{.}\)</span>  If <span class="process-math">\(\coords{\vec{x}}{\bcal} = \twovec{1}{-2}\text{,}\)</span> find the vector <span class="process-math">\(\vec{x}\text{.}\)</span> <div id="sec-jpeg-2-6-1-1-1-4-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-jpeg-2-6-1-1-1-5"><div class="para" id="sec-jpeg-2-6-1-1-1-5-1">If <span class="process-math">\(\xvec=\twovec{2}{-4}\text{,}\)</span> find <span class="process-math">\(\coords{\xvec}{\bcal}\text{.}\)</span>
+<li id="sec-jpeg-2-6-1-1-1-5"><div class="para" id="sec-jpeg-2-6-1-1-1-5-1">If <span class="process-math">\(\vec{x}=\twovec{2}{-4}\text{,}\)</span> find <span class="process-math">\(\coords{\vec{x}}{\bcal}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article></section><section class="subsection" id="sec-jpeg-3"><h3 class="heading hide-type">
@@ -637,13 +637,13 @@ sagecell.makeSagecell({
 <div class="para" id="sec-jpeg-3-2">A color is represented digitally by a vector in <span class="process-math">\(\real^3\text{.}\)</span>  There are different ways in which we can represent colors, however, depending on whether a computer or a human will be processing the color.  We will describe two of these representations, called <em class="emphasis">color models</em>, and demonstrate how they are used in the JPEG compression algorithm.</div>
 <div class="para" id="sec-jpeg-3-3">Digital displays typically create colors by blending together various amounts of red, green, and blue.  We can therefore describe a color by putting its constituent amounts of red, green, and blue into a vector <span class="process-math">\(\threevec{R}{G}{B}\text{.}\)</span>  The quantities <span class="process-math">\(R\text{,}\)</span> <span class="process-math">\(G\text{,}\)</span> and <span class="process-math">\(B\)</span> are each stored with one byte of information so they are integers between 0 and 255.  This is called the <span class="process-math">\(RGB\)</span> color model. </div>
 <div class="para logical" id="sec-jpeg-3-4">
-<div class="para">We define a basis <span class="process-math">\(\bcal=\{\vvec_1,\vvec_2,\vvec_3\}\)</span> where</div>
+<div class="para">We define a basis <span class="process-math">\(\bcal=\{\vec{v_1},\vec{v_2},\vec{v_3}\}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 =\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],~~~
-\vvec_2 =\left[\begin{array}{c} 0 \\ -0.34413 \\ 1.77200
+\vec{v_1} =\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],~~~
+\vec{v_2} =\left[\begin{array}{c} 0 \\ -0.34413 \\ 1.77200
 \end{array}\right],~~~
-\vvec_3 =\left[\begin{array}{c} 1.40200 \\ -0.71414 \\
+\vec{v_3} =\left[\begin{array}{c} 1.40200 \\ -0.71414 \\
 0 \end{array}\right]
 \end{equation*}
 </div>
@@ -681,7 +681,7 @@ sagecell.makeSagecell({
 <li id="sec-jpeg-3-5-1-2-1-2-3-1-5"><div class="para" id="sec-jpeg-3-5-1-2-1-2-3-1-5-1">How can you create white?</div></li>
 </ol></div>
 </li>
-<li id="sec-jpeg-3-5-1-2-1-3"><div class="para" id="sec-jpeg-3-5-1-2-1-3-1">Verify that <span class="process-math">\(\bcal\)</span> is a basis for <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-jpeg-3-5-1-2-1-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-jpeg-3-5-1-2-1-3"><div class="para" id="sec-jpeg-3-5-1-2-1-3-1">Verify that <span class="process-math">\(\bcal\)</span> is a basis for <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-jpeg-3-5-1-2-1-3-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-jpeg-3-5-1-2-1-4"><div class="para" id="sec-jpeg-3-5-1-2-1-4-1">Find the matrix <span class="process-math">\(P_{\bcal}\)</span> that converts from <span class="process-math">\(\threevec{Y}{C_b}{C_r}\)</span> coordinates into <span class="process-math">\(\threevec{R}{G}{B}\)</span> coordinates.  Then find the matrix <span class="process-math">\(P_{\bcal}^{-1}\)</span> that converts from <span class="process-math">\(\threevec{R}{G}{B}\)</span> coordinates back into <span class="process-math">\(\threevec{Y}{C_b}{C_r}\)</span> coordinates.</div></li>
@@ -767,7 +767,7 @@ sagecell.makeSagecell({
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec = \left[\begin{array}{c}
+\vec{x} = \left[\begin{array}{c}
 176 \\ 181 \\ 165 \\ \vdots \\ 150 \\
 \end{array}\right]\text{.}
 \end{equation*}
@@ -779,14 +779,14 @@ sagecell.makeSagecell({
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\vvec_0 = \left[\begin{array}{c}
+\vec{v_0} = \left[\begin{array}{c}
 \cos\left(\frac{(2\cdot0+1)\cdot0\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot1+1)\cdot0\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot2+1)\cdot0\pi}{16}\right) \\
 \vdots \\
 \cos\left(\frac{(2\cdot7+1)\cdot0\pi}{16}\right) \\
 \end{array}\right], \amp 
-\vvec_1 = \left[\begin{array}{c}
+\vec{v_1} = \left[\begin{array}{c}
 \cos\left(\frac{(2\cdot0+1)\cdot1\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot1+1)\cdot1\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot2+1)\cdot1\pi}{16}\right) \\
@@ -794,14 +794,14 @@ sagecell.makeSagecell({
 \cos\left(\frac{(2\cdot7+1)\cdot1\pi}{16}\right) \\
 \end{array}\right], \\ \\
 \ldots, 
-\vvec_6 = \left[\begin{array}{c}
+\vec{v_6} = \left[\begin{array}{c}
 \cos\left(\frac{(2\cdot0+1)\cdot6\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot1+1)\cdot6\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot2+1)\cdot6\pi}{16}\right) \\
 \vdots \\
 \cos\left(\frac{(2\cdot7+1)\cdot6\pi}{16}\right) \\
 \end{array}\right], \amp
-\vvec_7 = \left[\begin{array}{c}
+\vec{v_7} = \left[\begin{array}{c}
 \cos\left(\frac{(2\cdot0+1)\cdot7\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot1+1)\cdot7\pi}{16}\right) \\
 \cos\left(\frac{(2\cdot2+1)\cdot7\pi}{16}\right) \\
@@ -812,19 +812,19 @@ sagecell.makeSagecell({
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec-jpeg-4-11">On first glance, this probably looks intimidating, but we can make sense of it by looking at these vectors graphically.  Shown in <a href="sec-jpeg.html#fig-jpeg-fourier-basis" class="xref" data-knowl="./knowl/xref/fig-jpeg-fourier-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.9">Figure 3.3.9</a> are four of these basis vectors.  Notice that <span class="process-math">\(\vvec_0\)</span> is constantly 1, <span class="process-math">\(\vvec_1\)</span> varies relatively slowly, <span class="process-math">\(\vvec_2\)</span> varies a little more rapidly, and <span class="process-math">\(\vvec_7\)</span> varies quite rapidly. The main thing to notice is that:  the basis vectors vary at different rates with the first vectors varying relatively slowly and the later vectors varying more rapidly.</div>
+<div class="para" id="sec-jpeg-4-11">On first glance, this probably looks intimidating, but we can make sense of it by looking at these vectors graphically.  Shown in <a href="sec-jpeg.html#fig-jpeg-fourier-basis" class="xref" data-knowl="./knowl/xref/fig-jpeg-fourier-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.9">Figure 3.3.9</a> are four of these basis vectors.  Notice that <span class="process-math">\(\vec{v_0}\)</span> is constantly 1, <span class="process-math">\(\vec{v_1}\)</span> varies relatively slowly, <span class="process-math">\(\vec{v_2}\)</span> varies a little more rapidly, and <span class="process-math">\(\vec{v_7}\)</span> varies quite rapidly. The main thing to notice is that:  the basis vectors vary at different rates with the first vectors varying relatively slowly and the later vectors varying more rapidly.</div>
 <figure class="figure figure-like" id="fig-jpeg-fourier-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/jpeg-fourier-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Four of the basis vectors <span class="process-math">\(\vvec_0\text{,}\)</span> <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_7\text{.}\)</span></figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Four of the basis vectors <span class="process-math">\(\vec{v_0}\text{,}\)</span> <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_7}\text{.}\)</span></figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
 <div class="sbspanel top" style="width:46.1538461538462%;"><div class="para logical" id="sec-jpeg-4-13-1">
-<div class="para">These vectors form the basis <span class="process-math">\(\bcal\)</span> for <span class="process-math">\(\real^8\text{.}\)</span> Remember that <span class="process-math">\(\xvec\)</span> is the vector of luminance values in the first column as seen on the right.  We will write <span class="process-math">\(\xvec\)</span> in the new coordinates</div>
+<div class="para">These vectors form the basis <span class="process-math">\(\bcal\)</span> for <span class="process-math">\(\real^8\text{.}\)</span> Remember that <span class="process-math">\(\vec{x}\)</span> is the vector of luminance values in the first column as seen on the right.  We will write <span class="process-math">\(\vec{x}\)</span> in the new coordinates</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\xvec}{\bcal} = \left[\begin{array}{c}
+\coords{\vec{x}}{\bcal} = \left[\begin{array}{c}
 F_0 \\ F_1 \\ F_2 \\ \vdots \\ F_7
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">The coordinates <span class="process-math">\(F_j\)</span> are called the <em class="emphasis">Fourier coefficients</em> of the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para">The coordinates <span class="process-math">\(F_j\)</span> are called the <em class="emphasis">Fourier coefficients</em> of the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
 </div></div>
 <div class="sbspanel top" style="width:51.2820512820513%;"><img src="external/images/jpeg-luminance-col-graph.svg" role="img" class="contained"></div>
@@ -833,67 +833,74 @@ F_0 \\ F_1 \\ F_2 \\ \vdots \\ F_7
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-jpeg-4-14-1-1">
-<div class="para">We will explore the influence that the Fourier coefficients have on the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para">We will explore the influence that the Fourier coefficients have on the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-jpeg-4-14-1-1-2">
 <li id="sec-jpeg-4-14-1-1-2-1">
 <div class="para" id="sec-jpeg-4-14-1-1-2-1-1">To begin, we’ll look at the Fourier coefficient <span class="process-math">\(F_0\text{.}\)</span>
 </div>
-<figure class="figure figure-like" id="js-fourier-0"><iframe id="interactive-fourier-0" width="600" height="210" src="interactive-fourier-0-if.html"></iframe><div class="instructions"><details id="interactive-fourier-0-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-0-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_0\)</span> influences the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<figure class="figure figure-like" id="js-fourier-0"><iframe id="interactive-fourier-0" width="600" height="210" src="interactive-fourier-0-if.html"></iframe><div class="instructions"><details id="interactive-fourier-0-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-0-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_0\)</span> influences the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_0\)</span> on the vector <span class="process-math">\(\xvec = F_0\vvec_0\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-1-3">Describe the effect that <span class="process-math">\(F_0\)</span> has on the vector <span class="process-math">\(\xvec\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\xvec\)</span> as constant, slowly varying, or rapidly varying?</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_0\)</span> on the vector <span class="process-math">\(\vec{x} = F_0\vec{v_0}\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-1-3">Describe the effect that <span class="process-math">\(F_0\)</span> has on the vector <span class="process-math">\(\vec{x}\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\vec{x}\)</span> as constant, slowly varying, or rapidly varying?</div>
 </li>
 <li id="sec-jpeg-4-14-1-1-2-2">
-<div class="para" id="sec-jpeg-4-14-1-1-2-2-1">By comparison, let’s see how the Fourier coefficient <span class="process-math">\(F_3\)</span> influences <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para" id="sec-jpeg-4-14-1-1-2-2-1">By comparison, let’s see how the Fourier coefficient <span class="process-math">\(F_3\)</span> influences <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
-<figure class="figure figure-like" id="js-fourier-3"><iframe id="interactive-fourier-3" width="600" height="210" src="interactive-fourier-3-if.html"></iframe><div class="instructions"><details id="interactive-fourier-3-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-3-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_3\)</span> influences the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<figure class="figure figure-like" id="js-fourier-3"><iframe id="interactive-fourier-3" width="600" height="210" src="interactive-fourier-3-if.html"></iframe><div class="instructions"><details id="interactive-fourier-3-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-3-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_3\)</span> influences the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.11<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_3\)</span> on the vector <span class="process-math">\(\xvec = F_3\vvec_3\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-2-3">Describe the effect that <span class="process-math">\(F_3\)</span> has on the vector <span class="process-math">\(\xvec\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\xvec\)</span> as constant, slowly varying, or rapidly varying?</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.11<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_3\)</span> on the vector <span class="process-math">\(\vec{x} = F_3\vec{v_3}\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-2-3">Describe the effect that <span class="process-math">\(F_3\)</span> has on the vector <span class="process-math">\(\vec{x}\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\vec{x}\)</span> as constant, slowly varying, or rapidly varying?</div>
 </li>
 <li id="sec-jpeg-4-14-1-1-2-3">
-<div class="para" id="sec-jpeg-4-14-1-1-2-3-1">Let’s now investigate how the Fourier coefficient <span class="process-math">\(F_7\)</span> influences the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para" id="sec-jpeg-4-14-1-1-2-3-1">Let’s now investigate how the Fourier coefficient <span class="process-math">\(F_7\)</span> influences the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
-<figure class="figure figure-like" id="js-fourier-7"><iframe id="interactive-fourier-7" width="600" height="210" src="interactive-fourier-7-if.html"></iframe><div class="instructions"><details id="interactive-fourier-7-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-7-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_7\)</span> influences the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<figure class="figure figure-like" id="js-fourier-7"><iframe id="interactive-fourier-7" width="600" height="210" src="interactive-fourier-7-if.html"></iframe><div class="instructions"><details id="interactive-fourier-7-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-fourier-7-2-1">Use the slider below to explore how the Fourier coefficient <span class="process-math">\(F_7\)</span> influences the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.12<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_0\)</span> on the vector <span class="process-math">\(\xvec = F_7\vvec_7\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-3-3">Describe the effect that <span class="process-math">\(F_7\)</span> has on the vector <span class="process-math">\(\xvec\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\xvec\)</span> as constant, slowly varying, or rapidly varying?</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.12<span class="period">.</span></span><span class="space"> </span>The effect of the Fourier coefficient <span class="process-math">\(F_0\)</span> on the vector <span class="process-math">\(\vec{x} = F_7\vec{v_7}\text{.}\)</span></figcaption></figure><div class="para" id="sec-jpeg-4-14-1-1-2-3-3">Describe the effect that <span class="process-math">\(F_7\)</span> has on the vector <span class="process-math">\(\vec{x}\text{.}\)</span>  Would you describe the components in <span class="process-math">\(\vec{x}\)</span> as constant, slowly varying, or rapidly varying?</div>
 </li>
-<li id="sec-jpeg-4-14-1-1-2-4"><div class="para" id="sec-jpeg-4-14-1-1-2-4-1">If the components of <span class="process-math">\(\xvec\)</span> vary relatively slowly, what would you expect to be true of the Fourier coefficients <span class="process-math">\(F_j\text{?}\)</span>
+<li id="sec-jpeg-4-14-1-1-2-4"><div class="para" id="sec-jpeg-4-14-1-1-2-4-1">If the components of <span class="process-math">\(\vec{x}\)</span> vary relatively slowly, what would you expect to be true of the Fourier coefficients <span class="process-math">\(F_j\text{?}\)</span>
 </div></li>
-<li id="sec-jpeg-4-14-1-1-2-5"><div class="para" id="sec-jpeg-4-14-1-1-2-5-1">The Sage cell below will construct the vector <span class="process-math">\(P_{\bcal}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">P</code>, and its inverse <span class="process-math">\(P_{\bcal}^{-1}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">Pinv</code>.  Evaluate this Sage cell and notice that it prints the matrix <span class="process-math">\(P_{\bcal}^{-1}\text{.}\)</span> <div id="sage-dct-def" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">mat = [[cos((2*i+1)*j*pi/16) for j in range(8)] for i in range(8)]
-P = matrix(mat).numerical_approx()
-Pinv = P.inverse()	
-print (Pinv.numerical_approx(digits=3))
-</script></div> Now look at the form of <span class="process-math">\(P_{\bcal}^{-1}\)</span> and explain why <span class="process-math">\(F_0\)</span> is the average of the luminance values in the vector <span class="process-math">\(\xvec\text{.}\)</span>
+<li id="sec-jpeg-4-14-1-1-2-5"><div class="para" id="sec-jpeg-4-14-1-1-2-5-1">The Python cell below will construct the vector <span class="process-math">\(P_{\bcal}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">P</code>, and its inverse <span class="process-math">\(P_{\bcal}^{-1}\text{,}\)</span> which is denoted <code class="code-inline tex2jax_ignore">Pinv</code>.  Evaluate this Python cell and notice that it prints the matrix <span class="process-math">\(P_{\bcal}^{-1}\text{.}\)</span> <div id="sage-dct-def" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+
+mat = [[np.cos((2*i+1)*j*np.pi/16) for j in range(8)] for i in range(8)]
+P = np.array(mat).evalf()
+Pinv = P.inv()	
+print (Pinv.evalf(3))
+</script></div> Now look at the form of <span class="process-math">\(P_{\bcal}^{-1}\)</span> and explain why <span class="process-math">\(F_0\)</span> is the average of the luminance values in the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div></li>
-<li id="sec-jpeg-4-14-1-1-2-6"><div class="para" id="sec-jpeg-4-14-1-1-2-6-1">The Sage cell below defines the vector <span class="process-math">\(\xvec\text{,}\)</span> which is the vector of luminance values in the first column, as seen in <a href="sec-jpeg.html#fig-jpeg-block-luminance" class="xref" data-knowl="./knowl/xref/fig-jpeg-block-luminance.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.8">Figure 3.3.8</a>. Use the cell below to find the vector <span class="process-math">\(\fvec\)</span> of Fourier coefficients <span class="process-math">\(F_0,F_1,\ldots,F_7\text{.}\)</span>  If you have evaluated the cell above, you will still be able to refer to <code class="code-inline tex2jax_ignore">P</code> and <code class="code-inline tex2jax_ignore">Pinv</code> in this cell. <div id="sec-jpeg-4-14-1-1-2-6-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x = vector([176,181,165,139,131,131,140,150])
+<li id="sec-jpeg-4-14-1-1-2-6"><div class="para" id="sec-jpeg-4-14-1-1-2-6-1">The Python cell below defines the vector <span class="process-math">\(\vec{x}\text{,}\)</span> which is the vector of luminance values in the first column, as seen in <a href="sec-jpeg.html#fig-jpeg-block-luminance" class="xref" data-knowl="./knowl/xref/fig-jpeg-block-luminance.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.8">Figure 3.3.8</a>. Use the cell below to find the vector <span class="process-math">\(\fvec\)</span> of Fourier coefficients <span class="process-math">\(F_0,F_1,\ldots,F_7\text{.}\)</span>  If you have evaluated the cell above, you will still be able to refer to <code class="code-inline tex2jax_ignore">P</code> and <code class="code-inline tex2jax_ignore">Pinv</code> in this cell. <div id="sec-jpeg-4-14-1-1-2-6-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+
+x = np.array([176,181,165,139,131,131,140,150])
 #  find the vector of Fourier coefficients f below
 f =
-print (f.numerical_approx(digits=4))
+print (f.evalf(4))
 </script></div> Write the Fourier coefficients and discuss the relative sizes of the coefficients.</div></li>
-<li id="sec-jpeg-4-14-1-1-2-7"><div class="para" id="sec-jpeg-4-14-1-1-2-7-1">Let’s see what happens when we simply ignore the coefficients <span class="process-math">\(F_6\)</span> and <span class="process-math">\(F_7\text{.}\)</span>  Form a new vector of Fourier coefficients by rounding the coefficients to the nearest integer and setting <span class="process-math">\(F_6\)</span> and <span class="process-math">\(F_7\)</span> to zero. This is an approximation to <span class="process-math">\(\fvec\text{,}\)</span> the vector of Fourier coefficients.  Use the approximation to <span class="process-math">\(\fvec\)</span> to form an approximation of the vector <span class="process-math">\(\xvec\text{.}\)</span> <div id="sec-jpeg-4-14-1-1-2-7-1-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># define fapprox below and then find xapprox
+<li id="sec-jpeg-4-14-1-1-2-7"><div class="para" id="sec-jpeg-4-14-1-1-2-7-1">Let’s see what happens when we simply ignore the coefficients <span class="process-math">\(F_6\)</span> and <span class="process-math">\(F_7\text{.}\)</span>  Form a new vector of Fourier coefficients by rounding the coefficients to the nearest integer and setting <span class="process-math">\(F_6\)</span> and <span class="process-math">\(F_7\)</span> to zero. This is an approximation to <span class="process-math">\(\fvec\text{,}\)</span> the vector of Fourier coefficients.  Use the approximation to <span class="process-math">\(\fvec\)</span> to form an approximation of the vector <span class="process-math">\(\vec{x}\text{.}\)</span> <div id="sec-jpeg-4-14-1-1-2-7-1-8" class="ptx-sagecell sagecell-python"><script type="text/x-sage"># define fapprox below and then find xapprox
 fapprox =
 xapprox =
 print ("x      =", x)
-print ("xapprox=", xapprox.numerical_approx(digits=3))
-</script></div> How much does your approximation differ from the actual vector <span class="process-math">\(\xvec\text{?}\)</span>
+print ("xapprox=", xapprox.evalf(3))
+</script></div> How much does your approximation differ from the actual vector <span class="process-math">\(\vec{x}\text{?}\)</span>
 </div></li>
 <li id="sec-jpeg-4-14-1-1-2-8">
-<div class="para" id="sec-jpeg-4-14-1-1-2-8-1">When we ignore the Fourier coefficients corresponding to rapidly varying basis elements, we see that the vector <span class="process-math">\(\xvec\)</span> that we reconstruct is very close to the original one.  In fact, the luminance values in the approximation differ by at most one or two from the actual luminance values. Our eyes are not sensitive enough to detect this difference.</div>
-<div class="para" id="sec-jpeg-4-14-1-1-2-8-2">So far, we have concentrated on only one column in our <span class="process-math">\(8\times8\)</span> block of luminance values.  Let’s now consider all of the columns. The following Sage cell defines a matrix called <code class="code-inline tex2jax_ignore">luminance</code>, which is the <span class="process-math">\(8\times8\)</span> matrix of luminance values.  Find the <span class="process-math">\(8\times8\)</span> matrix <span class="process-math">\(F\)</span> whose columns are the Fourier coefficients of the columns of luminance values. <div id="sec-jpeg-4-14-1-1-2-8-2-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">luminance = matrix(8,8, [176, 170, 170, 169, 162, 160, 155, 150, 181,
-179, 175, 167, 162, 160, 154, 149, 165, 170, 169, 161, 162, 161, 160,
-158, 139, 150, 164, 166, 159, 160, 162, 163, 131, 137, 157, 165, 163,
-163, 164, 164, 131, 132, 153, 161, 167, 167, 167, 169, 140, 142, 157,
-166, 166, 166, 167, 169, 150, 152, 160, 168, 172, 170, 168, 168])
+<div class="para" id="sec-jpeg-4-14-1-1-2-8-1">When we ignore the Fourier coefficients corresponding to rapidly varying basis elements, we see that the vector <span class="process-math">\(\vec{x}\)</span> that we reconstruct is very close to the original one.  In fact, the luminance values in the approximation differ by at most one or two from the actual luminance values. Our eyes are not sensitive enough to detect this difference.</div>
+<div class="para" id="sec-jpeg-4-14-1-1-2-8-2">So far, we have concentrated on only one column in our <span class="process-math">\(8\times8\)</span> block of luminance values.  Let’s now consider all of the columns. The following Python cell defines a matrix called <code class="code-inline tex2jax_ignore">luminance</code>, which is the <span class="process-math">\(8\times8\)</span> matrix of luminance values.  Find the <span class="process-math">\(8\times8\)</span> matrix <span class="process-math">\(F\)</span> whose columns are the Fourier coefficients of the columns of luminance values. <div id="sec-jpeg-4-14-1-1-2-8-2-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">luminance = np.array([[176, 170, 170, 169, 162, 160, 155, 150], 
+					[181, 179, 175, 167, 162, 160, 154, 149], 
+					[165, 170, 169, 161, 162, 161, 160, 158], 
+					[139, 150, 164, 166, 159, 160, 162, 163], 
+					[131, 137, 157, 165, 163, 163, 164, 164], 
+					[131, 132, 153, 161, 167, 167, 167, 169], 
+					[140, 142, 157, 166, 166, 166, 167, 169], 
+					[150, 152, 160, 168, 172, 170, 168, 168]])
 # define your matrix F below
 F =
-print (F.numerical_approx(digits=3))
+print (F.evalf(3))
 </script></div>
 </div>
 </li>
-<li id="sec-jpeg-4-14-1-1-2-9"><div class="para" id="sec-jpeg-4-14-1-1-2-9-1">Notice that the first row of this matrix consists of the Fourier coefficient <span class="process-math">\(F_0\)</span> for each of the columns.  Just as we saw before, the entries in this row do not change significantly as we move across the row.  In the Sage cell below, write these entries in the vector <span class="process-math">\(\yvec\)</span> and find the corresponding Fourier coefficients. <div id="sec-jpeg-4-14-1-1-2-9-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># define the vector y as the entries in the first row of F	    
+<li id="sec-jpeg-4-14-1-1-2-9"><div class="para" id="sec-jpeg-4-14-1-1-2-9-1">Notice that the first row of this matrix consists of the Fourier coefficient <span class="process-math">\(F_0\)</span> for each of the columns.  Just as we saw before, the entries in this row do not change significantly as we move across the row.  In the Python cell below, write these entries in the vector <span class="process-math">\(\yvec\)</span> and find the corresponding Fourier coefficients. <div id="sec-jpeg-4-14-1-1-2-9-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage"># define the vector y as the entries in the first row of F	    
 y = 
 y_fourier =
-print (y_fourier.numerical_approx(digits=3))
+print (y_fourier.evalf(3))
 </script></div>
 </div></li>
 </ol>
@@ -1026,20 +1033,22 @@ print (y_fourier.numerical_approx(digits=3))
 </h3>
 <article class="exercise exercise-like" id="sec-jpeg-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-jpeg-6-1-1-1">
-<div class="para">Consider the vector <span class="process-math">\(\xvec=\left[\begin{array}{r}
+<div class="para">Consider the vector <span class="process-math">\(\vec{x}=\left[\begin{array}{r}
 103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
 \end{array}\right]
 \text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-jpeg-6-1-1-1-2">
-<li id="sec-jpeg-6-1-1-1-2-1"><div class="para" id="sec-jpeg-6-1-1-1-2-1-1">In the Sage cell below is a copy of the change of basis matrices that define the Fourier transform.  Find the Fourier coefficients of <span class="process-math">\(\xvec\text{.}\)</span> <div id="sec-jpeg-6-1-1-1-2-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">mat = [[cos((2*i+1)*j*pi/16) for j in range(8)] for i in range(8)]
-P = matrix(mat).numerical_approx()
-Pinv = P.inverse()	
-print (Pinv.numerical_approx(digits=3))
+<li id="sec-jpeg-6-1-1-1-2-1"><div class="para" id="sec-jpeg-6-1-1-1-2-1-1">In the Python cell below is a copy of the change of basis matrices that define the Fourier transform.  Find the Fourier coefficients of <span class="process-math">\(\vec{x}\text{.}\)</span> <div id="sec-jpeg-6-1-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+
+mat = [[np.cos((2*i+1)*j*np.pi/16) for j in range(8)] for i in range(8)]
+P = np.array(mat).evalf()
+Pinv = np.linalg.inv(P)	
+print (Pinv.evalf(3))
 </script></div>
 </div></li>
-<li id="sec-jpeg-6-1-1-1-2-2"><div class="para" id="sec-jpeg-6-1-1-1-2-2-1">We will now form the vector <span class="process-math">\(\yvec\text{,}\)</span> which is an approximation of <span class="process-math">\(\xvec\)</span> by rounding all the Fourier coefficients of <span class="process-math">\(\xvec\)</span> to the nearest integer to obtain <span class="process-math">\(\coords{\yvec}{\ccal}\text{.}\)</span>  Now find the vector <span class="process-math">\(\yvec\)</span> and compare this approximation to <span class="process-math">\(\xvec\text{.}\)</span>  What is the error in this approximation?</div></li>
-<li id="sec-jpeg-6-1-1-1-2-3"><div class="para" id="sec-jpeg-6-1-1-1-2-3-1">Repeat the last part of this problem, but set the rounded Fourier coefficients to zero if they have an absolute value less than five.  Use it to create a second approximation of <span class="process-math">\(\xvec\text{.}\)</span>  What is the error in this approximation?</div></li>
+<li id="sec-jpeg-6-1-1-1-2-2"><div class="para" id="sec-jpeg-6-1-1-1-2-2-1">We will now form the vector <span class="process-math">\(\yvec\text{,}\)</span> which is an approximation of <span class="process-math">\(\vec{x}\)</span> by rounding all the Fourier coefficients of <span class="process-math">\(\vec{x}\)</span> to the nearest integer to obtain <span class="process-math">\(\coords{\yvec}{\ccal}\text{.}\)</span>  Now find the vector <span class="process-math">\(\yvec\)</span> and compare this approximation to <span class="process-math">\(\vec{x}\text{.}\)</span>  What is the error in this approximation?</div></li>
+<li id="sec-jpeg-6-1-1-1-2-3"><div class="para" id="sec-jpeg-6-1-1-1-2-3-1">Repeat the last part of this problem, but set the rounded Fourier coefficients to zero if they have an absolute value less than five.  Use it to create a second approximation of <span class="process-math">\(\vec{x}\text{.}\)</span>  What is the error in this approximation?</div></li>
 <li id="sec-jpeg-6-1-1-1-2-4"><div class="para" id="sec-jpeg-6-1-1-1-2-4-1">Compare the number of nonzero Fourier coefficients that you have in the two approximations and compare the accuracy of the approximations.  Using a few sentences, discuss the comparisons that you find.</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-jpeg-6-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
@@ -1058,26 +1067,26 @@ print (Pinv.numerical_approx(digits=3))
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-fourier-sine-basis.html">
 \begin{equation*}
 \begin{aligned}
-\vvec_1 = \left[\begin{array}{c}
+\vec{v_1} = \left[\begin{array}{c}
 \sin\left(\frac{1\cdot1\pi}{8}\right) \\
 \sin\left(\frac{3\cdot1\pi}{8}\right) \\
 \sin\left(\frac{5\cdot1\pi}{8}\right) \\
 \sin\left(\frac{7\cdot1\pi}{8}\right) \\
 \end{array}\right], \amp
-\vvec_2 = \left[\begin{array}{c}
+\vec{v_2} = \left[\begin{array}{c}
 \sin\left(\frac{1\cdot2\pi}{8}\right) \\
 \sin\left(\frac{3\cdot2\pi}{8}\right) \\
 \sin\left(\frac{5\cdot2\pi}{8}\right) \\
 \sin\left(\frac{7\cdot2\pi}{8}\right) \\
 \end{array}\right], \\
 \\
-\vvec_3 = \left[\begin{array}{c}
+\vec{v_3} = \left[\begin{array}{c}
 \sin\left(\frac{1\cdot3\pi}{8}\right) \\
 \sin\left(\frac{3\cdot3\pi}{8}\right) \\
 \sin\left(\frac{5\cdot3\pi}{8}\right) \\
 \sin\left(\frac{7\cdot3\pi}{8}\right) \\
 \end{array}\right], \amp
-\vvec_4 = \left[\begin{array}{c}
+\vec{v_4} = \left[\begin{array}{c}
 \sin\left(\frac{1\cdot4\pi}{8}\right) \\
 \sin\left(\frac{3\cdot4\pi}{8}\right) \\
 \sin\left(\frac{5\cdot4\pi}{8}\right) \\
@@ -1088,20 +1097,20 @@ print (Pinv.numerical_approx(digits=3))
 </div>
 <div class="para">We can think of these vectors graphically, as shown in <a href="sec-jpeg.html#fig-fourier-sine-basis" class="xref" data-knowl="./knowl/xref/fig-fourier-sine-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.15">Figure 3.3.15</a>.</div>
 </div> <figure class="figure figure-like" id="fig-fourier-sine-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/fourier-sine-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.15<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec_1,\vvec_2,\vvec_3,\vvec_4\)</span> that form the basis <span class="process-math">\(\scal\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-jpeg-6-3-1-3"><ol class="lower-alpha ol-marker-1" id="sec-jpeg-6-3-1-3-1">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.15<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}\)</span> that form the basis <span class="process-math">\(\scal\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-jpeg-6-3-1-3"><ol class="lower-alpha ol-marker-1" id="sec-jpeg-6-3-1-3-1">
 <li id="sec-jpeg-6-3-1-3-1-1">
-<div class="para" id="sec-jpeg-6-3-1-3-1-1-1">The Sage cell below defines the matrix <code class="code-inline tex2jax_ignore">S</code> whose columns are the vectors in the basis <span class="process-math">\(\scal\)</span> as well as the matrix <code class="code-inline tex2jax_ignore">C</code> whose columns form the basis <span class="process-math">\(\ccal\)</span> used in the Fourier Cosine Transform.</div>
-<div id="sec-jpeg-6-3-1-3-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sinmat = [[sin((2*i+1)*j*pi/8) for j in range(1,5)] for i in range(4)]
-cosmat = [[cos((2*i+1)*j*pi/8) for j in range(4)] for i in range(4)]
-S = matrix(sinmat).numerical_approx()    
-C = matrix(cosmat).numerical_approx()
+<div class="para" id="sec-jpeg-6-3-1-3-1-1-1">The Python cell below defines the matrix <code class="code-inline tex2jax_ignore">S</code> whose columns are the vectors in the basis <span class="process-math">\(\scal\)</span> as well as the matrix <code class="code-inline tex2jax_ignore">C</code> whose columns form the basis <span class="process-math">\(\ccal\)</span> used in the Fourier Cosine Transform.</div>
+<div id="sec-jpeg-6-3-1-3-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">sinmat = [[np.sin((2*i+1)*j*np.pi/8) for j in range(1,5)] for i in range(4)]
+cosmat = [[np.cos((2*i+1)*j*np.pi/8) for j in range(4)] for i in range(4)]
+S = np.array(sinmat).evalf()    
+C = np.array(cosmat).evalf()
 </script></div>
-<div class="para" id="sec-jpeg-6-3-1-3-1-1-3">In the <span class="process-math">\(8\times8\)</span> block of luminance values we considered in this section, the first column begins with the four entries 176, 181, 165, and 139, as seen in <a href="sec-jpeg.html#fig-jpeg-block-luminance" class="xref" data-knowl="./knowl/xref/fig-jpeg-block-luminance.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.8">Figure 3.3.8</a>.  These form the vector <span class="process-math">\(\xvec=\fourvec{176}{181}{165}{139}\text{.}\)</span>  Find both <span class="process-math">\(\coords{\xvec}{\scal}\)</span> and <span class="process-math">\(\coords{\xvec}{\ccal}\text{.}\)</span>
+<div class="para" id="sec-jpeg-6-3-1-3-1-1-3">In the <span class="process-math">\(8\times8\)</span> block of luminance values we considered in this section, the first column begins with the four entries 176, 181, 165, and 139, as seen in <a href="sec-jpeg.html#fig-jpeg-block-luminance" class="xref" data-knowl="./knowl/xref/fig-jpeg-block-luminance.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.8">Figure 3.3.8</a>.  These form the vector <span class="process-math">\(\vec{x}=\fourvec{176}{181}{165}{139}\text{.}\)</span>  Find both <span class="process-math">\(\coords{\vec{x}}{\scal}\)</span> and <span class="process-math">\(\coords{\vec{x}}{\ccal}\text{.}\)</span>
 </div>
 </li>
-<li id="sec-jpeg-6-3-1-3-1-2"><div class="para" id="sec-jpeg-6-3-1-3-1-2-1">Write a sentence or two comparing the values for the Fourier Sine coefficients <span class="process-math">\(\coords{\xvec}{\scal}\)</span> and the Fourier Cosine coefficients <span class="process-math">\(\coords{\xvec}{\ccal}\text{.}\)</span>
+<li id="sec-jpeg-6-3-1-3-1-2"><div class="para" id="sec-jpeg-6-3-1-3-1-2-1">Write a sentence or two comparing the values for the Fourier Sine coefficients <span class="process-math">\(\coords{\vec{x}}{\scal}\)</span> and the Fourier Cosine coefficients <span class="process-math">\(\coords{\vec{x}}{\ccal}\text{.}\)</span>
 </div></li>
-<li id="sec-jpeg-6-3-1-3-1-3"><div class="para" id="sec-jpeg-6-3-1-3-1-3-1">Suppose now that <span class="process-math">\(\xvec=\fourvec{100}{100}{100}{100}\text{.}\)</span> Find the Fourier Sine coefficients <span class="process-math">\(\coords{\xvec}{\scal}\)</span> and the Fourier Cosine coefficients <span class="process-math">\(\coords{\xvec}{\ccal}\text{.}\)</span>
+<li id="sec-jpeg-6-3-1-3-1-3"><div class="para" id="sec-jpeg-6-3-1-3-1-3-1">Suppose now that <span class="process-math">\(\vec{x}=\fourvec{100}{100}{100}{100}\text{.}\)</span> Find the Fourier Sine coefficients <span class="process-math">\(\coords{\vec{x}}{\scal}\)</span> and the Fourier Cosine coefficients <span class="process-math">\(\coords{\vec{x}}{\ccal}\text{.}\)</span>
 </div></li>
 <li id="sec-jpeg-6-3-1-3-1-4"><div class="para" id="sec-jpeg-6-3-1-3-1-4-1">Write a few sentences explaining why we use the Fourier Cosine Transform in the JPEG compression algorithm rather than the Fourier Sine Transform.</div></li>
 </ol></div></article><article class="exercise exercise-like" id="sec-jpeg-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
@@ -1109,20 +1118,20 @@ C = matrix(cosmat).numerical_approx()
 <div class="para">In <a href="sec-bases.html#example-wavelet-basis" class="xref" data-knowl="./knowl/xref/example-wavelet-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 3.2.9">Example 3.2.9</a>, we looked at a basis for <span class="process-math">\(\real^4\)</span> that we called the Haar wavelet basis. The basis vectors are</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-wavelet-basis.html ./knowl/xref/fig-haar-wavelet-basis.html">
 \begin{equation*}
-\vvec_1=\fourvec{1}{1}{1}{1},
-\vvec_2=\fourvec{1}{1}{-1}{-1},
-\vvec_3=\fourvec{1}{-1}{0}{0},
-\vvec_4=\fourvec{0}{0}{1}{-1}\text{,}
+\vec{v_1}=\fourvec{1}{1}{1}{1},
+\vec{v_2}=\fourvec{1}{1}{-1}{-1},
+\vec{v_3}=\fourvec{1}{-1}{0}{0},
+\vec{v_4}=\fourvec{0}{0}{1}{-1}\text{,}
 \end{equation*}
 </div>
 <div class="para">which may be understood graphically as in <a href="sec-jpeg.html#fig-haar-wavelet-basis" class="xref" data-knowl="./knowl/xref/fig-haar-wavelet-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.3.16">Figure 3.3.16</a>. We will denote this basis by <span class="process-math">\(\wcal\text{.}\)</span>
 </div>
 </div> <figure class="figure figure-like" id="fig-haar-wavelet-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/basis-revenue-elements.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.16<span class="period">.</span></span><span class="space"> </span>The Haar wavelet basis represented graphically.</figcaption></figure> <div class="para logical" id="sec-jpeg-6-4-1-3">
-<div class="para">The change of coordinates from a vector <span class="process-math">\(\xvec\)</span> in <span class="process-math">\(\real^4\)</span> to <span class="process-math">\(\coords{\xvec}{\wcal}\)</span> is called the Haar <em class="emphasis">wavelet transform</em> and we write</div>
+<div class="para">The change of coordinates from a vector <span class="process-math">\(\vec{x}\)</span> in <span class="process-math">\(\real^4\)</span> to <span class="process-math">\(\coords{\vec{x}}{\wcal}\)</span> is called the Haar <em class="emphasis">wavelet transform</em> and we write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\xvec}{\wcal} = \fourvec{H_1}{H_2}{H_3}{H_4}\text{.}
+\coords{\vec{x}}{\wcal} = \fourvec{H_1}{H_2}{H_3}{H_4}\text{.}
 \end{equation*}
 </div>
 <div class="para">The coefficients <span class="process-math">\(H_1,H_2,H_3,H_4\)</span> are called wavelet coefficients.</div>
@@ -1139,27 +1148,32 @@ C = matrix(cosmat).numerical_approx()
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-jpeg-6-4-1-5"><ol class="lower-alpha ol-marker-1" id="sec-jpeg-6-4-1-5-1">
-<li id="sec-jpeg-6-4-1-5-1-1"><div class="para" id="sec-jpeg-6-4-1-5-1-1-1">The following Sage cell defines the matrix <code class="code-inline tex2jax_ignore">W</code> whose columns are the basis vectors in <span class="process-math">\(\wcal\text{.}\)</span>  If <span class="process-math">\(\xvec\)</span> is the first column of luminance values in the <span class="process-math">\(4\times4\)</span> block above, find the wavelet coefficients <span class="process-math">\(\coords{\xvec}{\wcal}\text{.}\)</span> <div id="sec-jpeg-6-4-1-5-1-1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">W = matrix(4,4,[1,1,1,0,1,1,-1,0,1,-1,0,1,1,-1,0,-1])
+<li id="sec-jpeg-6-4-1-5-1-1"><div class="para" id="sec-jpeg-6-4-1-5-1-1-1">The following Python cell defines the matrix <code class="code-inline tex2jax_ignore">W</code> whose columns are the basis vectors in <span class="process-math">\(\wcal\text{.}\)</span>  If <span class="process-math">\(\vec{x}\)</span> is the first column of luminance values in the <span class="process-math">\(4\times4\)</span> block above, find the wavelet coefficients <span class="process-math">\(\coords{\vec{x}}{\wcal}\text{.}\)</span> <div id="sec-jpeg-6-4-1-5-1-1-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">W = np.array([[1,1,1,0],
+			[1,1,-1,0],
+			[1,-1,0,1],
+			[1,-1,0,-1]])
 </script></div>
 </div></li>
 <li id="sec-jpeg-6-4-1-5-1-2">
-<div class="para" id="sec-jpeg-6-4-1-5-1-2-1">Notice that <span class="process-math">\(H_1\)</span> gives the average value of the components of <span class="process-math">\(\xvec\)</span> and <span class="process-math">\(H_2\)</span> describes how the averages of the first two and last two components differ from the overall average.  The coefficients <span class="process-math">\(H_3\)</span> and <span class="process-math">\(H_4\)</span> describe small-scale variations between the first two components and last two components, respectively.</div>
-<div class="para" id="sec-jpeg-6-4-1-5-1-2-2">If we set the last wavelet coefficients <span class="process-math">\(H_3=0\)</span> and <span class="process-math">\(H_4=0\text{,}\)</span> we obtain the wavelet coefficients <span class="process-math">\(\coords{\yvec}{\wcal}\)</span> for a vector <span class="process-math">\(\yvec\)</span> that approximates <span class="process-math">\(\xvec\text{.}\)</span>  Find the vector <span class="process-math">\(\yvec\)</span> and compare it to the original vector <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para" id="sec-jpeg-6-4-1-5-1-2-1">Notice that <span class="process-math">\(H_1\)</span> gives the average value of the components of <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(H_2\)</span> describes how the averages of the first two and last two components differ from the overall average.  The coefficients <span class="process-math">\(H_3\)</span> and <span class="process-math">\(H_4\)</span> describe small-scale variations between the first two components and last two components, respectively.</div>
+<div class="para" id="sec-jpeg-6-4-1-5-1-2-2">If we set the last wavelet coefficients <span class="process-math">\(H_3=0\)</span> and <span class="process-math">\(H_4=0\text{,}\)</span> we obtain the wavelet coefficients <span class="process-math">\(\coords{\yvec}{\wcal}\)</span> for a vector <span class="process-math">\(\yvec\)</span> that approximates <span class="process-math">\(\vec{x}\text{.}\)</span>  Find the vector <span class="process-math">\(\yvec\)</span> and compare it to the original vector <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
 </li>
-<li id="sec-jpeg-6-4-1-5-1-3"><div class="para" id="sec-jpeg-6-4-1-5-1-3-1">What impact does the fact that <span class="process-math">\(H_3=0\)</span> and <span class="process-math">\(H_4=0\)</span> have on the form of the vector <span class="process-math">\(\yvec\text{?}\)</span>  Explain how setting these coefficients to zero ignores the behavior of <span class="process-math">\(\xvec\)</span> on a small scale.</div></li>
-<li id="sec-jpeg-6-4-1-5-1-4"><div class="para" id="sec-jpeg-6-4-1-5-1-4-1">In the JPEG compression algorithm, we looked at the Fourier coefficients of all the columns of luminance values and then performed a Fourier transform on the rows.  The Sage cell below will perform the same operation using the wavelet transform;  that is, it will first find the wavelet coefficients of each of the columns and then perform the wavelet transform on the rows.  You only need to evaluate the cell to find the wavelet coefficients obtained in this way. <div id="sec-jpeg-6-4-1-5-1-4-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">luminance = matrix(4,4,[176, 170, 170, 169, 181, 179, 175, 167, 165,
-170, 169, 161, 139, 150,  164, 166])
-Winv = W.inverse()
+<li id="sec-jpeg-6-4-1-5-1-3"><div class="para" id="sec-jpeg-6-4-1-5-1-3-1">What impact does the fact that <span class="process-math">\(H_3=0\)</span> and <span class="process-math">\(H_4=0\)</span> have on the form of the vector <span class="process-math">\(\yvec\text{?}\)</span>  Explain how setting these coefficients to zero ignores the behavior of <span class="process-math">\(\vec{x}\)</span> on a small scale.</div></li>
+<li id="sec-jpeg-6-4-1-5-1-4"><div class="para" id="sec-jpeg-6-4-1-5-1-4-1">In the JPEG compression algorithm, we looked at the Fourier coefficients of all the columns of luminance values and then performed a Fourier transform on the rows.  The Python cell below will perform the same operation using the wavelet transform;  that is, it will first find the wavelet coefficients of each of the columns and then perform the wavelet transform on the rows.  You only need to evaluate the cell to find the wavelet coefficients obtained in this way. <div id="sec-jpeg-6-4-1-5-1-4-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">luminance = np.array([[176, 170, 170, 169], 
+					[181, 179, 175, 167], 
+					[165, 170, 169, 161], 
+					[139, 150,  164, 166]])
+Winv = np.linalg.inv(W)
 wavelet_transform = (Winv*(Winv*luminance).transpose()).transpose()
-print (wavelet_transform.numerical_approx(digits=3))
+print (wavelet_transform.evalf(3))
 </script></div>
 </div></li>
-<li id="sec-jpeg-6-4-1-5-1-5"><div class="para" id="sec-jpeg-6-4-1-5-1-5-1">Now set all the wavelet coefficients equal to zero except those in the upper left <span class="process-math">\(2\times2\)</span> block and use them to define the matrix <code class="code-inline tex2jax_ignore">coeffs</code> in the Sage cell below.  This has the effect of ignoring all of the small-scale differences.  Evaluating this cell will recover the approximate luminance values. <div id="sec-jpeg-6-4-1-5-1-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># define the matrix of coefficients below
+<li id="sec-jpeg-6-4-1-5-1-5"><div class="para" id="sec-jpeg-6-4-1-5-1-5-1">Now set all the wavelet coefficients equal to zero except those in the upper left <span class="process-math">\(2\times2\)</span> block and use them to define the matrix <code class="code-inline tex2jax_ignore">coeffs</code> in the Python cell below.  This has the effect of ignoring all of the small-scale differences.  Evaluating this cell will recover the approximate luminance values. <div id="sec-jpeg-6-4-1-5-1-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage"># define the matrix of coefficients below
 coeffs = 
 # this code will undo the wavelet transform
 approx_luminance = W*((W*(coeffs.transpose())).transpose())
-print (approx_luminance.numerical_approx(digits=3))
+print (approx_luminance.evalf(3))
 </script></div>
 </div></li>
 <li id="sec-jpeg-6-4-1-5-1-6"><div class="para" id="sec-jpeg-6-4-1-5-1-6-1">Explain how the wavelet transform and this approximation can be used to create a lower resolution version of the image.</div></li>

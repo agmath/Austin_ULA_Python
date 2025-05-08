@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -597,15 +597,15 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-span"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.3</span><span class="space"> </span><span class="title">The span of a set of vectors</span>
 </h2>
-<section class="introduction" id="sec-span-2"><div class="para" id="sec-span-2-1">Matrix multiplication allows us to rewrite a linear system in the form <span class="process-math">\(A\xvec = \bvec\text{.}\)</span>  Besides being a more compact way of expressing a linear system, this form allows us to think about linear systems geometrically since matrix multiplication is defined in terms of linear combinations of vectors.</div>
+<section class="introduction" id="sec-span-2"><div class="para" id="sec-span-2-1">Matrix multiplication allows us to rewrite a linear system in the form <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  Besides being a more compact way of expressing a linear system, this form allows us to think about linear systems geometrically since matrix multiplication is defined in terms of linear combinations of vectors.</div>
 <div class="para logical" id="sec-span-2-2">
 <div class="para">We now return to our <a href="sec-pivots.html#fundamental-questions" class="xref" data-knowl="./knowl/xref/fundamental-questions.html" data-reveal-label="Reveal" data-close-label="Close" title="Question 1.4.2: Two Fundamental Questions">two fundamental questions,</a> rephrased here in terms of matrix multiplication.</div>
 <ul class="disc" id="sec-span-2-2-2">
 <li id="sec-span-2-2-2-1"><div class="para" id="sec-span-2-2-2-1-1">
-<em class="emphasis">Existence:</em> Is there a solution to the equation <span class="process-math">\(A\xvec=\bvec\text{?}\)</span>
+<em class="emphasis">Existence:</em> Is there a solution to the equation <span class="process-math">\(A\vec{x}=\vec{b}\text{?}\)</span>
 </div></li>
 <li id="sec-span-2-2-2-2"><div class="para" id="sec-span-2-2-2-2-1">
-<em class="emphasis">Uniqueness:</em> If there is a solution to the equation <span class="process-math">\(A\xvec=\bvec\text{,}\)</span> is it unique?</div></li>
+<em class="emphasis">Uniqueness:</em> If there is a solution to the equation <span class="process-math">\(A\vec{x}=\vec{b}\text{,}\)</span> is it unique?</div></li>
 </ul>
 <div class="para">In this section, we focus on the existence question and see how it leads to the concept of the <em class="emphasis">span</em> of a set of vectors.</div>
 </div>
@@ -613,7 +613,7 @@ sagecell.makeSagecell({
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">The existence of solutions.</span>
 </h3>
 <div class="para logical" id="sec-span-2-3-2-1"><ol class="lower-alpha ol-marker-1" id="sec-span-2-3-2-1-1">
-<li id="sec-span-2-3-2-1-1-1"><div class="para" id="sec-span-2-3-2-1-1-1-1">If the equation <span class="process-math">\(A\xvec = \bvec\)</span> is inconsistent, what can we say about the pivot positions of the augmented matrix <span class="process-math">\(\left[\begin{array}{r|r} A \amp \bvec
+<li id="sec-span-2-3-2-1-1-1"><div class="para" id="sec-span-2-3-2-1-1-1-1">If the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is inconsistent, what can we say about the pivot positions of the augmented matrix <span class="process-math">\(\left[\begin{array}{r|r} A \amp \vec{b}
 \end{array}\right]\text{?}\)</span>
 </div></li>
 <li id="sec-span-2-3-2-1-1-2"><div class="para logical" id="sec-span-2-3-2-1-1-2-1">
@@ -629,61 +629,61 @@ A = \left[
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">If <span class="process-math">\(\bvec=\threevec{2}{2}{5}\text{,}\)</span> is the equation <span class="process-math">\(A\xvec = \bvec\)</span> consistent?  If so, find a solution. <div id="sec-span-2-3-2-1-1-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">If <span class="process-math">\(\vec{b}=\threevec{2}{2}{5}\text{,}\)</span> is the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> consistent?  If so, find a solution. <div id="sec-span-2-3-2-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-span-2-3-2-1-1-3"><div class="para" id="sec-span-2-3-2-1-1-3-1">If <span class="process-math">\(\bvec=\threevec{2}{2}{6}\text{,}\)</span> is the equation <span class="process-math">\(A\xvec = \bvec\)</span> consistent?  If so, find a solution. <div id="sec-span-2-3-2-1-1-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-span-2-3-2-1-1-3"><div class="para" id="sec-span-2-3-2-1-1-3-1">If <span class="process-math">\(\vec{b}=\threevec{2}{2}{6}\text{,}\)</span> is the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> consistent?  If so, find a solution. <div id="sec-span-2-3-2-1-1-3-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-span-2-3-2-1-1-4"><div class="para" id="sec-span-2-3-2-1-1-4-1">Identify the pivot positions of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-span-2-3-2-1-1-5"><div class="para" id="sec-span-2-3-2-1-1-5-1">For our two choices of the vector <span class="process-math">\(\bvec\text{,}\)</span> one equation <span class="process-math">\(A\xvec = \bvec\)</span> has a solution and the other does not.  What feature of the pivot positions of the matrix <span class="process-math">\(A\)</span> tells us to expect this?</div></li>
+<li id="sec-span-2-3-2-1-1-5"><div class="para" id="sec-span-2-3-2-1-1-5-1">For our two choices of the vector <span class="process-math">\(\vec{b}\text{,}\)</span> one equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> has a solution and the other does not.  What feature of the pivot positions of the matrix <span class="process-math">\(A\)</span> tells us to expect this?</div></li>
 </ol></div></article></section><section class="subsection" id="sec-span-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="space"> </span><span class="title">The span of a set of vectors</span>
 </h3>
-<div class="para" id="sec-span-3-2">In the preview activity, we considered a <span class="process-math">\(3\times3\)</span> matrix <span class="process-math">\(A\)</span> and found that the equation <span class="process-math">\(A\xvec = \bvec\)</span> has a solution for some vectors <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^3\)</span> and has no solution for others.  We will introduce a concept called <em class="emphasis">span</em> that describes the vectors <span class="process-math">\(\bvec\)</span> for which there is a solution.</div>
+<div class="para" id="sec-span-3-2">In the preview activity, we considered a <span class="process-math">\(3\times3\)</span> matrix <span class="process-math">\(A\)</span> and found that the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> has a solution for some vectors <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^3\)</span> and has no solution for others.  We will introduce a concept called <em class="emphasis">span</em> that describes the vectors <span class="process-math">\(\vec{b}\)</span> for which there is a solution.</div>
 <div class="para logical" id="sec-span-3-3">
 <div class="para">We can write an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> in terms of its columns</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-eq-solution.html">
 \begin{equation*}
 A = \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n
+\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Remember that <a href="sec-matrices-lin-combs.html#prop-matrix-eq-solution" class="xref" data-knowl="./knowl/xref/prop-matrix-eq-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.4">Proposition 2.2.4</a> says that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent if and only if we can express <span class="process-math">\(\bvec\)</span> as a linear combination of <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)</span>
+<div class="para">Remember that <a href="sec-matrices-lin-combs.html#prop-matrix-eq-solution" class="xref" data-knowl="./knowl/xref/prop-matrix-eq-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.4">Proposition 2.2.4</a> says that the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent if and only if we can express <span class="process-math">\(\vec{b}\)</span> as a linear combination of <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\text{.}\)</span>
 </div>
 </div>
 <article class="definition definition-like" id="sec-span-3-4"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-span-3-4-2">The <dfn class="terminology">span</dfn> of a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is the set of all linear combinations that can be formed from the vectors.</div>
-<div class="para" id="sec-span-3-4-3">Alternatively, if <span class="process-math">\(A = \begin{bmatrix} \vvec_1 \amp \vvec_2 \amp \cdots \amp
-\vvec_n \end{bmatrix}\text{,}\)</span> then the span of the vectors consists of all vectors <span class="process-math">\(\bvec\)</span> for which the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent.</div></article><article class="example example-like" id="sec-span-3-5"><h4 class="heading">
+<div class="para" id="sec-span-3-4-2">The <dfn class="terminology">span</dfn> of a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is the set of all linear combinations that can be formed from the vectors.</div>
+<div class="para" id="sec-span-3-4-3">Alternatively, if <span class="process-math">\(A = \begin{bmatrix} \vec{v_1} \amp \vec{v_2} \amp \cdots \amp
+\vec{v_n} \end{bmatrix}\text{,}\)</span> then the span of the vectors consists of all vectors <span class="process-math">\(\vec{b}\)</span> for which the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent.</div></article><article class="example example-like" id="sec-span-3-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-span-3-5-1-1">
-<div class="para">Considering the set of vectors <span class="process-math">\(\vvec=\twovec{-2}{1}\)</span> and <span class="process-math">\(\wvec = \twovec{8}{-4}\text{,}\)</span> we see that the vector</div>
+<div class="para">Considering the set of vectors <span class="process-math">\(\vvec=\twovec{-2}{1}\)</span> and <span class="process-math">\(\vec{w} = \twovec{8}{-4}\text{,}\)</span> we see that the vector</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bvec = 3\vvec + \wvec = \twovec2{-1}
+\vec{b} = 3\vec{v} + \vec{w} = \twovec2{-1}
 \end{equation*}
 </div>
-<div class="para">is one vector in the span of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> because it is a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<div class="para">is one vector in the span of the vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> because it is a linear combination of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="sec-span-3-5-1-2">
-<div class="para">To determine whether the vector <span class="process-math">\(\bvec=\twovec{5}{2}\)</span> is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span> we form the matrix</div>
+<div class="para">To determine whether the vector <span class="process-math">\(\vec{b}=\twovec{5}{2}\)</span> is in the span of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{,}\)</span> we form the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
-A = \begin{bmatrix} \vvec \amp \wvec \end{bmatrix} = 
+A = \begin{bmatrix} \vec{v} \amp \vec{w} \end{bmatrix} = 
 \begin{bmatrix}
 -2 \amp 8 \\
 1 \amp -4 \\
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">and consider the equation <span class="process-math">\(A\xvec=\bvec\text{.}\)</span>  We have</div>
+<div class="para">and consider the equation <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span>  We have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -701,7 +701,7 @@ A = \begin{bmatrix} \vvec \amp \wvec \end{bmatrix} =
 \right],
 \end{equation*}
 </div>
-<div class="para">which shows that the equation <span class="process-math">\(A\xvec = \bvec\)</span> is inconsistent.  Therefore, <span class="process-math">\(\bvec=\twovec52\)</span> is one vector that is not in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<div class="para">which shows that the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is inconsistent.  Therefore, <span class="process-math">\(\vec{b}=\twovec52\)</span> is one vector that is not in the span of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div>
 </div></article><article class="activity project-like" id="activity-intro-span"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span>
@@ -714,22 +714,22 @@ A = \begin{bmatrix} \vvec \amp \wvec \end{bmatrix} =
 <div class="para">First, we will consider the set of vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec = \twovec{1}{2}, ~~~\wvec = \twovec{-2}{-4}\text{.}
+\vec{v} = \twovec{1}{2}, ~~~\vec{w} = \twovec{-2}{-4}\text{.}
 \end{equation*}
 </div>
 </div>
 <figure class="figure figure-like" id="js-span-1"><iframe id="interactive-span1" width="600" height="493" src="interactive-span1-if.html"></iframe><div class="instructions"><details id="interactive-span1-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para logical" id="interactive-span1-2-1">
-<div class="para">The diagram below can be used to construct linear combinations whose weights <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> may be varied using the sliders at the top.  The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> are outlined while the linear combination</div>
+<div class="para">The diagram below can be used to construct linear combinations whose weights <span class="process-math">\(c\)</span> and <span class="process-math">\(d\)</span> may be varied using the sliders at the top.  The vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> are outlined while the linear combination</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c\vvec + d\wvec
+c\vec{v} + d\vec{w}
 \end{equation*}
 </div>
 <div class="para">is shaded in red.</div>
 </div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>An interactive diagram for constructing linear combinations of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></figcaption></figure><div class="para logical" id="activity-intro-span-1-1-1-1-3"><ol class="decimal ol-marker-2" id="activity-intro-span-1-1-1-1-3-1">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>An interactive diagram for constructing linear combinations of the vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span></figcaption></figure><div class="para logical" id="activity-intro-span-1-1-1-1-3"><ol class="decimal ol-marker-2" id="activity-intro-span-1-1-1-1-3-1">
 <li id="activity-intro-span-1-1-1-1-3-1-1"><div class="para logical" id="activity-intro-span-1-1-1-1-3-1-1-1">
-<div class="para">What vector is the linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> with weights:</div>
+<div class="para">What vector is the linear combination of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> with weights:</div>
 <ul class="disc" id="activity-intro-span-1-1-1-1-3-1-1-1-3">
 <li id="activity-intro-span-1-1-1-1-3-1-1-1-3-1"><div class="para" id="activity-intro-span-1-1-1-1-3-1-1-1-3-1-1">
 <span class="process-math">\(c = 2\)</span> and <span class="process-math">\(d=0\text{?}\)</span>
@@ -742,18 +742,18 @@ c\vvec + d\wvec
 </div></li>
 </ul>
 </div></li>
-<li id="activity-intro-span-1-1-1-1-3-1-2"><div class="para" id="activity-intro-span-1-1-1-1-3-1-2-1">Can the vector <span class="process-math">\(\twovec{2}{4}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{2}{4}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+<li id="activity-intro-span-1-1-1-1-3-1-2"><div class="para" id="activity-intro-span-1-1-1-1-3-1-2-1">Can the vector <span class="process-math">\(\twovec{2}{4}\)</span> be expressed as a linear combination of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{2}{4}\)</span> in the span of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>
 </div></li>
-<li id="activity-intro-span-1-1-1-1-3-1-3"><div class="para" id="activity-intro-span-1-1-1-1-3-1-3-1">Can the vector <span class="process-math">\(\twovec{3}{0}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{3}{0}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+<li id="activity-intro-span-1-1-1-1-3-1-3"><div class="para" id="activity-intro-span-1-1-1-1-3-1-3-1">Can the vector <span class="process-math">\(\twovec{3}{0}\)</span> be expressed as a linear combination of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{3}{0}\)</span> in the span of <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>
 </div></li>
-<li id="activity-intro-span-1-1-1-1-3-1-4"><div class="para" id="activity-intro-span-1-1-1-1-3-1-4-1">Describe the set of vectors in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<li id="activity-intro-span-1-1-1-1-3-1-4"><div class="para" id="activity-intro-span-1-1-1-1-3-1-4-1">Describe the set of vectors in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div></li>
 <li id="activity-intro-span-1-1-1-1-3-1-5"><div class="para logical" id="activity-intro-span-1-1-1-1-3-1-5-1">
-<div class="para">For what vectors <span class="process-math">\(\bvec\)</span> does the equation</div>
+<div class="para">For what vectors <span class="process-math">\(\vec{b}\)</span> does the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr} 1 \amp -2 \\ 2 \amp -4
-\end{array}\right] \xvec = \bvec
+\end{array}\right] \vec{x} = \vec{b}
 \end{equation*}
 </div>
 <div class="para">have a solution?</div>
@@ -765,7 +765,7 @@ c\vvec + d\wvec
 <div class="para">We will now look at an example where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec = \twovec{2}{1}, ~~~\wvec = \twovec{1}{2}\text{.}
+\vvec = \twovec{2}{1}, ~~~\vec{w} = \twovec{1}{2}\text{.}
 \end{equation*}
 </div>
 </div>
@@ -773,13 +773,13 @@ c\vvec + d\wvec
 <div class="para">In a similar way, the diagram below can be used to construct linear combinations</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c\vvec + d\wvec.
+c\vvec + d\vec{w}.
 \end{equation*}
 </div>
 </div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>An interactive diagram for constructing linear combinations of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span></figcaption></figure><div class="para logical" id="activity-intro-span-1-1-1-2-3"><ol class="decimal ol-marker-2" id="activity-intro-span-1-1-1-2-3-1">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.4<span class="period">.</span></span><span class="space"> </span>An interactive diagram for constructing linear combinations of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span></figcaption></figure><div class="para logical" id="activity-intro-span-1-1-1-2-3"><ol class="decimal ol-marker-2" id="activity-intro-span-1-1-1-2-3-1">
 <li id="activity-intro-span-1-1-1-2-3-1-1"><div class="para logical" id="activity-intro-span-1-1-1-2-3-1-1-1">
-<div class="para">What vector is the linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> with weights:</div>
+<div class="para">What vector is the linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> with weights:</div>
 <ul class="disc" id="activity-intro-span-1-1-1-2-3-1-1-1-3">
 <li id="activity-intro-span-1-1-1-2-3-1-1-1-3-1"><div class="para" id="activity-intro-span-1-1-1-2-3-1-1-1-3-1-1">
 <span class="process-math">\(c = 2\)</span> and <span class="process-math">\(d=0\text{?}\)</span>
@@ -792,18 +792,18 @@ c\vvec + d\wvec.
 </div></li>
 </ul>
 </div></li>
-<li id="activity-intro-span-1-1-1-2-3-1-2"><div class="para" id="activity-intro-span-1-1-1-2-3-1-2-1">Can the vector <span class="process-math">\(\twovec{-2}{2}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{-2}{2}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+<li id="activity-intro-span-1-1-1-2-3-1-2"><div class="para" id="activity-intro-span-1-1-1-2-3-1-2-1">Can the vector <span class="process-math">\(\twovec{-2}{2}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{-2}{2}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>
 </div></li>
-<li id="activity-intro-span-1-1-1-2-3-1-3"><div class="para" id="activity-intro-span-1-1-1-2-3-1-3-1">Can the vector <span class="process-math">\(\twovec{3}{0}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{3}{0}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+<li id="activity-intro-span-1-1-1-2-3-1-3"><div class="para" id="activity-intro-span-1-1-1-2-3-1-3-1">Can the vector <span class="process-math">\(\twovec{3}{0}\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>  Is the vector <span class="process-math">\(\twovec{3}{0}\)</span> in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{?}\)</span>
 </div></li>
-<li id="activity-intro-span-1-1-1-2-3-1-4"><div class="para" id="activity-intro-span-1-1-1-2-3-1-4-1">Describe the set of vectors in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<li id="activity-intro-span-1-1-1-2-3-1-4"><div class="para" id="activity-intro-span-1-1-1-2-3-1-4-1">Describe the set of vectors in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div></li>
 <li id="activity-intro-span-1-1-1-2-3-1-5"><div class="para logical" id="activity-intro-span-1-1-1-2-3-1-5-1">
-<div class="para">For what vectors <span class="process-math">\(\bvec\)</span> does the equation</div>
+<div class="para">For what vectors <span class="process-math">\(\vec{b}\)</span> does the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr} 2 \amp 1 \\ 1 \amp 2
-\end{array}\right] \xvec = \bvec
+\end{array}\right] \vec{x} = \vec{b}
 \end{equation*}
 </div>
 <div class="para">have a solution?</div>
@@ -811,18 +811,18 @@ c\vvec + d\wvec.
 </ol></div>
 </li>
 </ol>
-</div></article><div class="para" id="sec-span-3-7">This activity aims to convey the geometric meaning of span. Remember that we can think of a linear combination of the two vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> as a recipe for walking in the plane <span class="process-math">\(\real^2\text{.}\)</span>  We first move a prescribed amount in the direction of <span class="process-math">\(\vvec\)</span> and then a prescribed amount in the direction of <span class="process-math">\(\wvec\text{.}\)</span>  The span consists of all the places we can walk to.</div>
+</div></article><div class="para" id="sec-span-3-7">This activity aims to convey the geometric meaning of span. Remember that we can think of a linear combination of the two vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> as a recipe for walking in the plane <span class="process-math">\(\real^2\text{.}\)</span>  We first move a prescribed amount in the direction of <span class="process-math">\(\vvec\)</span> and then a prescribed amount in the direction of <span class="process-math">\(\vec{w}\text{.}\)</span>  The span consists of all the places we can walk to.</div>
 <article class="example example-like" id="example-span-linear-indep"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="example-span-linear-indep-1-1">Let’s consider the vectors <span class="process-math">\(\vvec=\twovec20\)</span> and <span class="process-math">\(\wvec=\twovec{-1}1\)</span> as shown in <a href="sec-span.html#fig-span-linear-indep" class="xref" data-knowl="./knowl/xref/fig-span-linear-indep.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.6">Figure 2.3.6</a>. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig-span-linear-indep"><img src="external/images/span-linear-indep.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.6<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> and some linear combinations they create.</figcaption></figure></div></div></div>
+<div class="para" id="example-span-linear-indep-1-1">Let’s consider the vectors <span class="process-math">\(\vvec=\twovec20\)</span> and <span class="process-math">\(\vec{w}=\twovec{-1}1\)</span> as shown in <a href="sec-span.html#fig-span-linear-indep" class="xref" data-knowl="./knowl/xref/fig-span-linear-indep.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.6">Figure 2.3.6</a>. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig-span-linear-indep"><img src="external/images/span-linear-indep.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.6<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> and some linear combinations they create.</figcaption></figure></div></div></div>
 </div> <div class="para logical" id="example-span-linear-indep-1-2">
-<div class="para">The figure shows us that <span class="process-math">\(\bvec = \vvec + 2\wvec =
-\twovec02\)</span> is a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  Indeed, we can verify this algebraically by constructing the linear system</div>
+<div class="para">The figure shows us that <span class="process-math">\(\vec{b} = \vvec + 2\vec{w} =
+\twovec02\)</span> is a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>  Indeed, we can verify this algebraically by constructing the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix}\vvec \amp \wvec \end{bmatrix} ~
-\xvec = \twovec02,
+\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix} ~
+\vec{x} = \twovec02,
 \end{equation*}
 </div>
 <div class="para">whose corresponding augmented matrix has the reduced row echelon form</div>
@@ -843,7 +843,7 @@ c\vvec + d\wvec.
 \right].
 \end{equation*}
 </div>
-<div class="para">Because this system is consistent, we know that <span class="process-math">\(\bvec=\twovec02\)</span> is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<div class="para">Because this system is consistent, we know that <span class="process-math">\(\vec{b}=\twovec02\)</span> is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="example-span-linear-indep-1-3">
 <div class="para">In fact, we can say more.  Notice that the coefficient matrix</div>
@@ -860,8 +860,8 @@ c\vvec + d\wvec.
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">has a pivot position in every row.  This means that for any other vector <span class="process-math">\(\bvec\text{,}\)</span> the augmented matrix corresponding to the equation <span class="process-math">\(\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-~\xvec = \bvec\)</span> cannot have a pivot position in its rightmost column:</div>
+<div class="para">has a pivot position in every row.  This means that for any other vector <span class="process-math">\(\vec{b}\text{,}\)</span> the augmented matrix corresponding to the equation <span class="process-math">\(\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+~\vec{x} = \vec{b}\)</span> cannot have a pivot position in its rightmost column:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -879,19 +879,19 @@ c\vvec + d\wvec.
 \right].
 \end{equation*}
 </div>
-<div class="para">Therefore, the equation <span class="process-math">\(\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-~\xvec = \bvec\)</span> is consistent for every two-dimensional vector <span class="process-math">\(\bvec\text{,}\)</span> which tells us that every two-dimensional vector is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span> In this case, we say that the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> is <span class="process-math">\(\real^2\text{.}\)</span>
+<div class="para">Therefore, the equation <span class="process-math">\(\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+~\vec{x} = \vec{b}\)</span> is consistent for every two-dimensional vector <span class="process-math">\(\vec{b}\text{,}\)</span> which tells us that every two-dimensional vector is in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span> In this case, we say that the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> is <span class="process-math">\(\real^2\text{.}\)</span>
 </div>
-</div> <div class="para" id="example-span-linear-indep-1-4">The intuitive meaning is that we can walk to any point in the plane by moving an appropriate distance in the <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> directions.</div></article><article class="example example-like" id="example-span-linear-dep"><h4 class="heading">
+</div> <div class="para" id="example-span-linear-indep-1-4">The intuitive meaning is that we can walk to any point in the plane by moving an appropriate distance in the <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> directions.</div></article><article class="example example-like" id="example-span-linear-dep"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="example-span-linear-dep-1-1">Now let’s consider the vectors <span class="process-math">\(\vvec=\twovec{-1}1\)</span> and <span class="process-math">\(\wvec=\twovec2{-2}\)</span> as shown in <a href="sec-span.html#fig-span-linear-dep" class="xref" data-knowl="./knowl/xref/fig-span-linear-dep.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.8">Figure 2.3.8</a>. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig-span-linear-dep"><img src="external/images/span-linear-dep.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.8<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> and some linear combinations they create.</figcaption></figure></div></div></div>
+<div class="para" id="example-span-linear-dep-1-1">Now let’s consider the vectors <span class="process-math">\(\vvec=\twovec{-1}1\)</span> and <span class="process-math">\(\vec{w}=\twovec2{-2}\)</span> as shown in <a href="sec-span.html#fig-span-linear-dep" class="xref" data-knowl="./knowl/xref/fig-span-linear-dep.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.8">Figure 2.3.8</a>. <div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><figure class="figure figure-like" id="fig-span-linear-dep"><img src="external/images/span-linear-dep.svg" role="img" class="contained"><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.8<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> and some linear combinations they create.</figcaption></figure></div></div></div>
 </div> <div class="para logical" id="example-span-linear-dep-1-2">
-<div class="para">From the figure, we expect that <span class="process-math">\(\bvec = \twovec02\)</span> is not a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  Once again, we can verify this algebraically by constructing the linear system</div>
+<div class="para">From the figure, we expect that <span class="process-math">\(\vec{b} = \twovec02\)</span> is not a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>  Once again, we can verify this algebraically by constructing the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{bmatrix}\vvec \amp \wvec \end{bmatrix} ~
-\xvec = \twovec02.
+\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix} ~
+\vec{x} = \twovec02.
 \end{equation*}
 </div>
 <div class="para">The augmented matrix has the reduced row echelon form</div>
@@ -912,7 +912,7 @@ c\vvec + d\wvec.
 \right],
 \end{equation*}
 </div>
-<div class="para">from which we see that the system is inconsistent. Therefore, <span class="process-math">\(\bvec=\twovec02\)</span> is not in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>
+<div class="para">from which we see that the system is inconsistent. Therefore, <span class="process-math">\(\vec{b}=\twovec02\)</span> is not in the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="example-span-linear-dep-1-3">
 <div class="para">We should expect this behavior from the coefficient matrix</div>
@@ -929,8 +929,8 @@ c\vvec + d\wvec.
 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="para">Because the second row of the coefficient matrix does not have a pivot position, it is possible for a linear system <span class="process-math">\(\begin{bmatrix}\vvec \amp \wvec \end{bmatrix}
-~\xvec = \bvec\)</span> to have a pivot position in its rightmost column:</div>
+<div class="para">Because the second row of the coefficient matrix does not have a pivot position, it is possible for a linear system <span class="process-math">\(\begin{bmatrix}\vvec \amp \vec{w} \end{bmatrix}
+~\vec{x} = \vec{b}\)</span> to have a pivot position in its rightmost column:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -949,24 +949,24 @@ c\vvec + d\wvec.
 \end{equation*}
 </div>
 </div> <div class="para logical" id="example-span-linear-dep-1-4">
-<div class="para">If we notice that <span class="process-math">\(\wvec = -2\vvec\text{,}\)</span> we see that any linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{,}\)</span>
+<div class="para">If we notice that <span class="process-math">\(\vec{w} = -2\vvec\text{,}\)</span> we see that any linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-c\vvec + d\wvec =
+c\vvec + d\vec{w} =
 c\vvec -2d\vvec = (c-2d)\vvec,
 \end{equation*}
 </div>
-<div class="para">is actually a scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span>  Therefore, the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> is the line defined by the vector <span class="process-math">\(\vvec\text{.}\)</span> Intuitively, this means that we can only walk to points on this line using these two vectors.</div>
+<div class="para">is actually a scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span>  Therefore, the span of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\vec{w}\)</span> is the line defined by the vector <span class="process-math">\(\vvec\text{.}\)</span> Intuitively, this means that we can only walk to points on this line using these two vectors.</div>
 </div></article><article class="convention remark-like" id="sec-span-3-10"><h4 class="heading">
 <span class="type">Notation</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-span-3-10-1">We will denote the span of the set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> by <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</span>
-</div></article><div class="para" id="sec-span-3-11">In <a href="sec-span.html#example-span-linear-indep" class="xref" data-knowl="./knowl/xref/example-span-linear-indep.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.5">Example 2.3.5</a>, we saw that <span class="process-math">\(\laspan{\vvec,\wvec} = \real^2\text{.}\)</span>  However, for the vectors in <a href="sec-span.html#example-span-linear-dep" class="xref" data-knowl="./knowl/xref/example-span-linear-dep.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.7">Example 2.3.7</a>, we saw that <span class="process-math">\(\laspan{\vvec,\wvec}\)</span> is simply a line.</div></section><section class="subsection" id="sec-span-4"><h3 class="heading hide-type">
+<div class="para" id="sec-span-3-10-1">We will denote the span of the set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> by <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}\text{.}\)</span>
+</div></article><div class="para" id="sec-span-3-11">In <a href="sec-span.html#example-span-linear-indep" class="xref" data-knowl="./knowl/xref/example-span-linear-indep.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.5">Example 2.3.5</a>, we saw that <span class="process-math">\(\laspan{\vvec,\vec{w}} = \real^2\text{.}\)</span>  However, for the vectors in <a href="sec-span.html#example-span-linear-dep" class="xref" data-knowl="./knowl/xref/example-span-linear-dep.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 2.3.7">Example 2.3.7</a>, we saw that <span class="process-math">\(\laspan{\vvec,\vec{w}}\)</span> is simply a line.</div></section><section class="subsection" id="sec-span-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="space"> </span><span class="title">Pivot positions and span</span>
 </h3>
-<div class="para" id="sec-span-4-2">A set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> naturally defines a matrix <span class="process-math">\(A =
-\begin{bmatrix}\vvec_1\amp\vvec_2\amp\cdots\vvec_n\end{bmatrix}\)</span> whose columns are the given vectors.  As we’ve seen, a vector <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\)</span> precisely when the linear system <span class="process-math">\(A\xvec=\bvec\)</span> is consistent.</div>
+<div class="para" id="sec-span-4-2">A set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> naturally defines a matrix <span class="process-math">\(A =
+\begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\cdots\vvec_n\end{bmatrix}\)</span> whose columns are the given vectors.  As we’ve seen, a vector <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}\)</span> precisely when the linear system <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is consistent.</div>
 <div class="para" id="sec-span-4-3">The previous examples point to the fact that the span is related to the pivot positions of <span class="process-math">\(A\text{.}\)</span>  While <a href="sec-linear-dep.html" class="internal" title="Section 2.4: Linear independence">Section 2.4</a> and <a href="sec-subspaces.html" class="internal" title="Section 3.5: Subspaces">Section 3.5</a> develop this idea more fully, we will now examine the possibilities in <span class="process-math">\(\real^3\text{.}\)</span>
 </div>
 <article class="activity project-like" id="activity-span-r3"><h4 class="heading">
@@ -986,24 +986,24 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">Now consider the two vectors</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-3d-span-2.html">
 \begin{equation*}
-\evec_1 = \threevec{1}{0}{0},~~~
-\evec_2 = \threevec{0}{1}{0}\text{.}
+\vec{e_1} = \threevec{1}{0}{0},~~~
+\vec{e_2} = \threevec{0}{1}{0}\text{.}
 \end{equation*}
 </div>
-<div class="para">Sketch the vectors below.  Then give a geometric description of <span class="process-math">\(\laspan{\evec_1,\evec_2}\)</span> and a rough sketch of  the span in <a href="sec-span.html#fig-3d-span-2" class="xref" data-knowl="./knowl/xref/fig-3d-span-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.11">Figure 2.3.11</a>.</div>
+<div class="para">Sketch the vectors below.  Then give a geometric description of <span class="process-math">\(\laspan{\vec{e_1},\vec{e_2}}\)</span> and a rough sketch of  the span in <a href="sec-span.html#fig-3d-span-2" class="xref" data-knowl="./knowl/xref/fig-3d-span-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.3.11">Figure 2.3.11</a>.</div>
 </div>
 <figure class="figure figure-like" id="fig-3d-span-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/coordinates-3d.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.11<span class="period">.</span></span><span class="space"> </span>A coordinate system for sketching <span class="process-math">\(\evec_1\text{,}\)</span> <span class="process-math">\(\evec_2\text{,}\)</span> and <span class="process-math">\(\laspan{\evec_1,\evec_2}\text{.}\)</span></figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.11<span class="period">.</span></span><span class="space"> </span>A coordinate system for sketching <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\laspan{\vec{e_1},\vec{e_2}}\text{.}\)</span></figcaption></figure>
 </li>
 <li id="activity-span-r3-1-1-2-3"><div class="para logical" id="activity-span-r3-1-1-2-3-1">
-<div class="para">Let’s now look at this situation algebraically by writing write <span class="process-math">\(\bvec = \threevec{b_1}{b_2}{b_3}\text{.}\)</span> Determine the conditions on <span class="process-math">\(b_1\text{,}\)</span> <span class="process-math">\(b_2\text{,}\)</span> and <span class="process-math">\(b_3\)</span> so that <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\evec_1,\evec_2}\)</span> by considering the linear system</div>
+<div class="para">Let’s now look at this situation algebraically by writing write <span class="process-math">\(\vec{b} = \threevec{b_1}{b_2}{b_3}\text{.}\)</span> Determine the conditions on <span class="process-math">\(b_1\text{,}\)</span> <span class="process-math">\(b_2\text{,}\)</span> and <span class="process-math">\(b_3\)</span> so that <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{e_1},\vec{e_2}}\)</span> by considering the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr}
-\evec_1 \amp \evec_2 \\
+\vec{e_1} \amp \vec{e_2} \\
 \end{array}\right]
-~\xvec =
-\bvec
+~\vec{x} =
+\vec{b}
 \end{equation*}
 </div>
 <div class="para">or</div>
@@ -1014,29 +1014,29 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 0 \amp 1 \\
 0 \amp 0 \\
 \end{array}\right]
-\xvec =
+\vec{x} =
 \threevec{b_1}{b_2}{b_3}\text{.}
 \end{equation*}
 </div>
-<div class="para">Explain how this relates to your sketch of <span class="process-math">\(\laspan{\evec_1,\evec_2}\text{.}\)</span>
+<div class="para">Explain how this relates to your sketch of <span class="process-math">\(\laspan{\vec{e_1},\vec{e_2}}\text{.}\)</span>
 </div>
 </div></li>
 <li id="activity-span-r3-1-1-2-4"><div class="para logical" id="activity-span-r3-1-1-2-4-1">
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{1}{1}{-1},~~
-\vvec_2 = \threevec{0}{2}{1}.
+\vec{v_1} = \threevec{1}{1}{-1},~~
+\vec{v_2} = \threevec{0}{2}{1}.
 \end{equation*}
 </div>
 <ol class="decimal ol-marker-2" id="activity-span-r3-1-1-2-4-1-2">
-<li id="activity-span-r3-1-1-2-4-1-2-1"><div class="para" id="activity-span-r3-1-1-2-4-1-2-1-1">Is the vector <span class="process-math">\(\bvec=\threevec{1}{-2}{4}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span> <div id="activity-span-r3-1-1-2-4-1-2-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-span-r3-1-1-2-4-1-2-1"><div class="para" id="activity-span-r3-1-1-2-4-1-2-1-1">Is the vector <span class="process-math">\(\vec{b}=\threevec{1}{-2}{4}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}}\text{?}\)</span> <div id="activity-span-r3-1-1-2-4-1-2-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="activity-span-r3-1-1-2-4-1-2-2"><div class="para" id="activity-span-r3-1-1-2-4-1-2-2-1">Is the vector <span class="process-math">\(\bvec=\threevec{-2}{0}{3}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span> <div id="activity-span-r3-1-1-2-4-1-2-2-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-span-r3-1-1-2-4-1-2-2"><div class="para" id="activity-span-r3-1-1-2-4-1-2-2-1">Is the vector <span class="process-math">\(\vec{b}=\threevec{-2}{0}{3}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}}\text{?}\)</span> <div id="activity-span-r3-1-1-2-4-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="activity-span-r3-1-1-2-4-1-2-3"><div class="para" id="activity-span-r3-1-1-2-4-1-2-3-1">Give a geometric description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<li id="activity-span-r3-1-1-2-4-1-2-3"><div class="para" id="activity-span-r3-1-1-2-4-1-2-3-1">Give a geometric description of <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
@@ -1044,21 +1044,21 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{1}{1}{-1},
-\vvec_2 = \threevec{0}{2}{1},
-\vvec_3 = \threevec{1}{-2}{4}\text{.}
+\vec{v_1} = \threevec{1}{1}{-1},
+\vec{v_2} = \threevec{0}{2}{1},
+\vec{v_3} = \threevec{1}{-2}{4}\text{.}
 \end{equation*}
 </div>
-<div class="para">Form the matrix <span class="process-math">\(\left[\begin{array}{rrrr} \vvec_1 \amp \vvec_2
-\amp \vvec_3 \end{array}\right]\)</span> and find its reduced row echelon form. <div id="activity-span-r3-1-1-2-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></div> What does this tell you about <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>
+<div class="para">Form the matrix <span class="process-math">\(\left[\begin{array}{rrrr} \vec{v_1} \amp \vec{v_2}
+\amp \vec{v_3} \end{array}\right]\)</span> and find its reduced row echelon form. <div id="activity-span-r3-1-1-2-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+</script></div> What does this tell you about <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>
 </div>
 </div></li>
-<li id="activity-span-r3-1-1-2-6"><div class="para" id="activity-span-r3-1-1-2-6-1">If the span of a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is <span class="process-math">\(\real^3\text{,}\)</span> what can you say about the pivot positions of the matrix <span class="process-math">\(\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+<li id="activity-span-r3-1-1-2-6"><div class="para" id="activity-span-r3-1-1-2-6-1">If the span of a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> is <span class="process-math">\(\real^3\text{,}\)</span> what can you say about the pivot positions of the matrix <span class="process-math">\(\left[\begin{array}{rrrr}
+\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vvec_n
 \end{array}\right]\text{?}\)</span>
 </div></li>
-<li id="activity-span-r3-1-1-2-7"><div class="para" id="activity-span-r3-1-1-2-7-1">What is the smallest number of vectors such that <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^3\text{?}\)</span>
+<li id="activity-span-r3-1-1-2-7"><div class="para" id="activity-span-r3-1-1-2-7-1">What is the smallest number of vectors such that <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} = \real^3\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><div class="para logical" id="sec-span-4-5">
@@ -1083,8 +1083,8 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">For example, the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec{-2}{3}{1},~~~
-\vvec_2=\threevec{1}{-1}{3}
+\vec{v_1}=\threevec{-2}{3}{1},~~~
+\vec{v_2}=\threevec{1}{-1}{3}
 \end{equation*}
 </div>
 <div class="para">lead to the matrix</div>
@@ -1110,16 +1110,16 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">Finally, a set of three vectors, such as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec12{-1},~~~
-\vvec_2=\threevec201,~~~
-\vvec_3=\threevec{-2}20
+\vec{v_1}=\threevec12{-1},~~~
+\vec{v_2}=\threevec201,~~~
+\vec{v_3}=\threevec{-2}20
 \end{equation*}
 </div>
 <div class="para">may form a matrix having three pivot positions</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr}
-\vvec_1 \amp \vvec_2 \amp \vvec_3
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 \end{array}\right]
 = \left[\begin{array}{rrr}
 1 \amp 2 \amp -2 \\
@@ -1150,14 +1150,14 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 \end{array}\right].
 \end{equation*}
 </div>
-<div class="para">Therefore, any linear system <span class="process-math">\(\begin{bmatrix}\vvec_1\amp\vvec_2\amp\vvec_3\end{bmatrix}
-~\xvec = \bvec\)</span> is consistent, which tells us that <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3} = \real^3\text{.}\)</span>
+<div class="para">Therefore, any linear system <span class="process-math">\(\begin{bmatrix}\vec{v_1}\amp\vec{v_2}\amp\vec{v_3}\end{bmatrix}
+~\vec{x} = \vec{b}\)</span> is consistent, which tells us that <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}} = \real^3\text{.}\)</span>
 </div>
 </div></li>
 </ul>
 </div>
 <div class="para logical" id="sec-span-4-6">
-<div class="para">To summarize, we looked at the pivot positions in a matrix whose columns are the three-dimensional vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)</span>  We found that with</div>
+<div class="para">To summarize, we looked at the pivot positions in a matrix whose columns are the three-dimensional vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\text{.}\)</span>  We found that with</div>
 <ul class="disc" id="sec-span-4-6-2">
 <li id="sec-span-4-6-2-1"><div class="para" id="sec-span-4-6-2-1-1">one pivot position, the span was a line.</div></li>
 <li id="sec-span-4-6-2-2"><div class="para" id="sec-span-4-6-2-2-1">two pivot positions, the span was a plane.</div></li>
@@ -1170,11 +1170,11 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <article class="proposition theorem-like" id="prop-pivot-row"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.3.14</span><span class="period">.</span>
 </h4>
-<div class="para" id="prop-pivot-row-1-1">Suppose we have vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> in <span class="process-math">\(\real^m\text{.}\)</span> Then <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}=\real^m\)</span> if and only if the matrix <span class="process-math">\(\left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\cdots\amp\vvec_n
+<div class="para" id="prop-pivot-row-1-1">Suppose we have vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> in <span class="process-math">\(\real^m\text{.}\)</span> Then <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}=\real^m\)</span> if and only if the matrix <span class="process-math">\(\left[\begin{array}{rrrr}
+\vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vvec_n
 \end{array}\right]\)</span> has a pivot position in every row.</div></article><div class="para logical" id="sec-span-4-9">
-<div class="para">This tells us something important about the number of vectors needed to span <span class="process-math">\(\real^m\text{.}\)</span>  Suppose we have <span class="process-math">\(n\)</span> vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> that span <span class="process-math">\(\real^m\text{.}\)</span>  The proposition tells us that the matrix <span class="process-math">\(A = \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+<div class="para">This tells us something important about the number of vectors needed to span <span class="process-math">\(\real^m\text{.}\)</span>  Suppose we have <span class="process-math">\(n\)</span> vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> that span <span class="process-math">\(\real^m\text{.}\)</span>  The proposition tells us that the matrix <span class="process-math">\(A = \left[\begin{array}{rrrr}
+\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vvec_n
 \end{array}\right]\)</span> has a pivot position in every row, such as in this reduced row echelon matrix.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1191,26 +1191,26 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <article class="proposition theorem-like" id="prop-span-bound"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.3.15</span><span class="period">.</span>
 </h4>
-<div class="para" id="prop-span-bound-1-1">A set of vectors whose span is <span class="process-math">\(\real^m\)</span> contains at least <span class="process-math">\(m\)</span> vectors.</div></article><div class="para" id="sec-span-4-11">We have thought about a linear combination of a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> as the result of walking a certain distance in the direction of <span class="process-math">\(\vvec_1\text{,}\)</span> followed by walking a certain distance in the direction of <span class="process-math">\(\vvec_2\text{,}\)</span> and so on.  If <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^m\text{,}\)</span> this means that we can walk to every point in <span class="process-math">\(\real^m\)</span> using the directions <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)</span>  Intuitively, this proposition is telling us that we need at least <span class="process-math">\(m\)</span> directions to have the flexibility needed to reach every point in <span class="process-math">\(\real^m\text{.}\)</span>
+<div class="para" id="prop-span-bound-1-1">A set of vectors whose span is <span class="process-math">\(\real^m\)</span> contains at least <span class="process-math">\(m\)</span> vectors.</div></article><div class="para" id="sec-span-4-11">We have thought about a linear combination of a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> as the result of walking a certain distance in the direction of <span class="process-math">\(\vec{v_1}\text{,}\)</span> followed by walking a certain distance in the direction of <span class="process-math">\(\vec{v_2}\text{,}\)</span> and so on.  If <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} = \real^m\text{,}\)</span> this means that we can walk to every point in <span class="process-math">\(\real^m\)</span> using the directions <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\text{.}\)</span>  Intuitively, this proposition is telling us that we need at least <span class="process-math">\(m\)</span> directions to have the flexibility needed to reach every point in <span class="process-math">\(\real^m\text{.}\)</span>
 </div>
 <article class="assemblage assemblage-like" id="sec-span-4-12"><h4 class="heading"><span class="title">Terminology.</span></h4>
-<div class="para" id="sec-span-4-12-2">Because span is a concept that is connected to a set of vectors, we say, “The span of the set of vectors <span class="process-math">\(\vvec_1,
-\vvec_2, \ldots, \vvec_n\)</span> is ....” While it may be tempting to say, “The span of the matrix <span class="process-math">\(A\)</span> is ...,” we should instead say “The span of the columns of the matrix <span class="process-math">\(A\)</span> is ....”</div></article></section><section class="subsection" id="sec-span-5"><h3 class="heading hide-type">
+<div class="para" id="sec-span-4-12-2">Because span is a concept that is connected to a set of vectors, we say, “The span of the set of vectors <span class="process-math">\(\vec{v_1},
+\vec{v_2}, \ldots, \vvec_n\)</span> is ....” While it may be tempting to say, “The span of the matrix <span class="process-math">\(A\)</span> is ...,” we should instead say “The span of the columns of the matrix <span class="process-math">\(A\)</span> is ....”</div></article></section><section class="subsection" id="sec-span-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <div class="para logical" id="sec-span-5-2">
 <div class="para">We defined the span of a set of vectors and developed some intuition for this concept through a series of examples.</div>
 <ul class="disc" id="sec-span-5-2-1">
-<li id="sec-span-5-2-1-1"><div class="para" id="sec-span-5-2-1-1-1">The span of a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> is the set of linear combinations of the vectors.  We denote the span by <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</span>
+<li id="sec-span-5-2-1-1"><div class="para" id="sec-span-5-2-1-1-1">The span of a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vvec_n\)</span> is the set of linear combinations of the vectors.  We denote the span by <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}\text{.}\)</span>
 </div></li>
 <li id="sec-span-5-2-1-2"><div class="para logical" id="sec-span-5-2-1-2-1">
-<div class="para">A vector <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\)</span> if and only if the linear system</div>
+<div class="para">A vector <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n}\)</span> if and only if the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\vvec_n
+\vec{v_1}\amp\vec{v_2}\amp\ldots\vvec_n
 \end{array}\right]
-~\xvec = \bvec
+~\vec{x} = \vec{b}
 \end{equation*}
 </div>
 <div class="para">is consistent.</div>
@@ -1220,14 +1220,14 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\vvec_n
+\vec{v_1}\amp\vec{v_2}\amp\ldots\vvec_n
 \end{array}\right]
 \end{equation*}
 </div>
 <div class="para">has a pivot position in every row, then the span of these vectors is <span class="process-math">\(\real^m\text{;}\)</span>  that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} =
+\laspan{\vec{v_1},\vec{v_2},\ldots,\vvec_n} =
 \real^m.
 \end{equation*}
 </div>
@@ -1239,7 +1239,7 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 </h3>
 <article class="exercise exercise-like" id="sec-span-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-span-6-1-1-1">
-<div class="para">In this exercise, we will consider the span of some sets of two- and three-dimensional vectors. <div id="sec-span-6-1-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">In this exercise, we will consider the span of some sets of two- and three-dimensional vectors. <div id="sec-span-6-1-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-1-1-1-2">
@@ -1247,14 +1247,14 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \twovec{1}{-2},
-\vvec_2 = \twovec{4}{3}\text{.}
+\vec{v_1} = \twovec{1}{-2},
+\vec{v_2} = \twovec{4}{3}\text{.}
 \end{equation*}
 </div>
 <ol class="decimal ol-marker-2" id="sec-span-6-1-1-1-2-1-1-2">
-<li id="sec-span-6-1-1-1-2-1-1-2-1"><div class="para" id="sec-span-6-1-1-1-2-1-1-2-1-1">Is <span class="process-math">\(\bvec = \twovec{2}{1}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span>
+<li id="sec-span-6-1-1-1-2-1-1-2-1"><div class="para" id="sec-span-6-1-1-1-2-1-1-2-1-1">Is <span class="process-math">\(\vec{b} = \twovec{2}{1}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-1-1-1-2-1-1-2-2"><div class="para" id="sec-span-6-1-1-1-2-1-1-2-2-1">Give a geometric description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<li id="sec-span-6-1-1-1-2-1-1-2-2"><div class="para" id="sec-span-6-1-1-1-2-1-1-2-2-1">Give a geometric description of <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
@@ -1262,19 +1262,19 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec{2}{1}{3},
-\vvec_2=\threevec{-2}{0}{2},
-\vvec_3=\threevec{6}{1}{-1}\text{.}
+\vec{v_1}=\threevec{2}{1}{3},
+\vec{v_2}=\threevec{-2}{0}{2},
+\vec{v_3}=\threevec{6}{1}{-1}\text{.}
 \end{equation*}
 </div>
 <ol class="decimal ol-marker-2" id="sec-span-6-1-1-1-2-2-1-2">
-<li id="sec-span-6-1-1-1-2-2-1-2-1"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-1-1">Is the vector <span class="process-math">\(\bvec=\threevec{-10}{-1}{5}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>
+<li id="sec-span-6-1-1-1-2-2-1-2-1"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-1-1">Is the vector <span class="process-math">\(\vec{b}=\threevec{-10}{-1}{5}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-1-1-1-2-2-1-2-2"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-2-1">Is the vector <span class="process-math">\(\vvec_3\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>
+<li id="sec-span-6-1-1-1-2-2-1-2-2"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-2-1">Is the vector <span class="process-math">\(\vec{v_3}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-1-1-1-2-2-1-2-3"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-3-1">Is the vector <span class="process-math">\(\bvec=\threevec{3}{3}{-1}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>
+<li id="sec-span-6-1-1-1-2-2-1-2-3"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-3-1">Is the vector <span class="process-math">\(\vec{b}=\threevec{3}{3}{-1}\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-1-1-1-2-2-1-2-4"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-4-1">Give a geometric description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</span>
+<li id="sec-span-6-1-1-1-2-2-1-2-4"><div class="para" id="sec-span-6-1-1-1-2-2-1-2-4-1">Give a geometric description of <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
@@ -1283,39 +1283,39 @@ c\vvec -2d\vvec = (c-2d)\vvec,
 <div class="para logical" id="sec-span-6-2-1-1">
 <div class="para">Provide a justification for your response to the following questions.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-2-1-1-1">
-<li id="sec-span-6-2-1-1-1-1"><div class="para" id="sec-span-6-2-1-1-1-1-1">Suppose you have a set of vectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\text{.}\)</span>  Can you guarantee that <span class="process-math">\(\zerovec\)</span> is in <span class="process-math">\(\laspan{\vvec_1\,\vvec_2,\ldots,\vvec_n}\text{?}\)</span>
+<li id="sec-span-6-2-1-1-1-1"><div class="para" id="sec-span-6-2-1-1-1-1-1">Suppose you have a set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\text{.}\)</span>  Can you guarantee that <span class="process-math">\(\zerovec\)</span> is in <span class="process-math">\(\laspan{\vec{v_1}\,\vec{v_2},\ldots,\vec{v_n}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-2-1-1-1-2"><div class="para" id="sec-span-6-2-1-1-1-2-1">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix.  Can you guarantee that the equation <span class="process-math">\(A\xvec =
+<li id="sec-span-6-2-1-1-1-2"><div class="para" id="sec-span-6-2-1-1-1-2-1">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(m \times n\)</span> matrix.  Can you guarantee that the equation <span class="process-math">\(A\vec{x} =
 \zerovec\)</span> is consistent?</div></li>
 <li id="sec-span-6-2-1-1-1-3"><div class="para" id="sec-span-6-2-1-1-1-3-1">What is <span class="process-math">\(\laspan{\zerovec,\zerovec,\ldots,\zerovec}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-span-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-span-6-3-1-1">
-<div class="para">For both parts of this exercise, give a geometric description of sets of the vectors <span class="process-math">\(\bvec\)</span> and include a sketch.</div>
+<div class="para">For both parts of this exercise, give a geometric description of sets of the vectors <span class="process-math">\(\vec{b}\)</span> and include a sketch.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-3-1-1-2">
 <li id="sec-span-6-3-1-1-2-1"><div class="para logical" id="sec-span-6-3-1-1-2-1-1">
-<div class="para">For which vectors <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^2\)</span> is the equation</div>
+<div class="para">For which vectors <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^2\)</span> is the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr}
 3 \amp -6 \\
 -2 \amp 4 \\
 \end{array}\right]
-\xvec = \bvec
+\vec{x} = \vec{b}
 \end{equation*}
 </div>
 <div class="para">consistent?</div>
 </div></li>
 <li id="sec-span-6-3-1-1-2-2"><div class="para logical" id="sec-span-6-3-1-1-2-2-1">
-<div class="para">For which vectors <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^2\)</span> is the equation</div>
+<div class="para">For which vectors <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^2\)</span> is the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rr}
 3 \amp -6 \\
 -2 \amp 2 \\
 \end{array}\right]
-\xvec = \bvec
+\vec{x} = \vec{b}
 \end{equation*}
 </div>
 <div class="para">consistent?</div>
@@ -1340,26 +1340,26 @@ B = \left[\begin{array}{rrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Do the columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\real^4\text{?}\)</span>  Do the columns of <span class="process-math">\(B\)</span> span <span class="process-math">\(\real^4\text{?}\)</span> <div id="sec-span-6-4-1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Do the columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\real^4\text{?}\)</span>  Do the columns of <span class="process-math">\(B\)</span> span <span class="process-math">\(\real^4\text{?}\)</span> <div id="sec-span-6-4-1-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></article><article class="exercise exercise-like" id="sec-span-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-span-6-5-1-1">
-<div class="para">Determine whether the following statements are true or false and provide a justification for your response.  Throughout, we will assume that the matrix <span class="process-math">\(A\)</span> has columns <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\text{;}\)</span>  that is,</div>
+<div class="para">Determine whether the following statements are true or false and provide a justification for your response.  Throughout, we will assume that the matrix <span class="process-math">\(A\)</span> has columns <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\text{;}\)</span>  that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A = \left[\begin{array}{rrrr}
-\vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+\vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-5-1-1-4">
-<li id="sec-span-6-5-1-1-4-1"><div class="para" id="sec-span-6-5-1-1-4-1-1">If the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent, then <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</span>
+<li id="sec-span-6-5-1-1-4-1"><div class="para" id="sec-span-6-5-1-1-4-1-1">If the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent, then <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}}\text{.}\)</span>
 </div></li>
-<li id="sec-span-6-5-1-1-4-2"><div class="para" id="sec-span-6-5-1-1-4-2-1">The equation <span class="process-math">\(A\xvec = \vvec_1\)</span> is consistent.</div></li>
-<li id="sec-span-6-5-1-1-4-3"><div class="para" id="sec-span-6-5-1-1-4-3-1">If <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> are vectors in <span class="process-math">\(\real^3\text{,}\)</span> then their span is <span class="process-math">\(\real^3\text{.}\)</span>
+<li id="sec-span-6-5-1-1-4-2"><div class="para" id="sec-span-6-5-1-1-4-2-1">The equation <span class="process-math">\(A\vec{x} = \vec{v_1}\)</span> is consistent.</div></li>
+<li id="sec-span-6-5-1-1-4-3"><div class="para" id="sec-span-6-5-1-1-4-3-1">If <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> are vectors in <span class="process-math">\(\real^3\text{,}\)</span> then their span is <span class="process-math">\(\real^3\text{.}\)</span>
 </div></li>
-<li id="sec-span-6-5-1-1-4-4"><div class="para" id="sec-span-6-5-1-1-4-4-1">If <span class="process-math">\(\bvec\)</span> is a linear combination of <span class="process-math">\(\vvec_1, \vvec_2,\ldots,\vvec_n\text{,}\)</span> then <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n}\text{.}\)</span>
+<li id="sec-span-6-5-1-1-4-4"><div class="para" id="sec-span-6-5-1-1-4-4-1">If <span class="process-math">\(\vec{b}\)</span> is a linear combination of <span class="process-math">\(\vec{v_1}, \vec{v_2},\ldots,\vec{v_n}\text{,}\)</span> then <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}}\text{.}\)</span>
 </div></li>
 <li id="sec-span-6-5-1-1-4-5"><div class="para" id="sec-span-6-5-1-1-4-5-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(8032\times 427\)</span> matrix, then the span of the columns of <span class="process-math">\(A\)</span> is a set of vectors in <span class="process-math">\(\real^{427}\text{.}\)</span>
 </div></li>
@@ -1379,30 +1379,30 @@ A = \left[\begin{array}{rrrr}
 <div class="para logical" id="sec-span-6-7-1-1">
 <div class="para">Provide a justification for your response to the following questions.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-7-1-1-1">
-<li id="sec-span-6-7-1-1-1-1"><div class="para" id="sec-span-6-7-1-1-1-1-1">Suppose that we have vectors in <span class="process-math">\(\real^8\text{,}\)</span> <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_{10}\text{,}\)</span>  whose span is <span class="process-math">\(\real^8\text{.}\)</span>  Can every vector <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^8\)</span> be written as a linear combination of <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_{10}\text{?}\)</span>
+<li id="sec-span-6-7-1-1-1-1"><div class="para" id="sec-span-6-7-1-1-1-1-1">Suppose that we have vectors in <span class="process-math">\(\real^8\text{,}\)</span> <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_{10}}\text{,}\)</span>  whose span is <span class="process-math">\(\real^8\text{.}\)</span>  Can every vector <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^8\)</span> be written as a linear combination of <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_{10}}\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-7-1-1-1-2"><div class="para" id="sec-span-6-7-1-1-1-2-1">Suppose that we have vectors in <span class="process-math">\(\real^8\text{,}\)</span> <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_{10}\text{,}\)</span>  whose span is <span class="process-math">\(\real^8\text{.}\)</span>  Can every vector <span class="process-math">\(\bvec\)</span> in <span class="process-math">\(\real^8\)</span> be written <em class="emphasis">uniquely</em> as a linear combination of <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_{10}\text{?}\)</span>
+<li id="sec-span-6-7-1-1-1-2"><div class="para" id="sec-span-6-7-1-1-1-2-1">Suppose that we have vectors in <span class="process-math">\(\real^8\text{,}\)</span> <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_{10}}\text{,}\)</span>  whose span is <span class="process-math">\(\real^8\text{.}\)</span>  Can every vector <span class="process-math">\(\vec{b}\)</span> in <span class="process-math">\(\real^8\)</span> be written <em class="emphasis">uniquely</em> as a linear combination of <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_{10}}\text{?}\)</span>
 </div></li>
 <li id="sec-span-6-7-1-1-1-3"><div class="para logical" id="sec-span-6-7-1-1-1-3-1">
 <div class="para">Do the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\evec_1=\threevec{1}{0}{0},
-\evec_2=\threevec{0}{1}{0},
-\evec_3=\threevec{0}{0}{1}
+\vec{e_1}=\threevec{1}{0}{0},
+\vec{e_2}=\threevec{0}{1}{0},
+\vec{e_3}=\threevec{0}{0}{1}
 \end{equation*}
 </div>
 <div class="para">span <span class="process-math">\(\real^3\text{?}\)</span>
 </div>
 </div></li>
-<li id="sec-span-6-7-1-1-1-4"><div class="para" id="sec-span-6-7-1-1-1-4-1">Suppose that <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> span <span class="process-math">\(\real^{438}\text{.}\)</span>  What can you guarantee about the value of <span class="process-math">\(n\text{?}\)</span>
+<li id="sec-span-6-7-1-1-1-4"><div class="para" id="sec-span-6-7-1-1-1-4-1">Suppose that <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> span <span class="process-math">\(\real^{438}\text{.}\)</span>  What can you guarantee about the value of <span class="process-math">\(n\text{?}\)</span>
 </div></li>
 <li id="sec-span-6-7-1-1-1-5"><div class="para" id="sec-span-6-7-1-1-1-5-1">Can 17 vectors in <span class="process-math">\(\real^{20}\)</span> span <span class="process-math">\(\real^{20}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-span-6-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
-<div class="para" id="sec-span-6-8-1-1">The following observation will be helpful in this exercise. If we want to find a solution to the equation <span class="process-math">\(AB\xvec =
-\bvec\text{,}\)</span> we could first find a solution to the equation <span class="process-math">\(A\yvec = \bvec\)</span> and then find a solution to the equation <span class="process-math">\(B\xvec = \yvec\text{.}\)</span>
+<div class="para" id="sec-span-6-8-1-1">The following observation will be helpful in this exercise. If we want to find a solution to the equation <span class="process-math">\(AB\vec{x} =
+\vec{b}\text{,}\)</span> we could first find a solution to the equation <span class="process-math">\(A\yvec = \vec{b}\)</span> and then find a solution to the equation <span class="process-math">\(B\vec{x} = \yvec\text{.}\)</span>
 </div> <div class="para logical" id="sec-span-6-8-1-2">
 <div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 4\)</span> matrix whose columns span <span class="process-math">\(\real^3\)</span> and <span class="process-math">\(B\)</span> is a <span class="process-math">\(4\times 5\)</span> matrix.  In this case, we can form the product <span class="process-math">\(AB\text{.}\)</span>
 </div>
@@ -1416,16 +1416,16 @@ A = \left[\begin{array}{rrrr}
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-span-6-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-span-6-9-1-1">
-<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(12\times12\)</span> matrix and that, for some vector <span class="process-math">\(\bvec\text{,}\)</span> the equation <span class="process-math">\(A\xvec=\bvec\)</span> has a unique solution.</div>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(12\times12\)</span> matrix and that, for some vector <span class="process-math">\(\vec{b}\text{,}\)</span> the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> has a unique solution.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-9-1-1-5">
 <li id="sec-span-6-9-1-1-5-1"><div class="para" id="sec-span-6-9-1-1-5-1-1">What can you say about the pivot positions of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
 <li id="sec-span-6-9-1-1-5-2"><div class="para" id="sec-span-6-9-1-1-5-2-1">What can you say about the span of the columns of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-9-1-1-5-3"><div class="para" id="sec-span-6-9-1-1-5-3-1">If <span class="process-math">\(\cvec\)</span> is some other vector in <span class="process-math">\(\real^{12}\text{,}\)</span> what can you conclude about the equation <span class="process-math">\(A\xvec =
+<li id="sec-span-6-9-1-1-5-3"><div class="para" id="sec-span-6-9-1-1-5-3-1">If <span class="process-math">\(\cvec\)</span> is some other vector in <span class="process-math">\(\real^{12}\text{,}\)</span> what can you conclude about the equation <span class="process-math">\(A\vec{x} =
 \cvec\text{?}\)</span>
 </div></li>
-<li id="sec-span-6-9-1-1-5-4"><div class="para" id="sec-span-6-9-1-1-5-4-1">What can you about the solution space to the equation <span class="process-math">\(A\xvec =\zerovec\text{?}\)</span>
+<li id="sec-span-6-9-1-1-5-4"><div class="para" id="sec-span-6-9-1-1-5-4-1">What can you about the solution space to the equation <span class="process-math">\(A\vec{x} =\zerovec\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-span-6-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
@@ -1433,26 +1433,26 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \fourvec{3}{1}{3}{-1},
-\vvec_2 = \fourvec{0}{-1}{-2}{2},
-\vvec_3 = \fourvec{-3}{-3}{-7}{5}\text{.}
+\vec{v_1} = \fourvec{3}{1}{3}{-1},
+\vec{v_2} = \fourvec{0}{-1}{-2}{2},
+\vec{v_3} = \fourvec{-3}{-3}{-7}{5}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-10-1-1-2">
-<li id="sec-span-6-10-1-1-2-1"><div class="para" id="sec-span-6-10-1-1-2-1-1">Is <span class="process-math">\(\vvec_3\)</span> a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span>  If so, find weights such that <span class="process-math">\(\vvec_3 = a\vvec_1+b\vvec_2\text{.}\)</span>
+<li id="sec-span-6-10-1-1-2-1"><div class="para" id="sec-span-6-10-1-1-2-1-1">Is <span class="process-math">\(\vec{v_3}\)</span> a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>  If so, find weights such that <span class="process-math">\(\vec{v_3} = a\vec{v_1}+b\vec{v_2}\text{.}\)</span>
 </div></li>
 <li id="sec-span-6-10-1-1-2-2"><div class="para logical" id="sec-span-6-10-1-1-2-2-1">
 <div class="para">Show that a linear combination</div>
 <div class="displaymath process-math">
 \begin{equation*}
-a\vvec_1 + b\vvec_2 + c\vvec_3
+a\vec{v_1} + b\vec{v_2} + c\vec{v_3}
 \end{equation*}
 </div>
-<div class="para">can be rewritten as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<div class="para">can be rewritten as a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-span-6-10-1-1-2-3"><div class="para" id="sec-span-6-10-1-1-2-3-1">Explain why <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3} =
-\laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<li id="sec-span-6-10-1-1-2-3"><div class="para" id="sec-span-6-10-1-1-2-3-1">Explain why <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}} =
+\laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-span-6-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
@@ -1460,23 +1460,23 @@ a\vvec_1 + b\vvec_2 + c\vvec_3
 <div class="para">We will consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec{1}{0}{-2},
-\vvec_2=\threevec{2}{1}{0},
-\vvec_3=\threevec{1}{1}{2}
+\vec{v_1}=\threevec{1}{0}{-2},
+\vec{v_2}=\threevec{2}{1}{0},
+\vec{v_3}=\threevec{1}{1}{2}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-span-6-11-1-2-2">
-<li id="sec-span-6-11-1-2-2-1"><div class="para" id="sec-span-6-11-1-2-2-1-1">Is every vector in <span class="process-math">\(\real^3\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>  If not, describe the span. <div id="sec-span-6-11-1-2-2-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-span-6-11-1-2-2-1"><div class="para" id="sec-span-6-11-1-2-2-1-1">Is every vector in <span class="process-math">\(\real^3\)</span> in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>  If not, describe the span. <div id="sec-span-6-11-1-2-2-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-span-6-11-1-2-2-2"><div class="para logical" id="sec-span-6-11-1-2-2-2-1">
-<div class="para">To describe <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\)</span> as the solution space of a linear system, we will write</div>
+<div class="para">To describe <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\)</span> as the solution space of a linear system, we will write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bvec=\threevec{a}{b}{c}\text{.}
+\vec{b}=\threevec{a}{b}{c}\text{.}
 \end{equation*}
 </div>
-<div class="para">If <span class="process-math">\(\bvec\)</span> is in <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{,}\)</span> then the linear system corresponding to the augmented matrix</div>
+<div class="para">If <span class="process-math">\(\vec{b}\)</span> is in <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{,}\)</span> then the linear system corresponding to the augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr|r}
@@ -1486,12 +1486,12 @@ a\vvec_1 + b\vvec_2 + c\vvec_3
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">must be consistent.  This means that a pivot cannot occur in the rightmost column.  Perform row operations to put this augmented matrix into a triangular form.  Now identify an equation in <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> that tells us when there is no pivot in the rightmost column.  The solution space to this equation describes <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{.}\)</span>
+<div class="para">must be consistent.  This means that a pivot cannot occur in the rightmost column.  Perform row operations to put this augmented matrix into a triangular form.  Now identify an equation in <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(c\)</span> that tells us when there is no pivot in the rightmost column.  The solution space to this equation describes <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{.}\)</span>
 </div>
 </div></li>
 <li id="sec-span-6-11-1-2-2-3"><div class="para" id="sec-span-6-11-1-2-2-3-1">In this example, the matrix formed by the vectors <span class="process-math">\(\left[\begin{array}{rrr}
-\vvec_1\amp\vvec_2\amp\vvec_2 \\
-\end{array}\right]\)</span> has two pivot positions.  Suppose we were to consider another example in which this matrix had had only one pivot position.  How would this have changed the linear system describing <span class="process-math">\(\laspan{\vvec_1,\vvec_2,\vvec_3}\text{?}\)</span>
+\vec{v_1}\amp\vec{v_2}\amp\vec{v_2} \\
+\end{array}\right]\)</span> has two pivot positions.  Suppose we were to consider another example in which this matrix had had only one pivot position.  How would this have changed the linear system describing <span class="process-math">\(\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article></section></section></div>

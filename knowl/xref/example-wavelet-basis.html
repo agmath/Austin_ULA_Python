@@ -41,7 +41,7 @@
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec=\fourvec{10.3}{13.1}{7.5}{8.2}\text{.}
+\vec{x}=\fourvec{10.3}{13.1}{7.5}{8.2}\text{.}
 \end{equation*}
 </div>
 </div></div>
@@ -50,10 +50,10 @@
 <div class="para">Let’s consider a new basis <span class="process-math">\(\bcal\)</span> for <span class="process-math">\(\real^4\)</span> using vectors</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-basis-revenue-elements.html">
 \begin{equation*}
-\vvec_1=\fourvec{1}{1}{1}{1},~~~
-\vvec_2=\fourvec{1}{1}{-1}{-1},~~~
-\vvec_3=\fourvec{1}{-1}{0}{0},~~~
-\vvec_4=\fourvec{0}{0}{1}{-1}\text{.}
+\vec{v_1}=\fourvec{1}{1}{1}{1},~~~
+\vec{v_2}=\fourvec{1}{1}{-1}{-1},~~~
+\vec{v_3}=\fourvec{1}{-1}{0}{0},~~~
+\vec{v_4}=\fourvec{0}{0}{1}{-1}\text{.}
 \end{equation*}
 </div>
 <div class="para">We may view these basis elements graphically, as in <a href="sec-bases.html#fig-basis-revenue-elements" class="xref" data-knowl="./knowl/xref/fig-basis-revenue-elements.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.2.11">Figure 3.2.11</a>
@@ -79,25 +79,25 @@ P_{\bcal}^{-1} =
 \end{array}\right].
 \end{equation*}
 </div>
-<div class="para">In particular, if the revenue vector is <span class="process-math">\(\xvec =
+<div class="para">In particular, if the revenue vector is <span class="process-math">\(\vec{x} =
 \fourvec{x_1}{x_2}{x_3}{x_4}\text{,}\)</span> then</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\xvec}{\bcal} = \cfourvec
+\coords{\vec{x}}{\bcal} = \cfourvec
 {\frac14 x_1 + \frac14 x_2 + \frac14 x_3 + \frac14 x_4}
 {\frac14 x_1 + \frac14 x_2 - \frac14 x_3 - \frac14 x_4}
 {\frac12 x_1 - \frac12 x_2}
 {\frac12 x_3 - \frac12 x_4}.
 \end{equation*}
 </div>
-<div class="para">Notice that the first component of <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> is the average of the components of <span class="process-math">\(\xvec\text{.}\)</span>
+<div class="para">Notice that the first component of <span class="process-math">\(\coords{\vec{x}}{\bcal}\)</span> is the average of the components of <span class="process-math">\(\vec{x}\text{.}\)</span>
 </div>
 </div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para logical">
-<div class="para">For our particular revenue vector <span class="process-math">\(\xvec = 
+<div class="para">For our particular revenue vector <span class="process-math">\(\vec{x} = 
 \fourvec{10.3}{13.1}{7.5}{8.2}\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\xvec}{\bcal} = P_{\bcal}^{-1} \xvec =
+\coords{\vec{x}}{\bcal} = P_{\bcal}^{-1} \vec{x} =
 P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 \fourvec{9.775}{1.925}{-1.400}{-0.350}.
 \end{equation*}
@@ -105,8 +105,8 @@ P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 <div class="para">This means that our revenue vector is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec = 9.775 \vvec_1 + 1.925 \vvec_2 - 1.400\vvec_3 -
-0.350 \vvec_4\text{.}
+\vec{x} = 9.775 \vec{v_1} + 1.925 \vec{v_2} - 1.400\vec{v_3} -
+0.350 \vec{v_4}\text{.}
 \end{equation*}
 </div>
 <div class="para">We will think about what these terms mean by adding them together one at a time.</div>
@@ -116,7 +116,7 @@ P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 <div class="para">The first term,</div>
 <div class="displaymath process-math">
 \begin{equation*}
-9.775\vvec_1 = \fourvec{9.775}{9.775}{9.775}{9.775},
+9.775\vec{v_1} = \fourvec{9.775}{9.775}{9.775}{9.775},
 \end{equation*}
 </div>
 <div class="para">gives us the average revenue over the year.</div>
@@ -128,7 +128,7 @@ P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 <div class="para">The average revenue for the first two quarters is 11.7, which is 1.925 million dollars above the yearly average.  Similarly, the average revenue for the last two quarters is 1.925 million dollars below the yearly average.  This is recorded by the second term</div>
 <div class="displaymath process-math">
 \begin{equation*}
-1.925\vvec_2 =
+1.925\vec{v_2} =
 \cfourvec{1.925}{1.925}{-1.925}{-1.925}.
 \end{equation*}
 </div>
@@ -140,14 +140,14 @@ P_{\bcal}^{-1} \fourvec{10.3}{13.1}{7.5}{8.2} =
 <div class="para">Finally, the first quarter’s revenue is 1.400 million dollars below the average over the first two quarters and the second quarter’s revenue is 1.400 million dollars above that average.  This, and the corresponding data for the last two quarters, is captured by the last two terms:</div>
 <div class="displaymath process-math">
 \begin{equation*}
--1.400\vvec_3 - 0.350\vvec_4 = \cfourvec
+-1.400\vec{v_3} - 0.350\vec{v_4} = \cfourvec
 {-1.400}{1.400}{-0.350}{0.350},
 \end{equation*}
 </div>
 </div></div>
 <div class="sbspanel top" style="width:47.3684210526316%;"><img xmlns:xlink="http://www.w3.org/1999/xlink" src="external/images/basis-revenue-approx-3.svg" role="img" class="contained"></div>
 </div></div>
-</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">If we write <span class="process-math">\(\coords{\xvec}{\bcal} =
+</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">If we write <span class="process-math">\(\coords{\vec{x}}{\bcal} =
 \fourvec{c_1}{c_2}{c_3}{c_4}\text{,}\)</span> we see that the coefficient <span class="process-math">\(c_1\)</span> measures the average revenue over the year, <span class="process-math">\(c_2\)</span> measures the deviation from the annual average in the first and second halves of the year, and <span class="process-math">\(c_3\)</span> measures how the revenue in the first and second quarter differs from the average in the first half of the year.  In this way, the coefficients provide a view of the revenue over different time scales, from an annual summary to a finer view of quarterly behavior.</div> <div xmlns:xlink="http://www.w3.org/1999/xlink" class="para">This basis is sometimes called a <em class="emphasis">Haar</em> wavelet basis, and the change of basis is known as a <em class="emphasis">Haar</em> wavelet transform.  In the next section, we will see how this basis provides a useful way to store digital images.</div></article><span class="incontext"><a class="internal" href="sec-bases.html#example-wavelet-basis">in-context</a></span>
 </body>
 </html>

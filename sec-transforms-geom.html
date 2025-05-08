@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -601,16 +601,16 @@ sagecell.makeSagecell({
 <article class="exploration project-like" id="sec-transforms-geom-2-2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec-transforms-geom-2-2-1-1">We will describe the matrix transformation <span class="process-math">\(T\)</span> that reflects 2-dimensional vectors across the horizontal axis.  For instance, <a href="sec-transforms-geom.html#fig-reflect-intro" class="xref" data-knowl="./knowl/xref/fig-reflect-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.1">Figure 2.6.1</a> illustrates how a vector <span class="process-math">\(\xvec\)</span> is reflected onto the vector <span class="process-math">\(T(\xvec)\text{.}\)</span>
+<div class="para" id="sec-transforms-geom-2-2-1-1">We will describe the matrix transformation <span class="process-math">\(T\)</span> that reflects 2-dimensional vectors across the horizontal axis.  For instance, <a href="sec-transforms-geom.html#fig-reflect-intro" class="xref" data-knowl="./knowl/xref/fig-reflect-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.1">Figure 2.6.1</a> illustrates how a vector <span class="process-math">\(\vec{x}\)</span> is reflected onto the vector <span class="process-math">\(T(\vec{x})\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-reflect-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/reflect-intro.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>A vector <span class="process-math">\(\xvec\)</span> and its reflection <span class="process-math">\(T(\xvec)\)</span> across the horizontal axis.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-2-2-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-2-2-1-3-1">
-<li id="sec-transforms-geom-2-2-1-3-1-1"><div class="para" id="sec-transforms-geom-2-2-1-3-1-1-1">If <span class="process-math">\(\xvec = \twovec{2}{4}\text{,}\)</span> what is the vector <span class="process-math">\(T(\xvec)\text{?}\)</span>  Sketch the vectors <span class="process-math">\(\xvec\)</span> and <span class="process-math">\(T(\xvec)\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>A vector <span class="process-math">\(\vec{x}\)</span> and its reflection <span class="process-math">\(T(\vec{x})\)</span> across the horizontal axis.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-2-2-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-2-2-1-3-1">
+<li id="sec-transforms-geom-2-2-1-3-1-1"><div class="para" id="sec-transforms-geom-2-2-1-3-1-1-1">If <span class="process-math">\(\vec{x} = \twovec{2}{4}\text{,}\)</span> what is the vector <span class="process-math">\(T(\vec{x})\text{?}\)</span>  Sketch the vectors <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(T(\vec{x})\text{.}\)</span>
 </div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-2"><div class="para" id="sec-transforms-geom-2-2-1-3-1-2-1">More generally, if <span class="process-math">\(\xvec=\twovec{x}{y}\text{,}\)</span> what is <span class="process-math">\(T(\xvec)\text{?}\)</span>
+<li id="sec-transforms-geom-2-2-1-3-1-2"><div class="para" id="sec-transforms-geom-2-2-1-3-1-2-1">More generally, if <span class="process-math">\(\vec{x}=\twovec{x}{y}\text{,}\)</span> what is <span class="process-math">\(T(\vec{x})\text{?}\)</span>
 </div></li>
 <li id="sec-transforms-geom-2-2-1-3-1-3"><div class="para" id="sec-transforms-geom-2-2-1-3-1-3-1">Find the vectors <span class="process-math">\(T\left(\twovec{1}{0}\right)\)</span> and <span class="process-math">\(T\left(\twovec{0}{1}\right)\text{.}\)</span>
 </div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-4"><div class="para" id="sec-transforms-geom-2-2-1-3-1-4-1">Use your results to write the matrix <span class="process-math">\(A\)</span> so that <span class="process-math">\(T(\xvec) = A\xvec\text{.}\)</span> Then verify that <span class="process-math">\(T\left(\twovec{x}{y}\right)\)</span> agrees with what you found in part b.</div></li>
+<li id="sec-transforms-geom-2-2-1-3-1-4"><div class="para" id="sec-transforms-geom-2-2-1-3-1-4-1">Use your results to write the matrix <span class="process-math">\(A\)</span> so that <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span> Then verify that <span class="process-math">\(T\left(\twovec{x}{y}\right)\)</span> agrees with what you found in part b.</div></li>
 <li id="sec-transforms-geom-2-2-1-3-1-5"><div class="para" id="sec-transforms-geom-2-2-1-3-1-5-1">Describe the transformation that results from composing <span class="process-math">\(T\)</span> with itself;  that is, what is the transformation <span class="process-math">\(T\circ T\text{?}\)</span>  Explain how matrix multiplication can be used to justify your response.</div></li>
 </ol></div></article></section><section class="subsection" id="sec-transforms-geom-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">The geometry of <span class="process-math">\(2\times2\)</span> matrix transformations</span>
@@ -626,8 +626,8 @@ sagecell.makeSagecell({
 </div>
 </div></details></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> transforms features shown on the left into features shown on the right.</figcaption></figure> <div class="para logical" id="activity-linear-trans-geom-2-2">
-<div class="para">For the following <span class="process-math">\(2\times2\)</span> matrices <span class="process-math">\(A\text{,}\)</span> use the diagram to study the effect of the corresponding matrix transformation <span class="process-math">\(T(\xvec) =
-A\xvec\text{.}\)</span>  For each transformation, describe the geometric effect the transformation has on the plane.</div>
+<div class="para">For the following <span class="process-math">\(2\times2\)</span> matrices <span class="process-math">\(A\text{,}\)</span> use the diagram to study the effect of the corresponding matrix transformation <span class="process-math">\(T(\vec{x}) =
+A\vec{x}\text{.}\)</span>  For each transformation, describe the geometric effect the transformation has on the plane.</div>
 <ol class="lower-alpha ol-marker-1" id="activity-linear-trans-geom-2-2-4">
 <li id="activity-linear-trans-geom-2-2-4-1"><div class="para" id="activity-linear-trans-geom-2-2-4-1-1"><span class="process-math">\(A=\left[\begin{array}{rr}
 2 \amp 0 \\
@@ -664,53 +664,53 @@ A\xvec\text{.}\)</span>  For each transformation, describe the geometric effect 
 </ol>
 </div></article><div class="para" id="sec-transforms-geom-3-4">The previous activity presented some examples showing that matrix transformations can perform interesting geometric operations, such as rotations, scalings, and reflections. Before we go any further, we should explain why it is possible to represent these operations by matrix transformations.  In fact, we ask more generally: what types of functions <span class="process-math">\(T:\real^n\to\real^m\)</span> are represented as matrix transformations?</div>
 <div class="para logical" id="sec-transforms-geom-3-5">
-<div class="para">The <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">linearity of matrix-vector multiplication</a> provides the key to answering this question.  Remember that if <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> vectors, and <span class="process-math">\(c\)</span> a scalar, then</div>
+<div class="para">The <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">linearity of matrix-vector multiplication</a> provides the key to answering this question.  Remember that if <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> vectors, and <span class="process-math">\(c\)</span> a scalar, then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-mult-prop.html">
 \begin{equation*}
 \begin{aligned}
-A(c\vvec) \amp {}={} cA\vvec \\
-A(\vvec + \wvec) \amp {}={} A\vvec + A\wvec\text{.}
+A(c\vec{v}) \amp {}={} cA\vec{v} \\
+A(\vec{v} + \vec{w}) \amp {}={} A\vec{v} + A\vec{w}\text{.}
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">This means that a matrix transformation <span class="process-math">\(T(\xvec) = A\xvec\)</span> satisfies the corresponding linearity property: <article class="assemblage assemblage-like" id="linearity-of-linear-transformations"><h4 class="heading"><span class="title">Linearity of Matrix Transformations.</span></h4>
+<div class="para">This means that a matrix transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> satisfies the corresponding linearity property: <article class="assemblage assemblage-like" id="linearity-of-linear-transformations"><h4 class="heading"><span class="title">Linearity of Matrix Transformations.</span></h4>
 <div class="para logical" id="linearity-of-linear-transformations-2"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-T(c\vvec) \amp {}={} cT(\vvec) \\
-T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}
 \end{equation*}
 </div></div></article>
 </div>
 </div>
 <div class="para logical" id="sec-transforms-geom-3-6">
-<div class="para">It turns out that, if <span class="process-math">\(T:\real^n\to\real^m\)</span> satisfies these two linearity properties, then we can find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\xvec) = A\xvec\text{.}\)</span>  In fact, <a href="sec-linear-trans.html#prop-linear-trans-columns" class="xref" data-knowl="./knowl/xref/prop-linear-trans-columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.6">Proposition 2.5.6</a> tells us how to form <span class="process-math">\(A\text{;}\)</span> we simply write</div>
+<div class="para">It turns out that, if <span class="process-math">\(T:\real^n\to\real^m\)</span> satisfies these two linearity properties, then we can find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span>  In fact, <a href="sec-linear-trans.html#prop-linear-trans-columns" class="xref" data-knowl="./knowl/xref/prop-linear-trans-columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.6">Proposition 2.5.6</a> tells us how to form <span class="process-math">\(A\text{;}\)</span> we simply write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-trans-columns.html">
 \begin{equation*}
 A = \left[\begin{array}{rrrr}
-T(\evec_1) \amp T(\evec_2) \amp \ldots T(\evec_n)
+T(\vec{e_1}) \amp T(\vec{e_2}) \amp \ldots T(\vec{e_n})
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">We will now check that <span class="process-math">\(T(\xvec) = A\xvec\)</span> using the linearity of <span class="process-math">\(T\text{:}\)</span>
+<div class="para">We will now check that <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> using the linearity of <span class="process-math">\(T\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-trans-columns.html">
 \begin{equation*}
 \begin{aligned}
-T(\xvec) = T\left(\fourvec{x_1}{x_2}{\vdots}{x_n}\right)
+T(\vec{x}) = T\left(\fourvec{x_1}{x_2}{\vdots}{x_n}\right)
 \amp {}={}
-T(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_n\vec{e_n}) \\ \\
 \amp {}={}
-x_1T(\evec_1) + x_2T(\evec_2) + \ldots + x_nT(\evec_n) \\ \\
+x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_nT(\vec{e_n}) \\ \\
 \amp {}={}
-x_1A\evec_1 + x_2A\evec_2 + \ldots + x_nA\evec_n \\ \\
+x_1A\vec{e_1} + x_2A\vec{e_2} + \ldots + x_nA\vec{e_n} \\ \\
 \amp {}={}
-A(x_1\evec_1 + x_2\evec_2 + \ldots + x_n\evec_n) \\ \\
+A(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_n\vec{e_n}) \\ \\
 \amp {}={}
 A\fourvec{x_1}{x_2}{\vdots}{x_n} \\ \\
 \amp {}={}
-A\xvec
+A\vec{x}
 \end{aligned}\text{.}
 \end{equation*}
 </div>
@@ -720,20 +720,20 @@ A\xvec
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-linear-trans-characterization-1-1">
-<div class="para">The function <span class="process-math">\(T:\real^n\to\real^m\)</span> is a matrix transformation where <span class="process-math">\(T(\xvec) = A\xvec\)</span> for some <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> if and only if</div>
+<div class="para">The function <span class="process-math">\(T:\real^n\to\real^m\)</span> is a matrix transformation where <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> for some <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> if and only if</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-T(c\vvec) \amp {}={} cT(\vvec) \\
-T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">In this case, <span class="process-math">\(A\)</span> is the matrix whose columns are <span class="process-math">\(T(\evec_j)\text{;}\)</span>  that is,</div>
+<div class="para">In this case, <span class="process-math">\(A\)</span> is the matrix whose columns are <span class="process-math">\(T(\vec{e_j})\text{;}\)</span>  that is,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A=\left[\begin{array}{rrrr}
-T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
+T(\vec{e_1}) \amp T(\vec{e_2}) \amp \ldots \amp T(\vec{e_n})
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
@@ -741,30 +741,30 @@ T(\evec_1) \amp T(\evec_2) \amp \ldots \amp T(\evec_n)
 <article class="example example-like" id="sec-transforms-geom-3-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-transforms-geom-3-10-1-1">We will consider the function <span class="process-math">\(T:\real^2\to\real^2\)</span> that rotates a vector <span class="process-math">\(\xvec\)</span> by <span class="process-math">\(45^\circ\)</span> in the counterclockwise direction to obtain <span class="process-math">\(T(\xvec)\)</span> as seen in <a href="sec-transforms-geom.html#fig-45-rotation" class="xref" data-knowl="./knowl/xref/fig-45-rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.5">Figure 2.6.5</a>.</div> <figure class="figure figure-like" id="fig-45-rotation"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation.svg" role="img" class="contained"></div></div></div>
+<div class="para" id="sec-transforms-geom-3-10-1-1">We will consider the function <span class="process-math">\(T:\real^2\to\real^2\)</span> that rotates a vector <span class="process-math">\(\vec{x}\)</span> by <span class="process-math">\(45^\circ\)</span> in the counterclockwise direction to obtain <span class="process-math">\(T(\vec{x})\)</span> as seen in <a href="sec-transforms-geom.html#fig-45-rotation" class="xref" data-knowl="./knowl/xref/fig-45-rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.5">Figure 2.6.5</a>.</div> <figure class="figure figure-like" id="fig-45-rotation"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(T\)</span> rotates a vector counterclockwise by <span class="process-math">\(45^\circ\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-3">
 <div class="para">We first need to know that <span class="process-math">\(T\)</span> can be represented by a matrix transformation, which means, by <a href="sec-transforms-geom.html#prop-linear-trans-characterization" class="xref" data-knowl="./knowl/xref/prop-linear-trans-characterization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.6.3">Proposition 2.6.3</a>, that we need to verify the linearity properties:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-trans-characterization.html">
 \begin{equation*}
 \begin{aligned}
-T(c\vvec) \amp {}={} cT(\vvec) \\
-T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-transforms-geom-3-10-1-4">The next two figures illustrate why these properties hold. For instance, <a href="sec-transforms-geom.html#fig-45-rotation-linear-mult" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.6">Figure 2.6.6</a> shows the relationship between <span class="process-math">\(T(\vvec)\)</span> and <span class="process-math">\(T(c\vvec)\)</span> when <span class="process-math">\(c\)</span> is a scalar.  In particular, scaling a vector and then rotating it is the same as rotating and then scaling it, which means that <span class="process-math">\(T(c\vvec)
-= cT(\vvec)\text{.}\)</span>
+</div> <div class="para" id="sec-transforms-geom-3-10-1-4">The next two figures illustrate why these properties hold. For instance, <a href="sec-transforms-geom.html#fig-45-rotation-linear-mult" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.6">Figure 2.6.6</a> shows the relationship between <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(c\vec{v})\)</span> when <span class="process-math">\(c\)</span> is a scalar.  In particular, scaling a vector and then rotating it is the same as rotating and then scaling it, which means that <span class="process-math">\(T(c\vec{v})
+= cT(\vec{v})\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-45-rotation-linear-mult"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-linear-a.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(c\vvec)\)</span> is a scalar multiple to <span class="process-math">\(T(\vvec)\)</span> so that <span class="process-math">\(T(c\vvec) =
-cT(\vvec)\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-6">Similarly, <a href="sec-transforms-geom.html#fig-45-rotation-linear-add" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-add.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.7">Figure 2.6.7</a> shows the relationship between <span class="process-math">\(T(\vvec+\wvec)\text{,}\)</span> <span class="process-math">\(T(\vvec)\text{,}\)</span> and <span class="process-math">\(T(\wvec)\text{.}\)</span>  Remember that the sum of two vectors is represented by the diagonal of the parallelogram defined by the two vectors.  The rotation <span class="process-math">\(T\)</span> has the effect of rotating the parallelogram defined by <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> into the parallelogram defined by <span class="process-math">\(T(\vvec)\)</span> and <span class="process-math">\(T(\wvec)\text{,}\)</span> explaining why <span class="process-math">\(T(\vvec+\wvec) = T(\vvec) + T(\wvec)\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(c\vec{v})\)</span> is a scalar multiple to <span class="process-math">\(T(\vec{v})\)</span> so that <span class="process-math">\(T(c\vec{v}) =
+cT(\vec{v})\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-6">Similarly, <a href="sec-transforms-geom.html#fig-45-rotation-linear-add" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-add.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.7">Figure 2.6.7</a> shows the relationship between <span class="process-math">\(T(\vec{v}+\vec{w})\text{,}\)</span> <span class="process-math">\(T(\vec{v})\text{,}\)</span> and <span class="process-math">\(T(\vec{w})\text{.}\)</span>  Remember that the sum of two vectors is represented by the diagonal of the parallelogram defined by the two vectors.  The rotation <span class="process-math">\(T\)</span> has the effect of rotating the parallelogram defined by <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> into the parallelogram defined by <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\text{,}\)</span> explaining why <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-45-rotation-linear-add"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-linear-b.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(\vvec+\wvec)\)</span> is the sum of <span class="process-math">\(T(\vvec)\)</span> and <span class="process-math">\(T(\wvec)\)</span> so that <span class="process-math">\(T(\vvec + \wvec) = T(\vvec) + T(\wvec)\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-8">Having verified these two properties, we now know that the function <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(45^\circ\)</span> is a matrix transformation.  We may therefore write it as <span class="process-math">\(T(\xvec) = A\xvec\)</span> where <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A=\left[\begin{array}{rr} T(\evec_1) \amp T(\evec_2)
-\end{array}\right]\text{.}\)</span>  The columns of this matrix, <span class="process-math">\(T(\evec_1)\)</span> and <span class="process-math">\(T(\evec_2)\text{,}\)</span> are shown on the right of <a href="sec-transforms-geom.html#fig-45-rotation-basis" class="xref" data-knowl="./knowl/xref/fig-45-rotation-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.8">Figure 2.6.8</a>.</div> <figure class="figure figure-like" id="fig-45-rotation-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.8<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> rotates <span class="process-math">\(\evec_1\)</span> and <span class="process-math">\(\evec_2\)</span> by <span class="process-math">\(45^\circ\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-10">Notice that <span class="process-math">\(T(\evec_1)\)</span> forms an isosceles right triangle, as shown in <a href="sec-transforms-geom.html#fig-45-rotation-e1" class="xref" data-knowl="./knowl/xref/fig-45-rotation-e1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.9">Figure 2.6.9</a>. Since the length of <span class="process-math">\(\evec_1\)</span> is 1, the length of <span class="process-math">\(T(\evec_1)\text{,}\)</span> the hypotenuse of the triangle, is also 1, and by Pythagoras’ theorem, the lengths of its legs are <span class="process-math">\(1/\sqrt{2}\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(\vec{v}+\vec{w})\)</span> is the sum of <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\)</span> so that <span class="process-math">\(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-8">Having verified these two properties, we now know that the function <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(45^\circ\)</span> is a matrix transformation.  We may therefore write it as <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> where <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A=\left[\begin{array}{rr} T(\vec{e_1}) \amp T(\vec{e_2})
+\end{array}\right]\text{.}\)</span>  The columns of this matrix, <span class="process-math">\(T(\vec{e_1})\)</span> and <span class="process-math">\(T(\vec{e_2})\text{,}\)</span> are shown on the right of <a href="sec-transforms-geom.html#fig-45-rotation-basis" class="xref" data-knowl="./knowl/xref/fig-45-rotation-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.8">Figure 2.6.8</a>.</div> <figure class="figure figure-like" id="fig-45-rotation-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-basis.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.8<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> rotates <span class="process-math">\(\vec{e_1}\)</span> and <span class="process-math">\(\vec{e_2}\)</span> by <span class="process-math">\(45^\circ\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-10">Notice that <span class="process-math">\(T(\vec{e_1})\)</span> forms an isosceles right triangle, as shown in <a href="sec-transforms-geom.html#fig-45-rotation-e1" class="xref" data-knowl="./knowl/xref/fig-45-rotation-e1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.9">Figure 2.6.9</a>. Since the length of <span class="process-math">\(\vec{e_1}\)</span> is 1, the length of <span class="process-math">\(T(\vec{e_1})\text{,}\)</span> the hypotenuse of the triangle, is also 1, and by Pythagoras’ theorem, the lengths of its legs are <span class="process-math">\(1/\sqrt{2}\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-45-rotation-e1"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-e1.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>The vector <span class="process-math">\(T(\evec_1)\)</span> has length 1 and is the hypotenuse of a right isosceles triangle.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-12">
-<div class="para">This leads to <span class="process-math">\(T(\evec_1) = \twovec{\frac1{\sqrt{2}}}
-{\frac1{\sqrt{2}}}\text{.}\)</span> In the same way, we find that <span class="process-math">\(T(\evec_2) = \twovec{-\frac1{\sqrt{2}}}
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>The vector <span class="process-math">\(T(\vec{e_1})\)</span> has length 1 and is the hypotenuse of a right isosceles triangle.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-12">
+<div class="para">This leads to <span class="process-math">\(T(\vec{e_1}) = \twovec{\frac1{\sqrt{2}}}
+{\frac1{\sqrt{2}}}\text{.}\)</span> In the same way, we find that <span class="process-math">\(T(\vec{e_2}) = \twovec{-\frac1{\sqrt{2}}}
 {\frac1{\sqrt{2}}}\)</span> so that the matrix <span class="process-math">\(A\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -783,8 +783,8 @@ A = \left[\begin{array}{rr}
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/activity-mt-intro.html">
 \begin{equation*}
 \begin{aligned}
-T(c\vvec) \amp {}={} cT(\vvec) \\
-T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
+T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
+T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}.
 \end{equation*}
 </div>
@@ -797,7 +797,7 @@ T(\vvec + \wvec) \amp {}={} T(\vvec) + T(\wvec)\text{.}
 <div class="para">In this activity, we seek to describe various matrix transformations by finding the matrix that gives the desired transformation.  All of the transformations that we study here have the form <span class="process-math">\(T:\real^2\to\real^2\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-3-12-1-1-2">
-<li id="sec-transforms-geom-3-12-1-1-2-1"><div class="para" id="sec-transforms-geom-3-12-1-1-2-1-1">Find the matrix of the transformation that has no effect on vectors;  that is, <span class="process-math">\(T(\xvec) = \xvec\text{.}\)</span>
+<li id="sec-transforms-geom-3-12-1-1-2-1"><div class="para" id="sec-transforms-geom-3-12-1-1-2-1-1">Find the matrix of the transformation that has no effect on vectors;  that is, <span class="process-math">\(T(\vec{x}) = \vec{x}\text{.}\)</span>
 </div></li>
 <li id="sec-transforms-geom-3-12-1-1-2-2"><div class="para" id="sec-transforms-geom-3-12-1-1-2-2-1">Find the matrix of the transformation that reflects vectors in <span class="process-math">\(\real^2\)</span> across the line <span class="process-math">\(y=x\text{.}\)</span>
 </div></li>
@@ -947,8 +947,8 @@ d \amp e \amp f \\
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-T(c\vvec) \amp = cT(\vvec) \\
-T(\vvec+\wvec) \amp = T(\vvec)+T(\wvec). \\
+T(c\vec{v}) \amp = cT(\vec{v}) \\
+T(\vec{v}+\vec{w}) \amp = T(\vec{v})+T(\vec{w}). \\
 \end{aligned}
 \end{equation*}
 </div>
@@ -987,13 +987,13 @@ T(\vvec+\wvec) \amp = T(\vvec)+T(\wvec). \\
 </ol>
 </div> <div class="para" id="ex-compose-reflections-1-2">It is a general fact that the composition of two reflections results in a rotation through twice the angle from the first line of reflection to the second.  We will investigate this more generally in <a href="sec-transforms-geom.html#ex-reflection-compose-general" class="xref" data-knowl="./knowl/xref/ex-reflection-compose-general.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.4.8">Exercise 2.6.4.8</a>
 </div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-transforms-geom-6-3-1-1">Shown below in <a href="sec-transforms-geom.html#fig-3d-basis" class="xref" data-knowl="./knowl/xref/fig-3d-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.19">Figure 2.6.19</a> are the vectors <span class="process-math">\(\evec_1\text{,}\)</span> <span class="process-math">\(\evec_2\text{,}\)</span> and <span class="process-math">\(\evec_3\)</span> in <span class="process-math">\(\real^3\text{.}\)</span>
+<div class="para" id="sec-transforms-geom-6-3-1-1">Shown below in <a href="sec-transforms-geom.html#fig-3d-basis" class="xref" data-knowl="./knowl/xref/fig-3d-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.19">Figure 2.6.19</a> are the vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span>
 </div> <figure class="figure figure-like" id="fig-3d-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/3d-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.19<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\evec_1\text{,}\)</span> <span class="process-math">\(\evec_2\text{,}\)</span> and <span class="process-math">\(\evec_3\)</span> in <span class="process-math">\(\real^3\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-3-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-3-1-3-1">
-<li id="sec-transforms-geom-6-3-1-3-1-1"><div class="para" id="sec-transforms-geom-6-3-1-3-1-1-1">Imagine that the thumb of your right hand points in the direction of <span class="process-math">\(\evec_1\text{.}\)</span>  A positive rotation about the <span class="process-math">\(x\)</span> axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(x\)</span>-axis.</div></li>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.19<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-3-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-3-1-3-1">
+<li id="sec-transforms-geom-6-3-1-3-1-1"><div class="para" id="sec-transforms-geom-6-3-1-3-1-1-1">Imagine that the thumb of your right hand points in the direction of <span class="process-math">\(\vec{e_1}\text{.}\)</span>  A positive rotation about the <span class="process-math">\(x\)</span> axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(x\)</span>-axis.</div></li>
 <li id="sec-transforms-geom-6-3-1-3-1-2"><div class="para" id="sec-transforms-geom-6-3-1-3-1-2-1">In the same way, find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(y\)</span>-axis.</div></li>
 <li id="sec-transforms-geom-6-3-1-3-1-3"><div class="para" id="p-derived-sec-transforms-geom-6-3-1-3-1-3">Find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(z\)</span>-axis.</div></li>
-<li id="sec-transforms-geom-6-3-1-3-1-4"><div class="para" id="sec-transforms-geom-6-3-1-3-1-4-1">What is the cumulative effect of rotating by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\(x\)</span>-axis, followed by a <span class="process-math">\(90^\circ\)</span> rotation about the <span class="process-math">\(y\)</span>-axis, followed by a <span class="process-math">\(-90^\circ\)</span> rotation about the <span class="process-math">\(x\)</span>-axis. <div id="sec-transforms-geom-6-3-1-3-1-4-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-transforms-geom-6-3-1-3-1-4"><div class="para" id="sec-transforms-geom-6-3-1-3-1-4-1">What is the cumulative effect of rotating by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\(x\)</span>-axis, followed by a <span class="process-math">\(90^\circ\)</span> rotation about the <span class="process-math">\(y\)</span>-axis, followed by a <span class="process-math">\(-90^\circ\)</span> rotation about the <span class="process-math">\(x\)</span>-axis. <div id="sec-transforms-geom-6-3-1-3-1-4-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
@@ -1001,7 +1001,7 @@ T(\vvec+\wvec) \amp = T(\vvec)+T(\wvec). \\
 <div class="para">If a matrix transformation performs a geometric operation, we would like to find a matrix transformation that undoes that operation.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-4-1-1-1">
 <li id="sec-transforms-geom-6-4-1-1-1-1">
-<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-1">Suppose that <span class="process-math">\(T:\real^2\to\real^2\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{.}\)</span> Find a matrix transformation <span class="process-math">\(S:\real^2\to\real^2\)</span> that undoes the rotation;  that is, <span class="process-math">\(S\)</span> takes <span class="process-math">\(T(\xvec)\)</span> back into <span class="process-math">\(\xvec\)</span> so that <span class="process-math">\((S\circ T)(\xvec) = \xvec\text{.}\)</span>  Think geometrically about what the transformation <span class="process-math">\(S\)</span> should be and then verify it algebraically.</div>
+<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-1">Suppose that <span class="process-math">\(T:\real^2\to\real^2\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{.}\)</span> Find a matrix transformation <span class="process-math">\(S:\real^2\to\real^2\)</span> that undoes the rotation;  that is, <span class="process-math">\(S\)</span> takes <span class="process-math">\(T(\vec{x})\)</span> back into <span class="process-math">\(\vec{x}\)</span> so that <span class="process-math">\((S\circ T)(\vec{x}) = \vec{x}\text{.}\)</span>  Think geometrically about what the transformation <span class="process-math">\(S\)</span> should be and then verify it algebraically.</div>
 <div class="para" id="sec-transforms-geom-6-4-1-1-1-1-2">We say that <span class="process-math">\(S\)</span> is the <em class="emphasis">inverse</em> of <span class="process-math">\(T\)</span> and we will write it as <span class="process-math">\(T^{-1}\text{.}\)</span>
 </div>
 </li>
@@ -1080,7 +1080,7 @@ d \amp e \amp f \\
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="sec-transforms-geom-6-6-1-1">Consider the matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> that assigns to a vector <span class="process-math">\(\xvec\)</span> the closest vector on horizontal axis as illustrated in <a href="sec-transforms-geom.html#fig-ex-projection" class="xref" data-knowl="./knowl/xref/fig-ex-projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.21">Figure 2.6.21</a>.  This transformation is called the <em class="emphasis">projection</em> onto the horizontal axis.  You may imagine <span class="process-math">\(T(\xvec)\)</span> as the shadow cast by <span class="process-math">\(\xvec\)</span> from a flashlight far up on the positive <span class="process-math">\(y\)</span>-axis.</div> <figure class="figure figure-like" id="fig-ex-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/v-projection.svg" role="img" class="contained"></div></div></div>
+<div class="para" id="sec-transforms-geom-6-6-1-1">Consider the matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> that assigns to a vector <span class="process-math">\(\vec{x}\)</span> the closest vector on horizontal axis as illustrated in <a href="sec-transforms-geom.html#fig-ex-projection" class="xref" data-knowl="./knowl/xref/fig-ex-projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.21">Figure 2.6.21</a>.  This transformation is called the <em class="emphasis">projection</em> onto the horizontal axis.  You may imagine <span class="process-math">\(T(\vec{x})\)</span> as the shadow cast by <span class="process-math">\(\vec{x}\)</span> from a flashlight far up on the positive <span class="process-math">\(y\)</span>-axis.</div> <figure class="figure figure-like" id="fig-ex-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/v-projection.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.21<span class="period">.</span></span><span class="space"> </span>Projection onto the <span class="process-math">\(x\)</span>-axis.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-6-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-6-1-3-1">
 <li id="sec-transforms-geom-6-6-1-3-1-1"><div class="para" id="sec-transforms-geom-6-6-1-3-1-1-1">Find the matrix that defines this matrix transformation <span class="process-math">\(T\text{.}\)</span>
 </div></li>
@@ -1254,7 +1254,7 @@ T\)</span> in terms of the <span class="process-math">\(a\text{,}\)</span> <span
 </div> <figure class="figure figure-like" id="fig-ex-reflection-def"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-reflection-def.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.23<span class="period">.</span></span><span class="space"> </span>The reflection across the line <span class="process-math">\(L_\theta\text{.}\)</span></figcaption></figure> <ol class="lower-alpha ol-marker-1" id="ex-reflection-compose-general-1-3">
 <li id="ex-reflection-compose-general-1-3-1">
-<div class="para" id="ex-reflection-compose-general-1-3-1-1">To do this, notice that this reflection can be obtained by composing three separate transformations as shown in <a href="sec-transforms-geom.html#fig-ex-reflection-compose" class="xref" data-knowl="./knowl/xref/fig-ex-reflection-compose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.24">Figure 2.6.24</a>.  Beginning with the vector <span class="process-math">\(\xvec\text{,}\)</span> we apply the transformation <span class="process-math">\(R\)</span> to rotate by <span class="process-math">\(-\theta\)</span> and obtain <span class="process-math">\(R(\xvec)\text{.}\)</span>  Next, we apply <span class="process-math">\(S\text{,}\)</span> a reflection in the horizontal axis, followed by <span class="process-math">\(T\text{,}\)</span> a rotation by <span class="process-math">\(\theta\text{.}\)</span>  We see that <span class="process-math">\(T(S(R(\xvec)))\)</span> is the same as the reflection of <span class="process-math">\(\xvec\)</span> in the original line <span class="process-math">\(L_\theta\text{.}\)</span>
+<div class="para" id="ex-reflection-compose-general-1-3-1-1">To do this, notice that this reflection can be obtained by composing three separate transformations as shown in <a href="sec-transforms-geom.html#fig-ex-reflection-compose" class="xref" data-knowl="./knowl/xref/fig-ex-reflection-compose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.24">Figure 2.6.24</a>.  Beginning with the vector <span class="process-math">\(\vec{x}\text{,}\)</span> we apply the transformation <span class="process-math">\(R\)</span> to rotate by <span class="process-math">\(-\theta\)</span> and obtain <span class="process-math">\(R(\vec{x})\text{.}\)</span>  Next, we apply <span class="process-math">\(S\text{,}\)</span> a reflection in the horizontal axis, followed by <span class="process-math">\(T\text{,}\)</span> a rotation by <span class="process-math">\(\theta\text{.}\)</span>  We see that <span class="process-math">\(T(S(R(\vec{x})))\)</span> is the same as the reflection of <span class="process-math">\(\vec{x}\)</span> in the original line <span class="process-math">\(L_\theta\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-ex-reflection-compose"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-reflection-compose.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Reflection in the line <span class="process-math">\(L_\theta\)</span> as a composition of three transformations.</figcaption></figure><div class="para logical" id="ex-reflection-compose-general-1-3-1-3">

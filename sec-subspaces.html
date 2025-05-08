@@ -89,7 +89,7 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra">
+<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
 <meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -123,24 +123,24 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href="https://understandinglinearalgebra.org"><img src="external/images/ula-logo.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra</span></a></h1>
+<h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
 </div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
@@ -597,7 +597,7 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-subspaces"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.5</span><span class="space"> </span><span class="title">Subspaces</span>
 </h2>
-<section class="introduction" id="sec-subspaces-2"><div class="para" id="sec-subspaces-2-1">In this chapter, we have been looking at bases for <span class="process-math">\(\real^p\text{,}\)</span> sets of vectors that are linearly independent and span <span class="process-math">\(\real^p\text{.}\)</span>  Frequently, however, we focus on only a subset of <span class="process-math">\(\real^p\text{.}\)</span>  In particular, if we are given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> we have been interested in both the span of the columns of <span class="process-math">\(A\)</span> and the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>  In this section, we will expand the concept of basis to describe sets like these.</div>
+<section class="introduction" id="sec-subspaces-2"><div class="para" id="sec-subspaces-2-1">In this chapter, we have been looking at bases for <span class="process-math">\(\real^p\text{,}\)</span> sets of vectors that are linearly independent and span <span class="process-math">\(\real^p\text{.}\)</span>  Frequently, however, we focus on only a subset of <span class="process-math">\(\real^p\text{.}\)</span>  In particular, if we are given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> we have been interested in both the span of the columns of <span class="process-math">\(A\)</span> and the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>  In this section, we will expand the concept of basis to describe sets like these.</div>
 <article class="exploration project-like" id="sec-subspaces-2-2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">3.5.1</span><span class="period">.</span>
 </h3>
@@ -621,20 +621,20 @@ A = \left[\begin{array}{rrrr}
 <ol class="lower-alpha ol-marker-1" id="sec-subspaces-2-2-1-1-3">
 <li id="sec-subspaces-2-2-1-1-3-1"><div class="para" id="sec-subspaces-2-2-1-1-3-1-1">Are the columns of <span class="process-math">\(A\)</span> linearly independent?  Is the span of the columns <span class="process-math">\(\real^3\text{?}\)</span>
 </div></li>
-<li id="sec-subspaces-2-2-1-1-3-2"><div class="para" id="sec-subspaces-2-2-1-1-3-2-1">Give a parametric description of the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>
+<li id="sec-subspaces-2-2-1-1-3-2"><div class="para" id="sec-subspaces-2-2-1-1-3-2-1">Give a parametric description of the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-2-2-1-1-3-3"><div class="para" id="sec-subspaces-2-2-1-1-3-3-1">Explain how this parametric description produces two vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> whose span is the solution space to the equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>
+<li id="sec-subspaces-2-2-1-1-3-3"><div class="para" id="sec-subspaces-2-2-1-1-3-3-1">Explain how this parametric description produces two vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\)</span> whose span is the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-2-2-1-1-3-4"><div class="para" id="sec-subspaces-2-2-1-1-3-4-1">What can you say about the linear independence of the set of vectors <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{?}\)</span>
+<li id="sec-subspaces-2-2-1-1-3-4"><div class="para" id="sec-subspaces-2-2-1-1-3-4-1">What can you say about the linear independence of the set of vectors <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{?}\)</span>
 </div></li>
-<li id="sec-subspaces-2-2-1-1-3-5"><div class="para" id="sec-subspaces-2-2-1-1-3-5-1">Let’s denote the columns of <span class="process-math">\(A\)</span> as <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span>  and <span class="process-math">\(\vvec_4\text{.}\)</span> Explain why <span class="process-math">\(\vvec_3\)</span> and <span class="process-math">\(\vvec_4\)</span> can be written as linear combinations of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-subspaces-2-2-1-1-3-5"><div class="para" id="sec-subspaces-2-2-1-1-3-5-1">Let’s denote the columns of <span class="process-math">\(A\)</span> as <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span>  and <span class="process-math">\(\vec{v_4}\text{.}\)</span> Explain why <span class="process-math">\(\vec{v_3}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> can be written as linear combinations of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-2-2-1-1-3-6"><div class="para logical" id="sec-subspaces-2-2-1-1-3-6-1">
-<div class="para">Explain why <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are linearly independent and</div>
+<div class="para">Explain why <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> are linearly independent and</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\laspan{\vvec_1,\vvec_2} =
-\laspan{\vvec_1, \vvec_2, \vvec_3, \vvec_4}.
+\laspan{\vec{v_1},\vec{v_2}} =
+\laspan{\vec{v_1}, \vec{v_2}, \vec{v_3}, \vec{v_4}}.
 \end{equation*}
 </div>
 </div></li>
@@ -654,18 +654,18 @@ A = \left[\begin{array}{rrrr}
 <div class="para">In <a href="sec-span.html#activity-span-r3" class="xref" data-knowl="./knowl/xref/activity-span-r3.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 2.3.3">Activity 2.3.3</a> and the following discussion, we looked at subspaces in <span class="process-math">\(\real^3\)</span> without explicitly using that language.  Let’s recall some of those examples.</div>
 <ul class="disc" id="sec-subspaces-3-5-2-3">
 <li id="sec-subspaces-3-5-2-3-1"><div class="para" id="sec-subspaces-3-5-2-3-1-1"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:46.1538461538462%;"><div class="para" id="sec-subspaces-3-5-2-3-1-1-1-1">Suppose we have a single nonzero vector <span class="process-math">\(\vvec\text{.}\)</span>  The span of <span class="process-math">\(\vvec\)</span> is a subspace, which we’ll write as <span class="process-math">\(S =
-\laspan{\vvec}\text{.}\)</span>  As we have seen, the span of a single vector consists of all scalar multiples of that vector, and these form a line passing through the origin.</div></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><div class="para" id="sec-subspaces-3-5-2-3-1-1-1-1">Suppose we have a single nonzero vector <span class="process-math">\(\vec{v}\text{.}\)</span>  The span of <span class="process-math">\(\vec{v}\)</span> is a subspace, which we’ll write as <span class="process-math">\(S =
+\laspan{\vec{v}}\text{.}\)</span>  As we have seen, the span of a single vector consists of all scalar multiples of that vector, and these form a line passing through the origin.</div></div>
 <div class="sbspanel top" style="width:51.2820512820513%;"><img src="external/images/3d-line.svg" role="img" class="contained"></div>
 </div></div></div></li>
 <li id="sec-subspaces-3-5-2-3-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
-<div class="sbspanel top" style="width:46.1538461538462%;"><div class="para" id="sec-subspaces-3-5-2-3-2-1-1">If instead we have two linearly independent vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> the subspace <span class="process-math">\(S=\laspan{\vvec_1,\vvec_2}\)</span> is a plane passing through the origin.</div></div>
+<div class="sbspanel top" style="width:46.1538461538462%;"><div class="para" id="sec-subspaces-3-5-2-3-2-1-1">If instead we have two linearly independent vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{,}\)</span> the subspace <span class="process-math">\(S=\laspan{\vec{v_1},\vec{v_2}}\)</span> is a plane passing through the origin.</div></div>
 <div class="sbspanel top" style="width:51.2820512820513%;"><img src="external/images/3d-plane-nonstd.svg" role="img" class="contained"></div>
 </div></div></li>
-<li id="sec-subspaces-3-5-2-3-3"><div class="para" id="sec-subspaces-3-5-2-3-3-1">Consider the three vectors <span class="process-math">\(\evec_1\text{,}\)</span> <span class="process-math">\(\evec_2\text{,}\)</span> and <span class="process-math">\(\evec_3\text{.}\)</span> Since we know that every 3-dimensional vector can be written as a linear combination, we have <span class="process-math">\(S = \laspan{\evec_1, \evec_2,
-\evec_3} = \real^3\text{.}\)</span>
+<li id="sec-subspaces-3-5-2-3-3"><div class="para" id="sec-subspaces-3-5-2-3-3-1">Consider the three vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\text{.}\)</span> Since we know that every 3-dimensional vector can be written as a linear combination, we have <span class="process-math">\(S = \laspan{\vec{e_1}, \vec{e_2},
+\vec{e_3}} = \real^3\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-3-5-2-3-4"><div class="para" id="sec-subspaces-3-5-2-3-4-1">One more subspace worth mentioning is <span class="process-math">\(S=\laspan{\zerovec}\text{.}\)</span>  Since any linear combination of the zero vector is itself the zero vector, this subspace consists of a single vector, <span class="process-math">\(\zerovec\text{.}\)</span>
+<li id="sec-subspaces-3-5-2-3-4"><div class="para" id="sec-subspaces-3-5-2-3-4-1">One more subspace worth mentioning is <span class="process-math">\(S=\laspan{\vec{0}}\text{.}\)</span>  Since any linear combination of the zero vector is itself the zero vector, this subspace consists of a single vector, <span class="process-math">\(\vec{0}\text{.}\)</span>
 </div></li>
 </ul>
 </div>
@@ -676,7 +676,7 @@ A = \left[\begin{array}{rrrr}
 <div class="para logical" id="sec-subspaces-3-6-1-1">
 <div class="para">We will look at some sets of vectors and the subspaces they form.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-subspaces-3-6-1-1-1">
-<li id="sec-subspaces-3-6-1-1-1-1"><div class="para" id="sec-subspaces-3-6-1-1-1-1-1">If <span class="process-math">\(\vvec_1, \vvec_2,\ldots,\vvec_n\)</span> is a set of vectors in <span class="process-math">\(\real^m\text{,}\)</span> explain why <span class="process-math">\(\zerovec\)</span> can be expressed as a linear combination of these vectors.  Use this fact to explain why the zero vector <span class="process-math">\(\zerovec\)</span> belongs to any subspace in <span class="process-math">\(\real^m\text{.}\)</span>
+<li id="sec-subspaces-3-6-1-1-1-1"><div class="para" id="sec-subspaces-3-6-1-1-1-1-1">If <span class="process-math">\(\vec{v_1}, \vec{v_2},\ldots,\vec{v_n}\)</span> is a set of vectors in <span class="process-math">\(\real^m\text{,}\)</span> explain why <span class="process-math">\(\vec{0}\)</span> can be expressed as a linear combination of these vectors.  Use this fact to explain why the zero vector <span class="process-math">\(\vec{0}\)</span> belongs to any subspace in <span class="process-math">\(\real^m\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-3-6-1-1-1-2">
 <div class="para" id="sec-subspaces-3-6-1-1-1-2-1">Explain why the line on the left of <a href="sec-subspaces.html#figure-lines-r2" class="xref" data-knowl="./knowl/xref/figure-lines-r2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 3.5.3">Figure 3.5.3</a> is not a subspace of <span class="process-math">\(\real^2\)</span> and why the line on the right is.</div>
@@ -690,12 +690,12 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\threevec101,~~~
-\vvec_2=\threevec011,~~~
-\vvec_3=\threevec110,
+\vec{v_1}=\threevec101,~~~
+\vec{v_2}=\threevec011,~~~
+\vec{v_3}=\threevec110,
 \end{equation*}
 </div>
-<div class="para">and describe the subspace <span class="process-math">\(S=\laspan{\vvec_1,\vvec_2,\vvec_3}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-subspaces-3-6-1-1-1-3-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and describe the subspace <span class="process-math">\(S=\laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span> <div id="sec-subspaces-3-6-1-1-1-3-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -703,28 +703,28 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Consider the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\wvec_1=\threevec210,~~~
-\wvec_2=\threevec{-1}1{-1},~~~
-\wvec_3=\threevec03{-2}
+\vec{w_1}=\threevec210,~~~
+\vec{w_2}=\threevec{-1}1{-1},~~~
+\vec{w_3}=\threevec03{-2}
 \end{equation*}
 </div>
 <ol class="decimal ol-marker-2" id="sec-subspaces-3-6-1-1-1-4-1-2">
-<li id="sec-subspaces-3-6-1-1-1-4-1-2-1"><div class="para" id="sec-subspaces-3-6-1-1-1-4-1-2-1-1">Write <span class="process-math">\(\wvec_3\)</span> as a linear combination of <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{.}\)</span>
+<li id="sec-subspaces-3-6-1-1-1-4-1-2-1"><div class="para" id="sec-subspaces-3-6-1-1-1-4-1-2-1-1">Write <span class="process-math">\(\vec{w_3}\)</span> as a linear combination of <span class="process-math">\(\vec{w_1}\)</span> and <span class="process-math">\(\vec{w_2}\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-3-6-1-1-1-4-1-2-2"><div class="para" id="sec-subspaces-3-6-1-1-1-4-1-2-2-1">Explain why <span class="process-math">\(\laspan{\wvec_1,\wvec_2,\wvec_3} =
-\laspan{\wvec_1, \wvec_2}\text{.}\)</span>
+<li id="sec-subspaces-3-6-1-1-1-4-1-2-2"><div class="para" id="sec-subspaces-3-6-1-1-1-4-1-2-2-1">Explain why <span class="process-math">\(\laspan{\vec{w_1},\vec{w_2},\vec{w_3}} =
+\laspan{\vec{w_1}, \vec{w_2}}\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-3-6-1-1-1-4-1-2-3"><div class="para" id="sec-subspaces-3-6-1-1-1-4-1-2-3-1">Describe the subspace <span class="process-math">\(S =
-\laspan{\wvec_1,\wvec_2,\wvec_3}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span>
+\laspan{\vec{w_1},\vec{w_2},\vec{w_3}}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
 <li id="sec-subspaces-3-6-1-1-1-5"><div class="para logical" id="sec-subspaces-3-6-1-1-1-5-1">
-<div class="para">Suppose that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> are four vectors in <span class="process-math">\(\real^3\)</span> and that</div>
+<div class="para">Suppose that <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> are four vectors in <span class="process-math">\(\real^3\)</span> and that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
-\vvec_1 \amp \vvec_2 \amp \vvec_3 \amp \vvec_4
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
 \end{bmatrix}
 \sim
 \begin{bmatrix}
@@ -734,7 +734,7 @@ A = \left[\begin{array}{rrrr}
 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="para">Give a description of the subspace <span class="process-math">\(S=\laspan{\vvec_1,\vvec_2,\vvec_3,\vvec_4}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span>
+<div class="para">Give a description of the subspace <span class="process-math">\(S=\laspan{\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}}\)</span> of <span class="process-math">\(\real^3\text{.}\)</span>
 </div>
 </div></li>
 </ol>
@@ -746,11 +746,11 @@ S\text{,}\)</span> is the number of vectors in any basis.</div></article><articl
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">A subspace of <span class="process-math">\(\real^4\)</span>.</span>
 </h4>
 <div class="para logical" id="sec-subspaces-3-9-2">
-<div class="para">Suppose we have the 4-dimensional vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> that define the subspace <span class="process-math">\(S = \laspan{\vvec_1,\vvec_2,\vvec_3}\)</span> of <span class="process-math">\(\real^4\text{.}\)</span>  Suppose also that</div>
+<div class="para">Suppose we have the 4-dimensional vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> that define the subspace <span class="process-math">\(S = \laspan{\vec{v_1},\vec{v_2},\vec{v_3}}\)</span> of <span class="process-math">\(\real^4\text{.}\)</span>  Suppose also that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{bmatrix}
-\vvec_1 \amp \vvec_2 \amp \vvec_3
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 \end{bmatrix}
 \sim
 \begin{bmatrix}
@@ -761,26 +761,26 @@ S\text{,}\)</span> is the number of vectors in any basis.</div></article><articl
 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="para">From the reduced row echelon form of the matrix, we see that <span class="process-math">\(\vvec_2 = -\vvec\text{.}\)</span>  Therefore, any linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> can be rewritten</div>
+<div class="para">From the reduced row echelon form of the matrix, we see that <span class="process-math">\(\vec{v_2} = -\vec{v}\text{.}\)</span>  Therefore, any linear combination of <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> can be rewritten</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vvec_1 + c_2\vvec_2 + c_3 \vvec_3 =
-(c_1-c_2)\vvec_1 + c_2\vvec_3
+c_1\vec{v_1} + c_2\vec{v_2} + c_3 \vec{v_3} =
+(c_1-c_2)\vec{v_1} + c_2\vec{v_3}
 \end{equation*}
 </div>
-<div class="para">as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span> This tells us that</div>
+<div class="para">as a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span> This tells us that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-S = \laspan{\vvec_1,\vvec_2,\vvec_3}
-= \laspan{\vvec_1,\vvec_3}.
+S = \laspan{\vec{v_1},\vec{v_2},\vec{v_3}}
+= \laspan{\vec{v_1},\vec{v_3}}.
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec-subspaces-3-9-3">Furthermore, the reduced row echelon form of the matrix shows that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_3\)</span> are linearly independent.  Therefore, <span class="process-math">\(\{\vvec_1,\vvec_3\}\)</span> is a basis for <span class="process-math">\(S\text{,}\)</span> which means that <span class="process-math">\(S\)</span> is a two-dimensional subspace of <span class="process-math">\(\real^4\text{.}\)</span>
+<div class="para" id="sec-subspaces-3-9-3">Furthermore, the reduced row echelon form of the matrix shows that <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> are linearly independent.  Therefore, <span class="process-math">\(\{\vec{v_1},\vec{v_3}\}\)</span> is a basis for <span class="process-math">\(S\text{,}\)</span> which means that <span class="process-math">\(S\)</span> is a two-dimensional subspace of <span class="process-math">\(\real^4\text{.}\)</span>
 </div></article><div class="para logical" id="sec-subspaces-3-10">
 <div class="para">Subspaces of <span class="process-math">\(\real^3\)</span> are either</div>
 <ul class="disc" id="sec-subspaces-3-10-2">
-<li id="sec-subspaces-3-10-2-1"><div class="para" id="sec-subspaces-3-10-2-1-1">0-dimensional, consisting of the single vector <span class="process-math">\(\zerovec\text{,}\)</span>
+<li id="sec-subspaces-3-10-2-1"><div class="para" id="sec-subspaces-3-10-2-1-1">0-dimensional, consisting of the single vector <span class="process-math">\(\vec{0}\text{,}\)</span>
 </div></li>
 <li id="sec-subspaces-3-10-2-2"><div class="para" id="sec-subspaces-3-10-2-2-1">a 1-dimensional line,</div></li>
 <li id="sec-subspaces-3-10-2-3"><div class="para" id="sec-subspaces-3-10-2-3-1">a 2-dimensional plane, or</div></li>
@@ -810,7 +810,7 @@ S = \laspan{\vvec_1,\vvec_2,\vvec_3}
 <div class="displaymath process-math">
 \begin{equation*}
 A= \left[\begin{array}{rrr}
-\vvec_1 \amp \vvec_2 \amp \vvec_3
+\vec{v_1} \amp \vec{v_2} \amp \vec{v_3}
 \end{array}\right]
 =
 \left[\begin{array}{rrr}
@@ -823,13 +823,13 @@ A= \left[\begin{array}{rrr}
 <div class="para">Since <span class="process-math">\(\col(A)\)</span> is the span of the columns, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\col(A) = \laspan{\vvec_1,\vvec_2,\vvec_3}.
+\col(A) = \laspan{\vec{v_1},\vec{v_2},\vec{v_3}}.
 \end{equation*}
 </div>
-<div class="para">Explain why <span class="process-math">\(\vvec_3\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> and why <span class="process-math">\(\col(A)=\laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<div class="para">Explain why <span class="process-math">\(\vec{v_3}\)</span> can be written as a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> and why <span class="process-math">\(\col(A)=\laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-subspaces-4-5-1-1-1-2"><div class="para" id="sec-subspaces-4-5-1-1-1-2-1">Explain why the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a basis for <span class="process-math">\(\col(A)\)</span> and why <span class="process-math">\(\col(A)\)</span> is a 2-dimensional subspace of <span class="process-math">\(\real^3\)</span> and therefore a plane.</div></li>
+<li id="sec-subspaces-4-5-1-1-1-2"><div class="para" id="sec-subspaces-4-5-1-1-1-2-1">Explain why the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> form a basis for <span class="process-math">\(\col(A)\)</span> and why <span class="process-math">\(\col(A)\)</span> is a 2-dimensional subspace of <span class="process-math">\(\real^3\)</span> and therefore a plane.</div></li>
 <li id="sec-subspaces-4-5-1-1-1-3"><div class="para logical" id="sec-subspaces-4-5-1-1-1-3-1">
 <div class="para">Now consider the matrix <span class="process-math">\(B\)</span> and its reduced row echelon form:</div>
 <div class="displaymath process-math">
@@ -853,7 +853,7 @@ B = \left[\begin{array}{rrrr}
 </div></li>
 <li id="sec-subspaces-4-5-1-1-1-6"><div class="para" id="sec-subspaces-4-5-1-1-1-6-1">If <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(9\times9\)</span> matrix, what can you say about the column space <span class="process-math">\(\col(A)\text{?}\)</span>
 </div></li>
-<li id="sec-subspaces-4-5-1-1-1-7"><div class="para" id="sec-subspaces-4-5-1-1-1-7-1">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(8\times 10\)</span> matrix and that <span class="process-math">\(\col(A) = \real^8\text{.}\)</span>  If <span class="process-math">\(\bvec\)</span> is an 8-dimensional vector, what can you say about the equation <span class="process-math">\(A\xvec = \bvec\text{?}\)</span>
+<li id="sec-subspaces-4-5-1-1-1-7"><div class="para" id="sec-subspaces-4-5-1-1-1-7-1">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(8\times 10\)</span> matrix and that <span class="process-math">\(\col(A) = \real^8\text{.}\)</span>  If <span class="process-math">\(\vec{b}\)</span> is an 8-dimensional vector, what can you say about the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span>
 </div></li>
 </ol>
 </div></article><article class="example example-like" id="example-col-basis"><h4 class="heading">
@@ -877,28 +877,28 @@ A =
 \end{array}\right],
 \end{equation*}
 </div>
-<div class="para">and denote the columns of <span class="process-math">\(A\)</span> as <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_5\text{.}\)</span>
+<div class="para">and denote the columns of <span class="process-math">\(A\)</span> as <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_5}\text{.}\)</span>
 </div>
 </div>
 <div class="para" id="example-col-basis-2">It is certainly true that <span class="process-math">\(\col(A) =
-\laspan{\vvec_1,\vvec_2,\ldots,\vvec_5}\)</span> by the definition of the column space.  However, the reduced row echelon form of the matrix shows us that the vectors are not linearly independent so <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_5\)</span> do not form a basis for <span class="process-math">\(\col(A)\text{.}\)</span>
+\laspan{\vec{v_1},\vec{v_2},\ldots,\vec{v_5}}\)</span> by the definition of the column space.  However, the reduced row echelon form of the matrix shows us that the vectors are not linearly independent so <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_5}\)</span> do not form a basis for <span class="process-math">\(\col(A)\text{.}\)</span>
 </div>
 <div class="para logical" id="example-col-basis-3">
 <div class="para">From the reduced row echelon form, however, we can see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\vvec_3 \amp {}={} -2\vvec_1 + \vvec_2 \\
-\vvec_4 \amp {}={} -3\vvec_1 + \vvec_2 \\
-\vvec_5 \amp {}={} -2\vvec_2 \\
+\vec{v_3} \amp {}={} -2\vec{v_1} + \vec{v_2} \\
+\vec{v_4} \amp {}={} -3\vec{v_1} + \vec{v_2} \\
+\vec{v_5} \amp {}={} -2\vec{v_2} \\
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">This means that any linear combination of <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_5\)</span> can be written as a linear combination of just <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  Therefore, we see that <span class="process-math">\(\col(A) = \laspan{\vvec_1,\vvec_2}\text{.}\)</span>
+<div class="para">This means that any linear combination of <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_5}\)</span> can be written as a linear combination of just <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>  Therefore, we see that <span class="process-math">\(\col(A) = \laspan{\vec{v_1},\vec{v_2}}\text{.}\)</span>
 </div>
 </div>
 <div class="para logical" id="example-col-basis-4">
-<div class="para">Moreover, the reduced row echelon form shows that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are linearly independent, which implies that they form a basis for <span class="process-math">\(\col(A)\text{.}\)</span>  This means that <span class="process-math">\(\col(A)\)</span> is a 2-dimensional subspace of <span class="process-math">\(\real^3\text{,}\)</span> which is a plane in <span class="process-math">\(\real^3\text{,}\)</span> having basis</div>
+<div class="para">Moreover, the reduced row echelon form shows that <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> are linearly independent, which implies that they form a basis for <span class="process-math">\(\col(A)\text{.}\)</span>  This means that <span class="process-math">\(\col(A)\)</span> is a 2-dimensional subspace of <span class="process-math">\(\real^3\text{,}\)</span> which is a plane in <span class="process-math">\(\real^3\text{,}\)</span> having basis</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \threevec{2}{-4}{0},
@@ -922,9 +922,9 @@ A =
 <div class="para" id="sec-subspaces-5-2">The second subspace associated to a matrix is its null space.</div>
 <article class="definition definition-like" id="sec-subspaces-5-3"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.5.10</span><span class="period">.</span>
-</h4> <div class="para" id="sec-subspaces-5-3-1-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, we call the subset of vectors <span class="process-math">\(\xvec\)</span> in <span class="process-math">\(\real^n\)</span> satisfying <span class="process-math">\(A\xvec = \zerovec\)</span> the <em class="emphasis">null space</em> of <span class="process-math">\(A\)</span> and denote it by <span class="process-math">\(\nul(A)\text{.}\)</span>
-</div></article><div class="para" id="sec-subspaces-5-4">Remember that a subspace is a subset that can be represented as the span of a set of vectors.  The column space of <span class="process-math">\(A\text{,}\)</span> which is simply the span of the columns of <span class="process-math">\(A\text{,}\)</span> fits this definition.  It may not be immediately clear how the null space of <span class="process-math">\(A\text{,}\)</span> which is the solution space of the equation <span class="process-math">\(A\xvec
-= \zerovec\text{,}\)</span> does, but we will see that <span class="process-math">\(\nul(A)\)</span> is a subspace of <span class="process-math">\(\real^n\text{.}\)</span>
+</h4> <div class="para" id="sec-subspaces-5-3-1-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, we call the subset of vectors <span class="process-math">\(\vec{x}\)</span> in <span class="process-math">\(\real^n\)</span> satisfying <span class="process-math">\(A\vec{x} = \vec{0}\)</span> the <em class="emphasis">null space</em> of <span class="process-math">\(A\)</span> and denote it by <span class="process-math">\(\nul(A)\text{.}\)</span>
+</div></article><div class="para" id="sec-subspaces-5-4">Remember that a subspace is a subset that can be represented as the span of a set of vectors.  The column space of <span class="process-math">\(A\text{,}\)</span> which is simply the span of the columns of <span class="process-math">\(A\text{,}\)</span> fits this definition.  It may not be immediately clear how the null space of <span class="process-math">\(A\text{,}\)</span> which is the solution space of the equation <span class="process-math">\(A\vec{x}
+= \vec{0}\text{,}\)</span> does, but we will see that <span class="process-math">\(\nul(A)\)</span> is a subspace of <span class="process-math">\(\real^n\text{.}\)</span>
 </div>
 <article class="activity project-like" id="sec-subspaces-5-5"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="period">.</span>
@@ -943,11 +943,11 @@ A=\begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">and give a parametric description of the solution space to the equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>  In other words, give a parametric description of <span class="process-math">\(\nul(A)\text{.}\)</span> <div id="sec-subspaces-5-5-1-1-2-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and give a parametric description of the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>  In other words, give a parametric description of <span class="process-math">\(\nul(A)\text{.}\)</span> <div id="sec-subspaces-5-5-1-1-2-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-subspaces-5-5-1-1-2-2"><div class="para" id="sec-subspaces-5-5-1-1-2-2-1">This parametric description shows that the vectors satisfying the equation <span class="process-math">\(A\xvec=\zerovec\)</span> can be written as a linear combination of a set of vectors.  In other words, this description shows why <span class="process-math">\(\nul(A)\)</span> is the span of a set of vectors and is therefore a subspace. Identify a set of vectors whose span is <span class="process-math">\(\nul(A)\text{.}\)</span>
+<li id="sec-subspaces-5-5-1-1-2-2"><div class="para" id="sec-subspaces-5-5-1-1-2-2-1">This parametric description shows that the vectors satisfying the equation <span class="process-math">\(A\vec{x}=\vec{0}\)</span> can be written as a linear combination of a set of vectors.  In other words, this description shows why <span class="process-math">\(\nul(A)\)</span> is the span of a set of vectors and is therefore a subspace. Identify a set of vectors whose span is <span class="process-math">\(\nul(A)\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-5-5-1-1-2-3"><div class="para" id="sec-subspaces-5-5-1-1-2-3-1">Use this set of vectors to find a basis for <span class="process-math">\(\nul(A)\)</span> and state the dimension of <span class="process-math">\(\nul(A)\text{.}\)</span>
 </div></li>
@@ -997,7 +997,7 @@ A =
 </div>
 </div>
 <div class="para logical" id="example-null-intro-2">
-<div class="para">To find a parametric description of the solution space to <span class="process-math">\(A\xvec=\zerovec\text{,}\)</span> imagine that we augment both <span class="process-math">\(A\)</span> and its reduced row echelon form by a column of zeroes, which leads to the equations</div>
+<div class="para">To find a parametric description of the solution space to <span class="process-math">\(A\vec{x}=\vec{0}\text{,}\)</span> imagine that we augment both <span class="process-math">\(A\)</span> and its reduced row echelon form by a column of zeroes, which leads to the equations</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{alignedat}{6}
@@ -1021,7 +1021,7 @@ x_2 \amp {}={} -x_3 - x_4 + 2x_5. \\
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\xvec \amp {}={} \fivevec{x_1}{x_2}{x_3}{x_4}{x_5} =
+\vec{x} \amp {}={} \fivevec{x_1}{x_2}{x_3}{x_4}{x_5} =
 \fivevec{2x_3 + 3x_4}{-x_3-x_4+2x_5}{x_3}{x_4}{x_5}
 \\
 \\
@@ -1034,17 +1034,17 @@ x_3\fivevec{2}{-1}{1}{0}{0}
 </div>
 </div>
 <div class="para logical" id="example-null-intro-3">
-<div class="para">This expression says that any vector <span class="process-math">\(\xvec\)</span> satisfying <span class="process-math">\(A\xvec= \zerovec\)</span> is a linear combination of the vectors</div>
+<div class="para">This expression says that any vector <span class="process-math">\(\vec{x}\)</span> satisfying <span class="process-math">\(A\vec{x}= \vec{0}\)</span> is a linear combination of the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \fivevec{2}{-1}{1}{0}{0},~~~
-\vvec_2 = \fivevec{3}{-1}{0}{1}{0},~~~
-\vvec_3 = \fivevec{0}{2}{0}{0}{1}.
+\vec{v_1} = \fivevec{2}{-1}{1}{0}{0},~~~
+\vec{v_2} = \fivevec{3}{-1}{0}{1}{0},~~~
+\vec{v_3} = \fivevec{0}{2}{0}{0}{1}.
 \end{equation*}
 </div>
-<div class="para">It is straightforward to check that these vectors are linearly independent, which means that <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> form a basis for <span class="process-math">\(\nul(A)\text{,}\)</span> a 3-dimensional subspace of <span class="process-math">\(\real^5\text{.}\)</span>
+<div class="para">It is straightforward to check that these vectors are linearly independent, which means that <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> form a basis for <span class="process-math">\(\nul(A)\text{,}\)</span> a 3-dimensional subspace of <span class="process-math">\(\real^5\text{.}\)</span>
 </div>
-</div></article><div class="para" id="sec-subspaces-5-7">As illustrated in this example, the dimension of <span class="process-math">\(\nul(A)\)</span> is equal to the number of free variables in the equation <span class="process-math">\(A\xvec=\zerovec\text{,}\)</span> which equals the number of columns of <span class="process-math">\(A\)</span> without pivot positions or the number of columns of <span class="process-math">\(A\)</span> minus the number of pivot positions.</div>
+</div></article><div class="para" id="sec-subspaces-5-7">As illustrated in this example, the dimension of <span class="process-math">\(\nul(A)\)</span> is equal to the number of free variables in the equation <span class="process-math">\(A\vec{x}=\vec{0}\text{,}\)</span> which equals the number of columns of <span class="process-math">\(A\)</span> without pivot positions or the number of columns of <span class="process-math">\(A\)</span> minus the number of pivot positions.</div>
 <article class="proposition theorem-like" id="proposition-nul-dim"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.5.12</span><span class="period">.</span>
 </h4>
@@ -1069,7 +1069,7 @@ x_3\fivevec{2}{-1}{1}{0}{0}
 </div></article></section><section class="subsection" id="sec-subspaces-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.5.4</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
-<div class="para" id="sec-subspaces-6-2">Once again, we find ourselves revisiting <a href="sec-pivots.html#fundamental-questions" class="xref" data-knowl="./knowl/xref/fundamental-questions.html" data-reveal-label="Reveal" data-close-label="Close" title="Question 1.4.2: Two Fundamental Questions">our two fundamental questions</a> concerning the existence and uniqueness of solutions to linear systems.  The column space <span class="process-math">\(\col(A)\)</span> contains all the vectors <span class="process-math">\(\bvec\)</span> for which the equation <span class="process-math">\(A\xvec = \bvec\)</span> is consistent. The null space <span class="process-math">\(\nul(A)\)</span> is the solution space to the equation <span class="process-math">\(A\xvec = \zerovec\text{,}\)</span> which reflects on the uniqueness of solutions to this and other equations.</div>
+<div class="para" id="sec-subspaces-6-2">Once again, we find ourselves revisiting <a href="sec-pivots.html#fundamental-questions" class="xref" data-knowl="./knowl/xref/fundamental-questions.html" data-reveal-label="Reveal" data-close-label="Close" title="Question 1.4.2: Two Fundamental Questions">our two fundamental questions</a> concerning the existence and uniqueness of solutions to linear systems.  The column space <span class="process-math">\(\col(A)\)</span> contains all the vectors <span class="process-math">\(\vec{b}\)</span> for which the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent. The null space <span class="process-math">\(\nul(A)\)</span> is the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{0}\text{,}\)</span> which reflects on the uniqueness of solutions to this and other equations.</div>
 <div class="para logical" id="sec-subspaces-6-3"><ul class="disc" id="sec-subspaces-6-3-1">
 <li id="sec-subspaces-6-3-1-1"><div class="para" id="sec-subspaces-6-3-1-1-1">A subspace <span class="process-math">\(S\)</span> of <span class="process-math">\(\real^p\)</span> is a subset of <span class="process-math">\(\real^p\)</span> that can be represented as the span of a set of vectors.  A basis of <span class="process-math">\(S\)</span> is a linearly independent set of vectors whose span is <span class="process-math">\(S\text{.}\)</span>
 </div></li>
@@ -1077,10 +1077,10 @@ x_3\fivevec{2}{-1}{1}{0}{0}
 </div></li>
 <li id="sec-subspaces-6-3-1-3"><div class="para" id="sec-subspaces-6-3-1-3-1">A basis for <span class="process-math">\(\col(A)\)</span> is found from the columns of <span class="process-math">\(A\)</span> that have pivot positions.  The dimension is therefore <span class="process-math">\(\dim~\col(A) = \rank(A)\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-6-3-1-4"><div class="para" id="sec-subspaces-6-3-1-4-1">The null space <span class="process-math">\(\nul(A)\)</span> is the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> and is a subspace of <span class="process-math">\(\real^n\text{.}\)</span>
+<li id="sec-subspaces-6-3-1-4"><div class="para" id="sec-subspaces-6-3-1-4-1">The null space <span class="process-math">\(\nul(A)\)</span> is the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> and is a subspace of <span class="process-math">\(\real^n\text{.}\)</span>
 </div></li>
-<li id="sec-subspaces-6-3-1-5"><div class="para" id="sec-subspaces-6-3-1-5-1">A basis for <span class="process-math">\(\nul(A)\)</span> is found through a parametric description of the solution space of <span class="process-math">\(A\xvec =
-\zerovec\text{,}\)</span> and we have that <span class="process-math">\(\dim~\nul(A) = n -
+<li id="sec-subspaces-6-3-1-5"><div class="para" id="sec-subspaces-6-3-1-5-1">A basis for <span class="process-math">\(\nul(A)\)</span> is found through a parametric description of the solution space of <span class="process-math">\(A\vec{x} =
+\vec{0}\text{,}\)</span> and we have that <span class="process-math">\(\dim~\nul(A) = n -
 \rank(A)\text{.}\)</span>
 </div></li>
 </ul></div></section><section class="exercises" id="sec-subspaces-7"><h3 class="heading hide-type">
@@ -1197,14 +1197,14 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Suppose we have the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1 = \threevec{2}{3}{-1},~
-\vvec_2 = \threevec{-1}{2}{4},~
-\wvec_1 = \fourvec{3}{-1}{1}{0},~
-\wvec_2 = \fourvec{-2}{4}{0}{1}
+\vec{v_1} = \threevec{2}{3}{-1},~
+\vec{v_2} = \threevec{-1}{2}{4},~
+\vec{w_1} = \fourvec{3}{-1}{1}{0},~
+\vec{w_2} = \fourvec{-2}{4}{0}{1}
 \end{equation*}
 </div>
-<div class="para">and that <span class="process-math">\(A\)</span> is a matrix such that <span class="process-math">\(\col(A)=\laspan{\vvec_1,\vvec_2}\)</span> and <span class="process-math">\(\nul(A) = 
-\laspan{\wvec_1,\wvec_2}\text{.}\)</span>
+<div class="para">and that <span class="process-math">\(A\)</span> is a matrix such that <span class="process-math">\(\col(A)=\laspan{\vec{v_1},\vec{v_2}}\)</span> and <span class="process-math">\(\nul(A) = 
+\laspan{\vec{w_1},\vec{w_2}}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-subspaces-7-7-1-1-5">
 <li id="sec-subspaces-7-7-1-1-5-1"><div class="para" id="sec-subspaces-7-7-1-1-5-1-1">What are the dimensions of <span class="process-math">\(A\text{?}\)</span>
@@ -1241,7 +1241,7 @@ A = P~\left[\begin{array}{rrr}
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-subspaces-7-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
-<div class="para" id="sec-subspaces-7-10-1-1">In this section, we saw that the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\)</span> is a subspace of <span class="process-math">\(\real^p\)</span> for some <span class="process-math">\(p\text{.}\)</span>  In this exercise, we will investigate whether the solution space to another equation <span class="process-math">\(A\xvec = \bvec\)</span> can form a subspace.</div> <div class="para logical" id="sec-subspaces-7-10-1-2">
+<div class="para" id="sec-subspaces-7-10-1-1">In this section, we saw that the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> is a subspace of <span class="process-math">\(\real^p\)</span> for some <span class="process-math">\(p\text{.}\)</span>  In this exercise, we will investigate whether the solution space to another equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> can form a subspace.</div> <div class="para logical" id="sec-subspaces-7-10-1-2">
 <div class="para">Let’s consider the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1252,20 +1252,20 @@ A = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-subspaces-7-10-1-2-2">
-<li id="sec-subspaces-7-10-1-2-2-1"><div class="para" id="sec-subspaces-7-10-1-2-2-1-1">Find a parametric description of the solution space to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>
+<li id="sec-subspaces-7-10-1-2-2-1"><div class="para" id="sec-subspaces-7-10-1-2-2-1-1">Find a parametric description of the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\text{.}\)</span>
 </div></li>
 <li id="sec-subspaces-7-10-1-2-2-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
 <div class="sbspanel top" style="width:46.1538461538462%;"><div class="para" id="sec-subspaces-7-10-1-2-2-2-1-1">Graph the solution space to the homogeneous equation to the right.</div></div>
 <div class="sbspanel top" style="width:51.2820512820513%;"><img src="external/images/empty-4.svg" role="img" class="contained"></div>
 </div></div></li>
-<li id="sec-subspaces-7-10-1-2-2-3"><div class="para" id="sec-subspaces-7-10-1-2-2-3-1">Find a parametric description of the solution space to the equation <span class="process-math">\(A\xvec = \twovec{4}{-2}\)</span> and graph it above.</div></li>
-<li id="sec-subspaces-7-10-1-2-2-4"><div class="para" id="sec-subspaces-7-10-1-2-2-4-1">Is the solution space to the equation <span class="process-math">\(A\xvec =
+<li id="sec-subspaces-7-10-1-2-2-3"><div class="para" id="sec-subspaces-7-10-1-2-2-3-1">Find a parametric description of the solution space to the equation <span class="process-math">\(A\vec{x} = \twovec{4}{-2}\)</span> and graph it above.</div></li>
+<li id="sec-subspaces-7-10-1-2-2-4"><div class="para" id="sec-subspaces-7-10-1-2-2-4-1">Is the solution space to the equation <span class="process-math">\(A\vec{x} =
 \twovec{4}{-2}\)</span> a subspace of <span class="process-math">\(\real^2\text{?}\)</span>
 </div></li>
-<li id="sec-subspaces-7-10-1-2-2-5"><div class="para" id="sec-subspaces-7-10-1-2-2-5-1">Find a parametric description of the solution space to the equation <span class="process-math">\(A\xvec=\twovec{-8}{4}\)</span> and graph it above.</div></li>
-<li id="sec-subspaces-7-10-1-2-2-6"><div class="para" id="sec-subspaces-7-10-1-2-2-6-1">What can you say about all the solution spaces to equations of the form <span class="process-math">\(A\xvec = \bvec\)</span> when <span class="process-math">\(\bvec\)</span> is a vector in <span class="process-math">\(\col(A)\text{?}\)</span>
+<li id="sec-subspaces-7-10-1-2-2-5"><div class="para" id="sec-subspaces-7-10-1-2-2-5-1">Find a parametric description of the solution space to the equation <span class="process-math">\(A\vec{x}=\twovec{-8}{4}\)</span> and graph it above.</div></li>
+<li id="sec-subspaces-7-10-1-2-2-6"><div class="para" id="sec-subspaces-7-10-1-2-2-6-1">What can you say about all the solution spaces to equations of the form <span class="process-math">\(A\vec{x} = \vec{b}\)</span> when <span class="process-math">\(\vec{b}\)</span> is a vector in <span class="process-math">\(\col(A)\text{?}\)</span>
 </div></li>
-<li id="sec-subspaces-7-10-1-2-2-7"><div class="para" id="sec-subspaces-7-10-1-2-2-7-1">Suppose that the solution space to the equation <span class="process-math">\(A\xvec = \bvec\)</span> forms a subspace.  Explain why it must be true that <span class="process-math">\(\bvec = \zerovec\text{.}\)</span>
+<li id="sec-subspaces-7-10-1-2-2-7"><div class="para" id="sec-subspaces-7-10-1-2-2-7-1">Suppose that the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> forms a subspace.  Explain why it must be true that <span class="process-math">\(\vec{b} = \zerovec\text{.}\)</span>
 </div></li>
 </ol>
 </div></article></section></section></div>
