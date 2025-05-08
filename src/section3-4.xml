@@ -15,7 +15,7 @@
     </p>
 
     <p> To begin, let's consider a <m>2\times2</m> matrix <m>A</m>
-    whose columns are vectors <m>\vvec_1</m> and <m>\vvec_2</m>.  We
+    whose columns are vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  We
     have frequently drawn the vectors and studied the linear
     combinations they form using a figure such as <xref
     ref="fig-intro-dets" />.
@@ -26,7 +26,7 @@
 	<image source="images/basis-1" />
       </sidebyside>
       <caption>
-	Linear combinations of two vectors <m>\vvec_1</m> and <m>\vvec_2</m> 
+	Linear combinations of two vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> 
 	form a collection of congruent parallelograms.
       </caption>
     </figure>
@@ -81,8 +81,8 @@
 	<li>
 	  <sidebyside widths="50% 40%" valign="middle">
 	    <p> Explain why the area of the parallelogram formed by 
-	      the vectors <m>\vvec</m> and <m>\wvec_1</m> is the same as
-	    that formed by <m>\vvec</m> and <m>\wvec_2</m>. </p>
+	      the vectors <m>\vec{v}</m> and <m>\vec{w_1}</m> is the same as
+	    that formed by <m>\vec{v}</m> and <m>\vec{w_2}</m>. </p>
 	    <image source="images/area-shear" />
 	  </sidebyside>
 	</li>
@@ -105,7 +105,7 @@
 	  </p></li>
 
 	  <li><p> If we consider the base to be the length of
-	  <m>\vvec</m>, then the height, which is the perpendicular
+	  <m>\vec{v}</m>, then the height, which is the perpendicular
 	  distance to its parallel side, is the same in both
 	  parallelograms. </p></li>
 	</ol></p>
@@ -120,13 +120,13 @@
 
     <p> We will begin by defining
     the determinant of a <m>2\times2</m> matrix <m>A =
-    \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+    \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
     \end{array}\right]</m>.  First, however, we need to define the
     orientation of an ordered pair of vectors.  As shown in <xref
     ref="fig-det-orientation" />, an ordered pair of vectors
-    <m>\vvec_1</m> and <m>\vvec_2</m> is called <em>positively</em>
+    <m>\vec{v_1}</m> and <m>\vec{v_2}</m> is called <em>positively</em>
     oriented if the angle, measured in the counterclockwise direction,
-    from <m>\vvec_1</m> to <m>\vvec_2</m> is less than
+    from <m>\vec{v_1}</m> to <m>\vec{v_2}</m> is less than
     <m>180^\circ</m>; we say the pair is <em>negatively</em> oriented if
     it is more than <m>180^\circ</m>.
     </p>
@@ -145,10 +145,10 @@
       <statement>
 	<idx> determinant </idx>
 	<p> Suppose a <m>2\times2</m> matrix <m>A</m> has columns
-	<m>\vvec_1</m> and <m>\vvec_2</m>.  If the pair of vectors is
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  If the pair of vectors is
 	positively oriented, then the <em>determinant</em> of
 	<m>A</m>, denoted <m>\det(A)</m>, is the area of the
-	parallelogram formed by <m>\vvec_1</m> and <m>\vvec_2</m>.
+	parallelogram formed by <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.
 	If the pair is negatively oriented, then <m>\det(A)</m> is
 	-1 times the area of the parallelogram. </p>
       </statement>
@@ -162,12 +162,12 @@
 	  \left[\begin{array}{rr} 1\amp 0 \\ 0 \amp 1 \\
 	  \end{array}\right]
 	  =
-	  \left[\begin{array}{rr} \evec_1 \amp \evec_2 \\
+	  \left[\begin{array}{rr} \vec{e_1} \amp \vec{e_2} \\
 	  \end{array}\right]
 	  </me>.
 	  As seen on the left of <xref ref="fig-det-identity" />,
-	  the vectors <m>\vvec_1 = \evec_1</m> 
-	  and <m>\vvec_2=\evec_2</m> form a positively oriented pair.
+	  the vectors <m>\vec{v_1} = \vec{e_1}</m> 
+	  and <m>\vec{v_2}=\vec{e_2}</m> form a positively oriented pair.
 	  Since the parallelogram they form is a <m>1\times1</m> square,
 	  we have <m>\det(I) = 1.</m>
 	</p>
@@ -188,11 +188,11 @@
 	  \left[\begin{array}{rr} -2\amp 0 \\ 0 \amp 1 \\
 	  \end{array}\right]
 	  =
-	  \left[\begin{array}{rr} \vvec_1 \amp \vvec_2 \\
+	  \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2} \\
 	  \end{array}\right]
 	  </me>.
 	  As seen on the right of <xref ref="fig-det-identity" />, the
-	  vectors <m>\vvec_1</m> and <m>\vvec_2</m> form a negatively
+	  vectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> form a negatively
 	  oriented pair.  The parallelogram they define is a
 	  <m>2\times1</m> rectangle so we have <m>\det(A) = -2</m>.
 	  </p>
@@ -1062,9 +1062,13 @@
 	</me>.
 	</p></li>
 	
-	<li><p> Sage will compute the determinant of a matrix <c>A</c>
-	with the command <c>A.det()</c>.  Use Sage to find the
-	determinant of the matrix
+	<li><p> We can use Python to compute the determinant of a matrix, 
+		but the commands required depend on whether you've defined the
+		matrix using <c>{numpy}</c> or <c>sympy</c>. If the matrix <c>A</c>
+		has been defined using <c>np.array()</c>, then we can calculate 
+		<m>\det(A)</m> with the command <c>np.linalg.det(A)</c>. Otherwise,
+		if the matrix has been defined using <c>sympy.Matrix()</c>, we'll 
+		use <c>A.det()</c>.
 	<me>
 	  \left[\begin{array}{rrrr}
 	  2 \amp 1 \amp -2 \amp -3 \\
@@ -1073,7 +1077,7 @@
 	  1 \amp 3 \amp 3 \amp -1 \\
 	  \end{array}\right]
 	</me>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1146,7 +1150,7 @@
 	  form a basis for <m>\real^3</m>.
 	  </p></li>
 
-	  <li><p> Sage tells us that <m>\det(A) = 72</m>.
+	  <li><p> Python tells us that <m>\det(A) = 72</m>.
 	  </p></li>
 	</ol></p>
       </solution>
