@@ -64,63 +64,63 @@
       coordinate systems.
       <ol marker="a.">
 	<li><p> Suppose that we have a basis
-	<m>\bcal=\{\vvec_1,\vvec_2,\ldots,\vvec_m\}</m> for
+	<m>\bcal=\{\vec{v_1},\vec{v_2},\ldots,\vec{v_m}\}</m> for
 	<m>\real^m</m>.  Explain what we mean by the representation
-	<m>\coords{\xvec}{\bcal}</m> of
-	a vector <m>\xvec</m> in the coordinate system 
+	<m>\coords{\vec{x}}{\bcal}</m> of
+	a vector <m>\vec{x}</m> in the coordinate system 
 	defined by <m>\bcal</m>. </p></li>
 
 	<li><p> If we are given the representation
-	<m>\coords{\xvec}{\bcal}</m>, how can we recover the vector
-	<m>\xvec</m>?  </p></li>
+	<m>\coords{\vec{x}}{\bcal}</m>, how can we recover the vector
+	<m>\vec{x}</m>?  </p></li>
 
-	<li><p> If we are given the vector <m>\xvec</m>, how can we
-	find <m>\coords{\xvec}{\bcal}</m>? </p></li>
+	<li><p> If we are given the vector <m>\vec{x}</m>, how can we
+	find <m>\coords{\vec{x}}{\bcal}</m>? </p></li>
 
 	<li><p> Suppose that
 	<me>
 	  \bcal=\left\{\twovec{1}{3},\twovec{1}{1}\right\}
 	</me> is a basis for <m>\real^2</m>.  If
-	<m>\coords{\xvec}{\bcal} = \twovec{1}{-2}</m>, find the vector
-	<m>\xvec</m>.
-	<sage>
+	<m>\coords{\vec{x}}{\bcal} = \twovec{1}{-2}</m>, find the vector
+	<m>\vec{x}</m>.
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
 	</p></li>
 
-	<li><p> If <m>\xvec=\twovec{2}{-4}</m>, find
-	<m>\coords{\xvec}{\bcal}</m>. </p></li>
+	<li><p> If <m>\vec{x}=\twovec{2}{-4}</m>, find
+	<m>\coords{\vec{x}}{\bcal}</m>. </p></li>
       </ol></p>
       </statement>
     <solution>
       <p><ol marker="a.">
 	<li><p>
-	  The components of the vector <m>\coords{\xvec}{\bcal}</m>
-	  are the weights that express <m>\xvec</m> as a linear
+	  The components of the vector <m>\coords{\vec{x}}{\bcal}</m>
+	  are the weights that express <m>\vec{x}</m> as a linear
 	  combination of the basis vectors;  that is,
-	  <m>\coords{\xvec}{\bcal} =
+	  <m>\coords{\vec{x}}{\bcal} =
 	  \cfourvec{c_1}{c_2}{\vdots}{c_m}</m> if
-	  <m>\xvec=c_1\vvec_1+c_2\vvec_2+\ldots+c_m\vvec_m</m>.
+	  <m>\vec{x}=c_1\vec{v_1}+c_2\vec{v_2}+\ldots+c_m\vec{v_m}</m>.
 	</p></li>
 
 	<li><p> If we form the matrix <m>P_{\bcal} =
 	\left[\begin{array}{rrrr}
-	\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_m
+	\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_m}
 	\end{array}\right]</m>, then
-	<m>\xvec=P_{\bcal}\coords{\xvec}{\bcal}</m>.
+	<m>\vec{x}=P_{\bcal}\coords{\vec{x}}{\bcal}</m>.
 	</p></li>
 
 	<li><p> As before, 
-	<m>\coords{\xvec}{\bcal}=P_{\bcal}^{-1}\xvec</m>.
+	<m>\coords{\vec{x}}{\bcal}=P_{\bcal}^{-1}\vec{x}</m>.
 	</p></li>
 
-	<li><p> We find <m>\xvec=P_{\bcal}\coords{\xvec}{\bcal} =
+	<li><p> We find <m>\vec{x}=P_{\bcal}\coords{\vec{x}}{\bcal} =
 	\twovec{-1}{1}</m>.
 	</p></li>
 
 	<li><p> We find
-	<m>\coords{\xvec}{\bcal}=P_{\bcal}^{-1}\xvec =
+	<m>\coords{\vec{x}}{\bcal}=P_{\bcal}^{-1}\vec{x} =
 	\twovec{-3}{5}</m>.
 	</p></li>
       </ol></p>
@@ -150,13 +150,13 @@
     <idx> <m>RGB</m> color model </idx>
     </p>
 
-    <p> We define a basis <m>\bcal=\{\vvec_1,\vvec_2,\vvec_3\}</m>
+    <p> We define a basis <m>\bcal=\{\vec{v_1},\vec{v_2},\vec{v_3}\}</m>
     where
     <me>
-      \vvec_1 =\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],~~~
-      \vvec_2 =\left[\begin{array}{c} 0 \\ -0.34413 \\ 1.77200
+      \vec{v_1} =\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right],~~~
+      \vec{v_2} =\left[\begin{array}{c} 0 \\ -0.34413 \\ 1.77200
       \end{array}\right],~~~
-      \vvec_3 =\left[\begin{array}{c} 1.40200 \\ -0.71414 \\
+      \vec{v_3} =\left[\begin{array}{c} 1.40200 \\ -0.71414 \\
       0 \end{array}\right]
     </me>
     to define a new coordinate system with coordinates we denote
@@ -310,7 +310,7 @@
 	
 	<li><p> Verify that <m>\bcal</m> is a basis for
 	<m>\real^3</m>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -634,7 +634,7 @@
 
     <p> Let's look at the first column of luminance values, which is a
     vector in <m>\real^8</m>:
-    <me>\xvec = \left[\begin{array}{c}
+    <me>\vec{x} = \left[\begin{array}{c}
     176 \\ 181 \\ 165 \\ \vdots \\ 150 \\
     \end{array}\right]
     </me>.
@@ -650,14 +650,14 @@
     whose basis vectors are
     <me>
       \begin{aligned}
-      \vvec_0 = \left[\begin{array}{c}
+      \vec{v_0} = \left[\begin{array}{c}
       \cos\left(\frac{(2\cdot0+1)\cdot0\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot1+1)\cdot0\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot2+1)\cdot0\pi}{16}\right) \\
       \vdots \\
       \cos\left(\frac{(2\cdot7+1)\cdot0\pi}{16}\right) \\
       \end{array}\right], \amp 
-      \vvec_1 = \left[\begin{array}{c}
+      \vec{v_1} = \left[\begin{array}{c}
       \cos\left(\frac{(2\cdot0+1)\cdot1\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot1+1)\cdot1\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot2+1)\cdot1\pi}{16}\right) \\
@@ -665,14 +665,14 @@
       \cos\left(\frac{(2\cdot7+1)\cdot1\pi}{16}\right) \\
       \end{array}\right], \\ \\
       \ldots, 
-      \vvec_6 = \left[\begin{array}{c}
+      \vec{v_6} = \left[\begin{array}{c}
       \cos\left(\frac{(2\cdot0+1)\cdot6\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot1+1)\cdot6\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot2+1)\cdot6\pi}{16}\right) \\
       \vdots \\
       \cos\left(\frac{(2\cdot7+1)\cdot6\pi}{16}\right) \\
       \end{array}\right], \amp
-      \vvec_7 = \left[\begin{array}{c}
+      \vec{v_7} = \left[\begin{array}{c}
       \cos\left(\frac{(2\cdot0+1)\cdot7\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot1+1)\cdot7\pi}{16}\right) \\
       \cos\left(\frac{(2\cdot2+1)\cdot7\pi}{16}\right) \\
@@ -686,9 +686,9 @@
     <p> On first glance, this probably looks intimidating, but we can
     make sense of it by looking at these vectors graphically.  Shown
     in <xref ref="fig-jpeg-fourier-basis" /> are four of these basis
-    vectors.  Notice that <m>\vvec_0</m> is constantly 1,
-    <m>\vvec_1</m> varies relatively slowly, <m>\vvec_2</m> varies
-    a little more rapidly, and <m>\vvec_7</m> varies quite rapidly.
+    vectors.  Notice that <m>\vec{v_0}</m> is constantly 1,
+    <m>\vec{v_1}</m> varies relatively slowly, <m>\vec{v_2}</m> varies
+    a little more rapidly, and <m>\vec{v_7}</m> varies quite rapidly.
     The main thing to notice is that:  the basis vectors vary at
     different rates with the first vectors varying relatively slowly
     and the later vectors varying more rapidly.
@@ -699,23 +699,23 @@
 	<image source="images/jpeg-fourier-basis" />
       </sidebyside>
       <caption>
-	Four of the basis vectors <m>\vvec_0</m>, <m>\vvec_1</m>,
-	<m>\vvec_2</m>, and <m>\vvec_7</m>.
+	Four of the basis vectors <m>\vec{v_0}</m>, <m>\vec{v_1}</m>,
+	<m>\vec{v_2}</m>, and <m>\vec{v_7}</m>.
       </caption>
     </figure>
 
     <sidebyside widths="45% 50%">
       <p> These vectors form the basis <m>\bcal</m> for <m>\real^8</m>.
-      Remember that <m>\xvec</m> is the vector of luminance values in
+      Remember that <m>\vec{x}</m> is the vector of luminance values in
       the first column as seen on the right.  We will write
-      <m>\xvec</m> in the new coordinates
+      <m>\vec{x}</m> in the new coordinates
       <me>
-	\coords{\xvec}{\bcal} = \left[\begin{array}{c}
+	\coords{\vec{x}}{\bcal} = \left[\begin{array}{c}
 	F_0 \\ F_1 \\ F_2 \\ \vdots \\ F_7
 	\end{array}\right]
       </me>.
       The coordinates <m>F_j</m> are called the <em>Fourier
-      coefficients</em> of the vector <m>\xvec</m>.
+      coefficients</em> of the vector <m>\vec{x}</m>.
       </p>
       <image source="images/jpeg-luminance-col-graph" />
     </sidebyside>
@@ -723,7 +723,7 @@
     <activity>
       <statement>
       <p> We will explore the influence that the Fourier coefficients
-      have on the vector <m>\xvec</m>.
+      have on the vector <m>\vec{x}</m>.
 
       <ol marker="a.">
 	<li>
@@ -734,7 +734,7 @@
   	  <figure xml:id="js-fourier-0">
 	    <caption>
 	      The effect of the Fourier coefficient <m>F_0</m> on the
-	      vector <m>\xvec = F_0\vvec_0</m>.
+	      vector <m>\vec{x} = F_0\vec{v_0}</m>.
 	    </caption>
 	    
 	    <interactive xml:id="interactive-fourier-0"
@@ -752,7 +752,7 @@
 		<p>
 		  Use the slider below to explore how the Fourier
 		  coefficient <m>F_0</m>
-		  influences the vector <m>\xvec</m>.
+		  influences the vector <m>\vec{x}</m>.
 		</p>
 	      </instructions>
 	      <static>
@@ -773,8 +773,8 @@
 
 	  <p>
 	    Describe the effect that <m>F_0</m> has on the
-	    vector <m>\xvec</m>.  Would you describe the
-	    components in <m>\xvec</m> as constant, slowly
+	    vector <m>\vec{x}</m>.  Would you describe the
+	    components in <m>\vec{x}</m> as constant, slowly
 	    varying, or rapidly varying?
 	  </p>
 	</li>
@@ -782,12 +782,12 @@
 	<li>
 	  <p>
 	    By comparison, let's see how the Fourier coefficient
-	    <m>F_3</m> influences <m>\xvec</m>.
+	    <m>F_3</m> influences <m>\vec{x}</m>.
 	  </p>
   	  <figure xml:id="js-fourier-3">
 	    <caption>
 	      The effect of the Fourier coefficient <m>F_3</m> on the
-	      vector <m>\xvec = F_3\vvec_3</m>.
+	      vector <m>\vec{x} = F_3\vec{v_3}</m>.
 	    </caption>
 	    
 	    <interactive xml:id="interactive-fourier-3"
@@ -805,7 +805,7 @@
 		<p>
 		  Use the slider below to explore how the Fourier
 		  coefficient <m>F_3</m>
-		  influences the vector <m>\xvec</m>.
+		  influences the vector <m>\vec{x}</m>.
 		</p>
 	      </instructions>
 	      <static>
@@ -826,8 +826,8 @@
 
 	  <p>
 	    Describe the effect that <m>F_3</m> has on the
-	    vector <m>\xvec</m>.  Would you describe the
-	    components in <m>\xvec</m> as constant, slowly
+	    vector <m>\vec{x}</m>.  Would you describe the
+	    components in <m>\vec{x}</m> as constant, slowly
 	    varying, or rapidly varying?
 	  </p>
 	</li>
@@ -835,12 +835,12 @@
 	<li>
 	  <p>
 	    Let's now investigate how the Fourier coefficient
-	    <m>F_7</m> influences the vector <m>\xvec</m>.
+	    <m>F_7</m> influences the vector <m>\vec{x}</m>.
 	  </p>
   	  <figure xml:id="js-fourier-7">
 	    <caption>
 	      The effect of the Fourier coefficient <m>F_0</m> on the
-	      vector <m>\xvec = F_7\vvec_7</m>.
+	      vector <m>\vec{x} = F_7\vec{v_7}</m>.
 	    </caption>
 	    
 	    <interactive xml:id="interactive-fourier-7"
@@ -858,7 +858,7 @@
 		<p>
 		  Use the slider below to explore how the Fourier
 		  coefficient <m>F_7</m>
-		  influences the vector <m>\xvec</m>.
+		  influences the vector <m>\vec{x}</m>.
 		</p>
 	      </instructions>
 	      <static>
@@ -879,36 +879,38 @@
 
 	  <p>
 	    Describe the effect that <m>F_7</m> has on the
-	    vector <m>\xvec</m>.  Would you describe the
-	    components in <m>\xvec</m> as constant, slowly
+	    vector <m>\vec{x}</m>.  Would you describe the
+	    components in <m>\vec{x}</m> as constant, slowly
 	    varying, or rapidly varying?
 	  </p>
 	</li>
 
-	<li><p> If the components of <m>\xvec</m> vary relatively
+	<li><p> If the components of <m>\vec{x}</m> vary relatively
 	slowly, what would you expect to be true of the Fourier
 	coefficients <m>F_j</m>? </p></li>
 
-	<li><p> The Sage cell below will construct the vector
+	<li><p> The Python cell below will construct the vector
 	<m>P_{\bcal}</m>, which is denoted <c>P</c>, and its inverse
 	<m>P_{\bcal}^{-1}</m>,
-	which is denoted <c>Pinv</c>.  Evaluate this Sage cell and
+	which is denoted <c>Pinv</c>.  Evaluate this Python cell and
 	notice that it prints the matrix <m>P_{\bcal}^{-1}</m>.
-	<sage xml:id="sage-dct-def">
+	<sage language="python" xml:id="sage-dct-def">
 	  <input>
-mat = [[cos((2*i+1)*j*pi/16) for j in range(8)] for i in range(8)]
-P = matrix(mat).numerical_approx()
-Pinv = P.inverse()	
-print (Pinv.numerical_approx(digits=3))
+import numpy as np
+
+mat = [[np.cos((2*i+1)*j*np.pi/16) for j in range(8)] for i in range(8)]
+P = np.array(mat).evalf()
+Pinv = P.inv()	
+print (Pinv.evalf(3))
 	  </input>
 	</sage>
 	Now look at the form of 
 	<m>P_{\bcal}^{-1}</m> and explain why <m>F_0</m> is the
 	average of the luminance values in the vector
-	<m>\xvec</m>.	
+	<m>\vec{x}</m>.	
 	</p></li>
 
-	<li><p> The Sage cell below defines the vector <m>\xvec</m>,
+	<li><p> The Python cell below defines the vector <m>\vec{x}</m>,
 	which is the vector of luminance values in the first column,
 	as seen in <xref ref="fig-jpeg-block-luminance" />.
 	Use the cell below to find the vector
@@ -917,12 +919,14 @@ print (Pinv.numerical_approx(digits=3))
 	<m>F_0,F_1,\ldots,F_7</m>.  If you have
 	evaluated the cell above, you will still be able to refer to
 	<c>P</c> and <c>Pinv</c> in this cell.  
-	<sage>
+	<sage language="python">
 	  <input>
-x = vector([176,181,165,139,131,131,140,150])
+import numpy as np
+
+x = np.array([176,181,165,139,131,131,140,150])
 #  find the vector of Fourier coefficients f below
 f =
-print (f.numerical_approx(digits=4))
+print (f.evalf(4))
 	  </input>
 	</sage>
 	Write the Fourier coefficients and discuss the relative
@@ -936,23 +940,23 @@ print (f.numerical_approx(digits=4))
 	  nearest integer and setting <m>F_6</m> and <m>F_7</m> to zero.
 	  This is an approximation to <m>\fvec</m>, the vector of
 	  Fourier coefficients.  Use the approximation to <m>\fvec</m>
-	  to form an approximation of the vector <m>\xvec</m>.
-	  <sage>
+	  to form an approximation of the vector <m>\vec{x}</m>.
+	  <sage language="python">
 	    <input>
 # define fapprox below and then find xapprox
 fapprox =
 xapprox =
 print ("x      =", x)
-print ("xapprox=", xapprox.numerical_approx(digits=3))
+print ("xapprox=", xapprox.evalf(3))
 	    </input>
 	  </sage>
 	  How much does your approximation differ from the actual
-	  vector <m>\xvec</m>?
+	  vector <m>\vec{x}</m>?
 	</p></li>
 
 	<li><p> When we ignore the Fourier coefficients corresponding
 	to rapidly varying basis elements, we see that the vector
-	<m>\xvec</m> that we reconstruct is very close to the original
+	<m>\vec{x}</m> that we reconstruct is very close to the original
 	one.  In fact, the luminance values in the approximation
 	differ by at most one or two from the actual luminance values.
 	Our eyes are not sensitive enough to detect this difference.
@@ -961,21 +965,24 @@ print ("xapprox=", xapprox.numerical_approx(digits=3))
       <p> So far, we have concentrated on only one column in our
       <m>8\times8</m> block of luminance values.  Let's now consider
       all of the columns.
-      The following Sage cell defines a matrix called
+      The following Python cell defines a matrix called
       <c>luminance</c>, which is the <m>8\times8</m> matrix of
       luminance values.  Find the <m>8\times8</m> matrix <m>F</m>
       whose columns are the Fourier coefficients of the columns of
       luminance values.
-      <sage>
+      <sage language="python">
 	<input>
-luminance = matrix(8,8, [176, 170, 170, 169, 162, 160, 155, 150, 181,
-179, 175, 167, 162, 160, 154, 149, 165, 170, 169, 161, 162, 161, 160,
-158, 139, 150, 164, 166, 159, 160, 162, 163, 131, 137, 157, 165, 163,
-163, 164, 164, 131, 132, 153, 161, 167, 167, 167, 169, 140, 142, 157,
-166, 166, 166, 167, 169, 150, 152, 160, 168, 172, 170, 168, 168])
+luminance = np.array([[176, 170, 170, 169, 162, 160, 155, 150], 
+					[181, 179, 175, 167, 162, 160, 154, 149], 
+					[165, 170, 169, 161, 162, 161, 160, 158], 
+					[139, 150, 164, 166, 159, 160, 162, 163], 
+					[131, 137, 157, 165, 163, 163, 164, 164], 
+					[131, 132, 153, 161, 167, 167, 167, 169], 
+					[140, 142, 157, 166, 166, 166, 167, 169], 
+					[150, 152, 160, 168, 172, 170, 168, 168]])
 # define your matrix F below
 F =
-print (F.numerical_approx(digits=3))
+print (F.evalf(3))
 
 	</input>
       </sage>
@@ -985,15 +992,15 @@ print (F.numerical_approx(digits=3))
 	the 
 	Fourier coefficient <m>F_0</m> for each of the columns.  Just
 	as we saw before, the entries in this row do not change
-	significantly as we move across the row.  In the Sage cell
+	significantly as we move across the row.  In the Python cell
 	below, write these entries in the vector <m>\yvec</m> and find
 	the corresponding Fourier coefficients.
-	<sage>
+	<sage language="python">
 	  <input>
 # define the vector y as the entries in the first row of F	    
 y = 
 y_fourier =
-print (y_fourier.numerical_approx(digits=3))
+print (y_fourier.evalf(3))
 	  </input>
 	</sage>
 	</p></li>
@@ -1005,15 +1012,15 @@ print (y_fourier.numerical_approx(digits=3))
     <p><ol marker="a.">
       <li><p>
 	Changing <m>F_0</m> has the effect of adding a constant to the
-	components of <m>\xvec</m>.
+	components of <m>\vec{x}</m>.
       </p></li>
       <li><p>
 	The coefficient <m>F_3</m> introduces a slow variation into the
-	components of <m>\xvec</m>.
+	components of <m>\vec{x}</m>.
       </p></li>
       <li><p>
 	The coefficient <m>F_7</m> introduces a
-	rapid variation into the components of <m>\xvec</m>.
+	rapid variation into the components of <m>\vec{x}</m>.
       </p></li>
       <li><p> The coefficients <m>F_j</m> with larger values of
       <m>j</m> will be small.
@@ -1065,7 +1072,7 @@ print (y_fourier.numerical_approx(digits=3))
 
       <li><p>
 	Notice that
-	<me>\xvec=
+	<me>\vec{x}=
 	\left[\begin{array}{c}
 	176 \\ 181 \\ 165 \\ 139 \\131 \\ 131 \\ 140 \\ 150
 	\end{array}\right],~~~

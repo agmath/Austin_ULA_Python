@@ -5,36 +5,38 @@
   <exercise>
     <statement>
       <p> Consider the vector
-      <m>\xvec=\left[\begin{array}{r}
+      <m>\vec{x}=\left[\begin{array}{r}
       103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
       \end{array}\right]
       </m>.
       <ol marker="a.">
-	<li><p> In the Sage cell below is a copy of the change of
+	<li><p> In the Python cell below is a copy of the change of
 	basis matrices that define the Fourier transform.  Find the
-	Fourier coefficients of <m>\xvec</m>.
-	<sage>
+	Fourier coefficients of <m>\vec{x}</m>.
+	<sage language="python">
 	  <input>
-mat = [[cos((2*i+1)*j*pi/16) for j in range(8)] for i in range(8)]
-P = matrix(mat).numerical_approx()
-Pinv = P.inverse()	
-print (Pinv.numerical_approx(digits=3))	    
+import numpy as np
+
+mat = [[np.cos((2*i+1)*j*np.pi/16) for j in range(8)] for i in range(8)]
+P = np.array(mat).evalf()
+Pinv = np.linalg.inv(P)	
+print (Pinv.evalf(3))	    
 	  </input>
 	</sage>
 	</p></li>
 
 	<li><p> We will now form the vector <m>\yvec</m>, which is an
-	approximation of <m>\xvec</m> by rounding all the
-	Fourier coefficients of <m>\xvec</m> to the nearest integer to
+	approximation of <m>\vec{x}</m> by rounding all the
+	Fourier coefficients of <m>\vec{x}</m> to the nearest integer to
 	obtain <m>\coords{\yvec}{\ccal}</m>.  Now find
 	the vector <m>\yvec</m> and compare this approximation to
-	<m>\xvec</m>.  What is the error in this approximation?
+	<m>\vec{x}</m>.  What is the error in this approximation?
 	</p></li>
 
 	<li><p> Repeat the last part of this problem, but set the
 	rounded Fourier coefficients to zero if they have an absolute
 	value less than five.  Use it to create a second approximation
-	of <m>\xvec</m>.  What is the error in this
+	of <m>\vec{x}</m>.  What is the error in this
 	approximation?</p></li>
 
 	<li><p> Compare the number of nonzero Fourier coefficients
@@ -48,7 +50,7 @@ print (Pinv.numerical_approx(digits=3))
     <solution>
       <p><ol marker="a.">
 	<li><p>
-	  <m> C_{\bcal}^{-1}\xvec=\fourvec{F_0}{F_1}{\vdots}{F_7} =
+	  <m> C_{\bcal}^{-1}\vec{x}=\fourvec{F_0}{F_1}{\vdots}{F_7} =
 	  \left[\begin{array}{c}
 	  100\\ -5.99 \\ 3.98 \\ 4.46 \\ 1.94 \\ -0.97 \\ 0.84 \\
 	  1.07 \\
@@ -62,17 +64,17 @@ print (Pinv.numerical_approx(digits=3))
 	  100 \\ -6 \\ 4 \\ 4 \\ 2 \\ -1 \\ 1 \\ 1
 	  \end{array}\right]
 	</m> and find the approximation <m>\yvec</m>, which compares
-	to the original vector <m>\xvec</m>.  
+	to the original vector <m>\vec{x}</m>.  
 	<me>
 	  \yvec=\left[\begin{array}{c}
 	  103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
 	  \end{array}\right],~~~
-	  \xvec=\left[\begin{array}{c}
+	  \vec{x}=\left[\begin{array}{c}
 	  103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
 	  \end{array}\right]\text{.}
 	</me>
 	In this case, the approximation <m>\yvec</m> is the same as
-	the original vector <m>\xvec</m>.
+	the original vector <m>\vec{x}</m>.
 	</p></li>
 
 	<li><p> Now we found the Fourier coefficients to
@@ -81,27 +83,27 @@ print (Pinv.numerical_approx(digits=3))
 	  100 \\ -6 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0
 	  \end{array}\right]
 	</m> and find the approximation <m>\yvec</m>, which compares
-	to the original vector <m>\xvec</m>.  
+	to the original vector <m>\vec{x}</m>.  
 	<me>
 	  \yvec=\left[\begin{array}{c}
 	  94 \\ 95 \\ 97 \\ 99 \\ 101 \\ 103 \\ 105 \\ 106
 	  \end{array}\right],~~~
-	  \xvec=\left[\begin{array}{c}
+	  \vec{x}=\left[\begin{array}{c}
 	  103 \\ 94 \\ 91 \\ 92 \\ 103 \\ 105 \\ 105 \\ 108
 	  \end{array}\right]\text{.}
 	</me>
 	Now we see that the approximating vector <m>\yvec</m> differs
-	from the original vector <m>\xvec</m>, though not significantly. 
+	from the original vector <m>\vec{x}</m>, though not significantly. 
 	</p></li>
 
 	<li><p> In the first approximation, the reconstructed vector
-	<m>\yvec</m> agrees with the original vector <m>\xvec</m>.  In
+	<m>\yvec</m> agrees with the original vector <m>\vec{x}</m>.  In
 	the second approximation, there are only two nonzero Fourier
 	coefficients, and we see that the approximating vector differs
 	from the original vector.  In the second case, however, we are
 	using only one quarter of the Fourier coefficients.  Though
 	the entries in the vector <m>\yvec</m> differ from those in the
-	original vector <m>\xvec</m>, the difference is probably not
+	original vector <m>\vec{x}</m>, the difference is probably not
 	visually noticeable since the possible values range from 0 to
 	255.
 	</p></li>
@@ -135,13 +137,13 @@ print (Pinv.numerical_approx(digits=3))
 	</p></li>
 
 	<li><p> In the first approximation, the reconstructed vector
-	<m>\yvec</m> agrees with the original vector <m>\xvec</m>.  In
+	<m>\yvec</m> agrees with the original vector <m>\vec{x}</m>.  In
 	the second approximation, there are only two nonzero Fourier
 	coefficients, and we see that the approximating vector differs
 	from the original vector.  In the second case, however, we are
 	using only one quarter of the Fourier coefficients.  Though
 	the entries in the vector <m>\yvec</m> differ from those in the
-	original vector <m>\xvec</m>, the difference is probably not
+	original vector <m>\vec{x}</m>, the difference is probably not
 	visually noticeable since the possible values range from 0 to
 	255.
 	</p></li>
@@ -264,26 +266,26 @@ print (Pinv.numerical_approx(digits=3))
       instance, in <m>\real^4</m>, the basis vectors of <m>\scal</m> are
     <me>
       \begin{aligned}
-      \vvec_1 = \left[\begin{array}{c}
+      \vec{v_1} = \left[\begin{array}{c}
       \sin\left(\frac{1\cdot1\pi}{8}\right) \\
       \sin\left(\frac{3\cdot1\pi}{8}\right) \\
       \sin\left(\frac{5\cdot1\pi}{8}\right) \\
       \sin\left(\frac{7\cdot1\pi}{8}\right) \\
       \end{array}\right], \amp
-      \vvec_2 = \left[\begin{array}{c}
+      \vec{v_2} = \left[\begin{array}{c}
       \sin\left(\frac{1\cdot2\pi}{8}\right) \\
       \sin\left(\frac{3\cdot2\pi}{8}\right) \\
       \sin\left(\frac{5\cdot2\pi}{8}\right) \\
       \sin\left(\frac{7\cdot2\pi}{8}\right) \\
       \end{array}\right], \\
       \\
-      \vvec_3 = \left[\begin{array}{c}
+      \vec{v_3} = \left[\begin{array}{c}
       \sin\left(\frac{1\cdot3\pi}{8}\right) \\
       \sin\left(\frac{3\cdot3\pi}{8}\right) \\
       \sin\left(\frac{5\cdot3\pi}{8}\right) \\
       \sin\left(\frac{7\cdot3\pi}{8}\right) \\
       \end{array}\right], \amp
-      \vvec_4 = \left[\begin{array}{c}
+      \vec{v_4} = \left[\begin{array}{c}
       \sin\left(\frac{1\cdot4\pi}{8}\right) \\
       \sin\left(\frac{3\cdot4\pi}{8}\right) \\
       \sin\left(\frac{5\cdot4\pi}{8}\right) \\
@@ -300,24 +302,24 @@ print (Pinv.numerical_approx(digits=3))
 	  <image source="images/fourier-sine-basis" />
 	</sidebyside>
 	<caption>
-	  The vectors <m>\vvec_1,\vvec_2,\vvec_3,\vvec_4</m>
+	  The vectors <m>\vec{v_1},\vec{v_2},\vec{v_3},\vec{v_4}</m>
 	  that form the basis <m>\scal</m>.
 	</caption>
       </figure>
 
       <p><ol marker="a.">
-	<li><p> The Sage cell below defines the matrix <c>S</c> whose
+	<li><p> The Python cell below defines the matrix <c>S</c> whose
 	columns are the vectors in the basis <m>\scal</m> as well as
 	the matrix <c>C</c> whose columns form the basis <m>\ccal</m>
 	used in the Fourier Cosine Transform.
       </p>
 
-      <sage>
+      <sage language="python">
 	<input>
-sinmat = [[sin((2*i+1)*j*pi/8) for j in range(1,5)] for i in range(4)]
-cosmat = [[cos((2*i+1)*j*pi/8) for j in range(4)] for i in range(4)]
-S = matrix(sinmat).numerical_approx()    
-C = matrix(cosmat).numerical_approx()    
+sinmat = [[np.sin((2*i+1)*j*np.pi/8) for j in range(1,5)] for i in range(4)]
+cosmat = [[np.cos((2*i+1)*j*np.pi/8) for j in range(4)] for i in range(4)]
+S = np.array(sinmat).evalf()    
+C = np.array(cosmat).evalf()    
 	</input>
       </sage>
 
@@ -326,20 +328,20 @@ C = matrix(cosmat).numerical_approx()
       four entries
       176, 181, 165, and 139, as seen in <xref
       ref="fig-jpeg-block-luminance" />.  These form the vector
-      <m>\xvec=\fourvec{176}{181}{165}{139}</m>.  Find both
-      <m>\coords{\xvec}{\scal}</m> and <m>\coords{\xvec}{\ccal}</m>.
+      <m>\vec{x}=\fourvec{176}{181}{165}{139}</m>.  Find both
+      <m>\coords{\vec{x}}{\scal}</m> and <m>\coords{\vec{x}}{\ccal}</m>.
 	</p></li>
 
 	<li><p> Write a sentence or two comparing the values for the
-	Fourier Sine coefficients <m>\coords{\xvec}{\scal}</m>
+	Fourier Sine coefficients <m>\coords{\vec{x}}{\scal}</m>
 	and the Fourier Cosine coefficients
-	<m>\coords{\xvec}{\ccal}</m>.
+	<m>\coords{\vec{x}}{\ccal}</m>.
 	</p></li>
 
-	<li><p> Suppose now that <m>\xvec=\fourvec{100}{100}{100}{100}</m>.
+	<li><p> Suppose now that <m>\vec{x}=\fourvec{100}{100}{100}{100}</m>.
 	Find the Fourier Sine coefficients
-	<m>\coords{\xvec}{\scal}</m> and the Fourier Cosine
-	coefficients <m>\coords{\xvec}{\ccal}</m>.  </p></li>
+	<m>\coords{\vec{x}}{\scal}</m> and the Fourier Cosine
+	coefficients <m>\coords{\vec{x}}{\ccal}</m>.  </p></li>
 
 	<li><p> Write a few sentences explaining why we use the
 	Fourier Cosine Transform in the JPEG compression algorithm
@@ -353,11 +355,11 @@ C = matrix(cosmat).numerical_approx()
       <p><ol marker="a.">
 	<li><p> We find that
 	<me>
-	  \coords{\xvec}{\scal} =
+	  \coords{\vec{x}}{\scal} =
 	  \left[\begin{array}{c}
 	  220 \\ 18.7 \\ 79.3 \\ 5.3 \\
 	  \end{array}\right],
-	  \coords{\xvec}{\ccal} =
+	  \coords{\vec{x}}{\ccal} =
 	  \left[\begin{array}{c}
 	  165 \\ 20.1 \\ -11.0 \\ -0.3 \\
 	  \end{array}\right]\text{.}
@@ -372,11 +374,11 @@ C = matrix(cosmat).numerical_approx()
 
 	<li><p> We find that
 	<me>
-	  \coords{\xvec}{\scal} =
+	  \coords{\vec{x}}{\scal} =
 	  \left[\begin{array}{c}
 	  131 \\ 0 \\ 54.1 \\ 0 \\
 	  \end{array}\right],
-	  \coords{\xvec}{\ccal} =
+	  \coords{\vec{x}}{\ccal} =
 	  \left[\begin{array}{c}
 	  100 \\ 0 \\ 0 \\ 0
 	  \end{array}\right]\text{.}
@@ -387,7 +389,7 @@ C = matrix(cosmat).numerical_approx()
 	coefficients in the Fourier Cosine transform.  Most of the
 	important information is channeled into the first coefficient,
 	which records the average of the components of the vector
-	<m>\xvec</m>.  </p></li>
+	<m>\vec{x}</m>.  </p></li>
       </ol></p>
     </solution>
 
@@ -395,13 +397,13 @@ C = matrix(cosmat).numerical_approx()
       <p><ol marker="a.">
 	<li><p> 
 	<m>
-	  \coords{\xvec}{\scal} =
+	  \coords{\vec{x}}{\scal} =
 	  \left[\begin{array}{c}
 	  220 \\ 18.7 \\ 79.3 \\ 5.3 \\
 	  \end{array}\right]
 	  </m> and
 	  <m>
-	  \coords{\xvec}{\ccal} =
+	  \coords{\vec{x}}{\ccal} =
 	  \left[\begin{array}{c}
 	  165 \\ 20.1 \\ -11.0 \\ -0.3 \\
 	  \end{array}\right]
@@ -416,13 +418,13 @@ C = matrix(cosmat).numerical_approx()
 
 	<li><p> 
 	<m>
-	  \coords{\xvec}{\scal} =
+	  \coords{\vec{x}}{\scal} =
 	  \left[\begin{array}{c}
 	  131 \\ 0 \\ 54.1 \\ 0 \\
 	  \end{array}\right]
 	  </m> and
 	  <m>
-	  \coords{\xvec}{\ccal} =
+	  \coords{\vec{x}}{\ccal} =
 	  \left[\begin{array}{c}
 	  100 \\ 0 \\ 0 \\ 0
 	  \end{array}\right]
@@ -433,7 +435,7 @@ C = matrix(cosmat).numerical_approx()
 	coefficients in the Fourier Cosine transform.  Most of the
 	important information is channeled into the first coefficient,
 	which records the average of the components of the vector
-	<m>\xvec</m>.  </p></li>
+	<m>\vec{x}</m>.  </p></li>
       </ol></p>
     </answer>
 
@@ -445,10 +447,10 @@ C = matrix(cosmat).numerical_approx()
       basis for <m>\real^4</m> that we called the Haar wavelet basis.
       The basis vectors are
       <me>
-	\vvec_1=\fourvec{1}{1}{1}{1},
-	\vvec_2=\fourvec{1}{1}{-1}{-1},
-	\vvec_3=\fourvec{1}{-1}{0}{0},
-	\vvec_4=\fourvec{0}{0}{1}{-1}
+	\vec{v_1}=\fourvec{1}{1}{1}{1},
+	\vec{v_2}=\fourvec{1}{1}{-1}{-1},
+	\vec{v_3}=\fourvec{1}{-1}{0}{0},
+	\vec{v_4}=\fourvec{0}{0}{1}{-1}
       </me>,
       which may be understood graphically as in <xref
       ref="fig-haar-wavelet-basis" />. We will denote this basis by
@@ -463,11 +465,11 @@ C = matrix(cosmat).numerical_approx()
 	</caption>
       </figure>
 
-      <p> The change of coordinates from a vector <m>\xvec</m> in
-      <m>\real^4</m> to <m>\coords{\xvec}{\wcal}</m> is called the
+      <p> The change of coordinates from a vector <m>\vec{x}</m> in
+      <m>\real^4</m> to <m>\coords{\vec{x}}{\wcal}</m> is called the
       Haar <em>wavelet transform</em> and we write
       <me>
-	\coords{\xvec}{\wcal} = \fourvec{H_1}{H_2}{H_3}{H_4}
+	\coords{\vec{x}}{\wcal} = \fourvec{H_1}{H_2}{H_3}{H_4}
       </me>.  The coefficients <m>H_1,H_2,H_3,H_4</m> are called
       wavelet coefficients.
       </p>
@@ -486,21 +488,24 @@ C = matrix(cosmat).numerical_approx()
       </p>
 	
       <p> <ol marker="a.">
-	<li><p> The following Sage cell defines the matrix <c>W</c>
+	<li><p> The following Python cell defines the matrix <c>W</c>
 	whose columns are the basis vectors in <m>\wcal</m>.  If
-	<m>\xvec</m> is the first column of luminance values in the
+	<m>\vec{x}</m> is the first column of luminance values in the
 	<m>4\times4</m> block above, find the wavelet coefficients
-	<m>\coords{\xvec}{\wcal}</m>.
+	<m>\coords{\vec{x}}{\wcal}</m>.
 
-	<sage>
+	<sage language="python">
 	  <input>
-W = matrix(4,4,[1,1,1,0,1,1,-1,0,1,-1,0,1,1,-1,0,-1])	    
+W = np.array([[1,1,1,0],
+			[1,1,-1,0],
+			[1,-1,0,1],
+			[1,-1,0,-1]])	    
 	  </input>
 	</sage>
 	</p></li>
 
 	<li><p> Notice that <m>H_1</m> gives the average value of the
-	components of <m>\xvec</m> and <m>H_2</m> describes how the
+	components of <m>\vec{x}</m> and <m>H_2</m> describes how the
 	averages of the first two and last two components differ from
 	the overall average.  The coefficients <m>H_3</m> and
 	<m>H_4</m> describe small-scale variations between the first
@@ -510,47 +515,49 @@ W = matrix(4,4,[1,1,1,0,1,1,-1,0,1,-1,0,1,1,-1,0,-1])
 	<p> If we set the last wavelet coefficients <m>H_3=0</m>
 	and <m>H_4=0</m>, we obtain the wavelet coefficients
 	<m>\coords{\yvec}{\wcal}</m> for a vector <m>\yvec</m> that
-	approximates <m>\xvec</m>.  Find the vector <m>\yvec</m> and
-	compare it to the original vector <m>\xvec</m>. </p></li>
+	approximates <m>\vec{x}</m>.  Find the vector <m>\yvec</m> and
+	compare it to the original vector <m>\vec{x}</m>. </p></li>
 
 	<li><p> What impact does the fact that <m>H_3=0</m> and
 	<m>H_4=0</m> have on the form of the vector
 	<m>\yvec</m>?  Explain how setting these coefficients to zero
-	ignores the behavior of <m>\xvec</m> on a small scale.
+	ignores the behavior of <m>\vec{x}</m> on a small scale.
 	</p></li>
 
 	<li><p> In the JPEG compression algorithm, we looked at the
 	Fourier coefficients of all the columns of luminance values
 	and then performed a Fourier transform on the rows.  The
-	Sage cell below will perform the same operation using the
+	Python cell below will perform the same operation using the
 	wavelet transform;  that is, it will first find the wavelet
 	coefficients of each of the columns and then perform the
 	wavelet transform on the rows.  You only need to evaluate the
 	cell to find the wavelet coefficients obtained in this way.
-	<sage>
+	<sage language="python">
 	  <input>
-luminance = matrix(4,4,[176, 170, 170, 169, 181, 179, 175, 167, 165,
-170, 169, 161, 139, 150,  164, 166])
-Winv = W.inverse()
+luminance = np.array([[176, 170, 170, 169], 
+					[181, 179, 175, 167], 
+					[165, 170, 169, 161], 
+					[139, 150,  164, 166]])
+Winv = np.linalg.inv(W)
 wavelet_transform = (Winv*(Winv*luminance).transpose()).transpose()
-print (wavelet_transform.numerical_approx(digits=3))
+print (wavelet_transform.evalf(3))
 	  </input>
 	</sage>
 	</p></li>
 
 	<li><p> Now set all the wavelet coefficients equal to zero
 	except those in the upper left <m>2\times2</m> block and use
-	them to define the matrix <c>coeffs</c> in the Sage cell
+	them to define the matrix <c>coeffs</c> in the Python cell
 	below.  This has the effect of ignoring all of the small-scale
 	differences.  Evaluating this cell will recover the
 	approximate luminance values.
-	<sage>
+	<sage language="python">
 	  <input>
 # define the matrix of coefficients below
 coeffs = 
 # this code will undo the wavelet transform
 approx_luminance = W*((W*(coeffs.transpose())).transpose())
-print (approx_luminance.numerical_approx(digits=3))
+print (approx_luminance.evalf(3))
 	  </input>
 	</sage>
 	</p> </li>
@@ -567,7 +574,7 @@ print (approx_luminance.numerical_approx(digits=3))
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We find that <m>\coords{\xvec}{\wcal} =
+	<li><p> We find that <m>\coords{\vec{x}}{\wcal} =
 	\left[\begin{array}{c}
 	165 \\ 13.2 \\ -2.5 \\ 13.0 \\
 	\end{array}\right]
@@ -620,7 +627,7 @@ print (approx_luminance.numerical_approx(digits=3))
 	  
     <answer>
       <p><ol marker="a.">
-	<li><p> <m>\coords{\xvec}{\wcal} =
+	<li><p> <m>\coords{\vec{x}}{\wcal} =
 	\left[\begin{array}{c}
 	165 \\ 13.2 \\ -2.5 \\ 13.0 \\
 	\end{array}\right]
