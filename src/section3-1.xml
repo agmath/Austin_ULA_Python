@@ -11,7 +11,7 @@
     <p> Up to this point, we have used the Gaussian elimination
     algorithm to find solutions to linear systems.  We now
     investigate another way to find solutions to the 
-    equation <m>A\xvec=\bvec</m> when the matrix <m>A</m> has the same
+    equation <m>A\vec{x}=\vec{b}</m> when the matrix <m>A</m> has the same
     number of rows and columns.  To get started, let's look at some
     familiar examples.
     </p>
@@ -36,16 +36,16 @@
 	  Explain the reasoning behind your expectation and then
 	  compute <m>AB</m> to verify it. </p></li>
 
-	  <li><p> Solve the equation <m>A\xvec = \twovec{3}{-2}</m>
+	  <li><p> Solve the equation <m>A\vec{x} = \twovec{3}{-2}</m>
 	  using Gaussian elimination.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
 	  </p></li>
 
 	  <li><p> Explain why your solution may also be found by
-	  computing <m>\xvec = B\twovec{3}{-2}</m>. </p></li>
+	  computing <m>\vec{x} = B\twovec{3}{-2}</m>. </p></li>
 	</ol>
       </p>
 
@@ -103,19 +103,19 @@
 	    0 \amp 1 \amp -3 \\
 	    \end{array}\right]
 	  </me>
-	  so the solution is <m>\xvec=\twovec{-2}{-3}</m>.
+	  so the solution is <m>\vec{x}=\twovec{-2}{-3}</m>.
 	  </p></li>
 
 	  <li><p>
-	    The equation <m>A\xvec=\twovec{3}{-2}</m> is asking us to
+	    The equation <m>A\vec{x}=\twovec{3}{-2}</m> is asking us to
 	    find the vector that becomes <m>\twovec{3}{-2}</m> after
 	    being rotated by <m>90^\circ</m>.  If we rotate
 	    <m>\twovec{3}{-2}</m> by <m>90^\circ</m> in the opposite
 	    direction, it will 
 	    have this property.  That is,
-	    if <m>\xvec = B\twovec{-2}{-3}</m>, then
+	    if <m>\vec{x} = B\twovec{-2}{-3}</m>, then
 	    <me>
-	      A\xvec = A(B\xvec) 
+	      A\vec{x} = A(B\vec{x}) 
 	      = (AB)\twovec{3}{-2} 
 	      = I\twovec{3}{-2} 
 	      = \twovec{3}{-2}.
@@ -139,7 +139,7 @@
     </p>
 
     <p> Now that we are interested in solving equations of the form
-    <m>A\xvec = \bvec</m>, we might try to find a similar approach.
+    <m>A\vec{x} = \vec{b}</m>, we might try to find a similar approach.
     Is there a matrix <m>A^{-1}</m> that plays the role of the
     multiplicative inverse of <m>A</m>?  Of course, the real number
     <m>0</m> does not have a multiplicative inverse so we probably
@@ -226,13 +226,13 @@
 		1 \amp -1 \\
 		\end{bmatrix}
 		</m>.  To find an inverse <m>B</m>, we write its columns
-		as <m>B = \begin{bmatrix}\bvec_1 \amp \bvec_2
+		as <m>B = \begin{bmatrix}\vec{b_1} \amp \vec{b_2}
 		\end{bmatrix}</m> and require that
 		<me>
 		  \begin{aligned}
 		  AB \amp = I \\
 		  \begin{bmatrix}
-		  A\bvec_1 \amp A\bvec_2
+		  A\vec{b_1} \amp A\vec{b_2}
 		  \end{bmatrix}
 		  \amp = 
 		  \begin{bmatrix}
@@ -244,15 +244,15 @@
 		In other words, we can find the columns of <m>B</m> by
 		solving the equations
 		<me>
-		  A\bvec_1 = \twovec10,~~~
-		  A\bvec_2 = \twovec01.
+		  A\vec{b_1} = \twovec10,~~~
+		  A\vec{b_2} = \twovec01.
 		</me>
-		Solve these equations to find <m>\bvec_1</m> and
-		<m>\bvec_2</m>.  Then write the matrix <m>B</m> and
+		Solve these equations to find <m>\vec{b_1}</m> and
+		<m>\vec{b_2}</m>.  Then write the matrix <m>B</m> and
 		verify that <m>AB=I</m>.  This is enough for us to
 		conclude that <m>B</m> is
 		the inverse of <m>A</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -262,7 +262,7 @@
 	      <p>
 		Find the product <m>BA</m> and explain why we now know
 		that <m>B</m> is invertible and <m>B^{-1}=A</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -284,18 +284,18 @@
 		an invertible matrix.
 		Suppose that <m>A</m> is an invertible
 		<m>n\times n</m> matrix with inverse <m>B</m> and 
-		suppose that <m>\bvec</m> is any <m>n</m>-dimensional
+		suppose that <m>\vec{b}</m> is any <m>n</m>-dimensional
 		vector. Since <m>AB=I</m>, we have
 		<me>
-		  A(B\bvec) = (AB)\bvec = I\bvec = \bvec.
+		  A(B\vec{b}) = (AB)\vec{b} = I\vec{b} = \vec{b}.
 		</me>
-		This says that the equation <m>A\xvec = \bvec</m> is
-		consistent and that <m>\xvec=B\bvec</m> is a solution.
+		This says that the equation <m>A\vec{x} = \vec{b}</m> is
+		consistent and that <m>\vec{x}=B\vec{b}</m> is a solution.
 	      </p>
 
 	      <p>
-		Since we know that <m>A\xvec = \bvec</m> is consistent
-		for any vector <m>\bvec</m>, what does this say about
+		Since we know that <m>A\vec{x} = \vec{b}</m> is consistent
+		for any vector <m>\vec{b}</m>, what does this say about
 		the span of the columns of <m>A</m>?
 	      </p>
 	    </li>
@@ -333,8 +333,8 @@
       <solution>
 	<p><ol marker="a.">
 	  <li><p>
-	    Solving the two equations for <m>\bvec_1</m> and
-	    <m>\bvec_2</m> gives
+	    Solving the two equations for <m>\vec{b_1}</m> and
+	    <m>\vec{b_2}</m> gives
 	    <m>B = \begin{bmatrix}
 	    1 \amp -2 \\
 	    1 \amp -3 \\
@@ -349,13 +349,13 @@
 
 	  <li><p>
 	    Seeking the first column of <m>C^{-1}</m>, we see that
-	    the equation <m>C\xvec = \twovec10</m> is not consistent.
+	    the equation <m>C\vec{x} = \twovec10</m> is not consistent.
 	    This means that <m>C</m> is not invertible.
 	  </p></li>
 
 	  <li><p>
-	    Since the equation <m>A\xvec = \bvec</m> is consistent for
-	    every <m>\bvec</m>, we know that the span of the columns
+	    Since the equation <m>A\vec{x} = \vec{b}</m> is consistent for
+	    every <m>\vec{b}</m>, we know that the span of the columns
 	    of <m>A</m> is <m>\real^n</m>.
 	  </p></li>
 
@@ -394,11 +394,11 @@
 	  We can reformulate this procedure for finding the inverse of a
 	  matrix.  For the sake of convenience, suppose that <m>A</m> is a
 	  <m>2\times2</m> invertible matrix with inverse
-	  <m>B=\begin{bmatrix} \bvec_1 \amp \bvec_2 \end{bmatrix}</m>.  
+	  <m>B=\begin{bmatrix} \vec{b_1} \amp \vec{b_2} \end{bmatrix}</m>.  
 	  Rather than solving the equations
 	  <me>
-	    A\bvec_1 = \twovec10,~~~
-	    A\bvec_2 = \twovec01
+	    A\vec{b_1} = \twovec10,~~~
+	    A\vec{b_2} = \twovec01
 	  </me>
 	  separately, we can solve them at the same time by augmenting
 	  <m>A</m> by both vectors <m>\twovec10</m> and <m>\twovec01</m>
@@ -461,11 +461,11 @@
       In fact, this reformulation will always work.  Suppose that
       <m>A</m> is an invertible <m>n\times n</m> matrix with inverse
       <m>B</m>.  Suppose furthermore that
-      <m>\bvec</m> is any <m>n</m>-dimensional vector and consider the
-      equation <m>A\xvec = \bvec</m>.  We know that <m>x=B\bvec</m> is
+      <m>\vec{b}</m> is any <m>n</m>-dimensional vector and consider the
+      equation <m>A\vec{x} = \vec{b}</m>.  We know that <m>x=B\vec{b}</m> is
       a solution because
       <m>
-	A(B\bvec) = (AB)\bvec = I\bvec = \bvec.
+	A(B\vec{b}) = (AB)\vec{b} = I\vec{b} = \vec{b}.
       </m>
     </p>
 
@@ -473,10 +473,10 @@
       <statement>
 	<p>
 	  If <m>A</m> is an invertible matrix with inverse <m>B</m>,
-	  then any equation <m>A\xvec = \bvec</m> is consistent and
-	  <m>\xvec = B\bvec</m> is a solution.  In other words, the
-	  solution to <m>A\xvec = \bvec</m> is <m>\xvec =
-	  A^{-1}\bvec</m>. 
+	  then any equation <m>A\vec{x} = \vec{b}</m> is consistent and
+	  <m>\vec{x} = B\vec{b}</m> is a solution.  In other words, the
+	  solution to <m>A\vec{x} = \vec{b}</m> is <m>\vec{x} =
+	  A^{-1}\vec{b}</m>. 
 	</p>
       </statement>
     </proposition>
@@ -488,8 +488,8 @@
     </p>
 
     <p>
-      Now since <m>A\xvec=\bvec</m> is consistent for every vector
-      <m>\bvec</m>, the columns of <m>A</m>
+      Now since <m>A\vec{x}=\vec{b}</m> is consistent for every vector
+      <m>\vec{b}</m>, the columns of <m>A</m>
       must span <m>\real^n</m> so there is a pivot position in every
       row.  Since <m>A</m> is also square, this means that the reduced
       row echelon form of <m>A</m> is the identity matrix.  
@@ -523,8 +523,8 @@
     <p>
       You may have noticed that <xref
       ref="proposition-inverse-solve"/> says that <em>the</em>
-      solution to the equation <m>A\xvec = \bvec</m> is <m>\xvec =
-      A^{-1}\bvec</m>.  Indeed, we know that this equation has a
+      solution to the equation <m>A\vec{x} = \vec{b}</m> is <m>\vec{x} =
+      A^{-1}\vec{b}</m>.  Indeed, we know that this equation has a
       unique solution because <m>A</m> has a pivot position in every
       column.
     </p>
@@ -565,8 +565,8 @@
       then
       <xref ref="proposition-inverse-solve"/>
       shows us how to use <m>A^{-1}</m> to solve equations involving
-      <m>A</m>.  In particular, the solution to <m>A\xvec = \bvec</m>
-      is <m>\xvec = A^{-1}\bvec</m>.
+      <m>A</m>.  In particular, the solution to <m>A\vec{x} = \vec{b}</m>
+      is <m>\vec{x} = A^{-1}\vec{b}</m>.
     </p>
 
     <activity>
@@ -584,10 +584,10 @@
 	  <ol marker="a.">
 	    <li>
 	      <p>
-		Describe the solution space to the equation <m>A\xvec
+		Describe the solution space to the equation <m>A\vec{x}
 		= \threevec343</m> by augmenting <m>A</m> and finding
 		the reduced row echelon form.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -602,7 +602,7 @@
 	    </li>
 	    <li>
 	      <p>
-		Now use the inverse to solve the equation <m>A\xvec =
+		Now use the inverse to solve the equation <m>A\vec{x} =
 		\threevec343</m> and verify that your result agrees
 		with what you found in part a.
 	      </p>
@@ -610,9 +610,11 @@
 		
 	    <li>
 	      <p>
-		If you have defined a matrix <c>B</c> in Sage, you can
-		find it's inverse as <c>B.inverse()</c> or
-		<c>B^-1</c>.  Use Sage to 
+		If you have defined a matrix <c>B</c> using <c>{sympy}</c>'s , 
+		<c>sympy.Matrix()</c>, you can find it's inverse using <c>B.inv()</c>.  
+		If you are using <c>{numpy}</c> instead, then you can define the 
+		matrix <m>B</m> using <c>np.array()</c> and then use <c>np.linalg.inv(B)</c>
+		to find the inverse of <m>B</m>, provided that it exists. Use Python to 
 		find the inverse of the matrix
 		<me>
 		  B = \left[\begin{array}{rrr}
@@ -621,9 +623,11 @@
 		  5 \amp -4 \amp 6 \\
 		  \end{array}\right]
 		</me>
-		and use it to solve the equation <m>B\xvec =
+		Try it using <c>{sympy}</c> and then again using <c>{numpy}</c>. 
+		What do you notice about the results? Now that you've found <m>B^{-1}</m>,
+		use it to solve the equation <m>B\vec{x} =
 		\threevec83{36}</m>. 
-		  <sage>
+		  <sage language="python">
 		    <input>
 		    </input>
 		  </sage>
@@ -676,7 +680,7 @@
 	      0 \amp 0 \amp 1 \amp 2
 	      \end{array}\right],
 	    </me>
-	    which says that there is a unique solution <m>\xvec =
+	    which says that there is a unique solution <m>\vec{x} =
 	    \threevec{-1}22</m>.
 	  </p>
 	  </li>
@@ -716,13 +720,13 @@
 	  </li>
 	  <li>
 	    <p>
-	      Sage tells us that <m>B^{-1}\threevec{8}3{36} =
+	      Python tells us that <m>B^{-1}\threevec{8}3{36} =
 	      \threevec4{-1}2</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
-	      Sage helps us see that <m>(AB)\sim I</m>, which tells us
+	      Python helps us see that <m>(AB)\sim I</m>, which tells us
 	      that <m>AB</m> is invertible.
 	    </p>
 	  </li>
@@ -759,8 +763,8 @@
 	    and only if <m>A\sim I</m>. </p></li>
 
 	    <li><p> If <m>A</m> is invertible, then the solution to the
-	    equation <m>A\xvec = \bvec</m> is given by <m>\xvec =
-	    A^{-1}\bvec</m>. </p></li>
+	    equation <m>A\vec{x} = \vec{b}</m> is given by <m>\vec{x} =
+	    A^{-1}\vec{b}</m>. </p></li>
 
 	    <li><p> We can find <m>A^{-1}</m> by finding the reduced row
 	    echelon form of <m>\left[\begin{array}{r|r} A \amp I
@@ -967,7 +971,7 @@
 	    <li><p>
 	      Show that the product <m>RA</m> is the result of
 	      applying the replacement operation to <m>A</m>.
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -988,7 +992,7 @@
 	    <m>S</m> so that <m>SA</m> is the same as that obtained
 	    from the scaling operation.  Why is <m>S</m> invertible
 	    and what is <m>S^{-1}</m>?
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
@@ -1024,7 +1028,7 @@
 	      invertible and use this fact to write <m>A = LU</m>.  What
 	      is the matrix <m>L</m> that you find?  Why do you think we
 	      denote it by <m>L</m>?
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -1322,8 +1326,8 @@
       </me>. </p></li>
 
       <li><p> If a matrix <m>A</m> is invertible, then the solution to
-      the equation <m>A\xvec = \bvec</m> is <m>\xvec =
-      A^{-1}\bvec</m>. </p></li> 
+      the equation <m>A\vec{x} = \vec{b}</m> is <m>\vec{x} =
+      A^{-1}\vec{b}</m>. </p></li> 
 
       <li><p> The row operations of replacement, scaling, and
       interchange can be performed 

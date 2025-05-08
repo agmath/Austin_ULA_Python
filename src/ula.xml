@@ -4,7 +4,7 @@
   <xi:include href="bookinfo.xml" />
   
   <book xml:id="ula">
-    <title> Understanding Linear Algebra</title>
+    <title> Understanding Linear Algebra (with Python)</title>
 
     <xi:include href="./frontmatter.xml" />
     <xi:include href="./chap1.xml" />

@@ -14,7 +14,7 @@
 	  3 \amp 0 \amp 1 \amp 2 \\
 	  \end{array}\right]
 	</me>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -26,7 +26,7 @@
 	  identity <m>I</m> to form <m>\left[\begin{array}{r|r}A \amp
 	  I \end{array}\right]</m>. </p></li>
 
-	  <li><p> Use your inverse to solve the equation <m>A\xvec =
+	  <li><p> Use your inverse to solve the equation <m>A\vec{x} =
 	  \fourvec{3}{2}{-3}{-1}</m>. </p></li>
 	</ol>
       </p>
@@ -71,7 +71,7 @@
 	</p></li>
 
 	<li><p>
-	  We compute that <m>\xvec=A^{-1}\fourvec{3}{2}{-3}{-1} =
+	  We compute that <m>\vec{x}=A^{-1}\fourvec{3}{2}{-3}{-1} =
 	  \fourvec{-\frac12}{-21}{\frac{35}2}{-\frac{17}{2}}
 	  </m>.
 	</p></li>
@@ -97,7 +97,7 @@
 	</p></li>
 
 	<li><p>
-	  <m>\xvec=
+	  <m>\vec{x}=
 	  \fourvec{-\frac12}{-21}{\frac{35}2}{-\frac{17}{2}}
 	  </m>.
 	</p></li>
@@ -423,7 +423,7 @@
 	  <li><p>
 	    Verify that <m>BA = I_2</m>.  In this case, we say that
 	    <m>B</m> is a <em>left</em> inverse of <m>A</m>.
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
@@ -432,14 +432,14 @@
 	  <li><p> If <m>A</m> has a left inverse <m>B</m>, we can
 	  still use it to find solutions to linear equations.  If we
 	  know there is a solution to the equation
-	  <m>A\xvec = \bvec</m>, we can
+	  <m>A\vec{x} = \vec{b}</m>, we can
 	  multiply both sides of the equation by <m>B</m> to find
-	  <m>\xvec = B\bvec</m>.
+	  <m>\vec{x} = B\vec{b}</m>.
 	</p>
 	<p>
 	  Suppose you know there is a solution to the equation
-	  <m>A\xvec = \threevec{-1}{-3}{6}</m>.  Use the left inverse
-	  <m>B</m> to find <m>\xvec</m> and verify that it is a
+	  <m>A\vec{x} = \threevec{-1}{-3}{6}</m>.  Use the left inverse
+	  <m>B</m> to find <m>\vec{x}</m> and verify that it is a
 	  solution.  </p></li>
 
 	  <li><p> Now consider the matrix
@@ -464,9 +464,9 @@
 	</p></li>
 
 	<li><p>
-	  We find <m>\xvec=B\threevec{-1}{-3}{6} = \twovec{2}{-1}</m>,
+	  We find <m>\vec{x}=B\threevec{-1}{-3}{6} = \twovec{2}{-1}</m>,
 	  which is indeed a solution to the equation
-	  <m>A\xvec=\threevec{-1}{-3}{6}</m>.
+	  <m>A\vec{x}=\threevec{-1}{-3}{6}</m>.
 	</p></li>
 
 	<li><p>
@@ -483,7 +483,7 @@
 	</p></li>
 
 	<li><p>
-	  <m>\xvec= \twovec{2}{-1}</m>
+	  <m>\vec{x}= \twovec{2}{-1}</m>
 	</p></li>
 
 	<li><p>
@@ -756,12 +756,12 @@
 	  <m>\real^n</m>. </p></li> 
 
 	  <li><p> If <m>A</m> is invertible, then there is a
-	  nonzero solution to the homogeneous equation <m>A\xvec =
-	  \zerovec</m>. </p></li>
+	  nonzero solution to the homogeneous equation <m>A\vec{x} =
+	  \vec{0}</m>. </p></li>
 
 	  <li><p> If <m>A</m> is an <m>n\times n</m> matrix and the
-	  equation <m>A\xvec = \bvec</m> has a solution for every
-	  vector <m>\bvec</m>, then <m>A</m> is invertible. </p></li>
+	  equation <m>A\vec{x} = \vec{b}</m> has a solution for every
+	  vector <m>\vec{b}</m>, then <m>A</m> is invertible. </p></li>
 	</ol>
       </p>
     </statement>
@@ -790,8 +790,8 @@
 
 	<li><p>
 	  False. Since there is a pivot position in every column, the
-	  homogeneous equation <m>A\xvec=\zerovec</m> has only the
-	  zero solution <m>\xvec=\zerovec</m>.
+	  homogeneous equation <m>A\vec{x}=\vec{0}</m> has only the
+	  zero solution <m>\vec{x}=\vec{0}</m>.
 	</p></li>
 
 	<li><p>
@@ -909,7 +909,7 @@
 	  0 \amp 0 \amp -4 \\
 	  \end{array}\right].
 	</me>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1152,14 +1152,14 @@
 		<li>
 		  <p>
 		    Since <m>AB</m> is invertible, explain why any solution
-		    to the homogeneous equation <m>AB\xvec = \zerovec</m> is
-		    <m>\xvec=\zerovec</m>.
+		    to the homogeneous equation <m>AB\vec{x} = \vec{0}</m> is
+		    <m>\vec{x}=\vec{0}</m>.
 		  </p>
 		</li>
 		<li>
 		  <p> Use this fact to explain why any solution to
-		  <m>B\xvec = \zerovec</m> must be
-		  <m>\xvec=\zerovec</m>.
+		  <m>B\vec{x} = \vec{0}</m> must be
+		  <m>\vec{x}=\vec{0}</m>.
 		  </p>
 		</li>
 		<li>
@@ -1177,15 +1177,15 @@
 		<li>
 		  <p>
 		    Since <m>AB</m> is invertible, explain why the
-		    equation <m>AB\xvec=\bvec</m> is consistent for
-		    every vector <m>\bvec</m>.
+		    equation <m>AB\vec{x}=\vec{b}</m> is consistent for
+		    every vector <m>\vec{b}</m>.
 		  </p>
 		</li>
 		<li>
 		  <p>
-		    Using the fact that <m>AB\xvec = A(B\xvec) =
-		    \bvec</m> is consistent for every <m>\bvec</m>,
-		    explain why every equation <m>A\xvec = \bvec</m>
+		    Using the fact that <m>AB\vec{x} = A(B\vec{x}) =
+		    \vec{b}</m> is consistent for every <m>\vec{b}</m>,
+		    explain why every equation <m>A\vec{x} = \vec{b}</m>
 		    is consistent.
 		  </p>
 		</li>
@@ -1209,24 +1209,24 @@
 		<li>
 		  <p> Since <m>AB</m> is invertible, <m>AB\sim I</m>,
 		  which says that there is pivot position in every
-		  column.  Therefore, <m>\xvec=\zerovec</m> is the
-		  only solution to the equation <m>AB\xvec =
-		  \zerovec</m>.
+		  column.  Therefore, <m>\vec{x}=\vec{0}</m> is the
+		  only solution to the equation <m>AB\vec{x} =
+		  \vec{0}</m>.
 		  </p>
 		</li>
 		<li>
 		  <p>
-		    If <m>\xvec</m> is a solution to the equation
-		    <m>B\xvec = \zerovec</m>, then 
-		    <m>AB\xvec =
-		    A\zerovec = \zerovec</m>, which says that <m>\xvec
-		    = \zerovec</m>.
+		    If <m>\vec{x}</m> is a solution to the equation
+		    <m>B\vec{x} = \vec{0}</m>, then 
+		    <m>AB\vec{x} =
+		    A\vec{0} = \vec{0}</m>, which says that <m>\vec{x}
+		    = \vec{0}</m>.
 		  </p>
 		</li>
 		<li>
 		  <p>
 		    Since the only solution to the homogeneous
-		    equation <m>B\xvec = \zerovec</m> is the zero
+		    equation <m>B\vec{x} = \vec{0}</m> is the zero
 		    solution, we know that <m>B\sim I</m> so <m>B</m>
 		    is invertible.
 		  </p>
@@ -1241,16 +1241,16 @@
 		  <p>
 		    Since <m>AB</m> is invertible, the span of the
 		    columns of <m>AB</m> is <m>\real^n</m>, which says
-		    that every equation <m>AB\xvec = \bvec</m> is
+		    that every equation <m>AB\vec{x} = \vec{b}</m> is
 		    consistent.
 		  </p>
 		</li>
 		<li>
 		  <p>
 		    If <m>\yvec</m> is the solution to the equation
-		    <m>AB\xvec = \bvec</m>, then <m>B\yvec</m> satisfies
-		    <m>A(B\yvec) = \bvec</m>, which means that
-		    <m>A\xvec = \bvec</m> is consistent.
+		    <m>AB\vec{x} = \vec{b}</m>, then <m>B\yvec</m> satisfies
+		    <m>A(B\yvec) = \vec{b}</m>, which means that
+		    <m>A\vec{x} = \vec{b}</m> is consistent.
 		  </p>
 		</li>
 		<li>
@@ -1280,8 +1280,8 @@
 		</li>
 		<li>
 		  <p>
-		    If <m>B\xvec=\zerovec</m>, then <m>AB\xvec =
-		    \zerovec</m>. 
+		    If <m>B\vec{x}=\vec{0}</m>, then <m>AB\vec{x} =
+		    \vec{0}</m>. 
 		  </p>
 		</li>
 		<li>
@@ -1304,8 +1304,8 @@
 		<li>
 		  <p>
 		    A solution to 
-		    <m>AB\xvec = \bvec</m> produces a solution to
-		    <m>A\xvec = \bvec</m>.
+		    <m>AB\vec{x} = \vec{b}</m> produces a solution to
+		    <m>A\vec{x} = \vec{b}</m>.
 		  </p>
 		</li>
 		<li>
@@ -1332,10 +1332,10 @@
       This means that, if <m>B=A^{-1}</m>, then
       <m>A = B^{-1}</m>.
       <ol marker="a.">
-	<li><p> Suppose that <m>\xvec</m> is an <m>n</m>-dimensional
-	vector.  Since <m>AB=I</m>, explain why <m>AB\xvec =
-	\xvec</m> and use this to explain why the only vector for
-	which <m>B\xvec = \zerovec</m> is <m>\xvec = \zerovec</m>.
+	<li><p> Suppose that <m>\vec{x}</m> is an <m>n</m>-dimensional
+	vector.  Since <m>AB=I</m>, explain why <m>AB\vec{x} =
+	\vec{x}</m> and use this to explain why the only vector for
+	which <m>B\vec{x} = \vec{0}</m> is <m>\vec{x} = \vec{0}</m>.
 	</p> </li>
 
 	<li><p> Explain why this implies that <m>B</m> must be
@@ -1356,12 +1356,12 @@
     <solution>
       <p><ol marker="a.">
 	<li><p>
-	  If <m>B\xvec = \zerovec</m>,
-	  then <m>AB\xvec = A\zerovec = \zerovec = \xvec</m>.
+	  If <m>B\vec{x} = \vec{0}</m>,
+	  then <m>AB\vec{x} = A\vec{0} = \vec{0} = \vec{x}</m>.
 	</p></li>
 	<li><p>
 	  Since the only solution to the homogeneous equation
-	  <m>B\xvec = \zerovec</m> is <m>\xvec=\zerovec</m>, we know that
+	  <m>B\vec{x} = \vec{0}</m> is <m>\vec{x}=\vec{0}</m>, we know that
 	  the columns of <m>B</m> are linearly independent and so
 	  <m>B</m> has a pivot position in every column.  Since
 	  <m>B</m> is a square matrix, this tells us that <m>B\sim
@@ -1387,8 +1387,8 @@
     <answer>
       <p><ol marker="a.">
 	<li><p>
-	  If <m>B\xvec = \zerovec</m>, then <m>AB\xvec = \xvec =
-	  \zerovec</m>. 
+	  If <m>B\vec{x} = \vec{0}</m>, then <m>AB\vec{x} = \vec{x} =
+	  \vec{0}</m>. 
 	</p></li>
 
 	<li><p>
