@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -418,7 +418,7 @@ sagecell.makeSagecell({
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">The characteristic polynomial</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-4" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Finding eigenvectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-5" class="internal"><span class="codenumber">4.2.3</span> <span class="title">The characteristic polynomial and the dimension of eigenspaces</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Using Sage to find eigenvalues and eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-6" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Using Python to find eigenvalues and eigenvectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-7" class="internal"><span class="codenumber">4.2.5</span> <span class="title">Summary</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec-eigen-find.html#sec-eigen-find-8" class="internal"><span class="codenumber">4.2.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
@@ -604,9 +604,9 @@ sagecell.makeSagecell({
 <div class="para logical" id="sec-eigen-find-2-2-1-1">
 <div class="para">Let’s begin by reviewing some important ideas that we have seen previously.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-2-2-1-1-1">
-<li id="sec-eigen-find-2-2-1-1-1-1"><div class="para" id="sec-eigen-find-2-2-1-1-1-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix and that the nonzero vector <span class="process-math">\(\xvec\)</span> is a solution to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{.}\)</span>  What can we conclude about the invertibility of <span class="process-math">\(A\text{?}\)</span>
+<li id="sec-eigen-find-2-2-1-1-1-1"><div class="para" id="sec-eigen-find-2-2-1-1-1-1-1">Suppose that <span class="process-math">\(A\)</span> is a square matrix and that the nonzero vector <span class="process-math">\(\vec{x}\)</span> is a solution to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>  What can we conclude about the invertibility of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li id="sec-eigen-find-2-2-1-1-1-2"><div class="para" id="sec-eigen-find-2-2-1-1-1-2-1">How does the determinant <span class="process-math">\(\det(A)\)</span> tell us if there is a nonzero solution to the homogeneous equation <span class="process-math">\(A\xvec = \zerovec\text{?}\)</span>
+<li id="sec-eigen-find-2-2-1-1-1-2"><div class="para" id="sec-eigen-find-2-2-1-1-1-2-1">How does the determinant <span class="process-math">\(\det(A)\)</span> tell us if there is a nonzero solution to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-find-2-2-1-1-1-3"><div class="para logical" id="sec-eigen-find-2-2-1-1-1-3-1">
 <div class="para">Suppose that</div>
@@ -619,8 +619,8 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Find the determinant <span class="process-math">\(\det(A)\text{.}\)</span>  What does this tell us about the solution space to the homogeneous equation <span class="process-math">\(A\xvec
-= \zerovec\text{?}\)</span>
+<div class="para">Find the determinant <span class="process-math">\(\det(A)\text{.}\)</span>  What does this tell us about the solution space to the homogeneous equation <span class="process-math">\(A\vec{x}
+= \vec{0}\text{?}\)</span>
 </div>
 </div></li>
 <li id="sec-eigen-find-2-2-1-1-1-4"><div class="para" id="sec-eigen-find-2-2-1-1-1-4-1">Find a basis for <span class="process-math">\(\nul(A)\text{.}\)</span>
@@ -631,31 +631,31 @@ A = \left[\begin{array}{rrr}
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="space"> </span><span class="title">The characteristic polynomial</span>
 </h3>
 <div class="para logical" id="sec-eigen-find-3-2">
-<div class="para">We will first see that the eigenvalues of a square matrix appear as the roots of a particular polynomial.  To begin, notice that we originally defined an eigenvector as a nonzero vector <span class="process-math">\(\vvec\)</span> that satisfies the equation <span class="process-math">\(A\vvec =
-\lambda\vvec\text{.}\)</span>  We will rewrite this as</div>
+<div class="para">We will first see that the eigenvalues of a square matrix appear as the roots of a particular polynomial.  To begin, notice that we originally defined an eigenvector as a nonzero vector <span class="process-math">\(\vec{v}\)</span> that satisfies the equation <span class="process-math">\(A\vec{v} =
+\lambda\vec{v}\text{.}\)</span>  We will rewrite this as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-A\vvec \amp {}={} \lambda\vvec \\
-A\vvec - \lambda\vvec \amp {}={} \zerovec \\
-A\vvec - \lambda I\vvec \amp {}={} \zerovec \\
-(A-\lambda I)\vvec \amp {}={} \zerovec\text{.} \\
+A\vec{v} \amp {}={} \lambda\vec{v} \\
+A\vec{v} - \lambda\vec{v} \amp {}={} \vec{0} \\
+A\vec{v} - \lambda I\vec{v} \amp {}={} \vec{0} \\
+(A-\lambda I)\vec{v} \amp {}={} \vec{0}\text{.} \\
 \end{aligned}
 \end{equation*}
 </div>
-<div class="para">In other words, an eigenvector <span class="process-math">\(\vvec\)</span> is a solution of the homogeneous equation <span class="process-math">\((A-\lambda I)\vvec=\zerovec\text{.}\)</span>  This puts us in the familiar territory explored in the next activity.</div>
+<div class="para">In other words, an eigenvector <span class="process-math">\(\vec{v}\)</span> is a solution of the homogeneous equation <span class="process-math">\((A-\lambda I)\vec{v}=\vec{0}\text{.}\)</span>  This puts us in the familiar territory explored in the next activity.</div>
 </div>
 <article class="activity project-like" id="sec-eigen-find-3-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-eigen-find-3-3-1-1">
-<div class="para">The eigenvalues of a square matrix are defined by the condition that there be a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vvec=\zerovec\text{.}\)</span>
+<div class="para">The eigenvalues of a square matrix are defined by the condition that there be a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vec{v}=\vec{0}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-3-3-1-1-2">
-<li id="sec-eigen-find-3-3-1-1-2-1"><div class="para" id="sec-eigen-find-3-3-1-1-2-1-1">If there is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vvec = \zerovec\text{,}\)</span> what can we conclude about the invertibility of the matrix <span class="process-math">\(A-\lambda
+<li id="sec-eigen-find-3-3-1-1-2-1"><div class="para" id="sec-eigen-find-3-3-1-1-2-1-1">If there is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vec{v} = \vec{0}\text{,}\)</span> what can we conclude about the invertibility of the matrix <span class="process-math">\(A-\lambda
 I\text{?}\)</span>
 </div></li>
-<li id="sec-eigen-find-3-3-1-1-2-2"><div class="para" id="sec-eigen-find-3-3-1-1-2-2-1">If there is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vvec = \zerovec\text{,}\)</span> what can we conclude about the determinant <span class="process-math">\(\det(A-\lambda I)\text{?}\)</span>
+<li id="sec-eigen-find-3-3-1-1-2-2"><div class="para" id="sec-eigen-find-3-3-1-1-2-2-1">If there is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vec{v} = \vec{0}\text{,}\)</span> what can we conclude about the determinant <span class="process-math">\(\det(A-\lambda I)\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-find-3-3-1-1-2-3"><div class="para logical" id="sec-eigen-find-3-3-1-1-2-3-1">
 <div class="para">Let’s consider the matrix</div>
@@ -710,7 +710,7 @@ A-\lambda I =
 </ol>
 </div></article><div class="para logical" id="sec-eigen-find-3-4">
 <div class="para">This activity demonstrates a technique that enables us to find the eigenvalues of a square matrix <span class="process-math">\(A\text{.}\)</span>  Since an eigenvalue <span class="process-math">\(\lambda\)</span> is a scalar for which the equation <span class="process-math">\((A-\lambda
-I)\vvec = \zerovec\)</span> has a nonzero solution, it must be the case that <span class="process-math">\(A-\lambda I\)</span> is not invertible.  Therefore, its determinant is zero.  This gives us the equation</div>
+I)\vec{v} = \vec{0}\)</span> has a nonzero solution, it must be the case that <span class="process-math">\(A-\lambda I\)</span> is not invertible.  Therefore, its determinant is zero.  This gives us the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \det(A-\lambda I) = 0
@@ -796,8 +796,8 @@ I)\vvec = \zerovec\)</span> has a nonzero solution, it must be the case that <sp
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="space"> </span><span class="title">Finding eigenvectors</span>
 </h3>
 <div class="para" id="sec-eigen-find-4-2">Now that we can find the eigenvalues of a square matrix <span class="process-math">\(A\)</span> by solving the characteristic equation <span class="process-math">\(\det(A-\lambda
-I) = 0\text{,}\)</span> we will turn to the question of finding the eigenvectors associated to an eigenvalue <span class="process-math">\(\lambda\text{.}\)</span> The key, as before, is to note that an eigenvector is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vvec =
-\zerovec\text{.}\)</span>  In other words, the eigenvectors associated to an eigenvalue <span class="process-math">\(\lambda\)</span> form the null space <span class="process-math">\(\nul(A-\lambda
+I) = 0\text{,}\)</span> we will turn to the question of finding the eigenvectors associated to an eigenvalue <span class="process-math">\(\lambda\text{.}\)</span> The key, as before, is to note that an eigenvector is a nonzero solution to the homogeneous equation <span class="process-math">\((A-\lambda I)\vec{v} =
+\vec{0}\text{.}\)</span>  In other words, the eigenvectors associated to an eigenvalue <span class="process-math">\(\lambda\)</span> form the null space <span class="process-math">\(\nul(A-\lambda
 I)\text{.}\)</span>
 </div>
 <div class="para logical" id="sec-eigen-find-4-3">
@@ -820,9 +820,9 @@ E_\lambda = \nul(A-\lambda I)\text{.}
 1 \amp 2 \\
 2 \amp 1 \\
 \end{array}\right]
-\text{.}\)</span>  We have seen that <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue. Form the matrix <span class="process-math">\(A-3I\)</span> and find a basis for the eigenspace <span class="process-math">\(E_3 = \nul(A-3I)\text{.}\)</span> What is the dimension of this eigenspace? For each of the basis vectors <span class="process-math">\(\vvec\text{,}\)</span> verify that <span class="process-math">\(A\vvec = 3\vvec\text{.}\)</span>
+\text{.}\)</span>  We have seen that <span class="process-math">\(\lambda = 3\)</span> is an eigenvalue. Form the matrix <span class="process-math">\(A-3I\)</span> and find a basis for the eigenspace <span class="process-math">\(E_3 = \nul(A-3I)\text{.}\)</span> What is the dimension of this eigenspace? For each of the basis vectors <span class="process-math">\(\vec{v}\text{,}\)</span> verify that <span class="process-math">\(A\vec{v} = 3\vec{v}\text{.}\)</span>
 </div></li>
-<li id="sec-eigen-find-4-4-1-1-2-2"><div class="para" id="sec-eigen-find-4-4-1-1-2-2-1">We also saw that <span class="process-math">\(\lambda = -1\)</span> is an eigenvalue.  Form the matrix <span class="process-math">\(A-(-1)I\)</span> and find a basis for the eigenspace <span class="process-math">\(E_{-1}\text{.}\)</span>  What is the dimension of this eigenspace? For each of the basis vectors <span class="process-math">\(\vvec\text{,}\)</span> verify that <span class="process-math">\(A\vvec = -\vvec\text{.}\)</span>
+<li id="sec-eigen-find-4-4-1-1-2-2"><div class="para" id="sec-eigen-find-4-4-1-1-2-2-1">We also saw that <span class="process-math">\(\lambda = -1\)</span> is an eigenvalue.  Form the matrix <span class="process-math">\(A-(-1)I\)</span> and find a basis for the eigenspace <span class="process-math">\(E_{-1}\text{.}\)</span>  What is the dimension of this eigenspace? For each of the basis vectors <span class="process-math">\(\vec{v}\text{,}\)</span> verify that <span class="process-math">\(A\vec{v} = -\vec{v}\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-find-4-4-1-1-2-3"><div class="para" id="sec-eigen-find-4-4-1-1-2-3-1">Is it possible to form a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
@@ -872,11 +872,11 @@ A -4I =
 \end{bmatrix}.
 \end{equation*}
 </div>
-<div class="para">Since the eigenvectors <span class="process-math">\(\vvec = \twovec{v_1}{v_2}\)</span> are the solutions of the equation <span class="process-math">\((A-4I)\vvec=\zerovec\text{,}\)</span> we see that they are determined by the single equation <span class="process-math">\(v_1-\frac12 v_2 = 0\)</span> or <span class="process-math">\(v_1 =
+<div class="para">Since the eigenvectors <span class="process-math">\(\vec{v} = \twovec{v_1}{v_2}\)</span> are the solutions of the equation <span class="process-math">\((A-4I)\vec{v}=\vec{0}\text{,}\)</span> we see that they are determined by the single equation <span class="process-math">\(v_1-\frac12 v_2 = 0\)</span> or <span class="process-math">\(v_1 =
 \frac12v_2\text{.}\)</span>  Therefore the eigenvectors in <span class="process-math">\(E_4\)</span> have the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec=\twovec{v_1}{v_2} = \ctwovec{\frac12 v_2}{v_2} =
+\vec{v}=\twovec{v_1}{v_2} = \ctwovec{\frac12 v_2}{v_2} =
 v_2\ctwovec{1/2}{1}.
 \end{equation*}
 </div>
@@ -945,10 +945,10 @@ A-(-1)I = \begin{bmatrix}
 \end{bmatrix},
 \end{equation*}
 </div>
-<div class="para">which says that every two-dimensional vector <span class="process-math">\(\vvec\)</span> satisfies <span class="process-math">\((A-(-1)I)\vvec = \zerovec\text{.}\)</span>  Therefore, every vector is an eigenvector and so <span class="process-math">\(E_{-1} =
+<div class="para">which says that every two-dimensional vector <span class="process-math">\(\vec{v}\)</span> satisfies <span class="process-math">\((A-(-1)I)\vec{v} = \vec{0}\text{.}\)</span>  Therefore, every vector is an eigenvector and so <span class="process-math">\(E_{-1} =
 \real^2\text{.}\)</span>  This eigenspace is two-dimensional.</div>
 </div>
-<div class="para" id="sec-eigen-find-4-8-2">We can see this in another way.  The matrix transformation defined by <span class="process-math">\(A\)</span> rotates vectors by <span class="process-math">\(180^\circ\text{,}\)</span> which says that <span class="process-math">\(A\xvec = -\xvec\)</span> for every vector <span class="process-math">\(\xvec\text{.}\)</span>  In other words, every two-dimensional vector is an eigenvector with associated eigenvalue <span class="process-math">\(\lambda=-1\text{.}\)</span>
+<div class="para" id="sec-eigen-find-4-8-2">We can see this in another way.  The matrix transformation defined by <span class="process-math">\(A\)</span> rotates vectors by <span class="process-math">\(180^\circ\text{,}\)</span> which says that <span class="process-math">\(A\vec{x} = -\vec{x}\)</span> for every vector <span class="process-math">\(\vec{x}\text{.}\)</span>  In other words, every two-dimensional vector is an eigenvector with associated eigenvalue <span class="process-math">\(\lambda=-1\text{.}\)</span>
 </div></article><div class="para" id="sec-eigen-find-4-9">These last two examples illustrate two types of behavior when there is a single eigenvalue.  In one case, we are able to construct a basis of <span class="process-math">\(\real^2\)</span> using eigenvectors;  in the other, we are not.  We will explore this behavior more in the next subsection.</div>
 <article class="assemblage assemblage-like" id="sec-eigen-find-4-10"><h4 class="heading"><span class="title">A check on our work.</span></h4>
 <div class="para" id="sec-eigen-find-4-10-2">When finding eigenvalues and their associated eigenvectors in this way, we first find eigenvalues <span class="process-math">\(\lambda\)</span> by solving the characteristic equation.  If <span class="process-math">\(\lambda\)</span> is a solution to the characteristic equation, then <span class="process-math">\(A-\lambda I\)</span> is not invertible and, consequently, <span class="process-math">\(A-\lambda I\)</span> must contain a row without a pivot position.</div>
@@ -1090,7 +1090,7 @@ A-(-1)I = \begin{bmatrix}
 (\lambda_n-\lambda) = 0
 \end{equation*}
 </div>
-<div class="para">where there are <span class="process-math">\(n\)</span> distinct real eigenvalues, each of which has multiplicity <span class="process-math">\(1\text{.}\)</span>  In this case, the dimension of each of the eigenspaces <span class="process-math">\(\dim E_{\lambda_j} = 1\text{.}\)</span>  With a little work, it can be seen that choosing a basis vector <span class="process-math">\(\vvec_j\)</span> for each of the eigenspaces produces a basis for <span class="process-math">\(\real^n\text{.}\)</span>  We therefore have the following proposition.</div>
+<div class="para">where there are <span class="process-math">\(n\)</span> distinct real eigenvalues, each of which has multiplicity <span class="process-math">\(1\text{.}\)</span>  In this case, the dimension of each of the eigenspaces <span class="process-math">\(\dim E_{\lambda_j} = 1\text{.}\)</span>  With a little work, it can be seen that choosing a basis vector <span class="process-math">\(\vec{v_j}\)</span> for each of the eigenspaces produces a basis for <span class="process-math">\(\real^n\text{.}\)</span>  We therefore have the following proposition.</div>
 </div>
 <article class="proposition theorem-like" id="sec-eigen-find-5-14"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.2.14</span><span class="period">.</span>
@@ -1164,14 +1164,14 @@ A-(-1)I = \begin{bmatrix}
 </ol>
 </div></li>
 </ol></div></article></section><section class="subsection" id="sec-eigen-find-6"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Using Sage to find eigenvalues and eigenvectors</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Using Python to find eigenvalues and eigenvectors</span>
 </h3>
-<div class="para" id="sec-eigen-find-6-2">We can use Sage to find the characteristic polynomial, eigenvalues, and eigenvectors of a matrix.  As we will see, however, some care is required when dealing with matrices whose entries include decimals.</div>
+<div class="para" id="sec-eigen-find-6-2">We can use Python to find the characteristic polynomial, eigenvalues, and eigenvectors of a matrix defined using either <code class="code-inline tex2jax_ignore">{numpy}</code> or <code class="code-inline tex2jax_ignore">{sympy}</code>. For a matrix <code class="code-inline tex2jax_ignore">A</code> defined using <code class="code-inline tex2jax_ignore">np.array()</code>, we can use <code class="code-inline tex2jax_ignore">np.linalg.eig(A)</code>. If <code class="code-inline tex2jax_ignore">A</code> is defined using <code class="code-inline tex2jax_ignore">{sympy}</code>, then we can use <code class="code-inline tex2jax_ignore">A.eigenvals()</code> and <code class="code-inline tex2jax_ignore">A.eigenvects()</code>. As we will see, some care is required when dealing with matrices whose entries include decimals.</div>
 <article class="activity project-like" id="sec-eigen-find-6-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-eigen-find-6-3-1-1">
-<div class="para">We will use Sage to find the eigenvalues and eigenvectors of a matrix.  Let’s begin with the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
+<div class="para">We will use Python to find the eigenvalues and eigenvectors of a matrix.  Let’s begin with the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 -3 \amp 1 \\
 0 \amp -3 \\
 \end{array}\right]
@@ -1179,28 +1179,30 @@ A-(-1)I = \begin{bmatrix}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-6-3-1-1-2">
 <li id="sec-eigen-find-6-3-1-1-2-1">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-1-1">We can find the characteristic polynomial of <span class="process-math">\(A\)</span> by writing <code class="code-inline tex2jax_ignore">A.charpoly('lambda')</code>.  Notice that we have to give Sage a variable in which to write the polynomial;  here, we use <code class="code-inline tex2jax_ignore">lambda</code> though <code class="code-inline tex2jax_ignore">x</code> works just as well.</div>
-<div id="sec-eigen-find-6-3-1-1-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
-A.charpoly('lambda')
+<div class="para" id="sec-eigen-find-6-3-1-1-2-1-1">We can find the characteristic polynomial of <span class="process-math">\(A\)</span> by writing <code class="code-inline tex2jax_ignore">A.charpoly()</code>.</div>
+<div id="sec-eigen-find-6-3-1-1-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3,1], [0,-3]])
+A.charpoly()
 </script></div>
-<div class="para" id="sec-eigen-find-6-3-1-1-2-1-3">The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities.  The factored characteristic polynomial is found with <code class="code-inline tex2jax_ignore">A.fcp('lambda')</code>.</div>
-<div id="sec-eigen-find-6-3-1-1-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
-A.fcp('lambda')
+<div class="para" id="sec-eigen-find-6-3-1-1-2-1-3">The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities. Obtaining the factored form of the characteristic polynomial is a multistep process. First, we obtain the characteristic polynomial and store it. Then, we’ll convert the polynomial to an expression using the <code class="code-inline tex2jax_ignore">.as_expr()</code> method, and finally use <code class="code-inline tex2jax_ignore">sympy.factor()</code> to obtain the factored polynomial.</div>
+<div id="sec-eigen-find-6-3-1-1-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+A_char_poly = A.charpoly()
+A_char_poly = A_char_poly.as_expr()
+sympy.factor(A_char_poly)
 </script></div>
 </li>
 <li id="sec-eigen-find-6-3-1-1-2-2">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-2-1">If we only want the eigenvalues, we can use <code class="code-inline tex2jax_ignore">A.eigenvalues()</code>.</div>
-<div id="sec-eigen-find-6-3-1-1-2-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
-A.eigenvalues()
+<div class="para" id="sec-eigen-find-6-3-1-1-2-2-1">If we only want the eigenvalues, we can use <code class="code-inline tex2jax_ignore">A.eigenvals()</code>.</div>
+<div id="sec-eigen-find-6-3-1-1-2-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+A.eigenvals()
 </script></div>
 <div class="para" id="sec-eigen-find-6-3-1-1-2-2-3">Notice that the multiplicity of an eigenvalue is the number of times it is repeated in the list of eigenvalues.</div>
 </li>
 <li id="sec-eigen-find-6-3-1-1-2-3">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-3-1">Finally, we can find eigenvectors by <code class="code-inline tex2jax_ignore">A.eigenvectors_right()</code>.  (We are looking for <em class="emphasis">right</em> eigenvalues since the vector <span class="process-math">\(\vvec\)</span> appears to the right of <span class="process-math">\(A\)</span> in the definition <span class="process-math">\(A\vvec=\lambda \vvec\text{.}\)</span>)</div>
-<div id="sec-eigen-find-6-3-1-1-2-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[-3,1,0,-3])
-A.eigenvectors_right()
+<div class="para" id="sec-eigen-find-6-3-1-1-2-3-1">Finally, we can find eigenvectors by <code class="code-inline tex2jax_ignore">A.eigenvects()</code>.</div>
+<div id="sec-eigen-find-6-3-1-1-2-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+A.eigenvects()
 </script></div>
-<div class="para" id="sec-eigen-find-6-3-1-1-2-3-3">At first glance, the result of this command can be a little confusing to interpret.  What we see is a list with one entry for each eigenvalue.  For each eigenvalue, there is a triple consisting of (i) the eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> (ii) a basis for <span class="process-math">\(E_\lambda\text{,}\)</span> and (iii) the multiplicity of <span class="process-math">\(\lambda\text{.}\)</span>
+<div class="para" id="sec-eigen-find-6-3-1-1-2-3-3">At first glance, the result of this command can be a little confusing to interpret.  What we see is a list with one entry for each eigenvalue.  For each eigenvalue, there is a triple consisting of (i) the eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> (ii) the multiplicity of <span class="process-math">\(\lambda\text{,}\)</span> and (iii) a basis for <span class="process-math">\(E_\lambda\text{.}\)</span>
 </div>
 </li>
 <li id="sec-eigen-find-6-3-1-1-2-4"><div class="para logical" id="sec-eigen-find-6-3-1-1-2-4-1">
@@ -1211,23 +1213,17 @@ A.eigenvectors_right()
 \text{.}\)</span>
 </div>
 <ol class="decimal ol-marker-2" id="sec-eigen-find-6-3-1-1-2-4-1-3">
-<li id="sec-eigen-find-6-3-1-1-2-4-1-3-1"><div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-1-1">Without using Sage, find the eigenvalues of this matrix.</div></li>
+<li id="sec-eigen-find-6-3-1-1-2-4-1-3-1"><div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-1-1">Without using Python, find the eigenvalues of this matrix.</div></li>
 <li id="sec-eigen-find-6-3-1-1-2-4-1-3-2"><div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-2-1">What do you find for the reduced row echelon form of <span class="process-math">\(A-I\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-find-6-3-1-1-2-4-1-3-3">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-1">Let’s now use Sage to determine the reduced row echelon form of <span class="process-math">\(A-I\text{:}\)</span>
-</div>
-<div id="sec-eigen-find-6-3-1-1-2-4-1-3-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[0.4,0.3,0.6,0.7])
-(A-identity_matrix(2)).rref()
+<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-1">Let’s now use Python to determine the reduced row echelon form of <span class="process-math">\(A-I\)</span> (note that you can create an <span class="process-math">\(n\times n\)</span> identify matrix in Python using <code class="code-inline tex2jax_ignore">np.eye(n)</code>):</div>
+<div id="sec-eigen-find-6-3-1-1-2-4-1-3-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[0.4,0.3], [0.6,0.7]])
+(A-eye(2)).rref()
 </script></div>
-<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-3">What result does Sage report for the reduced row echelon form?  Why is this result not correct?</div>
+<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-3">What result does Python report for the reduced row echelon form?  Why is this result not correct?</div>
 </li>
-<li id="sec-eigen-find-6-3-1-1-2-4-1-3-4">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-4-1">Because the arithmetic Sage performs with floating point entries is only approximate, we are not able to find the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In this next chapter, we will learn how to address this issue.  In the meantime, we can get around this problem by writing the entries in the matrix as rational numbers:</div>
-<div id="sec-eigen-find-6-3-1-1-2-4-1-3-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[4/10,3/10,6/10,7/10])
-A.eigenvectors_right()
-</script></div>
-</li>
+<li id="sec-eigen-find-6-3-1-1-2-4-1-3-4"><div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-4-1">Because the arithmetic Python performs with floating point entries is only approximate, we are not able to find the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In this next chapter, we will learn how to address this issue.</div></li>
 </ol>
 </div></li>
 </ol>
@@ -1253,7 +1249,7 @@ A.eigenvectors_right()
 </div></li>
 <li id="sec-eigen-find-7-2-3-4"><div class="para" id="sec-eigen-find-7-2-3-4-1">If each of the eigenvalues is real and has multiplicity <span class="process-math">\(1\text{,}\)</span> then we can form a basis of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-eigen-find-7-2-3-5"><div class="para" id="sec-eigen-find-7-2-3-5-1">We can use Sage to find the eigenvalues and eigenvalues of matrices.  However, we need to be careful working with floating point numbers since floating point arithmetic is only an approximation.</div></li>
+<li id="sec-eigen-find-7-2-3-5"><div class="para" id="sec-eigen-find-7-2-3-5-1">We can use Python to find the eigenvalues and eigenvalues of matrices.  However, we need to be careful working with floating point numbers since floating point arithmetic is only an approximation.</div></li>
 </ul>
 </div></section><section class="exercises" id="sec-eigen-find-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="space"> </span><span class="title">Exercises</span>
@@ -1331,7 +1327,7 @@ A.eigenvectors_right()
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-eigen-find-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-eigen-find-8-5-1-1">
-<div class="para">For each of the following matrices, use Sage to determine its eigenvalues, their multiplicities, and a basis for each eigenspace.  For which matrices is it possible to construct a basis for <span class="process-math">\(\real^3\)</span> consisting of eigenvectors? <div id="sec-eigen-find-8-5-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">For each of the following matrices, use Python to determine its eigenvalues, their multiplicities, and a basis for each eigenspace.  For which matrices is it possible to construct a basis for <span class="process-math">\(\real^3\)</span> consisting of eigenvectors? <div id="sec-eigen-find-8-5-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-8-5-1-1-3">
@@ -1392,24 +1388,24 @@ A\text{?}\)</span>  What is the product of the eigenvalues of <span class="proce
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-8-7-1-1-2">
 <li id="sec-eigen-find-8-7-1-1-2-1"><div class="para" id="sec-eigen-find-8-7-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\)</span> and a basis for their associated eigenspaces.</div></li>
-<li id="sec-eigen-find-8-7-1-1-2-2"><div class="para" id="sec-eigen-find-8-7-1-1-2-2-1">Suppose that <span class="process-math">\(\xvec_0=\twovec{11}{6}\text{.}\)</span>  Express <span class="process-math">\(\xvec_0\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-eigen-find-8-7-1-1-2-2"><div class="para" id="sec-eigen-find-8-7-1-1-2-2-1">Suppose that <span class="process-math">\(\vec{x_0}=\twovec{11}{6}\text{.}\)</span>  Express <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-find-8-7-1-1-2-3"><div class="para logical" id="sec-eigen-find-8-7-1-1-2-3-1">
 <div class="para">Define the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\xvec_1 \amp {}={} A\xvec_0 \\
-\xvec_2 \amp {}={} A\xvec_1 = A^2\xvec_0 \\
-\xvec_3 \amp {}={} A\xvec_2 = A^3\xvec_0 \\
+\vec{x_1} \amp {}={} A\vec{x_0} \\
+\vec{x_2} \amp {}={} A\vec{x_1} = A^2\vec{x_0} \\
+\vec{x_3} \amp {}={} A\vec{x_2} = A^3\vec{x_0} \\
 \vdots \amp {}={} \vdots
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">Write <span class="process-math">\(\xvec_1\text{,}\)</span> <span class="process-math">\(\xvec_2\text{,}\)</span> and <span class="process-math">\(\xvec_3\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">Write <span class="process-math">\(\vec{x_1}\text{,}\)</span> <span class="process-math">\(\vec{x_2}\text{,}\)</span> and <span class="process-math">\(\vec{x_3}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-eigen-find-8-7-1-1-2-4"><div class="para" id="sec-eigen-find-8-7-1-1-2-4-1">What happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> grows larger and larger?</div></li>
+<li id="sec-eigen-find-8-7-1-1-2-4"><div class="para" id="sec-eigen-find-8-7-1-1-2-4-1">What happens to <span class="process-math">\(\vec{x_k}\)</span> as <span class="process-math">\(k\)</span> grows larger and larger?</div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-eigen-find-8-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-eigen-find-8-8-1-1">
@@ -1420,24 +1416,24 @@ A\text{?}\)</span>  What is the product of the eigenvalues of <span class="proce
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-8-8-1-1-2">
 <li id="sec-eigen-find-8-8-1-1-2-1"><div class="para" id="sec-eigen-find-8-8-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\)</span> and a basis for their associated eigenspaces.</div></li>
-<li id="sec-eigen-find-8-8-1-1-2-2"><div class="para" id="sec-eigen-find-8-8-1-1-2-2-1">Suppose that <span class="process-math">\(\xvec_0=\twovec{0}{1}\text{.}\)</span>  Express <span class="process-math">\(\xvec_0\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-eigen-find-8-8-1-1-2-2"><div class="para" id="sec-eigen-find-8-8-1-1-2-2-1">Suppose that <span class="process-math">\(\vec{x_0}=\twovec{0}{1}\text{.}\)</span>  Express <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-find-8-8-1-1-2-3"><div class="para logical" id="sec-eigen-find-8-8-1-1-2-3-1">
 <div class="para">Define the vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\xvec_1 \amp {}={} A\xvec_0 \\
-\xvec_2 \amp {}={} A\xvec_1 = A^2\xvec_0 \\
-\xvec_3 \amp {}={} A\xvec_2 = A^3\xvec_0 \\
+\vec{x_1} \amp {}={} A\vec{x_0} \\
+\vec{x_2} \amp {}={} A\vec{x_1} = A^2\vec{x_0} \\
+\vec{x_3} \amp {}={} A\vec{x_2} = A^3\vec{x_0} \\
 \vdots \amp {}={} \vdots
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-<div class="para">Write <span class="process-math">\(\xvec_1\text{,}\)</span> <span class="process-math">\(\xvec_2\text{,}\)</span> and <span class="process-math">\(\xvec_3\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">Write <span class="process-math">\(\vec{x_1}\text{,}\)</span> <span class="process-math">\(\vec{x_2}\text{,}\)</span> and <span class="process-math">\(\vec{x_3}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-eigen-find-8-8-1-1-2-4"><div class="para" id="sec-eigen-find-8-8-1-1-2-4-1">What happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> grows larger and larger?</div></li>
+<li id="sec-eigen-find-8-8-1-1-2-4"><div class="para" id="sec-eigen-find-8-8-1-1-2-4-1">What happens to <span class="process-math">\(\vec{x_k}\)</span> as <span class="process-math">\(k\)</span> grows larger and larger?</div></li>
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
