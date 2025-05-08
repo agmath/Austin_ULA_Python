@@ -20,13 +20,13 @@
       seen previously.  
       <ol marker="a.">
 	<li><p> Suppose that <m>A</m> is a square matrix and that
-	the nonzero vector <m>\xvec</m> is a solution to
-	the homogeneous equation <m>A\xvec = \zerovec</m>.  What can
+	the nonzero vector <m>\vec{x}</m> is a solution to
+	the homogeneous equation <m>A\vec{x} = \vec{0}</m>.  What can
 	we conclude about the invertibility of <m>A</m>?  </p></li>
 
 	<li><p> How does the determinant <m>\det(A)</m> tell us if
 	there is a nonzero solution to the homogeneous equation
-	<m>A\xvec = \zerovec</m>? </p></li>
+	<m>A\vec{x} = \vec{0}</m>? </p></li>
 
 	<li><p> Suppose that
 	<me>
@@ -37,8 +37,8 @@
 	  \end{array}\right]
 	</me>.
 	Find the determinant <m>\det(A)</m>.  What does this tell us
-	about the solution space to the homogeneous equation <m>A\xvec
-	= \zerovec</m>? </p></li>
+	about the solution space to the homogeneous equation <m>A\vec{x}
+	= \vec{0}</m>? </p></li>
 
 	<li><p> Find a basis for <m>\nul(A)</m>.</p></li>
 
@@ -53,7 +53,7 @@
 	  column so it is not invertible. </p></li>
 
 	  <li><p> If there is a nonzero solution to the homogeneous
-	  equation <m>A\xvec=\zerovec</m>, then <m>A</m> is not
+	  equation <m>A\vec{x}=\vec{0}</m>, then <m>A</m> is not
 	  invertible so <m>\det(A) = 0</m>. </p></li>
 
 	  <li><p> We find that <m>\det(A) = 0</m> so there is a nonzero
@@ -88,18 +88,18 @@
     <p> We will first see that the eigenvalues of a square matrix
     appear as the roots of a particular polynomial.  To begin, notice
     that we originally defined an eigenvector as a nonzero vector
-    <m>\vvec</m> that satisfies the equation <m>A\vvec =
-    \lambda\vvec</m>.  We will rewrite this as
+    <m>\vec{v}</m> that satisfies the equation <m>A\vec{v} =
+    \lambda\vec{v}</m>.  We will rewrite this as
     <me>
       \begin{aligned}
-      A\vvec \amp {}={} \lambda\vvec \\
-      A\vvec - \lambda\vvec \amp {}={} \zerovec \\
-      A\vvec - \lambda I\vvec \amp {}={} \zerovec \\
-      (A-\lambda I)\vvec \amp {}={} \zerovec\text{.} \\
+      A\vec{v} \amp {}={} \lambda\vec{v} \\
+      A\vec{v} - \lambda\vec{v} \amp {}={} \vec{0} \\
+      A\vec{v} - \lambda I\vec{v} \amp {}={} \vec{0} \\
+      (A-\lambda I)\vec{v} \amp {}={} \vec{0}\text{.} \\
       \end{aligned}
     </me>
-    In other words, an eigenvector <m>\vvec</m> is a solution of the
-    homogeneous equation <m>(A-\lambda I)\vvec=\zerovec</m>.  This
+    In other words, an eigenvector <m>\vec{v}</m> is a solution of the
+    homogeneous equation <m>(A-\lambda I)\vec{v}=\vec{0}</m>.  This
     puts us in the familiar territory explored in the next
     activity.
     </p>
@@ -108,15 +108,15 @@
       <statement>
       <p> The eigenvalues of a square matrix are defined by the
       condition that there be a nonzero solution to the homogeneous
-      equation <m>(A-\lambda I)\vvec=\zerovec</m>.
+      equation <m>(A-\lambda I)\vec{v}=\vec{0}</m>.
       <ol marker="a.">
 	<li><p> If there is a nonzero solution to the homogeneous
-	equation <m>(A-\lambda I)\vvec = \zerovec</m>, what can we
+	equation <m>(A-\lambda I)\vec{v} = \vec{0}</m>, what can we
 	conclude about the invertibility of the matrix <m>A-\lambda
 	I</m>? </p></li>
 
 	<li><p> If there is a nonzero solution to the homogeneous
-	equation <m>(A-\lambda I)\vvec = \zerovec</m>, what can we
+	equation <m>(A-\lambda I)\vec{v} = \vec{0}</m>, what can we
 	conclude about the determinant <m>\det(A-\lambda I)</m>?
 	</p></li>
 
@@ -241,7 +241,7 @@
     <p> This activity demonstrates a technique that enables us to find
     the eigenvalues of a square matrix <m>A</m>.  Since an eigenvalue
     <m>\lambda</m> is a scalar for which the equation <m>(A-\lambda
-    I)\vvec = \zerovec</m> has a nonzero solution, it must be the case
+    I)\vec{v} = \vec{0}</m> has a nonzero solution, it must be the case
     that <m>A-\lambda I</m> is not invertible.  Therefore, its
     determinant is zero.  This gives us the equation
     <me>
@@ -352,8 +352,8 @@
     I) = 0</m>, we will turn to the question of finding the
     eigenvectors associated to an eigenvalue <m>\lambda</m>. 
     The key, as before, is to note that an eigenvector is a nonzero
-    solution to the homogeneous equation <m>(A-\lambda I)\vvec =
-    \zerovec</m>.  In other words, the eigenvectors associated to an
+    solution to the homogeneous equation <m>(A-\lambda I)\vec{v} =
+    \vec{0}</m>.  In other words, the eigenvectors associated to an
     eigenvalue <m>\lambda</m> form the null space <m>\nul(A-\lambda
     I)</m>. </p>
 
@@ -386,15 +386,15 @@
 	Form the matrix <m>A-3I</m> and find a basis for the
 	eigenspace <m>E_3 = \nul(A-3I)</m>.
 	What is the dimension of this eigenspace?
-	For each of the basis vectors <m>\vvec</m>, verify
-	that <m>A\vvec = 3\vvec</m>. </p></li>
+	For each of the basis vectors <m>\vec{v}</m>, verify
+	that <m>A\vec{v} = 3\vec{v}</m>. </p></li>
 
 	<li><p> We also saw that <m>\lambda = -1</m> is an
 	eigenvalue.  Form the matrix <m>A-(-1)I</m> and find a basis
 	for the eigenspace <m>E_{-1}</m>.  What is the dimension of
 	this eigenspace? 
 	For each of the basis vectors
-	<m>\vvec</m>, verify that <m>A\vvec = -\vvec</m>. </p></li>
+	<m>\vec{v}</m>, verify that <m>A\vec{v} = -\vec{v}</m>. </p></li>
 
 	<li><p> Is it possible to form a basis of <m>\real^2</m>
 	consisting of eigenvectors of <m>A</m>? </p></li>
@@ -521,14 +521,14 @@
 	  \end{bmatrix}.
 	</me>
 	Since the eigenvectors
-	<m>\vvec = \twovec{v_1}{v_2}</m> are the solutions of the
-	equation <m>(A-4I)\vvec=\zerovec</m>, we see that they
+	<m>\vec{v} = \twovec{v_1}{v_2}</m> are the solutions of the
+	equation <m>(A-4I)\vec{v}=\vec{0}</m>, we see that they
 	are determined by the single
 	equation <m>v_1-\frac12 v_2 = 0</m> or <m>v_1 =
 	\frac12v_2</m>.  Therefore the 
 	eigenvectors in <m>E_4</m> have the form
 	<me>
-	  \vvec=\twovec{v_1}{v_2} = \ctwovec{\frac12 v_2}{v_2} =
+	  \vec{v}=\twovec{v_1}{v_2} = \ctwovec{\frac12 v_2}{v_2} =
 	  v_2\ctwovec{1/2}{1}.
 	</me>
 	In other words, <m>E_4</m> is a one-dimensional subspace of
@@ -597,8 +597,8 @@
 	  0 \amp 0 \\
 	  \end{bmatrix},
 	</me>
-	which says that every two-dimensional vector <m>\vvec</m>
-	satisfies <m>(A-(-1)I)\vvec = \zerovec</m>.  Therefore, every
+	which says that every two-dimensional vector <m>\vec{v}</m>
+	satisfies <m>(A-(-1)I)\vec{v} = \vec{0}</m>.  Therefore, every
 	vector is an eigenvector and so <m>E_{-1} =
 	\real^2</m>.  This eigenspace is two-dimensional.
       </p>
@@ -606,8 +606,8 @@
       <p>
 	We can see this in another way.  The matrix transformation
 	defined by <m>A</m> rotates vectors by <m>180^\circ</m>, which
-	says that <m>A\xvec = -\xvec</m> for every vector
-	<m>\xvec</m>.  In other words, every two-dimensional vector is
+	says that <m>A\vec{x} = -\vec{x}</m> for every vector
+	<m>\vec{x}</m>.  In other words, every two-dimensional vector is
 	an eigenvector with associated eigenvalue <m>\lambda=-1</m>.
       </p>
     </example>
@@ -842,7 +842,7 @@
     where there are <m>n</m> distinct real eigenvalues, each of which
     has multiplicity <m>1</m>.  In this case, the dimension of each of
     the eigenspaces <m>\dim E_{\lambda_j} = 1</m>.  With a little
-    work, it can be seen that choosing a basis vector <m>\vvec_j</m> for
+    work, it can be seen that choosing a basis vector <m>\vec{v_j}</m> for
     each of the eigenspaces produces a basis for <m>\real^n</m>.  We
     therefore have the following proposition. </p>
 
@@ -1051,18 +1051,21 @@
   </subsection>
 
   <subsection>
-    <title> Using Sage to find eigenvalues and
+    <title> Using Python to find eigenvalues and
     eigenvectors </title>
 
-    <p> We can use Sage to find the characteristic polynomial,
-    eigenvalues, and eigenvectors of a matrix.  As we will see,
-    however, some care is required when dealing with matrices whose
-    entries include decimals.  
+    <p> We can use Python to find the characteristic polynomial,
+    eigenvalues, and eigenvectors of a matrix defined using either 
+	<c>{numpy}</c> or <c>{sympy}</c>. For a matrix <c>A</c> defined using 
+	<c>np.array()</c>, we can use <c>np.linalg.eig(A)</c>. If <c>A</c> is
+	defined using <c>{sympy}</c>, then we can use <c>A.eigenvals()</c> and
+	<c>A.eigenvects()</c>. As we will see, some care is required when 
+	dealing with matrices whose entries include decimals.  
     </p>
 
     <activity>
       <statement>
-      <p> We will use Sage to find the eigenvalues and eigenvectors of
+      <p> We will use Python to find the eigenvalues and eigenvectors of
       a matrix.  Let's begin with the matrix
       <m>A = \left[\begin{array}{rr}
       -3 \amp 1 \\
@@ -1072,38 +1075,40 @@
       <ol marker="a.">
 	<li><p>
 	  We can find the characteristic polynomial of 
-	  <m>A</m> by writing 
-	  <c>A.charpoly('lambda')</c>.  Notice that we have to give Sage a
-	  variable in which to write the polynomial;  here, we use
-	  <c>lambda</c> though <c>x</c> works just as well. </p>
+	  <m>A</m> by writing <c>A.charpoly()</c>.</p>
 
-	  <sage>
+	  <sage language="python">
 	    <input>
-A = matrix(2,2,[-3,1,0,-3])
-A.charpoly('lambda')
+A = sympy.Matrix([[-3,1], [0,-3]])
+A.charpoly()
 	    </input>
 	  </sage>
 
 	  <p> The factored form of the characteristic polynomial may
 	  be more useful since it will tell us the eigenvalues and
-	  their multiplicities.  The factored characteristic polynomial is
-	  found with <c>A.fcp('lambda')</c>. </p>
+	  their multiplicities. Obtaining the factored form of the 
+	  characteristic polynomial is a multistep process. First, we 
+	obtain the characteristic polynomial and store it. Then, we'll 
+	convert the polynomial to an expression using the <c>.as_expr()</c> 
+	method, and finally use <c>sympy.factor()</c> to obtain the factored polynomial. </p>
 	  
-	  <sage>
+	  <sage language="python">
 	    <input>
-A = matrix(2,2,[-3,1,0,-3])
-A.fcp('lambda')
+A = sympy.Matrix([[-3.0,1], [0,-3]])
+A_char_poly = A.charpoly()
+A_char_poly = A_char_poly.as_expr()
+sympy.factor(A_char_poly)
 	    </input>
 	  </sage>
 	</li>
 
 	<li><p> If we only want the eigenvalues, we can use
-	<c>A.eigenvalues()</c>.  </p>
+	<c>A.eigenvals()</c>.  </p>
 
-	  <sage>
+	  <sage language="python">
 	    <input>
-A = matrix(2,2,[-3,1,0,-3])
-A.eigenvalues()
+A = sympy.Matrix([[-3.0,1], [0,-3]])
+A.eigenvals()
 	    </input>
 	  </sage>
 
@@ -1113,15 +1118,12 @@ A.eigenvalues()
 	</li>
 
 	<li><p> Finally, we can find eigenvectors by
-	<c>A.eigenvectors_right()</c>.  (We are looking for
-	<em>right</em> eigenvalues since the vector <m>\vvec</m>
-	appears to the right of <m>A</m> in the definition
-	<m>A\vvec=\lambda \vvec</m>.) </p>
+	<c>A.eigenvects()</c>.</p>
 	  
-	  <sage>
+	  <sage language="python">
 	    <input>
-A = matrix(2,2,[-3,1,0,-3])
-A.eigenvectors_right()
+A = sympy.Matrix([[-3.0,1], [0,-3]])
+A.eigenvects()
 	    </input>
 	  </sage>
 
@@ -1129,8 +1131,8 @@ A.eigenvectors_right()
 	  little confusing to interpret.  What we see is a list with
 	  one entry for each eigenvalue.  For each eigenvalue, there
 	  is a triple consisting of (i) the eigenvalue <m>\lambda</m>,
-	  (ii) a basis for <m>E_\lambda</m>, and (iii) the
-	  multiplicity of <m>\lambda</m>. </p> </li>
+	  (ii) the multiplicity of <m>\lambda</m>, and (iii) a basis 
+	  for <m>E_\lambda</m>. </p> </li>
 
 	  <li><p> When working with decimal entries, which are called
 	  <em>floating point numbers</em> in computer science, we must
@@ -1143,40 +1145,32 @@ A.eigenvectors_right()
 	  \end{array}\right]
 	  </m>.
 	  <ol marker="1.">
-	    <li><p> Without using Sage, find the eigenvalues of this
+	    <li><p> Without using Python, find the eigenvalues of this
 	    matrix.
 	    </p></li>
 
 	    <li><p> What do you find for the reduced row echelon form
 	    of <m>A-I</m>? </p></li>
 
-	    <li><p> Let's now use Sage to determine the reduced row
-	    echelon form of <m>A-I</m>: </p>
+	    <li><p> Let's now use Python to determine the reduced row
+	    echelon form of <m>A-I</m> (note that you can create an 
+		<m>n\times n</m> identify matrix in Python using <c>np.eye(n)</c>): </p>
 	      
-	    <sage>
+	    <sage language="python">
 	      <input>
-A = matrix(2,2,[0.4,0.3,0.6,0.7])
-(A-identity_matrix(2)).rref()
+A = sympy.Matrix([[0.4,0.3], [0.6,0.7]])
+(A-eye(2)).rref()
 	      </input>
 	    </sage>
 
-	    <p> What result does Sage report for the reduced row echelon
+	    <p> What result does Python report for the reduced row echelon
 	    form?  Why is this result not correct? </p>
 	    </li>
 	    
-	    <li><p> Because the arithmetic Sage performs with floating
+	    <li><p> Because the arithmetic Python performs with floating
 	    point entries is only approximate, we are not able to find
 	    the eigenspace <m>E_1</m>.  In this next chapter, we will
-	    learn how to address this issue.  In the meantime,
-	    we can get around this problem by writing the entries in
-	    the matrix as rational numbers: </p>
-
-	    <sage>
-	      <input>
-A = matrix(2,2,[4/10,3/10,6/10,7/10])
-A.eigenvectors_right()
-	      </input>
-	    </sage>
+	    learn how to address this issue.</p>
 	    </li>
 	  </ol></p>
 	  </li>
@@ -1208,7 +1202,7 @@ A.eigenvectors_right()
 	    is not invertible, as expected.
 	    </p></li>
 
-	    <li><p> Sage returns <m>\mattwo{1}{0}{0}{1}</m>, which is
+	    <li><p> Python returns <m>\mattwo{1}{0}{0}{1}</m>, which is
 	    not correct because <m>A-I</m> cannot be invertible if
 	    <m>\lambda=1</m> is an eigenvalue of <m>A</m>.
 	    </p></li>
@@ -1259,7 +1253,7 @@ A.eigenvectors_right()
       <m>1</m>, then we can form a basis of <m>\real^n</m> consisting
       of eigenvectors of <m>A</m>. </p></li>
 
-      <li><p> We can use Sage to find the eigenvalues and eigenvalues
+      <li><p> We can use Python to find the eigenvalues and eigenvalues
       of matrices.  However, we need to be careful working with
       floating point numbers since floating point arithmetic is only
       an approximation. </p></li>
