@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -599,7 +599,7 @@ sagecell.makeSagecell({
 </h2>
 <section class="introduction" id="sec-dynamical-2"><div class="para" id="sec-dynamical-2-1">The last section demonstrated ways in which we may relate a matrix, and the effect that multiplication has on vectors, to a simpler form.  For instance, if there is a basis of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{,}\)</span> we saw that <span class="process-math">\(A\)</span> is similar to a diagonal matrix <span class="process-math">\(D\text{.}\)</span>  As a result, the effect of multiplying vectors by <span class="process-math">\(A\text{,}\)</span> when expressed using the basis of eigenvectors, is the same as multiplying by <span class="process-math">\(D\text{.}\)</span>
 </div>
-<div class="para" id="sec-dynamical-2-2">In this section, we will put these ideas to use as we explore discrete dynamical systems, first encountered in <a href="sec-linear-trans.html#subsec-dynamical-systems" class="internal" title="Subsection 2.5.3: Discrete Dynamical Systems">Subsection 2.5.3</a>.  Recall that we used a state vector <span class="process-math">\(\xvec\)</span> to characterize the state of some system at a particular time, such as the distribution of delivery trucks between two locations. A matrix <span class="process-math">\(A\)</span> described the transition of the state vector with <span class="process-math">\(A\xvec\)</span> characterizing the state of the system at a later time.  Since we would like to understand how the state vector evolves over time, we are interested in studying the sequence of vectors <span class="process-math">\(A^k\xvec\text{.}\)</span>
+<div class="para" id="sec-dynamical-2-2">In this section, we will put these ideas to use as we explore discrete dynamical systems, first encountered in <a href="sec-linear-trans.html#subsec-dynamical-systems" class="internal" title="Subsection 2.5.3: Discrete Dynamical Systems">Subsection 2.5.3</a>.  Recall that we used a state vector <span class="process-math">\(\vec{x}\)</span> to characterize the state of some system at a particular time, such as the distribution of delivery trucks between two locations. A matrix <span class="process-math">\(A\)</span> described the transition of the state vector with <span class="process-math">\(A\vec{x}\)</span> characterizing the state of the system at a later time.  Since we would like to understand how the state vector evolves over time, we are interested in studying the sequence of vectors <span class="process-math">\(A^k\vec{x}\text{.}\)</span>
 </div>
 <div class="para" id="sec-dynamical-2-3">Our goal in this section is to describe the types of behaviors that dynamical systems exhibit and to develop a means of detecting these behaviors.</div>
 <article class="exploration project-like" id="sec-dynamical-2-4"><h3 class="heading">
@@ -621,10 +621,10 @@ D = \left[\begin{array}{rr}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-2-4-1-1-3">
 <li id="sec-dynamical-2-4-1-1-3-1"><div class="para" id="sec-dynamical-2-4-1-1-3-1-1">Find the eigenvalues of <span class="process-math">\(A\)</span> and find a basis for the associated eigenspaces.</div></li>
-<li id="sec-dynamical-2-4-1-1-3-2"><div class="para" id="sec-dynamical-2-4-1-1-3-2-1">Form a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> and write the vector <span class="process-math">\(\xvec = \twovec{1}{4}\)</span> as a linear combination of basis vectors.</div></li>
-<li id="sec-dynamical-2-4-1-1-3-3"><div class="para" id="sec-dynamical-2-4-1-1-3-3-1">Write <span class="process-math">\(A\xvec\)</span> as a linear combination of basis vectors.</div></li>
-<li id="sec-dynamical-2-4-1-1-3-4"><div class="para" id="sec-dynamical-2-4-1-1-3-4-1">For some power <span class="process-math">\(k\text{,}\)</span> write <span class="process-math">\(A^k\xvec\)</span> as a linear combination of basis vectors.</div></li>
-<li id="sec-dynamical-2-4-1-1-3-5"><div class="para" id="sec-dynamical-2-4-1-1-3-5-1">Find the vector <span class="process-math">\(A^5\xvec\text{.}\)</span>
+<li id="sec-dynamical-2-4-1-1-3-2"><div class="para" id="sec-dynamical-2-4-1-1-3-2-1">Form a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> and write the vector <span class="process-math">\(\vec{x} = \twovec{1}{4}\)</span> as a linear combination of basis vectors.</div></li>
+<li id="sec-dynamical-2-4-1-1-3-3"><div class="para" id="sec-dynamical-2-4-1-1-3-3-1">Write <span class="process-math">\(A\vec{x}\)</span> as a linear combination of basis vectors.</div></li>
+<li id="sec-dynamical-2-4-1-1-3-4"><div class="para" id="sec-dynamical-2-4-1-1-3-4-1">For some power <span class="process-math">\(k\text{,}\)</span> write <span class="process-math">\(A^k\vec{x}\)</span> as a linear combination of basis vectors.</div></li>
+<li id="sec-dynamical-2-4-1-1-3-5"><div class="para" id="sec-dynamical-2-4-1-1-3-5-1">Find the vector <span class="process-math">\(A^5\vec{x}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article></section><section class="subsection" id="sec-dynamical-3"><h3 class="heading hide-type">
@@ -648,7 +648,7 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 <div class="para">This is an example of a mutually beneficial relationship between two species.  If species <span class="process-math">\(S\)</span> is not present, then <span class="process-math">\(R_{k+1} = 0.9R_k\text{,}\)</span> which means that the population of species <span class="process-math">\(R\)</span> decreases every year.  However, species <span class="process-math">\(R\)</span> benefits from the presence of species <span class="process-math">\(S\text{,}\)</span> which helps <span class="process-math">\(R\)</span> to grow by 80% of the population of species <span class="process-math">\(S\text{.}\)</span>  In the same way, <span class="process-math">\(S\)</span> benefits from the presence of <span class="process-math">\(R\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="sec-dynamical-3-3-1-3">
-<div class="para">We will record the populations in a vector <span class="process-math">\(\xvec_k = \twovec{R_k}{S_k}\)</span> and note that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\)</span> where <span class="process-math">\(A = \left[\begin{array}{rr}
+<div class="para">We will record the populations in a vector <span class="process-math">\(\vec{x_k} = \twovec{R_k}{S_k}\)</span> and note that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\)</span> where <span class="process-math">\(A = \left[\begin{array}{rr}
 0.9 \amp 0.8 \\
 0.2 \amp 0.9 \\
 \end{array}\right]
@@ -659,58 +659,58 @@ S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
 <div class="para">Verify that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\vvec_1=\twovec{2}{1},\qquad
-\vvec_2=\twovec{-2}{1}
+\vec{v_1}=\twovec{2}{1},\qquad
+\vec{v_2}=\twovec{-2}{1}
 \end{equation*}
 </div>
 <div class="para">are eigenvectors of <span class="process-math">\(A\)</span> and find their respective eigenvalues.</div>
 </div></li>
-<li id="sec-dynamical-3-3-1-3-4-2"><div class="para" id="sec-dynamical-3-3-1-3-4-2-1">Suppose that initially <span class="process-math">\(\xvec_0 = \twovec{2}{3}\text{.}\)</span> Write <span class="process-math">\(\xvec_0\)</span> as a linear combination of the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-dynamical-3-3-1-3-4-2"><div class="para" id="sec-dynamical-3-3-1-3-4-2-1">Suppose that initially <span class="process-math">\(\vec{x_0} = \twovec{2}{3}\text{.}\)</span> Write <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of the eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
-<li id="sec-dynamical-3-3-1-3-4-3"><div class="para" id="sec-dynamical-3-3-1-3-4-3-1">Write the vectors <span class="process-math">\(\xvec_1\text{,}\)</span> <span class="process-math">\(\xvec_2\text{,}\)</span> and <span class="process-math">\(\xvec_3\)</span> as linear combinations of the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-dynamical-3-3-1-3-4-3"><div class="para" id="sec-dynamical-3-3-1-3-4-3-1">Write the vectors <span class="process-math">\(\vec{x_1}\text{,}\)</span> <span class="process-math">\(\vec{x_2}\text{,}\)</span> and <span class="process-math">\(\vec{x_3}\)</span> as linear combinations of the eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
-<li id="sec-dynamical-3-3-1-3-4-4"><div class="para" id="sec-dynamical-3-3-1-3-4-4-1">What happens to <span class="process-math">\(\xvec_k\)</span> after a very long time?</div></li>
+<li id="sec-dynamical-3-3-1-3-4-4"><div class="para" id="sec-dynamical-3-3-1-3-4-4-1">What happens to <span class="process-math">\(\vec{x_k}\)</span> after a very long time?</div></li>
 <li id="sec-dynamical-3-3-1-3-4-5"><div class="para" id="sec-dynamical-3-3-1-3-4-5-1">When <span class="process-math">\(k\)</span> becomes very large, what happens to the ratio of the populations <span class="process-math">\(R_k/S_k\text{?}\)</span>
 </div></li>
 <li id="sec-dynamical-3-3-1-3-4-6"><div class="para" id="sec-dynamical-3-3-1-3-4-6-1">After a very long time, by approximately what factor does the population of <span class="process-math">\(R\)</span> grow every year?  By approximately what factor does the population of <span class="process-math">\(S\)</span> grow every year?</div></li>
-<li id="sec-dynamical-3-3-1-3-4-7"><div class="para" id="sec-dynamical-3-3-1-3-4-7-1">If we begin instead with <span class="process-math">\(\xvec_0 =
+<li id="sec-dynamical-3-3-1-3-4-7"><div class="para" id="sec-dynamical-3-3-1-3-4-7-1">If we begin instead with <span class="process-math">\(\vec{x_0} =
 \twovec{4}{4}\text{,}\)</span> what eventually happens to the ratio <span class="process-math">\(R_k/S_k\)</span> as <span class="process-math">\(k\)</span> becomes very large?</div></li>
 </ol>
-</div></article><div class="para" id="sec-dynamical-3-4">This activity demonstrates the type of systems we will be considering.  In particular, we will have vectors <span class="process-math">\(\xvec_k\)</span> that describe the state of the system at time <span class="process-math">\(k\)</span> and a matrix <span class="process-math">\(A\)</span> that describes how the state evolves from one time to the next: <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span> The eigenvalues and eigenvectors of <span class="process-math">\(A\)</span> provide the key that helps us understand how the vectors <span class="process-math">\(\xvec_k\)</span> evolve and that enables us to make long-range predictions.</div>
+</div></article><div class="para" id="sec-dynamical-3-4">This activity demonstrates the type of systems we will be considering.  In particular, we will have vectors <span class="process-math">\(\vec{x_k}\)</span> that describe the state of the system at time <span class="process-math">\(k\)</span> and a matrix <span class="process-math">\(A\)</span> that describes how the state evolves from one time to the next: <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span> The eigenvalues and eigenvectors of <span class="process-math">\(A\)</span> provide the key that helps us understand how the vectors <span class="process-math">\(\vec{x_k}\)</span> evolve and that enables us to make long-range predictions.</div>
 <div class="para logical" id="sec-dynamical-3-5">
 <div class="para">Let’s look at the specific example in the previous activity more carefully.  We see that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec_{k+1} = A\xvec_k = 
+\vec{x_{k+1}} = A\vec{x_k} = 
 \left[\begin{array}{rr}
 0.9 \amp 0.8 \\
 0.2 \amp 0.9 \\
 \end{array}\right]
-\xvec_k
+\vec{x_k}
 \end{equation*}
 </div>
-<div class="para">and that the matrix <span class="process-math">\(A\)</span> has eigenvectors <span class="process-math">\(\vvec_1 =
-\twovec{2}{1}\)</span> and <span class="process-math">\(\vvec_2=\twovec{-2}{1}\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=1.3\)</span> and <span class="process-math">\(\lambda_2=0.5\text{.}\)</span>
+<div class="para">and that the matrix <span class="process-math">\(A\)</span> has eigenvectors <span class="process-math">\(\vec{v_1} =
+\twovec{2}{1}\)</span> and <span class="process-math">\(\vec{v_2}=\twovec{-2}{1}\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=1.3\)</span> and <span class="process-math">\(\lambda_2=0.5\text{.}\)</span>
 </div>
 </div>
 <div class="para logical" id="sec-dynamical-3-6">
-<div class="para">With initial populations <span class="process-math">\(\xvec_0=\twovec{2}{3}\text{,}\)</span> we have</div>
+<div class="para">With initial populations <span class="process-math">\(\vec{x_0}=\twovec{2}{3}\text{,}\)</span> we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\xvec_0 \amp {}={} 2\vvec_1 + 1\vvec_2 \\
-\xvec_1 \amp {}={} 1.3\cdot2\vvec_1 + 0.5\cdot1\vvec_2 \\
-\xvec_2 \amp {}={} 1.3^2\cdot2\vvec_1 + 0.5^2\cdot1\vvec_2 \\
-\xvec_k \amp {}={} 1.3^k\cdot2\vvec_1 + 0.5^k\cdot1\vvec_2. \\
+\vec{x_0} \amp {}={} 2\vec{v_1} + 1\vec{v_2} \\
+\vec{x_1} \amp {}={} 1.3\cdot2\vec{v_1} + 0.5\cdot1\vec{v_2} \\
+\vec{x_2} \amp {}={} 1.3^2\cdot2\vec{v_1} + 0.5^2\cdot1\vec{v_2} \\
+\vec{x_k} \amp {}={} 1.3^k\cdot2\vec{v_1} + 0.5^k\cdot1\vec{v_2}. \\
 \end{aligned}
 \end{equation*}
 </div>
 </div>
 <div class="para logical" id="sec-dynamical-3-7">
-<div class="para">Let’s shift our perspective slightly.  The eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a basis <span class="process-math">\(\bcal\)</span> of <span class="process-math">\(\real^2\text{,}\)</span> which says that <span class="process-math">\(A\)</span> is diagonalizable; that is, <span class="process-math">\(A = PDP^{-1}\)</span> where</div>
+<div class="para">Let’s shift our perspective slightly.  The eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> form a basis <span class="process-math">\(\bcal\)</span> of <span class="process-math">\(\real^2\text{,}\)</span> which says that <span class="process-math">\(A\)</span> is diagonalizable; that is, <span class="process-math">\(A = PDP^{-1}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-P = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+P = \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
 \end{array}\right] =
 \left[\begin{array}{rr}
 2 \amp -2 \\
@@ -724,24 +724,24 @@ D = \left[\begin{array}{rr}
 </div>
 </div>
 <div class="para logical" id="sec-dynamical-3-8">
-<div class="para">The coordinate system defined by the basis <span class="process-math">\(\bcal\)</span> can be used to express the state vectors.  For instance, we can write the initial state vector <span class="process-math">\(\xvec_0=\twovec{2}{3}= 2\vvec_1+\vvec_2\text{,}\)</span> which means that <span class="process-math">\(\coords{\xvec_0}{\bcal} = \twovec{2}{1}\text{.}\)</span>  Moreover, <span class="process-math">\(\xvec_1=A\xvec_0 = (1.3)\cdot2\vvec_1 + (0.5)\cdot1\vvec_2\)</span> so that</div>
+<div class="para">The coordinate system defined by the basis <span class="process-math">\(\bcal\)</span> can be used to express the state vectors.  For instance, we can write the initial state vector <span class="process-math">\(\vec{x_0}=\twovec{2}{3}= 2\vec{v_1}+\vec{v_2}\text{,}\)</span> which means that <span class="process-math">\(\coords{\vec{x_0}}{\bcal} = \twovec{2}{1}\text{.}\)</span>  Moreover, <span class="process-math">\(\vec{x_1}=A\vec{x_0} = (1.3)\cdot2\vec{v_1} + (0.5)\cdot1\vec{v_2}\)</span> so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\xvec_1}{\bcal} = \twovec{1.3\cdot 2}{0.5\cdot 1} =
-D\twovec21 = D\coords{\xvec_0}{\bcal}.
+\coords{\vec{x_1}}{\bcal} = \twovec{1.3\cdot 2}{0.5\cdot 1} =
+D\twovec21 = D\coords{\vec{x_0}}{\bcal}.
 \end{equation*}
 </div>
 <div class="para">In the same way,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
-\coords{\xvec_1}{\bcal} \amp {}={} D\coords{\xvec_0}{\bcal} =
+\coords{\vec{x_1}}{\bcal} \amp {}={} D\coords{\vec{x_0}}{\bcal} =
 \ctwovec{1.3\cdot 2}{0.5\cdot 1} \\
-\coords{\xvec_2}{\bcal} \amp {}={} D\coords{\xvec_1}{\bcal} =
+\coords{\vec{x_2}}{\bcal} \amp {}={} D\coords{\vec{x_1}}{\bcal} =
 \ctwovec{1.3^2\cdot 2}{0.5^2\cdot1} \\
-\coords{\xvec_3}{\bcal} \amp {}={} D\coords{\xvec_2}{\bcal} =
+\coords{\vec{x_3}}{\bcal} \amp {}={} D\coords{\vec{x_2}}{\bcal} =
 \ctwovec{1.3^3\cdot2}{0.5^3\cdot1} \\
-\coords{\xvec_k}{\bcal} \amp {}={} 
+\coords{\vec{x_k}}{\bcal} \amp {}={} 
 \ctwovec{1.3^k\cdot2}{0.5^k\cdot1}\text{.} \\
 \end{aligned}
 \end{equation*}
@@ -751,29 +751,29 @@ D\twovec21 = D\coords{\xvec_0}{\bcal}.
 <div class="para">More generally, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{A\xvec}{\bcal} = D\coords{\xvec}{\bcal},
+\coords{A\vec{x}}{\bcal} = D\coords{\vec{x}}{\bcal},
 \end{equation*}
 </div>
 <div class="para">which is a restatement of the fact that <span class="process-math">\(A\)</span> is similar to <span class="process-math">\(D\text{.}\)</span>
 </div>
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:55%;"><div class="para" id="sec-dynamical-3-10-1">Thinking about this geometrically, we begin with the vector <span class="process-math">\(\coords{\xvec_0}{\bcal}=\ctwovec{2}{1}\text{.}\)</span>  Subsequent vectors <span class="process-math">\(\coords{\xvec_k}{\bcal}\)</span> are obtained by scaling horizontally by a factor of <span class="process-math">\(1.3\)</span> and scaling vertically by a factor <span class="process-math">\(0.5\text{.}\)</span>  Notice how the points move along a curve away from the origin becoming ever closer to the horizontal axis. After a very long time, <span class="process-math">\(\coords{\xvec_k}{\bcal} \approx
+<div class="sbspanel top" style="width:55%;"><div class="para" id="sec-dynamical-3-10-1">Thinking about this geometrically, we begin with the vector <span class="process-math">\(\coords{\vec{x_0}}{\bcal}=\ctwovec{2}{1}\text{.}\)</span>  Subsequent vectors <span class="process-math">\(\coords{\vec{x_k}}{\bcal}\)</span> are obtained by scaling horizontally by a factor of <span class="process-math">\(1.3\)</span> and scaling vertically by a factor <span class="process-math">\(0.5\text{.}\)</span>  Notice how the points move along a curve away from the origin becoming ever closer to the horizontal axis. After a very long time, <span class="process-math">\(\coords{\vec{x_k}}{\bcal} \approx
 \ctwovec{1.3^k\cdot2}{0}\text{.}\)</span>
 </div></div>
 <div class="sbspanel top" style="width:45%;"><img src="external/images/eigen-dynamical-intro.svg" role="img" class="contained"></div>
 </div></div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel top" style="width:55%;"><div class="para" id="sec-dynamical-3-11-1">To recover the behavior of the sequence <span class="process-math">\(\xvec_0, \xvec_1,
-\xvec_2, \ldots\text{,}\)</span> we change coordinate systems using the basis defined by <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  Here, the points move along a curve away from the origin becoming ever closer to the line defined by <span class="process-math">\(\vvec_1\text{.}\)</span>
+<div class="sbspanel top" style="width:55%;"><div class="para" id="sec-dynamical-3-11-1">To recover the behavior of the sequence <span class="process-math">\(\vec{x_0}, \vec{x_1},
+\vec{x_2}, \ldots\text{,}\)</span> we change coordinate systems using the basis defined by <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>  Here, the points move along a curve away from the origin becoming ever closer to the line defined by <span class="process-math">\(\vec{v_1}\text{.}\)</span>
 </div></div>
 <div class="sbspanel top" style="width:45%;"><img src="external/images/eigen-dynamical-intro-1.svg" role="img" class="contained"></div>
 </div></div>
 <div class="para logical" id="sec-dynamical-3-12">
-<div class="para">Eventually, the vectors become practically indistinguishable from a scalar multiple of <span class="process-math">\(\vvec_1 = \twovec{2}{1}\)</span> since <span class="process-math">\(\xvec_k\approx 1.3^k\cdot2\vvec_1\text{.}\)</span>  This means that</div>
+<div class="para">Eventually, the vectors become practically indistinguishable from a scalar multiple of <span class="process-math">\(\vec{v_1} = \twovec{2}{1}\)</span> since <span class="process-math">\(\vec{x_k}\approx 1.3^k\cdot2\vec{v_1}\text{.}\)</span>  This means that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec_k = \twovec{R_k}{S_k} \approx 1.3^k\cdot 2\vvec_1 = 
+\vec{x_k} = \twovec{R_k}{S_k} \approx 1.3^k\cdot 2\vec{v_1} = 
 \twovec{1.3^k\cdot4}{1.3^k\cdot2}.
 \end{equation*}
 </div>
@@ -786,18 +786,18 @@ R_k/S_k \approx (1.3^k\cdot 4) / (1.3^k\cdot 2) = 2
 <div class="para">so that we expect the population of species <span class="process-math">\(R\)</span> to eventually be about twice that of species <span class="process-math">\(S\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="sec-dynamical-3-13">In addition, <span class="process-math">\(\xvec_{k+1}
-\approx 1.3\xvec_k\)</span> so that <span class="process-math">\(R_{k+1}\approx 1.3 R_k\)</span> and <span class="process-math">\(S_{k+1}\approx 1.3 S_k\text{,}\)</span> which tells us that both populations are multiplied by 1.3 every year meaning the annual growth rate for both populations is about 30%.</div>
-<div class="para" id="sec-dynamical-3-14">In the same way, we can consider other possible initial populations <span class="process-math">\(\xvec_0\)</span> as shown in <a href="sec-dynamical.html#fig-eigen-dynam-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-dynam-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.1">Figure 4.4.1</a>.  Regardless of <span class="process-math">\(\xvec_0\text{,}\)</span> the population vectors, in the coordinates defined by <span class="process-math">\(\bcal\text{,}\)</span> are scaled horizontally by a factor of <span class="process-math">\(1.3\)</span> and vertically by a factor of <span class="process-math">\(0.5\text{.}\)</span>  The sequence of points <span class="process-math">\(\coords{\xvec_k}{\bcal}\text{,}\)</span> called <em class="emphasis">trajectories</em>, move along the curves, as shown on the left.  In the standard coordinate system, we see that the trajectories converge to the eigenspace <span class="process-math">\(E_{1.3}\text{.}\)</span>
+<div class="para" id="sec-dynamical-3-13">In addition, <span class="process-math">\(\vec{x_{k+1}}
+\approx 1.3\vec{x_k}\)</span> so that <span class="process-math">\(R_{k+1}\approx 1.3 R_k\)</span> and <span class="process-math">\(S_{k+1}\approx 1.3 S_k\text{,}\)</span> which tells us that both populations are multiplied by 1.3 every year meaning the annual growth rate for both populations is about 30%.</div>
+<div class="para" id="sec-dynamical-3-14">In the same way, we can consider other possible initial populations <span class="process-math">\(\vec{x_0}\)</span> as shown in <a href="sec-dynamical.html#fig-eigen-dynam-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-dynam-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.1">Figure 4.4.1</a>.  Regardless of <span class="process-math">\(\vec{x_0}\text{,}\)</span> the population vectors, in the coordinates defined by <span class="process-math">\(\bcal\text{,}\)</span> are scaled horizontally by a factor of <span class="process-math">\(1.3\)</span> and vertically by a factor of <span class="process-math">\(0.5\text{.}\)</span>  The sequence of points <span class="process-math">\(\coords{\vec{x_k}}{\bcal}\text{,}\)</span> called <em class="emphasis">trajectories</em>, move along the curves, as shown on the left.  In the standard coordinate system, we see that the trajectories converge to the eigenspace <span class="process-math">\(E_{1.3}\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-eigen-dynam-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-dynam-saddle.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.1<span class="period">.</span></span><span class="space"> </span>The trajectories of the dynamical system formed by the matrix <span class="process-math">\(A\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{,}\)</span> on the left, and in the standard coordinate system, on the right.</figcaption></figure><div class="para" id="sec-dynamical-3-16">We conclude that, regardless of the initial populations, the ratio of the populations <span class="process-math">\(R_k/S_k\)</span> will approach 2 to 1 and that the growth rate for both populations approaches 30%.  This example demonstrates the power of using eigenvalues and eigenvectors to rewrite the problem in terms of a new coordinate system.  By doing so, we are able to predict the long-term behavior of the populations independently of the initial populations.</div>
 <div class="para" id="sec-dynamical-3-17">Diagrams like those shown in <a href="sec-dynamical.html#fig-eigen-dynam-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-dynam-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.1">Figure 4.4.1</a> are called <em class="emphasis">phase portraits.</em> On the left of <a href="sec-dynamical.html#fig-eigen-dynam-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-dynam-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.1">Figure 4.4.1</a> is the phase portrait of the diagonal matrix <span class="process-math">\(D=\mattwo{1.3}00{0.5}\)</span> while the right of that figure shows the phase portrait of <span class="process-math">\(A =
-\mattwo{0.9}{0.8}{0.2}{0.9}\text{.}\)</span>  The phase portrait of <span class="process-math">\(D\)</span> is relatively easy to understand because it is determined only by the two eigenvalues.  Once we have the phase portrait of <span class="process-math">\(D\text{,}\)</span> however, the phase portrait of <span class="process-math">\(A\)</span> has a similar appearance with the eigenvectors <span class="process-math">\(\vvec_j\)</span> replacing the standard basis vectors <span class="process-math">\(\evec_j\text{.}\)</span>
+\mattwo{0.9}{0.8}{0.2}{0.9}\text{.}\)</span>  The phase portrait of <span class="process-math">\(D\)</span> is relatively easy to understand because it is determined only by the two eigenvalues.  Once we have the phase portrait of <span class="process-math">\(D\text{,}\)</span> however, the phase portrait of <span class="process-math">\(A\)</span> has a similar appearance with the eigenvectors <span class="process-math">\(\vec{v_j}\)</span> replacing the standard basis vectors <span class="process-math">\(\vec{e_j}\text{.}\)</span>
 </div></section><section class="subsection" id="sec-dynamical-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="space"> </span><span class="title">Classifying dynamical systems</span>
 </h3>
-<div class="para" id="sec-dynamical-4-2">In the previous example, we were able to make predictions about the behavior of trajectories <span class="process-math">\(\xvec_k=A^k\xvec_0\)</span> by considering the eigenvalues and eigenvectors of the matrix <span class="process-math">\(A\text{.}\)</span>  The next activity looks at a collection of matrices that demonstrate the types of behavior a <span class="process-math">\(2\times2\)</span> dynamical system can exhibit.</div>
+<div class="para" id="sec-dynamical-4-2">In the previous example, we were able to make predictions about the behavior of trajectories <span class="process-math">\(\vec{x_k}=A^k\vec{x_0}\)</span> by considering the eigenvalues and eigenvectors of the matrix <span class="process-math">\(A\text{.}\)</span>  The next activity looks at a collection of matrices that demonstrate the types of behavior a <span class="process-math">\(2\times2\)</span> dynamical system can exhibit.</div>
 <article class="activity project-like" id="sec-dynamical-4-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="period">.</span>
 </h4>
@@ -806,7 +806,7 @@ R_k/S_k \approx (1.3^k\cdot 4) / (1.3^k\cdot 2) = 2
 1 \amp -1 \\
 1 \amp 1 \\
 \end{array}\right]
-\text{,}\)</span> we note that the columns of <span class="process-math">\(P\)</span> form a basis <span class="process-math">\(\bcal\)</span> of <span class="process-math">\(\real^2\text{.}\)</span>  Given below are several matrices <span class="process-math">\(A\)</span> written in the form <span class="process-math">\(A=PEP^{-1}\)</span> for some matrix <span class="process-math">\(E\text{.}\)</span>  For each matrix, state the eigenvalues of <span class="process-math">\(A\)</span> and sketch a phase portrait for the matrix <span class="process-math">\(E\)</span> on the left and a phase portrait for <span class="process-math">\(A\)</span> on the right. Describe the behavior of <span class="process-math">\(A^k\xvec_0\)</span> as <span class="process-math">\(k\)</span> becomes very large for a typical initial vector <span class="process-math">\(\xvec_0\text{.}\)</span>
+\text{,}\)</span> we note that the columns of <span class="process-math">\(P\)</span> form a basis <span class="process-math">\(\bcal\)</span> of <span class="process-math">\(\real^2\text{.}\)</span>  Given below are several matrices <span class="process-math">\(A\)</span> written in the form <span class="process-math">\(A=PEP^{-1}\)</span> for some matrix <span class="process-math">\(E\text{.}\)</span>  For each matrix, state the eigenvalues of <span class="process-math">\(A\)</span> and sketch a phase portrait for the matrix <span class="process-math">\(E\)</span> on the left and a phase portrait for <span class="process-math">\(A\)</span> on the right. Describe the behavior of <span class="process-math">\(A^k\vec{x_0}\)</span> as <span class="process-math">\(k\)</span> becomes very large for a typical initial vector <span class="process-math">\(\vec{x_0}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-4-3-1-1-14">
 <li id="sec-dynamical-4-3-1-1-14-1">
@@ -876,37 +876,37 @@ R_k/S_k \approx (1.3^k\cdot 4) / (1.3^k\cdot 2) = 2
 <ul class="disc" id="sec-dynamical-4-4-2">
 <li id="sec-dynamical-4-4-2-1">
 <div class="para" id="sec-dynamical-4-4-2-1-1">Suppose that <span class="process-math">\(A\)</span> has two real eigenvalues <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> and that both <span class="process-math">\(|\lambda_1|, |\lambda_2| \gt
-1\text{.}\)</span>  In this case, any nonzero vector <span class="process-math">\(\xvec_0\)</span> forms a trajectory that moves away from the origin so we say that the origin is a <em class="emphasis">repellor</em>.   This is illustrated in <a href="sec-dynamical.html#fig-eigen-phase-repellor" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-repellor.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.2">Figure 4.4.2</a>.</div>
+1\text{.}\)</span>  In this case, any nonzero vector <span class="process-math">\(\vec{x_0}\)</span> forms a trajectory that moves away from the origin so we say that the origin is a <em class="emphasis">repellor</em>.   This is illustrated in <a href="sec-dynamical.html#fig-eigen-phase-repellor" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-repellor.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.2">Figure 4.4.2</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-repellor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-repellor.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.2<span class="period">.</span></span><span class="space"> </span>The origin is a repellor when <span class="process-math">\(|\lambda_1|,
 |\lambda_2| \gt 1\text{.}\)</span></figcaption></figure>
 </li>
 <li id="sec-dynamical-4-4-2-2">
 <div class="para" id="sec-dynamical-4-4-2-2-1">Suppose that <span class="process-math">\(A\)</span> has two real eigenvalues <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> and that <span class="process-math">\(|\lambda_1| \gt 1 \gt |\lambda_2|
-\text{.}\)</span>  In this case, most nonzero vectors <span class="process-math">\(\xvec_0\)</span> form trajectories that converge to the eigenspace <span class="process-math">\(E_{\lambda_1}\text{.}\)</span>  In this case, we say that the origin is a <em class="emphasis">saddle</em> as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.3">Figure 4.4.3</a>.</div>
+\text{.}\)</span>  In this case, most nonzero vectors <span class="process-math">\(\vec{x_0}\)</span> form trajectories that converge to the eigenspace <span class="process-math">\(E_{\lambda_1}\text{.}\)</span>  In this case, we say that the origin is a <em class="emphasis">saddle</em> as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.3">Figure 4.4.3</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-saddle.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.3<span class="period">.</span></span><span class="space"> </span>The origin is a saddle when <span class="process-math">\(|\lambda_1|\gt 1 \gt
 |\lambda_2|\text{.}\)</span></figcaption></figure>
 </li>
 <li id="sec-dynamical-4-4-2-3">
 <div class="para" id="sec-dynamical-4-4-2-3-1">Suppose that <span class="process-math">\(A\)</span> has two real eigenvalues <span class="process-math">\(\lambda_1\)</span> and <span class="process-math">\(\lambda_2\)</span> and that both <span class="process-math">\(|\lambda_1|, |\lambda_2| \lt
-1\text{.}\)</span>  In this case, any nonzero vector <span class="process-math">\(\xvec_0\)</span> forms a trajectory that moves into the origin so we say that the origin is an <em class="emphasis">attractor</em>.   This is illustrated in <a href="sec-dynamical.html#fig-eigen-phase-attractor" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-attractor.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.4">Figure 4.4.4</a>.</div>
+1\text{.}\)</span>  In this case, any nonzero vector <span class="process-math">\(\vec{x_0}\)</span> forms a trajectory that moves into the origin so we say that the origin is an <em class="emphasis">attractor</em>.   This is illustrated in <a href="sec-dynamical.html#fig-eigen-phase-attractor" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-attractor.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.4">Figure 4.4.4</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-attractor"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-attractor.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.4<span class="period">.</span></span><span class="space"> </span>The origin is an attractor when <span class="process-math">\(|\lambda_1|,
 |\lambda_2| \lt 1\text{.}\)</span></figcaption></figure>
 </li>
 <li id="sec-dynamical-4-4-2-4">
-<div class="para" id="sec-dynamical-4-4-2-4-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| \gt 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\xvec_0\)</span> forms a trajectory that spirals away from the origin.  We say that the origin is a <em class="emphasis">spiral repellor</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-spiralr" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-spiralr.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.5">Figure 4.4.5</a>.</div>
+<div class="para" id="sec-dynamical-4-4-2-4-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| \gt 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\vec{x_0}\)</span> forms a trajectory that spirals away from the origin.  We say that the origin is a <em class="emphasis">spiral repellor</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-spiralr" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-spiralr.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.5">Figure 4.4.5</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-spiralr"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-spiralr.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.5<span class="period">.</span></span><span class="space"> </span>The origin is a spiral repellor when <span class="process-math">\(A\)</span> has an eigenvalue <span class="process-math">\(\lambda=a+bi\)</span> with <span class="process-math">\(a^2+b^2\gt 1\text{.}\)</span></figcaption></figure>
 </li>
 <li id="sec-dynamical-4-4-2-5">
-<div class="para" id="sec-dynamical-4-4-2-5-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| = 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\xvec_0\)</span> forms a trajectory that moves on a closed curve around the origin.  We say that the origin is a <em class="emphasis">center</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-center" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-center.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.6">Figure 4.4.6</a>.</div>
+<div class="para" id="sec-dynamical-4-4-2-5-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| = 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\vec{x_0}\)</span> forms a trajectory that moves on a closed curve around the origin.  We say that the origin is a <em class="emphasis">center</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-center" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-center.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.6">Figure 4.4.6</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-center"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-center.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.6<span class="period">.</span></span><span class="space"> </span>The origin is a center when <span class="process-math">\(A\)</span> has an eigenvalue <span class="process-math">\(\lambda=a+bi\)</span> with <span class="process-math">\(a^2+b^2 = 1\text{.}\)</span></figcaption></figure>
 </li>
 <li id="sec-dynamical-4-4-2-6">
-<div class="para" id="sec-dynamical-4-4-2-6-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| \lt 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\xvec_0\)</span> forms a trajectory that spirals into the origin.  We say that the origin is a <em class="emphasis">spiral attractor</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-spirala" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-spirala.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.7">Figure 4.4.7</a>.</div>
+<div class="para" id="sec-dynamical-4-4-2-6-1">Suppose that <span class="process-math">\(A\)</span> has a complex eigenvalue <span class="process-math">\(\lambda = a+bi\)</span> where <span class="process-math">\(|\lambda| \lt 1\text{.}\)</span>  In this case, a nonzero vector <span class="process-math">\(\vec{x_0}\)</span> forms a trajectory that spirals into the origin.  We say that the origin is a <em class="emphasis">spiral attractor</em>, as illustrated in <a href="sec-dynamical.html#fig-eigen-phase-spirala" class="xref" data-knowl="./knowl/xref/fig-eigen-phase-spirala.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.7">Figure 4.4.7</a>.</div>
 <figure class="figure figure-like" id="fig-eigen-phase-spirala"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-phase-spirala.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.7<span class="period">.</span></span><span class="space"> </span>The origin is a spiral attractor when <span class="process-math">\(A\)</span> has an eigenvalue <span class="process-math">\(\lambda=a+bi\)</span> with <span class="process-math">\(a^2+b^2\lt 1\text{.}\)</span></figcaption></figure>
 </li>
@@ -917,10 +917,10 @@ R_k/S_k \approx (1.3^k\cdot 4) / (1.3^k\cdot 2) = 2
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-dynamical-4-6-1-1">
-<div class="para">In this activity, we will consider several ways in which two species might interact with one another.  Throughout, we will consider two species <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> whose populations in year <span class="process-math">\(k\)</span> form a vector <span class="process-math">\(\xvec_k=\twovec{R_k}{S_k}\)</span> and which evolve according to the rule</div>
+<div class="para">In this activity, we will consider several ways in which two species might interact with one another.  Throughout, we will consider two species <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> whose populations in year <span class="process-math">\(k\)</span> form a vector <span class="process-math">\(\vec{x_k}=\twovec{R_k}{S_k}\)</span> and which evolve according to the rule</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec_{k+1}=A\xvec_k\text{.}
+\vec{x_{k+1}}=A\vec{x_k}\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-4-6-1-1-6">
@@ -956,19 +956,19 @@ R_k/S_k \approx (1.3^k\cdot 4) / (1.3^k\cdot 2) = 2
 </div></article></section><section class="subsection" id="sec-dynamical-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.3</span><span class="space"> </span><span class="title">A <span class="process-math">\(3\times3\)</span> system</span>
 </h3>
-<div class="para" id="sec-dynamical-5-2">Up to this point, we have focused on <span class="process-math">\(2\times2\)</span> systems. In fact, the general case is quite similar.  As an example, consider a <span class="process-math">\(3\times3\)</span> system <span class="process-math">\(\xvec_{k+1}=A\xvec_k\)</span> where the matrix <span class="process-math">\(A\)</span> has eigenvalues <span class="process-math">\(\lambda_1 = 0.6\text{,}\)</span> <span class="process-math">\(\lambda_2 = 0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3=1.1\text{.}\)</span>  Since the eigenvalues are real and distinct, there is a basis <span class="process-math">\(\bcal\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> so we can look at the trajectories <span class="process-math">\(\coords{\xvec_k}{\bcal}\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span>  The phase portraits in <a href="sec-dynamical.html#fig-eigen-3d-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-3d-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.8">Figure 4.4.8</a> show how some representative trajectories will evolve.  We see that all the trajectories will converge into the eigenspace <span class="process-math">\(E_{1.1}\text{.}\)</span>
+<div class="para" id="sec-dynamical-5-2">Up to this point, we have focused on <span class="process-math">\(2\times2\)</span> systems. In fact, the general case is quite similar.  As an example, consider a <span class="process-math">\(3\times3\)</span> system <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\)</span> where the matrix <span class="process-math">\(A\)</span> has eigenvalues <span class="process-math">\(\lambda_1 = 0.6\text{,}\)</span> <span class="process-math">\(\lambda_2 = 0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3=1.1\text{.}\)</span>  Since the eigenvalues are real and distinct, there is a basis <span class="process-math">\(\bcal\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> so we can look at the trajectories <span class="process-math">\(\coords{\vec{x_k}}{\bcal}\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span>  The phase portraits in <a href="sec-dynamical.html#fig-eigen-3d-saddle" class="xref" data-knowl="./knowl/xref/fig-eigen-3d-saddle.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.8">Figure 4.4.8</a> show how some representative trajectories will evolve.  We see that all the trajectories will converge into the eigenspace <span class="process-math">\(E_{1.1}\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-eigen-3d-saddle"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
 <div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/eigen-3d-saddle-d.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/eigen-3d-saddle-e.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.8<span class="period">.</span></span><span class="space"> </span>In a <span class="process-math">\(3\times3\)</span> system with <span class="process-math">\(\lambda_1 = 0.6\text{,}\)</span> <span class="process-math">\(\lambda_2=0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3 = 1.1\text{,}\)</span> the trajectories <span class="process-math">\(\coords{\xvec_k}{\bcal}\)</span> move along the curves shown above.</figcaption></figure><div class="para" id="sec-dynamical-5-4">In the same way, suppose we have a <span class="process-math">\(3\times3\)</span> system with complex eigenvalues <span class="process-math">\(\lambda=0.8 \pm 0.5i\)</span> and <span class="process-math">\(\lambda_3=1.1\text{.}\)</span>  Since the complex eigenvalues satisfy <span class="process-math">\(|\lambda| \lt 1\text{,}\)</span> there is a two-dimensional subspace in which the trajectories spiral in toward the origin.  The phase portraits in <a href="sec-dynamical.html#fig-eigen-3d-spiral" class="xref" data-knowl="./knowl/xref/fig-eigen-3d-spiral.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.9">Figure 4.4.9</a> show some of the trajectories.  Once again, we see that all the trajectories converge into the eigenspace <span class="process-math">\(E_{1.1}\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.8<span class="period">.</span></span><span class="space"> </span>In a <span class="process-math">\(3\times3\)</span> system with <span class="process-math">\(\lambda_1 = 0.6\text{,}\)</span> <span class="process-math">\(\lambda_2=0.8\text{,}\)</span> and <span class="process-math">\(\lambda_3 = 1.1\text{,}\)</span> the trajectories <span class="process-math">\(\coords{\vec{x_k}}{\bcal}\)</span> move along the curves shown above.</figcaption></figure><div class="para" id="sec-dynamical-5-4">In the same way, suppose we have a <span class="process-math">\(3\times3\)</span> system with complex eigenvalues <span class="process-math">\(\lambda=0.8 \pm 0.5i\)</span> and <span class="process-math">\(\lambda_3=1.1\text{.}\)</span>  Since the complex eigenvalues satisfy <span class="process-math">\(|\lambda| \lt 1\text{,}\)</span> there is a two-dimensional subspace in which the trajectories spiral in toward the origin.  The phase portraits in <a href="sec-dynamical.html#fig-eigen-3d-spiral" class="xref" data-knowl="./knowl/xref/fig-eigen-3d-spiral.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.4.9">Figure 4.4.9</a> show some of the trajectories.  Once again, we see that all the trajectories converge into the eigenspace <span class="process-math">\(E_{1.1}\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-eigen-3d-spiral"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
 <div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/eigen-3d-saddle-a.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/eigen-3d-saddle-c.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.9<span class="period">.</span></span><span class="space"> </span>In a <span class="process-math">\(3\times3\)</span> system with complex eigenvalues <span class="process-math">\(\lambda = a\pm bi\)</span> with <span class="process-math">\(|\lambda| \lt 1\)</span> and <span class="process-math">\(\lambda_3=1.1\text{,}\)</span> the trajectories <span class="process-math">\(\coords{\xvec_k}{\bcal}\)</span> move along the curves shown above.</figcaption></figure><article class="activity project-like" id="sec-dynamical-5-6"><h4 class="heading">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4.9<span class="period">.</span></span><span class="space"> </span>In a <span class="process-math">\(3\times3\)</span> system with complex eigenvalues <span class="process-math">\(\lambda = a\pm bi\)</span> with <span class="process-math">\(|\lambda| \lt 1\)</span> and <span class="process-math">\(\lambda_3=1.1\text{,}\)</span> the trajectories <span class="process-math">\(\coords{\vec{x_k}}{\bcal}\)</span> move along the curves shown above.</figcaption></figure><article class="activity project-like" id="sec-dynamical-5-6"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.5</span><span class="period">.</span>
 </h4>
 <div class="para" id="sec-dynamical-5-6-1-1">The following type of analysis has been used to study the population of a bison herd.  We will divide the population of female bison into three groups: juveniles who are less than one year old; yearlings between one and two years old; and adults who are older than two years.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
@@ -992,7 +992,7 @@ J_{k+1} = 0.4 A_k\text{.}
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-5-6-1-3-6">
 <li id="sec-dynamical-5-6-1-3-6-1"><div class="para" id="sec-dynamical-5-6-1-3-6-1-1">Find similar expressions for <span class="process-math">\(Y_{k+1}\)</span> and <span class="process-math">\(A_{k+1}\)</span> in terms of <span class="process-math">\(J_k\text{,}\)</span> <span class="process-math">\(Y_k\text{,}\)</span> and <span class="process-math">\(A_k\text{.}\)</span>
 </div></li>
-<li id="sec-dynamical-5-6-1-3-6-2"><div class="para" id="sec-dynamical-5-6-1-3-6-2-1">As is usual, we write the matrix <span class="process-math">\(\xvec_k=\threevec{J_k}{Y_k}{A_k}\text{.}\)</span>  Write the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\)</span> and find its eigenvalues.</div></li>
+<li id="sec-dynamical-5-6-1-3-6-2"><div class="para" id="sec-dynamical-5-6-1-3-6-2-1">As is usual, we write the matrix <span class="process-math">\(\vec{x_k}=\threevec{J_k}{Y_k}{A_k}\text{.}\)</span>  Write the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\)</span> and find its eigenvalues.</div></li>
 <li id="sec-dynamical-5-6-1-3-6-3"><div class="para logical" id="sec-dynamical-5-6-1-3-6-3-1">
 <div class="para">We can write <span class="process-math">\(A = PEP^{-1}\)</span> where the matrices <span class="process-math">\(E\)</span> and <span class="process-math">\(P\)</span> are approximately:</div>
 <div class="displaymath process-math">
@@ -1011,12 +1011,12 @@ P \amp {}={} \left[\begin{array}{rrr}
 \end{aligned}
 \end{equation*}
 </div>
-<div class="para">Make a prediction about the long-term behavior of <span class="process-math">\(\xvec_k\text{.}\)</span>  For instance, at what rate does it grow?  For every 100 adults, how many juveniles, and yearlings are there?</div>
+<div class="para">Make a prediction about the long-term behavior of <span class="process-math">\(\vec{x_k}\text{.}\)</span>  For instance, at what rate does it grow?  For every 100 adults, how many juveniles, and yearlings are there?</div>
 </div></li>
-<li id="sec-dynamical-5-6-1-3-6-4"><div class="para" id="sec-dynamical-5-6-1-3-6-4-1">Suppose that the birth rate decreases so that only 30% of adults give birth to a juvenile.  How does this affect the long-term growth rate of the herd? <div id="sec-dynamical-5-6-1-3-6-4-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-dynamical-5-6-1-3-6-4"><div class="para" id="sec-dynamical-5-6-1-3-6-4-1">Suppose that the birth rate decreases so that only 30% of adults give birth to a juvenile.  How does this affect the long-term growth rate of the herd? <div id="sec-dynamical-5-6-1-3-6-4-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-dynamical-5-6-1-3-6-5"><div class="para" id="sec-dynamical-5-6-1-3-6-5-1">Suppose that the birth rate decreases further so that only 20% of adults give birth to a juvenile.  How does this affect the long-term growth rate of the herd? <div id="sec-dynamical-5-6-1-3-6-5-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-dynamical-5-6-1-3-6-5"><div class="para" id="sec-dynamical-5-6-1-3-6-5-1">Suppose that the birth rate decreases further so that only 20% of adults give birth to a juvenile.  How does this affect the long-term growth rate of the herd? <div id="sec-dynamical-5-6-1-3-6-5-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-dynamical-5-6-1-3-6-6"><div class="para" id="sec-dynamical-5-6-1-3-6-6-1">Find the smallest birth rate that supports a stable population.</div></li>
@@ -1025,7 +1025,7 @@ P \amp {}={} \left[\begin{array}{rrr}
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.4.4</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <div class="para logical" id="sec-dynamical-6-2">
-<div class="para">We have been exploring discrete dynamical systems in which an initial state vector <span class="process-math">\(\xvec_0\)</span> evolves over time according to the rule <span class="process-math">\(\xvec_{k+1}=A\xvec_k\text{.}\)</span>  The eigenvalues and eigenvectors of <span class="process-math">\(A\)</span> help us understand the behavior of the state vectors.  In the <span class="process-math">\(2\times2\)</span> case, we saw that</div>
+<div class="para">We have been exploring discrete dynamical systems in which an initial state vector <span class="process-math">\(\vec{x_0}\)</span> evolves over time according to the rule <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\text{.}\)</span>  The eigenvalues and eigenvectors of <span class="process-math">\(A\)</span> help us understand the behavior of the state vectors.  In the <span class="process-math">\(2\times2\)</span> case, we saw that</div>
 <ul class="disc" id="sec-dynamical-6-2-5">
 <li id="sec-dynamical-6-2-5-1"><div class="para" id="sec-dynamical-6-2-5-1-1">
 <span class="process-math">\(|\lambda_1|, |\lambda_2| \lt 1\)</span> produces an attractor so that trajectories are pulled in toward the origin.</div></li>
@@ -1041,7 +1041,7 @@ P \amp {}={} \left[\begin{array}{rrr}
 </h3>
 <article class="exercise exercise-like" id="sec-dynamical-7-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-dynamical-7-1-1-1">
-<div class="para">For each of the <span class="process-math">\(2\times2\)</span> matrices below, find the eigenvalues and, when appropriate, the eigenvectors to classify the dynamical system <span class="process-math">\(\xvec_{k+1}=A\xvec_k\text{.}\)</span>  Use this information to sketch the phase portraits.</div>
+<div class="para">For each of the <span class="process-math">\(2\times2\)</span> matrices below, find the eigenvalues and, when appropriate, the eigenvectors to classify the dynamical system <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\text{.}\)</span>  Use this information to sketch the phase portraits.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-1-1-1-3">
 <li id="sec-dynamical-7-1-1-1-3-1"><div class="para" id="sec-dynamical-7-1-1-1-3-1-1"><span class="process-math">\(A = \left[\begin{array}{rr}
 3\amp 1 \\
@@ -1120,7 +1120,7 @@ B = \left[\begin{array}{cc}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-4-1-1-2">
-<li id="sec-dynamical-7-4-1-1-2-1"><div class="para" id="sec-dynamical-7-4-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span>  To which of the six types does the system <span class="process-math">\(\xvec_{k+1}=A\xvec_{k}\)</span> belong?</div></li>
+<li id="sec-dynamical-7-4-1-1-2-1"><div class="para" id="sec-dynamical-7-4-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span>  To which of the six types does the system <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\)</span> belong?</div></li>
 <li id="sec-dynamical-7-4-1-1-2-2"><div class="para" id="sec-dynamical-7-4-1-1-2-2-1">Using the eigenvalues of <span class="process-math">\(A\text{,}\)</span> we can write <span class="process-math">\(A=PEP^{-1}\)</span> for some matrices <span class="process-math">\(E\)</span> and <span class="process-math">\(P\text{.}\)</span>  What is the matrix <span class="process-math">\(E\)</span> and what geometric effect does multiplication by <span class="process-math">\(E\)</span> have on vectors in the plane?</div></li>
 <li id="sec-dynamical-7-4-1-1-2-3"><div class="para" id="sec-dynamical-7-4-1-1-2-3-1">If we remember that <span class="process-math">\(A^k = PE^kP^{-1}\text{,}\)</span> determine the smallest positive value of <span class="process-math">\(k\)</span> for which <span class="process-math">\(A^k=I\text{.}\)</span>
 </div></li>
@@ -1141,21 +1141,21 @@ PEP^{-1}\)</span> for some matrix <span class="process-math">\(P\text{.}\)</span
 <li id="sec-dynamical-7-5-1-1-1-4"><div class="para" id="sec-dynamical-7-5-1-1-1-4-1">50% of the adults give birth to a juvenile.</div></li>
 </ul>
 </div> <div class="para logical" id="sec-dynamical-7-5-1-2"><ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-5-1-2-1">
-<li id="sec-dynamical-7-5-1-2-1-1"><div class="para" id="sec-dynamical-7-5-1-2-1-1-1">Set up a system of the form <span class="process-math">\(\xvec_{k+1}=A\xvec_k\)</span> that describes this situation.</div></li>
-<li id="sec-dynamical-7-5-1-2-1-2"><div class="para" id="sec-dynamical-7-5-1-2-1-2-1">Find the eigenvalues of the matrix <span class="process-math">\(A\text{.}\)</span> <div id="sec-dynamical-7-5-1-2-1-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-dynamical-7-5-1-2-1-1"><div class="para" id="sec-dynamical-7-5-1-2-1-1-1">Set up a system of the form <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\)</span> that describes this situation.</div></li>
+<li id="sec-dynamical-7-5-1-2-1-2"><div class="para" id="sec-dynamical-7-5-1-2-1-2-1">Find the eigenvalues of the matrix <span class="process-math">\(A\text{.}\)</span> <div id="sec-dynamical-7-5-1-2-1-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-dynamical-7-5-1-2-1-3"><div class="para" id="sec-dynamical-7-5-1-2-1-3-1">What prediction can you make about these populations after a very long time?</div></li>
 <li id="sec-dynamical-7-5-1-2-1-4"><div class="para" id="sec-dynamical-7-5-1-2-1-4-1">If the birth rate goes up to 80%, what prediction can you make about these populations after a very long time? For every 100 adults, how many juveniles, and yearlings are there?</div></li>
 </ol></div></article><article class="exercise exercise-like" id="sec-dynamical-7-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-dynamical-7-6-1-1">
-<div class="para">Determine whether the following statements are true or false and provide a justification for your response.  In each case, we are considering a dynamical system of the form <span class="process-math">\(\xvec_{k+1} =
-A\xvec_k\text{.}\)</span>
+<div class="para">Determine whether the following statements are true or false and provide a justification for your response.  In each case, we are considering a dynamical system of the form <span class="process-math">\(\vec{x_{k+1}} =
+A\vec{x_k}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-6-1-1-2">
 <li id="sec-dynamical-7-6-1-1-2-1"><div class="para" id="sec-dynamical-7-6-1-1-2-1-1">If the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A\)</span> has a complex eigenvalue, we cannot make a prediction about the behavior of the trajectories.</div></li>
 <li id="sec-dynamical-7-6-1-1-2-2"><div class="para" id="sec-dynamical-7-6-1-1-2-2-1">If <span class="process-math">\(A\)</span> has eigenvalues whose absolute value is smaller than 1, then all the trajectories are pulled in toward the origin.</div></li>
-<li id="sec-dynamical-7-6-1-1-2-3"><div class="para" id="sec-dynamical-7-6-1-1-2-3-1">If the origin is a repellor, then it is an attractor for the system <span class="process-math">\(\xvec_{k+1} = A^{-1}\xvec_k\text{.}\)</span>
+<li id="sec-dynamical-7-6-1-1-2-3"><div class="para" id="sec-dynamical-7-6-1-1-2-3-1">If the origin is a repellor, then it is an attractor for the system <span class="process-math">\(\vec{x_{k+1}} = A^{-1}\vec{x_k}\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-6-1-1-2-4"><div class="para" id="sec-dynamical-7-6-1-1-2-4-1">If a <span class="process-math">\(4\times4\)</span> matrix has complex eigenvalues <span class="process-math">\(\lambda_1\text{,}\)</span> <span class="process-math">\(\lambda_2\text{,}\)</span> <span class="process-math">\(\lambda_3\text{,}\)</span> and <span class="process-math">\(\lambda_4\text{,}\)</span> all of which satisfy <span class="process-math">\(|\lambda_j| \gt
 1\text{,}\)</span> then all the trajectories are pushed away from the origin.</div></li>
@@ -1183,8 +1183,8 @@ F_{n+1} \amp {}={} F_{n+1}\text{.} \\
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-dynamical-7-7-1-2"><ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-7-1-2-1">
-<li id="sec-dynamical-7-7-1-2-1-1"><div class="para" id="sec-dynamical-7-7-1-2-1-1-1">If we write <span class="process-math">\(\xvec_n = \twovec{F_{n+1}}{F_n}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{n+1} =
-A\xvec_n\text{.}\)</span>
+<li id="sec-dynamical-7-7-1-2-1-1"><div class="para" id="sec-dynamical-7-7-1-2-1-1-1">If we write <span class="process-math">\(\vec{x_n} = \twovec{F_{n+1}}{F_n}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{n+1}} =
+A\vec{x_n}\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-7-1-2-1-2"><div class="para logical" id="sec-dynamical-7-7-1-2-1-2-1">
 <div class="para">Show that <span class="process-math">\(A\)</span> has eigenvalues</div>
@@ -1197,14 +1197,14 @@ A\xvec_n\text{.}\)</span>
 \end{aligned}
 \end{equation*}
 </div>
-<div class="para">with associated eigenvectors <span class="process-math">\(\vvec_1=\twovec{\lambda_1}{1}\)</span> and <span class="process-math">\(\vvec_2=\twovec{\lambda_2}{1}\text{.}\)</span>
+<div class="para">with associated eigenvectors <span class="process-math">\(\vec{v_1}=\twovec{\lambda_1}{1}\)</span> and <span class="process-math">\(\vec{v_2}=\twovec{\lambda_2}{1}\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-dynamical-7-7-1-2-1-3"><div class="para" id="sec-dynamical-7-7-1-2-1-3-1">Classify this dynamical system as one of the six types that we have seen in this section.  What happens to <span class="process-math">\(\xvec_n\)</span> as <span class="process-math">\(n\)</span> becomes very large?</div></li>
-<li id="sec-dynamical-7-7-1-2-1-4"><div class="para" id="sec-dynamical-7-7-1-2-1-4-1">Write the initial vector <span class="process-math">\(\xvec_0 =
-\twovec{1}{0}\)</span> as a linear combination of eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-dynamical-7-7-1-2-1-3"><div class="para" id="sec-dynamical-7-7-1-2-1-3-1">Classify this dynamical system as one of the six types that we have seen in this section.  What happens to <span class="process-math">\(\vec{x_n}\)</span> as <span class="process-math">\(n\)</span> becomes very large?</div></li>
+<li id="sec-dynamical-7-7-1-2-1-4"><div class="para" id="sec-dynamical-7-7-1-2-1-4-1">Write the initial vector <span class="process-math">\(\vec{x_0} =
+\twovec{1}{0}\)</span> as a linear combination of eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
-<li id="sec-dynamical-7-7-1-2-1-5"><div class="para" id="sec-dynamical-7-7-1-2-1-5-1">Write the vector <span class="process-math">\(\xvec_n\)</span> as a linear combinations of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-dynamical-7-7-1-2-1-5"><div class="para" id="sec-dynamical-7-7-1-2-1-5-1">Write the vector <span class="process-math">\(\vec{x_n}\)</span> as a linear combinations of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-7-1-2-1-6"><div class="para logical" id="sec-dynamical-7-7-1-2-1-6-1">
 <div class="para">Explain why the <span class="process-math">\(n^{th}\)</span> Fibonacci number</div>
@@ -1224,7 +1224,7 @@ F_{n} = \frac{1}{\sqrt{5}}\left[
 <div class="para">The Lucas numbers <span class="process-math">\(L_n\)</span> are defined by the same relationship as the Fibonacci numbers: <span class="process-math">\(L_{n+2}=L_{n+1}+L_n\text{.}\)</span>  However, we begin with <span class="process-math">\(L_0=2\)</span> and <span class="process-math">\(L_1=1\text{,}\)</span> which leads to the sequence <span class="process-math">\(2,1,3,4,7,11,\ldots\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-8-1-2-6">
-<li id="sec-dynamical-7-8-1-2-6-1"><div class="para" id="sec-dynamical-7-8-1-2-6-1-1">As before, form the vector <span class="process-math">\(\xvec_n=\twovec{L_{n+1}}{L_n}\)</span> so that <span class="process-math">\(\xvec_{n+1}=A\xvec_n\text{.}\)</span>  Express <span class="process-math">\(\xvec_0\)</span> as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{,}\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-dynamical-7-8-1-2-6-1"><div class="para" id="sec-dynamical-7-8-1-2-6-1-1">As before, form the vector <span class="process-math">\(\vec{x_n}=\twovec{L_{n+1}}{L_n}\)</span> so that <span class="process-math">\(\vec{x_{n+1}}=A\vec{x_n}\text{.}\)</span>  Express <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{,}\)</span> eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-8-1-2-6-2"><div class="para logical" id="sec-dynamical-7-8-1-2-6-2-1">
 <div class="para">Explain why</div>
@@ -1253,15 +1253,15 @@ G_{n+1} \amp {}={} G_{n+1}\text{.} \\
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-9-1-1-7">
-<li id="sec-dynamical-7-9-1-1-7-1"><div class="para" id="sec-dynamical-7-9-1-1-7-1-1">If <span class="process-math">\(\xvec_n=\twovec{G_{n+1}}{G_n}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{n+1} =
-A\xvec_n\text{.}\)</span>
+<li id="sec-dynamical-7-9-1-1-7-1"><div class="para" id="sec-dynamical-7-9-1-1-7-1-1">If <span class="process-math">\(\vec{x_n}=\twovec{G_{n+1}}{G_n}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{n+1}} =
+A\vec{x_n}\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-9-1-1-7-2"><div class="para" id="sec-dynamical-7-9-1-1-7-2-1">Find the eigenvalues and associated eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-9-1-1-7-3"><div class="para" id="sec-dynamical-7-9-1-1-7-3-1">Explain why this dynamical system does not neatly fit into one of the six types that we saw in this section.</div></li>
-<li id="sec-dynamical-7-9-1-1-7-4"><div class="para" id="sec-dynamical-7-9-1-1-7-4-1">Write <span class="process-math">\(\xvec_{0}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-dynamical-7-9-1-1-7-4"><div class="para" id="sec-dynamical-7-9-1-1-7-4-1">Write <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-dynamical-7-9-1-1-7-5"><div class="para" id="sec-dynamical-7-9-1-1-7-5-1">Write <span class="process-math">\(\xvec_n\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-dynamical-7-9-1-1-7-5"><div class="para" id="sec-dynamical-7-9-1-1-7-5-1">Write <span class="process-math">\(\vec{x_n}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-9-1-1-7-6"><div class="para" id="sec-dynamical-7-9-1-1-7-6-1">What happens to <span class="process-math">\(G_n\)</span> as <span class="process-math">\(n\)</span> becomes very large?</div></li>
 </ol>
@@ -1275,18 +1275,18 @@ A\xvec_n\text{.}\)</span>
 <li id="sec-dynamical-7-10-1-1-1-4"><div class="para" id="sec-dynamical-7-10-1-1-1-4-1">None of the adults survive to the next year.</div></li>
 </ul>
 </div> <div class="para logical" id="sec-dynamical-7-10-1-2"><ol class="lower-alpha ol-marker-1" id="sec-dynamical-7-10-1-2-1">
-<li id="sec-dynamical-7-10-1-2-1-1"><div class="para" id="sec-dynamical-7-10-1-2-1-1-1">Writing the populations of juveniles, yearlings, and adults in year <span class="process-math">\(k\)</span> using the vector <span class="process-math">\(\xvec_k=\threevec{J_k}{Y_k}{A_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>
+<li id="sec-dynamical-7-10-1-2-1-1"><div class="para" id="sec-dynamical-7-10-1-2-1-1-1">Writing the populations of juveniles, yearlings, and adults in year <span class="process-math">\(k\)</span> using the vector <span class="process-math">\(\vec{x_k}=\threevec{J_k}{Y_k}{A_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-10-1-2-1-2"><div class="para" id="sec-dynamical-7-10-1-2-1-2-1">Show that <span class="process-math">\(A^3=I\text{.}\)</span>
 </div></li>
 <li id="sec-dynamical-7-10-1-2-1-3"><div class="para" id="sec-dynamical-7-10-1-2-1-3-1">What are the eigenvalues of <span class="process-math">\(A^3\text{?}\)</span>  What does this say about the eigenvalues of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li id="sec-dynamical-7-10-1-2-1-4"><div class="para" id="sec-dynamical-7-10-1-2-1-4-1">Verify your observation by finding the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-dynamical-7-10-1-2-1-4-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-dynamical-7-10-1-2-1-4"><div class="para" id="sec-dynamical-7-10-1-2-1-4-1">Verify your observation by finding the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-dynamical-7-10-1-2-1-4-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-dynamical-7-10-1-2-1-5"><div class="para" id="sec-dynamical-7-10-1-2-1-5-1">What can you say about the trajectories of this dynamical system?</div></li>
 <li id="sec-dynamical-7-10-1-2-1-6"><div class="para" id="sec-dynamical-7-10-1-2-1-6-1">What does this mean about the population of rodents?</div></li>
-<li id="sec-dynamical-7-10-1-2-1-7"><div class="para" id="sec-dynamical-7-10-1-2-1-7-1">Find a population vector <span class="process-math">\(\xvec_0\)</span> that is unchanged from year to year.</div></li>
+<li id="sec-dynamical-7-10-1-2-1-7"><div class="para" id="sec-dynamical-7-10-1-2-1-7-1">Find a population vector <span class="process-math">\(\vec{x_0}\)</span> that is unchanged from year to year.</div></li>
 </ol></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-eigen-diag.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-stochastic.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
