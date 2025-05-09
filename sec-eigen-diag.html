@@ -113,27 +113,27 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.2';
+eBookConfig.runestone_version = '7.6.3';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.11f2df1b38a61a3f.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.f7a03b209751032d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -601,13 +601,13 @@ sagecell.makeSagecell({
 1 \amp 2 \\
 2 \amp 1 \\
 \end{array}\right]
-\text{,}\)</span> which has eigenvectors <span class="process-math">\(\vvec_1=\twovec{1}{1}\)</span> and <span class="process-math">\(\vvec_2 = \twovec{-1}{1}\)</span> and associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span>  In <a href="sec-eigen-intro.html#subsec-eigen-use" class="internal" title="Subsection 4.1.2: The usefulness of eigenvalues and eigenvectors">Subsection 4.1.2</a>, we described how <span class="process-math">\(A\)</span> is, in some sense, equivalent to the diagonal matrix <span class="process-math">\(D = \left[\begin{array}{rr}
+\text{,}\)</span> which has eigenvectors <span class="process-math">\(\vec{v_1}=\twovec{1}{1}\)</span> and <span class="process-math">\(\vec{v_2} = \twovec{-1}{1}\)</span> and associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2=-1\text{.}\)</span>  In <a href="sec-eigen-intro.html#subsec-eigen-use" class="internal" title="Subsection 4.1.2: The usefulness of eigenvalues and eigenvectors">Subsection 4.1.2</a>, we described how <span class="process-math">\(A\)</span> is, in some sense, equivalent to the diagonal matrix <span class="process-math">\(D = \left[\begin{array}{rr}
 3 \amp 0 \\
 0 \amp -1\\
 \end{array}\right]
 \text{.}\)</span>
 </div>
-<div class="para" id="sec-eigen-diag-2-2">This equivalence is summarized by <a href="sec-eigen-diag.html#fig-eigen-diag-A" class="xref" data-knowl="./knowl/xref/fig-eigen-diag-A.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.3.1">Figure 4.3.1</a>.  The diagonal matrix <span class="process-math">\(D\)</span> has the geometric effect of stretching vectors horizontally by a factor of <span class="process-math">\(3\)</span> and flipping vectors vertically.  The matrix <span class="process-math">\(A\)</span> has the geometric effect of stretching vectors by a factor of <span class="process-math">\(3\)</span> in the <span class="process-math">\(\vvec_1\)</span> direction and flipping them in the <span class="process-math">\(\vvec_2\)</span> direction.  That is, the geometric effect of <span class="process-math">\(A\)</span> is the same as that of <span class="process-math">\(D\)</span> when viewed in a basis of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<div class="para" id="sec-eigen-diag-2-2">This equivalence is summarized by <a href="sec-eigen-diag.html#fig-eigen-diag-A" class="xref" data-knowl="./knowl/xref/fig-eigen-diag-A.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.3.1">Figure 4.3.1</a>.  The diagonal matrix <span class="process-math">\(D\)</span> has the geometric effect of stretching vectors horizontally by a factor of <span class="process-math">\(3\)</span> and flipping vectors vertically.  The matrix <span class="process-math">\(A\)</span> has the geometric effect of stretching vectors by a factor of <span class="process-math">\(3\)</span> in the <span class="process-math">\(\vec{v_1}\)</span> direction and flipping them in the <span class="process-math">\(\vec{v_2}\)</span> direction.  That is, the geometric effect of <span class="process-math">\(A\)</span> is the same as that of <span class="process-math">\(D\)</span> when viewed in a basis of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <figure class="figure figure-like" id="fig-eigen-diag-A"><div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/eigen-intro-A.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.1<span class="period">.</span></span><span class="space"> </span>The matrix <span class="process-math">\(A\)</span> has the same geometric effect as the diagonal matrix <span class="process-math">\(D\)</span> when viewed in the basis of eigenvectors.</figcaption></figure><div class="para" id="sec-eigen-diag-2-4">Our goal in this section is to express this geometric observation in algebraic terms.  In doing so, we will make precise the sense in which <span class="process-math">\(A\)</span> and <span class="process-math">\(D\)</span> are equivalent.</div>
@@ -618,23 +618,23 @@ sagecell.makeSagecell({
 <div class="para">In this preview activity, we will review some familiar properties about matrix multiplication that appear in this section.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-diag-2-5-1-1-1">
 <li id="sec-eigen-diag-2-5-1-1-1-1"><div class="para" id="sec-eigen-diag-2-5-1-1-1-1-1">Remember that matrix-vector multiplication constructs linear combinations of the columns of the matrix.  For instance, if <span class="process-math">\(A = \begin{bmatrix}
-\avec_1 \amp \avec_2 \end{bmatrix}\text{,}\)</span> express the product <span class="process-math">\(A\twovec2{-3}\)</span> in terms of <span class="process-math">\(\avec_1\)</span> and <span class="process-math">\(\avec_2\text{.}\)</span>
+\vec{a_1} \amp \vec{a_2} \end{bmatrix}\text{,}\)</span> express the product <span class="process-math">\(A\twovec2{-3}\)</span> in terms of <span class="process-math">\(\vec{a_1}\)</span> and <span class="process-math">\(\vec{a_2}\text{.}\)</span>
 </div></li>
-<li id="sec-eigen-diag-2-5-1-1-1-2"><div class="para" id="sec-eigen-diag-2-5-1-1-1-2-1">What is the product <span class="process-math">\(A\twovec40\)</span> in terms of <span class="process-math">\(\avec_1\)</span> and <span class="process-math">\(\avec_2\text{?}\)</span>
+<li id="sec-eigen-diag-2-5-1-1-1-2"><div class="para" id="sec-eigen-diag-2-5-1-1-1-2-1">What is the product <span class="process-math">\(A\twovec40\)</span> in terms of <span class="process-math">\(\vec{a_1}\)</span> and <span class="process-math">\(\vec{a_2}\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-diag-2-5-1-1-1-3"><div class="para" id="sec-eigen-diag-2-5-1-1-1-3-1">Next, remember how matrix-matrix multiplication is defined.  Suppose that we have matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> and that <span class="process-math">\(B = \begin{bmatrix}
-\bvec_1 \amp \bvec_2 \end{bmatrix}\text{.}\)</span>  How can we express the matrix product <span class="process-math">\(AB\)</span> in terms of the columns of <span class="process-math">\(B\text{?}\)</span>
+\vec{b_1} \amp \vec{b_2} \end{bmatrix}\text{.}\)</span>  How can we express the matrix product <span class="process-math">\(AB\)</span> in terms of the columns of <span class="process-math">\(B\text{?}\)</span>
 </div></li>
-<li id="sec-eigen-diag-2-5-1-1-1-4"><div class="para" id="sec-eigen-diag-2-5-1-1-1-4-1">Suppose that <span class="process-math">\(A\)</span> is a matrix having eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1 = 4\)</span> and <span class="process-math">\(\lambda_2 =
--1\text{.}\)</span>  Express the product <span class="process-math">\(A(2\vvec_1+3\vvec_2)\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+<li id="sec-eigen-diag-2-5-1-1-1-4"><div class="para" id="sec-eigen-diag-2-5-1-1-1-4-1">Suppose that <span class="process-math">\(A\)</span> is a matrix having eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1 = 4\)</span> and <span class="process-math">\(\lambda_2 =
+-1\text{.}\)</span>  Express the product <span class="process-math">\(A(2\vec{v_1}+3\vec{v_2})\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-diag-2-5-1-1-1-5"><div class="para logical" id="sec-eigen-diag-2-5-1-1-1-5-1">
-<div class="para">Suppose that <span class="process-math">\(A\)</span> is the matrix from the previous part and that <span class="process-math">\(P=\begin{bmatrix} \vvec_1 \amp \vvec_2
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is the matrix from the previous part and that <span class="process-math">\(P=\begin{bmatrix} \vec{v_1} \amp \vec{v_2}
 \end{bmatrix}\text{.}\)</span>  What is the matrix product</div>
 <div class="displaymath process-math">
 \begin{equation*}
 AP = A\begin{bmatrix}
-\vvec_1 \amp \vvec_2
+\vec{v_1} \amp \vec{v_2}
 \end{bmatrix}?
 \end{equation*}
 </div>
@@ -649,45 +649,45 @@ AP = A\begin{bmatrix}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-eigen-diag-3-3-1-1">
-<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix having eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2 = -6\text{.}\)</span> Because the eigenvalues are real and distinct, we know by <a href="sec-eigen-find.html#prop-eigen-basis" class="xref" data-knowl="./knowl/xref/prop-eigen-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.9">Proposition 4.2.9</a> that these eigenvectors form a basis of <span class="process-math">\(\real^2\text{.}\)</span>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix having eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1=3\)</span> and <span class="process-math">\(\lambda_2 = -6\text{.}\)</span> Because the eigenvalues are real and distinct, we know by <a href="sec-eigen-find.html#prop-eigen-basis" class="xref" data-knowl="./knowl/xref/prop-eigen-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 4.2.9">Proposition 4.2.9</a> that these eigenvectors form a basis of <span class="process-math">\(\real^2\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-diag-3-3-1-1-9">
-<li id="sec-eigen-diag-3-3-1-1-9-1"><div class="para" id="sec-eigen-diag-3-3-1-1-9-1-1">What are the products <span class="process-math">\(A\vvec_1\)</span> and <span class="process-math">\(A\vvec_2\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span>
+<li id="sec-eigen-diag-3-3-1-1-9-1"><div class="para" id="sec-eigen-diag-3-3-1-1-9-1-1">What are the products <span class="process-math">\(A\vec{v_1}\)</span> and <span class="process-math">\(A\vec{v_2}\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-diag-3-3-1-1-9-2"><div class="para" id="sec-eigen-diag-3-3-1-1-9-2-1">If we form the matrix <span class="process-math">\(P = \begin{bmatrix}
-\vvec_1 \amp \vvec_2
+\vec{v_1} \amp \vec{v_2}
 \end{bmatrix}
-\text{,}\)</span> what is the product <span class="process-math">\(AP\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span>
+\text{,}\)</span> what is the product <span class="process-math">\(AP\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-diag-3-3-1-1-9-3"><div class="para" id="sec-eigen-diag-3-3-1-1-9-3-1">Use the eigenvalues to form the diagonal matrix <span class="process-math">\(D
 = \begin{bmatrix}
 3 \amp 0 \\
 0 \amp -6 
-\end{bmatrix}\)</span> and determine the product <span class="process-math">\(PD\)</span> in terms of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>
+\end{bmatrix}\)</span> and determine the product <span class="process-math">\(PD\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{.}\)</span>
 </div></li>
-<li id="sec-eigen-diag-3-3-1-1-9-4"><div class="para" id="sec-eigen-diag-3-3-1-1-9-4-1">The results from the previous two parts of this activity demonstrate that <span class="process-math">\(AP=PD\text{.}\)</span> Using the fact that the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> form a basis of <span class="process-math">\(\real^2\text{,}\)</span> explain why <span class="process-math">\(P\)</span> is invertible and that we must have <span class="process-math">\(A=PDP^{-1}\text{.}\)</span>
+<li id="sec-eigen-diag-3-3-1-1-9-4"><div class="para" id="sec-eigen-diag-3-3-1-1-9-4-1">The results from the previous two parts of this activity demonstrate that <span class="process-math">\(AP=PD\text{.}\)</span> Using the fact that the eigenvectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> form a basis of <span class="process-math">\(\real^2\text{,}\)</span> explain why <span class="process-math">\(P\)</span> is invertible and that we must have <span class="process-math">\(A=PDP^{-1}\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-diag-3-3-1-1-9-5"><div class="para" id="sec-eigen-diag-3-3-1-1-9-5-1">Suppose that <span class="process-math">\(A=\begin{bmatrix}
 -3 \amp 6 \\
 3 \amp 0 \\
-\end{bmatrix}\text{.}\)</span>  Verify that <span class="process-math">\(\vvec_1=\twovec11\)</span> and <span class="process-math">\(\vvec_2=\twovec2{-1}\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2=-6\text{.}\)</span>
+\end{bmatrix}\text{.}\)</span>  Verify that <span class="process-math">\(\vec{v_1}=\twovec11\)</span> and <span class="process-math">\(\vec{v_2}=\twovec2{-1}\)</span> are eigenvectors of <span class="process-math">\(A\)</span> with eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2=-6\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-diag-3-3-1-1-9-6">
-<div class="para" id="sec-eigen-diag-3-3-1-1-9-6-1">Use the Sage cell below to define the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> and then verify that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span>
+<div class="para" id="sec-eigen-diag-3-3-1-1-9-6-1">Use the Python cell below to define the matrices <span class="process-math">\(P\)</span> and <span class="process-math">\(D\)</span> and then verify that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span>
 </div>
-<div id="sec-eigen-diag-3-3-1-1-9-6-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"># enter the matrices P and D below	    
+<div id="sec-eigen-diag-3-3-1-1-9-6-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage"># enter the matrices P and D below	    
 P =
 D =	    
-P*D*P.inverse()
+P*D*P.inv()
 </script></div>
 </li>
 </ol>
 </div></article><div class="para logical" id="sec-eigen-diag-3-4">
-<div class="para">More generally, suppose that we have an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> and that there is a basis of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors <span class="process-math">\(\vvec_1,\vvec_2,\ldots,\vvec_n\)</span> of <span class="process-math">\(A\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_n\text{.}\)</span>  If we use the eigenvectors to form the matrix</div>
+<div class="para">More generally, suppose that we have an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> and that there is a basis of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> of <span class="process-math">\(A\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1,\lambda_2,\ldots,\lambda_n\text{.}\)</span>  If we use the eigenvectors to form the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \begin{bmatrix}
-\vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
 \end{bmatrix}
 \end{equation*}
 </div>
@@ -714,7 +714,7 @@ A=PDP^{-1}.
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="prop-diagonalizable-1-1">
-<div class="para">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and there is a basis <span class="process-math">\(\{\vvec_1,\vvec_2,\ldots,\vvec_n\}\)</span> of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> having associated eigenvalues <span class="process-math">\(\lambda_1, \lambda_2, \ldots, \lambda_n\text{,}\)</span> then we can write <span class="process-math">\(A=PDP^{-1}\)</span> where <span class="process-math">\(D\)</span> is the diagonal matrix whose diagonal entries are the eigenvalues of <span class="process-math">\(A\)</span>
+<div class="para">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> matrix and there is a basis <span class="process-math">\(\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}\)</span> of <span class="process-math">\(\real^n\)</span> consisting of eigenvectors of <span class="process-math">\(A\)</span> having associated eigenvalues <span class="process-math">\(\lambda_1, \lambda_2, \ldots, \lambda_n\text{,}\)</span> then we can write <span class="process-math">\(A=PDP^{-1}\)</span> where <span class="process-math">\(D\)</span> is the diagonal matrix whose diagonal entries are the eigenvalues of <span class="process-math">\(A\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -727,7 +727,7 @@ D = \left[\begin{array}{cccc}
 \end{equation*}
 </div>
 <div class="para">and the matrix <span class="process-math">\(P = \left[\begin{array}{cccc}
-\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n}
 \end{array}\right]
 \text{.}\)</span>
 </div>
@@ -738,11 +738,11 @@ D = \left[\begin{array}{cccc}
 <div class="para">We have seen that <span class="process-math">\(A = \begin{bmatrix}
 1 \amp 2 \\
 2 \amp 1 \\
-\end{bmatrix}\)</span> has eigenvectors <span class="process-math">\(\vvec_1 = \twovec11\)</span> and <span class="process-math">\(\vvec_2=\twovec{-1}1\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2 = -1\text{.}\)</span> Forming the matrices</div>
+\end{bmatrix}\)</span> has eigenvectors <span class="process-math">\(\vec{v_1} = \twovec11\)</span> and <span class="process-math">\(\vec{v_2}=\twovec{-1}1\)</span> with associated eigenvalues <span class="process-math">\(\lambda_1 = 3\)</span> and <span class="process-math">\(\lambda_2 = -1\text{.}\)</span> Forming the matrices</div>
 <div class="displaymath process-math">
 \begin{equation*}
 P = \begin{bmatrix}
-\vvec_1 \amp \vvec_2
+\vec{v_1} \amp \vec{v_2}
 \end{bmatrix} =
 \begin{bmatrix}
 1 \amp -1 \\
@@ -757,7 +757,7 @@ D = \begin{bmatrix}
 <div class="para">we see that <span class="process-math">\(A=PDP^{-1}\text{.}\)</span>
 </div>
 </div>
-<div class="para" id="sec-eigen-diag-3-7-2">This is the sense in which we mean that <span class="process-math">\(A\)</span> is equivalent to a diagonal matrix <span class="process-math">\(D\text{.}\)</span>  The expression <span class="process-math">\(A=PDP^{-1}\)</span> says that <span class="process-math">\(A\text{,}\)</span> expressed in the basis defined by the columns of <span class="process-math">\(P\text{,}\)</span> has the same geometric effect as <span class="process-math">\(D\text{,}\)</span> expressed in the standard basis <span class="process-math">\(\evec_1, \evec_2,\ldots,\evec_n\text{.}\)</span>
+<div class="para" id="sec-eigen-diag-3-7-2">This is the sense in which we mean that <span class="process-math">\(A\)</span> is equivalent to a diagonal matrix <span class="process-math">\(D\text{.}\)</span>  The expression <span class="process-math">\(A=PDP^{-1}\)</span> says that <span class="process-math">\(A\text{,}\)</span> expressed in the basis defined by the columns of <span class="process-math">\(P\text{,}\)</span> has the same geometric effect as <span class="process-math">\(D\text{,}\)</span> expressed in the standard basis <span class="process-math">\(\vec{e_1}, \vec{e_2},\ldots,\vec{e_n}\text{.}\)</span>
 </div></article><article class="definition definition-like" id="sec-eigen-diag-3-8"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
 </h4> <div class="para logical" id="sec-eigen-diag-3-8-1-2">
@@ -785,8 +785,8 @@ A = PDP^{-1}.
 <div class="para">This shows that the eigenvalues of <span class="process-math">\(A\)</span> are <span class="process-math">\(\lambda_1 =
 -2\)</span> and <span class="process-math">\(\lambda_2 = 1\text{.}\)</span>
 </div>
-</div> <div class="para" id="sec-eigen-diag-3-9-1-2">By constructing <span class="process-math">\(\nul(A-(-2)I)\text{,}\)</span> we find a basis for <span class="process-math">\(E_{-2}\)</span> consisting of the vector <span class="process-math">\(\vvec_1 =
-\twovec{2}{1}\text{.}\)</span>  Similarly, a basis for <span class="process-math">\(E_1\)</span> consists of the vector <span class="process-math">\(\vvec_2 = \twovec{1}{1}\text{.}\)</span>  This shows that we can construct a basis <span class="process-math">\(\{\vvec_1,\vvec_2\}\)</span> of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+</div> <div class="para" id="sec-eigen-diag-3-9-1-2">By constructing <span class="process-math">\(\nul(A-(-2)I)\text{,}\)</span> we find a basis for <span class="process-math">\(E_{-2}\)</span> consisting of the vector <span class="process-math">\(\vec{v_1} =
+\twovec{2}{1}\text{.}\)</span>  Similarly, a basis for <span class="process-math">\(E_1\)</span> consists of the vector <span class="process-math">\(\vec{v_2} = \twovec{1}{1}\text{.}\)</span>  This shows that we can construct a basis <span class="process-math">\(\{\vec{v_1},\vec{v_2}\}\)</span> of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div> <div class="para logical" id="sec-eigen-diag-3-9-1-3">
 <div class="para">We now form the matrices</div>
 <div class="displaymath process-math">
@@ -795,7 +795,7 @@ D = \left[\begin{array}{rr}
 -2 \amp 0 \\
 0 \amp 1 \\
 \end{array}\right],\qquad
-P = \left[\begin{array}{cc} \vvec_1 \amp \vvec_2
+P = \left[\begin{array}{cc} \vec{v_1} \amp \vec{v_2}
 \end{array}\right] = 
 \left[\begin{array}{rr}
 2 \amp 1 \\
@@ -834,7 +834,7 @@ D = \left[\begin{array}{rr}
 1 \amp 0 \\
 0 \amp -2 \\
 \end{array}\right],\qquad
-P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 \end{array}\right] = 
 \left[\begin{array}{rr}
 1 \amp 2 \\
@@ -878,7 +878,7 @@ A-2I = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">This shows that the eigenspace <span class="process-math">\(E_2\)</span> is one-dimensional with <span class="process-math">\(\vvec_1=\twovec{2}{1}\)</span> forming a basis.</div>
+<div class="para">This shows that the eigenspace <span class="process-math">\(E_2\)</span> is one-dimensional with <span class="process-math">\(\vec{v_1}=\twovec{2}{1}\)</span> forming a basis.</div>
 </div> <div class="para" id="sec-eigen-diag-3-10-1-4">In this case, there is not a basis of <span class="process-math">\(\real^2\)</span> consisting of eigenvectors of <span class="process-math">\(A\text{,}\)</span> which tells us that <span class="process-math">\(A\)</span> is not diagonalizable.</div></article><div class="para" id="sec-eigen-diag-3-11">In fact, if we only know that <span class="process-math">\(A = PDP^{-1}\text{,}\)</span> we can say that the columns of <span class="process-math">\(P\)</span> are eigenvectors of <span class="process-math">\(A\)</span> and that the diagonal entries of <span class="process-math">\(D\)</span> are the associated eigenvalues.</div>
 <article class="proposition theorem-like" id="sec-eigen-diag-3-12"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">4.3.7</span><span class="period">.</span>
@@ -895,7 +895,7 @@ D = \left[\begin{array}{rr}
 2 \amp 0 \\
 0 \amp -2 \\
 \end{array}\right],\qquad
-P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 \end{array}\right] = 
 \left[\begin{array}{rr}
 1 \amp 1 \\
@@ -903,8 +903,8 @@ P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
 \end{array}\right].
 \end{equation*}
 </div>
-<div class="para">The columns of <span class="process-math">\(P\)</span> form eigenvectors of <span class="process-math">\(A\)</span> so that <span class="process-math">\(\vvec_1 =
-\twovec{1}{1}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with eigenvalue <span class="process-math">\(\lambda_1 = 2\)</span> and <span class="process-math">\(\vvec_2 =
+<div class="para">The columns of <span class="process-math">\(P\)</span> form eigenvectors of <span class="process-math">\(A\)</span> so that <span class="process-math">\(\vec{v_1} =
+\twovec{1}{1}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with eigenvalue <span class="process-math">\(\lambda_1 = 2\)</span> and <span class="process-math">\(\vec{v_2} =
 \twovec{1}{2}\)</span> is an eigenvector with eigenvalue <span class="process-math">\(\lambda_2=-2\text{.}\)</span>
 </div>
 </div> <div class="para logical" id="sec-eigen-diag-3-13-1-2">
@@ -918,9 +918,9 @@ A = PDP^{-1} =
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and checking that <span class="process-math">\(A\vvec_1 =
-\twovec{1}{1}=2\vvec_1\)</span> and <span class="process-math">\(A\vvec_2 = \twovec{1}{2} =
--2\vvec_2\text{.}\)</span>
+<div class="para">and checking that <span class="process-math">\(A\vec{v_1} =
+\twovec{1}{1}=2\vec{v_1}\)</span> and <span class="process-math">\(A\vec{v_2} = \twovec{1}{2} =
+-2\vec{v_2}\text{.}\)</span>
 </div>
 </div></article><article class="activity project-like" id="sec-eigen-diag-3-14"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="period">.</span>
@@ -963,7 +963,7 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 </div>
-<div id="sec-eigen-diag-3-14-1-1-1-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div id="sec-eigen-diag-3-14-1-1-1-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </li>
 <li id="sec-eigen-diag-3-14-1-1-1-4">
@@ -979,7 +979,7 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 </div>
-<div id="sec-eigen-diag-3-14-1-1-1-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div id="sec-eigen-diag-3-14-1-1-1-4-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </li>
 <li id="sec-eigen-diag-3-14-1-1-1-5"><div class="para logical" id="sec-eigen-diag-3-14-1-1-1-5-1">
@@ -990,7 +990,7 @@ D = \left[\begin{array}{rr}
 3 \amp 0 \\
 0 \amp -1 \\
 \end{array}\right],\qquad
-P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 \end{array}\right] = 
 \left[\begin{array}{rr}
 2 \amp 2 \\
@@ -1013,17 +1013,17 @@ P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
 <div class="para">In several earlier examples, we have been interested in computing powers of a given matrix.  For instance, in <a href="sec-eigen-intro.html#activity-eigen-intro" class="xref" data-knowl="./knowl/xref/activity-eigen-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 4.1.3">Activity 4.1.3</a>, we had the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 0.8 \amp 0.6 \\
 0.2 \amp 0.4 \\
-\end{array}\right]\)</span> and an initial vector <span class="process-math">\(\xvec_0=\ctwovec{1000}{0}\text{,}\)</span> and we wanted to compute</div>
+\end{array}\right]\)</span> and an initial vector <span class="process-math">\(\vec{x_0}=\ctwovec{1000}{0}\text{,}\)</span> and we wanted to compute</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/activity-eigen-intro.html">
 \begin{equation*}
 \begin{aligned}
-\xvec_1 \amp {}={} A\xvec_0 \\
-\xvec_2 \amp {}={} A\xvec_1 = A^2\xvec_0 \\
-\xvec_3 \amp {}={} A\xvec_2 = A^3\xvec_0\text{.} \\
+\vec{x_1} \amp {}={} A\vec{x_0} \\
+\vec{x_2} \amp {}={} A\vec{x_1} = A^2\vec{x_0} \\
+\vec{x_3} \amp {}={} A\vec{x_2} = A^3\vec{x_0}\text{.} \\
 \end{aligned}
 \end{equation*}
 </div>
-<div class="para">In particular, we wanted to find <span class="process-math">\(\xvec_k=A^k\xvec_0\)</span> and determine what happens as <span class="process-math">\(k\)</span> becomes very large.  If a matrix <span class="process-math">\(A\)</span> is diagonalizable, writing <span class="process-math">\(A=PDP^{-1}\)</span> can help us understand powers of <span class="process-math">\(A\)</span> more easily.</div>
+<div class="para">In particular, we wanted to find <span class="process-math">\(\vec{x_k}=A^k\vec{x_0}\)</span> and determine what happens as <span class="process-math">\(k\)</span> becomes very large.  If a matrix <span class="process-math">\(A\)</span> is diagonalizable, writing <span class="process-math">\(A=PDP^{-1}\)</span> can help us understand powers of <span class="process-math">\(A\)</span> more easily.</div>
 </div>
 <article class="activity project-like" id="sec-eigen-diag-4-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.4</span><span class="period">.</span>
@@ -1042,7 +1042,7 @@ D = \left[\begin{array}{rr}
 <div class="para">Find the powers <span class="process-math">\(D^2\text{,}\)</span> <span class="process-math">\(D^3\text{,}\)</span> and <span class="process-math">\(D^4\text{.}\)</span>  What is <span class="process-math">\(D^k\)</span> for a general value of <span class="process-math">\(k\text{?}\)</span>
 </div>
 </div></li>
-<li id="sec-eigen-diag-4-3-1-1-1-2"><div class="para" id="sec-eigen-diag-4-3-1-1-1-2-1">Suppose that <span class="process-math">\(A\)</span> is a matrix with eigenvector <span class="process-math">\(\vvec\)</span> and associated eigenvalue <span class="process-math">\(\lambda\text{;}\)</span>  that is, <span class="process-math">\(A\vvec = \lambda\vvec\text{.}\)</span>  By considering <span class="process-math">\(A^2\vvec\text{,}\)</span> explain why <span class="process-math">\(\vvec\)</span> is also an eigenvector of <span class="process-math">\(A\)</span> with eigenvalue <span class="process-math">\(\lambda^2\text{.}\)</span>
+<li id="sec-eigen-diag-4-3-1-1-1-2"><div class="para" id="sec-eigen-diag-4-3-1-1-1-2-1">Suppose that <span class="process-math">\(A\)</span> is a matrix with eigenvector <span class="process-math">\(\vec{v}\)</span> and associated eigenvalue <span class="process-math">\(\lambda\text{;}\)</span>  that is, <span class="process-math">\(A\vec{v} = \lambda\vec{v}\text{.}\)</span>  By considering <span class="process-math">\(A^2\vec{v}\text{,}\)</span> explain why <span class="process-math">\(\vec{v}\)</span> is also an eigenvector of <span class="process-math">\(A\)</span> with eigenvalue <span class="process-math">\(\lambda^2\text{.}\)</span>
 </div></li>
 <li id="sec-eigen-diag-4-3-1-1-1-3"><div class="para logical" id="sec-eigen-diag-4-3-1-1-1-3-1">
 <div class="para">Suppose that <span class="process-math">\(A= PDP^{-1}\)</span> where</div>
@@ -1081,11 +1081,11 @@ PD^{-1}P^{-1}\text{.}\)</span>
 <div class="para" id="sec-eigen-diag-4-6-1">Let’s revisit <a href="sec-eigen-intro.html#activity-eigen-intro" class="xref" data-knowl="./knowl/xref/activity-eigen-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 4.1.3">Activity 4.1.3</a> where we had the matrix <span class="process-math">\(A = \begin{bmatrix}
 0.8 \amp 0.6 \\
 0.2 \amp 0.4 \\
-\end{bmatrix}\)</span> and the initial vector <span class="process-math">\(\xvec_0 = \ctwovec{1000}0\text{.}\)</span> We were interested in understanding the sequence of vectors <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{,}\)</span> which means that <span class="process-math">\(\xvec_k =
-A^k\xvec_0\text{.}\)</span>
+\end{bmatrix}\)</span> and the initial vector <span class="process-math">\(\vec{x_0} = \ctwovec{1000}0\text{.}\)</span> We were interested in understanding the sequence of vectors <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{,}\)</span> which means that <span class="process-math">\(\vec{x_k} =
+A^k\vec{x_0}\text{.}\)</span>
 </div>
 <div class="para logical" id="sec-eigen-diag-4-6-2">
-<div class="para">We can verify that <span class="process-math">\(\vvec_1 = \twovec31\)</span> and <span class="process-math">\(\vvec_2 =
+<div class="para">We can verify that <span class="process-math">\(\vec{v_1} = \twovec31\)</span> and <span class="process-math">\(\vec{v_2} =
 \twovec{-1}1\)</span> are eigenvectors of <span class="process-math">\(A\)</span> having associated eigenvalues <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 =
 0.2\text{.}\)</span>  This means that <span class="process-math">\(A = PDP^{-1}\)</span> where</div>
 <div class="displaymath process-math">
@@ -1136,7 +1136,7 @@ A^k = PD^kP^{-1} \approx P\begin{bmatrix}
 \end{equation*}
 </div>
 </div>
-<div class="para" id="sec-eigen-diag-4-6-4">Beginning with the vector <span class="process-math">\(\xvec_0 = \ctwovec{1000}{0}\text{,}\)</span> we find that <span class="process-math">\(\xvec_k = A^k\xvec_0\approx
+<div class="para" id="sec-eigen-diag-4-6-4">Beginning with the vector <span class="process-math">\(\vec{x_0} = \ctwovec{1000}{0}\text{,}\)</span> we find that <span class="process-math">\(\vec{x_k} = A^k\vec{x_0}\approx
 \twovec{750}{250}\)</span> when <span class="process-math">\(k\)</span> is very large.</div></article></section><section class="subsection" id="sec-eigen-diag-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.3.3</span><span class="space"> </span><span class="title">Similarity and complex eigenvalues</span>
 </h3>
@@ -1224,9 +1224,9 @@ A = \left[\begin{array}{rr}
 \end{array}\right]
 \text{.}\)</span>  Verify that <span class="process-math">\(A = PCP^{-1}\text{.}\)</span>
 </div>
-<div id="sec-eigen-diag-5-8-1-1-5-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">C = 
+<div id="sec-eigen-diag-5-8-1-1-5-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">C = 
 P = 
-P*C*P.inverse()
+P*C*P.inv()
 </script></div>
 </li>
 <li id="sec-eigen-diag-5-8-1-1-5-4"><div class="para" id="sec-eigen-diag-5-8-1-1-5-4-1">Explain why <span class="process-math">\(A^k = PC^kP^{-1}\text{.}\)</span>
@@ -1435,16 +1435,16 @@ b \amp a \\
 <li id="exercise-complex-eigenvector-1-1-9-1"><div class="para" id="exercise-complex-eigenvector-1-1-9-1-1">Show that the eigenvalues of <span class="process-math">\(A\)</span> are complex.</div></li>
 <li id="exercise-complex-eigenvector-1-1-9-2"><div class="para" id="exercise-complex-eigenvector-1-1-9-2-1">Choose one of the complex eigenvalues <span class="process-math">\(\lambda=a+bi\)</span> and construct the usual matrix <span class="process-math">\(C\text{.}\)</span>
 </div></li>
-<li id="exercise-complex-eigenvector-1-1-9-3"><div class="para" id="exercise-complex-eigenvector-1-1-9-3-1">Using the same eigenvalue, we will find an eigenvector <span class="process-math">\(\vvec\)</span> where the entries of <span class="process-math">\(\vvec\)</span> are complex numbers.  As always, we will describe <span class="process-math">\(\nul(A-\lambda I)\)</span> by constructing the matrix <span class="process-math">\(A-\lambda I\)</span> and finding its reduced row echelon form.  In doing so, we will necessarily need to use complex arithmetic.</div></li>
-<li id="exercise-complex-eigenvector-1-1-9-4"><div class="para" id="exercise-complex-eigenvector-1-1-9-4-1">We have now found a complex eigenvector <span class="process-math">\(\vvec\text{.}\)</span> Write <span class="process-math">\(\vvec = \vvec_1 - i \vvec_2\)</span> to identify vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> having real entries.</div></li>
+<li id="exercise-complex-eigenvector-1-1-9-3"><div class="para" id="exercise-complex-eigenvector-1-1-9-3-1">Using the same eigenvalue, we will find an eigenvector <span class="process-math">\(\vec{v}\)</span> where the entries of <span class="process-math">\(\vec{v}\)</span> are complex numbers.  As always, we will describe <span class="process-math">\(\nul(A-\lambda I)\)</span> by constructing the matrix <span class="process-math">\(A-\lambda I\)</span> and finding its reduced row echelon form.  In doing so, we will necessarily need to use complex arithmetic.</div></li>
+<li id="exercise-complex-eigenvector-1-1-9-4"><div class="para" id="exercise-complex-eigenvector-1-1-9-4-1">We have now found a complex eigenvector <span class="process-math">\(\vec{v}\text{.}\)</span> Write <span class="process-math">\(\vec{v} = \vec{v_1} - i \vec{v_2}\)</span> to identify vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> having real entries.</div></li>
 <li id="exercise-complex-eigenvector-1-1-9-5"><div class="para" id="exercise-complex-eigenvector-1-1-9-5-1">Construct the matrix <span class="process-math">\(P = \left[\begin{array}{rr}
-\vvec_1 \amp \vvec_2
+\vec{v_1} \amp \vec{v_2}
 \end{array}\right]\)</span> and verify that <span class="process-math">\(A=PCP^{-1}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-eigen-diag-7-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-eigen-diag-7-9-1-1">
-<div class="para">For each of the following matrices, sketch the vector <span class="process-math">\(\xvec = \twovec{1}{0}\)</span> and powers <span class="process-math">\(A^k\xvec\)</span> for <span class="process-math">\(k=1,2,3,4\text{.}\)</span>
+<div class="para">For each of the following matrices, sketch the vector <span class="process-math">\(\vec{x} = \twovec{1}{0}\)</span> and powers <span class="process-math">\(A^k\vec{x}\)</span> for <span class="process-math">\(k=1,2,3,4\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-diag-7-9-1-1-4">
 <li id="sec-eigen-diag-7-9-1-1-4-1"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
@@ -1485,7 +1485,7 @@ b \amp a \\
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-eigen-diag-7-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-eigen-diag-7-10-1-1">
-<div class="para">For each of the following matrices and vectors, sketch the vector <span class="process-math">\(\xvec\)</span> along with <span class="process-math">\(A^k\xvec\)</span> for <span class="process-math">\(k=1,2,3,4\text{.}\)</span>
+<div class="para">For each of the following matrices and vectors, sketch the vector <span class="process-math">\(\vec{x}\)</span> along with <span class="process-math">\(A^k\vec{x}\)</span> for <span class="process-math">\(k=1,2,3,4\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-diag-7-10-1-1-4">
 <li id="sec-eigen-diag-7-10-1-1-4-1"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
@@ -1497,7 +1497,7 @@ A \amp {}={} \left[\begin{array}{rr}
 0 \amp 0.7 \\
 \end{array}\right] \\
 \\
-\xvec \amp {}={} \twovec{1}{2}\text{.}
+\vec{x} \amp {}={} \twovec{1}{2}\text{.}
 \end{aligned}\text{.}
 \end{equation*}
 </div></div></div>
@@ -1511,7 +1511,7 @@ A \amp {}={} \left[\begin{array}{rr}
 0.6 \amp 0 \\
 0 \amp 0.9 \\
 \end{array}\right] \\ \\
-\xvec \amp {}={} \twovec{4}{3}\text{.}
+\vec{x} \amp {}={} \twovec{4}{3}\text{.}
 \end{aligned}
 \end{equation*}
 </div></div></div>
@@ -1525,7 +1525,7 @@ A \amp {}={} \left[\begin{array}{rr}
 1.2 \amp 0 \\
 0 \amp 1.4 \\
 \end{array}\right] \\ \\
-\xvec\amp{}={}\twovec{2}{1}\text{.}
+\vec{x}\amp{}={}\twovec{2}{1}\text{.}
 \end{aligned}
 \end{equation*}
 </div></div></div>
@@ -1540,7 +1540,7 @@ A \amp {}={} \left[\begin{array}{rr}
 0.95 \amp 0.25 \\
 0.25 \amp 0.95 \\
 \end{array}\right] \\ \\
-\xvec\amp{}={}\twovec{3}{0}\text{.}
+\vec{x}\amp{}={}\twovec{3}{0}\text{.}
 \end{aligned}
 \end{equation*}
 </div>
@@ -1548,7 +1548,7 @@ A \amp {}={} \left[\begin{array}{rr}
 </div></div>
 <div class="sbspanel top" style="width:48.9795918367347%;"><img src="external/images/empty.svg" role="img" class="contained"></div>
 </div></div></li>
-<li id="sec-eigen-diag-7-10-1-1-4-5"><div class="para" id="sec-eigen-diag-7-10-1-1-4-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix with eigenvalues <span class="process-math">\(\lambda_1=0.7\)</span> and <span class="process-math">\(\lambda_2=0.5\)</span> and <span class="process-math">\(\xvec\)</span> is any vector, what happens to <span class="process-math">\(A^k\xvec\)</span> when <span class="process-math">\(k\)</span> becomes very large?</div></li>
+<li id="sec-eigen-diag-7-10-1-1-4-5"><div class="para" id="sec-eigen-diag-7-10-1-1-4-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(2\times2\)</span> matrix with eigenvalues <span class="process-math">\(\lambda_1=0.7\)</span> and <span class="process-math">\(\lambda_2=0.5\)</span> and <span class="process-math">\(\vec{x}\)</span> is any vector, what happens to <span class="process-math">\(A^k\vec{x}\)</span> when <span class="process-math">\(k\)</span> becomes very large?</div></li>
 </ol>
 </div></article></section></section></div>
 <div class="ptx-content-footer">
