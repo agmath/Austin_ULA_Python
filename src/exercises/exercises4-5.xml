@@ -57,24 +57,24 @@
       <p><ol marker="a.">
 	<li><p> The eigenvalues are <m>\lambda_1=1</m> and
 	<m>\lambda_2=0</m> so there is a unique steady-state vector
-	<m>\qvec=\twovec10</m> to which any Markov chain will
+	<m>\vec{q}=\twovec10</m> to which any Markov chain will
 	converge. </p></li>
 
 	<li><p> The eigenvalues are <m>\lambda_1=1</m> and
 	<m>\lambda_2=-0.2</m> so there is a unique steady-state vector
-	<m>\qvec=\twovec{\frac56}{\frac16}</m> to which any Markov
+	<m>\vec{q}=\twovec{\frac56}{\frac16}</m> to which any Markov
 	chain will converge. </p></li>
 
 	<li><p> Every two-dimensional vector is an eigenvector with
-	eigenvalue <m>\lambda=1</m> so that <m>A\xvec=\xvec</m> for
-	every <m>\xvec</m>.  This shows that any Markov chain will
+	eigenvalue <m>\lambda=1</m> so that <m>A\vec{x}=\vec{x}</m> for
+	every <m>\vec{x}</m>.  This shows that any Markov chain will
 	remain constant.  The steady-state vectors are those for
-	which <m>\qvec=\twovec{p}{1-p}</m> for some <m>p</m> 
+	which <m>\vec{q}=\twovec{p}{1-p}</m> for some <m>p</m> 
 	satisfying <m>0\leq p\leq 1</m>.  </p></li>
 
 	<li><p> The eigenvalues are <m>\lambda_1=1</m> and
 	<m>\lambda_2=0.1</m> so there is a unique steady-state vector
-	<m>\qvec=\twovec{\frac23}{\frac13}</m> to which any Markov
+	<m>\vec{q}=\twovec{\frac23}{\frac13}</m> to which any Markov
 	chain will converge. </p></li>
       </ol></p>
     </solution>
@@ -82,18 +82,18 @@
     <answer>
       <p><ol marker="a.">
 	<li><p> Any Markov chain will converge to
-	<m>\qvec=\twovec10</m>.</p></li>
+	<m>\vec{q}=\twovec10</m>.</p></li>
 
 	<li><p> Any Markov chain will converge to
-	<m>\qvec=\twovec{\frac56}{\frac16}</m>.
+	<m>\vec{q}=\twovec{\frac56}{\frac16}</m>.
 	</p></li>
 
 	<li><p> The steady-state vectors are those for
-	which <m>\qvec=\twovec{p}{1-p}</m> for some <m>p</m> 
+	which <m>\vec{q}=\twovec{p}{1-p}</m> for some <m>p</m> 
 	satisfying <m>0\leq p\leq 1</m>.  </p></li>
 
 	<li><p> Any Markov chain will converge to 
-	<m>\qvec=\twovec{\frac23}{\frac13}</m>. </p></li>
+	<m>\vec{q}=\twovec{\frac23}{\frac13}</m>. </p></li>
       </ol></p>
     </answer>
   </exercise>
@@ -120,17 +120,17 @@
 	  the movement of people. </p></li>
 
 	  <li><p> Explain what the Perron-Frobenius theorem tells us 
-	  about the existence of a steady-state vector <m>\qvec</m>
+	  about the existence of a steady-state vector <m>\vec{q}</m>
 	  and the behavior of a Markov chain. </p></li>
 
-	  <li><p> Use the Sage cell below to find the some terms of a
+	  <li><p> Use the Python cell below to find the some terms of a
 	  Markov chain.
-	  <sage>
+	  <sage language="python">
 	    <input>
 def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix G and x0
 A =
 x0 =
@@ -171,11 +171,11 @@ markov_chain(A, x0, 20)
 	<li><p> Since all the entries of <m>A</m> are positive, we
 	know that <m>A</m> is a positive matrix.  Therefore, the
 	Perron-Frobenius theorem tells us that there is a unique
-	steady-state vector <m>\qvec</m> and that any Markov chain
-	will converge to <m>\qvec</m>.</p></li>
+	steady-state vector <m>\vec{q}</m> and that any Markov chain
+	will converge to <m>\vec{q}</m>.</p></li>
 
 	<li><p> Any Markov chain we create will converge to
-	<m>\qvec=\threevec{0.267}{0.333}{0.400}</m>.  </p></li>
+	<m>\vec{q}=\threevec{0.267}{0.333}{0.400}</m>.  </p></li>
 
 	<li><p> Eventually, about <m>26.7</m>% of the population
 	will be rural, <m>33.3</m>% will be suburban, and
@@ -196,11 +196,11 @@ markov_chain(A, x0, 20)
 	</p></li>
 
 	<li><p> There is a unique
-	steady-state vector <m>\qvec</m> and any Markov chain
-	will converge to <m>\qvec</m>.</p></li>
+	steady-state vector <m>\vec{q}</m> and any Markov chain
+	will converge to <m>\vec{q}</m>.</p></li>
 
 	<li><p> Any Markov chain we create will converge to
-	<m>\qvec=\threevec{0.267}{0.333}{0.400}</m>.  </p></li>
+	<m>\vec{q}=\threevec{0.267}{0.333}{0.400}</m>.  </p></li>
 
 	<li><p> Eventually, about <m>26.7</m>% of the population
 	will be rural, <m>33.3</m>% will be suburban, and
@@ -286,7 +286,7 @@ markov_chain(A, x0, 20)
       </me>.
       <ol marker="a.">
 	<li><p> Find the eigenvalues of <m>A</m>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -307,9 +307,9 @@ markov_chain(A, x0, 20)
       <p><ol marker="a.">
 	<li><p> The eigenvalues are <m>\lambda_1=1</m>,
 	<m>\lambda_2=0.8</m>, and <m>\lambda_3=0.4</m> with associated
-	eigenvectors <m>\vvec_1=\threevec100</m>,
-	<m>\vvec_2=\threevec{-2}11</m>, and
-	<m>\vvec_3=\threevec01{-1}</m>. </p></li>
+	eigenvectors <m>\vec{v_1}=\threevec100</m>,
+	<m>\vec{v_2}=\threevec{-2}11</m>, and
+	<m>\vec{v_3}=\threevec01{-1}</m>. </p></li>
 
 	<li><p> The conditions of the Perron-Frobenius theorem do not
 	apply because the matrix is not positive.  The first column of
@@ -319,9 +319,9 @@ markov_chain(A, x0, 20)
 	<li><p> Since <m>\lambda_1=1</m> has multiplicity <m>1</m>, we
 	know that <m>E_1</m> is one-dimensional.  There is, therefore,
 	a unique steady-state vector
-	<m>\qvec=\threevec100</m>. </p></li>
+	<m>\vec{q}=\threevec100</m>. </p></li>
 
-	<li><p> Any Markov chain will converge to <m>\qvec</m> because
+	<li><p> Any Markov chain will converge to <m>\vec{q}</m> because
 	the eigenvalues <m>\lambda_2</m> and <m>\lambda_2</m> are less
 	than <m>1</m>. </p></li>
       </ol></p>
@@ -331,17 +331,17 @@ markov_chain(A, x0, 20)
       <p><ol marker="a.">
 	<li><p> The eigenvalues are <m>\lambda_1=1</m>,
 	<m>\lambda_2=0.8</m>, and <m>\lambda_3=0.4</m> with associated
-	eigenvectors <m>\vvec_1=\threevec100</m>,
-	<m>\vvec_2=\threevec{-2}11</m>, and
-	<m>\vvec_3=\threevec01{-1}</m>. </p></li>
+	eigenvectors <m>\vec{v_1}=\threevec100</m>,
+	<m>\vec{v_2}=\threevec{-2}11</m>, and
+	<m>\vec{v_3}=\threevec01{-1}</m>. </p></li>
 
 	<li><p> No
 	</p></li>
 
-	<li><p> <m>\qvec=\threevec100</m> </p></li>
+	<li><p> <m>\vec{q}=\threevec100</m> </p></li>
 
 	<li><p> Any Markov chain will converge to
-	<m>\qvec</m>. </p></li> 
+	<m>\vec{q}</m>. </p></li> 
       </ol></p>
     </answer>
     
@@ -359,9 +359,9 @@ markov_chain(A, x0, 20)
 	\end{aligned}
       </me>
       <ol marker="a.">
-	<li><p> If the vector <m>\xvec_k=\twovec{R_k}{S_k}</m>,
+	<li><p> If the vector <m>\vec{x_k}=\twovec{R_k}{S_k}</m>,
 	write the matrix <m>A</m> that describes the evolution of the
-	populations <m>\xvec_{k+1} = A\xvec_k</m>.</p></li>
+	populations <m>\vec{x_{k+1}} = A\vec{x_k}</m>.</p></li>
 
 	<li><p> Explain whether the matrix <m>A</m> is stochastic or
 	not. </p></li> 
@@ -441,33 +441,33 @@ markov_chain(A, x0, 20)
   <exercise xml:id="exercise-stochastic-probability">
     <statement>
       <p> Suppose that <m>A</m> is a stochastic matrix and that
-      <m>\xvec</m> is a probability vector.  We would like
-      to explain why the product <m>A\xvec</m> is a probability vector.
+      <m>\vec{x}</m> is a probability vector.  We would like
+      to explain why the product <m>A\vec{x}</m> is a probability vector.
       <ol marker="a.">
-	<li><p> Explain why <m>\xvec=\threevec{0.4}{0.5}{0.1}</m> is
+	<li><p> Explain why <m>\vec{x}=\threevec{0.4}{0.5}{0.1}</m> is
 	a probability vector and then find the product
-	<m>S\xvec</m>. </p></li>  
+	<m>S\vec{x}</m>. </p></li>  
 	
-	<li><p> More generally, if <m>\xvec</m> is any probability
-	vector, what is the product <m>S\xvec</m>?  </p></li>
+	<li><p> More generally, if <m>\vec{x}</m> is any probability
+	vector, what is the product <m>S\vec{x}</m>?  </p></li>
 
 	<li><p> If <m>A</m> is a stochastic matrix, explain why
 	<m>SA=S</m>. </p></li> 
 
-	<li><p> Explain why <m>A\xvec</m> is a probability vector by
-	considering the product <m>SA\xvec</m>. </p></li>
+	<li><p> Explain why <m>A\vec{x}</m> is a probability vector by
+	considering the product <m>SA\vec{x}</m>. </p></li>
       </ol></p>
     </statement>
 
     <solution>
       <p><ol marker="a.">
-	<li><p> Since the components of <m>\xvec</m> are nonnegative
-	and add to <m>1</m>, <m>\xvec</m> is a probability vector.  We
-	see that <m>S\xvec=[1]</m>. </p></li>
+	<li><p> Since the components of <m>\vec{x}</m> are nonnegative
+	and add to <m>1</m>, <m>\vec{x}</m> is a probability vector.  We
+	see that <m>S\vec{x}=[1]</m>. </p></li>
 
-	<li><p> Multiplying any vector <m>\xvec</m> by <m>S</m> just adds the
-	components of <m>\xvec</m>.  Therefore, if <m>\xvec</m> is a
-	probability vector, <m>S\xvec=[1]</m>.
+	<li><p> Multiplying any vector <m>\vec{x}</m> by <m>S</m> just adds the
+	components of <m>\vec{x}</m>.  Therefore, if <m>\vec{x}</m> is a
+	probability vector, <m>S\vec{x}=[1]</m>.
 	</p></li>
 
 	<li><p> Because the columns of <m>A</m> add to <m>1</m>, we
@@ -478,28 +478,28 @@ markov_chain(A, x0, 20)
 	</p></li>
 
 	<li><p> Because all the entries in both <m>A</m> and
-	<m>\xvec</m> are 
-	nonnegative, it follows that the components of <m>A\xvec</m>
-	are nonnegative.  Then we have <m>S(A\xvec)=(SA)\xvec = S\xvec
-	= [1]</m>, which shows that the components of <m>\xvec</m> add
-	to <m>1</m>.  Therefore, <m>\xvec</m> is a probability
+	<m>\vec{x}</m> are 
+	nonnegative, it follows that the components of <m>A\vec{x}</m>
+	are nonnegative.  Then we have <m>S(A\vec{x})=(SA)\vec{x} = S\vec{x}
+	= [1]</m>, which shows that the components of <m>\vec{x}</m> add
+	to <m>1</m>.  Therefore, <m>\vec{x}</m> is a probability
 	vector. </p></li>
       </ol></p>
     </solution>
 
     <answer>
       <p><ol marker="a.">
-	<li><p> <m>S\xvec=[1]</m>. </p></li>
+	<li><p> <m>S\vec{x}=[1]</m>. </p></li>
 
-	<li><p> If <m>\xvec</m> is a
-	probability vector, <m>S\xvec=[1]</m>.
+	<li><p> If <m>\vec{x}</m> is a
+	probability vector, <m>S\vec{x}=[1]</m>.
 	</p></li>
 
 	<li><p> The entries in <m>SA</m> are the
 	sums of the columns of <m>A</m>, which are all <m>1</m>.  
 	</p></li>
 
-	<li><p> <m>S(A\xvec)=(SA)\xvec = S\xvec = [1]</m></p></li>
+	<li><p> <m>S(A\vec{x})=(SA)\vec{x} = S\vec{x} = [1]</m></p></li>
       </ol></p>
     </answer>
   </exercise>
@@ -536,9 +536,9 @@ markov_chain(A, x0, 20)
 	the product of two stochastic matrices is
 	stochastic. </p></li>
 
-	<li><p> If <m>\qvec</m> is a steady-state vector for <m>A</m>,
+	<li><p> If <m>\vec{q}</m> is a steady-state vector for <m>A</m>,
 	it will be a steady-state vector for <m>A^2</m> as well
-	because <m>A^2\qvec = A\qvec=\qvec</m>. </p>
+	because <m>A^2\vec{q} = A\vec{q}=\vec{q}</m>. </p>
 
 	<p> However, it is possible that there are steady-state
 	vectors of <m>A^2</m> that are not steady-state vectors of
@@ -577,11 +577,11 @@ markov_chain(A, x0, 20)
       <ol marker="a.">
 	<li><p> What is the product <m>S(A-I)</m>? </p></li>
 
-	<li><p> What is the product <m>S\evec_1</m>?</p></li>
+	<li><p> What is the product <m>S\vec{e_1}</m>?</p></li>
 	
-	<li><p> Consider the equation <m>(A-I)\xvec = \evec_1</m>.
+	<li><p> Consider the equation <m>(A-I)\vec{x} = \vec{e_1}</m>.
 	Explain why this equation cannot be consistent by multiplying
-	by <m>S</m> to obtain <m>S(A-I)\xvec = S\evec_1</m>.  </p></li>
+	by <m>S</m> to obtain <m>S(A-I)\vec{x} = S\vec{e_1}</m>.  </p></li>
 
 	<li><p> What can you say about the span of the columns of
 	<m>A-I</m>? </p></li>
@@ -599,20 +599,20 @@ markov_chain(A, x0, 20)
 	\left[\begin{array}{rrrr}0\amp0\amp\cdots\amp 0
 	\end{array}\right]</m>.  </p></li>
 
-	<li><p> <m>S\evec_1 = \begin{bmatrix} 0
+	<li><p> <m>S\vec{e_1} = \begin{bmatrix} 0
 	\end{bmatrix}</m>. </p></li> 
 
 	<li><p> We have
 	<me>
 	  \begin{aligned}
-	  (A-I)\xvec \amp = \evec_1 \\
-	  S(A-I)\xvec \amp = S\evec_1 \\
+	  (A-I)\vec{x} \amp = \vec{e_1} \\
+	  S(A-I)\vec{x} \amp = S\vec{e_1} \\
 	  \begin{bmatrix} 0 \end{bmatrix} \amp = \begin{bmatrix} 1
 	  \end{bmatrix}.
 	  \end{aligned}
 	</me>
-	This says that the original equation <m>(A-I)\xvec =
-	\evec_1</m> is not consistent. </p></li>
+	This says that the original equation <m>(A-I)\vec{x} =
+	\vec{e_1}</m> is not consistent. </p></li>
 	
 	<li><p> The span of the columns of <m>A-I</m> is not
 	<m>\real^n</m>. </p></li>
@@ -634,10 +634,10 @@ markov_chain(A, x0, 20)
 	\end{array}\right]</m>
 	</p></li>
 
-	<li><p> <m>S\evec_1 = \begin{bmatrix}1\end{bmatrix}</m>.
+	<li><p> <m>S\vec{e_1} = \begin{bmatrix}1\end{bmatrix}</m>.
 	</p></li>
 	
-	<li><p> <m>S(A-I)\xvec = [0]</m> while <m>S\evec_1=[1]</m>.
+	<li><p> <m>S(A-I)\vec{x} = [0]</m> while <m>S\vec{e_1}=[1]</m>.
 	</p></li> 
 
 	<li><p> The span of the columns of <m>A-I</m> is not
@@ -676,22 +676,23 @@ markov_chain(A, x0, 20)
       <m>\alpha</m> in this exercise.  Let's consider the model
       Internet described in <xref 
       ref="fig-google-cyclic" /> and construct the Google matrix
-      <m>G</m>.  In the Sage cell below, you can enter the matrix
+      <m>G</m>.  In the Python cell below, you can enter the matrix
       <m>G</m> and choose a value for <m>\alpha</m>.
-      <sage>
+      <sage language="python">
 	<input>
 def modified_markov_chain(A, x0, N):
     r = A.nrows()
-    A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
-    for i in range(N):
+    #A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
+    A = alpha*A + (1 - alpha)*(1.0/r)*np.ones_like(A)
+	for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## Define the matrix original Google matrix G and choose alpha.
 ## The function above finds the modified Google matrix
 ## and resulting Markov chain
 alpha = 0
 G =
-x0 = vector([1,0,0,0,0])
+x0 = np.array([1.0,0,0,0,0])
 modified_markov_chain(G, x0, 20)		
 	</input>
       </sage>
@@ -699,14 +700,14 @@ modified_markov_chain(G, x0, 20)
       <ol marker="a.">
 	<li><p> Let's begin with <m>\alpha=0</m>.  With this choice,
 	what is the matrix <m>G'=\alpha G + (1-\alpha)H_n</m>?
-	Construct a Markov chain using the Sage cell above.  How
+	Construct a Markov chain using the Python cell above.  How
 	many steps are required for the Markov chain to converge to
-	the accuracy with which the vectors <m>\xvec_k</m> are
+	the accuracy with which the vectors <m>\vec{x_k}</m> are
 	displayed? </p></li>
 	
 	<li><p> Now choose <m>\alpha=0.25</m>.  How
 	many steps are required for the Markov chain to converge to
-	the accuracy at which the vectors <m>\xvec_k</m> are
+	the accuracy at which the vectors <m>\vec{x_k}</m> are
 	displayed? </p></li>
 	
 	<li><p> Repeat this experiment with <m>\alpha = 0.5</m> and
@@ -730,7 +731,7 @@ modified_markov_chain(G, x0, 20)
 
     <solution>
       <p> Remember that the steady-state vector for <m>G'</m> is
-      <m>\qvec=\left[\begin{array}{c}
+      <m>\vec{q}=\left[\begin{array}{c}
       \frac15  \\
       \frac15  \\
       \frac15  \\
@@ -739,16 +740,16 @@ modified_markov_chain(G, x0, 20)
       \end{array}\right]</m>.
       <ol marker="a.">
 	<li><p> If <m>\alpha = 0</m>, then <m>G'=H_n</m> and we see
-	that any Markov chain converges to <m>\qvec</m> in one term.
-	That is, <m>\xvec_1=\qvec</m>. </p></li>
+	that any Markov chain converges to <m>\vec{q}</m> in one term.
+	That is, <m>\vec{x_1}=\vec{q}</m>. </p></li>
 
-	<li><p> After six terms, we have <m>\xvec_6=\qvec</m> to
+	<li><p> After six terms, we have <m>\vec{x_6}=\vec{q}</m> to
 	three digits. </p></li>
 
 	<li><p> With <m>\alpha = 0.5</m>, it is not until
-	<m>\xvec_{11}=\qvec</m> to three digits. With
+	<m>\vec{x_{11}}=\vec{q}</m> to three digits. With
 	<m>\alpha=0.75</m>, it is not until
-	<m>\xvec_{26}</m>. </p></li>
+	<m>\vec{x_{26}}</m>. </p></li>
 
 	<li><p> With <m>\alpha=1</m>, we have <m>G'=G</m> so the
 	Markov chain will never converge. </p></li>
@@ -758,16 +759,16 @@ modified_markov_chain(G, x0, 20)
       <p> <ol marker="a.">
 	<li><p> If <m>\alpha = 0</m>, then <m>G'=H_n</m> and we see
 	that any Markov chain converges to the steady-state vector
-	<m>\qvec</m> in one term. 
-	That is, <m>\xvec_1=\qvec</m>. </p></li>
+	<m>\vec{q}</m> in one term. 
+	That is, <m>\vec{x_1}=\vec{q}</m>. </p></li>
 
-	<li><p> After six terms, we have <m>\xvec_6=\qvec</m> to
+	<li><p> After six terms, we have <m>\vec{x_6}=\vec{q}</m> to
 	three digits. </p></li>
 
 	<li><p> With <m>\alpha = 0.5</m>, it is not until
-	<m>\xvec_{11}=\qvec</m> to three digits. With
+	<m>\vec{x_{11}}=\vec{q}</m> to three digits. With
 	<m>\alpha=0.75</m>, it is not until
-	<m>\xvec_{26}</m>. </p></li>
+	<m>\vec{x_{26}}</m>. </p></li>
 
 	<li><p> With <m>\alpha=1</m>, we have <m>G'=G</m> so the
 	Markov chain will never converge. </p></li>
@@ -826,9 +827,9 @@ modified_markov_chain(G, x0, 20)
 	  move. </p>
 
 	  <p> Since we begin the game on square 1, the initial vector
-	  <m>\xvec_0 = \evec_1</m>.  Generate a few terms of the
-	  Markov chain <m>\xvec_{k+1} = A\xvec_k</m>.
-	  <sage>
+	  <m>\vec{x_0} = \vec{e_1}</m>.  Generate a few terms of the
+	  Markov chain <m>\vec{x_{k+1}} = A\vec{x_k}</m>.
+	  <sage language="python">
 	    <input>
 def markov_chain(A, x0, N):
     for i in range(N):
@@ -869,13 +870,13 @@ markov_chain(A, x0, 10)
 	  <p> Once again, construct the <m>6\times6</m> stochastic
 	  matrix that records the probability that we move from one
 	  square to another on a given turn and generate some terms in
-	  the Markov chain that begins with <m>\xvec_0=\evec_1</m>.  
-	  <sage>
+	  the Markov chain that begins with <m>\vec{x_0}=\vec{e_1}</m>.  
+	  <sage language="python">
 	    <input>
 def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix A and x0
 A =
 x0 =
@@ -938,16 +939,16 @@ markov_chain(A, x0, 10)
 	  0 \amp 0 \amp 0 \amp 0 \amp 0 \amp \frac{1}{2} \amp 1 \amp 1
 	  \end{array}\right]\text{.}
 	</me>
-	Starting a Markov chain with <m>\xvec_0 = \evec_1</m>, we find
+	Starting a Markov chain with <m>\vec{x_0} = \vec{e_1}</m>, we find
 	that
 	<me>
-	  \xvec_4=\left[\begin{array}{c}
+	  \vec{x_4}=\left[\begin{array}{c}
 	  0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.0625\\ 0.250\\ 0.375\\ 0.312
 	  \end{array}\right],
-	  \xvec_6=\left[\begin{array}{c}
+	  \vec{x_6}=\left[\begin{array}{c}
 	  0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.0156\\ 0.984
 	  \end{array}\right],
-	  \xvec_7=\left[\begin{array}{c}
+	  \vec{x_7}=\left[\begin{array}{c}
 	  0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.000\\ 0.000\\ 1.00
 	  \end{array}\right]\text{.}
 	</me>
@@ -972,19 +973,19 @@ markov_chain(A, x0, 10)
 	which leads to the Markov chain with terms
 	<me>
 	  \begin{array}{rrr}
-	  \xvec_3=\left[\begin{array}{c}
+	  \vec{x_3}=\left[\begin{array}{c}
 	  0.250\\ 0.125\\ 0.000\\ 0.250\\ 0.250\\ 0.125
 	  \end{array}\right], \amp 
-	  \xvec_5=\left[\begin{array}{c}
+	  \vec{x_5}=\left[\begin{array}{c}
 	  0.156\\ 0.125\\ 0.063\\ 0.219\\ 0.125\\ 0.312
 	  \end{array}\right], \amp
-	  \xvec_7=\left[\begin{array}{c}
+	  \vec{x_7}=\left[\begin{array}{c}
 	  0.156\\ 0.086\\ 0.039\\ 0.156\\ 0.117\\ 0.445
 	  \end{array}\right], \\
-	  \xvec_9=\left[\begin{array}{c}
+	  \vec{x_9}=\left[\begin{array}{c}
 	  0.119\\ 0.069\\ 0.039\\ 0.129\\ 0.092\\ 0.553
 	  \end{array}\right], \amp
-	  \xvec_{23}=\left[\begin{array}{c}
+	  \vec{x_{23}}=\left[\begin{array}{c}
 	  0.027\\ 0.015\\ 0.008\\ 0.028\\ 0.020\\ 0.902
 	  \end{array}\right]\text{.}
 	  \end{array}
@@ -1004,7 +1005,7 @@ markov_chain(A, x0, 10)
 	  <li><p> After 23 moves, there is a <m>90.2</m>%
 	  chance that we have arrived at square <m>6</m>. </p></li>
 
-	  <li><p> The steady-state vector is <m>\qvec=\evec_6</m>,
+	  <li><p> The steady-state vector is <m>\vec{q}=\vec{e_6}</m>,
 	  which means that we will eventually arrive at square
 	  <m>6</m>. </p></li>
 	</ol>
@@ -1037,7 +1038,7 @@ markov_chain(A, x0, 10)
 	  <li><p> After 23 moves, there is a <m>90.2</m>%
 	  chance that we have arrived at square <m>6</m>. </p></li>
 
-	  <li><p> <m>\qvec=\evec_6</m> </p></li>
+	  <li><p> <m>\vec{q}=\vec{e_6}</m> </p></li>
 	</ol>
 	</p></li>
       </ol></p>

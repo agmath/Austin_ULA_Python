@@ -17,14 +17,14 @@
     <p> In this section, we will put these ideas to use as we explore
     discrete dynamical systems, first encountered in <xref
     ref="subsec-dynamical-systems" />.  Recall that we used a state
-    vector <m>\xvec</m> to characterize the state of some system
+    vector <m>\vec{x}</m> to characterize the state of some system
     at a particular time, such as
     the distribution of delivery trucks between two locations.
     A matrix <m>A</m> described the transition of
-    the state vector with <m>A\xvec</m> characterizing the state of the
+    the state vector with <m>A\vec{x}</m> characterizing the state of the
     system at a later time.  Since we would like to understand how the
     state vector evolves over time, we are interested in studying the
-    sequence of vectors <m>A^k\xvec</m>. </p>
+    sequence of vectors <m>A^k\vec{x}</m>. </p>
 
     <p> Our goal in this section is to describe the types of behaviors
     that dynamical systems exhibit and to develop a means of detecting
@@ -50,16 +50,16 @@
 
 	<li><p> Form a basis of <m>\real^2</m> consisting
 	of eigenvectors 
-	of <m>A</m> and write the vector <m>\xvec = \twovec{1}{4}</m>
+	of <m>A</m> and write the vector <m>\vec{x} = \twovec{1}{4}</m>
 	as a linear combination of basis vectors. </p></li>
 
-	<li><p> Write <m>A\xvec</m> as a linear combination of basis
+	<li><p> Write <m>A\vec{x}</m> as a linear combination of basis
 	vectors. </p></li>
 
-	<li><p> For some power <m>k</m>, write <m>A^k\xvec</m> as a
+	<li><p> For some power <m>k</m>, write <m>A^k\vec{x}</m> as a
 	linear combination of basis vectors.</p></li>
 
-	<li><p> Find the vector <m>A^5\xvec</m>. </p></li>
+	<li><p> Find the vector <m>A^5\vec{x}</m>. </p></li>
 
       </ol></p>
       </statement>
@@ -71,23 +71,23 @@
 	  are the diagonal entries of <m>D</m> and the eigenvectors
 	  are the columns of <m>P</m>.  Therefore, we know the
 	  eigenvalues are <m>\lambda_1=2</m> with associated
-	  eigenvector <m>\vvec_1=\twovec11</m> and <m>\lambda_2=-3</m>
-	  with associated eigenvector <m>\vvec_2=\twovec{-1}{2}</m>.
+	  eigenvector <m>\vec{v_1}=\twovec11</m> and <m>\lambda_2=-3</m>
+	  with associated eigenvector <m>\vec{v_2}=\twovec{-1}{2}</m>.
 	  </p></li>
 
-	  <li><p> The columns of <m>P</m>, <m>\vvec_1</m> and
-	  <m>\vvec_2</m>, form a basis for
-	  <m>\real^2</m>.  We find that <m>\xvec=\twovec14 =
-	  2\vvec_1+\vvec_2</m>. </p></li>
+	  <li><p> The columns of <m>P</m>, <m>\vec{v_1}</m> and
+	  <m>\vec{v_2}</m>, form a basis for
+	  <m>\real^2</m>.  We find that <m>\vec{x}=\twovec14 =
+	  2\vec{v_1}+\vec{v_2}</m>. </p></li>
 
 	  <li><p> Then
-	  <m>A\xvec=2\lambda_1\vvec_1+\lambda_2\vvec_2=
-	  4\vvec_1-3\vvec_2</m>. </p></li>
+	  <m>A\vec{x}=2\lambda_1\vec{v_1}+\lambda_2\vec{v_2}=
+	  4\vec{v_1}-3\vec{v_2}</m>. </p></li>
 
-	  <li><p> We have <m>A^k\xvec = 2\cdot2^k\vvec_1
-	  +(-3)^k\vvec_2</m>. </p></li>
+	  <li><p> We have <m>A^k\vec{x} = 2\cdot2^k\vec{v_1}
+	  +(-3)^k\vec{v_2}</m>. </p></li>
 
-	  <li><p> <m>A^5\xvec = 2\cdot2^5\vvec_1 + (-3)^5\vvec_2 =
+	  <li><p> <m>A^5\vec{x} = 2\cdot2^5\vec{v_1} + (-3)^5\vec{v_2} =
 	  \twovec{307}{-422}</m>. </p></li>
 	</ol></p>
       </solution>
@@ -138,8 +138,8 @@
 
       <p>
       We will record the populations in a vector
-      <m>\xvec_k = \twovec{R_k}{S_k}</m> and note that
-      <m>\xvec_{k+1} = A\xvec_k</m> where
+      <m>\vec{x_k} = \twovec{R_k}{S_k}</m> and note that
+      <m>\vec{x_{k+1}} = A\vec{x_k}</m> where
       <m>A = \left[\begin{array}{rr}
       0.9 \amp 0.8 \\
       0.2 \amp 0.9 \\
@@ -148,22 +148,22 @@
       <ol marker="a.">
 	<li><p> Verify that
 	<me>
-	  \vvec_1=\twovec{2}{1},\qquad
-	  \vvec_2=\twovec{-2}{1}
+	  \vec{v_1}=\twovec{2}{1},\qquad
+	  \vec{v_2}=\twovec{-2}{1}
 	</me>
 	are eigenvectors of <m>A</m> and find their respective
 	eigenvalues. </p></li>
 
-	<li><p> Suppose that initially <m>\xvec_0 = \twovec{2}{3}</m>.
+	<li><p> Suppose that initially <m>\vec{x_0} = \twovec{2}{3}</m>.
 	Write 
-	<m>\xvec_0</m> as a linear combination of the eigenvectors
-	<m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+	<m>\vec{x_0}</m> as a linear combination of the eigenvectors
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  </p></li>
 
-	<li><p> Write the vectors <m>\xvec_1</m>, <m>\xvec_2</m>, and
-	<m>\xvec_3</m> as linear combinations of the eigenvectors
-	<m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+	<li><p> Write the vectors <m>\vec{x_1}</m>, <m>\vec{x_2}</m>, and
+	<m>\vec{x_3}</m> as linear combinations of the eigenvectors
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  </p></li>
 
-	<li><p> What happens to <m>\xvec_k</m> after a very long time?
+	<li><p> What happens to <m>\vec{x_k}</m> after a very long time?
 	</p></li> 
 
 	<li><p> When <m>k</m> becomes very large, what happens to the
@@ -174,7 +174,7 @@
 	what factor does the population of <m>S</m> grow every year?
 	</p></li> 
 
-	<li><p> If we begin instead with <m>\xvec_0 =
+	<li><p> If we begin instead with <m>\vec{x_0} =
 	\twovec{4}{4}</m>, what eventually happens to the ratio
 	<m>R_k/S_k</m> as <m>k</m> becomes very large? </p></li>
 
@@ -183,48 +183,48 @@
 
       <solution>
 	<p><ol marker="a.">
-	  <li><p> We find that <m>A\vvec_1=\twovec{2.6}{1.3} =
-	  1.3\vvec_1</m> and
-	  <m>A\vvec_2=\twovec{-1}{0.5}=0.5\vvec_2</m>.  This shows
-	  that <m>\vvec_1</m> and <m>\vvec_2</m> are eigenvectors with
+	  <li><p> We find that <m>A\vec{v_1}=\twovec{2.6}{1.3} =
+	  1.3\vec{v_1}</m> and
+	  <m>A\vec{v_2}=\twovec{-1}{0.5}=0.5\vec{v_2}</m>.  This shows
+	  that <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are eigenvectors with
 	  associated eigenvalues <m>\lambda_1=1.3</m> and
 	  <m>\lambda_2=0.5</m>.  </p></li>
 
 	  <li><p> Solving for the weights of the linear combination of
-	  <m>\vvec_1</m> and <m>\vvec_2</m> that produces
-	  <m>\xvec_0</m>, we find that
-	  <m>\xvec_0=2\vvec_1+\vvec_2</m>. </p></li>
+	  <m>\vec{v_1}</m> and <m>\vec{v_2}</m> that produces
+	  <m>\vec{x_0}</m>, we find that
+	  <m>\vec{x_0}=2\vec{v_1}+\vec{v_2}</m>. </p></li>
 
 	  <li><p> Each time we multiply by <m>A</m>, the eigenvectors
 	  are multiplied by their associated eigenvalues.  This gives
 	  <me>
 	    \begin{aligned}
-	    \xvec_1 = A\xvec_0 \amp = 2(1.3)\vvec_1 + 0.5\vvec_2 \\
-	    \xvec_2 = A\xvec_1 \amp = 2(1.3)^2\vvec_1 + 0.5^2\vvec_2 \\
-	    \xvec_3 = A\xvec_2 \amp = 2(1.3)^3\vvec_1 +
-	    0.5^3\vvec_2\text{.} \\
+	    \vec{x_1} = A\vec{x_0} \amp = 2(1.3)\vec{v_1} + 0.5\vec{v_2} \\
+	    \vec{x_2} = A\vec{x_1} \amp = 2(1.3)^2\vec{v_1} + 0.5^2\vec{v_2} \\
+	    \vec{x_3} = A\vec{x_2} \amp = 2(1.3)^3\vec{v_1} +
+	    0.5^3\vec{v_2}\text{.} \\
 	    \end{aligned}
 	  </me>
 	  </p></li>
 
 	  <li><p> After a long time <m>0.5^k\approx 0</m> so we have
-	  <m>\xvec_k \approx 2(1.3)^k\vvec_1</m>.</p></li>
+	  <m>\vec{x_k} \approx 2(1.3)^k\vec{v_1}</m>.</p></li>
 
-	  <li><p> More generally, we have <m>\xvec_k=2(1.3)^k\vvec_1 +
-	  0.5^k\vvec_2</m>.  As <m>k</m> grows large, <m>0.5^k</m>
-	  becomes insignificantly small so that <m>\xvec_k\approx
-	  2(1.3)^k\vvec_1</m>.  This means that <m>R_k\approx
+	  <li><p> More generally, we have <m>\vec{x_k}=2(1.3)^k\vec{v_1} +
+	  0.5^k\vec{v_2}</m>.  As <m>k</m> grows large, <m>0.5^k</m>
+	  becomes insignificantly small so that <m>\vec{x_k}\approx
+	  2(1.3)^k\vec{v_1}</m>.  This means that <m>R_k\approx
 	  4(1.3)^k</m> and <m>S_k\approx2(1.3)^k</m> so that the ratio
 	  <m>R_k/S_k \approx 2</m>.
 	  </p></li>
 
-	  <li><p> We see that <m>\xvec_{k+1}\approx 1.3\xvec_k</m> so
+	  <li><p> We see that <m>\vec{x_{k+1}}\approx 1.3\vec{x_k}</m> so
 	  that the populations both grow by a factor of approximately
 	  1.3, which is a 30% growth rate. </p></li>
 
-	  <li><p> Now we have <m>\xvec_0 = 3\vvec_1 + \vvec_2</m>.  In
+	  <li><p> Now we have <m>\vec{x_0} = 3\vec{v_1} + \vec{v_2}</m>.  In
 	  the same way, when <m>k </m> is very large, we have
-	  <m>\xvec_k\approx 3(1.3)^k\vvec_1</m> so that
+	  <m>\vec{x_k}\approx 3(1.3)^k\vec{v_1}</m> so that
 	  <m>R_k\approx6(1.3)^k</m> and <m>S_k\approx3(1.3)^k</m>.
 	  This gives the same ratio:  <m>R_k/S_k\approx
 	  2</m>.</p></li>
@@ -235,47 +235,47 @@
 
     <p> This activity demonstrates the type of systems we will be
     considering.  In particular, we will have vectors
-    <m>\xvec_k</m> that describe the state of the system at time 
+    <m>\vec{x_k}</m> that describe the state of the system at time 
     <m>k</m> and a matrix <m>A</m> that describes how the state
-    evolves from one time to the next: <m>\xvec_{k+1} = A\xvec_k</m>.
+    evolves from one time to the next: <m>\vec{x_{k+1}} = A\vec{x_k}</m>.
     The eigenvalues and eigenvectors of <m>A</m> provide the key that
-    helps us understand how the vectors <m>\xvec_k</m> evolve and that
+    helps us understand how the vectors <m>\vec{x_k}</m> evolve and that
     enables us to make long-range predictions.
     </p>
 
     <p> Let's look at the specific example in the previous activity
     more carefully.  We see that 
     <me>
-      \xvec_{k+1} = A\xvec_k = 
+      \vec{x_{k+1}} = A\vec{x_k} = 
       \left[\begin{array}{rr}
       0.9 \amp 0.8 \\
       0.2 \amp 0.9 \\
       \end{array}\right]
-      \xvec_k
+      \vec{x_k}
     </me>
-    and that the matrix <m>A</m> has eigenvectors <m>\vvec_1 =
-    \twovec{2}{1}</m> and <m>\vvec_2=\twovec{-2}{1}</m> with associated
+    and that the matrix <m>A</m> has eigenvectors <m>\vec{v_1} =
+    \twovec{2}{1}</m> and <m>\vec{v_2}=\twovec{-2}{1}</m> with associated
     eigenvalues <m>\lambda_1=1.3</m> and <m>\lambda_2=0.5</m>. </p>
 
     <p>
-      With initial populations <m>\xvec_0=\twovec{2}{3}</m>, we have
+      With initial populations <m>\vec{x_0}=\twovec{2}{3}</m>, we have
       <me>
 	\begin{aligned}
-	\xvec_0 \amp {}={} 2\vvec_1 + 1\vvec_2 \\
-	\xvec_1 \amp {}={} 1.3\cdot2\vvec_1 + 0.5\cdot1\vvec_2 \\
-	\xvec_2 \amp {}={} 1.3^2\cdot2\vvec_1 + 0.5^2\cdot1\vvec_2 \\
-	\xvec_k \amp {}={} 1.3^k\cdot2\vvec_1 + 0.5^k\cdot1\vvec_2. \\
+	\vec{x_0} \amp {}={} 2\vec{v_1} + 1\vec{v_2} \\
+	\vec{x_1} \amp {}={} 1.3\cdot2\vec{v_1} + 0.5\cdot1\vec{v_2} \\
+	\vec{x_2} \amp {}={} 1.3^2\cdot2\vec{v_1} + 0.5^2\cdot1\vec{v_2} \\
+	\vec{x_k} \amp {}={} 1.3^k\cdot2\vec{v_1} + 0.5^k\cdot1\vec{v_2}. \\
 	\end{aligned}
       </me>
     </p>
 
     <p>
       Let's shift our perspective slightly.  The eigenvectors
-      <m>\vvec_1</m> and <m>\vvec_2</m> form a basis <m>\bcal</m> of
+      <m>\vec{v_1}</m> and <m>\vec{v_2}</m> form a basis <m>\bcal</m> of
       <m>\real^2</m>, which says that <m>A</m> is diagonalizable;
       that is, <m>A = PDP^{-1}</m> where
       <me>
-	P = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+	P = \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
 	\end{array}\right] =
 	\left[\begin{array}{rr}
 	2 \amp -2 \\
@@ -291,25 +291,25 @@
     <p> The coordinate system defined by the basis <m>\bcal</m> can be
     used to express the state vectors.  For instance,
     we can write the initial state vector
-    <m>\xvec_0=\twovec{2}{3}= 2\vvec_1+\vvec_2</m>, which means that
-    <m>\coords{\xvec_0}{\bcal} = \twovec{2}{1}</m>.  Moreover,
-    <m>\xvec_1=A\xvec_0 = (1.3)\cdot2\vvec_1 + (0.5)\cdot1\vvec_2</m>
+    <m>\vec{x_0}=\twovec{2}{3}= 2\vec{v_1}+\vec{v_2}</m>, which means that
+    <m>\coords{\vec{x_0}}{\bcal} = \twovec{2}{1}</m>.  Moreover,
+    <m>\vec{x_1}=A\vec{x_0} = (1.3)\cdot2\vec{v_1} + (0.5)\cdot1\vec{v_2}</m>
     so that
     <me>
-      \coords{\xvec_1}{\bcal} = \twovec{1.3\cdot 2}{0.5\cdot 1} =
-      D\twovec21 = D\coords{\xvec_0}{\bcal}.
+      \coords{\vec{x_1}}{\bcal} = \twovec{1.3\cdot 2}{0.5\cdot 1} =
+      D\twovec21 = D\coords{\vec{x_0}}{\bcal}.
     </me>  
 
     In the same way,
     <me>
       \begin{aligned}
-      \coords{\xvec_1}{\bcal} \amp {}={} D\coords{\xvec_0}{\bcal} =
+      \coords{\vec{x_1}}{\bcal} \amp {}={} D\coords{\vec{x_0}}{\bcal} =
       \ctwovec{1.3\cdot 2}{0.5\cdot 1} \\
-      \coords{\xvec_2}{\bcal} \amp {}={} D\coords{\xvec_1}{\bcal} =
+      \coords{\vec{x_2}}{\bcal} \amp {}={} D\coords{\vec{x_1}}{\bcal} =
       \ctwovec{1.3^2\cdot 2}{0.5^2\cdot1} \\
-      \coords{\xvec_3}{\bcal} \amp {}={} D\coords{\xvec_2}{\bcal} =
+      \coords{\vec{x_3}}{\bcal} \amp {}={} D\coords{\vec{x_2}}{\bcal} =
       \ctwovec{1.3^3\cdot2}{0.5^3\cdot1} \\
-      \coords{\xvec_k}{\bcal} \amp {}={} 
+      \coords{\vec{x_k}}{\bcal} \amp {}={} 
       \ctwovec{1.3^k\cdot2}{0.5^k\cdot1}\text{.} \\
       \end{aligned}
     </me>
@@ -317,7 +317,7 @@
     <p>
     More generally, we have
     <me>
-      \coords{A\xvec}{\bcal} = D\coords{\xvec}{\bcal},
+      \coords{A\vec{x}}{\bcal} = D\coords{\vec{x}}{\bcal},
     </me>
     which is a restatement of the fact that <m>A</m> is
     similar to <m>D</m>.
@@ -325,33 +325,33 @@
 
     <sidebyside widths="55% 45%">
       <p> Thinking about this geometrically, we begin with the vector
-      <m>\coords{\xvec_0}{\bcal}=\ctwovec{2}{1}</m>.  Subsequent
-      vectors <m>\coords{\xvec_k}{\bcal}</m> are obtained by scaling
+      <m>\coords{\vec{x_0}}{\bcal}=\ctwovec{2}{1}</m>.  Subsequent
+      vectors <m>\coords{\vec{x_k}}{\bcal}</m> are obtained by scaling
       horizontally by a factor of <m>1.3</m> and scaling vertically by
       a factor <m>0.5</m>.  Notice how the points move along a curve
       away from the origin becoming ever closer to the horizontal
-      axis. After a very long time, <m>\coords{\xvec_k}{\bcal} \approx
+      axis. After a very long time, <m>\coords{\vec{x_k}}{\bcal} \approx
       \ctwovec{1.3^k\cdot2}{0}</m>.</p>
 
       <image source="images/eigen-dynamical-intro" />
     </sidebyside>
 
     <sidebyside widths="55% 45%">
-      <p> To recover the behavior of the sequence <m>\xvec_0, \xvec_1,
-      \xvec_2, \ldots</m>, we change coordinate systems using the
-      basis defined by <m>\vvec_1</m> and <m>\vvec_2</m>.  Here, the
+      <p> To recover the behavior of the sequence <m>\vec{x_0}, \vec{x_1},
+      \vec{x_2}, \ldots</m>, we change coordinate systems using the
+      basis defined by <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  Here, the
       points move along a curve away from the origin becoming ever
-      closer to the line defined by <m>\vvec_1</m>.
+      closer to the line defined by <m>\vec{v_1}</m>.
       </p>
 
       <image source="images/eigen-dynamical-intro-1" />
     </sidebyside>
 
     <p> Eventually, the vectors become practically indistinguishable
-    from a scalar multiple of <m>\vvec_1 = \twovec{2}{1}</m> since
-    <m>\xvec_k\approx 1.3^k\cdot2\vvec_1</m>.  This means that
+    from a scalar multiple of <m>\vec{v_1} = \twovec{2}{1}</m> since
+    <m>\vec{x_k}\approx 1.3^k\cdot2\vec{v_1}</m>.  This means that
     <me>
-      \xvec_k = \twovec{R_k}{S_k} \approx 1.3^k\cdot 2\vvec_1 = 
+      \vec{x_k} = \twovec{R_k}{S_k} \approx 1.3^k\cdot 2\vec{v_1} = 
       \twovec{1.3^k\cdot4}{1.3^k\cdot2}.
     </me>
     This shows that
@@ -364,20 +364,20 @@
     </p>
 
     <p>
-    In addition, <m>\xvec_{k+1}
-    \approx 1.3\xvec_k</m> so that <m>R_{k+1}\approx 1.3 R_k</m> and
+    In addition, <m>\vec{x_{k+1}}
+    \approx 1.3\vec{x_k}</m> so that <m>R_{k+1}\approx 1.3 R_k</m> and
     <m>S_{k+1}\approx 1.3 S_k</m>, which tells us that both
     populations are
     multiplied by 1.3 every year meaning the annual growth rate for
     both populations is about 30%.</p>
 
     <p> In the same way, we can consider other possible initial
-    populations <m>\xvec_0</m> as shown in <xref
-    ref="fig-eigen-dynam-saddle" />.  Regardless of <m>\xvec_0</m>, the
+    populations <m>\vec{x_0}</m> as shown in <xref
+    ref="fig-eigen-dynam-saddle" />.  Regardless of <m>\vec{x_0}</m>, the
     population vectors, in the coordinates defined by <m>\bcal</m>, are
     scaled horizontally by a factor of <m>1.3</m> and vertically by a
     factor of <m>0.5</m>.  The sequence of points
-    <m>\coords{\xvec_k}{\bcal}</m>, called <em>trajectories</em>, move
+    <m>\coords{\vec{x_k}}{\bcal}</m>, called <em>trajectories</em>, move
     along the curves, as shown on the left.  In the standard 
     coordinate system, we see that the trajectories
     converge to the eigenspace <m>E_{1.3}</m>. 
@@ -413,8 +413,8 @@
     the two eigenvalues.  Once we have the
     phase portrait of <m>D</m>, however, the phase portrait of
     <m>A</m> has a similar appearance with the eigenvectors
-    <m>\vvec_j</m> replacing the standard basis vectors
-    <m>\evec_j</m>. </p>
+    <m>\vec{v_j}</m> replacing the standard basis vectors
+    <m>\vec{e_j}</m>. </p>
 
   </subsection>
   
@@ -422,7 +422,7 @@
     <title> Classifying dynamical systems </title>
 
     <p> In the previous example, we were able to make predictions
-    about the behavior of trajectories <m>\xvec_k=A^k\xvec_0</m>
+    about the behavior of trajectories <m>\vec{x_k}=A^k\vec{x_0}</m>
     by considering the eigenvalues and eigenvectors of the matrix
     <m>A</m>.  The next activity looks at a collection of matrices
     that demonstrate the types of behavior a <m>2\times2</m> dynamical
@@ -443,9 +443,9 @@
       matrix <m>E</m>.  For each matrix, state the eigenvalues of
       <m>A</m> and sketch a phase portrait for the matrix <m>E</m> on
       the left and a phase portrait for <m>A</m> on the right.
-      Describe the behavior of <m>A^k\xvec_0</m> as
+      Describe the behavior of <m>A^k\vec{x_0}</m> as
       <m>k</m> becomes very large for a typical initial vector
-      <m>\xvec_0</m>.
+      <m>\vec{x_0}</m>.
 
       <ol marker="a.">
 	<li>
@@ -583,7 +583,7 @@
       <li><p> Suppose that <m>A</m> has two real eigenvalues
       <m>\lambda_1</m> and 
       <m>\lambda_2</m> and that both <m>|\lambda_1|, |\lambda_2| \gt
-      1</m>.  In this case, any nonzero vector <m>\xvec_0</m> forms a
+      1</m>.  In this case, any nonzero vector <m>\vec{x_0}</m> forms a
       trajectory that moves away from the origin so we say that the
       origin is a <em>repellor</em>.   This is illustrated in <xref
       ref="fig-eigen-phase-repellor" />. </p>
@@ -601,7 +601,7 @@
       <li><p> Suppose that <m>A</m> has two real eigenvalues
       <m>\lambda_1</m> and 
       <m>\lambda_2</m> and that <m>|\lambda_1| \gt 1 \gt |\lambda_2|
-      </m>.  In this case, most nonzero vectors <m>\xvec_0</m> form
+      </m>.  In this case, most nonzero vectors <m>\vec{x_0}</m> form
       trajectories that converge to the eigenspace
       <m>E_{\lambda_1}</m>.  In this case, we say that the origin is a
       <em>saddle</em> as illustrated in <xref
@@ -620,7 +620,7 @@
       <li><p> Suppose that <m>A</m> has two real eigenvalues
       <m>\lambda_1</m> and 
       <m>\lambda_2</m> and that both <m>|\lambda_1|, |\lambda_2| \lt
-      1</m>.  In this case, any nonzero vector <m>\xvec_0</m> forms a
+      1</m>.  In this case, any nonzero vector <m>\vec{x_0}</m> forms a
       trajectory that moves into the origin so we say that the
       origin is an <em>attractor</em>.   This is illustrated in <xref
       ref="fig-eigen-phase-attractor" />. </p>
@@ -637,7 +637,7 @@
 
       <li><p> Suppose that <m>A</m> has a complex eigenvalue
       <m>\lambda = a+bi</m> where <m>|\lambda| \gt 1</m>.  In this case,
-      a nonzero vector <m>\xvec_0</m> forms a trajectory that spirals
+      a nonzero vector <m>\vec{x_0}</m> forms a trajectory that spirals
       away from the origin.  We say that the origin is a <em>spiral
       repellor</em>, as illustrated in <xref ref="fig-eigen-phase-spiralr"
       />. </p>
@@ -654,7 +654,7 @@
 
       <li><p> Suppose that <m>A</m> has a complex eigenvalue
       <m>\lambda = a+bi</m> where <m>|\lambda| = 1</m>.  In this case,
-      a nonzero vector <m>\xvec_0</m> forms a trajectory that moves on
+      a nonzero vector <m>\vec{x_0}</m> forms a trajectory that moves on
       a closed curve around the origin.  We say that the origin is a <em>center
       </em>, as illustrated in <xref ref="fig-eigen-phase-center"
       />. </p>
@@ -671,7 +671,7 @@
 
       <li><p> Suppose that <m>A</m> has a complex eigenvalue
       <m>\lambda = a+bi</m> where <m>|\lambda| \lt 1</m>.  In this case,
-      a nonzero vector <m>\xvec_0</m> forms a trajectory that spirals
+      a nonzero vector <m>\vec{x_0}</m> forms a trajectory that spirals
       into the origin.  We say that the origin is a <em>spiral
       attractor</em>, as illustrated in <xref ref="fig-eigen-phase-spirala"
       />. </p>
@@ -700,10 +700,10 @@
       <p> In this activity, we will consider several ways in which two
       species might interact with one another.  Throughout, we will
       consider two species <m>R</m> and <m>S</m> whose populations in
-      year <m>k</m> form a vector <m>\xvec_k=\twovec{R_k}{S_k}</m> and
+      year <m>k</m> form a vector <m>\vec{x_k}=\twovec{R_k}{S_k}</m> and
       which evolve according to the rule
       <me>
-	\xvec_{k+1}=A\xvec_k
+	\vec{x_{k+1}}=A\vec{x_k}
       </me>.
       <ol marker="a.">
 	<li>
@@ -798,9 +798,9 @@
 	<p> Because the eigenvalues are <m>\lambda_1=0.7</m> and
 	<m>\lambda_2=1.6</m>, this dynamical system is again a
 	saddle.  The associated eigenvectors are
-	<m>\vvec_1=\twovec10</m> and <m>\vvec_2=\twovec13</m>.  After
-	a long time, the population vector <m>\xvec_k\approx
-	c_1(1.6)^k\vvec_2</m> so both populations grow by a factor of
+	<m>\vec{v_1}=\twovec10</m> and <m>\vec{v_2}=\twovec13</m>.  After
+	a long time, the population vector <m>\vec{x_k}\approx
+	c_1(1.6)^k\vec{v_2}</m> so both populations grow by a factor of
 	1.6 and with a ratio <m>R_k/S_k=1/3.</m>
 	  </p></li>
 
@@ -817,9 +817,9 @@
 	  species <m>S</m> as a food source.
 	</p>
 
-	<p> We have eigenvectors <m>\vvec_1=\twovec11</m> with
+	<p> We have eigenvectors <m>\vec{v_1}=\twovec11</m> with
 	associated eigenvalue <m>\lambda_1=1.2</m> and
-	<m>\vvec_2=\twovec{5}{4}</m> with <m>\lambda_2=1.1</m>.  This
+	<m>\vec{v_2}=\twovec{5}{4}</m> with <m>\lambda_2=1.1</m>.  This
 	dynamical system is a repellor so both species will grow
 	arbitrarily large.
 	  </p></li>
@@ -853,13 +853,13 @@
 
     <p> Up to this point, we have focused on <m>2\times2</m> systems.
     In fact, the general case is quite similar.  As an example,
-    consider a <m>3\times3</m> system <m>\xvec_{k+1}=A\xvec_k</m>
+    consider a <m>3\times3</m> system <m>\vec{x_{k+1}}=A\vec{x_k}</m>
     where the matrix <m>A</m> has eigenvalues <m>\lambda_1 = 0.6</m>,
     <m>\lambda_2 = 0.8</m>, and <m>\lambda_3=1.1</m>.  Since the
     eigenvalues are real and distinct, there is a
     basis <m>\bcal</m> consisting of
     eigenvectors of <m>A</m> so we can look at the trajectories
-    <m>\coords{\xvec_k}{\bcal}</m> in the coordinate system defined by
+    <m>\coords{\vec{x_k}}{\bcal}</m> in the coordinate system defined by
     <m>\bcal</m>.  The phase portraits in <xref
     ref="fig-eigen-3d-saddle" /> show how some representative
     trajectories will evolve.  We see that all the trajectories will
@@ -874,7 +874,7 @@
       <caption>
 	In a <m>3\times3</m> system with <m>\lambda_1 = 0.6</m>,
 	<m>\lambda_2=0.8</m>, and <m>\lambda_3 = 1.1</m>, the
-	trajectories <m>\coords{\xvec_k}{\bcal}</m> move along the
+	trajectories <m>\coords{\vec{x_k}}{\bcal}</m> move along the
 	curves shown above.   
       </caption>
     </figure>
@@ -898,7 +898,7 @@
 	In a <m>3\times3</m> system with complex eigenvalues
 	<m>\lambda = a\pm bi</m> with <m>|\lambda| \lt 1</m> and
 	<m>\lambda_3=1.1</m>, the trajectories
-	<m>\coords{\xvec_k}{\bcal}</m> move along the curves
+	<m>\coords{\vec{x_k}}{\bcal}</m> move along the curves
 	shown above.
       </caption>
     </figure>
@@ -940,9 +940,9 @@
 	<m>A_k</m>.  </p></li>
 
 	<li><p> As is usual, we write the matrix
-	<m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>.  Write the matrix
+	<m>\vec{x_k}=\threevec{J_k}{Y_k}{A_k}</m>.  Write the matrix
 	<m>A</m> such that
-	<m>\xvec_{k+1} = A\xvec_k</m> and find its eigenvalues.
+	<m>\vec{x_{k+1}} = A\vec{x_k}</m> and find its eigenvalues.
 	</p></li>
 
 	<li><p> We can write <m>A = PEP^{-1}</m> where the matrices
@@ -962,14 +962,14 @@
 	  \end{aligned}
 	</me>
 	Make a prediction about the long-term behavior of
-	<m>\xvec_k</m>.  For instance, at what rate does it grow?  For
+	<m>\vec{x_k}</m>.  For instance, at what rate does it grow?  For
 	every 100 adults, how many juveniles, and yearlings are there?
 	</p></li>
 
 	<li><p> Suppose that the birth rate decreases so that only 30%
 	of adults give birth to a juvenile.  How does this affect the
 	long-term growth rate of the herd?
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -978,7 +978,7 @@
 	<li><p> Suppose that the birth rate decreases further so that
 	only 20% of adults give birth to a juvenile.  How does this affect the
 	long-term growth rate of the herd?
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1015,9 +1015,9 @@
 	  complex <m>\lambda_{2,3} = -0.128\pm 0.506i</m> and satisfy
 	  <m>|\lambda_{2,3}| \lt 1</m>.  Therefore, the complex
 	  eigenvalues will pull vectors in toward the line defined by
-	  the eigenvector <m>\vvec_1</m>.  After a long
-	  time, the population is <m>\xvec_k\approx
-	  c_1(1.058)^k\vvec_1</m>.  All the populations grow annually
+	  the eigenvector <m>\vec{v_1}</m>.  After a long
+	  time, the population is <m>\vec{x_k}\approx
+	  c_1(1.058)^k\vec{v_1}</m>.  All the populations grow annually
 	  by a factor of <m>1.058</m> or 5.8%, and there are
 	  approximately 38 juveniles and 29 yearlings for every 100
 	  adults. </p></li>
@@ -1049,8 +1049,8 @@
     <title> Summary </title>
 
     <p> We have been exploring discrete dynamical systems in which an
-    initial state vector <m>\xvec_0</m> evolves over time according
-    to the rule <m>\xvec_{k+1}=A\xvec_k</m>.  The
+    initial state vector <m>\vec{x_0}</m> evolves over time according
+    to the rule <m>\vec{x_{k+1}}=A\vec{x_k}</m>.  The
     eigenvalues and eigenvectors of <m>A</m> help us understand the
     behavior of the state vectors.  In the <m>2\times2</m>
     case, we saw that

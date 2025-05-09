@@ -55,9 +55,9 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We find that <m>\vvec_1=\twovec{1}{-2}</m> is an
+	<li><p> We find that <m>\vec{v_1}=\twovec{1}{-2}</m> is an
 	eigenvector with associated eigenvalue <m>\lambda_1=2</m> as
-	is <m>\vvec_2=\twovec{2}{1}</m> with associated eigenvalue
+	is <m>\vec{v_2}=\twovec{2}{1}</m> with associated eigenvalue
 	<m>\lambda_2=-3</m>.  Therefore, we have <m>A=PDP^{-1}</m>
 	where
 	<me>
@@ -78,9 +78,9 @@
 	<li><p> The matrix <m>A</m> has three distinct eigenvalues
 	<m>\lambda_1=1</m>, <m>\lambda_2=-2</m>, and
 	<m>\lambda_3=4</m> with associated eigenvectors
-	<m>\vvec_1=\threevec96{-2}</m>,
-	<m>\vvec_2=\threevec06{-1}</m>, and
-	<m>\vvec_3=\threevec001</m>.  This shows us that
+	<m>\vec{v_1}=\threevec96{-2}</m>,
+	<m>\vec{v_2}=\threevec06{-1}</m>, and
+	<m>\vec{v_3}=\threevec001</m>.  This shows us that
 	<m>A=PDP^{-1}</m> where
 	<me>
 	  P = \left[\begin{array}{rrr}
@@ -421,13 +421,13 @@
 	<m>2</m> before being reflected in the horizontal
 	axis. </p></li>
 
-	<li><p> This matrix has eigenvectors <m>\vvec_1=\twovec11</m>
+	<li><p> This matrix has eigenvectors <m>\vec{v_1}=\twovec11</m>
 	with associated eigenvalue <m>\lambda_1=4</m> and
-	<m>\vvec_2=\twovec{-1}{1}</m> with <m>\lambda_2=-2</m>.
+	<m>\vec{v_2}=\twovec{-1}{1}</m> with <m>\lambda_2=-2</m>.
 	Therefore, <m>A</m> stretches vectors by a factor of <m>4</m>
-	in the direction of <m>\vvec_1</m> and a factor of <m>2</m> in
-	the direction of <m>\vvec_1</m> before reflecting in the line
-	defined by <m>\vvec_1</m>. </p></li>
+	in the direction of <m>\vec{v_1}</m> and a factor of <m>2</m> in
+	the direction of <m>\vec{v_1}</m> before reflecting in the line
+	defined by <m>\vec{v_1}</m>. </p></li>
       </ol></p>
     </solution>
 
@@ -450,13 +450,13 @@
 	<m>2</m> before being reflected in the horizontal
 	axis. </p></li>
 
-	<li><p> This matrix has eigenvectors <m>\vvec_1=\twovec11</m>
+	<li><p> This matrix has eigenvectors <m>\vec{v_1}=\twovec11</m>
 	with associated eigenvalue <m>\lambda_1=4</m> and
-	<m>\vvec_2=\twovec{-1}{1}</m> with <m>\lambda_2=-2</m>.
+	<m>\vec{v_2}=\twovec{-1}{1}</m> with <m>\lambda_2=-2</m>.
 	Therefore, <m>A</m> stretches vectors by a factor of <m>4</m>
-	in the direction of <m>\vvec_1</m> and a factor of <m>2</m> in
-	the direction of <m>\vvec_1</m> before reflecting in the line
-	defined by <m>\vvec_1</m>. </p></li>
+	in the direction of <m>\vec{v_1}</m> and a factor of <m>2</m> in
+	the direction of <m>\vec{v_1}</m> before reflecting in the line
+	defined by <m>\vec{v_1}</m>. </p></li>
       </ol></p>
     </answer>
   </exercise>
@@ -647,20 +647,20 @@
 	<m>C</m>. </p></li> 
 
 	<li><p> Using the same eigenvalue, we will find an eigenvector
-	<m>\vvec</m> 
-	where the entries of <m>\vvec</m> are complex numbers.  As
+	<m>\vec{v}</m> 
+	where the entries of <m>\vec{v}</m> are complex numbers.  As
 	always, we will describe <m>\nul(A-\lambda I)</m> by
 	constructing the matrix <m>A-\lambda I</m> and finding its
 	reduced row echelon form.  In doing so, we will necessarily
 	need to use complex arithmetic. </p></li>
 
-	<li><p> We have now found a complex eigenvector <m>\vvec</m>.
-	Write <m>\vvec = \vvec_1 - i \vvec_2</m> to identify vectors
-	<m>\vvec_1</m> and <m>\vvec_2</m> having real entries. </p></li>
+	<li><p> We have now found a complex eigenvector <m>\vec{v}</m>.
+	Write <m>\vec{v} = \vec{v_1} - i \vec{v_2}</m> to identify vectors
+	<m>\vec{v_1}</m> and <m>\vec{v_2}</m> having real entries. </p></li>
 
 	<li><p> Construct the matrix
 	<m>P = \left[\begin{array}{rr}
-	\vvec_1 \amp \vvec_2
+	\vec{v_1} \amp \vec{v_2}
 	\end{array}\right]
 	</m> and verify that <m>A=PCP^{-1}</m>. </p></li>
       </ol>
@@ -680,12 +680,12 @@
 	  \sim
 	  \mattwo{1}{-1+i}00
 	</me>
-	so that a basis vector for the null space is <m>\vvec =
+	so that a basis vector for the null space is <m>\vec{v} =
 	\twovec{1-i}{1}</m>. </p></li>
 
-	<li><p> We have <m>\vvec=\twovec{1-i}{1} =
-	\twovec11-i\twovec{1}{0}</m> giving <m>\vvec_1=\twovec11</m>
-	and <m>\vvec_2=\twovec{1}{0}</m>. </p></li>
+	<li><p> We have <m>\vec{v}=\twovec{1-i}{1} =
+	\twovec11-i\twovec{1}{0}</m> giving <m>\vec{v_1}=\twovec11</m>
+	and <m>\vec{v_2}=\twovec{1}{0}</m>. </p></li>
 
 	<li><p> We let <m>P = \mattwo1110</m> and verify that
 	<m>A=PCP^{-1}</m>. </p></li>
@@ -700,10 +700,10 @@
 	<m>C=\mattwo3{-1}13</m>. </p></li>
 
 	<li><p> 
-	  <m>\vvec = \twovec{1-i}{1}</m> </p></li>
+	  <m>\vec{v} = \twovec{1-i}{1}</m> </p></li>
 
-	<li><p> <m>\vvec_1=\twovec11</m> and
-	<m>\vvec_2=\twovec{1}{0}</m>. </p></li> 
+	<li><p> <m>\vec{v_1}=\twovec11</m> and
+	<m>\vec{v_2}=\twovec{1}{0}</m>. </p></li> 
 
 	<li><p> <m>P = \mattwo1110</m></p></li>
       </ol></p>
@@ -713,7 +713,7 @@
   <exercise>
     <statement>
       <p> For each of the following matrices, sketch the vector
-      <m>\xvec = \twovec{1}{0}</m> and powers <m>A^k\xvec</m> for
+      <m>\vec{x} = \twovec{1}{0}</m> and powers <m>A^k\vec{x}</m> for
       <m>k=1,2,3,4</m>.
       <ol marker="a.">
 	<li>
@@ -841,7 +841,7 @@
   <exercise>
     <statement>
       <p> For each of the following matrices and vectors, sketch the
-      vector <m>\xvec</m> along with <m>A^k\xvec</m> for
+      vector <m>\vec{x}</m> along with <m>A^k\vec{x}</m> for
       <m>k=1,2,3,4</m>.
       <ol marker="a.">
 	<li>
@@ -854,7 +854,7 @@
 		0 \amp 0.7 \\
 		\end{array}\right] \\
 		\\
-		\xvec \amp {}={} \twovec{1}{2}\text{.}
+		\vec{x} \amp {}={} \twovec{1}{2}\text{.}
 		\end{aligned}
 	      </me>.
 	    </p>
@@ -871,7 +871,7 @@
 		0.6 \amp 0 \\
 		0 \amp 0.9 \\
 		\end{array}\right] \\ \\
-		\xvec \amp {}={} \twovec{4}{3}\text{.}
+		\vec{x} \amp {}={} \twovec{4}{3}\text{.}
 		\end{aligned}
 	      </me>
 	    </p>
@@ -888,7 +888,7 @@
 		1.2 \amp 0 \\
 		0 \amp 1.4 \\
 		\end{array}\right] \\ \\
-		\xvec\amp{}={}\twovec{2}{1}\text{.}
+		\vec{x}\amp{}={}\twovec{2}{1}\text{.}
 		\end{aligned}
 	      </me>
 	    </p>
@@ -905,7 +905,7 @@
 		0.95 \amp 0.25 \\
 		0.25 \amp 0.95 \\
 		\end{array}\right] \\ \\
-		\xvec\amp{}={}\twovec{3}{0}\text{.}
+		\vec{x}\amp{}={}\twovec{3}{0}\text{.}
 		\end{aligned}
 	      </me>
 	      Find the eigenvalues and eigenvectors of <m>A</m> to
@@ -917,7 +917,7 @@
 
 	<li><p> If <m>A</m> is a <m>2\times2</m> matrix with
 	eigenvalues <m>\lambda_1=0.7</m> and <m>\lambda_2=0.5</m> and
-	<m>\xvec</m> is any vector, what happens to <m>A^k\xvec</m>
+	<m>\vec{x}</m> is any vector, what happens to <m>A^k\vec{x}</m>
 	when <m>k</m> becomes very large?</p></li>
       </ol>
       </p>
@@ -951,11 +951,11 @@
 
 	<li>
 	  <sidebyside widths="40% 40%">
-	    <p> There are eigenvectors <m>\vvec_1=\twovec11</m> with
-	    <m>\lambda_1 = 1.2</m> and <m>\vvec_2=\twovec{-1}1</m>
+	    <p> There are eigenvectors <m>\vec{v_1}=\twovec11</m> with
+	    <m>\lambda_1 = 1.2</m> and <m>\vec{v_2}=\twovec{-1}1</m>
 	    with <m>\lambda_2=0.7</m>.  Vectors are expanded in the
-	    direction of <m>\vvec_1</m> and compressed in the
-	    direction of <m>\vvec_2</m>.</p>
+	    direction of <m>\vec{v_1}</m> and compressed in the
+	    direction of <m>\vec{v_2}</m>.</p>
 	    <image source="images/ex-power-d" />
 	  </sidebyside>
 	</li>

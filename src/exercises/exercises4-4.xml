@@ -7,7 +7,7 @@
       <p> For each of the <m>2\times2</m> matrices below, find
       the eigenvalues and, when appropriate, the eigenvectors to
       classify the dynamical system
-      <m>\xvec_{k+1}=A\xvec_k</m>.  Use this information to sketch the
+      <m>\vec{x_{k+1}}=A\vec{x_k}</m>.  Use this information to sketch the
       phase portraits.
       <ol marker="a.">
 	<li><p>
@@ -45,7 +45,7 @@
       <p><ol marker="a.">
 	<li><p> There are two real eigenvalues <m>\lambda_1=4</m> and
 	<m>\lambda_2=2</m> with associated eigenvectors
-	<m>\vvec_1=\twovec11</m> and <m>\vvec=\twovec{-1}{1}</m>.  
+	<m>\vec{v_1}=\twovec11</m> and <m>\vec{v}=\twovec{-1}{1}</m>.  
 	This dynamical system is a repellor so trajectories are
 	pushed away from the origin.
 	<sidebyside width="90%">
@@ -64,11 +64,11 @@
 
 	<li><p> This is a saddle because there are two real
 	eigenvalues <m>\lambda_1=1.2</m> and <m>\lambda_2=0.5</m> with
-	associated eigenvectors <m>\vvec_1=\twovec{-2}1</m> and
-	<m>\vvec_2=\twovec{-1}1</m>. 
+	associated eigenvectors <m>\vec{v_1}=\twovec{-2}1</m> and
+	<m>\vec{v_2}=\twovec{-1}1</m>. 
 	Most trajectories will move away from the origin along the
 	line defined
-	by the eigenvector <m>\vvec_1</m>.
+	by the eigenvector <m>\vec{v_1}</m>.
 	<sidebyside width="90%">
 	  <image source="images/ex-dynam-sol-c" />
 	</sidebyside>
@@ -76,8 +76,8 @@
 
 	<li><p> This is an attractor because there are two real
 	eigenvalues <m>0.9</m> and <m>0.7</m> with associated
-	eigenvectors <m>\vvec_1=\twovec11</m> and
-	<m>\vvec_2=\twovec12</m>. 
+	eigenvectors <m>\vec{v_1}=\twovec11</m> and
+	<m>\vec{v_2}=\twovec12</m>. 
 	Trajectories will be pulled in toward the origin.
 	<sidebyside width="90%">
 	  <image source="images/ex-dynam-sol-d" />
@@ -241,8 +241,8 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> If <m>p = 0</m>, the eigenvectors are
-	<m>\vvec_1=\twovec10</m> with associated eigenvalue
-	<m>\lambda_1=\frac12</m> and <m>\vvec_2=\twovec13</m> with
+	<m>\vec{v_1}=\twovec10</m> with associated eigenvalue
+	<m>\lambda_1=\frac12</m> and <m>\vec{v_2}=\twovec13</m> with
 	eigenvalue <m>\lambda_2=2</m>.  The phase portraits are as
 	<sidebyside width="90%">
 	  <image source="images/ex-predator-sol-a" />
@@ -250,8 +250,8 @@
 	</p></li>
 
 	<li><p> With <m>p=1</m>, we have eigenvectors
-	<m>\vvec_1=\twovec11</m> with eigenvalue <m>\lambda_1=1</m>
-	and <m>\vvec_2=\twovec12</m> with eigenvalue
+	<m>\vec{v_1}=\twovec11</m> with eigenvalue <m>\lambda_1=1</m>
+	and <m>\vec{v_2}=\twovec12</m> with eigenvalue
 	<m>\lambda_2=1.5</m>.  The phase portraits appear as
 	<sidebyside width="90%">
 	  <image source="images/ex-predator-sol-b" />
@@ -339,7 +339,7 @@
       </me>
       <ol marker="a.">
 	<li><p> Find the eigenvalues of <m>A</m>.  To which of the six 
-	types does the system <m>\xvec_{k+1}=A\xvec_{k}</m> belong?
+	types does the system <m>\vec{x_{k+1}}=A\vec{x_k}</m> belong?
 	</p> </li>
 
 	<li><p> Using the eigenvalues of <m>A</m>, we can
@@ -440,11 +440,11 @@
       <p>
 	<ol marker="a.">
 	  <li><p> Set up a system of the form
-	  <m>\xvec_{k+1}=A\xvec_k</m> that describes this
+	  <m>\vec{x_{k+1}}=A\vec{x_k}</m> that describes this
 	  situation. </p></li>
 
 	  <li><p> Find the eigenvalues of the matrix <m>A</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -463,15 +463,15 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> If we write <m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>,
+	<li><p> If we write <m>\vec{x_k}=\threevec{J_k}{Y_k}{A_k}</m>,
 	we have
 	<me>
-	  \xvec_{k+1} = \left[\begin{array}{rrr}
+	  \vec{x_{k+1}} = \left[\begin{array}{rrr}
 	  0 \amp 0 \amp 0.5 \\
 	  0.9 \amp 0 \amp 0 \\
 	  0.6 \amp 0.8 \amp 0 \\
 	  \end{array}\right]
-	  \xvec_k\text{.}
+	  \vec{x_k}\text{.}
 	</me>
 	</p></li>
 
@@ -485,7 +485,7 @@
 	<li><p> With a birth rate of <m>80</m>%, the first
 	eigenvalue goes up to <m>\lambda_1=1.02</m>, which means that,
 	eventually, all the populations grow by <m>2</m>%.
-	An eigenvector is approximately <m>\vvec_1 =
+	An eigenvector is approximately <m>\vec{v_1} =
 	\threevec{78}{69}{100}</m> so there are about <m>78</m>
 	juveniles and <m>69</m> yearlings for every <m>100</m> adults.
 	</p></li>
@@ -494,15 +494,15 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> If we write <m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>,
+	<li><p> If we write <m>\vec{x_k}=\threevec{J_k}{Y_k}{A_k}</m>,
 	we have
 	<me>
-	  \xvec_{k+1} = \left[\begin{array}{rrr}
+	  \vec{x_{k+1}} = \left[\begin{array}{rrr}
 	  0 \amp 0 \amp 0.5 \\
 	  0.9 \amp 0 \amp 0 \\
 	  0.6 \amp 0.8 \amp 0 \\
 	  \end{array}\right]
-	  \xvec_k\text{.}
+	  \vec{x_k}\text{.}
 	</me>
 	</p></li>
 
@@ -524,8 +524,8 @@
     <statement>
       <p> Determine whether the following statements are true or false
       and provide a justification for your response.  In each case, we
-      are considering a dynamical system of the form <m>\xvec_{k+1} =
-      A\xvec_k</m>. 
+      are considering a dynamical system of the form <m>\vec{x_{k+1}} =
+      A\vec{x_k}</m>. 
       <ol marker="a.">
 	<li><p> If the <m>2\times2</m> matrix <m>A</m> has a complex
 	eigenvalue, we cannot make a prediction about the behavior of
@@ -536,7 +536,7 @@
 	the origin. </p></li>
 
 	<li><p> If the origin is a repellor, then it is an attractor
-	for the system <m>\xvec_{k+1} = A^{-1}\xvec_k</m>. </p></li>
+	for the system <m>\vec{x_{k+1}} = A^{-1}\vec{x_k}</m>. </p></li>
 
 	<li><p> If a <m>4\times4</m> matrix has complex eigenvalues
 	<m>\lambda_1</m>, <m>\lambda_2</m>, <m>\lambda_3</m>, and
@@ -610,9 +610,9 @@
 
       <p> 
       <ol marker="a.">
-	<li><p> If we write <m>\xvec_n = \twovec{F_{n+1}}{F_n}</m>,
-	find the matrix <m>A</m> such that <m>\xvec_{n+1} =
-	A\xvec_n</m>. </p></li>
+	<li><p> If we write <m>\vec{x_n} = \twovec{F_{n+1}}{F_n}</m>,
+	find the matrix <m>A</m> such that <m>\vec{x_{n+1}} =
+	A\vec{x_n}</m>. </p></li>
 
 	<li><p> Show that <m>A</m> has eigenvalues
 	<me>
@@ -623,20 +623,20 @@
 	  \end{aligned}
 	</me>
 	with associated eigenvectors
-	<m>\vvec_1=\twovec{\lambda_1}{1}</m> and
-	<m>\vvec_2=\twovec{\lambda_2}{1}</m>. 
+	<m>\vec{v_1}=\twovec{\lambda_1}{1}</m> and
+	<m>\vec{v_2}=\twovec{\lambda_2}{1}</m>. 
 	</p></li>
 
 	<li><p> Classify this dynamical system as one of the six types
 	that we have seen in this section.  What happens to
-	<m>\xvec_n</m> as <m>n</m> becomes very large? </p></li>
+	<m>\vec{x_n}</m> as <m>n</m> becomes very large? </p></li>
 
-	<li><p> Write the initial vector <m>\xvec_0 =
+	<li><p> Write the initial vector <m>\vec{x_0} =
 	\twovec{1}{0}</m> as a linear combination of
-	eigenvectors <m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+	eigenvectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m>. </p></li>
 
-	<li><p> Write the vector <m>\xvec_n</m> as a linear
-	combinations of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+	<li><p> Write the vector <m>\vec{x_n}</m> as a linear
+	combinations of <m>\vec{v_1}</m> and <m>\vec{v_2}</m>. </p></li>
 
 	<li><p> Explain why the <m>n^{th}</m> Fibonacci number
 	<me>F_{n} = \frac{1}{\sqrt{5}}\left[
@@ -663,13 +663,13 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> We have
-	<me>\xvec_{n+1}=\twovec{F_{n+2}}{F_{n+1}} =
+	<me>\vec{x_{n+1}}=\twovec{F_{n+2}}{F_{n+1}} =
 	\twovec{F_{n+1}+F_n}{F_{n+1}}
 	= \left[\begin{array}{rr}
 	1 \amp 1 \\
 	1 \amp 0 \\
 	\end{array}\right]
-	\xvec_n\text{.}
+	\vec{x_n}\text{.}
 	</me>
 	</p></li>
 
@@ -689,15 +689,15 @@
 	<li><p> Because <m>|\lambda_1| \gt 1</m> and <m>|\lambda_2|
 	\lt 1</m>, this is a saddle. </p></li>
 
-	<li><p> We find <m>\xvec_0=\twovec10 = \frac1{\sqrt{5}}\vvec_1
-	-\frac1{\sqrt{5}}\vvec_2</m>.
+	<li><p> We find <m>\vec{x_0}=\twovec10 = \frac1{\sqrt{5}}\vec{v_1}
+	-\frac1{\sqrt{5}}\vec{v_2}</m>.
 	</p></li>
 
 	<li><p> We have
 	<me>
 	  \begin{aligned}
-	  \xvec_n \amp =\frac1{\sqrt5}\lambda_1^n\vvec_1 -
-	  \frac1{\sqrt5}\lambda_2^n\vvec_2 \\
+	  \vec{x_n} \amp =\frac1{\sqrt5}\lambda_1^n\vec{v_1} -
+	  \frac1{\sqrt5}\lambda_2^n\vec{v_2} \\
 	  \twovec{F_{n+1}}{F_n} \amp =
 	  \frac1{\sqrt5}\left(\frac{1+\sqrt5}{2}\right)^n
 	  \twovec{\lambda_1}{1} - 
@@ -719,7 +719,7 @@
 	6765</m>. </p></li>
 
 	<li><p> For large values of <m>n</m>, we have
-	<m>\xvec_n\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}</m>,
+	<m>\vec{x_n}\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}</m>,
 	which says that
 	<m>F_{n+1} \approx \frac1{\sqrt5}\lambda_1^{n+1}</m> and 
 	<m>F_{n} \approx \frac1{\sqrt5}\lambda_1^{n}</m>.  This gives
@@ -744,13 +744,13 @@
 
 	<li><p> <m>A</m> defines a saddle. </p></li>
 
-	<li><p> <m>\xvec_0 = \frac1{\sqrt{5}}\vvec_1
-	-\frac1{\sqrt{5}}\vvec_2</m>.
+	<li><p> <m>\vec{x_0} = \frac1{\sqrt{5}}\vec{v_1}
+	-\frac1{\sqrt{5}}\vec{v_2}</m>.
 	</p></li>
 
 	<li><p> We have
 	<m>
-	  \xvec_n =
+	  \vec{x_n} =
 	  \frac1{\sqrt5}\left(\frac{1+\sqrt5}{2}\right)^n
 	  \twovec{\lambda_1}{1} - 
 	  \frac1{\sqrt5}\left(\frac{1-\sqrt5}{2}\right)^n
@@ -769,7 +769,7 @@
 	<li><p> <m>F_{20} = 6765</m> </p></li>
 
 	<li><p> For large values of <m>n</m>, we have
-	<m>\xvec_n\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}</m>.
+	<m>\vec{x_n}\approx\frac1{\sqrt5}\lambda_1^n\twovec{\lambda_1}{1}</m>.
 	</p></li>
 	
       </ol></p>
@@ -788,9 +788,9 @@
       which leads to the sequence <m>2,1,3,4,7,11,\ldots</m>.
       <ol marker="a.">
 	<li><p> As before, form the vector
-	<m>\xvec_n=\twovec{L_{n+1}}{L_n}</m> so that
-	<m>\xvec_{n+1}=A\xvec_n</m>.  Express <m>\xvec_0</m> as a
-	linear combination of <m>\vvec_1</m> and <m>\vvec_2</m>,
+	<m>\vec{x_n}=\twovec{L_{n+1}}{L_n}</m> so that
+	<m>\vec{x_{n+1}}=A\vec{x_n}</m>.  Express <m>\vec{x_0}</m> as a
+	linear combination of <m>\vec{v_1}</m> and <m>\vec{v_2}</m>,
 	eigenvectors of <m>A</m>. </p></li>
 
 	<li><p> Explain why
@@ -813,11 +813,11 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> Constructing the augmented matrix and row reducing
-	shows that <m>\xvec_0 = \vvec_1+\vvec_2</m>. </p></li>
+	shows that <m>\vec{x_0} = \vec{v_1}+\vec{v_2}</m>. </p></li>
 
-	<li><p> Then we have <m>\xvec_n = A^n\xvec_0 =
-	\lambda_1^n\vvec_1 + \lambda_2^n\vvec_2</m>.  Since <m>L_n</m>
-	is the second component of <m>\xvec_n</m>, we have <m>L_n =
+	<li><p> Then we have <m>\vec{x_n} = A^n\vec{x_0} =
+	\lambda_1^n\vec{v_1} + \lambda_2^n\vec{v_2}</m>.  Since <m>L_n</m>
+	is the second component of <m>\vec{x_n}</m>, we have <m>L_n =
 	\lambda_1^n + \lambda_2^n</m>. </p></li>
 
 	<li><p> Because <m>|\lambda_2| \lt 1</m>, larger powers
@@ -832,10 +832,10 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p> <m>\xvec_0 = \vvec_1+\vvec_2</m>. </p></li>
+	<li><p> <m>\vec{x_0} = \vec{v_1}+\vec{v_2}</m>. </p></li>
 
-	<li><p> <m>\xvec_n = A^n\xvec_0 =
-	\lambda_1^n\vvec_1 + \lambda_2^n\vvec_2</m>
+	<li><p> <m>\vec{x_n} = A^n\vec{x_0} =
+	\lambda_1^n\vec{v_1} + \lambda_2^n\vec{v_2}</m>
 	</p></li>
 
 	<li><p> Because <m>|\lambda_2| \lt 1</m>, larger powers
@@ -860,9 +860,9 @@
 	\end{aligned}
       </me>
       <ol marker="a.">
-	<li><p> If <m>\xvec_n=\twovec{G_{n+1}}{G_n}</m>, find the
-	matrix <m>A</m> such that <m>\xvec_{n+1} =
-	A\xvec_n</m>. </p></li>
+	<li><p> If <m>\vec{x_n}=\twovec{G_{n+1}}{G_n}</m>, find the
+	matrix <m>A</m> such that <m>\vec{x_{n+1}} =
+	A\vec{x_n}</m>. </p></li>
 
 	<li><p> Find the eigenvalues and associated eigenvectors of
 	<m>A</m>.  </p></li>
@@ -871,10 +871,10 @@
 	into one of the six types that we saw in this
 	section. </p></li>
 
-	<li><p> Write <m>\xvec_{0}</m> as a linear combination of
+	<li><p> Write <m>\vec{x_0}</m> as a linear combination of
 	eigenvectors of <m>A</m>.  </p></li>
 
-	<li><p> Write <m>\xvec_n</m> as a linear combination of
+	<li><p> Write <m>\vec{x_n}</m> as a linear combination of
 	eigenvectors of <m>A</m>.  </p></li>
 
 	<li><p> What happens to <m>G_n</m> as <m>n</m> becomes very
@@ -886,11 +886,11 @@
     <solution>
       <p><ol marker="a.">
 	<li><p> If <m>A=\mattwo{\frac12}{\frac12}10</m>, then we have
-	<m>\xvec_{n+1} = A\xvec_n</m>. </p></li>
+	<m>\vec{x_{n+1}} = A\vec{x_n}</m>. </p></li>
 
 	<li><p> The eigenvalues are <m>\lambda_1=1</m> and
 	<m>\lambda_2=-\frac12</m> with associated eigenvectors
-	<m>\vvec_1=\twovec11</m> and <m>\vvec_2=\twovec{1}{-2}</m>.
+	<m>\vec{v_1}=\twovec11</m> and <m>\vec{v_2}=\twovec{1}{-2}</m>.
 	</p></li>
 
 	<li><p> We have one eigenvalue <m>|\lambda_1| = 1</m>, which
@@ -898,16 +898,16 @@
 	cases. </p></li>
 
 	<li><p> After constructing an augmented matrix and row
-	reducing, we find <m>\xvec_0 = \frac23\vvec_1 +
-	\frac13\vvec_2</m>. </p></li>
+	reducing, we find <m>\vec{x_0} = \frac23\vec{v_1} +
+	\frac13\vec{v_2}</m>. </p></li>
 
 	<li><p> We have
-	<m>\xvec_n=\frac23\vvec_1+
-	\frac13\left(-\frac12\right)^n\vvec_n</m>. </p></li>
+	<m>\vec{x_n}=\frac23\vec{v_1}+
+	\frac13\left(-\frac12\right)^n\vec{v_n}</m>. </p></li>
 
 	<li><p> As <m>n</m> becomes large, the coefficient
 	<m>\left(-\frac12\right)^n</m> becomes very small.  Therefore,
-	<m>\xvec_n\approx \frac23\vvec_1 =
+	<m>\vec{x_n}\approx \frac23\vec{v_1} =
 	\twovec{\frac23}{\frac23}</m>. This shows that <m>G_n</m>
 	stabilizes at <m>\frac23</m>. </p></li>
       </ol></p>
@@ -919,19 +919,19 @@
 
 	<li><p> The eigenvalues are <m>\lambda_1=1</m> and
 	<m>\lambda_2=-\frac12</m> with associated eigenvectors
-	<m>\vvec_1=\twovec11</m> and <m>\vvec_2=\twovec{1}{-2}</m>.
+	<m>\vec{v_1}=\twovec11</m> and <m>\vec{v_2}=\twovec{1}{-2}</m>.
 	</p></li>
 
 	<li><p> We have one eigenvalue <m>|\lambda_1| = 1</m>, which
 	means this system does not fall into any of our
 	cases. </p></li>
 
-	<li><p> <m>\xvec_0 = \frac23\vvec_1 +
-	\frac13\vvec_2</m> </p></li>
+	<li><p> <m>\vec{x_0} = \frac23\vec{v_1} +
+	\frac13\vec{v_2}</m> </p></li>
 
 	<li><p> 
-	<m>\xvec_n=\frac23\vvec_1+
-	\frac13\left(-\frac12\right)^n\vvec_n</m> </p></li>
+	<m>\vec{x_n}=\frac23\vec{v_1}+
+	\frac13\left(-\frac12\right)^n\vec{v_n}</m> </p></li>
 
 	<li><p> <m>G_n</m>
 	stabilizes at <m>\frac23</m>. </p></li>
@@ -962,8 +962,8 @@
 	<ol marker="a.">
 	  <li><p> Writing the populations of juveniles, yearlings, and
 	  adults in year <m>k</m> using the vector
-	  <m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>, find the matrix
-	  <m>A</m> such that <m>\xvec_{k+1} = A\xvec_k</m>.</p></li>
+	  <m>\vec{x_k}=\threevec{J_k}{Y_k}{A_k}</m>, find the matrix
+	  <m>A</m> such that <m>\vec{x_{k+1}} = A\vec{x_k}</m>.</p></li>
 
 	  <li><p> Show that <m>A^3=I</m>. </p></li>
 
@@ -972,7 +972,7 @@
 
 	  <li><p> Verify your observation by finding the eigenvalues
 	  of <m>A</m>. 
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -984,7 +984,7 @@
 	  <li><p> What does this mean about the population of rodents?
 	  </p></li> 
 
-	  <li><p> Find a population vector <m>\xvec_0</m> that is
+	  <li><p> Find a population vector <m>\vec{x_0}</m> that is
 	  unchanged from year to year. </p></li>
 
 	</ol>
@@ -993,7 +993,7 @@
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We have <m>\xvec_{k+1} = A\xvec_k</m> where <m>A =
+	<li><p> We have <m>\vec{x_{k+1}} = A\vec{x_k}</m> where <m>A =
 	\left[\begin{array}{rrr}
 	0 \amp 0 \amp 8 \\
 	\frac 12 \amp 0 \amp 0 \\
@@ -1001,29 +1001,29 @@
 	\end{array}\right]</m>.
 	</p></li>
 
-	<li><p> We can use Sage to compute that
+	<li><p> We can use Python to compute that
 	<m>A^3=I</m>. </p></li>
 
 	<li><p> The only eigenvalues of <m>I</m> are <m>1</m> so any
 	eigenvalue <m>\lambda</m> of <m>A</m> must satisfy
 	<m>\lambda^3=1</m>.  </p></li>
 
-	<li><p> Sage tells us that the eigenvalues are
+	<li><p> Python tells us that the eigenvalues are
 	<m>\lambda_1=1</m> and <m>\lambda_{2,3} =
 	-\frac12\pm\frac{\sqrt3}{2}i</m>.
 	</p></li>
 
-	<li><p> The eigenvector <m>\vvec_1=\threevec841</m> satisfies
-	<m>A\vvec_1 = \vvec_1</m> so it is unchanged.  The complex
+	<li><p> The eigenvector <m>\vec{v_1}=\threevec841</m> satisfies
+	<m>A\vec{v_1} = \vec{v_1}</m> so it is unchanged.  The complex
 	eigenvalues cause a <m>120^\circ</m> rotation about the axis
-	defined by <m>\vvec_1</m>.  Therefore, the trajectories lie on
+	defined by <m>\vec{v_1}</m>.  Therefore, the trajectories lie on
 	circles about this line. </p></li>
 
 	<li><p> After every three years, the populations return to
 	their initial values. </p></li>
 
-	<li><p> If <m>\xvec_0=\vvec_1 = \threevec841</m>, we know that
-	<m>A\xvec_0 = \xvec_0</m> so this population vector is
+	<li><p> If <m>\vec{x_0}=\vec{v_1} = \threevec841</m>, we know that
+	<m>A\vec{x_0} = \vec{x_0}</m> so this population vector is
 	unchanged. </p></li>
       </ol></p>
     </solution>
@@ -1038,7 +1038,7 @@
 	\end{array}\right]</m>.
 	</p></li>
 
-	<li><p> We can use Sage to compute that
+	<li><p> We can use Python to compute that
 	<m>A^3=I</m>. </p></li>
 
 	<li><p> Any
@@ -1057,7 +1057,7 @@
 	<li><p> After every three years, the populations return to
 	their initial values. </p></li>
 
-	<li><p> <m>\xvec_0=\vvec_1 = \threevec841</m></p></li>
+	<li><p> <m>\vec{x_0}=\vec{v_1} = \threevec841</m></p></li>
       </ol></p>
     </answer>
   </exercise>

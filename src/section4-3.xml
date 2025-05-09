@@ -11,8 +11,8 @@
     1 \amp 2 \\
     2 \amp 1 \\
     \end{array}\right]
-    </m>, which has eigenvectors <m>\vvec_1=\twovec{1}{1}</m> and
-    <m>\vvec_2 = \twovec{-1}{1}</m> and associated eigenvalues
+    </m>, which has eigenvectors <m>\vec{v_1}=\twovec{1}{1}</m> and
+    <m>\vec{v_2} = \twovec{-1}{1}</m> and associated eigenvalues
     <m>\lambda_1=3</m> and <m>\lambda_2=-1</m>.  In <xref
     ref="subsec-eigen-use" />, we described how <m>A</m> is, in some
     sense, equivalent to the diagonal matrix
@@ -27,8 +27,8 @@
     stretching vectors horizontally by a factor of <m>3</m> and
     flipping vectors vertically.  The matrix <m>A</m> has the
     geometric effect of stretching vectors by a factor of <m>3</m> in
-    the <m>\vvec_1</m> direction and flipping them in the
-    <m>\vvec_2</m> direction.  That is, the geometric effect of
+    the <m>\vec{v_1}</m> direction and flipping them in the
+    <m>\vec{v_2}</m> direction.  That is, the geometric effect of
     <m>A</m> is the same as that of <m>D</m> when viewed in a basis of
     eigenvectors of <m>A</m>.
     </p>
@@ -61,16 +61,16 @@
 	      linear combinations of the columns of the matrix.  For
 	      instance, if 
 	      <m>A = \begin{bmatrix}
-	      \avec_1 \amp \avec_2 \end{bmatrix}</m>, express the
-	      product <m>A\twovec2{-3}</m> in terms of <m>\avec_1</m>
-	      and <m>\avec_2</m>.
+	      \vec{a_1} \amp \vec{a_2} \end{bmatrix}</m>, express the
+	      product <m>A\twovec2{-3}</m> in terms of <m>\vec{a_1}</m>
+	      and <m>\vec{a_2}</m>.
 	    </p>
 	  </li>
 
 	  <li>
 	    <p>
 	      What is the product <m>A\twovec40</m> in terms of
-	      <m>\avec_1</m> and <m>\avec_2</m>?
+	      <m>\vec{a_1}</m> and <m>\vec{a_2}</m>?
 	    </p>
 	  </li>
 
@@ -79,7 +79,7 @@
 	      Next, remember how matrix-matrix multiplication is
 	      defined.  Suppose that we have matrices <m>A</m> and
 	      <m>B</m> and that <m>B = \begin{bmatrix}
-	      \bvec_1 \amp \bvec_2 \end{bmatrix}</m>.  How can we
+	      \vec{b_1} \amp \vec{b_2} \end{bmatrix}</m>.  How can we
 	      express the matrix product <m>AB</m> in terms of the
 	      columns of <m>B</m>?
 	    </p>
@@ -88,21 +88,21 @@
 	  <li>
 	    <p>
 	      Suppose that <m>A</m> is a matrix having eigenvectors
-	      <m>\vvec_1</m> and <m>\vvec_2</m> with associated
+	      <m>\vec{v_1}</m> and <m>\vec{v_2}</m> with associated
 	      eigenvalues <m>\lambda_1 = 4</m> and <m>\lambda_2 =
-	      -1</m>.  Express the product <m>A(2\vvec_1+3\vvec_2)</m>
-	      in terms of <m>\vvec_1</m> and <m>\vvec_2</m>.
+	      -1</m>.  Express the product <m>A(2\vec{v_1}+3\vec{v_2})</m>
+	      in terms of <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.
 	    </p>
 	  </li>
 
 	  <li>
 	    <p>
 	      Suppose that <m>A</m> is the matrix from the previous
-	      part and that <m>P=\begin{bmatrix} \vvec_1 \amp \vvec_2
+	      part and that <m>P=\begin{bmatrix} \vec{v_1} \amp \vec{v_2}
 	      \end{bmatrix}</m>.  What is the matrix product
 	      <me>
 		AP = A\begin{bmatrix}
-		\vvec_1 \amp \vvec_2
+		\vec{v_1} \amp \vec{v_2}
 		\end{bmatrix}?
 	      </me>
 	    </p>
@@ -115,35 +115,35 @@
 	<p><ol marker="a.">
 	  <li>
 	    <p>
-	      <m>A\twovec{2}{-3} = 2\avec_1 - 3\avec_2</m>.
+	      <m>A\twovec{2}{-3} = 2\vec{a_1} - 3\vec{a_2}</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
-	      <m>A\twovec40 = 4\avec_1</m>.
+	      <m>A\twovec40 = 4\vec{a_1}</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
 	      <m>AB = \begin{bmatrix}
-	      A\bvec_1 \amp A\bvec_2
+	      A\vec{b_1} \amp A\vec{b_2}
 	      \end{bmatrix}</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
-	      <m>A(2\vvec_1 + 3\vvec_2) = 8\vvec_1 - 3\vvec_2</m>.
+	      <m>A(2\vec{v_1} + 3\vec{v_2}) = 8\vec{v_1} - 3\vec{v_2}</m>.
 	    </p>
 	  </li>
 	  <li>
 	    <p>
 	      <m>AP =
 	      \begin{bmatrix}
-	      A\vvec_1 \amp A\vvec_2
+	      A\vec{v_1} \amp A\vec{v_2}
 	      \end{bmatrix}
 	      = 
 	      \begin{bmatrix}
-	      4\vvec_1 \amp -\vvec_2
+	      4\vec{v_1} \amp -\vec{v_2}
 	      \end{bmatrix}
 	      </m>.
 	    </p>
@@ -174,7 +174,7 @@
     <activity>
       <statement>
       <p> Suppose that <m>A</m> is a <m>2\times2</m> matrix having
-      eigenvectors <m>\vvec_1</m> and <m>\vvec_2</m> with associated
+      eigenvectors <m>\vec{v_1}</m> and <m>\vec{v_2}</m> with associated
       eigenvalues <m>\lambda_1=3</m> and <m>\lambda_2 = -6</m>.
       Because the eigenvalues are real and distinct, we know by
       <xref ref="prop-eigen-basis"/> that these eigenvectors form a
@@ -182,18 +182,18 @@
       <ol marker="a.">
 	<li>
 	  <p>
-	    What are the products <m>A\vvec_1</m> and <m>A\vvec_2</m>
-	    in terms of <m>\vvec_1</m> and <m>\vvec_2</m>?
+	    What are the products <m>A\vec{v_1}</m> and <m>A\vec{v_2}</m>
+	    in terms of <m>\vec{v_1}</m> and <m>\vec{v_2}</m>?
 	  </p>
 	</li>
 
 	<li>
 	  <p>
 	    If we form the matrix <m>P = \begin{bmatrix}
-	    \vvec_1 \amp \vvec_2
+	    \vec{v_1} \amp \vec{v_2}
 	    \end{bmatrix}
 	    </m>, what is the product <m>AP</m> in
-	    terms of <m>\vvec_1</m> and <m>\vvec_2</m>?
+	    terms of <m>\vec{v_1}</m> and <m>\vec{v_2}</m>?
 	  </p>
 	</li>
 
@@ -205,7 +205,7 @@
 	    0 \amp -6 
 	    \end{bmatrix}</m> and
 	    determine the product <m>PD</m> in terms of
-	    <m>\vvec_1</m> and <m>\vvec_2</m>.  
+	    <m>\vec{v_1}</m> and <m>\vec{v_2}</m>.  
 	  </p>
 	</li>
 
@@ -213,8 +213,8 @@
 	  <p>
 	    The results from the previous two parts of this activity
 	    demonstrate that <m>AP=PD</m>.  
-	    Using the fact that the eigenvectors <m>\vvec_1</m> and
-	    <m>\vvec_2</m> form a basis of 
+	    Using the fact that the eigenvectors <m>\vec{v_1}</m> and
+	    <m>\vec{v_2}</m> form a basis of 
 	    <m>\real^2</m>, explain why <m>P</m> is
 	    invertible and that we must have <m>A=PDP^{-1}</m>.
 	  </p>
@@ -225,8 +225,8 @@
 	    Suppose that <m>A=\begin{bmatrix}
 	    -3 \amp 6 \\
 	    3 \amp 0 \\
-	    \end{bmatrix}</m>.  Verify that <m>\vvec_1=\twovec11</m>
-	    and <m>\vvec_2=\twovec2{-1}</m> are eigenvectors of
+	    \end{bmatrix}</m>.  Verify that <m>\vec{v_1}=\twovec11</m>
+	    and <m>\vec{v_2}=\twovec2{-1}</m> are eigenvectors of
 	    <m>A</m> with eigenvalues <m>\lambda_1 = 3</m> and
 	    <m>\lambda_2=-6</m>.
 	  </p>
@@ -234,15 +234,15 @@
 
 	<li>
 	  <p>
-	    Use the Sage cell below to define the matrices <m>P</m>
+	    Use the Python cell below to define the matrices <m>P</m>
 	    and <m>D</m> and then verify that <m>A=PDP^{-1}</m>.
 	  </p> 
-	<sage>
+	<sage language="python">
 	  <input>
 # enter the matrices P and D below	    
 P =
 D =	    
-P*D*P.inverse()
+P*D*P.inv()
 	  </input>
 	</sage>
 	</li>
@@ -252,15 +252,15 @@ P*D*P.inverse()
       <solution>
 	<p><ol marker="a.">
 	  <li><p> We have
-	  <m>A\vvec_1=3\vvec_1</m> and <m>A\vvec_2 = -6\vvec_2</m>.
+	  <m>A\vec{v_1}=3\vec{v_1}</m> and <m>A\vec{v_2} = -6\vec{v_2}</m>.
 	  </p></li>
 
 	  <li>
 	    <p>
 	      <m>AP = \begin{bmatrix}
-	      A\vvec_1 \amp A\vvec_2
+	      A\vec{v_1} \amp A\vec{v_2}
 	      \end{bmatrix} = \begin{bmatrix}
-	      3\vvec_1 \amp -6\vvec_2
+	      3\vec{v_1} \amp -6\vec{v_2}
 	      \end{bmatrix}</m>.
 	    </p>
 	  </li>
@@ -268,14 +268,14 @@ P*D*P.inverse()
 	  <li>
 	    <p>
 	      <m>PD = \begin{bmatrix}
-	      \vvec_1 \amp \vvec_2
+	      \vec{v_1} \amp \vec{v_2}
 	      \end{bmatrix}
 	      \begin{bmatrix}
 	      3 \amp 0 \\
 	      0 \amp -6\\
 	      \end{bmatrix}
 	      = \begin{bmatrix}
-	      3\vvec_1 \amp -6\vvec_2
+	      3\vec{v_1} \amp -6\vec{v_2}
 	      \end{bmatrix}
 	      </m>.  Comparing the result of this part of the activity
 	      to the previous, we see that <m>AP = PD</m>.
@@ -294,7 +294,7 @@ P*D*P.inverse()
 	  </li>
 	</ol></p>
 	<p>
-	  The rest of the activity can be verified using Sage.
+	  The rest of the activity can be verified using Python.
 	</p>
       </solution>
     </activity>
@@ -302,13 +302,13 @@ P*D*P.inverse()
     <p>
       More generally, suppose that we have an <m>n\times n</m> matrix
       <m>A</m> and that there is a basis of <m>\real^n</m> consisting
-      of eigenvectors <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> of
+      of eigenvectors <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> of
       <m>A</m> with associated eigenvalues
       <m>\lambda_1,\lambda_2,\ldots,\lambda_n</m>.  If we use the
       eigenvectors to form the
       matrix
       <me>P = \begin{bmatrix}
-      \vvec_1 \amp \vvec_2 \amp \cdots \amp \vvec_n
+      \vec{v_1} \amp \vec{v_2} \amp \cdots \amp \vec{v_n}
       \end{bmatrix}
       </me>
       and the eigenvalues to form the diagonal matrix
@@ -329,7 +329,7 @@ P*D*P.inverse()
     <proposition xml:id="prop-diagonalizable">
       <statement>
 	<p> If <m>A</m> is an <m>n\times n</m> matrix and there is a
-	basis <m>\{\vvec_1,\vvec_2,\ldots,\vvec_n\}</m> of
+	basis <m>\{\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\}</m> of
 	<m>\real^n</m> consisting of
 	eigenvectors of <m>A</m> having associated eigenvalues
 	<m>\lambda_1, \lambda_2, \ldots, \lambda_n</m>, then we can
@@ -345,7 +345,7 @@ P*D*P.inverse()
 	  \end{array}\right]
 	</me>
 	and the matrix <m>P = \left[\begin{array}{cccc}
-	\vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+	\vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n}
 	\end{array}\right]
 	</m>.
 	</p>
@@ -357,13 +357,13 @@ P*D*P.inverse()
 	We have seen that <m>A = \begin{bmatrix}
 	1 \amp 2 \\
 	2 \amp 1 \\
-	\end{bmatrix}</m> has eigenvectors <m>\vvec_1 = \twovec11</m>
-	and <m>\vvec_2=\twovec{-1}1</m> with associated eigenvalues
+	\end{bmatrix}</m> has eigenvectors <m>\vec{v_1} = \twovec11</m>
+	and <m>\vec{v_2}=\twovec{-1}1</m> with associated eigenvalues
 	<m>\lambda_1 = 3</m> and <m>\lambda_2 = -1</m>.
 	Forming the matrices
 	<me>
 	  P = \begin{bmatrix}
-	  \vvec_1 \amp \vvec_2
+	  \vec{v_1} \amp \vec{v_2}
 	  \end{bmatrix} =
 	  \begin{bmatrix}
 	  1 \amp -1 \\
@@ -382,7 +382,7 @@ P*D*P.inverse()
 	to a diagonal matrix <m>D</m>.  The expression <m>A=PDP^{-1}</m>
 	says that <m>A</m>, expressed in the basis defined by the columns
 	of <m>P</m>, has the same geometric effect as <m>D</m>, expressed
-	in the standard basis <m>\evec_1, \evec_2,\ldots,\evec_n</m>.
+	in the standard basis <m>\vec{e_1}, \vec{e_2},\ldots,\vec{e_n}</m>.
       </p>
     </example>
     
@@ -418,10 +418,10 @@ P*D*P.inverse()
 	</p>
 
 	<p> By constructing <m>\nul(A-(-2)I)</m>, we find a basis for
-	<m>E_{-2}</m> consisting of the vector <m>\vvec_1 =
+	<m>E_{-2}</m> consisting of the vector <m>\vec{v_1} =
 	\twovec{2}{1}</m>.  Similarly, a basis for <m>E_1</m> consists
-	of the vector <m>\vvec_2 = \twovec{1}{1}</m>.  This shows
-	that we can construct a basis <m>\{\vvec_1,\vvec_2\}</m>
+	of the vector <m>\vec{v_2} = \twovec{1}{1}</m>.  This shows
+	that we can construct a basis <m>\{\vec{v_1},\vec{v_2}\}</m>
 	of <m>\real^2</m> consisting of eigenvectors of <m>A</m>.
 	</p>
 
@@ -431,7 +431,7 @@ P*D*P.inverse()
 	  -2 \amp 0 \\
 	  0 \amp 1 \\
 	  \end{array}\right],\qquad
-	  P = \left[\begin{array}{cc} \vvec_1 \amp \vvec_2
+	  P = \left[\begin{array}{cc} \vec{v_1} \amp \vec{v_2}
 	  \end{array}\right] = 
 	  \left[\begin{array}{rr}
 	  2 \amp 1 \\
@@ -469,7 +469,7 @@ P*D*P.inverse()
 	  1 \amp 0 \\
 	  0 \amp -2 \\
 	  \end{array}\right],\qquad
-	  P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+	  P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 	  \end{array}\right] = 
 	  \left[\begin{array}{rr}
 	  1 \amp 2 \\
@@ -518,7 +518,7 @@ P*D*P.inverse()
 	  \end{array}\right]
 	</me>.
 	This shows that the eigenspace <m>E_2</m> is one-dimensional
-	with <m>\vvec_1=\twovec{2}{1}</m> forming a basis. </p>
+	with <m>\vec{v_1}=\twovec{2}{1}</m> forming a basis. </p>
 
 	<p> In this case, there is not a basis of <m>\real^2</m>
 	consisting of eigenvectors of <m>A</m>, which tells us that
@@ -552,7 +552,7 @@ P*D*P.inverse()
 	  2 \amp 0 \\
 	  0 \amp -2 \\
 	  \end{array}\right],\qquad
-	  P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+	  P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 	  \end{array}\right] = 
 	  \left[\begin{array}{rr}
 	  1 \amp 1 \\
@@ -560,9 +560,9 @@ P*D*P.inverse()
 	  \end{array}\right].
 	</me>
 	The columns of <m>P</m> form
-	eigenvectors of <m>A</m> so that <m>\vvec_1 =
+	eigenvectors of <m>A</m> so that <m>\vec{v_1} =
 	\twovec{1}{1}</m> is an eigenvector of <m>A</m> with
-	eigenvalue <m>\lambda_1 = 2</m> and <m>\vvec_2 =
+	eigenvalue <m>\lambda_1 = 2</m> and <m>\vec{v_2} =
 	\twovec{1}{2}</m> is an eigenvector with eigenvalue
 	<m>\lambda_2=-2</m>. </p>
 
@@ -574,9 +574,9 @@ P*D*P.inverse()
 	  8 \amp -6 \\
 	  \end{array}\right]
 	</me>
-	and checking that <m>A\vvec_1 =
-	\twovec{1}{1}=2\vvec_1</m> and <m>A\vvec_2 = \twovec{1}{2} =
-	-2\vvec_2</m>. </p>
+	and checking that <m>A\vec{v_1} =
+	\twovec{1}{1}=2\vec{v_1}</m> and <m>A\vec{v_2} = \twovec{1}{2} =
+	-2\vec{v_2}</m>. </p>
       </statement>
     </example>
 
@@ -615,7 +615,7 @@ P*D*P.inverse()
 	    \end{array}\right]
 	  </me>.
 	</p>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -631,7 +631,7 @@ P*D*P.inverse()
 	    \end{array}\right]
 	  </me>.
 	</p>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -643,7 +643,7 @@ P*D*P.inverse()
 	    3 \amp 0 \\
 	    0 \amp -1 \\
 	    \end{array}\right],\qquad
-	    P = \left[\begin{array}{cc} \vvec_2 \amp \vvec_1
+	    P = \left[\begin{array}{cc} \vec{v_2} \amp \vec{v_1}
 	    \end{array}\right] = 
 	    \left[\begin{array}{rr}
 	    2 \amp 2 \\
@@ -662,24 +662,24 @@ P*D*P.inverse()
       <solution>
 	<p><ol marker="a.">
 	  <li><p> We find that <m>A</m> has eigenvectors
-	  <m>\vvec_1=\twovec11</m> with associated eigenvalue
-	  <m>\lambda_1=1</m> and <m>\vvec_2=\twovec{1}{3}</m> with
+	  <m>\vec{v_1}=\twovec11</m> with associated eigenvalue
+	  <m>\lambda_1=1</m> and <m>\vec{v_2}=\twovec{1}{3}</m> with
 	  associated eigenvalue <m>\lambda_2=-3</m>.  We then have
 	  <m>P=\mattwo1113</m> and <m>D=\mattwo100{-3}</m>. </p></li>
 
 	  <li><p> Yes.  We know that the eigenvectors are
-	  <m>\vvec_1=\twovec10</m> with associated eigenvalue
-	  <m>\lambda_1=2</m> and <m>\vvec_2=\twovec01</m> with
+	  <m>\vec{v_1}=\twovec10</m> with associated eigenvalue
+	  <m>\lambda_1=2</m> and <m>\vec{v_2}=\twovec01</m> with
 	  associated eigenvalue <m>\lambda_2=-5</m>.  Therefore, <m>P
-	  = \left[\begin{array}{rr}\vvec_1 \amp \vvec_2
+	  = \left[\begin{array}{rr}\vec{v_1} \amp \vec{v_2}
 	  \end{array}\right] = \mattwo1001=I</m> and
 	  <m>D=\mattwo200{-5}=A</m>.  This shows that the
 	  diagonalization is <m>A=IAI^{-1}</m>; that is, since
 	  <m>A</m> is already diagonal, it is diagonalized by the
 	  identity matrix. </p></li>
 
-	  <li><p> We find eigenvectors <m>\vvec_1=\threevec112</m>,
-	  <m>\vvec_2=\threevec010</m>, and <m>\vvec_3=\threevec001</m> 
+	  <li><p> We find eigenvectors <m>\vec{v_1}=\threevec112</m>,
+	  <m>\vec{v_2}=\threevec010</m>, and <m>\vec{v_3}=\threevec001</m> 
 	  with associated eigenvalues <m>\lambda_1=-2</m>,
 	  <m>\lambda_2=-3</m>, and <m>\lambda_3=-3</m>.  Therefore,
 	  <m>A = PDP^{-1}</m> where
@@ -709,11 +709,11 @@ P*D*P.inverse()
 	    <li><p> <m>A</m> is invertible since <m>\det A = \det D =
 	    -3</m>. </p></li>
 
-	    <li><p> We know that <m>\vvec_1</m> and <m>\vvec_2</m> are
+	    <li><p> We know that <m>\vec{v_1}</m> and <m>\vec{v_2}</m> are
 	    eigenvectors of <m>A</m> with associated eigenvalues
 	    <m>\lambda_1=3</m> and <m>\lambda_2=-1</m>.  If
-	    <m>\vvec</m> is an eigenvector of <m>A</m> with associated
-	    eigenvalue <m>\lambda</m>, then <m>\vvec</m> is an
+	    <m>\vec{v}</m> is an eigenvector of <m>A</m> with associated
+	    eigenvalue <m>\lambda</m>, then <m>\vec{v}</m> is an
 	    eigenvector of <m>A^{-1}</m> with associated eigenvalue
 	    <m>\frac1{\lambda}</m>.  Therefore, <m>A^{-1} =
 	    PEP^{-1}</m> where <m>E =
@@ -740,16 +740,16 @@ P*D*P.inverse()
       0.8 \amp 0.6 \\
       0.2 \amp 0.4 \\
       \end{array}\right]
-    </m> and an initial vector <m>\xvec_0=\ctwovec{1000}{0}</m>, and we 
+    </m> and an initial vector <m>\vec{x_0}=\ctwovec{1000}{0}</m>, and we 
     wanted to compute
     <me>
       \begin{aligned}
-      \xvec_1 \amp {}={} A\xvec_0 \\
-      \xvec_2 \amp {}={} A\xvec_1 = A^2\xvec_0 \\
-      \xvec_3 \amp {}={} A\xvec_2 = A^3\xvec_0\text{.} \\
+      \vec{x_1} \amp {}={} A\vec{x_0} \\
+      \vec{x_2} \amp {}={} A\vec{x_1} = A^2\vec{x_0} \\
+      \vec{x_3} \amp {}={} A\vec{x_2} = A^3\vec{x_0}\text{.} \\
       \end{aligned}
     </me>
-    In particular, we wanted to find <m>\xvec_k=A^k\xvec_0</m>
+    In particular, we wanted to find <m>\vec{x_k}=A^k\vec{x_0}</m>
     and determine what happens as <m>k</m> becomes very large.  If a
     matrix <m>A</m> is diagonalizable, writing <m>A=PDP^{-1}</m> can
     help us understand powers of <m>A</m> more easily. </p>
@@ -769,9 +769,9 @@ P*D*P.inverse()
 	  <m>k</m>? </p></li>
 
 	  <li><p> Suppose that <m>A</m> is a matrix with eigenvector
-	  <m>\vvec</m> and associated eigenvalue <m>\lambda</m>;  that
-	  is, <m>A\vvec = \lambda\vvec</m>.  By considering
-	  <m>A^2\vvec</m>, explain why <m>\vvec</m> is also an
+	  <m>\vec{v}</m> and associated eigenvalue <m>\lambda</m>;  that
+	  is, <m>A\vec{v} = \lambda\vec{v}</m>.  By considering
+	  <m>A^2\vec{v}</m>, explain why <m>\vec{v}</m> is also an
 	  eigenvector of <m>A</m> with eigenvalue
 	  <m>\lambda^2</m>. </p></li>
 
@@ -813,8 +813,8 @@ P*D*P.inverse()
 	  </me>
 	  </p></li>
 
-	  <li><p> We know that <m>A^2\vvec = \lambda A\vvec =
-	  \lambda^2\vvec</m> so that <m>\vvec</m> is also an
+	  <li><p> We know that <m>A^2\vec{v} = \lambda A\vec{v} =
+	  \lambda^2\vec{v}</m> so that <m>\vec{v}</m> is also an
 	  eigenvector of <m>A^2</m> with associated eigenvalue
 	  <m>\lambda^2</m>. </p></li>
 
@@ -872,14 +872,14 @@ P*D*P.inverse()
 	0.8 \amp 0.6 \\
 	0.2 \amp 0.4 \\
 	\end{bmatrix}
-	</m> and the initial vector <m>\xvec_0 = \ctwovec{1000}0</m>.
+	</m> and the initial vector <m>\vec{x_0} = \ctwovec{1000}0</m>.
 	We were interested in understanding the sequence of vectors
-	<m>\xvec_{k+1} = A\xvec_k</m>, which means that <m>\xvec_k =
-	A^k\xvec_0</m>. 
+	<m>\vec{x_{k+1}} = A\vec{x_k}</m>, which means that <m>\vec{x_k} =
+	A^k\vec{x_0}</m>. 
       </p>
 
       <p>
-	We can verify that <m>\vvec_1 = \twovec31</m> and <m>\vvec_2 =
+	We can verify that <m>\vec{v_1} = \twovec31</m> and <m>\vec{v_2} =
 	\twovec{-1}1</m> are eigenvectors of <m>A</m> having
 	associated eigenvalues <m>\lambda_1=1</m> and <m>\lambda_2 =
 	0.2</m>.  This means that <m>A = PDP^{-1}</m> where
@@ -928,8 +928,8 @@ P*D*P.inverse()
 	</me>
       </p>
       <p>
-	Beginning with the vector <m>\xvec_0 = \ctwovec{1000}{0}</m>, 
-	we find that <m>\xvec_k = A^k\xvec_0\approx
+	Beginning with the vector <m>\vec{x_0} = \ctwovec{1000}{0}</m>, 
+	we find that <m>\vec{x_k} = A^k\vec{x_0}\approx
 	\twovec{750}{250}</m> when <m>k</m> is very large.
       </p>
     </example>
@@ -1066,11 +1066,11 @@ P*D*P.inverse()
 	    \end{array}\right]
 	    </m>.  Verify that <m>A = PCP^{-1}</m>. </p>
 	    
-	    <sage>
+	    <sage language="python">
 	      <input>
 C = 
 P = 
-P*C*P.inverse()
+P*C*P.inv()
 	      </input>
 	    </sage>
 	    </li>
@@ -1110,7 +1110,7 @@ P*C*P.inverse()
 	  <m>C</m> will scale vectors by a factor of <m>\sqrt2</m>
 	  while rotating them by <m>45^\circ</m>. </p></li>
 
-	  <li><p> Sage will verify this relationship.
+	  <li><p> Python will verify this relationship.
 	  </p></li>
 
 	  <li><p> As we saw earlier, we have <m>A^2 =
