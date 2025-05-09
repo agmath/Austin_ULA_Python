@@ -135,6 +135,18 @@ sagecell.makeSagecell({
   ],
   "evalButtonText": "Evaluate (Sage)"
 });
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-python",
+  "linked": true,
+  "linkKey": "linked-python",
+  "autoeval": false,
+  "languages": [
+    "python"
+  ],
+  "evalButtonText": "Evaluate (Python)"
+});
 </script>
 </head>
 <body id="ula" class="pretext book ignore-math">
@@ -597,8 +609,8 @@ sagecell.makeSagecell({
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-stochastic"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.5</span><span class="space"> </span><span class="title">Markov chains and Google’s PageRank algorithm</span>
 </h2>
-<section class="introduction" id="sec-stochastic-2"><div class="para" id="sec-stochastic-2-1">In the last section, we used our understanding of eigenvalues and eigenvectors to describe the long-term behavior of some discrete dynamical systems.  The state of the system, which could record, say, the populations of a few interacting species, at one time is described by a vector <span class="process-math">\(\xvec_k\text{.}\)</span>  The state vector then evolves according to a linear rule <span class="process-math">\(\xvec_{k+1} =
-A\xvec_k\text{.}\)</span>
+<section class="introduction" id="sec-stochastic-2"><div class="para" id="sec-stochastic-2-1">In the last section, we used our understanding of eigenvalues and eigenvectors to describe the long-term behavior of some discrete dynamical systems.  The state of the system, which could record, say, the populations of a few interacting species, at one time is described by a vector <span class="process-math">\(\vec{x_k}\text{.}\)</span>  The state vector then evolves according to a linear rule <span class="process-math">\(\vec{x_{k+1}} =
+A\vec{x_k}\text{.}\)</span>
 </div>
 <div class="para" id="sec-stochastic-2-2">This section continues this exploration by looking at <em class="emphasis">Markov chains</em>, which form a specific type of discrete dynamical system.  For instance, we could be interested in a rental car company that rents cars from several locations.  From one day to the next, the number of cars at different locations can change, but the total number of cars stays the same.  Once again, an understanding of eigenvalues and eigenvectors will help us make predictions about the long-term behavior of the system.</div>
 <article class="exploration project-like" id="sec-stochastic-2-3"><h3 class="heading">
@@ -616,14 +628,14 @@ Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-stochastic-2-3-1-2-8">
-<li id="sec-stochastic-2-3-1-2-8-1"><div class="para" id="sec-stochastic-2-3-1-2-8-1-1">If we use the vector <span class="process-math">\(\xvec_k =
-\twovec{P_k}{Q_k}\)</span> to represent the distribution of cars on day <span class="process-math">\(k\text{,}\)</span> find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>
+<li id="sec-stochastic-2-3-1-2-8-1"><div class="para" id="sec-stochastic-2-3-1-2-8-1-1">If we use the vector <span class="process-math">\(\vec{x_k} =
+\twovec{P_k}{Q_k}\)</span> to represent the distribution of cars on day <span class="process-math">\(k\text{,}\)</span> find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-2-3-1-2-8-2"><div class="para" id="sec-stochastic-2-3-1-2-8-2-1">Find the eigenvalues and associated eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-2-3-1-2-8-3"><div class="para" id="sec-stochastic-2-3-1-2-8-3-1">Suppose that there are initially 1500 cars, all of which are at location <span class="process-math">\(P\text{.}\)</span>  Write the vector <span class="process-math">\(\xvec_0\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-stochastic-2-3-1-2-8-3"><div class="para" id="sec-stochastic-2-3-1-2-8-3-1">Suppose that there are initially 1500 cars, all of which are at location <span class="process-math">\(P\text{.}\)</span>  Write the vector <span class="process-math">\(\vec{x_0}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-2-3-1-2-8-4"><div class="para" id="sec-stochastic-2-3-1-2-8-4-1">Write the vectors <span class="process-math">\(\xvec_k\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<li id="sec-stochastic-2-3-1-2-8-4"><div class="para" id="sec-stochastic-2-3-1-2-8-4-1">Write the vectors <span class="process-math">\(\vec{x_k}\)</span> as a linear combination of eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-2-3-1-2-8-5"><div class="para" id="sec-stochastic-2-3-1-2-8-5-1">What happens to the distribution of cars after a long time?</div></li>
 </ol>
@@ -634,11 +646,11 @@ Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
 <div class="para">In the preview activity, the distribution of rental cars was described by the discrete dynamical system</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\xvec_{k+1} = A\xvec_k=\left[\begin{array}{rr}
+\vec{x_{k+1}} = A\vec{x_k}=\left[\begin{array}{rr}
 0.8 \amp 0.4 \\
 0.2 \amp 0.6 \\
 \end{array}\right]
-\xvec_k\text{.}
+\vec{x_k}\text{.}
 \end{equation*}
 </div>
 <div class="para">This matrix has some special properties.  First, each entry represents the probability that a car rented at one location is returned to another.  For instance, there is an 80% chance that a car rented at <span class="process-math">\(P\)</span> is returned to <span class="process-math">\(P\text{,}\)</span> which explains the entry of 0.8 in the upper left corner.  Therefore, the entries of the matrix are between 0 and 1.</div>
@@ -657,19 +669,19 @@ Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
 </div></div> <div class="para logical" id="sec-stochastic-3-5-1-3"><ol class="lower-alpha ol-marker-1" id="sec-stochastic-3-5-1-3-1">
 <li id="sec-stochastic-3-5-1-3-1-1"><div class="para" id="sec-stochastic-3-5-1-3-1-1-1">Write expressions for <span class="process-math">\(P_{k+1}\text{,}\)</span> <span class="process-math">\(Q_{k+1}\text{,}\)</span> and <span class="process-math">\(R_{k+1}\)</span> in terms of <span class="process-math">\(P_k\text{,}\)</span> <span class="process-math">\(Q_k\text{,}\)</span> and <span class="process-math">\(R_k\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-3-5-1-3-1-2"><div class="para" id="sec-stochastic-3-5-1-3-1-2-1">If we write <span class="process-math">\(\xvec_k =
-\threevec{P_k}{Q_k}{R_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>
+<li id="sec-stochastic-3-5-1-3-1-2"><div class="para" id="sec-stochastic-3-5-1-3-1-2-1">If we write <span class="process-math">\(\vec{x_k} =
+\threevec{P_k}{Q_k}{R_k}\text{,}\)</span> find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-3-5-1-3-1-3"><div class="para" id="sec-stochastic-3-5-1-3-1-3-1">Explain why <span class="process-math">\(A\)</span> is a stochastic matrix.</div></li>
-<li id="sec-stochastic-3-5-1-3-1-4"><div class="para" id="sec-stochastic-3-5-1-3-1-4-1">Suppose that initially 40% of citizens vote for party <span class="process-math">\(P\text{,}\)</span> 30% vote for party <span class="process-math">\(Q\text{,}\)</span> and 30% vote for party <span class="process-math">\(R\text{.}\)</span>  Form the vector <span class="process-math">\(\xvec_0\)</span> and explain why <span class="process-math">\(\xvec_0\)</span> is a probability vector.</div></li>
-<li id="sec-stochastic-3-5-1-3-1-5"><div class="para" id="sec-stochastic-3-5-1-3-1-5-1">Find <span class="process-math">\(\xvec_1\text{,}\)</span> the percentages who vote for the three parties in the next election.  Verify that <span class="process-math">\(\xvec_1\)</span> is also a probability vector and explain why <span class="process-math">\(\xvec_k\)</span> will be a probability vector for every <span class="process-math">\(k\text{.}\)</span> <div id="sec-stochastic-3-5-1-3-1-5-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-stochastic-3-5-1-3-1-4"><div class="para" id="sec-stochastic-3-5-1-3-1-4-1">Suppose that initially 40% of citizens vote for party <span class="process-math">\(P\text{,}\)</span> 30% vote for party <span class="process-math">\(Q\text{,}\)</span> and 30% vote for party <span class="process-math">\(R\text{.}\)</span>  Form the vector <span class="process-math">\(\vec{x_0}\)</span> and explain why <span class="process-math">\(\vec{x_0}\)</span> is a probability vector.</div></li>
+<li id="sec-stochastic-3-5-1-3-1-5"><div class="para" id="sec-stochastic-3-5-1-3-1-5-1">Find <span class="process-math">\(\vec{x_1}\text{,}\)</span> the percentages who vote for the three parties in the next election.  Verify that <span class="process-math">\(\vec{x_1}\)</span> is also a probability vector and explain why <span class="process-math">\(\vec{x_k}\)</span> will be a probability vector for every <span class="process-math">\(k\text{.}\)</span> <div id="sec-stochastic-3-5-1-3-1-5-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-stochastic-3-5-1-3-1-6"><div class="para" id="sec-stochastic-3-5-1-3-1-6-1">Find the eigenvalues of the matrix <span class="process-math">\(A\)</span> and explain why the eigenspace <span class="process-math">\(E_1\)</span> is a one-dimensional subspace of <span class="process-math">\(\real^3\text{.}\)</span>  Then verify that <span class="process-math">\(\vvec=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\text{.}\)</span>
+<li id="sec-stochastic-3-5-1-3-1-6"><div class="para" id="sec-stochastic-3-5-1-3-1-6-1">Find the eigenvalues of the matrix <span class="process-math">\(A\)</span> and explain why the eigenspace <span class="process-math">\(E_1\)</span> is a one-dimensional subspace of <span class="process-math">\(\real^3\text{.}\)</span>  Then verify that <span class="process-math">\(\vec{v}=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-3-5-1-3-1-7"><div class="para" id="sec-stochastic-3-5-1-3-1-7-1">As every vector in <span class="process-math">\(E_1\)</span> is a scalar multiple of <span class="process-math">\(\vvec\text{,}\)</span> find a probability vector in <span class="process-math">\(E_1\)</span> and explain why it is the only probability vector in <span class="process-math">\(E_1\text{.}\)</span>
+<li id="sec-stochastic-3-5-1-3-1-7"><div class="para" id="sec-stochastic-3-5-1-3-1-7-1">As every vector in <span class="process-math">\(E_1\)</span> is a scalar multiple of <span class="process-math">\(\vec{v}\text{,}\)</span> find a probability vector in <span class="process-math">\(E_1\)</span> and explain why it is the only probability vector in <span class="process-math">\(E_1\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-3-5-1-3-1-8"><div class="para" id="sec-stochastic-3-5-1-3-1-8-1">Describe what happens to <span class="process-math">\(\xvec_k\)</span> after a very long time.</div></li>
+<li id="sec-stochastic-3-5-1-3-1-8"><div class="para" id="sec-stochastic-3-5-1-3-1-8-1">Describe what happens to <span class="process-math">\(\vec{x_k}\)</span> after a very long time.</div></li>
 </ol></div></article><div class="para" id="sec-stochastic-3-6">The previous activity illustrates some important points that we wish to emphasize.</div>
 <div class="para logical" id="sec-stochastic-3-7">
 <div class="para">First, to determine <span class="process-math">\(P_{k+1}\text{,}\)</span> we note that in election <span class="process-math">\(k+1\text{,}\)</span> party <span class="process-math">\(P\)</span> retains 60% of its voters from the previous election and adds 20% of those who voted for party <span class="process-math">\(R\text{.}\)</span> In this way, we see that</div>
@@ -694,28 +706,28 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">and note that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>
+<div class="para">and note that <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span>
 </div>
 </div>
 <div class="para" id="sec-stochastic-3-8">If we consider the first column of <span class="process-math">\(A\text{,}\)</span> we see that the entries represent the percentages of party <span class="process-math">\(P\)</span>’s voters in the last election who vote for each of the three parties in the next election.  Since everyone who voted for party <span class="process-math">\(P\)</span> previously votes for one of the three parties in the next election, the sum of these percentages must be 1.  This is true for each of the columns of <span class="process-math">\(A\text{,}\)</span> which explains why <span class="process-math">\(A\)</span> is a stochastic matrix.</div>
 <div class="para logical" id="sec-stochastic-3-9">
-<div class="para">We begin with the vector <span class="process-math">\(\xvec_0 =
-\threevec{0.4}{0.3}{0.3}\text{,}\)</span> the entries of which represent the percentage of voters voting for each of the three parties.  Since every voter votes for one of the three parties, the sum of these entries must be 1, which means that <span class="process-math">\(\xvec_0\)</span> is a probability vector. We then find that</div>
+<div class="para">We begin with the vector <span class="process-math">\(\vec{x_0} =
+\threevec{0.4}{0.3}{0.3}\text{,}\)</span> the entries of which represent the percentage of voters voting for each of the three parties.  Since every voter votes for one of the three parties, the sum of these entries must be 1, which means that <span class="process-math">\(\vec{x_0}\)</span> is a probability vector. We then find that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{array}{cccc}
-\xvec_1=\threevec{0.300}{0.400}{0.300},\amp
-\xvec_2=\threevec{0.240}{0.420}{0.340},\amp
-\xvec_3=\threevec{0.212}{0.416}{0.372},\amp
+\vec{x_1}=\threevec{0.300}{0.400}{0.300},\amp
+\vec{x_2}=\threevec{0.240}{0.420}{0.340},\amp
+\vec{x_3}=\threevec{0.212}{0.416}{0.372},\amp
 \ldots,\\ \\
-\xvec_5=\threevec{0.199}{0.404}{0.397},\amp
+\vec{x_5}=\threevec{0.199}{0.404}{0.397},\amp
 \ldots,\amp
-\xvec_{10}=\threevec{0.200}{0.400}{0.400},\amp
+\vec{x_{10}}=\threevec{0.200}{0.400}{0.400},\amp
 \ldots \\
 \end{array}\text{.}
 \end{equation*}
 </div>
-<div class="para">Notice that the vectors <span class="process-math">\(\xvec_k\)</span> are also probability vectors and that the sequence <span class="process-math">\(\xvec_k\)</span> seems to be converging to <span class="process-math">\(\threevec{0.2}{0.4}{0.4}\text{.}\)</span>  It is this behavior that we would like to understand more fully by investigating the eigenvalues and eigenvectors of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">Notice that the vectors <span class="process-math">\(\vec{x_k}\)</span> are also probability vectors and that the sequence <span class="process-math">\(\vec{x_k}\)</span> seems to be converging to <span class="process-math">\(\threevec{0.2}{0.4}{0.4}\text{.}\)</span>  It is this behavior that we would like to understand more fully by investigating the eigenvalues and eigenvectors of <span class="process-math">\(A\text{.}\)</span>
 </div>
 </div>
 <div class="para logical" id="sec-stochastic-3-10">
@@ -726,8 +738,8 @@ A = \left[\begin{array}{rrr}
 0.4-0.2i \text{.}
 \end{equation*}
 </div>
-<div class="para">Notice that if <span class="process-math">\(\vvec\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=1\text{,}\)</span> then <span class="process-math">\(A\vvec = 1\vvec
-= \vvec\text{.}\)</span>  That is, <span class="process-math">\(\vvec\)</span> is unchanged when we multiply it by <span class="process-math">\(A\text{.}\)</span>
+<div class="para">Notice that if <span class="process-math">\(\vec{v}\)</span> is an eigenvector of <span class="process-math">\(A\)</span> with associated eigenvalue <span class="process-math">\(\lambda_1=1\text{,}\)</span> then <span class="process-math">\(A\vec{v} = 1\vec{v}
+= \vec{v}\text{.}\)</span>  That is, <span class="process-math">\(\vec{v}\)</span> is unchanged when we multiply it by <span class="process-math">\(A\text{.}\)</span>
 </div>
 </div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
@@ -742,29 +754,29 @@ E = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">Notice that <span class="process-math">\(|\lambda_2| = |\lambda_3| \lt 1\)</span> so the trajectories <span class="process-math">\(\xvec_k\)</span> spiral into the eigenspace <span class="process-math">\(E_1\)</span> as indicated in the figure.</div>
+<div class="para">Notice that <span class="process-math">\(|\lambda_2| = |\lambda_3| \lt 1\)</span> so the trajectories <span class="process-math">\(\vec{x_k}\)</span> spiral into the eigenspace <span class="process-math">\(E_1\)</span> as indicated in the figure.</div>
 </div></div>
 <div class="sbspanel top" style="width:45%;"><img src="external/images/eigen-3d-stoch.svg" role="img" class="contained"></div>
 </div></div>
-<div class="para" id="sec-stochastic-3-12">This tells us that the sequence <span class="process-math">\(\xvec_k\)</span> converges to a vector in <span class="process-math">\(E_1\text{.}\)</span> In the usual way, we see that <span class="process-math">\(\vvec=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\)</span> because <span class="process-math">\(A\vvec = \vvec\)</span> so we expect that <span class="process-math">\(\xvec_k\)</span> will converge to a scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span> Indeed, since the vectors <span class="process-math">\(\xvec_k\)</span> are probability vectors, we expect them to converge to a probability vector in <span class="process-math">\(E_1\text{.}\)</span>
+<div class="para" id="sec-stochastic-3-12">This tells us that the sequence <span class="process-math">\(\vec{x_k}\)</span> converges to a vector in <span class="process-math">\(E_1\text{.}\)</span> In the usual way, we see that <span class="process-math">\(\vec{v}=\threevec{1}{2}{2}\)</span> is a basis vector for <span class="process-math">\(E_1\)</span> because <span class="process-math">\(A\vec{v} = \vec{v}\)</span> so we expect that <span class="process-math">\(\vec{x_k}\)</span> will converge to a scalar multiple of <span class="process-math">\(\vec{v}\text{.}\)</span> Indeed, since the vectors <span class="process-math">\(\vec{x_k}\)</span> are probability vectors, we expect them to converge to a probability vector in <span class="process-math">\(E_1\text{.}\)</span>
 </div>
-<div class="para" id="sec-stochastic-3-13">We can find the probability vector in <span class="process-math">\(E_1\)</span> by finding the appropriate scalar multiple of <span class="process-math">\(\vvec\text{.}\)</span>  Notice that <span class="process-math">\(c\vvec = \threevec{c}{2c}{2c}\)</span> is a probability vector when <span class="process-math">\(c+2c+2c=5c = 1\text{,}\)</span> which implies that <span class="process-math">\(c = 1/5\text{.}\)</span> Therefore, <span class="process-math">\(\qvec=\threevec{0.2}{0.4}{0.4}\)</span> is the unique probability vector in <span class="process-math">\(E_1\text{.}\)</span>  Since the sequence <span class="process-math">\(\xvec_k\)</span> converges to a probability vector in <span class="process-math">\(E_1\text{,}\)</span> we see that <span class="process-math">\(\xvec_k\)</span> converges to <span class="process-math">\(\qvec\text{,}\)</span> which agrees with the computations we showed above.</div>
-<div class="para" id="sec-stochastic-3-14">The role of the eigenvalues is important in this example. Since <span class="process-math">\(\lambda_1=1\text{,}\)</span> we can find a probability vector <span class="process-math">\(\qvec\)</span> that is unchanged by multiplication by <span class="process-math">\(A\text{.}\)</span> Also, the other eigenvalues satisfy <span class="process-math">\(|\lambda_j| \lt 1\text{,}\)</span> which means that all the trajectories get pulled in to the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  Since <span class="process-math">\(\xvec_k\)</span> is a sequence of probability vectors, these vectors converge to the probability vector <span class="process-math">\(\qvec\)</span> as they are pulled into <span class="process-math">\(E_1\text{.}\)</span>
+<div class="para" id="sec-stochastic-3-13">We can find the probability vector in <span class="process-math">\(E_1\)</span> by finding the appropriate scalar multiple of <span class="process-math">\(\vec{v}\text{.}\)</span>  Notice that <span class="process-math">\(c\vec{v} = \threevec{c}{2c}{2c}\)</span> is a probability vector when <span class="process-math">\(c+2c+2c=5c = 1\text{,}\)</span> which implies that <span class="process-math">\(c = 1/5\text{.}\)</span> Therefore, <span class="process-math">\(\vec{q}=\threevec{0.2}{0.4}{0.4}\)</span> is the unique probability vector in <span class="process-math">\(E_1\text{.}\)</span>  Since the sequence <span class="process-math">\(\vec{x_k}\)</span> converges to a probability vector in <span class="process-math">\(E_1\text{,}\)</span> we see that <span class="process-math">\(\vec{x_k}\)</span> converges to <span class="process-math">\(\vec{q}\text{,}\)</span> which agrees with the computations we showed above.</div>
+<div class="para" id="sec-stochastic-3-14">The role of the eigenvalues is important in this example. Since <span class="process-math">\(\lambda_1=1\text{,}\)</span> we can find a probability vector <span class="process-math">\(\vec{q}\)</span> that is unchanged by multiplication by <span class="process-math">\(A\text{.}\)</span> Also, the other eigenvalues satisfy <span class="process-math">\(|\lambda_j| \lt 1\text{,}\)</span> which means that all the trajectories get pulled in to the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  Since <span class="process-math">\(\vec{x_k}\)</span> is a sequence of probability vectors, these vectors converge to the probability vector <span class="process-math">\(\vec{q}\)</span> as they are pulled into <span class="process-math">\(E_1\text{.}\)</span>
 </div></section><section class="subsection" id="sec-stochastic-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="space"> </span><span class="title">Markov chains</span>
 </h3>
-<div class="para" id="sec-stochastic-4-2">If we have a stochastic matrix <span class="process-math">\(A\)</span> and a probability vector <span class="process-math">\(\xvec_0\text{,}\)</span> we can form the sequence <span class="process-math">\(\xvec_k\)</span> where <span class="process-math">\(\xvec_{k+1} = A \xvec_k\text{.}\)</span>  We call this sequence of vectors a <em class="emphasis">Markov chain</em>. <a href="sec-stochastic.html#exercise-stochastic-probability" class="xref" data-knowl="./knowl/xref/exercise-stochastic-probability.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.5.5.6">Exercise 4.5.5.6</a> explains why we can guarantee that the vectors <span class="process-math">\(\xvec_k\)</span> are probability vectors. </div>
-<div class="para" id="sec-stochastic-4-3">In the example that studied voting patterns, we constructed a Markov chain that described how the percentages of voters choosing different parties changed from one election to the next.  We saw that the Markov chain converges to <span class="process-math">\(\qvec=\threevec{0.2}{0.4}{0.4}\text{,}\)</span> a probability vector in the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In other words, <span class="process-math">\(\qvec\)</span> is a probability vector that is unchanged under multiplication by <span class="process-math">\(A\text{;}\)</span> that is, <span class="process-math">\(A\qvec = \qvec\text{.}\)</span>  This implies that, after a long time, 20% of voters choose party <span class="process-math">\(P\text{,}\)</span> 40% choose <span class="process-math">\(Q\text{,}\)</span> and 40% choose <span class="process-math">\(R\text{.}\)</span>
+<div class="para" id="sec-stochastic-4-2">If we have a stochastic matrix <span class="process-math">\(A\)</span> and a probability vector <span class="process-math">\(\vec{x_0}\text{,}\)</span> we can form the sequence <span class="process-math">\(\vec{x_k}\)</span> where <span class="process-math">\(\vec{x_{k+1}} = A \vec{x_k}\text{.}\)</span>  We call this sequence of vectors a <em class="emphasis">Markov chain</em>. <a href="sec-stochastic.html#exercise-stochastic-probability" class="xref" data-knowl="./knowl/xref/exercise-stochastic-probability.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.5.5.6">Exercise 4.5.5.6</a> explains why we can guarantee that the vectors <span class="process-math">\(\vec{x_k}\)</span> are probability vectors. </div>
+<div class="para" id="sec-stochastic-4-3">In the example that studied voting patterns, we constructed a Markov chain that described how the percentages of voters choosing different parties changed from one election to the next.  We saw that the Markov chain converges to <span class="process-math">\(\vec{q}=\threevec{0.2}{0.4}{0.4}\text{,}\)</span> a probability vector in the eigenspace <span class="process-math">\(E_1\text{.}\)</span>  In other words, <span class="process-math">\(\vec{q}\)</span> is a probability vector that is unchanged under multiplication by <span class="process-math">\(A\text{;}\)</span> that is, <span class="process-math">\(A\vec{q} = \vec{q}\text{.}\)</span>  This implies that, after a long time, 20% of voters choose party <span class="process-math">\(P\text{,}\)</span> 40% choose <span class="process-math">\(Q\text{,}\)</span> and 40% choose <span class="process-math">\(R\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="sec-stochastic-4-4"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-stochastic-4-4-3">If <span class="process-math">\(A\)</span> is a stochastic matrix, we say that a probability vector <span class="process-math">\(\qvec\)</span> is a <em class="emphasis">steady-state</em> or <em class="emphasis">stationary</em> vector if <span class="process-math">\(A\qvec = \qvec\text{.}\)</span>
+<div class="para" id="sec-stochastic-4-4-3">If <span class="process-math">\(A\)</span> is a stochastic matrix, we say that a probability vector <span class="process-math">\(\vec{q}\)</span> is a <em class="emphasis">steady-state</em> or <em class="emphasis">stationary</em> vector if <span class="process-math">\(A\vec{q} = \vec{q}\text{.}\)</span>
 </div></article><div class="para" id="sec-stochastic-4-5">An important question that arises from our previous example is</div>
 <article class="question example-like" id="sec-stochastic-4-6"><h4 class="heading">
 <span class="type">Question</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-stochastic-4-6-1">If <span class="process-math">\(A\)</span> is a stochastic matrix and <span class="process-math">\(\xvec_k\)</span> a Markov chain, does <span class="process-math">\(\xvec_k\)</span> converge to a steady-state vector?</div></article><article class="activity project-like" id="sec-stochastic-4-7"><h4 class="heading">
+<div class="para" id="sec-stochastic-4-6-1">If <span class="process-math">\(A\)</span> is a stochastic matrix and <span class="process-math">\(\vec{x_k}\)</span> a Markov chain, does <span class="process-math">\(\vec{x_k}\)</span> converge to a steady-state vector?</div></article><article class="activity project-like" id="sec-stochastic-4-7"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-stochastic-4-7-1-1">
@@ -785,7 +797,7 @@ B=\left[\begin{array}{rr}
 <li id="sec-stochastic-4-7-1-1-2-1"><div class="para" id="sec-stochastic-4-7-1-1-2-1-1">Verify that both <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are stochastic matrices.</div></li>
 <li id="sec-stochastic-4-7-1-1-2-2"><div class="para" id="sec-stochastic-4-7-1-1-2-2-1">Find the eigenvalues of <span class="process-math">\(A\)</span> and then find a steady-state vector for <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-4-7-1-1-2-3"><div class="para" id="sec-stochastic-4-7-1-1-2-3-1">We will form the Markov chain beginning with the vector <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and defining <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span>  The Sage cell below constructs the first <span class="process-math">\(N\)</span> terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix <code class="code-inline tex2jax_ignore">A</code> and vector <code class="code-inline tex2jax_ignore">x0</code> and evaluate the cell to find the first 10 terms of the Markov chain. <div id="sec-stochastic-4-7-1-1-2-3-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="sec-stochastic-4-7-1-1-2-3"><div class="para" id="sec-stochastic-4-7-1-1-2-3-1">We will form the Markov chain beginning with the vector <span class="process-math">\(\vec{x_0} = \twovec{1}{0}\)</span> and defining <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span>  The Python cell below constructs the first <span class="process-math">\(N\)</span> terms of the Markov chain with the command <code class="code-inline tex2jax_ignore">markov_chain(A, x0, N)</code>.  Define the matrix <code class="code-inline tex2jax_ignore">A</code> and vector <code class="code-inline tex2jax_ignore">x0</code> and evaluate the cell to find the first 10 terms of the Markov chain. <div id="sec-stochastic-4-7-1-1-2-3-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0)
@@ -797,7 +809,7 @@ markov_chain(A, x0, 10)
 </div></li>
 <li id="sec-stochastic-4-7-1-1-2-4"><div class="para" id="sec-stochastic-4-7-1-1-2-4-1">Now find the eigenvalues of <span class="process-math">\(B\)</span> along with a steady-state vector for <span class="process-math">\(B\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-4-7-1-1-2-5"><div class="para" id="sec-stochastic-4-7-1-1-2-5-1">As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and <span class="process-math">\(\xvec_{k+1} = B\xvec_k\text{.}\)</span>  What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(B\text{?}\)</span>
+<li id="sec-stochastic-4-7-1-1-2-5"><div class="para" id="sec-stochastic-4-7-1-1-2-5-1">As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\vec{x_0} = \twovec{1}{0}\)</span> and <span class="process-math">\(\vec{x_{k+1}} = B\vec{x_k}\text{.}\)</span>  What do you notice about the Markov chain?  Does it converge to the steady-state vector for <span class="process-math">\(B\text{?}\)</span>
 </div></li>
 <li id="sec-stochastic-4-7-1-1-2-6"><div class="para" id="sec-stochastic-4-7-1-1-2-6-1">What condition on the eigenvalues of a stochastic matrix will guarantee that a Markov chain will converge to a steady-state vector?</div></li>
 </ol>
@@ -808,7 +820,7 @@ markov_chain(A, x0, 10)
 </div></li>
 <li id="sec-stochastic-4-8-1-2"><div class="para" id="sec-stochastic-4-8-1-2-1">All other eigenvalues satisfy the property that <span class="process-math">\(|\lambda_j| \leq 1\text{.}\)</span>
 </div></li>
-<li id="sec-stochastic-4-8-1-3"><div class="para" id="sec-stochastic-4-8-1-3-1">Any stochastic matrix has at least one steady-state vector <span class="process-math">\(\qvec\text{.}\)</span>
+<li id="sec-stochastic-4-8-1-3"><div class="para" id="sec-stochastic-4-8-1-3-1">Any stochastic matrix has at least one steady-state vector <span class="process-math">\(\vec{q}\text{.}\)</span>
 </div></li>
 </ul>
 </div>
@@ -819,12 +831,12 @@ markov_chain(A, x0, 10)
 \text{,}\)</span> whose eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 =
 -1\text{.}\)</span>
 </div>
-<div class="para" id="sec-stochastic-4-10">However, if all but the first eigenvalue satisfy <span class="process-math">\(|\lambda_j|\lt 1\text{,}\)</span> then there is a unique steady-state vector <span class="process-math">\(\qvec\)</span> and any Markov chain will converge to <span class="process-math">\(\qvec\text{.}\)</span>  This was the case for the matrix <span class="process-math">\(B = \left[\begin{array}{rr}
+<div class="para" id="sec-stochastic-4-10">However, if all but the first eigenvalue satisfy <span class="process-math">\(|\lambda_j|\lt 1\text{,}\)</span> then there is a unique steady-state vector <span class="process-math">\(\vec{q}\)</span> and any Markov chain will converge to <span class="process-math">\(\vec{q}\text{.}\)</span>  This was the case for the matrix <span class="process-math">\(B = \left[\begin{array}{rr}
 0.4 \amp 0.3 \\
 0.6 \amp 0.7 \\
 \end{array}\right]
 \text{,}\)</span> whose eigenvalues are <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(\lambda_2 =
-0.1\text{.}\)</span>  In this case, any Markov chain will converge to the unique steady-state vector <span class="process-math">\(\qvec =
+0.1\text{.}\)</span>  In this case, any Markov chain will converge to the unique steady-state vector <span class="process-math">\(\vec{q} =
 \twovec{\frac13}{\frac23}\text{.}\)</span>
 </div>
 <div class="para" id="sec-stochastic-4-11">In this way, we see that the eigenvalues of a stochastic matrix tell us whether a Markov chain will converge to a steady-state vector.  However, it is somewhat inconvenient to compute the eigenvalues to answer this question.  Is there some way to conclude that every Markov chain will converge to a steady-state vector without actually computing the eigenvalues?  It turns out that there is a simple condition on the matrix <span class="process-math">\(A\)</span> that guarantees this.</div>
@@ -852,7 +864,7 @@ markov_chain(A, x0, 10)
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Perron-Frobenius.</span>
 </h4>
 <div class="para" id="theorem-perron-2-1">If <span class="process-math">\(A\)</span> is a positive stochastic matrix, then the eigenvalues satisfy <span class="process-math">\(\lambda_1=1\)</span> and <span class="process-math">\(|\lambda_j| \lt
-1\)</span> for <span class="process-math">\(j\gt 1\text{.}\)</span>  This means that <span class="process-math">\(A\)</span> has a unique positive, steady-state vector <span class="process-math">\(\qvec\)</span> and that every Markov chain defined by <span class="process-math">\(A\)</span> will converge to <span class="process-math">\(\qvec\text{.}\)</span>
+1\)</span> for <span class="process-math">\(j\gt 1\text{.}\)</span>  This means that <span class="process-math">\(A\)</span> has a unique positive, steady-state vector <span class="process-math">\(\vec{q}\)</span> and that every Markov chain defined by <span class="process-math">\(A\)</span> will converge to <span class="process-math">\(\vec{q}\text{.}\)</span>
 </div></article><article class="activity project-like" id="sec-stochastic-4-16"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span>
 </h4>
@@ -864,7 +876,7 @@ markov_chain(A, x0, 10)
 1 \amp 0.5 \\
 \end{array}\right]
 \text{.}\)</span> This is a positive matrix, as we saw in the previous example.  Find the eigenvectors of <span class="process-math">\(C\)</span> and verify there is a unique steady-state vector.</div></li>
-<li id="sec-stochastic-4-16-1-1-1-2"><div class="para" id="sec-stochastic-4-16-1-1-1-2-1">Using the Sage cell below, construct the Markov chain with initial vector <span class="process-math">\(\xvec_0= \twovec{1}{0}\)</span> and describe what happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> becomes large. <div id="sec-stochastic-4-16-1-1-1-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="sec-stochastic-4-16-1-1-1-2"><div class="para" id="sec-stochastic-4-16-1-1-1-2-1">Using the Python cell below, construct the Markov chain with initial vector <span class="process-math">\(\vec{x_0}= \twovec{1}{0}\)</span> and describe what happens to <span class="process-math">\(\vec{x_k}\)</span> as <span class="process-math">\(k\)</span> becomes large. <div id="sec-stochastic-4-16-1-1-1-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0)
@@ -874,15 +886,15 @@ x0 =
 markov_chain(C, x0, 10)
 </script></div>
 </div></li>
-<li id="sec-stochastic-4-16-1-1-1-3"><div class="para" id="sec-stochastic-4-16-1-1-1-3-1">Construct another Markov chain with initial vector <span class="process-math">\(\xvec_0=\twovec{0.2}{0.8}\)</span> and describe what happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> becomes large.</div></li>
+<li id="sec-stochastic-4-16-1-1-1-3"><div class="para" id="sec-stochastic-4-16-1-1-1-3-1">Construct another Markov chain with initial vector <span class="process-math">\(\vec{x_0}=\twovec{0.2}{0.8}\)</span> and describe what happens to <span class="process-math">\(\vec{x_k}\)</span> as <span class="process-math">\(k\)</span> becomes large.</div></li>
 <li id="sec-stochastic-4-16-1-1-1-4"><div class="para" id="sec-stochastic-4-16-1-1-1-4-1">Consider the matrix <span class="process-math">\(D = \left[\begin{array}{rrr}
 0 \amp 0.5 \amp 0 \\
 1 \amp 0.5 \amp 0 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right]\)</span> and compute several powers of <span class="process-math">\(D\)</span> below. <div id="sec-stochastic-4-16-1-1-1-4-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\end{array}\right]\)</span> and compute several powers of <span class="process-math">\(D\)</span> below. <div id="sec-stochastic-4-16-1-1-1-4-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> Determine whether <span class="process-math">\(D\)</span> is a positive matrix.</div></li>
 <li id="sec-stochastic-4-16-1-1-1-5"><div class="para" id="sec-stochastic-4-16-1-1-1-5-1">Find the eigenvalues of <span class="process-math">\(D\)</span> and then find the steady-state vectors.  Is there a unique steady-state vector?</div></li>
-<li id="sec-stochastic-4-16-1-1-1-6"><div class="para" id="sec-stochastic-4-16-1-1-1-6-1">What happens to the Markov chain defined by <span class="process-math">\(D\)</span> with initial vector <span class="process-math">\(\xvec_0 =\threevec{1}{0}{0}\text{?}\)</span>  What happens to the Markov chain with initial vector <span class="process-math">\(\xvec_0=\threevec{0}{0}{1}\text{.}\)</span>
+<li id="sec-stochastic-4-16-1-1-1-6"><div class="para" id="sec-stochastic-4-16-1-1-1-6-1">What happens to the Markov chain defined by <span class="process-math">\(D\)</span> with initial vector <span class="process-math">\(\vec{x_0} =\threevec{1}{0}{0}\text{?}\)</span>  What happens to the Markov chain with initial vector <span class="process-math">\(\vec{x_0}=\threevec{0}{0}{1}\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-4-16-1-1-1-7"><div class="para" id="sec-stochastic-4-16-1-1-1-7-1">Explain how the matrices <span class="process-math">\(C\)</span> and <span class="process-math">\(D\text{,}\)</span> which we have considered in this activity, relate to the Perron-Frobenius theorem.</div></li>
 </ol>
@@ -908,19 +920,19 @@ x_1 = x_2 + \frac12 x_3\text{.}
 </div> <div class="para logical" id="subsec-google-5-1-4"><ol class="lower-alpha ol-marker-1" id="subsec-google-5-1-4-1">
 <li id="subsec-google-5-1-4-1-1"><div class="para" id="subsec-google-5-1-4-1-1-1">Find similar expressions for <span class="process-math">\(x_2\)</span> and <span class="process-math">\(x_3\text{.}\)</span>
 </div></li>
-<li id="subsec-google-5-1-4-1-2"><div class="para" id="subsec-google-5-1-4-1-2-1">We now form the PageRank vector <span class="process-math">\(\xvec =
-\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find a matrix <span class="process-math">\(G\)</span> such that the expressions for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\)</span> can be written in the form <span class="process-math">\(G\xvec = \xvec\text{.}\)</span>  The matrix <span class="process-math">\(G\)</span> is called the “Google matrix”.</div></li>
+<li id="subsec-google-5-1-4-1-2"><div class="para" id="subsec-google-5-1-4-1-2-1">We now form the PageRank vector <span class="process-math">\(\vec{x} =
+\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find a matrix <span class="process-math">\(G\)</span> such that the expressions for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\)</span> can be written in the form <span class="process-math">\(G\vec{x} = \vec{x}\text{.}\)</span>  The matrix <span class="process-math">\(G\)</span> is called the “Google matrix”.</div></li>
 <li id="subsec-google-5-1-4-1-3"><div class="para" id="subsec-google-5-1-4-1-3-1">Explain why <span class="process-math">\(G\)</span> is a stochastic matrix.</div></li>
-<li id="subsec-google-5-1-4-1-4"><div class="para" id="subsec-google-5-1-4-1-4-1">Since <span class="process-math">\(\xvec\)</span> is defined by the equation <span class="process-math">\(G\xvec = \xvec\text{,}\)</span> any vector in the eigenspace <span class="process-math">\(E_1\)</span> satisfies this equation.  So that we might work with a specific vector, we will define the PageRank vector to be the steady-state vector of the stochastic matrix <span class="process-math">\(G\text{.}\)</span>  Find this steady state vector. <div id="subsec-google-5-1-4-1-4-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="subsec-google-5-1-4-1-4"><div class="para" id="subsec-google-5-1-4-1-4-1">Since <span class="process-math">\(\vec{x}\)</span> is defined by the equation <span class="process-math">\(G\vec{x} = \vec{x}\text{,}\)</span> any vector in the eigenspace <span class="process-math">\(E_1\)</span> satisfies this equation.  So that we might work with a specific vector, we will define the PageRank vector to be the steady-state vector of the stochastic matrix <span class="process-math">\(G\text{.}\)</span>  Find this steady state vector. <div id="subsec-google-5-1-4-1-4-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="subsec-google-5-1-4-1-5"><div class="para" id="subsec-google-5-1-4-1-5-1">The PageRank vector <span class="process-math">\(\xvec\)</span> is composed of the PageRanks for each of the three pages.  Which page of the three is assessed to have the highest quality?  By referring to the structure of this small model of the Internet, explain why this is a good choice.</div></li>
-<li id="subsec-google-5-1-4-1-6"><div class="para" id="subsec-google-5-1-4-1-6-1">If we begin with the initial vector <span class="process-math">\(\xvec_0 =
-\threevec{1}{0}{0}\)</span> and form the Markov chain <span class="process-math">\(\xvec_{k+1} = G\xvec_k\text{,}\)</span> what does the Perron-Frobenius theorem tell us about the long-term behavior of the Markov chain?</div></li>
-<li id="subsec-google-5-1-4-1-7"><div class="para" id="subsec-google-5-1-4-1-7-1">Verify that this Markov chain converges to the steady-state PageRank vector. <div id="subsec-google-5-1-4-1-7-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="subsec-google-5-1-4-1-5"><div class="para" id="subsec-google-5-1-4-1-5-1">The PageRank vector <span class="process-math">\(\vec{x}\)</span> is composed of the PageRanks for each of the three pages.  Which page of the three is assessed to have the highest quality?  By referring to the structure of this small model of the Internet, explain why this is a good choice.</div></li>
+<li id="subsec-google-5-1-4-1-6"><div class="para" id="subsec-google-5-1-4-1-6-1">If we begin with the initial vector <span class="process-math">\(\vec{x_0} =
+\threevec{1}{0}{0}\)</span> and form the Markov chain <span class="process-math">\(\vec{x_{k+1}} = G\vec{x_k}\text{,}\)</span> what does the Perron-Frobenius theorem tell us about the long-term behavior of the Markov chain?</div></li>
+<li id="subsec-google-5-1-4-1-7"><div class="para" id="subsec-google-5-1-4-1-7-1">Verify that this Markov chain converges to the steady-state PageRank vector. <div id="subsec-google-5-1-4-1-7-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix G and x0
 G =
 x0 =
@@ -934,10 +946,10 @@ markov_chain(G, x0, 20)
 </h4>
 <div class="para" id="subsec-google-8-1-1">Consider the Internet with eight web pages, shown in <a href="sec-stochastic.html#fig-google-irreducible" class="xref" data-knowl="./knowl/xref/fig-google-irreducible.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.8">Figure 4.5.8</a>.</div> <figure class="figure figure-like" id="fig-google-irreducible"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-irreducible.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.8<span class="period">.</span></span><span class="space"> </span>A simple model of the Internet with eight web pages.</figcaption></figure> <div class="para logical" id="subsec-google-8-1-3"><ol class="lower-alpha ol-marker-1" id="subsec-google-8-1-3-1">
-<li id="subsec-google-8-1-3-1-1"><div class="para" id="subsec-google-8-1-3-1-1-1">Construct the Google matrix <span class="process-math">\(G\)</span> for this Internet.  Then use a Markov chain to find the steady-state PageRank vector <span class="process-math">\(\xvec\text{.}\)</span> <div id="subsec-google-8-1-3-1-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="subsec-google-8-1-3-1-1"><div class="para" id="subsec-google-8-1-3-1-1-1">Construct the Google matrix <span class="process-math">\(G\)</span> for this Internet.  Then use a Markov chain to find the steady-state PageRank vector <span class="process-math">\(\vec{x}\text{.}\)</span> <div id="subsec-google-8-1-3-1-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix G and x0
 G =
 x0 =
@@ -948,7 +960,7 @@ markov_chain(G, x0, 20)
 <li id="subsec-google-8-1-3-1-3">
 <div class="para" id="subsec-google-8-1-3-1-3-1">Now consider the Internet with five pages, shown in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a>.</div>
 <figure class="figure figure-like" id="fig-google-cyclic"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-cyclic.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.9<span class="period">.</span></span><span class="space"> </span>A model of the Internet with five web pages.</figcaption></figure><div class="para" id="subsec-google-8-1-3-1-3-3">What happens when you begin the Markov chain with the vector <span class="process-math">\(\xvec_0=\fivevec{1}{0}{0}{0}{0}\text{?}\)</span>  Explain why this behavior is consistent with the Perron-Frobenius theorem.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.9<span class="period">.</span></span><span class="space"> </span>A model of the Internet with five web pages.</figcaption></figure><div class="para" id="subsec-google-8-1-3-1-3-3">What happens when you begin the Markov chain with the vector <span class="process-math">\(\vec{x_0}=\fivevec{1}{0}{0}{0}{0}\text{?}\)</span>  Explain why this behavior is consistent with the Perron-Frobenius theorem.</div>
 </li>
 <li id="subsec-google-8-1-3-1-4"><div class="para" id="subsec-google-8-1-3-1-4-1">What do you think the PageRank vector for this Internet should be?  Is any one page of a higher quality than another?</div></li>
 <li id="subsec-google-8-1-3-1-5">
@@ -957,7 +969,7 @@ markov_chain(G, x0, 20)
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.10<span class="period">.</span></span><span class="space"> </span>Another model of the Internet with eight web pages.</figcaption></figure><div class="para" id="subsec-google-8-1-3-1-5-3">Notice that this version of the Internet is identical to the first one that we saw in this activity, except that a single link from page 7 to page 1 has been removed.  We can therefore find its Google matrix <span class="process-math">\(G\)</span> by slightly modifying the earlier matrix.</div>
 <div class="para" id="subsec-google-8-1-3-1-5-4">What is the long-term behavior of a Markov chain defined by <span class="process-math">\(G\)</span> and why is this behavior not desirable?  How is this behavior consistent with the Perron-Frobenius theorem?</div>
 </li>
-</ol></div></article><div class="para" id="subsec-google-9">The Perron-Frobenius theorem <a href="sec-stochastic.html#theorem-perron" class="xref" data-knowl="./knowl/xref/theorem-perron.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.6: Perron-Frobenius">Theorem 4.5.6</a> tells us that a Markov chain <span class="process-math">\(\xvec_{k+1}=G\xvec_k\)</span> converges to a unique steady-state vector when the matrix <span class="process-math">\(G\)</span> is positive.  This means that <span class="process-math">\(G\)</span> or some power of <span class="process-math">\(G\)</span> should have only positive entries.  Clearly, this is not the case for the matrix formed from the Internet in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a>.</div>
+</ol></div></article><div class="para" id="subsec-google-9">The Perron-Frobenius theorem <a href="sec-stochastic.html#theorem-perron" class="xref" data-knowl="./knowl/xref/theorem-perron.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.6: Perron-Frobenius">Theorem 4.5.6</a> tells us that a Markov chain <span class="process-math">\(\vec{x_{k+1}}=G\vec{x_k}\)</span> converges to a unique steady-state vector when the matrix <span class="process-math">\(G\)</span> is positive.  This means that <span class="process-math">\(G\)</span> or some power of <span class="process-math">\(G\)</span> should have only positive entries.  Clearly, this is not the case for the matrix formed from the Internet in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a>.</div>
 <div class="para" id="subsec-google-10">We can understand the problem with the Internet shown in <a href="sec-stochastic.html#fig-google-reducible" class="xref" data-knowl="./knowl/xref/fig-google-reducible.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.10">Figure 4.5.10</a> by adding a box around some of the pages as shown in <a href="sec-stochastic.html#fig-google-reducible-box" class="xref" data-knowl="./knowl/xref/fig-google-reducible-box.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.11">Figure 4.5.11</a>.  Here we see that the pages outside of the box give up all of their PageRank to the pages inside the box.  This is not desirable because the PageRanks of the pages outside of the box are found to be zero.  Once again, the Google matrix <span class="process-math">\(G\)</span> is not a positive matrix.</div>
 <figure class="figure figure-like" id="fig-google-reducible-box"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/google-reducible-box.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.11<span class="period">.</span></span><span class="space"> </span>The pages outside the box give up all of their PageRank to the pages inside the box.</figcaption></figure><div class="para" id="subsec-google-12">Google solves this problem by slightly modifying the Google matrix <span class="process-math">\(G\)</span> to obtain a positive matrix <span class="process-math">\(G'\text{.}\)</span>  To understand this, think of the entries in the Google matrix as giving the probability that an Internet user follows a link from one page of another.  To create a positive matrix, we will allow that user to randomly jump to any other page on the Internet with a small probability.</div>
@@ -991,12 +1003,13 @@ G' = 0.85 G + 0.15H_n\text{.}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-google-14-1-1">
-<div class="para">The following Sage cell will generate the Markov chain for the modified Google matrix <span class="process-math">\(G\)</span> if you simply enter the original Google matrix <span class="process-math">\(G\)</span> in the appropriate line. <div id="subsec-google-14-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+<div class="para">The following Python cell will generate the Markov chain for the modified Google matrix <span class="process-math">\(G\)</span> if you simply enter the original Google matrix <span class="process-math">\(G\)</span> in the appropriate line. <div id="subsec-google-14-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
     r = A.nrows()
-    A = 0.85*A + 0.15*matrix(r,r,[1.0/r]*(r*r))	      
+    #A = 0.85*A + 0.15*matrix(r,r,[1.0/r]*(r*r))
+	A = 0.85*A + 0.15*(1.0/r)*np.ones_like(A)	      
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## Define original Google matrix G and initial vector x0.
 ## The function above finds the modified Google matrix
 ## and resulting Markov chain 
@@ -1006,7 +1019,7 @@ modified_markov_chain(G, x0, 20)
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="subsec-google-14-1-1-4">
-<li id="subsec-google-14-1-1-4-1"><div class="para" id="subsec-google-14-1-1-4-1-1">Consider the original Internet with three pages shown in <a href="sec-stochastic.html#fig-google-intro" class="xref" data-knowl="./knowl/xref/fig-google-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.7">Figure 4.5.7</a> and find the PageRank vector <span class="process-math">\(\xvec\)</span> using the modified Google matrix in the Sage cell above. How does this modified PageRank vector compare to the vector we found using the original Google matrix <span class="process-math">\(G\text{?}\)</span>
+<li id="subsec-google-14-1-1-4-1"><div class="para" id="subsec-google-14-1-1-4-1-1">Consider the original Internet with three pages shown in <a href="sec-stochastic.html#fig-google-intro" class="xref" data-knowl="./knowl/xref/fig-google-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.7">Figure 4.5.7</a> and find the PageRank vector <span class="process-math">\(\vec{x}\)</span> using the modified Google matrix in the Python cell above. How does this modified PageRank vector compare to the vector we found using the original Google matrix <span class="process-math">\(G\text{?}\)</span>
 </div></li>
 <li id="subsec-google-14-1-1-4-2"><div class="para" id="subsec-google-14-1-1-4-2-1">Find the modified PageRank vector for the Internet shown in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a>.  Explain why this vector seems to be the correct one.</div></li>
 <li id="subsec-google-14-1-1-4-3"><div class="para" id="subsec-google-14-1-1-4-3-1">Find the modified PageRank vector for the Internet shown in <a href="sec-stochastic.html#fig-google-reducible" class="xref" data-knowl="./knowl/xref/fig-google-reducible.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.10">Figure 4.5.10</a>.  Explain why this modified PageRank vector fixes the problem that appeared with the original PageRank vector.</div></li>
@@ -1018,9 +1031,9 @@ modified_markov_chain(G, x0, 20)
 <div class="para">This section explored stochastic matrices and Markov chains.</div>
 <ul class="disc" id="sec-stochastic-6-2-1">
 <li id="sec-stochastic-6-2-1-1"><div class="para" id="sec-stochastic-6-2-1-1-1">A probability vector is one whose entries are nonnegative and whose columns add to 1.  A stochastic matrix is a square matrix whose columns are probability vectors.</div></li>
-<li id="sec-stochastic-6-2-1-2"><div class="para" id="sec-stochastic-6-2-1-2-1">A Markov chain is formed from a stochastic matrix <span class="process-math">\(A\)</span> and an initial probability vector <span class="process-math">\(\xvec_0\)</span> using the rule <span class="process-math">\(\xvec_{k+1}=A\xvec_k\text{.}\)</span>  We may think of the sequence <span class="process-math">\(\xvec_k\)</span> as describing the evolution of some conserved quantity, such as the number of rental cars or voters, among a number of possible states over time.</div></li>
-<li id="sec-stochastic-6-2-1-3"><div class="para" id="sec-stochastic-6-2-1-3-1">A steady-state vector <span class="process-math">\(\qvec\)</span> for a stochastic matrix <span class="process-math">\(A\)</span> is a probability vector that satisfies <span class="process-math">\(A\qvec
-= \qvec\text{.}\)</span>
+<li id="sec-stochastic-6-2-1-2"><div class="para" id="sec-stochastic-6-2-1-2-1">A Markov chain is formed from a stochastic matrix <span class="process-math">\(A\)</span> and an initial probability vector <span class="process-math">\(\vec{x_0}\)</span> using the rule <span class="process-math">\(\vec{x_{k+1}}=A\vec{x_k}\text{.}\)</span>  We may think of the sequence <span class="process-math">\(\vec{x_k}\)</span> as describing the evolution of some conserved quantity, such as the number of rental cars or voters, among a number of possible states over time.</div></li>
+<li id="sec-stochastic-6-2-1-3"><div class="para" id="sec-stochastic-6-2-1-3-1">A steady-state vector <span class="process-math">\(\vec{q}\)</span> for a stochastic matrix <span class="process-math">\(A\)</span> is a probability vector that satisfies <span class="process-math">\(A\vec{q}
+= \vec{q}\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-6-2-1-4"><div class="para" id="sec-stochastic-6-2-1-4-1">The Perron-Frobenius theorem tells us that, if <span class="process-math">\(A\)</span> is a positive stochastic matrix, then every Markov chain defined by <span class="process-math">\(A\)</span> converges to a unique, positive steady-state vector.</div></li>
 <li id="sec-stochastic-6-2-1-5"><div class="para" id="sec-stochastic-6-2-1-5-1">Google’s PageRank algorithm uses Markov chains and the Perron-Frobenius theorem to assess the relative quality of web pages on the Internet.</div></li>
@@ -1057,11 +1070,11 @@ modified_markov_chain(G, x0, 20)
 <div class="para" id="sec-stochastic-7-2-1-1">Every year, people move between urban (U), suburban (S), and rural (R) populations with the probabilities given in <a href="sec-stochastic.html#fig-stoch-pops" class="xref" data-knowl="./knowl/xref/fig-stoch-pops.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.12">Figure 4.5.12</a>.</div> <figure class="figure figure-like" id="fig-stoch-pops"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/stoch-pops.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.12<span class="period">.</span></span><span class="space"> </span>The flow between urban, suburban, and rural populations.</figcaption></figure> <div class="para logical" id="sec-stochastic-7-2-1-3"><ol class="lower-alpha ol-marker-1" id="sec-stochastic-7-2-1-3-1">
 <li id="sec-stochastic-7-2-1-3-1-1"><div class="para" id="sec-stochastic-7-2-1-3-1-1-1">Construct the stochastic matrix <span class="process-math">\(A\)</span> describing the movement of people.</div></li>
-<li id="sec-stochastic-7-2-1-3-1-2"><div class="para" id="sec-stochastic-7-2-1-3-1-2-1">Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector <span class="process-math">\(\qvec\)</span> and the behavior of a Markov chain.</div></li>
-<li id="sec-stochastic-7-2-1-3-1-3"><div class="para" id="sec-stochastic-7-2-1-3-1-3-1">Use the Sage cell below to find the some terms of a Markov chain. <div id="sec-stochastic-7-2-1-3-1-3-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<li id="sec-stochastic-7-2-1-3-1-2"><div class="para" id="sec-stochastic-7-2-1-3-1-2-1">Explain what the Perron-Frobenius theorem tells us about the existence of a steady-state vector <span class="process-math">\(\vec{q}\)</span> and the behavior of a Markov chain.</div></li>
+<li id="sec-stochastic-7-2-1-3-1-3"><div class="para" id="sec-stochastic-7-2-1-3-1-3-1">Use the Python cell below to find the some terms of a Markov chain. <div id="sec-stochastic-7-2-1-3-1-3-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix G and x0
 A =
 x0 =
@@ -1095,7 +1108,7 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-stochastic-7-4-1-1-2">
-<li id="sec-stochastic-7-4-1-1-2-1"><div class="para" id="sec-stochastic-7-4-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-stochastic-7-4-1-1-2-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-stochastic-7-4-1-1-2-1"><div class="para" id="sec-stochastic-7-4-1-1-2-1-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-stochastic-7-4-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-stochastic-7-4-1-1-2-2"><div class="para" id="sec-stochastic-7-4-1-1-2-2-1">Do the conditions of the Perron-Frobenius theorem apply to this matrix?</div></li>
@@ -1121,15 +1134,15 @@ A = \left[\begin{array}{rrr}
 </div>
 <article class="exercise exercise-like" id="exercise-stochastic-probability"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="exercise-stochastic-probability-1-1">
-<div class="para">Suppose that <span class="process-math">\(A\)</span> is a stochastic matrix and that <span class="process-math">\(\xvec\)</span> is a probability vector.  We would like to explain why the product <span class="process-math">\(A\xvec\)</span> is a probability vector.</div>
+<div class="para">Suppose that <span class="process-math">\(A\)</span> is a stochastic matrix and that <span class="process-math">\(\vec{x}\)</span> is a probability vector.  We would like to explain why the product <span class="process-math">\(A\vec{x}\)</span> is a probability vector.</div>
 <ol class="lower-alpha ol-marker-1" id="exercise-stochastic-probability-1-1-4">
-<li id="exercise-stochastic-probability-1-1-4-1"><div class="para" id="exercise-stochastic-probability-1-1-4-1-1">Explain why <span class="process-math">\(\xvec=\threevec{0.4}{0.5}{0.1}\)</span> is a probability vector and then find the product <span class="process-math">\(S\xvec\text{.}\)</span>
+<li id="exercise-stochastic-probability-1-1-4-1"><div class="para" id="exercise-stochastic-probability-1-1-4-1-1">Explain why <span class="process-math">\(\vec{x}=\threevec{0.4}{0.5}{0.1}\)</span> is a probability vector and then find the product <span class="process-math">\(S\vec{x}\text{.}\)</span>
 </div></li>
-<li id="exercise-stochastic-probability-1-1-4-2"><div class="para" id="exercise-stochastic-probability-1-1-4-2-1">More generally, if <span class="process-math">\(\xvec\)</span> is any probability vector, what is the product <span class="process-math">\(S\xvec\text{?}\)</span>
+<li id="exercise-stochastic-probability-1-1-4-2"><div class="para" id="exercise-stochastic-probability-1-1-4-2-1">More generally, if <span class="process-math">\(\vec{x}\)</span> is any probability vector, what is the product <span class="process-math">\(S\vec{x}\text{?}\)</span>
 </div></li>
 <li id="exercise-stochastic-probability-1-1-4-3"><div class="para" id="exercise-stochastic-probability-1-1-4-3-1">If <span class="process-math">\(A\)</span> is a stochastic matrix, explain why <span class="process-math">\(SA=S\text{.}\)</span>
 </div></li>
-<li id="exercise-stochastic-probability-1-1-4-4"><div class="para" id="exercise-stochastic-probability-1-1-4-4-1">Explain why <span class="process-math">\(A\xvec\)</span> is a probability vector by considering the product <span class="process-math">\(SA\xvec\text{.}\)</span>
+<li id="exercise-stochastic-probability-1-1-4-4"><div class="para" id="exercise-stochastic-probability-1-1-4-4-1">Explain why <span class="process-math">\(A\vec{x}\)</span> is a probability vector by considering the product <span class="process-math">\(SA\vec{x}\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-stochastic-7-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
@@ -1148,9 +1161,9 @@ A = \left[\begin{array}{rrr}
 <ol class="lower-alpha ol-marker-1" id="exercise-stochastic-eigenvalue-1-1-5">
 <li id="exercise-stochastic-eigenvalue-1-1-5-1"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-1-1">What is the product <span class="process-math">\(S(A-I)\text{?}\)</span>
 </div></li>
-<li id="exercise-stochastic-eigenvalue-1-1-5-2"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-2-1">What is the product <span class="process-math">\(S\evec_1\text{?}\)</span>
+<li id="exercise-stochastic-eigenvalue-1-1-5-2"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-2-1">What is the product <span class="process-math">\(S\vec{e_1}\text{?}\)</span>
 </div></li>
-<li id="exercise-stochastic-eigenvalue-1-1-5-3"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-3-1">Consider the equation <span class="process-math">\((A-I)\xvec = \evec_1\text{.}\)</span> Explain why this equation cannot be consistent by multiplying by <span class="process-math">\(S\)</span> to obtain <span class="process-math">\(S(A-I)\xvec = S\evec_1\text{.}\)</span>
+<li id="exercise-stochastic-eigenvalue-1-1-5-3"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-3-1">Consider the equation <span class="process-math">\((A-I)\vec{x} = \vec{e_1}\text{.}\)</span> Explain why this equation cannot be consistent by multiplying by <span class="process-math">\(S\)</span> to obtain <span class="process-math">\(S(A-I)\vec{x} = S\vec{e_1}\text{.}\)</span>
 </div></li>
 <li id="exercise-stochastic-eigenvalue-1-1-5-4"><div class="para" id="exercise-stochastic-eigenvalue-1-1-5-4-1">What can you say about the span of the columns of <span class="process-math">\(A-I\text{?}\)</span>
 </div></li>
@@ -1178,24 +1191,25 @@ G' = \alpha G + (1-\alpha)H_n\text{.}
 </div>
 <div class="para">Since <span class="process-math">\(G'\)</span> is positive, the Markov chain is guaranteed to converge to a unique steady-state vector.</div>
 </div> <div class="para logical" id="sec-stochastic-7-10-1-2">
-<div class="para">We said that Google chooses <span class="process-math">\(\alpha = 0.85\)</span> so we might wonder why this is a good choice.  We will explore the role of <span class="process-math">\(\alpha\)</span> in this exercise.  Let’s consider the model Internet described in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix <span class="process-math">\(G\text{.}\)</span>  In the Sage cell below, you can enter the matrix <span class="process-math">\(G\)</span> and choose a value for <span class="process-math">\(\alpha\text{.}\)</span> <div id="sec-stochastic-7-10-1-2-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+<div class="para">We said that Google chooses <span class="process-math">\(\alpha = 0.85\)</span> so we might wonder why this is a good choice.  We will explore the role of <span class="process-math">\(\alpha\)</span> in this exercise.  Let’s consider the model Internet described in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix <span class="process-math">\(G\text{.}\)</span>  In the Python cell below, you can enter the matrix <span class="process-math">\(G\)</span> and choose a value for <span class="process-math">\(\alpha\text{.}\)</span> <div id="sec-stochastic-7-10-1-2-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
     r = A.nrows()
-    A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
-    for i in range(N):
+    #A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
+    A = alpha*A + (1 - alpha)*(1.0/r)*np.ones_like(A)
+	for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## Define the matrix original Google matrix G and choose alpha.
 ## The function above finds the modified Google matrix
 ## and resulting Markov chain
 alpha = 0
 G =
-x0 = vector([1,0,0,0,0])
+x0 = np.array([1.0,0,0,0,0])
 modified_markov_chain(G, x0, 20)
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-stochastic-7-10-1-2-8">
-<li id="sec-stochastic-7-10-1-2-8-1"><div class="para" id="sec-stochastic-7-10-1-2-8-1-1">Let’s begin with <span class="process-math">\(\alpha=0\text{.}\)</span>  With this choice, what is the matrix <span class="process-math">\(G'=\alpha G + (1-\alpha)H_n\text{?}\)</span> Construct a Markov chain using the Sage cell above.  How many steps are required for the Markov chain to converge to the accuracy with which the vectors <span class="process-math">\(\xvec_k\)</span> are displayed?</div></li>
-<li id="sec-stochastic-7-10-1-2-8-2"><div class="para" id="sec-stochastic-7-10-1-2-8-2-1">Now choose <span class="process-math">\(\alpha=0.25\text{.}\)</span>  How many steps are required for the Markov chain to converge to the accuracy at which the vectors <span class="process-math">\(\xvec_k\)</span> are displayed?</div></li>
+<li id="sec-stochastic-7-10-1-2-8-1"><div class="para" id="sec-stochastic-7-10-1-2-8-1-1">Let’s begin with <span class="process-math">\(\alpha=0\text{.}\)</span>  With this choice, what is the matrix <span class="process-math">\(G'=\alpha G + (1-\alpha)H_n\text{?}\)</span> Construct a Markov chain using the Python cell above.  How many steps are required for the Markov chain to converge to the accuracy with which the vectors <span class="process-math">\(\vec{x_k}\)</span> are displayed?</div></li>
+<li id="sec-stochastic-7-10-1-2-8-2"><div class="para" id="sec-stochastic-7-10-1-2-8-2-1">Now choose <span class="process-math">\(\alpha=0.25\text{.}\)</span>  How many steps are required for the Markov chain to converge to the accuracy at which the vectors <span class="process-math">\(\vec{x_k}\)</span> are displayed?</div></li>
 <li id="sec-stochastic-7-10-1-2-8-3"><div class="para" id="sec-stochastic-7-10-1-2-8-3-1">Repeat this experiment with <span class="process-math">\(\alpha = 0.5\)</span> and <span class="process-math">\(\alpha=0.75\text{.}\)</span>
 </div></li>
 <li id="sec-stochastic-7-10-1-2-8-4"><div class="para" id="sec-stochastic-7-10-1-2-8-4-1">What happens if <span class="process-math">\(\alpha = 1\text{?}\)</span>
@@ -1210,7 +1224,7 @@ modified_markov_chain(G, x0, 20)
 <div class="para" id="sec-stochastic-7-11-1-3-1-1-1">We begin by playing a simpler version of this game with only eight squares laid out in a row as shown in <a href="sec-stochastic.html#fig-chutes-plain" class="xref" data-knowl="./knowl/xref/fig-chutes-plain.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.13">Figure 4.5.13</a> and containing neither chutes nor ladders.  Rather than a six-sided die, we will toss a coin and move ahead one or two squares depending on the result of the coin toss.  If we are on square 7, we move ahead to square 8 regardless of the coin flip, and if we are on square 8, we will stay there forever.</div>
 <figure class="figure figure-like" id="fig-chutes-plain"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/chutes-plain.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.13<span class="period">.</span></span><span class="space"> </span>A simple version of Chutes and Ladders with neither chutes nor ladders.</figcaption></figure><div class="para" id="sec-stochastic-7-11-1-3-1-1-3">Construct the <span class="process-math">\(8\times8\)</span> matrix <span class="process-math">\(A\)</span> that records the probability that a player moves from one square to another on one move.  For instance, if a player is on square 2, there is a 50% chance they move to square 3 and a 50% chance they move to square 4 on the next move.</div>
-<div class="para" id="sec-stochastic-7-11-1-3-1-1-4">Since we begin the game on square 1, the initial vector <span class="process-math">\(\xvec_0 = \evec_1\text{.}\)</span>  Generate a few terms of the Markov chain <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{.}\)</span> <div id="sec-stochastic-7-11-1-3-1-1-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<div class="para" id="sec-stochastic-7-11-1-3-1-1-4">Since we begin the game on square 1, the initial vector <span class="process-math">\(\vec{x_0} = \vec{e_1}\text{.}\)</span>  Generate a few terms of the Markov chain <span class="process-math">\(\vec{x_{k+1}} = A\vec{x_k}\text{.}\)</span> <div id="sec-stochastic-7-11-1-3-1-1-4-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
         print (x0.numerical_approx(digits=3))
@@ -1226,10 +1240,10 @@ markov_chain(A, x0, 10)
 <div class="para" id="sec-stochastic-7-11-1-3-1-2-1">We will now modify the game by adding one chute and one ladder as shown in <a href="sec-stochastic.html#fig-chutes-ladders" class="xref" data-knowl="./knowl/xref/fig-chutes-ladders.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.14">Figure 4.5.14</a>.</div>
 <figure class="figure figure-like" id="fig-chutes-ladders"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/chutes-ladders.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.14<span class="period">.</span></span><span class="space"> </span>A version of Chutes and Ladders with one chute and one ladder.</figcaption></figure><div class="para" id="sec-stochastic-7-11-1-3-1-2-3">Even though there are eight squares, we only need to consider six of them.  For instance, if we arrive at the first white square, we move up to square 4. Similarly, if we arrive at the second white square, we move down to square 1.</div>
-<div class="para" id="sec-stochastic-7-11-1-3-1-2-4">Once again, construct the <span class="process-math">\(6\times6\)</span> stochastic matrix that records the probability that we move from one square to another on a given turn and generate some terms in the Markov chain that begins with <span class="process-math">\(\xvec_0=\evec_1\text{.}\)</span> <div id="sec-stochastic-7-11-1-3-1-2-4-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def markov_chain(A, x0, N):
+<div class="para" id="sec-stochastic-7-11-1-3-1-2-4">Once again, construct the <span class="process-math">\(6\times6\)</span> stochastic matrix that records the probability that we move from one square to another on a given turn and generate some terms in the Markov chain that begins with <span class="process-math">\(\vec{x_0}=\vec{e_1}\text{.}\)</span> <div id="sec-stochastic-7-11-1-3-1-2-4-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def markov_chain(A, x0, N):
     for i in range(N):
         x0 = A*x0
-        print (x0.numerical_approx(digits=3))
+        print (x0.evalf(3))
 ## define the matrix A and x0
 A =
 x0 =
