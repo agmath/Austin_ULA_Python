@@ -839,7 +839,7 @@ c_1\vec{w_1} + c_2\vec{w_2} + c_3(-2\vec{w_1}-\vec{w_2}) \\
 <div class="para">Is it possible to write one of these vectors <span class="process-math">\(\vec{w_1}\text{,}\)</span> <span class="process-math">\(\vec{w_2}\text{,}\)</span> <span class="process-math">\(\vec{w_3}\)</span> as a linear combination of the others?  If so, show explicitly how one vector appears as a linear combination of some of the other vectors.  Is this set of vectors linearly dependent or independent?</div>
 </div></li>
 <li id="sec-linear-dep-4-2-1-1-1-3"><div class="para" id="sec-linear-dep-4-2-1-1-1-3-1">By looking at the pivot positions, how can you determine whether the columns of a matrix are linearly dependent or independent?</div></li>
-<li id="sec-linear-dep-4-2-1-1-1-4"><div class="para" id="sec-linear-dep-4-2-1-1-1-4-1">If one vector in a set is the zero vector <span class="process-math">\(\zerovec\text{,}\)</span> can the set of vectors be linearly independent?</div></li>
+<li id="sec-linear-dep-4-2-1-1-1-4"><div class="para" id="sec-linear-dep-4-2-1-1-1-4-1">If one vector in a set is the zero vector <span class="process-math">\(\vec{0}\text{,}\)</span> can the set of vectors be linearly independent?</div></li>
 <li id="sec-linear-dep-4-2-1-1-1-5"><div class="para" id="sec-linear-dep-4-2-1-1-1-5-1">Suppose a set of vectors in <span class="process-math">\(\real^{10}\)</span> has twelve vectors.  Is it possible for this set to be linearly independent?</div></li>
 </ol>
 </div></article><div class="para logical" id="sec-linear-dep-4-3">
@@ -937,14 +937,14 @@ c_1\vec{w_1} + c_2\vec{w_2} + c_3(-2\vec{w_1}-\vec{w_2}) \\
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="space"> </span><span class="title">Homogeneous equations</span>
 </h3>
 <div class="para" id="sec-linear-dep-5-2">If <span class="process-math">\(A\)</span> is a matrix, we call the equation <span class="process-math">\(A\vec{x} =
-\zerovec\)</span> a <em class="emphasis">homogeneous</em> equation.  As we’ll see, the uniqueness of solutions to this equation reflects on the linear independence of the columns of <span class="process-math">\(A\text{.}\)</span>
+\vec{0}\)</span> a <em class="emphasis">homogeneous</em> equation.  As we’ll see, the uniqueness of solutions to this equation reflects on the linear independence of the columns of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <article class="activity project-like" id="sec-linear-dep-5-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linear independence and homogeneous equations.</span>
 </h4>
 <div class="para logical" id="sec-linear-dep-5-3-2-1"><ol class="lower-alpha ol-marker-1" id="sec-linear-dep-5-3-2-1-1">
 <li id="sec-linear-dep-5-3-2-1-1-1"><div class="para" id="sec-linear-dep-5-3-2-1-1-1-1">Explain why the homogeneous equation <span class="process-math">\(A\vec{x} =
-\zerovec\)</span> is consistent no matter the matrix <span class="process-math">\(A\text{.}\)</span>
+\vec{0}\)</span> is consistent no matter the matrix <span class="process-math">\(A\text{.}\)</span>
 </div></li>
 <li id="sec-linear-dep-5-3-2-1-1-2"><div class="para logical" id="sec-linear-dep-5-3-2-1-1-2-1">
 <div class="para">Consider the matrix</div>
@@ -957,7 +957,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">whose columns we denote by <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span> Describe the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> using a parametric description, if appropriate. <div id="sec-linear-dep-5-3-2-1-1-2-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<div class="para">whose columns we denote by <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\text{.}\)</span> Describe the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> using a parametric description, if appropriate. <div id="sec-linear-dep-5-3-2-1-1-2-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -965,13 +965,13 @@ A = \left[\begin{array}{rrr}
 <div class="para">Find a nonzero solution to the homogeneous equation and use it to find weights <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \vec{0}\text{.}
 \end{equation*}
 </div>
 </div></li>
 <li id="sec-linear-dep-5-3-2-1-1-4"><div class="para" id="sec-linear-dep-5-3-2-1-1-4-1">Use the equation you found in the previous part to write one of the vectors as a linear combination of the others.</div></li>
 <li id="sec-linear-dep-5-3-2-1-1-5"><div class="para" id="sec-linear-dep-5-3-2-1-1-5-1">Are the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> and <span class="process-math">\(\vec{v_3}\)</span> linearly dependent or independent?</div></li>
-</ol></div></article><div class="para" id="sec-linear-dep-5-4">This activity shows how the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> indicates whether the columns of <span class="process-math">\(A\)</span> are linearly dependent or independent.  First, we know that the equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> always has at least one solution, the vector <span class="process-math">\(\vec{x} = \zerovec\text{.}\)</span>  Any other solution is a nonzero solution.</div>
+</ol></div></article><div class="para" id="sec-linear-dep-5-4">This activity shows how the solution space of the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> indicates whether the columns of <span class="process-math">\(A\)</span> are linearly dependent or independent.  First, we know that the equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> always has at least one solution, the vector <span class="process-math">\(\vec{x} = \vec{0}\text{.}\)</span>  Any other solution is a nonzero solution.</div>
 <article class="example example-like" id="sec-linear-dep-5-5"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span>
 </h4>
@@ -990,7 +990,7 @@ c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \zerovec\text{.}
 \text{.}\)</span>
 </div>
 </div> <div class="para logical" id="sec-linear-dep-5-5-1-2">
-<div class="para">The homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has the associated augmented matrix</div>
+<div class="para">The homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> has the associated augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -1040,14 +1040,14 @@ A\threevec{-1}{-1}1 =
 \vec{v_1}\amp\vec{v_2}\amp\vec{v_3}
 \end{bmatrix}
 \threevec{-1}{-1}1 =
--\vec{v_1} -\vec{v_2} + \vec{v_3} = \zerovec.
+-\vec{v_1} -\vec{v_2} + \vec{v_3} = \vec{0}.
 \end{equation*}
 </div>
 <div class="para">In other words,</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
--\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \zerovec \\
+-\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \vec{0} \\
 \vec{v_3} \amp{}={} \vec{v_1} + \vec{v_2}. \\
 \end{aligned}
 \end{equation*}
@@ -1065,12 +1065,12 @@ A\threevec{-1}{-1}1 =
 <li id="sec-linear-dep-5-7-1-1-2-1"><div class="para" id="sec-linear-dep-5-7-1-1-2-1-1">The columns of <span class="process-math">\(A\)</span> are linearly dependent.</div></li>
 <li id="sec-linear-dep-5-7-1-1-2-2"><div class="para" id="sec-linear-dep-5-7-1-1-2-2-1">One of the vectors in the set <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is a linear combination of the others.</div></li>
 <li id="sec-linear-dep-5-7-1-1-2-3"><div class="para" id="sec-linear-dep-5-7-1-1-2-3-1">The matrix <span class="process-math">\(A\)</span> has a column without a pivot position.</div></li>
-<li id="sec-linear-dep-5-7-1-1-2-4"><div class="para" id="sec-linear-dep-5-7-1-1-2-4-1">The homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has infinitely many solutions and hence a nonzero solution.</div></li>
+<li id="sec-linear-dep-5-7-1-1-2-4"><div class="para" id="sec-linear-dep-5-7-1-1-2-4-1">The homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> has infinitely many solutions and hence a nonzero solution.</div></li>
 <li id="sec-linear-dep-5-7-1-1-2-5"><div class="para logical" id="sec-linear-dep-5-7-1-1-2-5-1">
 <div class="para">There are weights <span class="process-math">\(c_1,c_2,\ldots,c_n\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{0}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1084,12 +1084,12 @@ c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec\text{.}
 <li id="sec-linear-dep-6-2-1-1"><div class="para" id="sec-linear-dep-6-2-1-1-1">A set of vectors is linearly dependent if one of the vectors is a linear combination of the others.</div></li>
 <li id="sec-linear-dep-6-2-1-2"><div class="para" id="sec-linear-dep-6-2-1-2-1">A set of vectors is linearly independent if and only if the vectors form a matrix that has a pivot position in every column.</div></li>
 <li id="sec-linear-dep-6-2-1-3"><div class="para" id="sec-linear-dep-6-2-1-3-1">A set of linearly independent vectors in <span class="process-math">\(\real^m\)</span> contains no more than <span class="process-math">\(m\)</span> vectors.</div></li>
-<li id="sec-linear-dep-6-2-1-4"><div class="para" id="sec-linear-dep-6-2-1-4-1">The columns of the matrix <span class="process-math">\(A\)</span> are linearly dependent if the homogeneous equation <span class="process-math">\(A\vec{x} = \zerovec\)</span> has a nonzero solution.</div></li>
+<li id="sec-linear-dep-6-2-1-4"><div class="para" id="sec-linear-dep-6-2-1-4-1">The columns of the matrix <span class="process-math">\(A\)</span> are linearly dependent if the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> has a nonzero solution.</div></li>
 <li id="sec-linear-dep-6-2-1-5"><div class="para logical" id="sec-linear-dep-6-2-1-5-1">
 <div class="para">A set of vectors <span class="process-math">\(\vec{v_1},\vec{v_2},\ldots,\vec{v_n}\)</span> is linearly dependent if there are weights <span class="process-math">\(c_1,c_2,\ldots,c_n\text{,}\)</span> not all of which are zero, such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec\text{.}
+c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{0}\text{.}
 \end{equation*}
 </div>
 </div></li>
@@ -1118,7 +1118,7 @@ A=\left[\begin{array}{rrrr} \vec{v_1}\amp\vec{v_2} \amp
 <td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-1-1">A vector <span class="process-math">\(\vec{v_b}\)</span> is in the span of <span class="process-math">\(\vec{v_1},
 \vec{v_2}, \ldots, \vec{v_n}\)</span> if there exists a solution to <span class="process-math">\(A\vec{x} = \vec{v_b}\text{.}\)</span>
 </div></td>
-<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-2-1">The vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}\)</span> are linearly independent if <span class="process-math">\(\vec{x}=\zerovec\)</span> is the unique solution to <span class="process-math">\(A\vec{x} = \zerovec\text{.}\)</span>
+<td class="l t b1 r0 l0 t0" style="max-width:300px;"><div class="para" id="sec-linear-dep-6-5-2-5-2-1">The vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}\)</span> are linearly independent if <span class="process-math">\(\vec{x}=\vec{0}\)</span> is the unique solution to <span class="process-math">\(A\vec{x} = \vec{0}\text{.}\)</span>
 </div></td>
 </tr>
 <tr>
