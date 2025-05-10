@@ -681,10 +681,10 @@ sympy.Matrix([[-1.0,-2, 2,-1],
 	<li> <p> Break the matrix entries across lines, one for each row,
 	for better readability by pressing <em>Enter</em> between rows.
 	<cd>
-		#A = sympy.Matrix([[1.0, 2, -1, 0],
-        #    			[-3, 0,  4, 3 ]])
-		A = np.array([[1.0, 2, -1, 0],
-					[-3, 0,  4, 3 ]])
+#A = sympy.Matrix([[1.0, 2, -1, 0],
+#    			[-3, 0,  4, 3 ]])
+A = np.array([[1.0, 2, -1, 0],
+			[-3, 0,  4, 3 ]])
 	</cd>
 	</p></li>
 	<li> <p> Print your original matrix to check that you have
