@@ -5,7 +5,7 @@
 
   <introduction>
     <p> Our primary concern so far has been to develop an
-    understanding of solutions to linear systems <m>A\xvec=\bvec</m>.
+    understanding of solutions to linear systems <m>A\vec{x}=\vec{b}</m>.
     In this way, our two fundamental questions about the 
     existence and uniqueness of solutions led us to the concepts of
     span and linear independence.</p>
@@ -24,7 +24,7 @@
       \end{array}\right]
     </me>,
     we would much prefer working with the diagonal matrix <m>A</m>.
-    Solutions to linear systems <m>A\xvec=\bvec</m> are easily
+    Solutions to linear systems <m>A\vec{x}=\vec{b}</m> are easily
     determined, and the geometry of the matrix transformation defined
     by <m>A</m> is 
     easily described. </p>

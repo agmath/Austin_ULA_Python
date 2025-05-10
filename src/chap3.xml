@@ -11,10 +11,10 @@
       </xref>
       concerning the existence and uniqueness of solutions to linear
       systems independently of one another.  We found that every
-      equation of the form <m>A\xvec = \bvec</m> has a solution when
+      equation of the form <m>A\vec{x} = \vec{b}</m> has a solution when
       the span of the columns of <m>A</m> is <m>\real^m</m>.  We
-      also found that the solution <m>\xvec=\zerovec</m> of the
-      homogeneous equation <m>A\xvec = \zerovec</m> is unique when the
+      also found that the solution <m>\vec{x}=\vec{0}</m> of the
+      homogeneous equation <m>A\vec{x} = \vec{0}</m> is unique when the
       columns of <m>A</m> are linearly independent.  In this chapter,
       we explore the situation in which these two conditions hold
       simultaneously.

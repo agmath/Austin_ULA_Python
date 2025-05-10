@@ -31,7 +31,7 @@
       A <em> vector </em> is most simply thought of as a matrix with a
       single column.  For instance,
       <m>
-	\vvec = \left[
+	\vec{v} = \left[
 	\begin{array}{r}
 	2 \\
 	1 \\
@@ -40,7 +40,7 @@
       </m>
       and
       <m>
-	\wvec = \left[
+	\vec{w} = \left[
 	\begin{array}{r}
 	-3 \\
 	1 \\
@@ -50,27 +50,27 @@
 	\right]
       </m>
       are both vectors.  The entries in a vector are called its
-      components.  Since the vector <m>\vvec</m> has two
+      components.  Since the vector <m>\vec{v}</m> has two
       components, we say that it is a two-dimensional vector;  in the
-      same way, the vector <m>\wvec</m> is a four-dimensional
+      same way, the vector <m>\vec{w}</m> is a four-dimensional
       vector.
     </p>
 
     <p>
       We denote the set of all <m>m</m>-dimensional vectors
-      by <m>\real^m</m>.  Consequently, if <m>\uvec</m> is a
-      3-dimensional vector, we say that <m>\uvec</m> is in
+      by <m>\real^m</m>.  Consequently, if <m>\vec{u}</m> is a
+      3-dimensional vector, we say that <m>\vec{u}</m> is in
       <m>\real^3</m>. 
     </p>
 
     <p>
       While it can be difficult to visualize a four-dimensional
       vector, we can draw a simple picture describing the
-      two-dimensional vector <m>\vvec</m>, as shown in <xref
+      two-dimensional vector <m>\vec{v}</m>, as shown in <xref
       ref="fig-vector"/>.  
       <figure xml:id="fig-vector">
 	<caption>
-	  A graphical representation of the vector <m>\vvec = \twovec21</m>.
+	  A graphical representation of the vector <m>\vec{v} = \twovec21</m>.
 	</caption>
 	<sidebyside width="50%">
 	  <image source="images/vector-u" />
@@ -79,7 +79,7 @@
     </p>
 
     <p>
-      We can think of <m>\vvec</m> as describing a walk in the
+      We can think of <m>\vec{v}</m> as describing a walk in the
       plane where we move two units horizontally and one unit
       vertically.  Though we allow ourselves to begin walking from any
       point in the plane, we will most frequently begin at the
@@ -94,8 +94,8 @@
 	<li><title> Scalar Multiplication </title>
 	<idx> scalar multiplication </idx>
 	<p>
-	  We multiply a vector <m>\vvec</m> by a real number <m>c</m> by
-	  multiplying each of the components of <m>\vvec</m> by
+	  We multiply a vector <m>\vec{v}</m> by a real number <m>c</m> by
+	  multiplying each of the components of <m>\vec{v}</m> by
 	  <m>c</m>.  For instance,
 	  <me>
 	    -3\left[\begin{array}{r} 2 \\ -4 \\ 1 \\ \end{array}\right]
@@ -131,9 +131,9 @@
       <p>
 	Suppose that
 	<me>
-	  \vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+	  \vec{v} = \left[\begin{array}{r} 3 \\ 1 \end{array}
 	  \right],
-	  \wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+	  \vec{w} = \left[\begin{array}{r} -1 \\ 2 \end{array}
 	  \right].
 	</me>
       </p>
@@ -142,8 +142,8 @@
 	  <li> <p> Find expressions for the vectors
 	  <me>
 	    \begin{array}{cccc}
-	    \vvec, \amp 2\vvec, \amp -\vvec, \amp -2\vvec, \\
-	    \wvec, \amp 2\wvec, \amp -\wvec, \amp -2\wvec\text{.} \\
+	    \vec{v}, \amp 2\vec{v}, \amp -\vec{v}, \amp -2\vec{v}, \\
+	    \vec{w}, \amp 2\vec{w}, \amp -\vec{w}, \amp -2\vec{w}\text{.} \\
 	    \end{array}
 	  </me>
 	  and sketch them using <xref ref="fig-activity-2-1-1"/>.
@@ -164,7 +164,7 @@
 	
 	<li> <p> Sketch the vectors
 	<m>
-	  \vvec, \wvec, \vvec + \wvec
+	  \vec{v}, \vec{w}, \vec{v} + \vec{w}
 	</m>
 	using <xref ref="fig-activity-2-1-2"/>.
 	<figure xml:id="fig-activity-2-1-2">
@@ -177,8 +177,8 @@
 	</figure>
 	</p> </li>
 
-	<li> <p> Consider vectors that have the form <m>\vvec +
-	c\wvec</m> where <m>c</m> is any scalar.  Sketch a few
+	<li> <p> Consider vectors that have the form <m>\vec{v} +
+	c\vec{w}</m> where <m>c</m> is any scalar.  Sketch a few
 	of these vectors when, say, <m>c = -2, -1, 0, 1, </m> and
 	<m>2</m>.  Give a geometric description of this set of
 	vectors.
@@ -194,18 +194,18 @@
 
 	<li> <p> If <m>c</m> and <m>d</m> are two scalars, then the
 	vector
-	<me> c \vvec + d \wvec </me>
+	<me> c \vec{v} + d \vec{w} </me>
 	is called a <em>linear combination</em> of the vectors
-	<m>\vvec</m> 
-	and <m>\wvec</m>.  Find the vector that is the linear
+	<m>\vec{v}</m> 
+	and <m>\vec{w}</m>.  Find the vector that is the linear
 	combination when <m>c = -2</m> and <m>d = 1</m>.
 	</p> </li>
 
 	<li> <p> Can the vector <m>\left[\begin{array}{r} -31 \\ 37
 	\end{array}\right]</m> be represented as a linear combination
-	of <m>\vvec</m> and <m>\wvec</m>?  Asked differently,
+	of <m>\vec{v}</m> and <m>\vec{w}</m>?  Asked differently,
 	can we find scalars <m>c</m> and <m>d</m>
-	such that <m>c\vvec+d\wvec = \twovec{-31}{37}</m>.
+	such that <m>c\vec{v}+d\vec{w} = \twovec{-31}{37}</m>.
 	</p></li>
 	</ol>
       </p>
@@ -229,27 +229,27 @@
       stretching or compressing a vector.  Multiplying by a negative
       scalar changes the direction of the vector.  In either case,
       <xref ref="fig-scalar-mult" /> shows that a scalar multiple of
-      a vector <m>\vvec</m> lies on the same line defined by
-      <m>\vvec</m>. 
+      a vector <m>\vec{v}</m> lies on the same line defined by
+      <m>\vec{v}</m>. 
       <figure xml:id="fig-scalar-mult">
 	<sidebyside width="50%">
 	  <image source="images/scalar-mult" />
 	</sidebyside>
-	<caption> Scalar multiples of the vector <m>\vvec=\twovec21</m>.
+	<caption> Scalar multiples of the vector <m>\vec{v}=\twovec21</m>.
 	</caption>
       </figure>
     </p>
 
     <p>
-      To represent the sum <m>\vvec + \wvec</m>, we 
+      To represent the sum <m>\vec{v} + \vec{w}</m>, we 
       imagine walking from the origin with the appropriate horizontal
-      and vertical changes given by <m>\vvec</m>.  From there, we
+      and vertical changes given by <m>\vec{v}</m>.  From there, we
       continue our walk using the horizontal and vertical changes
       prescribed by 
-      <m>\wvec</m>, after which we arrive at the sum <m>\vvec
-      + \wvec</m>.  This is illustrated on the left of
+      <m>\vec{w}</m>, after which we arrive at the sum <m>\vec{v}
+      + \vec{w}</m>.  This is illustrated on the left of
       <xref ref="fig-vector-sum" /> where the
-      tail of <m>\wvec</m> is placed on the tip of <m>\vvec</m>.
+      tail of <m>\vec{w}</m> is placed on the tip of <m>\vec{v}</m>.
       <figure xml:id="fig-vector-sum">
 	<sidebyside widths="45% 45%">
 	  <image source="images/vector-addition-a" />
@@ -263,25 +263,25 @@
     </p>
     <p>
       Alternatively, we may construct the parallelogram with
-      <m>\vvec</m> and <m>\wvec</m> as two sides.  The sum
+      <m>\vec{v}</m> and <m>\vec{w}</m> as two sides.  The sum
       is then the diagonal of the parallelogram, as illustrated on the
       right of <xref ref="fig-vector-sum" />.
     </p>
 
     <p>
       We have now seen that the set of vectors having the form
-      <m>c\vvec</m> is a line.  To form the set of vectors
-      <m>c\vvec+\wvec</m>, we can begin with the vector <m>\wvec</m>
-      and add multiples of <m>\vvec</m>.  Geometrically, this means
-      that we begin from the tip of <m>\wvec</m> and move in a
-      direction parallel to <m>\vvec</m>.  The effect is to translate
-      the line <m> c\vvec</m> by the vector <m>\wvec</m>, as shown in
+      <m>c\vec{v}</m> is a line.  To form the set of vectors
+      <m>c\vec{v}+\vec{w}</m>, we can begin with the vector <m>\vec{w}</m>
+      and add multiples of <m>\vec{v}</m>.  Geometrically, this means
+      that we begin from the tip of <m>\vec{w}</m> and move in a
+      direction parallel to <m>\vec{v}</m>.  The effect is to translate
+      the line <m> c\vec{v}</m> by the vector <m>\vec{w}</m>, as shown in
       <xref ref="fig-parametric-line" />.
       <figure xml:id="fig-parametric-line">
 	<sidebyside width="50%">
 	  <image source = "images/line-param" />
 	</sidebyside>
-	<caption> The set of vectors <m>c\vvec + \wvec</m> form a
+	<caption> The set of vectors <m>c\vec{v} + \vec{w}</m> form a
 	line.
 	</caption>
       </figure>
@@ -292,10 +292,10 @@
       points interchangeably.  That is, we may wish to think of the
       vector <m>\left[\begin{array}{r} 2 \\ 1 \end{array}\right]</m>
       as describing the point <m>(2,1)</m> and vice-versa.  When we
-      say that the vectors having the form <m>c\vvec + \wvec</m>
+      say that the vectors having the form <m>c\vec{v} + \vec{w}</m>
       form a line, we really mean that the tips of the vectors
-      all lie on the line passing through <m>\wvec</m> and
-      parallel to <m>\vvec</m>.
+      all lie on the line passing through <m>\vec{w}</m> and
+      parallel to <m>\vec{v}</m>.
     </p>
 
     <observation>
@@ -304,9 +304,9 @@
       properties hold.
       <dl>
 	<li> <title> Commutativity </title>
-	<p> <m>\vvec + \wvec = \wvec + \vvec</m>. </p></li>
+	<p> <m>\vec{v} + \vec{w} = \vec{w} + \vec{v}</m>. </p></li>
 	<li> <title> Distributivity </title>
-	<p> <m>a(\vvec + \wvec) = a\vvec + a\wvec</m>. </p></li>
+	<p> <m>a(\vec{v} + \vec{w}) = a\vec{v} + a\vec{w}</m>. </p></li>
       </dl>
       </p>
     </observation>
@@ -344,11 +344,11 @@
       <idx> linear combination </idx>
       <idx> weights </idx>
       <p> The <em> linear combination </em> of the vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> with scalars
+      <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> with scalars
       <m>c_1,c_2,\ldots,c_n</m> is
       the vector
       <me>
-	c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n\text{.}
+	c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}\text{.}
       </me>
       The scalars <m>c_1,c_2,\ldots,c_n</m> are called the
       <em>weights</em> of the linear combination.
@@ -360,17 +360,17 @@
       <p> In this activity, we will look at linear combinations
       of a pair of vectors,
       <m>
-	\vvec = \left[\begin{array}{r} 2 \\ 1 \end{array}\right]
+	\vec{v} = \left[\begin{array}{r} 2 \\ 1 \end{array}\right]
       </m>
       and
       <m>
-	\wvec = \left[\begin{array}{r} 1 \\ 2 \end{array}\right]
+	\vec{w} = \left[\begin{array}{r} 1 \\ 2 \end{array}\right]
       </m>.
       </p>
 
       <figure xml:id="js-linear-combs">
 	<caption>
-	  Linear combinations of vectors <m>\vvec</m> and <m>\wvec</m>.
+	  Linear combinations of vectors <m>\vec{v}</m> and <m>\vec{w}</m>.
 	</caption>
 
 	<interactive xml:id="interactive-linear-combs"
@@ -408,10 +408,10 @@
 	      The diagram below can be used to construct linear
 	      combinations whose weights <m>c</m> and <m>d</m> may be
 	      varied using the sliders at the top.  The vectors
-	      <m>\vvec</m> and <m>\wvec</m> are outlined while
+	      <m>\vec{v}</m> and <m>\vec{w}</m> are outlined while
 	      the linear combination
 	      <me>
-		c\vvec + d\wvec
+		c\vec{v} + d\vec{w}
 	      </me>
 	      is shaded red.
 	    </p>
@@ -425,8 +425,8 @@
 	How is 
 	this related to scalar multiplication? </p></li>
 
-	<li> <p> What is the linear combination of <m>\vvec</m> and
-	<m>\wvec</m> when <m>c = 1</m> and <m>d=-2</m>?  You may find
+	<li> <p> What is the linear combination of <m>\vec{v}</m> and
+	<m>\vec{w}</m> when <m>c = 1</m> and <m>d=-2</m>?  You may find
 	this result using the diagram, but you should also verify it
 	by computing the linear combination. </p></li>
 
@@ -438,13 +438,13 @@
 	<li> <p> Can the vector
 	<m>\left[\begin{array}{r} 0 \\ 0 \end{array} \right]</m>
 	be expressed as a linear combination
-	of <m>\vvec</m> and <m>\wvec</m>?  If so, what are the weights
+	of <m>\vec{v}</m> and <m>\vec{w}</m>?  If so, what are the weights
 	<m>c</m> and <m>d</m>? </p></li>
 
 	<li> <p> Can the vector
 	<m>\left[\begin{array}{r} 3 \\ 0 \end{array} \right]</m>
 	be expressed as a linear combination
-	of <m>\vvec</m> and <m>\wvec</m>?  If so, what are the weights
+	of <m>\vec{v}</m> and <m>\vec{w}</m>?  If so, what are the weights
 	<m>c</m> and <m>d</m>? </p></li>
 
 	<li> <p> Verify the result from the previous part by
@@ -455,14 +455,14 @@
 
 	<li> <p> Can the vector
 	<m>\left[\begin{array}{r} 1.3 \\ -1.7 \end{array} \right]</m>
-	be expressed as a linear combination of <m>\vvec</m> and
-	<m>\wvec</m>?  What about the vector
+	be expressed as a linear combination of <m>\vec{v}</m> and
+	<m>\vec{w}</m>?  What about the vector
 	<m>\left[\begin{array}{r} 15.2 \\ 7.1 \end{array} \right]</m>?
 	</p></li>
 
 	<li> <p> Are there any two-dimensional vectors that cannot be
-	expressed as linear combinations of <m>\vvec</m> and
-	<m>\wvec</m>? </p></li>
+	expressed as linear combinations of <m>\vec{v}</m> and
+	<m>\vec{w}</m>? </p></li>
       </ol>
       </statement>
 
@@ -470,21 +470,21 @@
 	<p>
 	  <ol marker="a.">
 	    <li><p> When we vary <m>c</m> with <m>d=0</m>, the linear
-	    combination moves along the line defined by <m>\vvec</m>.
+	    combination moves along the line defined by <m>\vec{v}</m>.
 	    </p></li>
 
 	    <li><p>
 	      When <m>c=1</m> and <m>d=-2</m>, we find
 	      <me>
-		1\vvec -2 \wvec =
+		1\vec{v} -2 \vec{w} =
 		\twovec{0}{-3}\text{.}
 	      </me>
 	    </p></li>
 
 	    <li><p>
 	      When <m>d=1</m> and <m>c</m> is allowed to vary, the linear
-	      combinations lie on the line through <m>\wvec</m>
-	      parallel to <m>\vvec</m>.
+	      combinations lie on the line through <m>\vec{w}</m>
+	      parallel to <m>\vec{v}</m>.
 	    </p></li>
 
 	    <li><p>
@@ -527,13 +527,13 @@
 	      </me>
 	      which shows that there are weights that produce the
 	      desired linear combination.  The same will happen for
-	      any vector <m>\bvec</m> that we ask to write as a linear
-	      combination of <m>\vvec</m> and <m>\wvec</m>.
+	      any vector <m>\vec{b}</m> that we ask to write as a linear
+	      combination of <m>\vec{v}</m> and <m>\vec{w}</m>.
 	    </p></li>
 
 	    <li><p>
 	      Every two-dimensional vector can be written as a linear
-	      combination of <m>\vvec</m> and <m>\wvec</m>
+	      combination of <m>\vec{v}</m> and <m>\vec{w}</m>
 	      because the coefficient matrix of the linear system
 	      remains the same.  Since that coefficient matrix has a
 	      pivot position in every row, the augmented matrix can
@@ -547,13 +547,13 @@
 	<p>
 	  <ol marker="a.">
 	    <li><p> The linear combinations lie on the line defined by
-	    <m>\vvec</m>.
+	    <m>\vec{v}</m>.
 	    </p></li>
 
 	    <li><p> <m>\twovec{0}{-3}</m>. </p></li>
 
-	    <li><p> They lie on the line through <m>\wvec</m> parallel
-	    to <m>\vvec</m>.
+	    <li><p> They lie on the line through <m>\vec{w}</m> parallel
+	    to <m>\vec{v}</m>.
 	    </p></li>
 
 	    <li><p> Yes, with weights <m>c=d=0</m>. </p></li>
@@ -566,7 +566,7 @@
 	    </p></li>
 
 	    <li><p> No, any two-dimensional vector can be expressed
-	    as a linear combination of <m>\vvec</m> and <m>\wvec</m>.
+	    as a linear combination of <m>\vec{v}</m> and <m>\vec{w}</m>.
 	    </p></li>
 	  </ol>
 	</p>
@@ -574,9 +574,9 @@
     </activity>
 
     <p> This activity illustrates how linear combinations are
-    constructed geometrically: the linear combination <m>c\vvec +
-    d\wvec</m> is found by walking along <m>\vvec</m> a total of
-    <m>c</m> times followed by walking along <m>\wvec</m> a total of
+    constructed geometrically: the linear combination <m>c\vec{v} +
+    d\vec{w}</m> is found by walking along <m>\vec{v}</m> a total of
+    <m>c</m> times followed by walking along <m>\vec{w}</m> a total of
     <m>d</m> times.  When one of the weights is held constant while
     the other varies, the vector moves along a line.
     </p>
@@ -586,14 +586,14 @@
 	<p>
 	  The previous activity also shows that questions about linear
 	  combinations lead naturally to linear systems.  Suppose we
-	  have vectors <m>\vvec = \twovec3{-1}</m> and
-	  <m>\wvec=\twovec43</m>.  Let's determine whether we can
-	  describe the vector <m>\bvec=\twovec{-11}{-18}</m> as a linear
-	  combination of <m>\vvec</m> and <m>\wvec</m>.  In other
+	  have vectors <m>\vec{v} = \twovec3{-1}</m> and
+	  <m>\vec{w}=\twovec43</m>.  Let's determine whether we can
+	  describe the vector <m>\vec{b}=\twovec{-11}{-18}</m> as a linear
+	  combination of <m>\vec{v}</m> and <m>\vec{w}</m>.  In other
 	  words, we would like to know whether there are weights
 	  <m>c</m> and <m>d</m> such that
 	  <me>
-	    c\vvec + d\wvec= \bvec.
+	    c\vec{v} + d\vec{w}= \vec{b}.
 	  </me>
 	</p>
 
@@ -622,8 +622,8 @@
 	    -a \amp {}+{} \amp 3b \amp {}={} \amp -18 \
 	    \end{alignedat}
 	  </me>
-	  This means that <m>\bvec</m> is a linear combination of
-	  <m>\vvec</m> and <m>\wvec</m> if this linear system is
+	  This means that <m>\vec{b}</m> is a linear combination of
+	  <m>\vec{v}</m> and <m>\vec{w}</m> if this linear system is
 	  consistent. 
 	</p>
 	
@@ -647,12 +647,12 @@
 	  </me>
 	  giving us the weights <m>c=3</m> and <m>d=-5</m>;  that is,
 	  <me>
-	    3\vvec -5 \wvec = \bvec
+	    3\vec{v} -5 \vec{w} = \vec{b}
 	    </me>.
 	    In fact, we know more because the reduced row echelon matrix
 	    tells us that these are the only possible weights.  Therefore,
-	    <m>\bvec</m> may be expressed as a linear combination of
-	    <m>\vvec</m> and <m>\wvec</m> in exactly one way.
+	    <m>\vec{b}</m> may be expressed as a linear combination of
+	    <m>\vec{v}</m> and <m>\vec{w}</m> in exactly one way.
 	</p>
       </statement>
     </example>
@@ -660,15 +660,15 @@
     <p>
       This example demonstrates the connection between linear
       combinations and linear systems.  Asking whether a vector
-      <m>\bvec</m> is a linear combination of vectors
-      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is equivalent to asking
+      <m>\vec{b}</m> is a linear combination of vectors
+      <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is equivalent to asking
       whether an associated linear system is consistent.
     </p>
 
     <p>
       In fact, we may easily describe the associated linear system in
-      terms of the vectors <m>\vvec</m>, <m>\wvec</m>, and
-      <m>\bvec</m>. 
+      terms of the vectors <m>\vec{v}</m>, <m>\vec{w}</m>, and
+      <m>\vec{b}</m>. 
       Notice that the augmented matrix we found in our example was
       <m>
 	\left[
@@ -678,14 +678,14 @@
 	\end{array}
 	\right].
       </m>
-      The first two columns of this matrix are <m>\vvec</m> and
-      <m>\wvec</m> and the rightmost column is <m>\bvec</m>.  As
+      The first two columns of this matrix are <m>\vec{v}</m> and
+      <m>\vec{w}</m> and the rightmost column is <m>\vec{b}</m>.  As
       shorthand, we will write this augmented matrix replacing the
       columns with their vector representation:
       <me>
 	\left[
 	\begin{array}{rr|r}
-	\vvec \amp \wvec \amp \bvec
+	\vec{v} \amp \vec{w} \amp \vec{b}
 	\end{array}
 	\right]
       </me>.
@@ -696,21 +696,21 @@
     <proposition xml:id="prop-system-comb">
       <statement>
 	<p>
-	  The vector <m>\bvec</m> is a linear combination of the vectors
-	  <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> if and only if the linear
+	  The vector <m>\vec{b}</m> is a linear combination of the vectors
+	  <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> if and only if the linear
 	  system corresponding to the augmented matrix
 	  <me>
 	    \left[
 	    \begin{array}{rrrr|r}
-	    \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n \amp 
-	    \bvec
+	    \vec{v_1} \amp \vec{v_2} \amp \ldots \amp \vec{v_n} \amp 
+	    \vec{b}
 	    \end{array}
 	    \right]
 	  </me>
 	  is consistent.  A solution to this linear system gives
 	  weights <m>c_1,c_2,\ldots,c_n</m> such that
 	  <me>
-	    c_1\vvec_1 + c_2\vvec_2 + \ldots + c_n\vvec_n = \bvec
+	    c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{b}
 	  </me>.
 	</p>
       </statement>
@@ -727,18 +727,18 @@
       <ol marker="a.">
 	<li><p> Given the vectors
 	<me>
-	  \vvec_1 = \left[\begin{array}{r} 4 \\ 0 \\ 2 \\ 1
+	  \vec{v_1} = \left[\begin{array}{r} 4 \\ 0 \\ 2 \\ 1
 	  \end{array} \right], 
-	  \vvec_2 = \left[\begin{array}{r} 1 \\ -3 \\ 3 \\ 1
+	  \vec{v_2} = \left[\begin{array}{r} 1 \\ -3 \\ 3 \\ 1
 	  \end{array} \right], 
-	  \vvec_3 = \left[\begin{array}{r} -2 \\ 1 \\ 1 \\ 0
+	  \vec{v_3} = \left[\begin{array}{r} -2 \\ 1 \\ 1 \\ 0
 	  \end{array} \right], 
-	  \bvec   = \left[\begin{array}{r} 0 \\ 1 \\ 2 \\ -2
+	  \vec{b}   = \left[\begin{array}{r} 0 \\ 1 \\ 2 \\ -2
 	  \end{array} \right]
 	</me>,
-	can <m>\bvec</m> be expressed as a
-	linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>, and
-	<m>\vvec_3</m>?  Rephrase this question by writing a linear
+	can <m>\vec{b}</m> be expressed as a
+	linear combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
+	<m>\vec{v_3}</m>?  Rephrase this question by writing a linear
 	system for the weights 
 	<m>c_1</m>, <m>c_2</m>, and <m>c_3</m> and use the Python
 	cell below to answer this question.
@@ -757,28 +757,28 @@
 	  \\
 	  \end{alignedat}
 	</me>
-	Identify vectors <m>\vvec_1</m>, <m>\vvec_2</m>,
-	<m>\vvec_3</m>, and <m>\bvec</m> such that
+	Identify vectors <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	<m>\vec{v_3}</m>, and <m>\vec{b}</m> such that
 	the question "Is this linear system consistent?" is equivalent to
-	the question "Can <m>\bvec</m> be expressed as a linear combination
-	of <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?"
+	the question "Can <m>\vec{b}</m> be expressed as a linear combination
+	of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m>?"
 	</p></li>
 
 	<li> <p>
 	  Consider the vectors
 	<me>
-	  \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+	  \vec{v_1} = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
 	  \end{array} \right], 
-	  \vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+	  \vec{v_2} = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
 	  \end{array} \right], 
-	  \vvec_3 = \left[\begin{array}{r} 2 \\ 0 \\ -1 \\
+	  \vec{v_3} = \left[\begin{array}{r} 2 \\ 0 \\ -1 \\
 	  \end{array} \right], 
-	  \bvec   = \left[\begin{array}{r} -1 \\ 3 \\ -1 \\
+	  \vec{b}   = \left[\begin{array}{r} -1 \\ 3 \\ -1 \\
 	  \end{array} \right]
 	</me>.
-	Can <m>\bvec</m> be expressed as a linear combination of
-	<m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?  If so,
-	can <m>\bvec</m> be written as a linear combination of these
+	Can <m>\vec{b}</m> be expressed as a linear combination of
+	<m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m>?  If so,
+	can <m>\vec{b}</m> be written as a linear combination of these
 	vectors in more than one way?
 	<sage language="python">
 	  <input>
@@ -787,30 +787,30 @@
 	 
 	</p></li>
 
-	<li> <p> Considering the vectors <m>\vvec_1</m>,
-	<m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, can
-	we write every three-dimensional vector <m>\bvec</m> as
+	<li> <p> Considering the vectors <m>\vec{v_1}</m>,
+	<m>\vec{v_2}</m>, and <m>\vec{v_3}</m> from the previous part, can
+	we write every three-dimensional vector <m>\vec{b}</m> as
 	a linear combination of these vectors?  Explain how the pivot
-	positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
-	\vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
+	positions of the matrix <m>\left[\begin{array}{rrr} \vec{v_1} \amp
+	\vec{v_2} \amp \vec{v_3} \end{array} \right]</m> help answer this
 	question. 
 	</p></li>
 
 	<li> <p>
 	  Now consider the vectors
 	<me>
-	  \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+	  \vec{v_1} = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
 	  \end{array} \right], 
-	  \vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+	  \vec{v_2} = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
 	  \end{array} \right], 
-	  \vvec_3 = \left[\begin{array}{r} 1 \\ -1 \\ -2 \\
+	  \vec{v_3} = \left[\begin{array}{r} 1 \\ -1 \\ -2 \\
 	  \end{array} \right], 
-	  \bvec   = \left[\begin{array}{r} 0 \\ 8 \\ -4 \\
+	  \vec{b}   = \left[\begin{array}{r} 0 \\ 8 \\ -4 \\
 	  \end{array} \right]
 	</me>.
-	Can <m>\bvec</m> be expressed as a linear combination of
-	<m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?  If so,
-	can <m>\bvec</m> be written as a linear combination of these
+	Can <m>\vec{b}</m> be expressed as a linear combination of
+	<m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m>?  If so,
+	can <m>\vec{b}</m> be written as a linear combination of these
 	vectors in more than one way?
 	<sage language="python">
 	  <input>
@@ -818,12 +818,12 @@
 	</sage>
 	</p></li>
 
-	<li> <p> Considering the vectors <m>\vvec_1</m>,
-	<m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, can
-	we write every three-dimensional vector <m>\bvec</m> as
+	<li> <p> Considering the vectors <m>\vec{v_1}</m>,
+	<m>\vec{v_2}</m>, and <m>\vec{v_3}</m> from the previous part, can
+	we write every three-dimensional vector <m>\vec{b}</m> as
 	a linear combination of these vectors?  Explain how the pivot
-	positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
-	\vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
+	positions of the matrix <m>\left[\begin{array}{rrr} \vec{v_1} \amp
+	\vec{v_2} \amp \vec{v_3} \end{array} \right]</m> help answer this
 	question. 
 	</p></li>
 
@@ -866,18 +866,18 @@
 	      </me>
 	      This shows that the linear system is inconsistent so
 	      there are no such weights <m>c_1</m>, <m>c_2</m>, and
-	      <m>c_3</m>.  This means that <m>\bvec</m> is not a
-	      linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m>.
+	      <m>c_3</m>.  This means that <m>\vec{b}</m> is not a
+	      linear combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m>.
 	    </p></li>
 
 	    <li><p>
 	      We find vectors
 	      <me>
-		\vvec_1=\threevec{3}{1}{-1},
-		\vvec_2=\threevec{2}{0}{-1},
-		\vvec_3=\threevec{-1}{2}{3},
-		\bvec=\threevec{4}{0}{1}\text{.}
+		\vec{v_1}=\threevec{3}{1}{-1},
+		\vec{v_2}=\threevec{2}{0}{-1},
+		\vec{v_3}=\threevec{-1}{2}{3},
+		\vec{b}=\threevec{4}{0}{1}\text{.}
 	      </me>
 	    </p></li>
 
@@ -899,20 +899,20 @@
 		\end{array}\right]\text{.}
 	      </me>
 	      From the reduced row echelon form, we see that the
-	      system is consistent, which means that <m>\bvec</m> can
-	      be expressed as a linear combination of <m>\vvec_1</m>,
-	      <m>\vvec_2</m>, and <m>\vvec_3</m>.  Moreover, there are
+	      system is consistent, which means that <m>\vec{b}</m> can
+	      be expressed as a linear combination of <m>\vec{v_1}</m>,
+	      <m>\vec{v_2}</m>, and <m>\vec{v_3}</m>.  Moreover, there are
 	      infinitely many ways in which we can do so.
 	    </p></li>
 
 	    <li><p>
 	      No, it is not possible to write every three-dimensional
-	      <m>\bvec</m> as a linear combination of <m>\vvec_1</m>,
-	      <m>\vvec_2</m>, and <m>\vvec_3</m> because the matrix
-	      <m>\left[\begin{array}{rrr} \vvec_1 \amp \vvec_2 \amp
-	      \vvec_3 \end{array}\right]</m> does not have a pivot
+	      <m>\vec{b}</m> as a linear combination of <m>\vec{v_1}</m>,
+	      <m>\vec{v_2}</m>, and <m>\vec{v_3}</m> because the matrix
+	      <m>\left[\begin{array}{rrr} \vec{v_1} \amp \vec{v_2} \amp
+	      \vec{v_3} \end{array}\right]</m> does not have a pivot
 	      position in every row.  This means that, with some
-	      choice of vector <m>\bvec</m>, we will obtain an
+	      choice of vector <m>\vec{b}</m>, we will obtain an
 	      inconsistent system.
 	    </p></li>
 
@@ -931,17 +931,17 @@
 		0 \amp 0 \amp 1 \amp 0
 		\end{array}\right]\text{.}
 	      </me>
-	      This shows that <m>\bvec</m> can be expressed as a
-	      linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m> in exactly one way.
+	      This shows that <m>\vec{b}</m> can be expressed as a
+	      linear combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m> in exactly one way.
 	    </p></li>
 
 	    <li><p>
-	      Every vector <m>\bvec</m> can be expressed as a linear
-	      combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m> in exactly one way because 
-	      <m>\left[\begin{array}{rrr} \vvec_1 \amp \vvec_2 \amp
-	      \vvec_3 \end{array}\right]</m> has a pivot position in
+	      Every vector <m>\vec{b}</m> can be expressed as a linear
+	      combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m> in exactly one way because 
+	      <m>\left[\begin{array}{rrr} \vec{v_1} \amp \vec{v_2} \amp
+	      \vec{v_3} \end{array}\right]</m> has a pivot position in
 	      every row and every column.
 	    </p></li>
 	  </ol>
@@ -952,25 +952,25 @@
 	<p>
 	  <ol marker="a.">
 	    <li><p>
-	      The vector <m>\bvec</m> cannot be expressed as a linear
-	      combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m>.
+	      The vector <m>\vec{b}</m> cannot be expressed as a linear
+	      combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m>.
 	    </p></li>
 
 	    <li><p>
 	      We find vectors
 	      <me>
-		\vvec_1=\threevec{3}{1}{-1},
-		\vvec_2=\threevec{2}{0}{-1},
-		\vvec_3=\threevec{-1}{2}{3},
-		\bvec=\threevec{4}{0}{1}\text{.}
+		\vec{v_1}=\threevec{3}{1}{-1},
+		\vec{v_2}=\threevec{2}{0}{-1},
+		\vec{v_3}=\threevec{-1}{2}{3},
+		\vec{b}=\threevec{4}{0}{1}\text{.}
 	      </me>
 	    </p></li>
 
 	    <li><p>
-	      Yes, <m>\bvec</m> can be expressed as a linear
-	      combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m> in infinitely many ways.
+	      Yes, <m>\vec{b}</m> can be expressed as a linear
+	      combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m> in infinitely many ways.
 	    </p></li>
 
 	    <li><p>
@@ -978,15 +978,15 @@
 	    </p></li>
 
 	    <li><p>
-	      Yes, <m>\bvec</m> can be expressed as a linear
-	      combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m> in exactly one way.
+	      Yes, <m>\vec{b}</m> can be expressed as a linear
+	      combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m> in exactly one way.
 	    </p></li>
 
 	    <li><p>
-	      Any vector <m>\bvec</m> can be expressed as a linear
-	      combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
-	      and <m>\vvec_3</m> in exactly one way.
+	      Any vector <m>\vec{b}</m> can be expressed as a linear
+	      combination of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>,
+	      and <m>\vec{v_3}</m> in exactly one way.
 	    </p></li>
 	  </ol>
 	</p>
@@ -997,33 +997,33 @@
     <example>
       <statement>
 	<p>
-	  Consider the vectors <m>\vvec=\twovec{-1}1</m> and
-	  <m>\wvec=\twovec{2}{-2}</m>, as shown in <xref
+	  Consider the vectors <m>\vec{v}=\twovec{-1}1</m> and
+	  <m>\vec{w}=\twovec{2}{-2}</m>, as shown in <xref
 	  ref="fig-lin-comb-ex"/>.
 	</p>
 	<figure xml:id="fig-lin-comb-ex">
-	  <caption> Vectors <m>\vvec</m> and <m>\wvec</m>. </caption>
+	  <caption> Vectors <m>\vec{v}</m> and <m>\vec{w}</m>. </caption>
 	  <sidebyside width="50%">
 	    <image source="images/lin-comb-ex" />
 	  </sidebyside>
 	</figure>
 	<p>
 	  These vectors appear to lie on the same line, a fact that
-	  becomes apparent once we notice that <m>\wvec =
-	  -2\vvec</m>.  Intuitively, we think of the linear
+	  becomes apparent once we notice that <m>\vec{w} =
+	  -2\vec{v}</m>.  Intuitively, we think of the linear
 	  combination
 	  <me>
-	    c\vvec + d\wvec
+	    c\vec{v} + d\vec{w}
 	  </me>
-	  as the result of walking <m>c</m> times in the <m>\vvec</m>
-	  direction and <m>d</m> times in the <m>\wvec</m> direction.
+	  as the result of walking <m>c</m> times in the <m>\vec{v}</m>
+	  direction and <m>d</m> times in the <m>\vec{w}</m> direction.
 	  With these vectors, we are always walking along the same
 	  line so it would seem that any linear combination of these
 	  vectors should lie
 	  on the same line.  In addition, a vector that is not on
-	  the line, say <m>\bvec = \twovec30</m>, should be not be
-	  expressible as a linear combination of <m>\vvec</m> and
-	  <m>\wvec</m>.
+	  the line, say <m>\vec{b} = \twovec30</m>, should be not be
+	  expressible as a linear combination of <m>\vec{v}</m> and
+	  <m>\vec{w}</m>.
 	</p>
 
 	<p>
@@ -1045,8 +1045,8 @@
 	  </me>
 	  This shows that the associated linear system is
 	  inconsistent, which means that the vector
-	  <m>\bvec=\twovec30</m> cannot be written as a linear
-	  combination of <m>\vvec</m> and <m>\wvec</m>.
+	  <m>\vec{b}=\twovec30</m> cannot be written as a linear
+	  combination of <m>\vec{v}</m> and <m>\vec{w}</m>.
 	</p>
 
 	<p>
@@ -1054,7 +1054,7 @@
 	  matrix
 	  <me>
 	    \begin{bmatrix}
-	    \vvec \amp \wvec \\
+	    \vec{v} \amp \vec{w} \\
 	    \end{bmatrix}
 	    =
 	    \begin{bmatrix}
@@ -1069,16 +1069,16 @@
 	  </me>
 	  tells us to expect this. Since there is not a pivot position
 	  in the
-	  second row of the coefficient matrix <m>\begin{bmatrix}\vvec
-	  \amp \wvec \end{bmatrix}</m>, it is possible for a
+	  second row of the coefficient matrix <m>\begin{bmatrix}\vec{v}
+	  \amp \vec{w} \end{bmatrix}</m>, it is possible for a
 	  pivot position to appear in the rightmost column of the
 	  augmented matrix
 	  <me>
 	    \left[
-	    \begin{array}{rr|r} \vvec \amp \wvec \amp \bvec \end{array}
+	    \begin{array}{rr|r} \vec{v} \amp \vec{w} \amp \vec{b} \end{array}
 	    \right]
 	  </me>
-	  for some choice of <m>\bvec</m>.
+	  for some choice of <m>\vec{b}</m>.
 	</p>
       </statement>
     </example>
@@ -1106,11 +1106,11 @@
 	<li> <p> A solution to the linear system whose augmented matrix
 	is
 	<me>
-	  \left[\begin{array}{rrrr|r} \vvec_1 \amp \vvec_2 \amp \ldots
-	  \amp \vvec_n \amp \bvec \end{array}\right]
+	  \left[\begin{array}{rrrr|r} \vec{v_1} \amp \vec{v_2} \amp \ldots
+	  \amp \vec{v_n} \amp \vec{b} \end{array}\right]
 	</me>
-	is a set of weights that expresses <m>\bvec</m> as a linear
-	combination of <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m>.
+	is a set of weights that expresses <m>\vec{b}</m> as a linear
+	combination of <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m>.
 	</p></li>
       </ul>
     </p>

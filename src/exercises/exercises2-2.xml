@@ -54,7 +54,7 @@
 	    0 \amp 0 \amp 1 \amp 0
 	    \end{array}\right]
 	  </me>
-	  so there is a unique solution <m>\xvec=\threevec{3}{-1}{0}</m>. 
+	  so there is a unique solution <m>\vec{x}=\threevec{3}{-1}{0}</m>. 
 	</p></li>
       </ol>
       </p>
@@ -72,7 +72,7 @@
 	</p></li>
 
 	<li><p>
-	  There is a unique solution <m>\xvec=\threevec{3}{-1}{0}</m>. 
+	  There is a unique solution <m>\vec{x}=\threevec{3}{-1}{0}</m>. 
 	</p></li>
       </ol>
       </p>
@@ -83,21 +83,21 @@
   <exercise>
     <statement>
       <p> Suppose that <m>A</m> is a <m>135\times2201</m> matrix,
-      and that <m>\xvec</m> is a vector.  If
-      <m>A\xvec</m> is defined, what is the dimension of <m>\xvec</m>?
-      What is the dimension of <m>A\xvec</m>?
+      and that <m>\vec{x}</m> is a vector.  If
+      <m>A\vec{x}</m> is defined, what is the dimension of <m>\vec{x}</m>?
+      What is the dimension of <m>A\vec{x}</m>?
       </p>
     </statement>
 
     <solution>
-      <p> If <m>A\xvec</m> is defined, then
-      <m>\xvec\in\real^{2201}</m> and <m>A\xvec\in\real^{135}</m>.
+      <p> If <m>A\vec{x}</m> is defined, then
+      <m>\vec{x}\in\real^{2201}</m> and <m>A\vec{x}\in\real^{135}</m>.
       </p>
     </solution>
 
     <answer>
       <p>
-      <m>\xvec\in\real^{2201}</m> and <m>A\xvec\in\real^{135}</m>.
+      <m>\vec{x}\in\real^{2201}</m> and <m>A\vec{x}\in\real^{135}</m>.
       </p>
     </answer>
     
@@ -208,10 +208,10 @@
 	</me>.
 	</p> </li>
 
-	<li> <p> Find all vectors <m>\xvec</m> such that
-	<m>A\xvec=\vec{b}</m>. </p></li>
+	<li> <p> Find all vectors <m>\vec{x}</m> such that
+	<m>A\vec{x}=\vec{b}</m>. </p></li>
 
-	<li> <p> Find all vectors <m>\xvec</m> such that <m>A\xvec =
+	<li> <p> Find all vectors <m>\vec{x}</m> such that <m>A\vec{x} =
 	\vec{0}</m>. </p></li>
       </ol> 
       </p>
@@ -231,11 +231,11 @@
 	</p></li>
 
 	<li><p>
-	  There is a unique vector <m>\xvec=\twovec{-3}{-3}</m>.
+	  There is a unique vector <m>\vec{x}=\twovec{-3}{-3}</m>.
 	</p></li>
 
 	<li><p>
-	  There is a unique vector <m>\xvec=\twovec{0}{0}</m>.
+	  There is a unique vector <m>\vec{x}=\twovec{0}{0}</m>.
 	</p></li>
       </ol></p>
     </solution>
@@ -254,11 +254,11 @@
 	</p></li>
 
 	<li><p>
-	  There is a unique vector <m>\xvec=\twovec{-3}{-3}</m>.
+	  There is a unique vector <m>\vec{x}=\twovec{-3}{-3}</m>.
 	</p></li>
 
 	<li><p>
-	  There is a unique vector <m>\xvec=\twovec{0}{0}</m>.
+	  There is a unique vector <m>\vec{x}=\twovec{0}{0}</m>.
 	</p></li>
       </ol></p>
     </answer>
@@ -275,7 +275,7 @@
       \end{array}\right]
       </me>.
       <ol marker="a.">
-	<li><p> Describe the solution space to the equation <m>A\xvec
+	<li><p> Describe the solution space to the equation <m>A\vec{x}
 	= \vec{0}</m>.</p></li>
 
 	<li><p> Find a <m>3\times2</m> matrix <m>B</m> with no zero
@@ -302,13 +302,13 @@
 	</me>
 	which shows that
 	<me>
-	  \xvec=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
+	  \vec{x}=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
 	</me>
 	</p></li>
 
 	<li><p>
 	  We form <m>B</m> by choosing two vectors in the solution
-	  space to <m>A\xvec=\vec{0}</m>.  For instance,
+	  space to <m>A\vec{x}=\vec{0}</m>.  For instance,
 	  <m>
 	    B = \left[\begin{array}{rr}
 	    -2 \amp 2 \\
@@ -324,7 +324,7 @@
       <p><ol marker="a.">
 	<li><p>
 	  <m>
-	  \xvec=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
+	  \vec{x}=\threevec{-2x_3}{x_3}{x_3} = x_3\threevec{-2}{1}{1}\text{.}
 	  </m>
 	</p></li>
 
@@ -354,15 +354,15 @@
 	\end{array}\right]
       </me>.
       <ol marker="a.">
-	<li> <p> Find the product <m>A\xvec</m> where
+	<li> <p> Find the product <m>A\vec{x}</m> where
 	<me>
-	  \xvec = \fourvec{1}{-2}{0}{2}
+	  \vec{x} = \fourvec{1}{-2}{0}{2}
 	</me>. </p></li>
 
-	<li> <p> Give a description of the vectors <m>\xvec</m> such
+	<li> <p> Give a description of the vectors <m>\vec{x}</m> such
 	that
 	<me>
-	  A\xvec = \threevec{-1}{15}{17}
+	  A\vec{x} = \threevec{-1}{15}{17}
 	</me>.
 	<sage language="python">
 	  <input>
@@ -374,11 +374,11 @@
 	identify the pivot positions. </p></li>
 
 	<li> <p> Can you find a vector <m>\vec{b}</m> such that
-	<m>A\xvec=\vec{b}</m> is inconsistent? </p></li>
+	<m>A\vec{x}=\vec{b}</m> is inconsistent? </p></li>
 
 	<li> <p> For a general 3-dimensional vector <m>\vec{b}</m>, what
 	can you say about the solution space of the equation
-	<m>A\xvec = \vec{b}</m>?
+	<m>A\vec{x} = \vec{b}</m>?
 	</p></li>
       </ol></p>
     </statement>
@@ -386,7 +386,7 @@
     <solution>
       <p><ol marker="a.">
 	<li><p>
-	  <m>A\xvec = \threevec{-11}{-2}{13}</m>.
+	  <m>A\vec{x} = \threevec{-11}{-2}{13}</m>.
 	</p></li>
 
 	<li><p>
@@ -405,7 +405,7 @@
 	    \end{array}\right]
 	  </me>
 	  so that
-	  <m>\xvec=\fourvec{9-2x_4}{-1+x_4}{2-x_4}{x_4}
+	  <m>\vec{x}=\fourvec{9-2x_4}{-1+x_4}{2-x_4}{x_4}
 	  =\fourvec{9}{-1}{2}{0}+x_4\fourvec{-2}{1}{-1}{1}</m>.
 	</p></li>
 
@@ -421,7 +421,7 @@
 
 	<li><p>
 	  There is no vector <m>\vec{b}</m> such that
-	  <m>A\xvec=\vec{b}</m> is inconsistent because the augmented
+	  <m>A\vec{x}=\vec{b}</m> is inconsistent because the augmented
 	  matrix <m>\left[\begin{array}{r|r} A \amp \vec{b}
 	  \end{array}\right]</m> cannot have a pivot position in the
 	  rightmost column.
@@ -438,11 +438,11 @@
     <answer>
       <p><ol marker="a.">
 	<li><p>
-	  <m>A\xvec = \threevec{-11}{-2}{13}</m>.
+	  <m>A\vec{x} = \threevec{-11}{-2}{13}</m>.
 	</p></li>
 
 	<li><p>
-	  <m>\xvec=\fourvec{9-2x_4}{-1+x_4}{2-x_4}{x_4}
+	  <m>\vec{x}=\fourvec{9-2x_4}{-1+x_4}{2-x_4}{x_4}
 	  =\fourvec{9}{-1}{2}{0}+x_4\fourvec{-2}{1}{-1}{1}</m>.
 	</p></li>
 
@@ -766,27 +766,27 @@
 	  </sage>
 	</p></li>
 
-	<li><p> Suppose that <m>\xvec = \twovec{x_1}{x_2}</m>.  What
-	do you find when you evaluate <m>I\xvec</m>? </p></li>
+	<li><p> Suppose that <m>\vec{x} = \twovec{x_1}{x_2}</m>.  What
+	do you find when you evaluate <m>I\vec{x}</m>? </p></li>
 
-	<li><p> Suppose that we want to solve the equation <m>A\xvec =
+	<li><p> Suppose that we want to solve the equation <m>A\vec{x} =
 	\vec{b}</m>.  We know how to do this using Gaussian elimination;
 	let's use our matrix <m>B</m> to find a different way:
 	<me>
 	  \begin{aligned}
-	  A\xvec \amp {}={} \vec{b} \\
-	  B(A\xvec) \amp {}={} B\vec{b} \\
-	  (BA)\xvec \amp {}={} B\vec{b} \\
-	  I\xvec \amp {}={} B\vec{b} \\
-	  \xvec \amp {}={} B\vec{b} \\
+	  A\vec{x} \amp {}={} \vec{b} \\
+	  B(A\vec{x}) \amp {}={} B\vec{b} \\
+	  (BA)\vec{x} \amp {}={} B\vec{b} \\
+	  I\vec{x} \amp {}={} B\vec{b} \\
+	  \vec{x} \amp {}={} B\vec{b} \\
 	  \end{aligned}
 	</me>.
 	In other words, the solution to the equation
-	<m>A\xvec=\vec{b}</m> is <m>\xvec = B\vec{b}</m>. </p>
+	<m>A\vec{x}=\vec{b}</m> is <m>\vec{x} = B\vec{b}</m>. </p>
 
-	<p> Consider the equation <m>A\xvec = \twovec{5}{-2}</m>.
+	<p> Consider the equation <m>A\vec{x} = \twovec{5}{-2}</m>.
 	Find the solution in two different ways, first using Gaussian
-	elimination and then as <m>\xvec = B\vec{b}</m>, and verify that
+	elimination and then as <m>\vec{x} = B\vec{b}</m>, and verify that
 	you have found the same result.</p>
 	<sage language="python">
 	  <input>
@@ -819,14 +819,14 @@
 	</p></li>
 
 	<li><p>
-	  We have seen that <m>I\xvec = \xvec</m>.
+	  We have seen that <m>I\vec{x} = \vec{x}</m>.
 	</p></li>
 
 	<li><p>
 	  If <m>\vec{b}=\twovec{5}{-2}</m>, then
-	  <m>\xvec=B\vec{b}=\twovec{-1}{-4}</m> is the solution to the
+	  <m>\vec{x}=B\vec{b}=\twovec{-1}{-4}</m> is the solution to the
 	  equation
-	  <m>A\xvec=\vec{b}</m>.
+	  <m>A\vec{x}=\vec{b}</m>.
 	</p></li>
 
 	</ol></p>
@@ -848,11 +848,11 @@
 	</p></li>
 
 	<li><p>
-	  <m>I\xvec = \xvec</m>.
+	  <m>I\vec{x} = \vec{x}</m>.
 	</p></li>
 
 	<li><p>
-	  <m>\xvec=B\vec{b}=\twovec{-1}{-4}</m>.
+	  <m>\vec{x}=B\vec{b}=\twovec{-1}{-4}</m>.
 	</p></li>
 
 	</ol></p>
@@ -866,12 +866,12 @@
       and provide a justification for your response.
       <ol marker="a.">
 	<li><p>
-	  If <m>A\xvec</m> is defined, then the number of components
-	  of <m>\xvec</m> equals the number of rows of <m>A</m>.
+	  If <m>A\vec{x}</m> is defined, then the number of components
+	  of <m>\vec{x}</m> equals the number of rows of <m>A</m>.
 	</p></li>
 
 	<li><p>
-	  The solution space to the equation <m>A\xvec = \vec{b}</m> is
+	  The solution space to the equation <m>A\vec{x} = \vec{b}</m> is
 	  equivalent to the solution space to the linear system whose
 	  augmented matrix is <m>\left[\begin{array}{r|r} A \amp \vec{b}
 	  \end{array}\right]</m>.
@@ -880,17 +880,17 @@
 	<li><p>
 	  If a linear system of equations has 8 equations and 5
 	  unknowns, then the shape of the matrix <m>A</m> in the
-	  corresponding equation <m>A\xvec = \vec{b}</m> is
+	  corresponding equation <m>A\vec{x} = \vec{b}</m> is
 	  <m>5\times8</m>.
 	</p></li>
 
 	<li><p>
 	  If <m>A</m> has a pivot position in every row, then every equation
-	  <m>A\xvec = \vec{b}</m> is consistent.
+	  <m>A\vec{x} = \vec{b}</m> is consistent.
 	</p></li>
 
 	<li><p>
-	  If <m>A</m> is a <m>9\times5</m> matrix, then <m>A\xvec=\vec{b}</m>
+	  If <m>A</m> is a <m>9\times5</m> matrix, then <m>A\vec{x}=\vec{b}</m>
 	  is inconsistent for some vector <m>\vec{b}</m>.
 	</p></li>
       </ol></p>
@@ -899,7 +899,7 @@
     <solution>
       <p><ol marker="a.">
 	<li><p>
-	  False, the number of components of <m>\xvec</m> equals the
+	  False, the number of components of <m>\vec{x}</m> equals the
 	  number of columns of <m>A</m>.
 	</p></li>
 
@@ -950,19 +950,19 @@
     <statement>
       <p> 
 	Suppose that <m>A</m> is a <m>4\times4</m> matrix and that
-	the equation <m>A\xvec = \vec{b}</m> has a unique solution for
+	the equation <m>A\vec{x} = \vec{b}</m> has a unique solution for
 	some vector <m>\vec{b}</m>.
 	<ol marker="a.">
 	<li><p>  What does this say about the pivot positions of the matrix
 	<m>A</m>?  Write the reduced row echelon form of <m>A</m>.
 	</p></li>
 
-	<li><p> Can you find another vector <m>\cvec</m> such that
-	<m>A\xvec = \cvec</m> is inconsistent?
+	<li><p> Can you find another vector <m>\vec{c}</m> such that
+	<m>A\vec{x} = \vec{c}</m> is inconsistent?
 	</p></li>
 
 	<li><p> What can you say about the solution space to the
-	equation <m>A\xvec = \vec{0}</m>? </p></li>
+	equation <m>A\vec{x} = \vec{0}</m>? </p></li>
 
 	<li><p> Suppose <m>A=\left[\begin{array}{rrrr}
 	\vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
@@ -998,7 +998,7 @@
 	<m>\vec{x}=\vec{0}</m>. </p></li>
 
 	<li><p> If <m>\vec{b}</m> is a four-dimensional vector, then
-	<m>A\xvec=\vec{b}</m> has a unique solution since <m>A</m> has a
+	<m>A\vec{x}=\vec{b}</m> has a unique solution since <m>A</m> has a
 	pivot position in every row and every column.  This means that
 	<m>\vec{b}</m> can be written as a linear combination of the
 	columns of <m>A</m> in exactly one way.
@@ -1051,7 +1051,7 @@
 	</p></li>
 
 	<li><p> Describe the solution space to the equation
-	<m>A\xvec=\vec{b}</m> where <m>\vec{b} = \threevec{-3}{-4}{1}</m>.
+	<m>A\vec{x}=\vec{b}</m> where <m>\vec{b} = \threevec{-3}{-4}{1}</m>.
 	What does this solution space represent geometrically and how
 	does it compare to the previous solution space?
 	<sage language="python">
@@ -1106,7 +1106,7 @@
 	 0 \amp 0 \amp 0 \amp 0 \\
 	 \end{array}\right]
 	</me>
-	so that <m>\xvec = x_3\threevec{-2}{-1}{1}</m>.  The solution
+	so that <m>\vec{x} = x_3\threevec{-2}{-1}{1}</m>.  The solution
 	space is a line that passes through the origin.
 	</p></li>
 
@@ -1126,7 +1126,7 @@
 	    \end{array}\right]
 	  </me>
 	  so that
-	  <m>\xvec=\threevec{1}{-2}{0}+x_3\threevec{-2}{-1}{1}</m>.
+	  <m>\vec{x}=\threevec{1}{-2}{0}+x_3\threevec{-2}{-1}{1}</m>.
 	  This is a line through <m>\threevec{1}{-2}{0}</m> parallel
 	  to <m>\threevec{-2}{-1}{1}</m>.  Notice that this line is
 	  parallel to the line in part a.
@@ -1146,11 +1146,11 @@
     <answer>
       <p><ol marker="a.">
 	<li><p>
-	  <m>\xvec = x_3\threevec{-2}{-1}{1}</m>.
+	  <m>\vec{x} = x_3\threevec{-2}{-1}{1}</m>.
 	</p></li>
 
 	<li><p>
-	  <m>\xvec=\threevec{1}{-2}{0}+x_3\threevec{-2}{-1}{1}</m>.
+	  <m>\vec{x}=\threevec{1}{-2}{0}+x_3\threevec{-2}{-1}{1}</m>.
 	</p></li>
 
 	<li><p>
@@ -1177,7 +1177,7 @@
 
       <p> To keep track of the bicycles, we form a vector
       <me>
-	\xvec_k = \twovec{B_k}{C_k}
+	\vec{x_k} = \twovec{B_k}{C_k}
       </me>
       where <m>B_k</m> is the number of bicycles at location <m>B</m>
       at the beginning of day <m>k</m> and <m>C_k</m> is the number of
@@ -1191,7 +1191,7 @@
       </me>
       Expressed in matrix-vector form, these expressions give
       <me>
-	\xvec_{k+1} = A\xvec_k
+	\vec{x_{k+1}} = A\vec{x_k}
       </me>
       where
       <me>
@@ -1210,15 +1210,15 @@
 	<ol marker="1.">
 	  <li><p> Suppose that there are 1000 bicycles at location
 	  <m>B</m> and none at <m>C</m> on day 1.  This means we have
-	  <m>\xvec_1 = \twovec{1000}{0}</m>.  Find the number of
+	  <m>\vec{x_1} = \twovec{1000}{0}</m>.  Find the number of
 	  bicycles at both locations on day 2 by evaluating
-	  <m>\xvec_2 = A\xvec_1</m>. </p></li>
+	  <m>\vec{x_2} = A\vec{x_1}</m>. </p></li>
 
 	  <li><p> Suppose that there are 1000 bicycles at location
 	  <m>C</m> and none at <m>B</m> on day 1.  Form the vector
-	  <m>\xvec_1</m> and determine the number of bicycles at the
+	  <m>\vec{x_1}</m> and determine the number of bicycles at the
 	  two locations the next day by finding 
-	  <m>\xvec_2 = A\xvec_1</m>. </p></li>
+	  <m>\vec{x_2} = A\vec{x_1}</m>. </p></li>
 	</ol></p> </li>
 
 	<li> <p> Suppose that one day there are 1050 bicycles at
@@ -1246,16 +1246,16 @@
 	</p></li>
 
 	<li><p> We solve the equation
-	<m>A\xvec = \twovec{1050}{450}</m> to obtain
-	<m>\xvec = \twovec{1000}{500}</m>.
+	<m>A\vec{x} = \twovec{1050}{450}</m> to obtain
+	<m>\vec{x} = \twovec{1000}{500}</m>.
 	</p></li>
 
-	<li><p> If <m>\xvec_1 = \twovec{500}{500}</m> represents the
-	distribution of bicycles on Monday, then <m>\xvec_2=A\xvec_1 =
+	<li><p> If <m>\vec{x_1} = \twovec{500}{500}</m> represents the
+	distribution of bicycles on Monday, then <m>\vec{x_2}=A\vec{x_1} =
 	\twovec{650}{350}</m> represents the distribution of bicycles
-	on Tuesday, <m>\xvec_3=A\xvec_2=\twovec{695}{305}</m>
+	on Tuesday, <m>\vec{x_3}=A\vec{x_2}=\twovec{695}{305}</m>
 	represents the distribution of bicycles on Wednesday, and
-	<m>\xvec_4=A\xvec_3=\twovec{708.5}{291.5}</m> on Thursday.
+	<m>\vec{x_4}=A\vec{x_3}=\twovec{708.5}{291.5}</m> on Thursday.
 	</p></li>
       </ol></p>
     </solution>
@@ -1270,7 +1270,7 @@
 	</p></li>
 
 	<li><p> 
-	  <m>\xvec = \twovec{1000}{500}</m>.
+	  <m>\vec{x} = \twovec{1000}{500}</m>.
 	</p></li>
 
 	<li><p> 
@@ -1429,11 +1429,11 @@
 	Then
 	<me>
 	  \begin{array}{l}
-	  \xvec_2=\frac{1000}{7}\vec{v_1} + 0.3\frac{1500}{7}\vvec{2},
+	  \vec{x_2}=\frac{1000}{7}\vec{v_1} + 0.3\frac{1500}{7}\vvec{2},
 	  \\
-	  \xvec_3=\frac{1000}{7}\vec{v_1} + 0.3^2\frac{1500}{7}\vvec{2},
+	  \vec{x_3}=\frac{1000}{7}\vec{v_1} + 0.3^2\frac{1500}{7}\vvec{2},
 	  \\
-	  \xvec_4=\frac{1000}{7}\vec{v_1} +
+	  \vec{x_4}=\frac{1000}{7}\vec{v_1} +
 	  0.3^3\frac{1500}{7}\vvec{2}\text{.}
 	  \end{array}
 	  </me>
@@ -1441,7 +1441,7 @@
 
       <li><p> After a very long time, the second term becomes
       increasingly close to zero and so
-      <me>\xvec\approx\frac{1000}{7}\vec{v_1} = \twovec{5000/7}{2000/7}
+      <me>\vec{x}\approx\frac{1000}{7}\vec{v_1} = \twovec{5000/7}{2000/7}
       = \twovec{714.3}{285.7}\text{.}
       </me>
       </p></li>

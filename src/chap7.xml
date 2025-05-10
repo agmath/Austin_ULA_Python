@@ -11,8 +11,8 @@
       theory of eigenvalues and eigenvectors.  For example,
       knowing the eigenvalues and eigenvectors of a matrix <m>A</m>
       enabled us to make predictions about the long-term behavior of
-      dynamical systems in which some initial state <m>\xvec_0</m>
-      evolves according to the rule <m>\xvec_{k+1} = A\xvec_k</m>.
+      dynamical systems in which some initial state <m>\vec{x_0}</m>
+      evolves according to the rule <m>\vec{x_{k+1}} = A\vec{x_k}</m>.
     </p>
 
     <p>

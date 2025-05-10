@@ -19,9 +19,9 @@
       this will simplify our search for solutions to a linear system.
       Perhaps more importantly, we will be able to measure the
       distance between vectors.  This means that if a system
-      <m>A\xvec=\bvec</m> is inconsistent, we can look for
-      <m>\xhat</m>, the vector for which <m>A\xhat</m> is as close to
-      <m>\bvec</m> as possible.  This leads to the method of <em>least
+      <m>A\vec{x}=\vec{b}</m> is inconsistent, we can look for
+      <m>\hat{\vec{x}}</m>, the vector for which <m>A\hat{\vec{x}}</m> is as close to
+      <m>\vec{b}</m> as possible.  This leads to the method of <em>least
       squares</em>, which underpins regression, a key tool in
       data science.
     </p>

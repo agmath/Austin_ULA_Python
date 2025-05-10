@@ -102,7 +102,7 @@
 	<ol marker="a.">
 	<li><p> Check that the following function <m>T:\real^3\to\real^2</m>
 	is a matrix transformation by finding a matrix <m>A</m> such
-	that <m>T(\xvec) = A\xvec</m>.
+	that <m>T(\vec{x}) = A\vec{x}</m>.
 	<me>
 	  T\left(\threevec{x_1}{x_2}{x_3}\right) =
 	  \left[\begin{array}{c}
@@ -133,7 +133,7 @@
 
 	<li><p>
 	  Because the first component has the term <m>3x_1^4</m>,
-	  there is no matrix such that <m>T(\xvec) = A\xvec</m>.
+	  there is no matrix such that <m>T(\vec{x}) = A\vec{x}</m>.
 	</p></li>
       </ol></p>
     </solution>
@@ -166,27 +166,27 @@
       </me>
       defines the matrix transformation <m>T:\real^3\to\real^3</m>.
       <ol marker="a.">
-	<li><p> Describe the vectors <m>\xvec</m> that satisfy 
-	<m>T(\xvec) = \zerovec</m>. </p></li>
+	<li><p> Describe the vectors <m>\vec{x}</m> that satisfy 
+	<m>T(\vec{x}) = \zerovec</m>. </p></li>
 
-	<li><p> Describe the vectors <m>\xvec</m> that satisfy 
-	<m>T(\xvec) = \threevec{-8}{9}{2}</m>. </p></li>
+	<li><p> Describe the vectors <m>\vec{x}</m> that satisfy 
+	<m>T(\vec{x}) = \threevec{-8}{9}{2}</m>. </p></li>
 
-	<li><p> Describe the vectors <m>\xvec</m> that satisfy 
-	<m>T(\xvec) = \threevec{-8}{2}{-4}</m>. </p></li>
+	<li><p> Describe the vectors <m>\vec{x}</m> that satisfy 
+	<m>T(\vec{x}) = \threevec{-8}{2}{-4}</m>. </p></li>
       </ol></p>
     </statement>
 
     <solution>
       <p><ol marker="a.">
-	<li><p> We have <m>T(\xvec) = A\xvec = \zerovec</m>.  The
+	<li><p> We have <m>T(\vec{x}) = A\vec{x} = \zerovec</m>.  The
 	reduced row echelon form of <m>A</m> is
 	<m>A \sim \left[\begin{array}{rrr}
 	1 \amp 0 \amp -2 \\
 	0 \amp 1 \amp 1 \\
 	0 \amp 0 \amp 0 \\
 	\end{array}\right]</m>.  Therefore, the solutions have the
-	form <m>\xvec=x_3\threevec{2}{-1}{1}</m>.
+	form <m>\vec{x}=x_3\threevec{2}{-1}{1}</m>.
 	</p></li>
 
 	<li><p> We see that
@@ -204,7 +204,7 @@
 	  \end{array}\right]\text{.}
 	</me>
 	Since this is an inconsistent system, there are no vectors
-	<m>\xvec</m> satisfying the equation.
+	<m>\vec{x}</m> satisfying the equation.
 	</p></li>
 
 	<li><p> In the same way, we have
@@ -221,7 +221,7 @@
 	  0 \amp 0 \amp 0 \amp 0 \\
 	  \end{array}\right]\text{.}
 	</me>
-	This shows that <m>\xvec=\threevec{-2}{-2}{0} +
+	This shows that <m>\vec{x}=\threevec{-2}{-2}{0} +
 	x_3\threevec{2}{-1}{1}</m>.
 	</p></li>
       </ol></p>
@@ -229,14 +229,14 @@
 
     <answer>
       <p><ol marker="a.">
-	<li><p><m>\xvec=
+	<li><p><m>\vec{x}=
 	x_3\threevec{2}{-1}{1}</m>.
 	</p></li>
 
 	<li><p> There are no such vectors. </p></li>
 
 	<li><p> 
-	  <m>\xvec=\threevec{-2}{-2}{0} +
+	  <m>\vec{x}=\threevec{-2}{-2}{0} +
 	  x_3\threevec{2}{-1}{1}</m>.
 	</p></li>
       </ol></p>
@@ -268,7 +268,7 @@
 	<li><p> What is the vector <m>T\left(\threevec{0}{1}{0}\right)</m>?
 	</p></li>
 
-	<li><p> Find all the vectors <m>\xvec</m> such that <m>T(\xvec) =
+	<li><p> Find all the vectors <m>\vec{x}</m> such that <m>T(\vec{x}) =
 	\zerovec</m>. </p></li>
 	</ol></p>
     </statement>
@@ -297,8 +297,8 @@
 	  0 \amp 1 \amp -1 \\
 	  \end{array}\right]\text{.}
 	</me>
-	This shows that the solutions to <m>T(\xvec) = A\xvec =
-	\zerovec</m> are <m>\xvec=x_3\threevec{1}{1}{1}</m>.
+	This shows that the solutions to <m>T(\vec{x}) = A\vec{x} =
+	\zerovec</m> are <m>\vec{x}=x_3\threevec{1}{1}{1}</m>.
 	</p></li>
       </ol></p>
     </solution>
@@ -312,7 +312,7 @@
 	</p></li>
 
 	<li><p>
-	  <m>\xvec=x_3\threevec{1}{1}{1}</m>.
+	  <m>\vec{x}=x_3\threevec{1}{1}{1}</m>.
 	</p></li>
       </ol></p>
     </answer>
@@ -324,7 +324,7 @@
       <p>
 	In <xref ref="example-mt-to-matrix"/> and <xref
 	ref="example-matrix-to-mt"/>, we wrote matrix transformations
-	in terms of the components of <m>T(\xvec)</m>.  This exercise
+	in terms of the components of <m>T(\vec{x})</m>.  This exercise
 	makes use of that form.
 	<ol marker="a.">
 	  <li>
@@ -332,9 +332,9 @@
 	      Let's return to the example in <xref
 	      ref="activity-mt-intro"/> concerning the company that
 	      operates two bakeries.  We used a matrix transformation
-	      with input <m>\xvec</m>, which recorded the amount of
+	      with input <m>\vec{x}</m>, which recorded the amount of
 	      time the two bakeries operated, and output
-	      <m>T(\xvec)</m>, the number of cakes, doughnuts, and
+	      <m>T(\vec{x})</m>, the number of cakes, doughnuts, and
 	      eclairs produced.  The associated matrix is
 	      <m>A=\begin{bmatrix}
 	      10 \amp 20 \\
@@ -345,8 +345,8 @@
 	      <ol marker="1.">
 		<li>
 		  <p>
-		    If <m>\xvec=\twovec{x_1}{x_2}</m>, write the
-		    output <m>T(\xvec)</m> as a three-dimensional
+		    If <m>\vec{x}=\twovec{x_1}{x_2}</m>, write the
+		    output <m>T(\vec{x})</m> as a three-dimensional
 		    vector in terms of <m>x_1</m> and <m>x_2</m>.
 		  </p>
 		</li>
@@ -436,7 +436,7 @@
 		  <p>
 		    We have
 		    <me>
-		      T(\xvec) = \begin{bmatrix}
+		      T(\vec{x}) = \begin{bmatrix}
 		      10 \amp 20 \\
 		      50 \amp 30 \\
 		      30 \amp 30 \\
@@ -494,13 +494,13 @@
 		  <p>
 		    This gives the matrix
 		    <me>
-		      T(\xvec) = \twovec{0.6x_1+0.7x_2}{0.4x_1+0.3x_2}
+		      T(\vec{x}) = \twovec{0.6x_1+0.7x_2}{0.4x_1+0.3x_2}
 		      =
 		      \begin{bmatrix}
 		      0.6 \amp 0.7 \\
 		      0.4 \amp 0.3 \\
 		      \end{bmatrix}
-		      \xvec.
+		      \vec{x}.
 		    </me>
 		  </p>
 		</li>
@@ -530,7 +530,7 @@
 		<li>
 		  <p>
 		    We have <m>
-		      T(\xvec) = 
+		      T(\vec{x}) = 
 		      \threevec{10x_1+20x_2}{50x_1+20x_2}{30x_1+30x_2}
 		    </m>.
 		  </p>
@@ -568,7 +568,7 @@
 		<li>
 		  <p>
 		    <m>
-		      T(\xvec) = \twovec{0.6x_1+0.7x_2}{0.4x_1+0.3x_2}
+		      T(\vec{x}) = \twovec{0.6x_1+0.7x_2}{0.4x_1+0.3x_2}
 		    </m>.
 		  </p>
 		</li>
@@ -599,21 +599,21 @@
       and provide a justification for your response.
       <ol marker="a.">
 	<li><p> A matrix transformation <m>T:\real^4\to\real^5</m> is
-	defined by <m>T(\xvec) = A\xvec</m> where <m>A</m> is a
+	defined by <m>T(\vec{x}) = A\vec{x}</m> where <m>A</m> is a
 	<m>4\times5</m> matrix. </p></li>
 
 	<li><p> If <m>T:\real^3\to\real^2</m> is a matrix
 	transformation, then there are infinitely many vectors
-	<m>\xvec</m> such that <m>T(\xvec) = \zerovec</m>. </p></li>
+	<m>\vec{x}</m> such that <m>T(\vec{x}) = \zerovec</m>. </p></li>
 
 	<li><p> If <m>T:\real^2\to\real^3</m> is a matrix
 	transformation, then it is possible that every equation
-	<m>T(\xvec) = \vec{b}</m> has a solution for every vector
+	<m>T(\vec{x}) = \vec{b}</m> has a solution for every vector
 	<m>\vec{b}</m>. </p></li>
 
 	<li><p>
 	  If <m>T:\real^n\to\real^m</m> is a matrix
-	  transformation, then the equation <m>T(\xvec) =
+	  transformation, then the equation <m>T(\vec{x}) =
 	  \zerovec</m> always has a solution.
 	</p></li>
 
@@ -634,7 +634,7 @@
 	so there must be a row without a pivot position.
 	</p></li>
 
-	<li><p> True.  The vector <m>\xvec=\zerovec</m> is always a
+	<li><p> True.  The vector <m>\vec{x}=\zerovec</m> is always a
 	solution.
 	</p></li>
 
@@ -671,10 +671,10 @@
 	record the amounts of time that the three plants are operated
 	and that <m>M</m> and <m>Y</m> record the amount of milk and yogurt
 	produced. 
-	If we write <m>\xvec=\threevec{x_1}{x_2}{x_3}</m> and
-	<m>\yvec = \twovec{M}{Y}</m>, find the matrix <m>A</m> that
-	defines the matrix transformation <m>T(\xvec) =
-	\yvec</m>. </p></li>
+	If we write <m>\vec{x}=\threevec{x_1}{x_2}{x_3}</m> and
+	<m>\vec{y} = \twovec{M}{Y}</m>, find the matrix <m>A</m> that
+	defines the matrix transformation <m>T(\vec{x}) =
+	\vec{y}</m>. </p></li>
 
 	<li><p> Furthermore, suppose that producing each unit of
 	<ul>
@@ -683,22 +683,22 @@
 	  <li><p> yogurt requires 6 units of electricity and 10 units
 	  of labor. </p></li>
 	</ul>
-	If we write the vector <m>\zvec = \twovec{E}{L}</m> to record
+	If we write the vector <m>\vec{z} = \twovec{E}{L}</m> to record
 	the required amounts of electricity <m>E</m> and labor
 	<m>L</m>, find the matrix 
-	<m>B</m> that defines the matrix transformation <m>S(\yvec) =
-	\zvec</m>. </p></li>
+	<m>B</m> that defines the matrix transformation <m>S(\vec{y}) =
+	\vec{z}</m>. </p></li>
 
-	<li><p> If <m>\xvec = \threevec{30}{20}{10}</m> describes the
+	<li><p> If <m>\vec{x} = \threevec{30}{20}{10}</m> describes the
 	amounts of time that the three plants are operated, how much
 	milk and yogurt is produced?  How much electricity and labor
 	are required? </p></li>
 
 	<li><p> Find the matrix <m>C</m> that describes the matrix
-	transformation <m>R(\xvec)=\zvec</m> that gives the required
+	transformation <m>R(\vec{x})=\vec{z}</m> that gives the required
 	amounts of electricity and labor when the each plants is
 	operated an amount of time given by the vector
-	<m>\xvec</m>. </p></li>
+	<m>\vec{x}</m>. </p></li>
       </ol></p>
     </statement>
 
@@ -861,7 +861,7 @@
       <p> Suppose that two species <m>P</m> and <m>Q</m> 
       interact with one another and that we measure their populations
       every month.  We record their populations in a state vector
-      <m>\xvec = \twovec{p}{q}</m>, where <m>p</m> and <m>q</m> are
+      <m>\vec{x} = \twovec{p}{q}</m>, where <m>p</m> and <m>q</m> are
       the populations of <m>P</m> and <m>Q</m>, respectively.  We
       observe that there is a matrix
       <me>
@@ -871,10 +871,10 @@
 	\end{array}\right]
       </me>
       such that the matrix transformation
-      <m>T(\xvec)=A\xvec</m> is the transition function
+      <m>T(\vec{x})=A\vec{x}</m> is the transition function
       describing how the state vector evolves from month to month.  We
       also observe that, at the beginning of July, the populations are
-      described by the state vector <m>\xvec=\twovec{1}{2}</m>.
+      described by the state vector <m>\vec{x}=\twovec{1}{2}</m>.
       <sage language="python">
 	<input>
 	</input>
@@ -950,12 +950,12 @@
       </ul>
       We will record the number of present students <m>p</m> and the
       number of absent students <m>a</m> in a state vector
-      <m>\xvec=\twovec{p}{a}</m> and note that that 
+      <m>\vec{x}=\twovec{p}{a}</m> and note that that 
       state vector evolves from
       one day to the next according to the transition function
       <m>T:\real^2\to\real^2</m>. 
       On Tuesday, the state vector is
-      <m>\xvec=\ctwovec{1700}{100}</m>.
+      <m>\vec{x}=\ctwovec{1700}{100}</m>.
       <sage language="python">
 	<input>
 	</input>
@@ -973,7 +973,7 @@
 	<m>A</m> that defines the matrix 
 	transformation <m>T</m>. </p></li>
 
-	<li><p> If <m>\xvec=\ctwovec{1700}{100}</m> on Tuesday, how
+	<li><p> If <m>\vec{x}=\ctwovec{1700}{100}</m> on Tuesday, how
 	are the students distributed on Wednesday? </p></li>
 
 	<li><p> How many students were present on Monday? </p></li>
@@ -1001,12 +1001,12 @@
       \end{array}\right]</m>.
       </p></li>
 
-      <li><p> <m>T(\xvec) = A\xvec = \twovec{1665}{135}</m> meaning
+      <li><p> <m>T(\vec{x}) = A\vec{x} = \twovec{1665}{135}</m> meaning
       that 1665 students are present and 135 are absent.
       </p></li>
 
-      <li><p> We want to solve the equation <m>T(\xvec) =
-      A\xvec=\twovec{1700}{100}</m>, which gives <m>\xvec =
+      <li><p> We want to solve the equation <m>T(\vec{x}) =
+      A\vec{x}=\twovec{1700}{100}</m>, which gives <m>\vec{x} =
       \twovec{1778}{22}</m>.  There were 1778 students present on Monday.
       </p></li>
 

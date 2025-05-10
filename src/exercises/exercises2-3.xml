@@ -606,8 +606,8 @@
       <p> The following observation will be helpful in this exercise.
 	If we want to find a solution to the equation <m>AB\vec{x} =
 	\vec{b}</m>, we could first find a solution to the equation
-	<m>A\yvec = \vec{b}</m> and then find a solution to the equation
-	<m>B\vec{x} = \yvec</m>.
+	<m>A\vec{y} = \vec{b}</m> and then find a solution to the equation
+	<m>B\vec{x} = \vec{y}</m>.
       </p>
 
       <p>
@@ -634,19 +634,19 @@
 	<li><p> <m>AB</m> is a <m>3\times5</m> matrix. </p></li>
 
 	<li><p> No.  Since the columns of <m>A</m> span
-	<m>\real^3</m>, then the equation <m>A\yvec=\vec{b}</m> has a
-	solution <m>\yvec</m> for every vector <m>\vec{b}</m>.  However,
-	we may not be able to solve the equation <m>B\vec{x}=\yvec</m>
+	<m>\real^3</m>, then the equation <m>A\vec{y}=\vec{b}</m> has a
+	solution <m>\vec{y}</m> for every vector <m>\vec{b}</m>.  However,
+	we may not be able to solve the equation <m>B\vec{x}=\vec{y}</m>
 	if the columns of <m>B</m> do not span <m>\real^4</m>.
 	</p></li>
 
 	<li><p> Yes.  
 	If we are given a vector <m>\vec{b}</m> in
-	<m>\real^3</m>, we can find a vector <m>\yvec</m> such that
-	<m>A\yvec = \vec{b}</m> since the columns of <m>A</m> span
+	<m>\real^3</m>, we can find a vector <m>\vec{y}</m> such that
+	<m>A\vec{y} = \vec{b}</m> since the columns of <m>A</m> span
 	<m>\real^3</m>.  Since the columns of <m>B</m> span
 	<m>\real^4</m>, we can find a vector <m>\vec{x}</m> such that
-	<m>B\vec{x}=\yvec</m>.  Then <m>AB\vec{x} = \vec{b}</m>, which means
+	<m>B\vec{x}=\vec{y}</m>.  Then <m>AB\vec{x} = \vec{b}</m>, which means
 	that <m>B</m> is the span of the columns of <m>AB</m>.
 	</p></li>
 
@@ -685,9 +685,9 @@
 	<m>A</m>?
 	</p></li>
 
-	<li><p> If <m>\cvec</m> is some other vector in <m>\real^{12}</m>,
+	<li><p> If <m>\vec{c}</m> is some other vector in <m>\real^{12}</m>,
 	what can you conclude about the equation <m>A\vec{x} =
-	\cvec</m>?
+	\vec{c}</m>?
 	</p></li>
 
 	<li><p> What can you about the solution space to the equation

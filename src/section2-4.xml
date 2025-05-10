@@ -459,7 +459,7 @@
 	</p></li>
 
 	<li><p>
-	  If one vector in a set is the zero vector <m>\zerovec</m>,
+	  If one vector in a set is the zero vector <m>\vec{0}</m>,
 	  can the set of vectors be linearly independent?
 	</p></li>
 
@@ -508,8 +508,8 @@
 	  </p></li>
 
 	  <li><p>
-	    No, because we can write the zero vector <m>\zerovec</m>
-	    as a linear combination of the other vectors: <m>\zerovec
+	    No, because we can write the zero vector <m>\vec{0}</m>
+	    as a linear combination of the other vectors: <m>\vec{0}
 	    = 0\vec{v_2} + \ldots + 0\vec{v_n}</m>.
 	  </p></li>
 
@@ -679,7 +679,7 @@
 
     <p>
       If <m>A</m> is a matrix, we call the equation <m>A\vec{x} =
-      \zerovec</m> a <em>homogeneous</em> equation.  As we'll see, the
+      \vec{0}</m> a <em>homogeneous</em> equation.  As we'll see, the
       uniqueness of solutions to this equation reflects on the
       linear independence of the columns of <m>A</m>.
     </p>
@@ -690,7 +690,7 @@
       <statement>
       <p><ol marker="a.">
 	<li><p> Explain why the homogeneous equation <m>A\vec{x} =
-	\zerovec</m> is consistent no matter the matrix <m>A</m>.
+	\vec{0}</m> is consistent no matter the matrix <m>A</m>.
 	</p></li>
 
 	<li><p> Consider the matrix
@@ -704,7 +704,7 @@
 	whose columns we denote by <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and
 	<m>\vec{v_3}</m>.
 	Describe the solution space of
-	the homogeneous equation <m>A\vec{x} = \zerovec</m> using a
+	the homogeneous equation <m>A\vec{x} = \vec{0}</m> using a
 	parametric description, if appropriate.
 	<sage language="python">
 	  <input>
@@ -717,7 +717,7 @@
 	  and use it to find weights 
 	  <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> such that
 	  <me>
-	    c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \zerovec
+	    c_1\vec{v_1} + c_2\vec{v_2} + c_3\vec{v_3} = \vec{0}
 	  </me>.
 	</p></li>
 
@@ -736,7 +736,7 @@
       <solution>
 	<p><ol marker="a.">
 	  <li><p>
-	    The vector <m>\zerovec</m> is always a solution.
+	    The vector <m>\vec{0}</m> is always a solution.
 	  </p></li>
 
 	  <li><p>
@@ -772,7 +772,7 @@
 	    If we set <m>x_3=1</m>, then we have the solution
 	    <m>\vec{x}=\threevec{-2}{3}{1}</m>, which says that
 	    <me>
-	      -2\vec{v_1}+3\vec{v_2}+\vec{v_3} = \zerovec\text{.}
+	      -2\vec{v_1}+3\vec{v_2}+\vec{v_3} = \vec{0}\text{.}
 	    </me>
 	  </p></li>
 
@@ -800,11 +800,11 @@
 
     <p>
       This activity shows how the solution space of the homogeneous
-      equation <m>A\vec{x} = \zerovec</m> indicates whether the columns
+      equation <m>A\vec{x} = \vec{0}</m> indicates whether the columns
       of <m>A</m> are linearly dependent or independent.  First, we
-      know that the equation <m>A\vec{x} = \zerovec</m> always has at
+      know that the equation <m>A\vec{x} = \vec{0}</m> always has at
       least 
-      one solution, the vector <m>\vec{x} = \zerovec</m>.  Any
+      one solution, the vector <m>\vec{x} = \vec{0}</m>.  Any
       other solution is a nonzero solution.
     </p>
 
@@ -825,7 +825,7 @@
 	</p>
 
 	<p>
-	  The homogeneous equation <m>A\vec{x} = \zerovec</m> has the
+	  The homogeneous equation <m>A\vec{x} = \vec{0}</m> has the
 	  associated augmented matrix
 	  <me>
 	    \left[
@@ -880,12 +880,12 @@
 	    \vec{v_1}\amp\vec{v_2}\amp\vec{v_3}
 	    \end{bmatrix}
 	    \threevec{-1}{-1}1 =
-	    -\vec{v_1} -\vec{v_2} + \vec{v_3} = \zerovec.
+	    -\vec{v_1} -\vec{v_2} + \vec{v_3} = \vec{0}.
 	  </me>
 	  In other words,
 	  <me>
 	    \begin{aligned}
-	    -\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \zerovec \\
+	    -\vec{v_1} -\vec{v_2} + \vec{v_3} \amp{}={} \vec{0} \\
 	    \vec{v_3} \amp{}={} \vec{v_1} + \vec{v_2}. \\
 	    \end{aligned}
 	  </me>
@@ -923,14 +923,14 @@
 	  <li> <p> The matrix <m>A</m> has a column without a pivot
 	  position. </p></li>
 
-	  <li> <p> The homogeneous equation <m>A\vec{x} = \zerovec</m>
+	  <li> <p> The homogeneous equation <m>A\vec{x} = \vec{0}</m>
 	  has infinitely many solutions and hence a nonzero
 	  solution. </p></li> 
 
 	  <li> <p> There are weights <m>c_1,c_2,\ldots,c_n</m>, not
 	  all of which are zero, such that
 	  <me>
-	    c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec
+	    c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{0}
 	  </me>. </p></li>
 	</ul>
 	</p>
@@ -958,14 +958,14 @@
       contains no more than <m>m</m> vectors. </p></li>
 
       <li><p> The columns of the matrix <m>A</m> are linearly
-      dependent if the homogeneous equation <m>A\vec{x} = \zerovec</m>
+      dependent if the homogeneous equation <m>A\vec{x} = \vec{0}</m>
       has a nonzero solution. </p></li>
 
       <li><p> A set of vectors <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m>
       is linearly dependent if there are weights
       <m>c_1,c_2,\ldots,c_n</m>, not all of which are zero, such that
       <me>
-	c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \zerovec
+	c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{0}
       </me>.
       </p></li>
     </ul></p>
@@ -1023,8 +1023,8 @@
 	  <cell valign="top">
 	    <p>
 	      The vectors <m>\vec{v_1}, \vec{v_2}, \ldots, \vec{v_n}</m> are
-	      linearly independent if <m>\vec{x}=\zerovec</m> is the
-	      unique solution to <m>A\vec{x} = \zerovec</m>.
+	      linearly independent if <m>\vec{x}=\vec{0}</m> is the
+	      unique solution to <m>A\vec{x} = \vec{0}</m>.
 	    </p>
 	  </cell>
 	</row>

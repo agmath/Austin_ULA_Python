@@ -294,7 +294,7 @@
 	      shape of <m>A</m>? </p></li>
 
 	      <li><p> Describe the vectors <m>\vec{x}</m> for which
-	      <m>T(\vec{x}) = \zerovec</m>. </p></li>
+	      <m>T(\vec{x}) = \vec{0}</m>. </p></li>
 	  </ol></p></li>
 
 	  <li><p> If <m>A</m> is the matrix
@@ -370,7 +370,7 @@
 	    </p></li>
 
 	    <li><p> If we solve the homogeneous equation
-	    <m>A\vec{x}=\zerovec</m>, we find that
+	    <m>A\vec{x}=\vec{0}</m>, we find that
 	    <m>\vec{x}=x_4\fourvec{-3}{2}{-1}{1}</m>.
 	    </p></li>
 	  </ol>

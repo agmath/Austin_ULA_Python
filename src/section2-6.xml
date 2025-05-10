@@ -769,7 +769,7 @@
     <p>
       This presents a problem because
       a matrix transformation <m>T:\real^2\to\real^2</m> has the
-      property that <m>T(\zerovec) = A\zerovec = \zerovec</m>.  This
+      property that <m>T(\vec{0}) = A\vec{0} = \vec{0}</m>.  This
       means that a 
       matrix transformation cannot move the origin of the coordinate
       plane.  To address this restriction, animators use
