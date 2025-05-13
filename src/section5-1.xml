@@ -549,7 +549,7 @@
 	<m>L = E_1^{-1}E_2^{-1}E_3^{-1}</m>.  Then verify that
 	<m>A=LU</m>.
 
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -849,11 +849,12 @@
 
     <activity>
       <statement>
-      <p> Sage will create <m>LU</m> factorizations;  once we have a
-      matrix <c>A</c>, we write <c>P, L, U = A.LU()</c> to obtain the
-      matrices <m>P</m>, <m>L</m>, and <m>U</m> such that <m>PA =
+      <p> We can use Python's <c>{sympy}</c> functionality to create 
+		<m>LU</m> factorizations;  once we have a
+      matrix <c>A</c>, we write <c>L, U, P = A.LUdecomposition()</c> to obtain the
+      matrices <m>L</m>, <m>U</m>, and <m>P</m> such that <m>PA =
       LU</m>.
-      <sage>
+      <sage language="python">
 	<input>
 	</input>
       </sage>
@@ -880,20 +881,21 @@
 	  0 \amp 0 \amp 3
 	  \end{bmatrix}=LU.
 	</me>
-	Using Sage, define the matrix <m>A</m>, and then ask Sage for
+	Using Python, define the matrix <m>A</m> using <c>{sympy}</c>, and 
+	then ask Python for
 	the <m>LU</m> factorization.  What are the matrices <m>P</m>,
 	<m>L</m>, and <m>U</m>? </p>
 
-	<p> Notice that Sage finds a different
+	<p> Notice that Python finds a different
 	<m>LU</m> factorization than we found in the previous
-	example because Sage uses partial pivoting, as
+	example because Python is making use of partial pivoting, as
 	described in the previous section, when it performs Gaussian
 	elimination.  	
 	</p>
 	</li>
 
 	<li><p> Define the vector <m>\bvec = \threevec8{-13}{8}</m>
-	in Sage and compute <m>P\bvec</m>. </p></li>
+	in Python and compute <m>P\bvec</m>. </p></li>
 
 	<li><p> Use the matrices <c>L</c> and <c>U</c> to solve
 	<m>L\cvec = P\bvec</m> and <m>U\xvec = \cvec</m>.  You should
@@ -915,7 +917,7 @@
 	  2 \amp 1 \amp 3 \\
 	  \end{array}\right]
 	</me>.
-	Use Sage to find the <m>LU</m> factorization.  Explain how the
+	Use Python to find the <m>LU</m> factorization.  Explain how the
 	factorization shows that <m>B</m> is not invertible. </p></li>
 
 	<li><p> Consider the matrix
@@ -935,7 +937,7 @@
 
       <solution>
 	<p><ol marker="a.">
-	  <li><p> Sage gives us the matrices
+	  <li><p> Python gives us the matrices
 	  <me>
 	    P=\left[\begin{array}{rrr}
 	    0 \amp 1 \amp 0 \\
@@ -976,7 +978,7 @@
 	  L \det U)/\det P\neq 0</m>, which means that <m>A</m> is
 	  invertible. </p></li>
 
-	  <li><p> Sage tells us that
+	  <li><p> Python tells us that
 	  <me>
 	    P = \left[\begin{array}{rrr}
 	    1 \amp 0 \amp 0 \\

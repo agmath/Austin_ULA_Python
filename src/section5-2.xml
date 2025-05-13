@@ -45,12 +45,12 @@
 	0.2 \amp 0.6 \\
 	\end{array}\right]
 	</m>.  Explain how we know that <m>1</m> is an eigenvalue of
-	<m>A</m> and then explain why the following Sage computation
+	<m>A</m> and then explain why the following Python computation
 	is incorrect.
-	<sage>
+	<sage language="python">
 	  <input>
-A = matrix(2,2,[0.8, 0.4, 0.2, 0.6])
-I = matrix(2,2,[1, 0, 0, 1])	  
+A = sympy.Matrix([[0.8, 0.4], [0.2, 0.6]])
+I = sympy.Matrix([[1, 0], [0, 1]])	  
 (A-I).rref()
 	  </input>
 	</sage>
@@ -89,7 +89,7 @@ I = matrix(2,2,[1, 0, 0, 1])
 
 	  <li><p> Since <m>A</m> is a positive stochastic matrix, we
 	  know that <m>\lambda=1</m> is an eigenvalue and hence that
-	  <m>A-I</m> is not invertible.  Sage, however, tells us that
+	  <m>A-I</m> is not invertible.  Python, however, tells us that
 	  <m>A-I\sim I</m>, which cannot be true since <m>A-I</m> is
 	  not invertible. </p></li>
 
@@ -259,7 +259,7 @@ I = matrix(2,2,[1, 0, 0, 1])
       \end{array}\right]
       </m> and the initial vector <m>\xvec_0 = \twovec{1}{0}</m>.
 
-      <sage>
+      <sage language="python">
 	<input>
 	</input>
       </sage>
@@ -281,20 +281,21 @@ I = matrix(2,2,[1, 0, 0, 1])
 	component with the largest absolute value is
 	<m>1</m>. </p></li>
 
-	<li><p> The Sage cell below defines a function that implements
+	<li><p> The Python cell below defines a function that implements
 	the power method.  Define the matrix <m>A</m> and initial
 	vector <m>\xvec_0</m> below.  The command
 	<c>power(A, x0,	N)</c> will print out the
 	multiplier <m>m</m> and the vectors
 	<m>\overline{\xvec}_k</m> for <m>N</m> steps of the power method.
 
-	  <sage>
+	  <sage language="python">
 	    <input>
 def power(A, x, N):
     for i in range(N):
         x = A*x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
+        m = max([comp for comp in x], key=abs).evalf(14)
+        # x = 1/float(m)*x
+		x = 1/m*x
         print (m, x)
 
 ### Define the matrix A and initial vector x0 below
@@ -441,7 +442,7 @@ power(A, x0, 20)
 	<m>A</m> is useful for implementing the power method applied to
 	<m>A^{-1}</m>. </p></li>
 
-	<li><p> The following Sage cell defines a command called
+	<li><p> The following Python cell defines a command called
 	<c>inverse_power</c> that applies the power method to
 	<m>A^{-1}</m>.  That is, <c>inverse_power(A, x0, N)</c>
 	prints the vectors <m>\xvec_k</m>, where <m>\xvec_{k+1} =
@@ -455,14 +456,16 @@ power(A, x0, 20)
 	</m>
 	having the smallest absolute value.
 
-	<sage>
+	<sage language="python">
 	  <input>
 def inverse_power(A, x, N):
     for i in range(N):
         x = A \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m), x)
+        m = max([comp for comp in x], key=abs).evalf(14)
+        #x = 1/float(m)*x
+		x = 1/m*x
+        #print (1/float(m), x)
+		print(1/m, x)
 ### define the matrix A and vector x0
 A =
 x0 =
@@ -585,7 +588,7 @@ inverse_power(A, x0, 20)
 	  </caption>
 	</figure>
 
-	<p> The Sage cell below has a function
+	<p> The Python cell below has a function
 	<c>find_closest_eigenvalue(A, s, x, N)</c> that implements
 	<m>N</m> steps of the inverse power method using the matrix
 	<m>A-sI</m> and an initial vector <m>x</m>.  This function
@@ -595,15 +598,17 @@ inverse_power(A, x0, 20)
 	shown in <xref ref="fig-numerical-power-line"/>, find the
 	other two eigenvalues of <m>A</m>.
 
-	<sage>
+	<sage language="python">
 	  <input>
 def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*identity_matrix(A.nrows())
+    B = A-s*sympy.eye(A.shape()[0])
     for i in range(N):
         x = B \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m)+s, x)
+        m = max([comp for comp in x], key=abs).evalf(14)
+        #x = 1/float(m)*x
+        x = 1/m*x
+		#print (1/float(m)+s, x)
+		print(1/m + s, x)
 ### define the matrix A and vector x0
 A =
 x0 =
