@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -847,7 +847,7 @@ U = \left[\begin{array}{rrr}
 = U\text{.}\)</span>
 </div>
 </div></li>
-<li id="sec-gaussian-revisited-4-4-1-1-2-3"><div class="para" id="sec-gaussian-revisited-4-4-1-1-2-3-1">We can write <span class="process-math">\(A=E_1^{-1}E_2^{-1}E_3^{-1} U\text{.}\)</span> Find the inverse matrices <span class="process-math">\(E_1^{-1}\text{,}\)</span> <span class="process-math">\(E_2^{-1}\text{,}\)</span> and <span class="process-math">\(E_3^{-1}\)</span> and the product <span class="process-math">\(L = E_1^{-1}E_2^{-1}E_3^{-1}\text{.}\)</span>  Then verify that <span class="process-math">\(A=LU\text{.}\)</span> <div id="sec-gaussian-revisited-4-4-1-1-2-3-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-gaussian-revisited-4-4-1-1-2-3"><div class="para" id="sec-gaussian-revisited-4-4-1-1-2-3-1">We can write <span class="process-math">\(A=E_1^{-1}E_2^{-1}E_3^{-1} U\text{.}\)</span> Find the inverse matrices <span class="process-math">\(E_1^{-1}\text{,}\)</span> <span class="process-math">\(E_2^{-1}\text{,}\)</span> and <span class="process-math">\(E_3^{-1}\)</span> and the product <span class="process-math">\(L = E_1^{-1}E_2^{-1}E_3^{-1}\text{.}\)</span>  Then verify that <span class="process-math">\(A=LU\text{.}\)</span> <div id="sec-gaussian-revisited-4-4-1-1-2-3-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-gaussian-revisited-4-4-1-1-2-4"><div class="para logical" id="sec-gaussian-revisited-4-4-1-1-2-4-1">
@@ -1018,13 +1018,13 @@ PA\xvec = LU\xvec = P\bvec\text{.}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-gaussian-revisited-4-11-1-1">
-<div class="para">Sage will create <span class="process-math">\(LU\)</span> factorizations;  once we have a matrix <code class="code-inline tex2jax_ignore">A</code>, we write <code class="code-inline tex2jax_ignore">P, L, U = A.LU()</code> to obtain the matrices <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(U\)</span> such that <span class="process-math">\(PA =
-LU\text{.}\)</span> <div id="sec-gaussian-revisited-4-11-1-1-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">We can use Python’s <code class="code-inline tex2jax_ignore">{sympy}</code> functionality to create <span class="process-math">\(LU\)</span> factorizations;  once we have a matrix <code class="code-inline tex2jax_ignore">A</code>, we write <code class="code-inline tex2jax_ignore">L, U, P = A.LUdecomposition()</code> to obtain the matrices <span class="process-math">\(L\text{,}\)</span> <span class="process-math">\(U\text{,}\)</span> and <span class="process-math">\(P\)</span> such that <span class="process-math">\(PA =
+LU\text{.}\)</span> <div id="sec-gaussian-revisited-4-11-1-1-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
-<ol class="lower-alpha ol-marker-1" id="sec-gaussian-revisited-4-11-1-1-9">
-<li id="sec-gaussian-revisited-4-11-1-1-9-1">
-<div class="para logical" id="sec-gaussian-revisited-4-11-1-1-9-1-1">
+<ol class="lower-alpha ol-marker-1" id="sec-gaussian-revisited-4-11-1-1-10">
+<li id="sec-gaussian-revisited-4-11-1-1-10-1">
+<div class="para logical" id="sec-gaussian-revisited-4-11-1-1-10-1-1">
 <div class="para">In <a href="sec-gaussian-revisited.html#example-LU" class="xref" data-knowl="./knowl/xref/example-LU.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 5.1.1">Example 5.1.1</a>, we found the <span class="process-math">\(LU\)</span> factorization</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/example-LU.html">
 \begin{equation*}
@@ -1047,19 +1047,19 @@ A =
 \end{bmatrix}=LU.
 \end{equation*}
 </div>
-<div class="para">Using Sage, define the matrix <span class="process-math">\(A\text{,}\)</span> and then ask Sage for the <span class="process-math">\(LU\)</span> factorization.  What are the matrices <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(U\text{?}\)</span>
+<div class="para">Using Python, define the matrix <span class="process-math">\(A\)</span> using <code class="code-inline tex2jax_ignore">{sympy}</code>, and then ask Python for the <span class="process-math">\(LU\)</span> factorization.  What are the matrices <span class="process-math">\(P\text{,}\)</span> <span class="process-math">\(L\text{,}\)</span> and <span class="process-math">\(U\text{?}\)</span>
 </div>
 </div>
-<div class="para" id="sec-gaussian-revisited-4-11-1-1-9-1-2">Notice that Sage finds a different <span class="process-math">\(LU\)</span> factorization than we found in the previous example because Sage uses partial pivoting, as described in the previous section, when it performs Gaussian elimination.</div>
+<div class="para" id="sec-gaussian-revisited-4-11-1-1-10-1-2">Notice that Python finds a different <span class="process-math">\(LU\)</span> factorization than we found in the previous example because Python is making use of partial pivoting, as described in the previous section, when it performs Gaussian elimination.</div>
 </li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-2"><div class="para" id="sec-gaussian-revisited-4-11-1-1-9-2-1">Define the vector <span class="process-math">\(\bvec = \threevec8{-13}{8}\)</span> in Sage and compute <span class="process-math">\(P\bvec\text{.}\)</span>
+<li id="sec-gaussian-revisited-4-11-1-1-10-2"><div class="para" id="sec-gaussian-revisited-4-11-1-1-10-2-1">Define the vector <span class="process-math">\(\bvec = \threevec8{-13}{8}\)</span> in Python and compute <span class="process-math">\(P\bvec\text{.}\)</span>
 </div></li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-3"><div class="para" id="sec-gaussian-revisited-4-11-1-1-9-3-1">Use the matrices <code class="code-inline tex2jax_ignore">L</code> and <code class="code-inline tex2jax_ignore">U</code> to solve <span class="process-math">\(L\cvec = P\bvec\)</span> and <span class="process-math">\(U\xvec = \cvec\text{.}\)</span>  You should find the same solution <span class="process-math">\(\xvec\)</span> that we found in the previous example.</div></li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-4"><div class="para" id="sec-gaussian-revisited-4-11-1-1-9-4-1">Use the factorization to solve the equation <span class="process-math">\(A\xvec
+<li id="sec-gaussian-revisited-4-11-1-1-10-3"><div class="para" id="sec-gaussian-revisited-4-11-1-1-10-3-1">Use the matrices <code class="code-inline tex2jax_ignore">L</code> and <code class="code-inline tex2jax_ignore">U</code> to solve <span class="process-math">\(L\cvec = P\bvec\)</span> and <span class="process-math">\(U\xvec = \cvec\text{.}\)</span>  You should find the same solution <span class="process-math">\(\xvec\)</span> that we found in the previous example.</div></li>
+<li id="sec-gaussian-revisited-4-11-1-1-10-4"><div class="para" id="sec-gaussian-revisited-4-11-1-1-10-4-1">Use the factorization to solve the equation <span class="process-math">\(A\xvec
 = \threevec9{-16}{10}\text{.}\)</span>
 </div></li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-5"><div class="para" id="sec-gaussian-revisited-4-11-1-1-9-5-1">How does the factorization show us that <span class="process-math">\(A\)</span> is invertible and that, therefore, every equation <span class="process-math">\(A\xvec=\bvec\)</span> has a unique solution?</div></li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-6"><div class="para logical" id="sec-gaussian-revisited-4-11-1-1-9-6-1">
+<li id="sec-gaussian-revisited-4-11-1-1-10-5"><div class="para" id="sec-gaussian-revisited-4-11-1-1-10-5-1">How does the factorization show us that <span class="process-math">\(A\)</span> is invertible and that, therefore, every equation <span class="process-math">\(A\xvec=\bvec\)</span> has a unique solution?</div></li>
+<li id="sec-gaussian-revisited-4-11-1-1-10-6"><div class="para logical" id="sec-gaussian-revisited-4-11-1-1-10-6-1">
 <div class="para">Suppose that we have the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1070,9 +1070,9 @@ B = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Use Sage to find the <span class="process-math">\(LU\)</span> factorization.  Explain how the factorization shows that <span class="process-math">\(B\)</span> is not invertible.</div>
+<div class="para">Use Python to find the <span class="process-math">\(LU\)</span> factorization.  Explain how the factorization shows that <span class="process-math">\(B\)</span> is not invertible.</div>
 </div></li>
-<li id="sec-gaussian-revisited-4-11-1-1-9-7"><div class="para logical" id="sec-gaussian-revisited-4-11-1-1-9-7-1">
+<li id="sec-gaussian-revisited-4-11-1-1-10-7"><div class="para logical" id="sec-gaussian-revisited-4-11-1-1-10-7-1">
 <div class="para">Consider the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1130,7 +1130,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]
 \end{equation*}
 </div>
-<div class="para">in one of the activities, without using partial pivoting.  Apply a sequence of row operations, now using partial pivoting, to find an upper triangular matrix <span class="process-math">\(U\)</span> that is row equivalent to <span class="process-math">\(A\text{.}\)</span> <div id="sec-gaussian-revisited-6-2-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">in one of the activities, without using partial pivoting.  Apply a sequence of row operations, now using partial pivoting, to find an upper triangular matrix <span class="process-math">\(U\)</span> that is row equivalent to <span class="process-math">\(A\text{.}\)</span> <div id="sec-gaussian-revisited-6-2-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></article><article class="exercise exercise-like" id="sec-gaussian-revisited-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
@@ -1179,7 +1179,7 @@ A\xvec =
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-gaussian-revisited-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-gaussian-revisited-6-4-1-1">
-<div class="para">Use Sage to solve the following equation by finding an <span class="process-math">\(LU\)</span> factorization:</div>
+<div class="para">Use Python to solve the following equation by finding an <span class="process-math">\(LU\)</span> factorization:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrr}
@@ -1190,7 +1190,7 @@ A\xvec =
 \xvec = \threevec{-3}{-3}{-4}\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-gaussian-revisited-6-4-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-gaussian-revisited-6-4-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-eigenvector-approx"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="exercise-eigenvector-approx-1-1">
@@ -1206,10 +1206,10 @@ A = \left[\begin{array}{rrr}
 </div>
 <ol class="lower-alpha ol-marker-1" id="exercise-eigenvector-approx-1-1-2">
 <li id="exercise-eigenvector-approx-1-1-2-1"><div class="para" id="exercise-eigenvector-approx-1-1-2-1-1">Notice that this is a positive stochastic matrix. What do we know about the eigenvalues of this matrix?</div></li>
-<li id="exercise-eigenvector-approx-1-1-2-2"><div class="para" id="exercise-eigenvector-approx-1-1-2-2-1">Use Sage to define the matrix <span class="process-math">\(A\)</span> using decimals such as <code class="code-inline tex2jax_ignore">0.2</code> and the <span class="process-math">\(3\times3\)</span> identity matrix <span class="process-math">\(I\text{.}\)</span>  Ask Sage to compute <span class="process-math">\(B = A-I\)</span> and find the reduced row echelon form of <span class="process-math">\(B\text{.}\)</span> <div id="exercise-eigenvector-approx-1-1-2-2-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="exercise-eigenvector-approx-1-1-2-2"><div class="para" id="exercise-eigenvector-approx-1-1-2-2-1">Use Python to define the matrix <span class="process-math">\(A\)</span> using decimals such as <code class="code-inline tex2jax_ignore">0.2</code> and the <span class="process-math">\(3\times3\)</span> identity matrix <span class="process-math">\(I\text{.}\)</span>  Ask Python to compute <span class="process-math">\(B = A-I\)</span> and find the reduced row echelon form of <span class="process-math">\(B\text{.}\)</span> <div id="exercise-eigenvector-approx-1-1-2-2-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="exercise-eigenvector-approx-1-1-2-3"><div class="para" id="exercise-eigenvector-approx-1-1-2-3-1">Why is the computation that Sage performed incorrect?</div></li>
+<li id="exercise-eigenvector-approx-1-1-2-3"><div class="para" id="exercise-eigenvector-approx-1-1-2-3-1">Why is the computation that Python performed incorrect?</div></li>
 <li id="exercise-eigenvector-approx-1-1-2-4"><div class="para" id="exercise-eigenvector-approx-1-1-2-4-1">Explain why using a computer to find the eigenvectors of a matrix <span class="process-math">\(A\)</span> by finding a basis for <span class="process-math">\(\nul(A-\lambda
 I)\)</span> is problematic.</div></li>
 </ol>
@@ -1235,7 +1235,7 @@ A = \left[\begin{array}{rrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para">Find the <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\)</span> and use it to find <span class="process-math">\(A^{-1}\text{.}\)</span> <div id="sec-gaussian-revisited-6-6-1-1-5-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Find the <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\)</span> and use it to find <span class="process-math">\(A^{-1}\text{.}\)</span> <div id="sec-gaussian-revisited-6-6-1-1-5-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>

@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -616,8 +616,8 @@ I\text{?}\)</span>
 0.8 \amp 0.4 \\
 0.2 \amp 0.6 \\
 \end{array}\right]
-\text{.}\)</span>  Explain how we know that <span class="process-math">\(1\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> and then explain why the following Sage computation is incorrect. <div id="sec-power-method-2-3-1-1-1-4-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(2,2,[0.8, 0.4, 0.2, 0.6])
-I = matrix(2,2,[1, 0, 0, 1])	  
+\text{.}\)</span>  Explain how we know that <span class="process-math">\(1\)</span> is an eigenvalue of <span class="process-math">\(A\)</span> and then explain why the following Python computation is incorrect. <div id="sec-power-method-2-3-1-1-1-4-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[0.8, 0.4], [0.2, 0.6]])
+I = sympy.Matrix([[1, 0], [0, 1]])	  
 (A-I).rref()
 </script></div>
 </div></li>
@@ -707,7 +707,7 @@ I = matrix(2,2,[1, 0, 0, 1])
 <div class="para">Let’s begin by considering the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 0.5 \amp 0.2 \\
 0.4 \amp 0.7 \\
-\end{array}\right]\)</span> and the initial vector <span class="process-math">\(\xvec_0 = \twovec{1}{0}\text{.}\)</span> <div id="sec-power-method-3-5-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\end{array}\right]\)</span> and the initial vector <span class="process-math">\(\xvec_0 = \twovec{1}{0}\text{.}\)</span> <div id="sec-power-method-3-5-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-power-method-3-5-1-1-4">
@@ -721,11 +721,12 @@ A\xvec_0\text{.}\)</span>
 \frac1{m_2}\overline{\xvec}_1\)</span> to obtain a vector in which the component with the largest absolute value is <span class="process-math">\(1\text{.}\)</span>
 </div></li>
 <li id="sec-power-method-3-5-1-1-4-4">
-<div class="para" id="sec-power-method-3-5-1-1-4-4-1">The Sage cell below defines a function that implements the power method.  Define the matrix <span class="process-math">\(A\)</span> and initial vector <span class="process-math">\(\xvec_0\)</span> below.  The command <code class="code-inline tex2jax_ignore">power(A, x0,	N)</code> will print out the multiplier <span class="process-math">\(m\)</span> and the vectors <span class="process-math">\(\overline{\xvec}_k\)</span> for <span class="process-math">\(N\)</span> steps of the power method. <div id="sec-power-method-3-5-1-1-4-4-1-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def power(A, x, N):
+<div class="para" id="sec-power-method-3-5-1-1-4-4-1">The Python cell below defines a function that implements the power method.  Define the matrix <span class="process-math">\(A\)</span> and initial vector <span class="process-math">\(\xvec_0\)</span> below.  The command <code class="code-inline tex2jax_ignore">power(A, x0,	N)</code> will print out the multiplier <span class="process-math">\(m\)</span> and the vectors <span class="process-math">\(\overline{\xvec}_k\)</span> for <span class="process-math">\(N\)</span> steps of the power method. <div id="sec-power-method-3-5-1-1-4-4-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def power(A, x, N):
     for i in range(N):
         x = A*x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
+        m = max([comp for comp in x], key=abs).evalf(14)
+        # x = 1/float(m)*x
+		x = 1/m*x
         print (m, x)
 
 ### Define the matrix A and initial vector x0 below
@@ -771,16 +772,18 @@ A^k\xvec_0=\lambda_2^k\vvec_2\)</span> will not detect the eigenvector <span cla
 <li id="sec-power-method-4-3-1-1-4-4"><div class="para" id="sec-power-method-4-3-1-1-4-4-1">If we apply the power method to <span class="process-math">\(A^{-1}\text{,}\)</span> we begin with an intial vector <span class="process-math">\(\xvec_0\)</span> and generate the sequence <span class="process-math">\(\xvec_{k+1} = A^{-1}\xvec_k\text{.}\)</span>  It is not computationally efficient to compute <span class="process-math">\(A^{-1}\text{,}\)</span> however, so instead we solve the equation <span class="process-math">\(A\xvec_{k+1} =
 \xvec_k\text{.}\)</span>  Explain why an <span class="process-math">\(LU\)</span> factorization of <span class="process-math">\(A\)</span> is useful for implementing the power method applied to <span class="process-math">\(A^{-1}\text{.}\)</span>
 </div></li>
-<li id="sec-power-method-4-3-1-1-4-5"><div class="para" id="sec-power-method-4-3-1-1-4-5-1">The following Sage cell defines a command called <code class="code-inline tex2jax_ignore">inverse_power</code> that applies the power method to <span class="process-math">\(A^{-1}\text{.}\)</span>  That is, <code class="code-inline tex2jax_ignore">inverse_power(A, x0, N)</code> prints the vectors <span class="process-math">\(\xvec_k\text{,}\)</span> where <span class="process-math">\(\xvec_{k+1} =
+<li id="sec-power-method-4-3-1-1-4-5"><div class="para" id="sec-power-method-4-3-1-1-4-5-1">The following Python cell defines a command called <code class="code-inline tex2jax_ignore">inverse_power</code> that applies the power method to <span class="process-math">\(A^{-1}\text{.}\)</span>  That is, <code class="code-inline tex2jax_ignore">inverse_power(A, x0, N)</code> prints the vectors <span class="process-math">\(\xvec_k\text{,}\)</span> where <span class="process-math">\(\xvec_{k+1} =
 A^{-1}\xvec_k\text{,}\)</span> and multipliers <span class="process-math">\(\frac{1}{m_k}\text{,}\)</span> which approximate the eigenvalue of <span class="process-math">\(A\text{.}\)</span>  Use it to find the eigenvalue of <span class="process-math">\(A=\left[\begin{array}{rr}
 -5.1 \amp 5.7 \\
 -3.8 \amp 4.4 \\
-\end{array}\right]\)</span> having the smallest absolute value. <div id="sec-power-method-4-3-1-1-4-5-1-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def inverse_power(A, x, N):
+\end{array}\right]\)</span> having the smallest absolute value. <div id="sec-power-method-4-3-1-1-4-5-1-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def inverse_power(A, x, N):
     for i in range(N):
         x = A \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m), x)
+        m = max([comp for comp in x], key=abs).evalf(14)
+        #x = 1/float(m)*x
+		x = 1/m*x
+        #print (1/float(m), x)
+		print(1/m, x)
 ### define the matrix A and vector x0
 A =
 x0 =
@@ -820,13 +823,15 @@ inverse_power(A, x0, 20)
 \end{array}\right]
 \text{.}\)</span> If we use the power method and inverse power method, we find two eigenvalues, <span class="process-math">\(\lambda_1=16.35\)</span> and <span class="process-math">\(\lambda_2=0.75\text{.}\)</span>  Viewing these eigenvalues on a number line, we know that the other eigenvalues lie in the range between <span class="process-math">\(-\lambda_1\)</span> and <span class="process-math">\(\lambda_1\text{,}\)</span> as shaded in <a href="sec-power-method.html#fig-numerical-power-line" class="xref" data-knowl="./knowl/xref/fig-numerical-power-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.3">Figure 5.2.3</a>.</div>
 <figure class="figure figure-like" id="fig-numerical-power-line"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/numerical-power-line.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>The range of eigenvalues of <span class="process-math">\(A\text{.}\)</span></figcaption></figure><div class="para" id="sec-power-method-4-5-1-1-3-5-3">The Sage cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements <span class="process-math">\(N\)</span> steps of the inverse power method using the matrix <span class="process-math">\(A-sI\)</span> and an initial vector <span class="process-math">\(x\text{.}\)</span>  This function prints approximations to the eigenvalue of <span class="process-math">\(A\)</span> closest to <span class="process-math">\(s\)</span> and its associated eigenvector.  By trying different values of <span class="process-math">\(s\)</span> in the shaded regions of the number line shown in <a href="sec-power-method.html#fig-numerical-power-line" class="xref" data-knowl="./knowl/xref/fig-numerical-power-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.3">Figure 5.2.3</a>, find the other two eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-power-method-4-5-1-1-3-5-3-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*identity_matrix(A.nrows())
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.2.3<span class="period">.</span></span><span class="space"> </span>The range of eigenvalues of <span class="process-math">\(A\text{.}\)</span></figcaption></figure><div class="para" id="sec-power-method-4-5-1-1-3-5-3">The Python cell below has a function <code class="code-inline tex2jax_ignore">find_closest_eigenvalue(A, s, x, N)</code> that implements <span class="process-math">\(N\)</span> steps of the inverse power method using the matrix <span class="process-math">\(A-sI\)</span> and an initial vector <span class="process-math">\(x\text{.}\)</span>  This function prints approximations to the eigenvalue of <span class="process-math">\(A\)</span> closest to <span class="process-math">\(s\)</span> and its associated eigenvector.  By trying different values of <span class="process-math">\(s\)</span> in the shaded regions of the number line shown in <a href="sec-power-method.html#fig-numerical-power-line" class="xref" data-knowl="./knowl/xref/fig-numerical-power-line.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 5.2.3">Figure 5.2.3</a>, find the other two eigenvalues of <span class="process-math">\(A\text{.}\)</span> <div id="sec-power-method-4-5-1-1-3-5-3-10" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def find_closest_eigenvalue(A, s, x, N):
+    B = A-s*sympy.eye(A.shape()[0])
     for i in range(N):
         x = B \ x
-        m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m)+s, x)
+        m = max([comp for comp in x], key=abs).evalf(14)
+        #x = 1/float(m)*x
+        x = 1/m*x
+		#print (1/float(m)+s, x)
+		print(1/m + s, x)
 ### define the matrix A and vector x0
 A =
 x0 =
@@ -853,19 +858,22 @@ find_closest_eigenvalue(A, 2, x0, 20)
 </div></section><section class="exercises" id="sec-power-method-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
-<div class="para" id="sec-power-method-6-1">This Sage cell has the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> that we have developed in this section.  After evaluating this cell, these commands will be available in any other cell on this page. <div id="sec-power-method-6-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def power(A, x, N):
+<div class="para" id="sec-power-method-6-1">This Python cell has the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> that we have developed in this section.  After evaluating this cell, these commands will be available in any other cell on this page. <div id="sec-power-method-6-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def power(A, x, N):
     for i in range(N):
         x = A*x
         m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
+        #x = 1/float(m)*x
+        x = 1/m*x
         print (m, x)
 def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*identity_matrix(A.nrows())
+    B = A-s*eye(A.shape()[0])
     for i in range(N):
         x = B \ x
         m = max([comp for comp in x], key=abs).numerical_approx(digits=14)
-        x = 1/float(m)*x
-        print (1/float(m)+s, x)
+        #x = 1/float(m)*x
+        x = 1/m*x
+        #print (1/float(m)+s, x)
+        print(1/m + s, x)
 def inverse_power(A, x, N):
     find_closest_eigenvalue(A, 0, x, N)
 </script></div>
@@ -882,7 +890,7 @@ def inverse_power(A, x, N):
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-power-method-6-3"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-power-method-6-3-1-1">
-<div class="para">Use the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> to approximate the eigenvalues and associated eigenvectors of the following matrices. <div id="sec-power-method-6-3-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">Use the commands <code class="code-inline tex2jax_ignore">power</code>, <code class="code-inline tex2jax_ignore">inverse_power</code>, and <code class="code-inline tex2jax_ignore">find_closest_eigenvalue</code> to approximate the eigenvalues and associated eigenvectors of the following matrices. <div id="sec-power-method-6-3-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-power-method-6-3-1-1-5">
@@ -918,7 +926,7 @@ A= \left[\begin{array}{rrrrr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-power-method-6-4-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A = matrix(5,5, [-14.6,  9.0, -14.1, 5.8,  13.0,
+<div class="para"><div id="sec-power-method-6-4-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = matrix(5,5, [-14.6,  9.0, -14.1, 5.8,  13.0,
                   27.8, -4.2,  16.0, 0.9, -21.3,
                   -5.5,  3.4,   3.4, 3.3,   1.1,
                  -25.4, 11.3, -15.4, 4.7,  20.3,
@@ -930,7 +938,7 @@ A= \left[\begin{array}{rrrrr}
 0 \amp -1 \\
 -4 \amp 0 \\
 \end{array}\right]
-\text{.}\)</span> <div id="sec-power-method-6-5-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\text{.}\)</span> <div id="sec-power-method-6-5-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-power-method-6-5-1-1-3">
@@ -972,7 +980,7 @@ A= \left[\begin{array}{rrrrr}
 </div></li>
 <li id="sec-power-method-6-10-1-1-2-2"><div class="para" id="sec-power-method-6-10-1-1-2-2-1">Make a prediction about what happens if we apply the power method and the inverse power method to find eigenvalues of <span class="process-math">\(A\text{.}\)</span>
 </div></li>
-<li id="sec-power-method-6-10-1-1-2-3"><div class="para" id="sec-power-method-6-10-1-1-2-3-1">Verify your prediction using Sage. <div id="sec-power-method-6-10-1-1-2-3-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-power-method-6-10-1-1-2-3"><div class="para" id="sec-power-method-6-10-1-1-2-3-1">Verify your prediction using Python. <div id="sec-power-method-6-10-1-1-2-3-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol>
