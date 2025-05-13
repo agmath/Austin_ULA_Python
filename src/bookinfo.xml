@@ -15,7 +15,7 @@
     convert embedded sage math cells into Python cells.
   </blurb>
   <macros>
-    \newcommand{\avec}{{\mathbf a}}
+    <!-- \newcommand{\avec}{{\mathbf a}}
     \newcommand{\bvec}{{\mathbf b}}
     \newcommand{\cvec}{{\mathbf c}}
     \newcommand{\dvec}{{\mathbf d}}
@@ -36,7 +36,29 @@
     \newcommand{\rvec}{{\mathbf r}}
     \newcommand{\mvec}{{\mathbf m}}
     \newcommand{\zerovec}{{\mathbf 0}}
-    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\onevec}{{\mathbf 1}} -->
+    \newcommand{\avec}{{\vec{a}}}
+    \newcommand{\bvec}{{\vec{b}}}
+    \newcommand{\cvec}{{\vec{c}}}
+    \newcommand{\dvec}{{\vec{d}}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\vec{e}}}
+    \newcommand{\fvec}{{\vec{f}}}
+    \newcommand{\nvec}{{\vec{n}}}
+    \newcommand{\pvec}{{\vec{p}}}
+    \newcommand{\qvec}{{\vec{q}}}
+    \newcommand{\svec}{{\vec{s}}}
+    \newcommand{\tvec}{{\vec{t}}}
+    \newcommand{\uvec}{{\vec{u}}}
+    \newcommand{\vvec}{{\vec{v}}}
+    \newcommand{\wvec}{{\vec{w}}}
+    \newcommand{\xvec}{{\vec{x}}}
+    \newcommand{\yvec}{{\vec{y}}}
+    \newcommand{\zvec}{{\vec{z}}}
+    \newcommand{\rvec}{{\vec{r}}}
+    \newcommand{\mvec}{{\vec{m}}}
+    \newcommand{\zerovec}{{\vec{0}}}
+    \newcommand{\onevec}{{\vec{1}}}
     \newcommand{\real}{{\mathbb R}}
     \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
     \end{array}\right]}
