@@ -54,7 +54,7 @@
 	      \end{bmatrix}
 	      \xvec = \threevec5{-3}{-1}\text{.}
 	    </me>
-	    <sage>
+	    <sage language="python">
 	      <input>
 	      </input>
 	    </sage>
@@ -213,7 +213,7 @@
 		Is there a solution to this linear system?  How does
 		this question relate to your attempt to draw a line
 		through the three points above?
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -568,13 +568,20 @@
 	  chirp rate <m>C</m> is expressed in chirps per second while the
 	  temperature <m>T</m> is in degrees Fahrenheit.  Evaluate the
 	  following cell to load the data:
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/crickets.csv')
 data = [vector(row) for row in df.values]
-chirps = vector(df['Chirps'])
-temps = vector(df['Temperature'])
+chirps = sympy.Matrix(df['Chirps'])
+temps = sympy.Matrix(df['Temperature'])
 print(df)
 list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 	    </input>
@@ -627,7 +634,7 @@ list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 		so that the linear system
 		<m>A\xvec= \bvec</m> describes the unknown vector
 		<m>\xvec</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -646,9 +653,9 @@ list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 	      <p> Solve the normal equations to find <m>\xhat</m>, the
 	      least-squares approximate solution to the equation
 	      <m>A\xvec=\bvec</m>.  Call your solution <c>xhat</c>
-	      since <c>x</c>
-	      has another meaning in Sage.
-	      <sage>
+	      since <c>x</c> may have another meaning, depending which 
+		  Python modules we have loaded.
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -670,7 +677,7 @@ list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 		You can plot the data and your line, assuming you called
 		the solution <c>xhat</c>, using the cell
 		below.
-		<sage>
+		<sage language="python">
 		  <input>
 plot_model(xhat, data, domain=(12, 22))
 		  </input>
@@ -943,9 +950,16 @@ plot_model(xhat, data, domain=(12, 22))
 		<m>r</m> in centimeters, neck circumference <m>n</m> in
 		centimeters, and <m>BFI</m>.  Evaluating the following
 		cell loads and displays the data.
-		<sage>
+		<sage language="python">
 		  <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/bfi.csv')
 weight = vector(df['Weight'])
 height = vector(df['Height'])
@@ -1019,7 +1033,7 @@ print(df)
 	      <p>
 		Construct the matrix <m>A</m> and find its <m>QR</m>
 		factorization in the cell below.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1043,7 +1057,7 @@ print(df)
 		Find the coefficient of determination <m>R^2</m> for
 		your parameters.  What does this imply about the quality
 		of the fit?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1230,10 +1244,16 @@ print(df)
 		points <m>(0,2)</m>, <m>(1,1)</m>, <m>(2,3)</m>, and
 		<m>(3,3)</m>, such as appear when the following cell is
 		evaluated.
-		<sage>
+		<sage language="python">
 		  <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py',
-globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 data = [[0, 2], [1, 1], [2, 3], [3, 3]]
 list_plot(data, color='blue', size=40)		  
 		  </input>
@@ -1283,7 +1303,7 @@ list_plot(data, color='blue', size=40)
 		Find the <m>QR</m> factorization of <m>A</m> and use it
 		to find the least-squares approximate solution
 		<m>\xhat</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1297,7 +1317,7 @@ list_plot(data, color='blue', size=40)
 		write the quadratic function that fits the data.  You
 		can plot this function, along with the data, by entering
 		your function in the place indicated below.
-		<sage>
+		<sage language="python">
 		  <input>
 list_plot(data, color='blue', size=40) + plot( **your function here**,
 0, 3, color='red')
@@ -1328,7 +1348,7 @@ list_plot(data, color='blue', size=40) + plot( **your function here**,
 		  \beta_0 + \beta_1x + \beta_2 x^2 + \beta_3x^3 = y
 		</me>
 		to this dataset.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1348,7 +1368,7 @@ list_plot(data, color='blue', size=40) + plot( **your function here**,
 		What do you notice when you plot the cubic function
 		along with the data?  How does this reflect the value of
 		<m>R^2</m> that you found?
-		<sage>
+		<sage language="python">
 		  <input>
 list_plot(data, color='blue', size=40) + plot( **your function here**,
 0, 3, color='red')
@@ -1528,9 +1548,16 @@ list_plot(data, color='blue', size=40) + plot( **your function here**,
 	  Evaluating the cell below will plot the extent of Arctic sea
 	  ice, in millions of square kilometers, during the twelve
 	  months of 2012.
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/sea_ice.csv')
 data = [vector([row[0], row[2]]) for row in df.values]
 month = vector(df['Month'])
@@ -1581,7 +1608,7 @@ list_plot(data, color='blue', size=40)
 		Find the vector <m>\xhat</m>, the least-squares
 		approximate solution to the linear system that results
 		from fitting a degree 5 polynomial to the data.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1594,7 +1621,7 @@ list_plot(data, color='blue', size=40)
 		If your result is stored in the variable <c>xhat</c>,
 		you may plot the polynomial and the data together using
 		the following cell.
-		<sage>
+		<sage language="python">
 		  <input>
 plot_model(xhat, data)
 		  </input>
@@ -1614,7 +1641,7 @@ plot_model(xhat, data)
 		Repeat these steps to fit a degree 8 polynomial to the
 		data, plot the polynomial with the data, and find
 		<m>R^2</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1625,7 +1652,7 @@ plot_model(xhat, data)
 	      <p>
 		Repeat one more time by fitting a degree 11 polynomial
 		to the data, creating a plot, and finding <m>R^2</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>

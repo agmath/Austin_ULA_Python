@@ -204,7 +204,7 @@
 	  call <m>W_1</m> the line defined by <m>\wvec_1</m>.
 	</p>
 	<p>
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -521,8 +521,8 @@
     <activity>
       <statement>
 	<p>
-	  Sage can automate these computations for us.  Before
-	  we begin, however, it will be helpful to understand how we can
+	  Python can automate these computations for us.  Before
+	  we begin, however, it will be helpful to remember how we can
 	  combine things using a <c>list</c> in Python.  For
 	  instance, if the vectors <c>v1</c>, <c>v2</c>, and <c>v3</c>
 	  form a basis for a subspace, we can bundle them together using
@@ -533,9 +533,15 @@
 	<p>
 	  Evaluating the following cell will load in some special
 	  commands.  
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py", globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 	    </input>
 	  </sage>
 	  <ul>
@@ -558,8 +564,8 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
 		Given a collection of vectors, say, <c>v1</c> and
 		<c>v2</c>, we can form the matrix whose columns are
 		<c>v1</c> and <c>v2</c> using
-		<c>matrix([v1, v2]).T</c>.  When given a <c>list</c> of
-		vectors, Sage constructs a matrix whose <em>rows</em>
+		<c>sympy.Matrix([v1, v2]).T</c>.  When given a <c>list</c> of
+		vectors, Python constructs a matrix whose <em>rows</em>
 		are the given vectors.  For this reason, we need to apply
 		the transpose.
 	      </p>
@@ -583,7 +589,7 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
 		basis <m>\wvec_1</m>, <m>\wvec_2</m>, and <m>\wvec_3</m>
 		for <m>W</m>.
 	      </p>
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -615,7 +621,7 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
 		<m>\uvec_2</m>, for <m>\uvec_3</m> for <m>W</m> and form
 		the matrix <m>Q</m> whose columns are these vectors.
 	      </p>
-	      <sage>
+	      <sage language="python">
 		<input>
 		</input>
 	      </sage>
@@ -780,7 +786,7 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
 	  <m>\real^4</m> that we encountered in <xref
 	  ref="activity-gram-schmidt" />.  Since these vectors are the
 	  columns of <m>A</m>, we have <m>\col(A) = W</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -1123,16 +1129,22 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
     <activity>
       <statement>
 	<p>
-	  As before, we would like to use Sage to automate the process
+	  As before, we would like to use Python to automate the process
 	  of finding and using the <m>QR</m> factorization of a matrix
 	  <m>A</m>. 
 	  Evaluating the following cell provides a command <c>QR(A)</c>
 	  that returns the factorization, which may be stored using,
 	  for example, 
 	  <c>Q, R = QR(A)</c>.
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py", globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 	    </input>
 	  </sage>
 	</p>
@@ -1162,7 +1174,7 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
 		Find the <m>QR</m> factorization using 
 		<c>Q, R = QR(A)</c> and verify that <m>R</m> has the predicted
 		shape and that <m>A=QR</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1305,7 +1317,7 @@ sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/
     </activity>
 
     <p>
-      In fact, Sage provides its own version of the <m>QR</m>
+      In fact, Python provides its own version of the <m>QR</m>
       factorization that is a bit different than the way we've
       developed the factorization here.  For this reason, we have
       provided our own version of the factorization.

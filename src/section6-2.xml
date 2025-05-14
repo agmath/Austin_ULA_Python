@@ -821,8 +821,9 @@
 
     <activity>
       <statement>
-	<p> In Sage, the transpose of a matrix <c>A</c> is given by
-	<c>A.T</c>.  Define the matrices
+	<p> In Python, the transpose of a matrix <c>A</c> is given by
+	<c>A.T</c> or <c>A.transpose()</c> as long as <c>A</c> was 
+	defined using <c>{sympy}</c>.  Define the matrices
 	<me>
 	  A =
 	  \begin{bmatrix}
@@ -843,7 +844,7 @@
 	  3 \amp 2 \amp 0 \\
 	  \end{bmatrix}\text{.}
 	</me>
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -1154,10 +1155,10 @@
 		  <li>
 		    <p>
 		      Find a basis for <m>W^\perp</m>.  It may be
-		      helpful to know that the Sage command
-		      <c>A.right_kernel()</c> produces a basis for
+		      helpful to know that the Python command
+		      <c>A.nullspace()</c> produces a basis for
 		      <m>\nul(A)</m>.
-		      <sage>
+		      <sage language="python">
 			<input>
 			</input>
 		      </sage>
