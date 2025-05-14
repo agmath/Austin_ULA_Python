@@ -70,7 +70,7 @@
 		What is the maximum value of <m>q_G(\xvec)</m> over
                 all unit vectors and in 
 		which direction does it occur?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -320,7 +320,7 @@
 		<m>A</m>.  Since <m>G</m> is symmetric, it is
 		orthogonally diagonalizable.  Find 
 		<m>G</m> and an orthogonal diagonalization of it.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -359,7 +359,7 @@
 		requiring that <m>A\vvec_1 = \sigma_1\uvec_1</m> and
 		<m>A\vvec_2=\sigma_2\uvec_2</m>.  Find the two left
 		singular vectors.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -819,7 +819,7 @@
 	      <p>
 		Construct the Gram matrix <m>G=A^TA</m> and find an
 		orthogonal diagonalization of it.
-		<sage>
+		<sage language="python">
 		  <input>
 		    
 		  </input>
@@ -870,7 +870,7 @@
 		\end{bmatrix}
 		</me>
 		and verify that <m>A = U\Sigma V^T</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>

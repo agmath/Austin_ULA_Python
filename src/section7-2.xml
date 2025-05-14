@@ -51,7 +51,7 @@
 		Construct the covariance matrix <m>C</m> and determine
 		the variance in the direction of <m>\twovec11</m> and
 		the variance in the direction of <m>\twovec{-1}1</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -427,7 +427,7 @@
 		<m>q_D(\xvec)</m>.  In addition, the points corresponding
 		to vectors <m>\uvec</m> with unit length are displayed
 		as a curve. 
-		<sage>
+		<sage language="python">
 		  <input>
 		    <!-->
 x, y, t = var('x', 'y', 't')
@@ -441,10 +441,16 @@ graph = plot3d(q(x,y), (x,-1.2,1.2), (y,-1.2,1.2), color='orange', opacity=0.9, 
 curve = parametric_plot3d([cos(t), sin(t), q(cos(t), sin(t))], (t,0,2*pi), thickness=3)   
 graph + curve
 		    -->
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/quad_plot.py', globals())
+import requests
+
+url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 
 ## We define our matrix here
-A = matrix(2, 2, [3, 0, 0, -1])
+A = sympy.Matrix([[3.0, 0], [0, -1]])
 
 quad_plot(A)
 
@@ -489,7 +495,7 @@ quad_plot(A)
 
 	    <li>
 	      <p>
-		Use the previous Sage cell to change the matrix to
+		Use the previous Python cell to change the matrix to
 		<m>A=\begin{bmatrix}
 		1 \amp 2 \\
 		2 \amp 1
@@ -1374,8 +1380,9 @@ quad_plot(A)
 		Explain why our understanding of the eigenvalues of
 		<m>A</m> shows that <m>(1,1)</m> is a local
 		minimum for <m>f</m>.
-		<sage>
+		<sage language="python">
 		  <input>
+#Maybe sage-specific...check and change to matplotlib...
 x, y = var('x', 'y')		    
 plot3d(2*x^3 - 6*x*y + 3*y^2, (x, 0.75,1.25), (y,0.75,1.25))
 		  </input>

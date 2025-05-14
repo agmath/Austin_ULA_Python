@@ -113,7 +113,7 @@
 	251 \amp -206 \amp 275
 	\end{bmatrix}
 	</m>.
-	<sage>
+	<sage language="python">
 	  <input>
 
 	  </input>
@@ -204,10 +204,15 @@
       <p>
 	Evaluating the following cell loads a <m>2\times100</m>
 	demeaned data matrix <c>A</c>.
-	<sage>
+	<sage language="python">
 	  <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_ex.py', globals())
+import requests
 
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_ex.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 
 	  </input>
 	</sage>
@@ -492,9 +497,16 @@ sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/
 	Evaluating the next cell will load and display the data.  The
 	meaning of the culmen length and width is contained in the
 	illustration on the right of <xref ref="fig-penguins" />.
-	<sage>
+	<sage language="python">
 	  <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_penguins.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_penguins.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df.T
 
 
@@ -508,7 +520,7 @@ df.T
 	demeaning it, as usual, and then rescaling each measurement by
 	the reciprocal of its standard deviation.  The result is
 	stored in the <m>4\times333</m> matrix <c>A</c>.
-	<sage>
+	<sage language="python">
 	  <input>
 
 	  </input>
@@ -532,7 +544,7 @@ df.T
 	      the coordinates of the demeaned data points projected
 	      onto the first two principal components.  
 	      The following cell will create the plot.
-	      <sage>
+	      <sage language="python">
 		<input>
 
 pca_plot(B)		  
@@ -561,7 +573,7 @@ pca_plot(B)
 	    <p>
 	      You can plot just the males or females using the
 	      following cell.
-	      <sage>
+	      <sage language="python">
 		<input>
 pca_plot(B, sex='female')
 

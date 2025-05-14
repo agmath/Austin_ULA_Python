@@ -314,14 +314,15 @@
     <activity>
       <statement>
 	<p>
-	  Remember that the Sage command <c>A.right_eigenmatrix()</c>
+	  Remember that the Python command <c>A.diagonalize()</c>
 	  attempts to find a basis for <m>\real^m</m> consisting of
-	  eigenvectors of <m>A</m>.  In particular, the assignment
-	  <c>D, P = A.right_eigenmatrix()</c>
+	  eigenvectors of <m>A</m>, as long as <m>A</m> is a <c>{sympy}</c> 
+	  matrix.  In particular, the assignment
+	  <c>P, D = A.diagonalize()</c>
 	  provides a diagonal matrix <m>D</m>
 	  constructed from the eigenvalues of <m>A</m> with the columns
 	  of <m>P</m> containing the associated eigenvectors.
-	  <sage>
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -773,7 +774,7 @@
 	  bases together to find an orthogonal basis for <m>\real^m</m>
 	  consisting of eigenvectors.  Use this basis to write an
 	  orthogonal diagonalization of the matrix.
-	  <sage>
+	  <sage language="python">
 	    <input>
 
 	    </input>
@@ -1486,7 +1487,7 @@
 		is useful because the variance <m>V_{\uvec} =
 		\uvec\cdot(C\uvec)</m>, as we have just seen.  Find
 		the matrix <m>C</m> for our dataset with three points.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1688,16 +1689,18 @@
 	  <ol marker="a.">
 	    <li>
 	      <p>
-		Evaluating the following Sage cell loads a dataset
+		Evaluating the following Python cell loads a dataset
 		consisting of 100 demeaned data points and provides a plot
 		of them.  It also provides the demeaned data matrix
 		<m>A</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/variance-data.csv', header=None)
-data = [vector(row) for row in df.values]
-A = matrix(data).T
+data = [sympy.Matrix(row) for row in df.values]
+A = sympy.Matrix(data).T
+
+#Next line is unlikely to work, as it is sage-specific
 list_plot(data, size=20, color='blue', aspect_ratio=1)
 		  </input>
 		</sage>
@@ -1706,7 +1709,7 @@ list_plot(data, size=20, color='blue', aspect_ratio=1)
 	      <p>
 		What is the shape of the covariance matrix
 		<m>C</m>?  Find <m>C</m> and verify your response.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>

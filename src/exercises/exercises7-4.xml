@@ -12,7 +12,7 @@
 	  0 \amp -1 \amp 2 \\
 	  \end{bmatrix}
 	</m>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -668,7 +668,7 @@
 	-1 \amp 1 \amp 2\\
 	\end{bmatrix}
 	</m>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
@@ -822,7 +822,7 @@
 	1 \amp 2
 	\end{bmatrix}</m> and notice that <m>B=A^T</m> where <m>A</m>
 	is the matrix in <xref ref="ex-7-4-1"/>.
-	<sage>
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>
