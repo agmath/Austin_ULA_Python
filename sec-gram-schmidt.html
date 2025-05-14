@@ -113,27 +113,27 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.3';
+eBookConfig.runestone_version = '7.6.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -664,7 +664,7 @@ sagecell.makeSagecell({
 </div>
 </div> <div class="para" id="activity-gram-schmidt-1-2">To begin, we declare that <span class="process-math">\(\wvec_1=\vvec_1\text{,}\)</span> and we call <span class="process-math">\(W_1\)</span> the line defined by <span class="process-math">\(\wvec_1\text{.}\)</span>
 </div> <div class="para logical" id="activity-gram-schmidt-1-3">
-<div class="para"><div id="activity-gram-schmidt-1-3-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="activity-gram-schmidt-1-3-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="activity-gram-schmidt-1-3-2">
 <li id="activity-gram-schmidt-1-3-2-1"><div class="para" id="activity-gram-schmidt-1-3-2-1-1">Find the vector <span class="process-math">\(\vhat_2\)</span> that is the orthogonal projection of <span class="process-math">\(\vvec_2\)</span> onto <span class="process-math">\(W_1\text{,}\)</span> the line defined by <span class="process-math">\(\wvec_1\text{.}\)</span>
@@ -782,14 +782,20 @@ W_2 = \laspan{\wvec_1,\wvec_2} =
 <article class="activity project-like" id="sec-gram-schmidt-3-10"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-gram-schmidt-3-10-1-1">Sage can automate these computations for us.  Before we begin, however, it will be helpful to understand how we can combine things using a <code class="code-inline tex2jax_ignore">list</code> in Python.  For instance, if the vectors <code class="code-inline tex2jax_ignore">v1</code>, <code class="code-inline tex2jax_ignore">v2</code>, and <code class="code-inline tex2jax_ignore">v3</code> form a basis for a subspace, we can bundle them together using square brackets: <code class="code-inline tex2jax_ignore">[v1, v2, v3]</code>.  Furthermore, we could assign this to a variable, such as <code class="code-inline tex2jax_ignore">basis = [v1, v2, v3]</code>.</div> <div class="para logical" id="sec-gram-schmidt-3-10-1-2">
-<div class="para">Evaluating the following cell will load in some special commands. <div id="sec-gram-schmidt-3-10-1-2-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py", globals())
+<div class="para" id="sec-gram-schmidt-3-10-1-1">Python can automate these computations for us.  Before we begin, however, it will be helpful to remember how we can combine things using a <code class="code-inline tex2jax_ignore">list</code> in Python.  For instance, if the vectors <code class="code-inline tex2jax_ignore">v1</code>, <code class="code-inline tex2jax_ignore">v2</code>, and <code class="code-inline tex2jax_ignore">v3</code> form a basis for a subspace, we can bundle them together using square brackets: <code class="code-inline tex2jax_ignore">[v1, v2, v3]</code>.  Furthermore, we could assign this to a variable, such as <code class="code-inline tex2jax_ignore">basis = [v1, v2, v3]</code>.</div> <div class="para logical" id="sec-gram-schmidt-3-10-1-2">
+<div class="para">Evaluating the following cell will load in some special commands. <div id="sec-gram-schmidt-3-10-1-2-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 </script></div>
 </div>
 <ul class="disc" id="sec-gram-schmidt-3-10-1-2-2">
 <li id="sec-gram-schmidt-3-10-1-2-2-1"><div class="para" id="sec-gram-schmidt-3-10-1-2-2-1-1">There is a command to apply the projection formula: <code class="code-inline tex2jax_ignore">projection(b, basis)</code> returns the orthogonal projection of <code class="code-inline tex2jax_ignore">b</code> onto the subspace spanned by <code class="code-inline tex2jax_ignore">basis</code>, which is a list of vectors.</div></li>
 <li id="sec-gram-schmidt-3-10-1-2-2-2"><div class="para" id="sec-gram-schmidt-3-10-1-2-2-2-1">The command <code class="code-inline tex2jax_ignore">unit(w)</code> returns a unit vector parallel to <code class="code-inline tex2jax_ignore">w</code>.</div></li>
-<li id="sec-gram-schmidt-3-10-1-2-2-3"><div class="para" id="sec-gram-schmidt-3-10-1-2-2-3-1">Given a collection of vectors, say, <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code>, we can form the matrix whose columns are <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> using <code class="code-inline tex2jax_ignore">matrix([v1, v2]).T</code>.  When given a <code class="code-inline tex2jax_ignore">list</code> of vectors, Sage constructs a matrix whose <em class="emphasis">rows</em> are the given vectors.  For this reason, we need to apply the transpose.</div></li>
+<li id="sec-gram-schmidt-3-10-1-2-2-3"><div class="para" id="sec-gram-schmidt-3-10-1-2-2-3-1">Given a collection of vectors, say, <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code>, we can form the matrix whose columns are <code class="code-inline tex2jax_ignore">v1</code> and <code class="code-inline tex2jax_ignore">v2</code> using <code class="code-inline tex2jax_ignore">sympy.Matrix([v1, v2]).T</code>.  When given a <code class="code-inline tex2jax_ignore">list</code> of vectors, Python constructs a matrix whose <em class="emphasis">rows</em> are the given vectors.  For this reason, we need to apply the transpose.</div></li>
 </ul>
 </div> <div class="para logical" id="sec-gram-schmidt-3-10-1-3">
 <div class="para">Let’s now consider <span class="process-math">\(W\text{,}\)</span> the subspace of <span class="process-math">\(\real^5\)</span> having basis</div>
@@ -804,7 +810,7 @@ W_2 = \laspan{\wvec_1,\wvec_2} =
 <li id="sec-gram-schmidt-3-10-1-3-4-1">
 <div class="para" id="sec-gram-schmidt-3-10-1-3-4-1-1">Apply the Gram-Schmidt algorithm to find an orthogonal basis <span class="process-math">\(\wvec_1\text{,}\)</span> <span class="process-math">\(\wvec_2\text{,}\)</span> and <span class="process-math">\(\wvec_3\)</span> for <span class="process-math">\(W\text{.}\)</span>
 </div>
-<div id="sec-gram-schmidt-3-10-1-3-4-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div id="sec-gram-schmidt-3-10-1-3-4-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </li>
 <li id="sec-gram-schmidt-3-10-1-3-4-2"><div class="para" id="sec-gram-schmidt-3-10-1-3-4-2-1">Find <span class="process-math">\(\bhat\text{,}\)</span> the orthogonal projection of <span class="process-math">\(\bvec = 
@@ -820,7 +826,7 @@ W_2 = \laspan{\wvec_1,\wvec_2} =
 </div></li>
 <li id="sec-gram-schmidt-3-10-1-3-4-4">
 <div class="para" id="sec-gram-schmidt-3-10-1-3-4-4-1">Find an orthonormal basis <span class="process-math">\(\uvec_1\text{,}\)</span> <span class="process-math">\(\uvec_2\text{,}\)</span> for <span class="process-math">\(\uvec_3\)</span> for <span class="process-math">\(W\)</span> and form the matrix <span class="process-math">\(Q\)</span> whose columns are these vectors.</div>
-<div id="sec-gram-schmidt-3-10-1-3-4-4-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div id="sec-gram-schmidt-3-10-1-3-4-4-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </li>
 <li id="sec-gram-schmidt-3-10-1-3-4-5"><div class="para" id="sec-gram-schmidt-3-10-1-3-4-5-1">Find the product <span class="process-math">\(Q^TQ\)</span> and explain the result.</div></li>
@@ -842,7 +848,7 @@ W_2 = \laspan{\wvec_1,\wvec_2} =
 \vvec_3 = \fourvec1{-3}{-3}{-3}\text{.}
 \end{equation*}
 </div>
-<div class="para">These vectors form a basis for <span class="process-math">\(W\text{,}\)</span> the subspace of <span class="process-math">\(\real^4\)</span> that we encountered in <a href="sec-gram-schmidt.html#activity-gram-schmidt" class="xref" data-knowl="./knowl/xref/activity-gram-schmidt.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 6.4.2">Activity 6.4.2</a>.  Since these vectors are the columns of <span class="process-math">\(A\text{,}\)</span> we have <span class="process-math">\(\col(A) = W\text{.}\)</span> <div id="sec-gram-schmidt-4-3-1-1-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">These vectors form a basis for <span class="process-math">\(W\text{,}\)</span> the subspace of <span class="process-math">\(\real^4\)</span> that we encountered in <a href="sec-gram-schmidt.html#activity-gram-schmidt" class="xref" data-knowl="./knowl/xref/activity-gram-schmidt.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 6.4.2">Activity 6.4.2</a>.  Since these vectors are the columns of <span class="process-math">\(A\text{,}\)</span> we have <span class="process-math">\(\col(A) = W\text{.}\)</span> <div id="sec-gram-schmidt-4-3-1-1-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-gram-schmidt-4-3-1-1-10">
@@ -951,7 +957,13 @@ A = Q\begin{bmatrix}
 <article class="activity project-like" id="sec-gram-schmidt-4-8"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.4.5</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-gram-schmidt-4-8-1-1">As before, we would like to use Sage to automate the process of finding and using the <span class="process-math">\(QR\)</span> factorization of a matrix <span class="process-math">\(A\text{.}\)</span> Evaluating the following cell provides a command <code class="code-inline tex2jax_ignore">QR(A)</code> that returns the factorization, which may be stored using, for example, <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code>. <div id="sec-gram-schmidt-4-8-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/orthogonality.py", globals())
+<div class="para" id="sec-gram-schmidt-4-8-1-1">As before, we would like to use Python to automate the process of finding and using the <span class="process-math">\(QR\)</span> factorization of a matrix <span class="process-math">\(A\text{.}\)</span> Evaluating the following cell provides a command <code class="code-inline tex2jax_ignore">QR(A)</code> that returns the factorization, which may be stored using, for example, <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code>. <div id="sec-gram-schmidt-4-8-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 </script></div>
 </div> <div class="para logical" id="sec-gram-schmidt-4-8-1-2">
 <div class="para">Suppose that <span class="process-math">\(A\)</span> is the following matrix whose columns are linearly independent.</div>
@@ -969,7 +981,7 @@ A =
 <ol class="lower-alpha ol-marker-1" id="sec-gram-schmidt-4-8-1-2-3">
 <li id="sec-gram-schmidt-4-8-1-2-3-1"><div class="para" id="sec-gram-schmidt-4-8-1-2-3-1-1">If <span class="process-math">\(A=QR\text{,}\)</span> what is the shape of <span class="process-math">\(Q\)</span> and <span class="process-math">\(R\text{?}\)</span>  What is special about the form of <span class="process-math">\(R\text{?}\)</span>
 </div></li>
-<li id="sec-gram-schmidt-4-8-1-2-3-2"><div class="para" id="sec-gram-schmidt-4-8-1-2-3-2-1">Find the <span class="process-math">\(QR\)</span> factorization using <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code> and verify that <span class="process-math">\(R\)</span> has the predicted shape and that <span class="process-math">\(A=QR\text{.}\)</span> <div id="sec-gram-schmidt-4-8-1-2-3-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-gram-schmidt-4-8-1-2-3-2"><div class="para" id="sec-gram-schmidt-4-8-1-2-3-2-1">Find the <span class="process-math">\(QR\)</span> factorization using <code class="code-inline tex2jax_ignore">Q, R = QR(A)</code> and verify that <span class="process-math">\(R\)</span> has the predicted shape and that <span class="process-math">\(A=QR\text{.}\)</span> <div id="sec-gram-schmidt-4-8-1-2-3-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-gram-schmidt-4-8-1-2-3-3"><div class="para" id="sec-gram-schmidt-4-8-1-2-3-3-1">Find the matrix <span class="process-math">\(P\)</span> that orthogonally projects vectors onto <span class="process-math">\(\col(A)\text{.}\)</span>
@@ -979,7 +991,7 @@ A =
 <li id="sec-gram-schmidt-4-8-1-2-3-5"><div class="para" id="sec-gram-schmidt-4-8-1-2-3-5-1">Explain why the equation <span class="process-math">\(A\xvec=\bhat\)</span> must be consistent and then find <span class="process-math">\(\xvec\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><div class="para" id="sec-gram-schmidt-4-9">In fact, Sage provides its own version of the <span class="process-math">\(QR\)</span> factorization that is a bit different than the way we’ve developed the factorization here.  For this reason, we have provided our own version of the factorization.</div></section><section class="subsection" id="sec-gram-schmidt-5"><h3 class="heading hide-type">
+</div></article><div class="para" id="sec-gram-schmidt-4-9">In fact, Python provides its own version of the <span class="process-math">\(QR\)</span> factorization that is a bit different than the way we’ve developed the factorization here.  For this reason, we have provided our own version of the factorization.</div></section><section class="subsection" id="sec-gram-schmidt-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <div class="para logical" id="sec-gram-schmidt-5-2">
@@ -1051,7 +1063,7 @@ A =
 \vvec_3=\threevec{2}0{-5}.
 \end{equation*}
 </div>
-<div class="para"><div id="sec-gram-schmidt-6-3-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-gram-schmidt-6-3-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="sec-gram-schmidt-6-3-1-1-4">
 <li id="sec-gram-schmidt-6-3-1-1-4-1"><div class="para" id="sec-gram-schmidt-6-3-1-1-4-1-1">Apply the Gram-Schmit orthogonalization algorithm to find an orthonormal basis <span class="process-math">\(\uvec_1\text{,}\)</span> <span class="process-math">\(\uvec_2\text{,}\)</span> <span class="process-math">\(\uvec_3\)</span> for <span class="process-math">\(\real^3\text{.}\)</span>
@@ -1080,7 +1092,7 @@ A =
 \vvec_3=\fivevec5{-4}{-3}71
 \end{equation*}
 </div>
-<div class="para">and the subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\real^5\)</span> that they span. <div id="sec-gram-schmidt-6-4-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and the subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\real^5\)</span> that they span. <div id="sec-gram-schmidt-6-4-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-gram-schmidt-6-4-1-1-5">

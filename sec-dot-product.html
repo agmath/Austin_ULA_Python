@@ -113,27 +113,27 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.3';
+eBookConfig.runestone_version = '7.6.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -794,7 +794,7 @@ c_2\vvec_2\cdot\wvec\text{.}
 <li id="sec-dot-product-3-14-1-1-1-6"><div class="para" id="sec-dot-product-3-14-1-1-1-6-1">For what value of <span class="process-math">\(k\)</span> is the vector <span class="process-math">\(\twovec6k\)</span> perpendicular to <span class="process-math">\(\wvec\text{?}\)</span>
 </div></li>
 <li id="sec-dot-product-3-14-1-1-1-7">
-<div class="para" id="sec-dot-product-3-14-1-1-1-7-1">Sage can be used to find lengths of vectors and their dot products.  For instance, if <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">w</code> are vectors, then <code class="code-inline tex2jax_ignore">v.norm()</code> gives the length of <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">v * w</code> gives <span class="process-math">\(\vvec\cdot\wvec\text{.}\)</span>
+<div class="para" id="sec-dot-product-3-14-1-1-1-7-1">Python can be used to find lengths of vectors and their dot products.  For instance, if <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">w</code> are vectors defined in <code class="code-inline tex2jax_ignore">{sympy}</code>, then <code class="code-inline tex2jax_ignore">v.norm()</code> gives the length of <code class="code-inline tex2jax_ignore">v</code> and <code class="code-inline tex2jax_ignore">v.dot(w)</code> gives <span class="process-math">\(\vvec\cdot\wvec\text{.}\)</span>
 </div>
 <div class="para logical" id="sec-dot-product-3-14-1-1-1-7-2">
 <div class="para">Suppose that</div>
@@ -804,7 +804,7 @@ c_2\vvec_2\cdot\wvec\text{.}
 \wvec=\fourvec1{-3}41\text{.}
 \end{equation*}
 </div>
-<div class="para">Use the Sage cell below to find <span class="process-math">\(\len{\vvec}\text{,}\)</span> <span class="process-math">\(\len{\wvec}\text{,}\)</span> <span class="process-math">\(\vvec\cdot\wvec\text{,}\)</span> and the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  You may use <code class="code-inline tex2jax_ignore">arccos</code> to find the angle’s measure expressed in radians. <div id="sec-dot-product-3-14-1-1-1-7-2-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage"></script></div>
+<div class="para">Use the Python cell below to find <span class="process-math">\(\len{\vvec}\text{,}\)</span> <span class="process-math">\(\len{\wvec}\text{,}\)</span> <span class="process-math">\(\vvec\cdot\wvec\text{,}\)</span> and the angle between <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  You may use <code class="code-inline tex2jax_ignore">np.arccos</code> to find the angle’s measure expressed in radians. <div id="sec-dot-product-3-14-1-1-1-7-2-8" class="ptx-sagecell sagecell-python"><script type="text/x-sage"></script></div>
 </div>
 </div>
 </li>
@@ -832,23 +832,30 @@ c_2\vvec_2\cdot\wvec\text{.}
 <ol class="lower-alpha ol-marker-1" id="sec-dot-product-3-20-1-1-1">
 <li id="sec-dot-product-3-20-1-1-1-1">
 <div class="para" id="sec-dot-product-3-20-1-1-1-1-1">Our first task is to assess the similarity between various Wikipedia articles by forming vectors from each of five articles.  In particular, one may download the text from a Wikipedia article, remove common words, such as “the” and “and”, count the number of times the remaining words appear in the article, and represent these counts in a vector.</div>
-<div class="para" id="sec-dot-product-3-20-1-1-1-1-2">For example, evaluate the following cell that loads some special commands along with the vectors constructed from the Wikipedia articles on Veteran’s Day, Memorial Day, Labor Day, the Golden Globe Awards, and the Super Bowl.  For each of the five articles, you will see a list of the number of times 10 words appear in these articles. For instance, the word “act” appears 3 times in the Veteran’s Day article and 0 times in the Labor Day article. <div id="sec-dot-product-3-20-1-1-1-1-2-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py", globals())
+<div class="para" id="sec-dot-product-3-20-1-1-1-1-2">For example, evaluate the following cell that loads some special commands along with the vectors constructed from the Wikipedia articles on Veteran’s Day, Memorial Day, Labor Day, the Golden Globe Awards, and the Super Bowl.  For each of the five articles, you will see a list of the number of times 10 words appear in these articles. For instance, the word “act” appears 3 times in the Veteran’s Day article and 0 times in the Labor Day article. <div id="sec-dot-product-3-20-1-1-1-1-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py"
+response = requests.get(url)
+
+# Make the script's contents available in the current environment
+exec(response.text, globals())
+
 events.head(int(10))
 </script></div> For each of the five articles, we obtain 604-dimensional vectors, which are named <code class="code-inline tex2jax_ignore">veterans</code>, <code class="code-inline tex2jax_ignore">memorial</code>, <code class="code-inline tex2jax_ignore">labor</code>, <code class="code-inline tex2jax_ignore">golden</code>, and <code class="code-inline tex2jax_ignore">super</code>.</div>
 <div class="para logical" id="sec-dot-product-3-20-1-1-1-1-3"><ol class="decimal ol-marker-2" id="sec-dot-product-3-20-1-1-1-1-3-1">
 <li id="sec-dot-product-3-20-1-1-1-1-3-1-1"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-1-1">Suppose that two articles have no words in common.  What is the value of the dot product between their corresponding vectors?  What does this say about the angle between these vectors?</div></li>
 <li id="sec-dot-product-3-20-1-1-1-1-3-1-2"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-2-1">Suppose there are two articles on the same subject, yet one article is twice as long.  What approximate relationship would you expect to hold between the two vectors?  What does this say about the angle between them?</div></li>
-<li id="sec-dot-product-3-20-1-1-1-1-3-1-3"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-3-1">Use the Sage cell below to find the angle between the vector <code class="code-inline tex2jax_ignore">veterans</code> and the other four vectors.  To express the angle in degrees, use the <code class="code-inline tex2jax_ignore">degrees(x)</code> command, which gives the number of degrees in <code class="code-inline tex2jax_ignore">x</code> radians. <div id="sec-dot-product-3-20-1-1-1-1-3-1-3-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-dot-product-3-20-1-1-1-1-3-1-3"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-3-1">Use the Python cell below to find the angle between the vector <code class="code-inline tex2jax_ignore">veterans</code> and the other four vectors.  To express the angle in degrees, use the <code class="code-inline tex2jax_ignore">np.rad2deg(x)</code> command, which gives the number of degrees in <code class="code-inline tex2jax_ignore">x</code> radians. <div id="sec-dot-product-3-20-1-1-1-1-3-1-3-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
 </script></div>
 </div></li>
 <li id="sec-dot-product-3-20-1-1-1-1-3-1-4"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-4-1">Compare the four angles you have found and discuss what they mean about the similarity between the Veteran’s Day article and the other four.  How do your findings reflect the nature of these five events?</div></li>
 </ol></div>
 </li>
 <li id="sec-dot-product-3-20-1-1-1-2"><div class="para logical" id="sec-dot-product-3-20-1-1-1-2-1">
-<div class="para">Vectors are often used to represent how a quantity changes over time.  For instance, the vector <span class="process-math">\(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\)</span> might represent the value of a company’s stock on four consecutive days.  When interpreted in this way, we call the vector a <em class="emphasis">time series.</em> Evaluate the Sage cell below to see a representation of two time series <span class="process-math">\(\svec_1\text{,}\)</span> in blue, and <span class="process-math">\(\svec_2\text{,}\)</span> in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <div id="sec-dot-product-3-20-1-1-1-2-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
+<div class="para">Vectors are often used to represent how a quantity changes over time.  For instance, the vector <span class="process-math">\(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\)</span> might represent the value of a company’s stock on four consecutive days.  When interpreted in this way, we call the vector a <em class="emphasis">time series.</em> Evaluate the Python cell below to see a representation of two time series <span class="process-math">\(\svec_1\text{,}\)</span> in blue, and <span class="process-math">\(\svec_2\text{,}\)</span> in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <div id="sec-dot-product-3-20-1-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
 </script></div> Even though one stock has a higher value than the other, the two appear to be related since they seem to rise and fall at roughly similar ways.  We often say that they are <em class="emphasis">correlated</em>, and we would like to measure the degree to which they are correlated.</div>
 <ol class="decimal ol-marker-2" id="sec-dot-product-3-20-1-1-1-2-1-7">
-<li id="sec-dot-product-3-20-1-1-1-2-1-7-1"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-1-1">In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command, <code class="code-inline tex2jax_ignore">demean(s)</code>, that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Sage cell below to demean the series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\)</span> and plot. <div id="sec-dot-product-3-20-1-1-1-2-1-7-1-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">ds1 = demean(s1)
+<li id="sec-dot-product-3-20-1-1-1-2-1-7-1"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-1-1">In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command, <code class="code-inline tex2jax_ignore">demean(s)</code>, that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Python cell below to demean the series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\)</span> and plot. <div id="sec-dot-product-3-20-1-1-1-2-1-7-1-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">ds1 = demean(s1)
 ds2 = demean(s2)
 series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 </script></div>
@@ -865,7 +872,7 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 </div>
 <div class="para">Given the geometric interpretation of the dot product, the correlation equals the cosine of the angle between the demeaned time series, and therefore <span class="process-math">\(\corr(\svec_1,\svec_2)\)</span> is between -1 and 1.</div>
 </div>
-<div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-2-2">Find the correlation between <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\text{.}\)</span> <div id="sec-dot-product-3-20-1-1-1-2-1-7-2-2-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-2-2">Find the correlation between <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\text{.}\)</span> <div id="sec-dot-product-3-20-1-1-1-2-1-7-2-2-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </li>
@@ -881,10 +888,10 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 </li>
 <li id="sec-dot-product-3-20-1-1-1-2-1-7-4"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-4-1">Suppose the demeaned time series <span class="process-math">\(\tilde{\tvec}_1\)</span> and <span class="process-math">\(\tilde{\tvec}_2\)</span> are negative scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation <span class="process-math">\(\corr(\tvec_1, \tvec_2)\text{?}\)</span>
 </div></li>
-<li id="sec-dot-product-3-20-1-1-1-2-1-7-5"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-5-1">Use the Sage cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_3\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
+<li id="sec-dot-product-3-20-1-1-1-2-1-7-5"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-5-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_3\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
 </script></div>
 </div></li>
-<li id="sec-dot-product-3-20-1-1-1-2-1-7-6"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-6-1">Use the Sage cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_4\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-6-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
+<li id="sec-dot-product-3-20-1-1-1-2-1-7-6"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-6-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_4\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-6-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
 </script></div>
 </div></li>
 </ol>
@@ -1038,17 +1045,24 @@ C_2 \amp {}={} \amp \{\vvec_2, \vvec_3,\vvec_4\}
 <div class="para">with centroids <span class="process-math">\(c_1=\vvec_1\)</span> and <span class="process-math">\(c_2=\twovec{5/3}{5/3}\text{.}\)</span> Find the objective of this clustering.</div>
 </div></li>
 <li id="sec-dot-product-4-13-1-1-2-2"><div class="para" id="sec-dot-product-4-13-1-1-2-2-1">We have now seen two clusterings and computed their objectives.  Recall that our dataset is shown in <a href="sec-dot-product.html#fig-clustering-ex" class="xref" data-knowl="./knowl/xref/fig-clustering-ex.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 6.1.12">Figure 6.1.12</a>.  Which of the two clusterings feels like the better fit?  How is this fit reflected in the values of the objectives?</div></li>
-<li id="li-guess-clusters"><div class="para" id="li-guess-clusters-1">Evaluating the following cell will load and display a dataset consisting of 177 data points.  This dataset has the name <code class="code-inline tex2jax_ignore">data</code>. <div id="li-guess-clusters-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/k_means.py", globals())
+<li id="li-guess-clusters"><div class="para" id="li-guess-clusters-1">Evaluating the following cell will load and display a dataset consisting of 177 data points.  This dataset has the name <code class="code-inline tex2jax_ignore">data</code>. <div id="li-guess-clusters-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_k_means.py"
+response = requests.get(url)
+
+# Make the script's contents available in the current environment
+exec(response.text, globals())
+
 list_plot(data, color='blue', size=20, aspect_ratio=1)
 </script></div> Given this plot of the data, what would seem like a reasonable number of clusters?</div></li>
-<li id="sec-dot-product-4-13-1-1-2-4"><div class="para" id="sec-dot-product-4-13-1-1-2-4-1">In the following cell, you may choose a value of <span class="process-math">\(k\)</span> and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of <span class="process-math">\(k\text{,}\)</span> you will likely see different clusterings having different objectives. This is natural since our algorithm starts by making a random choice of points <span class="process-math">\(c_1,c_2,\ldots,c_k\text{,}\)</span> and a different choices may lead to different clusterings. Choose a value of <span class="process-math">\(k\)</span> and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of <span class="process-math">\(k\text{.}\)</span> <div id="sec-dot-product-4-13-1-1-2-4-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">k = 2  # you may change the value of k here
+<li id="sec-dot-product-4-13-1-1-2-4"><div class="para" id="sec-dot-product-4-13-1-1-2-4-1">In the following cell, you may choose a value of <span class="process-math">\(k\)</span> and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of <span class="process-math">\(k\text{,}\)</span> you will likely see different clusterings having different objectives. This is natural since our algorithm starts by making a random choice of points <span class="process-math">\(c_1,c_2,\ldots,c_k\text{,}\)</span> and a different choices may lead to different clusterings. Choose a value of <span class="process-math">\(k\)</span> and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of <span class="process-math">\(k\text{.}\)</span> <div id="sec-dot-product-4-13-1-1-2-4-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">k = 2  # you may change the value of k here
 clusters, centroids, objective = kmeans(data, k)
 print('Objective =', objective)
 plotclusters(clusters, centroids)
 </script></div>
 </div></li>
 <li id="sec-dot-product-4-13-1-1-2-5">
-<div class="para" id="sec-dot-product-4-13-1-1-2-5-1">For a given value of <span class="process-math">\(k\text{,}\)</span> our strategy is to run the algorithm several times and choose the clustering with the smallest objective.  After choosing a value of <span class="process-math">\(k\text{,}\)</span> the following cell will run the algorithm 10 times and display the clustering having the smallest objective. <div id="sec-dot-product-4-13-1-1-2-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">k = 2  # you may change the value of k here
+<div class="para" id="sec-dot-product-4-13-1-1-2-5-1">For a given value of <span class="process-math">\(k\text{,}\)</span> our strategy is to run the algorithm several times and choose the clustering with the smallest objective.  After choosing a value of <span class="process-math">\(k\text{,}\)</span> the following cell will run the algorithm 10 times and display the clustering having the smallest objective. <div id="sec-dot-product-4-13-1-1-2-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">k = 2  # you may change the value of k here
 clusters, centroids, objective = minimalobjective(data, k)
 print('Objective =', objective)
 plotclusters(clusters, centroids)

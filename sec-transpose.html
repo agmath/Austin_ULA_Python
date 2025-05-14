@@ -113,27 +113,27 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.3';
+eBookConfig.runestone_version = '7.6.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -883,7 +883,7 @@ x_4\fourvec{-1}{-2}01\text{.}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.2.4</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-transpose-5-3-1-1">
-<div class="para">In Sage, the transpose of a matrix <code class="code-inline tex2jax_ignore">A</code> is given by <code class="code-inline tex2jax_ignore">A.T</code>.  Define the matrices</div>
+<div class="para">In Python, the transpose of a matrix <code class="code-inline tex2jax_ignore">A</code> is given by <code class="code-inline tex2jax_ignore">A.T</code> or <code class="code-inline tex2jax_ignore">A.transpose()</code> as long as <code class="code-inline tex2jax_ignore">A</code> was defined using <code class="code-inline tex2jax_ignore">{sympy}</code>.  Define the matrices</div>
 <div class="displaymath process-math">
 \begin{equation*}
 A =
@@ -906,22 +906,22 @@ C=
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-transpose-5-3-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-transpose-5-3-1-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-<ol class="lower-alpha ol-marker-1" id="sec-transpose-5-3-1-1-5">
-<li id="sec-transpose-5-3-1-1-5-1"><div class="para" id="sec-transpose-5-3-1-1-5-1-1">Evaluate <span class="process-math">\((A+B)^T\)</span> and <span class="process-math">\(A^T+B^T\text{.}\)</span>  What do you notice about the relationship between these two matrices?</div></li>
-<li id="sec-transpose-5-3-1-1-5-2"><div class="para" id="sec-transpose-5-3-1-1-5-2-1">What happens if you transpose a matrix twice;  that is, what is <span class="process-math">\((A^T)^T\text{?}\)</span>
+<ol class="lower-alpha ol-marker-1" id="sec-transpose-5-3-1-1-8">
+<li id="sec-transpose-5-3-1-1-8-1"><div class="para" id="sec-transpose-5-3-1-1-8-1-1">Evaluate <span class="process-math">\((A+B)^T\)</span> and <span class="process-math">\(A^T+B^T\text{.}\)</span>  What do you notice about the relationship between these two matrices?</div></li>
+<li id="sec-transpose-5-3-1-1-8-2"><div class="para" id="sec-transpose-5-3-1-1-8-2-1">What happens if you transpose a matrix twice;  that is, what is <span class="process-math">\((A^T)^T\text{?}\)</span>
 </div></li>
-<li id="sec-transpose-5-3-1-1-5-3"><div class="para" id="sec-transpose-5-3-1-1-5-3-1">Find <span class="process-math">\(\det(C)\)</span> and <span class="process-math">\(\det(C^T)\text{.}\)</span>  What do you notice about the relationship between these determinants?</div></li>
-<li id="sec-transpose-5-3-1-1-5-4"><div class="para logical" id="sec-transpose-5-3-1-1-5-4-1"><ol class="decimal ol-marker-2" id="sec-transpose-5-3-1-1-5-4-1-1">
-<li id="sec-transpose-5-3-1-1-5-4-1-1-1"><div class="para" id="sec-transpose-5-3-1-1-5-4-1-1-1-1">Find the product <span class="process-math">\(AC\)</span> and its transpose <span class="process-math">\((AC)^T\text{.}\)</span>
+<li id="sec-transpose-5-3-1-1-8-3"><div class="para" id="sec-transpose-5-3-1-1-8-3-1">Find <span class="process-math">\(\det(C)\)</span> and <span class="process-math">\(\det(C^T)\text{.}\)</span>  What do you notice about the relationship between these determinants?</div></li>
+<li id="sec-transpose-5-3-1-1-8-4"><div class="para logical" id="sec-transpose-5-3-1-1-8-4-1"><ol class="decimal ol-marker-2" id="sec-transpose-5-3-1-1-8-4-1-1">
+<li id="sec-transpose-5-3-1-1-8-4-1-1-1"><div class="para" id="sec-transpose-5-3-1-1-8-4-1-1-1-1">Find the product <span class="process-math">\(AC\)</span> and its transpose <span class="process-math">\((AC)^T\text{.}\)</span>
 </div></li>
-<li id="sec-transpose-5-3-1-1-5-4-1-1-2"><div class="para" id="sec-transpose-5-3-1-1-5-4-1-1-2-1">Is it possible to compute the product <span class="process-math">\(A^TC^T\text{?}\)</span> Explain why or why not.</div></li>
-<li id="sec-transpose-5-3-1-1-5-4-1-1-3"><div class="para" id="sec-transpose-5-3-1-1-5-4-1-1-3-1">Find the product <span class="process-math">\(C^TA^T\)</span> and compare it to <span class="process-math">\((AC)^T\text{.}\)</span>  What do you notice about the relationship between these two matrices?</div></li>
+<li id="sec-transpose-5-3-1-1-8-4-1-1-2"><div class="para" id="sec-transpose-5-3-1-1-8-4-1-1-2-1">Is it possible to compute the product <span class="process-math">\(A^TC^T\text{?}\)</span> Explain why or why not.</div></li>
+<li id="sec-transpose-5-3-1-1-8-4-1-1-3"><div class="para" id="sec-transpose-5-3-1-1-8-4-1-1-3-1">Find the product <span class="process-math">\(C^TA^T\)</span> and compare it to <span class="process-math">\((AC)^T\text{.}\)</span>  What do you notice about the relationship between these two matrices?</div></li>
 </ol></div></li>
-<li id="sec-transpose-5-3-1-1-5-5"><div class="para" id="sec-transpose-5-3-1-1-5-5-1">What is the transpose of the identity matrix <span class="process-math">\(I\text{?}\)</span>
+<li id="sec-transpose-5-3-1-1-8-5"><div class="para" id="sec-transpose-5-3-1-1-8-5-1">What is the transpose of the identity matrix <span class="process-math">\(I\text{?}\)</span>
 </div></li>
-<li id="sec-transpose-5-3-1-1-5-6"><div class="para" id="sec-transpose-5-3-1-1-5-6-1">If a square matrix <span class="process-math">\(D\)</span> is invertible, explain why you can guarantee that <span class="process-math">\(D^T\)</span> is invertible and why <span class="process-math">\((D^T)^{-1} = (D^{-1})^T\text{.}\)</span>
+<li id="sec-transpose-5-3-1-1-8-6"><div class="para" id="sec-transpose-5-3-1-1-8-6-1">If a square matrix <span class="process-math">\(D\)</span> is invertible, explain why you can guarantee that <span class="process-math">\(D^T\)</span> is invertible and why <span class="process-math">\((D^T)^{-1} = (D^{-1})^T\text{.}\)</span>
 </div></li>
 </ol>
 </div></article><div class="para" id="sec-transpose-5-4">In spite of the fact that we are looking at some specific examples, this activity demonstrates the following general properties of the transpose, which may be verified with a little effort.</div>
@@ -1023,7 +1023,7 @@ W\text{.}\)</span>
 <li id="sec-transpose-5-14-1-1-1-2-1-4-1"><div class="para" id="sec-transpose-5-14-1-1-1-2-1-4-1-1">Find the dimensions <span class="process-math">\(\dim W\)</span> and <span class="process-math">\(\dim
 W^\perp\text{.}\)</span>
 </div></li>
-<li id="sec-transpose-5-14-1-1-1-2-1-4-2"><div class="para" id="sec-transpose-5-14-1-1-1-2-1-4-2-1">Find a basis for <span class="process-math">\(W^\perp\text{.}\)</span>  It may be helpful to know that the Sage command <code class="code-inline tex2jax_ignore">A.right_kernel()</code> produces a basis for <span class="process-math">\(\nul(A)\text{.}\)</span> <div id="sec-transpose-5-14-1-1-1-2-1-4-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-transpose-5-14-1-1-1-2-1-4-2"><div class="para" id="sec-transpose-5-14-1-1-1-2-1-4-2-1">Find a basis for <span class="process-math">\(W^\perp\text{.}\)</span>  It may be helpful to know that the Python command <code class="code-inline tex2jax_ignore">A.nullspace()</code> produces a basis for <span class="process-math">\(\nul(A)\text{.}\)</span> <div id="sec-transpose-5-14-1-1-1-2-1-4-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-transpose-5-14-1-1-1-2-1-4-3"><div class="para" id="sec-transpose-5-14-1-1-1-2-1-4-3-1">Verify that each of the basis vectors you found for <span class="process-math">\(W^\perp\)</span> are orthogonal to the basis vectors for <span class="process-math">\(W\text{.}\)</span>
