@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -627,7 +627,7 @@ sagecell.makeSagecell({
 -2 \amp -1 \\
 \end{bmatrix}\text{.}\)</span>  Find the matrix <span class="process-math">\(G=A^TA\)</span> and write out the quadratic form <span class="process-math">\(q_G\left(\twovec{x_1}{x_2}\right)\)</span> as a function of <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\text{.}\)</span>
 </div></li>
-<li id="sec-svd-intro-2-3-1-1-1-3"><div class="para" id="sec-svd-intro-2-3-1-1-1-3-1">What is the maximum value of <span class="process-math">\(q_G(\xvec)\)</span> over all unit vectors and in which direction does it occur? <div id="sec-svd-intro-2-3-1-1-1-3-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-svd-intro-2-3-1-1-1-3"><div class="para" id="sec-svd-intro-2-3-1-1-1-3-1">What is the maximum value of <span class="process-math">\(q_G(\xvec)\)</span> over all unit vectors and in which direction does it occur? <div id="sec-svd-intro-2-3-1-1-1-3-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-svd-intro-2-3-1-1-1-4"><div class="para" id="sec-svd-intro-2-3-1-1-1-4-1">What is the minimum value of <span class="process-math">\(q_G(\xvec)\)</span> over all unit vectors and in which direction does it occur?</div></li>
@@ -691,12 +691,12 @@ c \amp d \\
 <div class="para" id="sec-svd-intro-3-6-1-4-1-2-2">Use the diagram to find the second singular value <span class="process-math">\(\sigma_2\)</span> and an associated right singular vector <span class="process-math">\(\vvec_2\text{.}\)</span>
 </div>
 </li>
-<li id="sec-svd-intro-3-6-1-4-1-3"><div class="para" id="sec-svd-intro-3-6-1-4-1-3-1">Here’s how we can find the right singular values and vectors without using the diagram.  Remember that <span class="process-math">\(l_A(\xvec) = \sqrt{q_G(\xvec)}\)</span> where <span class="process-math">\(G=A^TA\)</span> is the Gram matrix associated to <span class="process-math">\(A\text{.}\)</span>  Since <span class="process-math">\(G\)</span> is symmetric, it is orthogonally diagonalizable.  Find <span class="process-math">\(G\)</span> and an orthogonal diagonalization of it. <div id="sec-svd-intro-3-6-1-4-1-3-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-svd-intro-3-6-1-4-1-3"><div class="para" id="sec-svd-intro-3-6-1-4-1-3-1">Here’s how we can find the right singular values and vectors without using the diagram.  Remember that <span class="process-math">\(l_A(\xvec) = \sqrt{q_G(\xvec)}\)</span> where <span class="process-math">\(G=A^TA\)</span> is the Gram matrix associated to <span class="process-math">\(A\text{.}\)</span>  Since <span class="process-math">\(G\)</span> is symmetric, it is orthogonally diagonalizable.  Find <span class="process-math">\(G\)</span> and an orthogonal diagonalization of it. <div id="sec-svd-intro-3-6-1-4-1-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> What is the maximum value of the quadratic form <span class="process-math">\(q_G(\xvec)\)</span> among all unit vectors and in which direction does it occur?  What is the minimum value of <span class="process-math">\(q_G(\xvec)\)</span> and in which direction does it occur?</div></li>
 <li id="sec-svd-intro-3-6-1-4-1-4"><div class="para" id="sec-svd-intro-3-6-1-4-1-4-1">Because <span class="process-math">\(l_A(\xvec) = \sqrt{q_G(\xvec)}\text{,}\)</span> the first singular value <span class="process-math">\(\sigma_1\)</span> will be the square root of the maximum value of <span class="process-math">\(q_G(\xvec)\)</span> and <span class="process-math">\(\sigma_2\)</span> the square root of the minimum. Verify that the singular values that you found from the diagram are the square roots of the maximum and minimum values of <span class="process-math">\(q_G(\xvec)\text{.}\)</span>
 </div></li>
 <li id="sec-svd-intro-3-6-1-4-1-5"><div class="para" id="sec-svd-intro-3-6-1-4-1-5-1">Verify that the right singular vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> that you found from the diagram are the directions in which the maximum and minimum values occur.</div></li>
-<li id="sec-svd-intro-3-6-1-4-1-6"><div class="para" id="sec-svd-intro-3-6-1-4-1-6-1">Finally, we introduce the <em class="emphasis">left singular vectors</em> <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\)</span> by requiring that <span class="process-math">\(A\vvec_1 = \sigma_1\uvec_1\)</span> and <span class="process-math">\(A\vvec_2=\sigma_2\uvec_2\text{.}\)</span>  Find the two left singular vectors. <div id="sec-svd-intro-3-6-1-4-1-6-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-svd-intro-3-6-1-4-1-6"><div class="para" id="sec-svd-intro-3-6-1-4-1-6-1">Finally, we introduce the <em class="emphasis">left singular vectors</em> <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\)</span> by requiring that <span class="process-math">\(A\vvec_1 = \sigma_1\uvec_1\)</span> and <span class="process-math">\(A\vvec_2=\sigma_2\uvec_2\text{.}\)</span>  Find the two left singular vectors. <div id="sec-svd-intro-3-6-1-4-1-6-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-svd-intro-3-6-1-4-1-7"><div class="para logical" id="sec-svd-intro-3-6-1-4-1-7-1">
@@ -906,7 +906,7 @@ V = \begin{bmatrix}
 1 \amp 1 \amp 1
 \end{bmatrix}\text{.}\)</span> Notice that this matrix is not square so there are no eigenvalues and eigenvectors associated to it.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-svd-intro-3-11-1-1-2">
-<li id="sec-svd-intro-3-11-1-1-2-1"><div class="para" id="sec-svd-intro-3-11-1-1-2-1-1">Construct the Gram matrix <span class="process-math">\(G=A^TA\)</span> and find an orthogonal diagonalization of it. <div id="sec-svd-intro-3-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-svd-intro-3-11-1-1-2-1"><div class="para" id="sec-svd-intro-3-11-1-1-2-1-1">Construct the Gram matrix <span class="process-math">\(G=A^TA\)</span> and find an orthogonal diagonalization of it. <div id="sec-svd-intro-3-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-svd-intro-3-11-1-1-2-2"><div class="para" id="sec-svd-intro-3-11-1-1-2-2-1">Identify the singular values of <span class="process-math">\(A\)</span> and the right singular vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>  What is the dimension of these vectors?  How many nonzero singular values are there?</div></li>
@@ -925,7 +925,7 @@ V = \begin{bmatrix}
 \end{bmatrix}
 \end{equation*}
 </div>
-<div class="para">and verify that <span class="process-math">\(A = U\Sigma V^T\text{.}\)</span> <div id="sec-svd-intro-3-11-1-1-2-5-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para">and verify that <span class="process-math">\(A = U\Sigma V^T\text{.}\)</span> <div id="sec-svd-intro-3-11-1-1-2-5-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
@@ -1389,7 +1389,7 @@ r\)</span> diagonal, invertible matrix.</div></li>
 1 \amp 2 \amp 1 \\
 0 \amp -1 \amp 2 \\
 \end{bmatrix}
-\text{.}\)</span> <div id="ex-7-4-1-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\text{.}\)</span> <div id="ex-7-4-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="ex-7-4-1-1-1-3">
@@ -1476,7 +1476,7 @@ r\)</span> diagonal, invertible matrix.</div></li>
 2 \amp 2 \amp 0 \\
 -1 \amp 1 \amp 2\\
 \end{bmatrix}
-\text{.}\)</span> <div id="sec-svd-intro-7-5-1-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\text{.}\)</span> <div id="sec-svd-intro-7-5-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-svd-intro-7-5-1-1-3">
@@ -1497,7 +1497,7 @@ V^T\text{.}\)</span>
 1 \amp 0 \\
 2 \amp -1 \\
 1 \amp 2
-\end{bmatrix}\)</span> and notice that <span class="process-math">\(B=A^T\)</span> where <span class="process-math">\(A\)</span> is the matrix in <a href="sec-svd-intro.html#ex-7-4-1" class="xref" data-knowl="./knowl/xref/ex-7-4-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.4.5.1">Exercise 7.4.5.1</a>. <div id="sec-svd-intro-7-6-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\end{bmatrix}\)</span> and notice that <span class="process-math">\(B=A^T\)</span> where <span class="process-math">\(A\)</span> is the matrix in <a href="sec-svd-intro.html#ex-7-4-1" class="xref" data-knowl="./knowl/xref/ex-7-4-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.4.5.1">Exercise 7.4.5.1</a>. <div id="sec-svd-intro-7-6-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-svd-intro-7-6-1-1-6">

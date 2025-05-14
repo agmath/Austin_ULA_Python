@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -614,7 +614,7 @@ C = \begin{bmatrix}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-2-3-1-1-2">
 <li id="sec-pca-2-3-1-1-2-1"><div class="para" id="sec-pca-2-3-1-1-2-1-1">Suppose that <span class="process-math">\(\uvec\)</span> is a unit eigenvector of <span class="process-math">\(C\)</span> with eigenvalue <span class="process-math">\(\lambda\text{.}\)</span>  What is the variance <span class="process-math">\(V_{\uvec}\)</span> in the <span class="process-math">\(\uvec\)</span> direction?</div></li>
-<li id="sec-pca-2-3-1-1-2-2"><div class="para" id="sec-pca-2-3-1-1-2-2-1">Find an orthogonal diagonalization of <span class="process-math">\(C\text{.}\)</span> <div id="sec-pca-2-3-1-1-2-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-pca-2-3-1-1-2-2"><div class="para" id="sec-pca-2-3-1-1-2-2-1">Find an orthogonal diagonalization of <span class="process-math">\(C\text{.}\)</span> <div id="sec-pca-2-3-1-1-2-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-pca-2-3-1-1-2-3"><div class="para" id="sec-pca-2-3-1-1-2-3-1">What is the total variance?</div></li>
@@ -692,15 +692,21 @@ D = \begin{bmatrix}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-pca-3-9-1-1">
-<div class="para">We will work here with a dataset having 100 3-dimensional demeaned data points.  Evaluating the following cell will plot those data points and define the demeaned data matrix <code class="code-inline tex2jax_ignore">A</code> whose shape is <span class="process-math">\(3\times100\text{.}\)</span> <div id="sec-pca-3-9-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_demo.py', globals())
+<div class="para">We will work here with a dataset having 100 3-dimensional demeaned data points.  Evaluating the following cell will plot those data points and define the demeaned data matrix <code class="code-inline tex2jax_ignore">A</code> whose shape is <span class="process-math">\(3\times100\text{.}\)</span> <div id="sec-pca-3-9-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_demo.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 </script></div> Notice that the data appears to cluster around a plane though it does not seem to be wholly contained within that plane.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-3-9-1-1-4">
-<li id="sec-pca-3-9-1-1-4-1"><div class="para" id="sec-pca-3-9-1-1-4-1-1">Use the matrix <code class="code-inline tex2jax_ignore">A</code> to construct the covariance matrix <span class="process-math">\(C\text{.}\)</span>  Then determine the variance in the direction of <span class="process-math">\(\uvec=\threevec{1/3}{2/3}{2/3}\text{?}\)</span> <div id="sec-pca-3-9-1-1-4-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-pca-3-9-1-1-4-1"><div class="para" id="sec-pca-3-9-1-1-4-1-1">Use the matrix <code class="code-inline tex2jax_ignore">A</code> to construct the covariance matrix <span class="process-math">\(C\text{.}\)</span>  Then determine the variance in the direction of <span class="process-math">\(\uvec=\threevec{1/3}{2/3}{2/3}\text{?}\)</span> <div id="sec-pca-3-9-1-1-4-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="sec-pca-3-9-1-1-4-2"><div class="para" id="sec-pca-3-9-1-1-4-2-1">Find the eigenvalues of <span class="process-math">\(C\)</span> and determine the total variance. <div id="sec-pca-3-9-1-1-4-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
-</script></div> Notice that Sage does not necessarily sort the eigenvalues in decreasing order.</div></li>
-<li id="sec-pca-3-9-1-1-4-3"><div class="para" id="sec-pca-3-9-1-1-4-3-1">Use the <code class="code-inline tex2jax_ignore">right_eigenmatrix()</code> command to find the eigenvectors of <span class="process-math">\(C\text{.}\)</span>  Remembering that the Sage command <code class="code-inline tex2jax_ignore">B.column(1)</code> retrieves the vector represented by the second column of <code class="code-inline tex2jax_ignore">B</code>, define vectors <code class="code-inline tex2jax_ignore">u1</code>, <code class="code-inline tex2jax_ignore">u2</code>, and <code class="code-inline tex2jax_ignore">u3</code> representing the three principal components in order of decreasing eigenvalues.  How can you check if these vectors are an orthonormal basis for <span class="process-math">\(\real^3\text{?}\)</span>
+<li id="sec-pca-3-9-1-1-4-2"><div class="para" id="sec-pca-3-9-1-1-4-2-1">Find the eigenvalues of <span class="process-math">\(C\)</span> and determine the total variance. <div id="sec-pca-3-9-1-1-4-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+</script></div> Notice that Python does not necessarily sort the eigenvalues in decreasing order.</div></li>
+<li id="sec-pca-3-9-1-1-4-3"><div class="para" id="sec-pca-3-9-1-1-4-3-1">Use the <code class="code-inline tex2jax_ignore">.diagonalize()</code> method to find the eigenvectors of <span class="process-math">\(C\text{.}\)</span>  Remembering that the Python command <code class="code-inline tex2jax_ignore">B.col(1)</code> retrieves the vector represented by the second column of <code class="code-inline tex2jax_ignore">B</code>, define vectors <code class="code-inline tex2jax_ignore">u1</code>, <code class="code-inline tex2jax_ignore">u2</code>, and <code class="code-inline tex2jax_ignore">u3</code> representing the three principal components in order of decreasing eigenvalues.  How can you check if these vectors are an orthonormal basis for <span class="process-math">\(\real^3\text{?}\)</span>
 </div></li>
 <li id="sec-pca-3-9-1-1-4-4"><div class="para" id="sec-pca-3-9-1-1-4-4-1">What fraction of the total variance is retained by projecting the data onto <span class="process-math">\(W_1\text{,}\)</span> the subspace spanned by <span class="process-math">\(\uvec_1\text{?}\)</span>  What fraction of the total variance is retained by projecting onto <span class="process-math">\(W_2\text{,}\)</span> the subspace spanned by <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\text{?}\)</span>  What fraction of the total variance do we lose by projecting onto <span class="process-math">\(W_2\text{?}\)</span>
 </div></li>
@@ -719,11 +725,11 @@ D = \begin{bmatrix}
 \end{equation*}
 </div>
 <div class="para">Construct the matrix <span class="process-math">\(Q\)</span> so that <span class="process-math">\(Q^T\xvec =
-\twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}\text{.}\)</span> <div id="sec-pca-3-9-1-1-4-5-1-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}\text{.}\)</span> <div id="sec-pca-3-9-1-1-4-5-1-11" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 </div></li>
-<li id="sec-pca-3-9-1-1-4-6"><div class="para" id="sec-pca-3-9-1-1-4-6-1">Since each column of <span class="process-math">\(A\)</span> represents a data point, the matrix <span class="process-math">\(Q^TA\)</span> represents the coordinates of the projected data points.  Evaluating the following cell will plot those projected data points. <div id="sec-pca-3-9-1-1-4-6-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pca_plot(Q.T*A)
+<li id="sec-pca-3-9-1-1-4-6"><div class="para" id="sec-pca-3-9-1-1-4-6-1">Since each column of <span class="process-math">\(A\)</span> represents a data point, the matrix <span class="process-math">\(Q^TA\)</span> represents the coordinates of the projected data points.  Evaluating the following cell will plot those projected data points. <div id="sec-pca-3-9-1-1-4-6-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">pca_plot(Q.T*A)
 </script></div> Notice how this plot enables us to view the data as if it were two-dimensional. Why is this plot wider than it is tall?</div></li>
 </ol>
 </div></article><div class="para" id="sec-pca-3-10">This example is a more realistic illustration of principal component analysis.  The plot of the 3-dimensional data appears to show that the data lies close to a plane, and the principal components will identify this plane.  Starting with the <span class="process-math">\(3\times100\)</span> matrix of demeaned data <span class="process-math">\(A\text{,}\)</span> we construct the covariance matrix <span class="process-math">\(C=\frac{1}{100} ~AA^T\)</span> and study its eigenvalues.  Notice that the first two principal components account for more than 98% of the variance, which means we can expect the points to lie close to <span class="process-math">\(W_2\text{,}\)</span> the two-dimensional subspace spanned by <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\text{.}\)</span>
@@ -759,15 +765,15 @@ Q^T\xvec = \twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}.
 <article class="activity project-like" id="sec-pca-4-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-pca-4-3-1-1">The next cell will load a dataset describing the average consumption of various food groups for citizens in each of the four nations of the United Kingdom.  The units for each entry are grams per person per week. <div id="sec-pca-4-3-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">import pandas as pd
+<div class="para" id="sec-pca-4-3-1-1">The next cell will load a dataset describing the average consumption of various food groups for citizens in each of the four nations of the United Kingdom.  The units for each entry are grams per person per week. <div id="sec-pca-4-3-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/uk-diet.csv', index_col=0)
-data_mean = vector(df.T.mean())
-A = matrix([vector(row) for row in (df.T-df.T.mean()).values]).T
+data_mean = sympy.Matrix(df.T.mean())
+A = matrix([sympy.Matrix(row) for row in (df.T-df.T.mean()).values]).T
 df
 </script></div> We will view this as a dataset consisting of four points in <span class="process-math">\(\real^{17}\text{.}\)</span>  As such, it is impossible to visualize and studying the numbers themselves doesn’t lead to much insight.</div> <div class="para logical" id="sec-pca-4-3-1-2">
 <div class="para">In addition to loading the data, evaluating the cell above created a vector <code class="code-inline tex2jax_ignore">data_mean</code>, which is the mean of the four data points, and <code class="code-inline tex2jax_ignore">A</code>, the <span class="process-math">\(17\times4\)</span> matrix of demeaned data.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-4-3-1-2-4">
-<li id="sec-pca-4-3-1-2-4-1"><div class="para" id="sec-pca-4-3-1-2-4-1-1">What is the average consumption of Beverages across the four nations? <div id="sec-pca-4-3-1-2-4-1-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="sec-pca-4-3-1-2-4-1"><div class="para" id="sec-pca-4-3-1-2-4-1-1">What is the average consumption of Beverages across the four nations? <div id="sec-pca-4-3-1-2-4-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-pca-4-3-1-2-4-2"><div class="para" id="sec-pca-4-3-1-2-4-2-1">Find the covariance matrix <span class="process-math">\(C\)</span> and its eigenvalues.  Because there are four points in <span class="process-math">\(\real^{17}\)</span> whose mean is zero, there are only three nonzero eigenvalues.</div></li>
@@ -780,7 +786,7 @@ df
 </li>
 <li id="sec-pca-4-3-1-2-4-5"><div class="para" id="sec-pca-4-3-1-2-4-5-1">For what percentage of the total variance do the first two principal components account?</div></li>
 <li id="sec-pca-4-3-1-2-4-6">
-<div class="para" id="sec-pca-4-3-1-2-4-6-1">Find the coordinates of the demeaned data points projected onto <span class="process-math">\(W_2\text{,}\)</span> the two-dimensional subspace of <span class="process-math">\(\real^{17}\)</span> spanned by the first two principal components. <div id="sec-pca-4-3-1-2-4-6-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para" id="sec-pca-4-3-1-2-4-6-1">Find the coordinates of the demeaned data points projected onto <span class="process-math">\(W_2\text{,}\)</span> the two-dimensional subspace of <span class="process-math">\(\real^{17}\)</span> spanned by the first two principal components. <div id="sec-pca-4-3-1-2-4-6-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <div class="para" id="sec-pca-4-3-1-2-4-6-2">Plot these coordinates in <a href="sec-pca.html#fig-pca-2d" class="xref" data-knowl="./knowl/xref/fig-pca-2d.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.3.3">Figure 7.3.3</a>.</div>
@@ -799,26 +805,33 @@ df
 </h4>
 <div class="para" id="activity-pca-iris-1-1">In this activity, we’ll look at a <a class="external" href="https://archive.ics.uci.edu/ml/datasets/Iris" target="_blank">well-known dataset</a><details class="ptx-footnote" aria-live="polite" id="activity-pca-iris-1-1-2"><summary class="ptx-footnote__number" title="Footnote 7.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="activity-pca-iris-1-1-2"><code class="code-inline tex2jax_ignore">archive.ics.uci.edu</code></div></details> that describes 150 irises representing three species of iris: Iris setosa, Iris versicolor, and Iris virginica. For each flower, the length and width of its sepal and the length and width of its petal, all in centimeters, are recorded.</div> <figure class="figure figure-like" id="fig-iris"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/Iris_versicolor.jpg" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.8<span class="period">.</span></span><span class="space"> </span>One of the three species, iris versicolor, represented in the dataset showing three shorter petals and three longer sepals. (Source: <a class="external" href="https://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg" target="_blank">Wikipedia</a><details class="ptx-footnote" aria-live="polite" id="fig-iris-2-2"><summary class="ptx-footnote__number" title="Footnote 7.3.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="fig-iris-2-2"><code class="code-inline tex2jax_ignore">gvsu.edu/s/21D</code></div></details>, License: <a class="external" href="https://commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2" target="_blank">GNU Free Documetation License</a><details class="ptx-footnote" aria-live="polite" id="fig-iris-2-4"><summary class="ptx-footnote__number" title="Footnote 7.3.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="fig-iris-2-4"><code class="code-inline tex2jax_ignore">gvsu.edu/s/21E</code></div></details>)</figcaption></figure> <div class="para logical" id="activity-pca-iris-1-3">
-<div class="para">Evaluating the following cell will load the dataset, which consists of 150 points in <span class="process-math">\(\real^4\text{.}\)</span>  In addition, we have a vector <code class="code-inline tex2jax_ignore">data_mean</code>, a four-dimensional vector holding the mean of the data points, and <code class="code-inline tex2jax_ignore">A</code>, the <span class="process-math">\(4\times150\)</span> demeaned data matrix. <div id="activity-pca-iris-1-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_iris.py', globals())
+<div class="para">Evaluating the following cell will load the dataset, which consists of 150 points in <span class="process-math">\(\real^4\text{.}\)</span>  In addition, we have a vector <code class="code-inline tex2jax_ignore">data_mean</code>, a four-dimensional vector holding the mean of the data points, and <code class="code-inline tex2jax_ignore">A</code>, the <span class="process-math">\(4\times150\)</span> demeaned data matrix. <div id="activity-pca-iris-1-3-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_iris.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df.T
-</script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div id="activity-pca-iris-1-3-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sepal_plot()
+</script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div id="activity-pca-iris-1-3-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">sepal_plot()
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="activity-pca-iris-1-3-7">
 <li id="activity-pca-iris-1-3-7-1"><div class="para" id="activity-pca-iris-1-3-7-1-1">What is the mean sepal width?</div></li>
-<li id="activity-pca-iris-1-3-7-2"><div class="para" id="activity-pca-iris-1-3-7-2-1">Find the covariance matrix <span class="process-math">\(C\)</span> and its eigenvalues. <div id="activity-pca-iris-1-3-7-2-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-pca-iris-1-3-7-2"><div class="para" id="activity-pca-iris-1-3-7-2-1">Find the covariance matrix <span class="process-math">\(C\)</span> and its eigenvalues. <div id="activity-pca-iris-1-3-7-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="activity-pca-iris-1-3-7-3"><div class="para" id="activity-pca-iris-1-3-7-3-1">Find the fraction of variance for which the first two principal components account.</div></li>
-<li id="activity-pca-iris-1-3-7-4"><div class="para" id="activity-pca-iris-1-3-7-4-1">Construct the first two principal components <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\)</span> along with the matrix <span class="process-math">\(Q\)</span> whose columns are <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\text{.}\)</span> <div id="activity-pca-iris-1-3-7-4-1-6" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-pca-iris-1-3-7-4"><div class="para" id="activity-pca-iris-1-3-7-4-1">Construct the first two principal components <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\)</span> along with the matrix <span class="process-math">\(Q\)</span> whose columns are <span class="process-math">\(\uvec_1\)</span> and <span class="process-math">\(\uvec_2\text{.}\)</span> <div id="activity-pca-iris-1-3-7-4-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="activity-pca-iris-1-3-7-5"><div class="para" id="activity-pca-iris-1-3-7-5-1">As we have seen, the columns of the matrix <span class="process-math">\(Q^TA\)</span> hold the coordinates of the demeaned data points after projecting onto <span class="process-math">\(W_2\text{,}\)</span> the subspace spanned by the first two principal components.  Evaluating the following cell shows a plot of these coordinates. <div id="activity-pca-iris-1-3-7-5-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pca_plot(Q.T*A)
+<li id="activity-pca-iris-1-3-7-5"><div class="para" id="activity-pca-iris-1-3-7-5-1">As we have seen, the columns of the matrix <span class="process-math">\(Q^TA\)</span> hold the coordinates of the demeaned data points after projecting onto <span class="process-math">\(W_2\text{,}\)</span> the subspace spanned by the first two principal components.  Evaluating the following cell shows a plot of these coordinates. <div id="activity-pca-iris-1-3-7-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">pca_plot(Q.T*A)
 </script></div> Suppose we have a flower whose coordinates in this plane are <span class="process-math">\((-2.5, -0.75)\text{.}\)</span>  To what species does this iris most likely belong?  Find an estimate of the sepal length, sepal width, petal length, and petal width for this flower.</div></li>
-<li id="activity-pca-iris-1-3-7-6"><div class="para" id="activity-pca-iris-1-3-7-6-1">Suppose you have an iris, but you only know that its sepal length is 5.65 cm and its sepal width is 2.75 cm.  Knowing only these two measurements, determine the coordinates <span class="process-math">\((c_1, c_2)\)</span> in the plane where this iris lies.  To what species does this iris most likely belong?  Now estimate the petal length and petal width of this iris. <div id="activity-pca-iris-1-3-7-6-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-pca-iris-1-3-7-6"><div class="para" id="activity-pca-iris-1-3-7-6-1">Suppose you have an iris, but you only know that its sepal length is 5.65 cm and its sepal width is 2.75 cm.  Knowing only these two measurements, determine the coordinates <span class="process-math">\((c_1, c_2)\)</span> in the plane where this iris lies.  To what species does this iris most likely belong?  Now estimate the petal length and petal width of this iris. <div id="activity-pca-iris-1-3-7-6-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li id="activity-pca-iris-1-3-7-7"><div class="para" id="activity-pca-iris-1-3-7-7-1">Suppose you find another iris whose sepal width is 3.2 cm and whose petal width is 2.2 cm.  Find the coordinates <span class="process-math">\((c_1, c_2)\)</span> of this iris and determine the species to which it most likely belongs.  Also, estimate the sepal length and the petal length. <div id="activity-pca-iris-1-3-7-7-1-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="activity-pca-iris-1-3-7-7"><div class="para" id="activity-pca-iris-1-3-7-7-1">Suppose you find another iris whose sepal width is 3.2 cm and whose petal width is 2.2 cm.  Find the coordinates <span class="process-math">\((c_1, c_2)\)</span> of this iris and determine the species to which it most likely belongs.  Also, estimate the sepal length and the petal length. <div id="activity-pca-iris-1-3-7-7-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 </ol>
@@ -869,7 +882,7 @@ D_2 = \begin{bmatrix}
 -206 \amp 320 \amp -206 \\
 251 \amp -206 \amp 275
 \end{bmatrix}
-\text{.}\)</span> <div id="sec-pca-6-2-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+\text{.}\)</span> <div id="sec-pca-6-2-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-6-2-1-1-4">
@@ -879,7 +892,13 @@ D_2 = \begin{bmatrix}
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-pca-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-pca-6-3-1-1">
-<div class="para">Evaluating the following cell loads a <span class="process-math">\(2\times100\)</span> demeaned data matrix <code class="code-inline tex2jax_ignore">A</code>. <div id="sec-pca-6-3-1-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_ex.py', globals())
+<div class="para">Evaluating the following cell loads a <span class="process-math">\(2\times100\)</span> demeaned data matrix <code class="code-inline tex2jax_ignore">A</code>. <div id="sec-pca-6-3-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_ex.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-6-3-1-1-4">
@@ -911,20 +930,27 @@ D_2 = \begin{bmatrix}
 <div class="sbspanel top" style="width:36.8421052631579%;"><img src="external/images/culmen_depth.png" class="contained"></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.3.9<span class="period">.</span></span><span class="space"> </span>Artwork by <a class="external" href="https://github.com/allisonhorst/palmerpenguins/blob/master/README.md" target="_blank">@allison_horst</a><details class="ptx-footnote" aria-live="polite" id="fig-penguins-2-2"><summary class="ptx-footnote__number" title="Footnote 7.3.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="fig-penguins-2-2"><code class="code-inline tex2jax_ignore">gvsu.edu/s/21G</code></div></details></figcaption></figure> <div class="para logical" id="sec-pca-6-6-1-3">
-<div class="para">Evaluating the next cell will load and display the data.  The meaning of the culmen length and width is contained in the illustration on the right of <a href="sec-pca.html#fig-penguins" class="xref" data-knowl="./knowl/xref/fig-penguins.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.3.9">Figure 7.3.9</a>. <div id="sec-pca-6-6-1-3-2" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_penguins.py', globals())
+<div class="para">Evaluating the next cell will load and display the data.  The meaning of the culmen length and width is contained in the illustration on the right of <a href="sec-pca.html#fig-penguins" class="xref" data-knowl="./knowl/xref/fig-penguins.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.3.9">Figure 7.3.9</a>. <div id="sec-pca-6-6-1-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_penguins.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df.T
-</script></div> This dataset is a bit different from others that we’ve looked at because the scale of the measurements is significantly different.  For instance, the measurements for the body mass are roughly 100 times as large as those for the culmen length. For this reason, we will standardize the data by first demeaning it, as usual, and then rescaling each measurement by the reciprocal of its standard deviation.  The result is stored in the <span class="process-math">\(4\times333\)</span> matrix <code class="code-inline tex2jax_ignore">A</code>. <div id="sec-pca-6-6-1-3-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></div> This dataset is a bit different from others that we’ve looked at because the scale of the measurements is significantly different.  For instance, the measurements for the body mass are roughly 100 times as large as those for the culmen length. For this reason, we will standardize the data by first demeaning it, as usual, and then rescaling each measurement by the reciprocal of its standard deviation.  The result is stored in the <span class="process-math">\(4\times333\)</span> matrix <code class="code-inline tex2jax_ignore">A</code>. <div id="sec-pca-6-6-1-3-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-6-6-1-3-6">
 <li id="sec-pca-6-6-1-3-6-1"><div class="para" id="sec-pca-6-6-1-3-6-1-1">Find the covariance matrix and its eigenvalues.</div></li>
 <li id="sec-pca-6-6-1-3-6-2"><div class="para" id="sec-pca-6-6-1-3-6-2-1">What fraction of the total variance is explained by the first two principal components?</div></li>
-<li id="sec-pca-6-6-1-3-6-3"><div class="para" id="sec-pca-6-6-1-3-6-3-1">Construct the <span class="process-math">\(2\times333\)</span> matrix <span class="process-math">\(B\)</span> whose columns are the coordinates of the demeaned data points projected onto the first two principal components. The following cell will create the plot. <div id="sec-pca-6-6-1-3-6-3-1-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pca_plot(B)
+<li id="sec-pca-6-6-1-3-6-3"><div class="para" id="sec-pca-6-6-1-3-6-3-1">Construct the <span class="process-math">\(2\times333\)</span> matrix <span class="process-math">\(B\)</span> whose columns are the coordinates of the demeaned data points projected onto the first two principal components. The following cell will create the plot. <div id="sec-pca-6-6-1-3-6-3-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">pca_plot(B)
 </script></div>
 </div></li>
 <li id="sec-pca-6-6-1-3-6-4"><div class="para" id="sec-pca-6-6-1-3-6-4-1">Examine the components of the first two principal component vectors. How does the body mass of Gentoo penguins compare to that of the other two species?</div></li>
 <li id="sec-pca-6-6-1-3-6-5"><div class="para" id="sec-pca-6-6-1-3-6-5-1">What seems to be generally true about the culmen measurements for a Chinstrap penguin compared to a Adelie?</div></li>
-<li id="sec-pca-6-6-1-3-6-6"><div class="para" id="sec-pca-6-6-1-3-6-6-1">You can plot just the males or females using the following cell. <div id="sec-pca-6-6-1-3-6-6-1-1" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">pca_plot(B, sex='female')
+<li id="sec-pca-6-6-1-3-6-6"><div class="para" id="sec-pca-6-6-1-3-6-6-1">You can plot just the males or females using the following cell. <div id="sec-pca-6-6-1-3-6-6-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">pca_plot(B, sex='female')
 </script></div> What seems to be generally true about the body mass measurements for a male Gentoo compared to a female Gentoo?</div></li>
 </ol>
 </div></article></section></section></div>

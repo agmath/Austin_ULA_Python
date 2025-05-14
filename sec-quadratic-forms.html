@@ -123,17 +123,17 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+</script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
+  "inputLocation": "div.sagecell-python",
   "linked": true,
-  "linkKey": "linked-sage",
+  "linkKey": "linked-python",
   "autoeval": false,
   "languages": [
-    "sage"
+    "python"
   ],
-  "evalButtonText": "Evaluate (Sage)"
+  "evalButtonText": "Evaluate (Python)"
 });
 </script>
 </head>
@@ -617,7 +617,7 @@ A = \begin{bmatrix}
 <figure class="figure figure-like" id="fig-quad-preview"><div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/empty-4.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">7.2.1<span class="period">.</span></span><span class="space"> </span>Use this coordinate grid to plot the demeaned data points.</figcaption></figure>
 </li>
-<li id="preview-quadforms-1-1-2-2"><div class="para" id="preview-quadforms-1-1-2-2-1">Construct the covariance matrix <span class="process-math">\(C\)</span> and determine the variance in the direction of <span class="process-math">\(\twovec11\)</span> and the variance in the direction of <span class="process-math">\(\twovec{-1}1\text{.}\)</span> <div id="preview-quadforms-1-1-2-2-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<li id="preview-quadforms-1-1-2-2"><div class="para" id="preview-quadforms-1-1-2-2-1">Construct the covariance matrix <span class="process-math">\(C\)</span> and determine the variance in the direction of <span class="process-math">\(\twovec11\)</span> and the variance in the direction of <span class="process-math">\(\twovec{-1}1\text{.}\)</span> <div id="preview-quadforms-1-1-2-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="preview-quadforms-1-1-2-3"><div class="para" id="preview-quadforms-1-1-2-3-1">What is the total variance of this dataset?</div></li>
@@ -756,10 +756,16 @@ q_A(\xvec) = \xvec\cdot(A\xvec) = \lambda\xvec\cdot\xvec =
 <li id="sec-quadratic-forms-3-12-1-1-1-1"><div class="para" id="sec-quadratic-forms-3-12-1-1-1-1-1">Evaluating the following cell defines the matrix <span class="process-math">\(D = \begin{bmatrix}
 3 \amp 0 \\
 0 \amp -1
-\end{bmatrix}\)</span> and displays the graph of the associated quadratic form <span class="process-math">\(q_D(\xvec)\text{.}\)</span>  In addition, the points corresponding to vectors <span class="process-math">\(\uvec\)</span> with unit length are displayed as a curve. <div id="sec-quadratic-forms-3-12-1-1-1-1-1-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/quad_plot.py', globals())
+\end{bmatrix}\)</span> and displays the graph of the associated quadratic form <span class="process-math">\(q_D(\xvec)\text{.}\)</span>  In addition, the points corresponding to vectors <span class="process-math">\(\uvec\)</span> with unit length are displayed as a curve. <div id="sec-quadratic-forms-3-12-1-1-1-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+
+url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
 
 ## We define our matrix here
-A = matrix(2, 2, [3, 0, 0, -1])
+A = sympy.Matrix([[3.0, 0], [0, -1]])
 
 quad_plot(A)
 </script></div> Notice that the matrix <span class="process-math">\(D\)</span> is diagonal.  In which directions does the quadratic form have its maximum and minimum values?</div></li>
@@ -769,7 +775,7 @@ quad_plot(A)
 1\text{,}\)</span> an expression we can rewrite as <span class="process-math">\(u_1^2 =
 1-u_2^2\text{.}\)</span>  Write the quadratic form <span class="process-math">\(q_D(\uvec)\)</span> and replace <span class="process-math">\(u_1^2\)</span> by <span class="process-math">\(1-u_2^2\text{.}\)</span>  Now explain why the maximum of <span class="process-math">\(q_D(\uvec)\)</span> is 3.  In which direction does the maximum occur?  Does this agree with what you observed from the graph above?</div></li>
 <li id="sec-quadratic-forms-3-12-1-1-1-4"><div class="para" id="sec-quadratic-forms-3-12-1-1-1-4-1">Write the quadratic form <span class="process-math">\(q_D(\uvec)\)</span> and replace <span class="process-math">\(u_2^2\)</span> by <span class="process-math">\(1-u_1^2\text{.}\)</span>  What is the minimum value of <span class="process-math">\(q_D(\uvec)\)</span> and in which direction does the minimum occur?</div></li>
-<li id="sec-quadratic-forms-3-12-1-1-1-5"><div class="para" id="sec-quadratic-forms-3-12-1-1-1-5-1">Use the previous Sage cell to change the matrix to <span class="process-math">\(A=\begin{bmatrix}
+<li id="sec-quadratic-forms-3-12-1-1-1-5"><div class="para" id="sec-quadratic-forms-3-12-1-1-1-5-1">Use the previous Python cell to change the matrix to <span class="process-math">\(A=\begin{bmatrix}
 1 \amp 2 \\
 2 \amp 1
 \end{bmatrix}\)</span> and display the graph of the quadratic form <span class="process-math">\(q_A(\xvec) = \xvec\cdot(A\xvec)\text{.}\)</span> Determine the directions in which the maximum and minimum occur.</div></li>
@@ -1052,7 +1058,8 @@ f(x,y) \approx f(1,1) + q_A(\wvec)
 </div></li>
 <li id="sec-quadratic-forms-4-12-1-1-2-5"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-5-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span>  What can you conclude about the definiteness of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li id="sec-quadratic-forms-4-12-1-1-2-6"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-6-1">Recall that <span class="process-math">\((x_0,y_0)\)</span> is a local minimum for <span class="process-math">\(f\)</span> if <span class="process-math">\(f(x,y) \gt f(x_0,y_0)\)</span> for nearby points <span class="process-math">\((x,y)\text{.}\)</span> Explain why our understanding of the eigenvalues of <span class="process-math">\(A\)</span> shows that <span class="process-math">\((1,1)\)</span> is a local minimum for <span class="process-math">\(f\text{.}\)</span> <div id="sec-quadratic-forms-4-12-1-1-2-6-1-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">x, y = var('x', 'y')		    
+<li id="sec-quadratic-forms-4-12-1-1-2-6"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-6-1">Recall that <span class="process-math">\((x_0,y_0)\)</span> is a local minimum for <span class="process-math">\(f\)</span> if <span class="process-math">\(f(x,y) \gt f(x_0,y_0)\)</span> for nearby points <span class="process-math">\((x,y)\text{.}\)</span> Explain why our understanding of the eigenvalues of <span class="process-math">\(A\)</span> shows that <span class="process-math">\((1,1)\)</span> is a local minimum for <span class="process-math">\(f\text{.}\)</span> <div id="sec-quadratic-forms-4-12-1-1-2-6-1-8" class="ptx-sagecell sagecell-python"><script type="text/x-sage">#Maybe sage-specific...check and change to matplotlib...
+x, y = var('x', 'y')		    
 plot3d(2*x^3 - 6*x*y + 3*y^2, (x, 0.75,1.25), (y,0.75,1.25))
 </script></div>
 </div></li>
