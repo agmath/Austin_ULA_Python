@@ -329,22 +329,22 @@
 	    <m>\twovec6k</m> perpendicular to <m>\wvec</m>?
 	    </p></li>
 	    
-	    <li><p> Sage can be used to find lengths of vectors and their
+	    <li><p> Python can be used to find lengths of vectors and their
 	    dot products.  For instance, if <c>v</c> and <c>w</c> are
-	    vectors, then <c>v.norm()</c> gives the length of <c>v</c> and
-	    <c>v * w</c> gives <m>\vvec\cdot\wvec</m>.</p>
+	    vectors defined in <c>{sympy}</c>, then <c>v.norm()</c> gives the length of <c>v</c> and
+	    <c>v.dot(w)</c> gives <m>\vvec\cdot\wvec</m>.</p>
 	    
 	    <p> Suppose that
 	    <me>
 	      \vvec=\fourvec203{-2}, \hspace{24pt}
 	      \wvec=\fourvec1{-3}41\text{.}
 	    </me>
-	    Use the Sage cell below to find <m>\len{\vvec}</m>,
+	    Use the Python cell below to find <m>\len{\vvec}</m>,
 	    <m>\len{\wvec}</m>, <m>\vvec\cdot\wvec</m>, and the angle
 	    between <m>\vvec</m> and <m>\wvec</m>.  You may use
-	    <c>arccos</c> to find the angle's measure expressed in
+	    <c>np.arccos</c> to find the angle's measure expressed in
 	    radians.  
-	    <sage>
+	    <sage language="python">
 	    </sage>
 	    </p></li>
 	</ol></p>
@@ -550,9 +550,16 @@
 	      Veteran's Day article and 0 times in the Labor Day
 	      article.
 
-	      <sage>
+	      <sage language="python">
 		<input>
-sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py", globals())
+import requests
+
+url = "https://raw.githubusercontent.com/davidaustinm/ula_modules/master/dot_similarity.py"
+response = requests.get(url)
+
+# Make the script's contents available in the current environment
+exec(response.text, globals())
+
 events.head(int(10))
 		</input>
 	      </sage>
@@ -582,14 +589,16 @@ events.head(int(10))
 		</li>
 
 		<li>
-		  <p> Use the Sage cell below to find the angle between
+		  <p> Use the Python cell below to find the angle between
 		  the vector <c>veterans</c> and the other four
 		  vectors.  To express the angle in degrees, use the
-		  <c>degrees(x)</c> command, which gives the number of
+		  <c>np.rad2deg(x)</c> command, which gives the number of
 		  degrees in <c>x</c> radians.
 
-		  <sage>
+		  <sage language="python">
 		    <input>
+import numpy as np
+
 		    </input>
 		  </sage>
 		  </p>
@@ -614,14 +623,14 @@ events.head(int(10))
 	      <m>\svec=\fourvec{78.3}{81.2}{82.1}{79.0}</m> might
 	      represent the value of a company's stock on four
 	      consecutive days.  When interpreted in this way, we call the
-	      vector a <em>time series.</em> Evaluate the Sage cell
+	      vector a <em>time series.</em> Evaluate the Python cell
 	      below to see a representation of two time series
 	      <m>\svec_1</m>, in blue, and <m>\svec_2</m>, in orange,
 	      which we imagine represent the value of two stocks over a
 	      period of time.  (This cell relies on some data loaded by the
 	      first cell in this activity.)
 
-	      <sage>
+	      <sage language="python">
 		<input>
 series_plot(s1, 'blue') + series_plot(s2, 'orange')		
 		</input>
@@ -642,10 +651,10 @@ series_plot(s1, 'blue') + series_plot(s2, 'orange')
 		    time series, we will subtract its average value to
 		    obtain a new time series.  There is a command,
 		    <c>demean(s)</c>, that returns the demeaned time
-		    series of <c>s</c>.  Use the Sage cell below to
+		    series of <c>s</c>.  Use the Python cell below to
 		    demean the series <m>\svec_1</m> and <m>\svec_2</m> and
 		    plot. 
-		    <sage>
+		    <sage language="python">
 		      <input>
 ds1 = demean(s1)
 ds2 = demean(s2)
@@ -675,7 +684,7 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 		  <p>
 		    Find the correlation between <m>\svec_1</m> and
 		    <m>\svec_2</m>.
-		    <sage>
+		    <sage language="python">
 		      <input>
 
 		      </input>
@@ -727,10 +736,10 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 
 		<li>
 		  <p>
-		    Use the Sage cell below to plot the time series
+		    Use the Python cell below to plot the time series
 		    <m>\svec_1</m> and <m>\svec_3</m> and find their
 		    correlation. 
-		    <sage>
+		    <sage language="python">
 		      <input>
 series_plot(s1, 'blue') + series_plot(s3, 'orange')		
 		      </input>
@@ -740,10 +749,10 @@ series_plot(s1, 'blue') + series_plot(s3, 'orange')
 
 		<li>
 		  <p>
-		    Use the Sage cell below to plot the time series
+		    Use the Python cell below to plot the time series
 		    <m>\svec_1</m> and <m>\svec_4</m> and find their
 		    correlation. 
-		    <sage>
+		    <sage language="python">
 		      <input>
 series_plot(s1, 'blue') + series_plot(s4, 'orange')		
 		      </input>
@@ -1362,9 +1371,16 @@ series_plot(s1, 'blue') + series_plot(s4, 'orange')
 		Evaluating the following cell will load and display a
 		dataset consisting of 177 data points.  This dataset
 		has the name <c>data</c>.
-		<sage>
+		<sage language="python">
 		  <input>
-sage.repl.load.load("https://raw.githubusercontent.com/davidaustinm/ula_modules/master/k_means.py", globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_k_means.py"
+response = requests.get(url)
+
+# Make the script's contents available in the current environment
+exec(response.text, globals())
+
 list_plot(data, color='blue', size=20, aspect_ratio=1)
 		  </input>
 		</sage>
@@ -1388,7 +1404,7 @@ list_plot(data, color='blue', size=20, aspect_ratio=1)
 		times.  Notice that clusterings having lower objectives
 		seem to fit the data better.  Repeat this experiment
 		with a few different values of <m>k</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 k = 2  # you may change the value of k here
 clusters, centroids, objective = kmeans(data, k)
@@ -1407,7 +1423,7 @@ plotclusters(clusters, centroids)
 		<m>k</m>, the following cell will run the
 		algorithm 10 times and display the clustering having the
 		smallest objective.
-		<sage>
+		<sage language="python">
 		  <input>
 k = 2  # you may change the value of k here
 clusters, centroids, objective = minimalobjective(data, k)
