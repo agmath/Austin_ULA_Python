@@ -1064,11 +1064,11 @@
 	
 	<li><p> We can use Python to compute the determinant of a matrix, 
 		but the commands required depend on whether you've defined the
-		matrix using <c>{numpy}</c> or <c>sympy</c>. If the matrix <c>A</c>
-		has been defined using <c>np.array()</c>, then we can calculate 
-		<m>\det(A)</m> with the command <c>np.linalg.det(A)</c>. Otherwise,
-		if the matrix has been defined using <c>sympy.Matrix()</c>, we'll 
-		use <c>A.det()</c>.
+		matrix using <c>{sympy}</c> or <c>{numpy}</c>. If the matrix <c>A</c>
+		has been defined using <c>sp.Matrix()</c>, then we can calculate 
+		<m>\det(A)</m> with the command <c>A.det()</c>. Otherwise,
+		if the matrix has been defined using <c>np.array()</c>, we'll 
+		use <c>np.linalg.det(A)</c>.
 	<me>
 	  \left[\begin{array}{rrrr}
 	  2 \amp 1 \amp -2 \amp -3 \\

@@ -16,10 +16,11 @@
 	<sage language="python">
 	  <input>
 import numpy as np
+import sympy as sp
 
 mat = [[np.cos((2*i+1)*j*np.pi/16) for j in range(8)] for i in range(8)]
-P = np.array(mat).evalf()
-Pinv = np.linalg.inv(P)	
+P = sp.Matrix(mat).evalf()
+Pinv = P.inv()	
 print (Pinv.evalf(3))	    
 	  </input>
 	</sage>
