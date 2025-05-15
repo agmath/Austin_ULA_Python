@@ -153,16 +153,18 @@
     </p>
 
     <p>
-      Before exploring this connection further, we will introduce Sage 
+      Before exploring this connection further, we will show how to
+	  use Python 
       as a tool for automating the construction of singular value
-      decompositions.  One new feature is that we need to declare our
-      matrix to consist of floating point entries.  We do this by
-      including <c>RDF</c> inside the matrix definition, as
-      illustrated in the following cell.
-      <sage>
+      decompositions. We'll use <c>{sympy}</c> to define a matrix <m>A</m>
+	  and then use the <c>.singular_value_decomposition()</c> method 
+	  to obtain three new objects, <m>U</m>, <m>S</m>, and <m>V</m>, where
+	  <m>A = U\Sigma V^T</m> as defined above, and the matrix <m>\Sigma</m>
+	  is a diagonal matrix containing the singular values of <m>A</m>.
+      <sage language="python">
 	<input>
-A = matrix(RDF, 3, 2, [1,0,-1,1,1,1])
-U, Sigma, V = A.SVD()	  
+A = sympy.Matrix([[1.0,0,-1], [1,1,1]])
+U, Sigma, V = A.singular_value_decomposition()	  
 print(U)
 print('---------')
 print(Sigma)
@@ -189,9 +191,9 @@ print(V)
 	    <li>
 	      <p>
 		Find a singular value decomposition for <m>A</m> using
-		the Sage cell below.  What are singular values of
+		the Python cell below.  What are singular values of
 		<m>A</m>?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -216,13 +218,13 @@ print(V)
 	      </p>
 	      <p>
 		You may find it convenient to remember that if
-		<c>B</c> is a matrix defined in Sage, then
-		<c>B.matrix_from_columns( list )</c> and
-		<c>B.matrix_from_rows( list )</c> can be used to
+		<c>B</c> is a matrix defined using <c>{sympy}</c>, then
+		<c>B[:, list]</c> and
+		<c>B[list, :]</c> can be used to
 		extract columns or rows from <c>B</c>.  For instance,
-		<c>B.matrix_from_rows([0,1,2])</c> provides a matrix
+		<c>B[[0,1,2], :])</c> provides a matrix
 		formed from the first three rows of <c>B</c>.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -263,7 +265,7 @@ print(V)
 		</me>
 		is the least-squares approximate solution, and
 		use this expression to find <m>\xhat</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -531,12 +533,12 @@ print(V)
 	  <c>U</c>, <c>V</c>, and <c>Sigma</c>.  Notice how the
 	  <c>diagonal_matrix</c> command provides a convenient way to
 	  form the diagonal matrix <m>\Sigma</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
 h = 1/2
-U = matrix(4,4,[h,h,h,h,  h,h,-h,-h,  h,-h,h,-h,  h,-h,-h,h])	    
-V = matrix(4,4,[h,h,h,h,  h,-h,-h,h,  -h,-h,h,h,  -h,h,-h,h])
-Sigma = diagonal_matrix([500, 100, 20, 4])
+U = sympy.Matrix([[h,h,h,h], [h,h,-h,-h], [h,-h,h,-h], [h,-h,-h,h]])	    
+V = sympy.Matrix(4[[h,h,h,h], [h,-h,-h,h], [-h,-h,h,h], [-h,h,-h,h]])
+Sigma = sympy.diag([500, 100, 20, 4])
 	    </input>
 	  </sage>
 	  <ol marker="a.">
@@ -544,7 +546,7 @@ Sigma = diagonal_matrix([500, 100, 20, 4])
 	      <p>
 		Form the matrix <m>A=U\Sigma V^T</m>.  What is
 		<m>\rank(A)</m>?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -555,7 +557,7 @@ Sigma = diagonal_matrix([500, 100, 20, 4])
 	      <p>
 		Now form the approximating matrix <m>A_1=U\Sigma^{(1)}
 		V^T</m>.  What is <m>\rank(A_1)</m>?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -574,7 +576,7 @@ Sigma = diagonal_matrix([500, 100, 20, 4])
 	      <p>
 		Now find <m>A_2 = U\Sigma^{(2)} V^T</m> and the error
 		<m>A-A_2</m>.  What is <m>\rank(A_2)</m>?
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -916,9 +918,16 @@ Sigma = diagonal_matrix([500, 100, 20, 4])
 	  Evaluating the following cell will load the dataset and
 	  define the demeaned
 	  data matrix <m>A</m> whose shape is <m>4\times150</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/pca_iris.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_pca_iris.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
 df.T
 
 	    </input>
@@ -933,7 +942,7 @@ df.T
 		each of the four principal components.  What is the
 		fraction of variance retained by the first two
 		principal components?
-		<sage>
+		<sage language="python">
 		  <input>
 
 
@@ -1001,7 +1010,7 @@ df.T
 		evaluate this cell, you will see a plot of the
 		projected demeaned data plots, similar to the one we
 		created in <xref ref="sec-pca" />.
-		<sage>
+		<sage language="python">
 		  <input>
 # Form the SVD of A and use it to form Gamma2
 
@@ -1164,9 +1173,16 @@ data = Gamma2.columns()
 	  Evaluating the following cell loads some data that we'll use
 	  in this activity.  To begin, it defines and displays a
 	  <m>25\times15</m> matrix <m>A</m>.
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/svd_compress.py', globals())
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_svd_compress.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+			
 print(A)
 
 
@@ -1177,7 +1193,7 @@ print(A)
 	      <p> 
 		If we interpret 0 as black and 1 as white, this matrix
 		represents an image as shown below.
-		<sage>
+		<sage language="python">
 		  <input>
 display_matrix(A)
 
@@ -1199,7 +1215,7 @@ display_matrix(A)
 		      The following cell plots the singular values of
 		      <m>A</m>.  Explain how this plot verifies that
 		      the rank is what you found in the previous part.
-		      <sage>
+		      <sage language="python">
 			<input>
 plot_sv(A)		    
 
@@ -1216,7 +1232,7 @@ plot_sv(A)
 		      images represented by the
 		      first few approximations.  What is the smallest
 		      value of <m>k</m> for which <m>A=A_k</m>?
-		      <sage>
+		      <sage language="python">
 			<input>
 k = 
 display_matrix(approximate(A, k))			  
@@ -1270,9 +1286,9 @@ display_matrix(approximate(A, k))
 		      Consider the following image consisting of an
 		      array of <m>316\times310</m> pixels stored in the
 		      matrix <m>A</m>.
-		      <sage>
+		      <sage language="python">
 			<input>
-A = matrix(RDF, image)
+A = sympy.Matrix(image)
 display_image(A)
 
 			</input>
@@ -1280,7 +1296,7 @@ display_image(A)
 		    </p>
 		    <p>
 		      Plot the singular values of <m>A</m>.
-		      <sage>
+		      <sage language="python">
 			<input>
 plot_sv(A)
 			</input>
@@ -1292,7 +1308,7 @@ plot_sv(A)
 		    <p>
 		      Use the cell below to study the approximations
 		      <m>A_k</m> for <m>k=1, 10, 20, 50, 100</m>.
-		      <sage>
+		      <sage language="python">
 			<input>
 k = 1
 display_image(approximate(A, k))		    
@@ -1320,9 +1336,9 @@ display_image(approximate(A, k))
 		decomposition to image processing is called
 		<em>denoising</em>.  For example, consider the image
 		represented by the matrix <m>A</m> below.
-		<sage>
+		<sage language="python">
 		  <input>
-A = matrix(RDF, noise.values)		    
+A = sympy.Matrix(noise.values)		    
 display_matrix(A)		
 		  </input>
 		</sage>
@@ -1340,7 +1356,7 @@ display_matrix(A)
 		      singular values of this matrix similar to those
 		      represented by the clean image that we 
 		      considered earlier and how are they different?
-		      <sage>
+		      <sage language="python">
 			<input>
 plot_sv(A)
 
@@ -1364,7 +1380,7 @@ plot_sv(A)
 		      <m>k</m> below and notice that the new image
 		      appears to be somewhat cleaned up as a result of
 		      removing the noise.
-		      <sage>
+		      <sage language="python">
 			<input>
 k = 
 display_matrix(approximate(A, k))
@@ -1607,10 +1623,17 @@ display_matrix(approximate(A, k))
 	  justice was in the minority.  This information is also
 	  stored in the <m>9\times911</m> matrix <m>A</m>.
 	  
-	  <sage>
+	  <sage language="python">
 	    <input>
-sage.repl.load.load('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/svd_supreme.py', globals())
-A = matrix(RDF, cases.values)
+import requests
+
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_svd_supreme.py"
+response = requests.get(url)
+
+# Make the script's contents available in your current environment
+exec(response.text, globals())
+
+A = sympy.Matrix(cases.values)
 cases
 
 	    </input>
@@ -1625,7 +1648,7 @@ cases
 	  displays the first 50 columns of the matrix <m>A</m> with
 	  white representing an entry of +1, red representing -1, and
 	  black representing 0.
-	  <sage>
+	  <sage language="python">
 	    <input>
 display_matrix(A.matrix_from_columns(range(50)))
 
@@ -1639,7 +1662,7 @@ display_matrix(A.matrix_from_columns(range(50)))
 		the significance of this plot, including the relative
 		contributions from the singular values <m>\sigma_k</m>
 		as <m>k</m> increases.
-		<sage>
+		<sage language="python">
 		  <input>
 plot_sv(A)
 		  </input>
@@ -1652,7 +1675,7 @@ plot_sv(A)
 		Form the singular value decomposition <m>A=U\Sigma
 		V^T</m> and the matrix of coefficients <m>\Gamma</m>
 		so that <m>A=U\Gamma</m>.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1669,7 +1692,7 @@ plot_sv(A)
 		provides a visual display of the <m>k^{th}</m> column
 		of a matrix <m>A</m>.  Describe the justices' votes in
 		the second case.
-		<sage>
+		<sage language="python">
 		  <input>
 		  </input>
 		</sage>
@@ -1684,7 +1707,7 @@ plot_sv(A)
 		<m>\Gamma</m> holding the coefficients that express the
 		second case as a linear combination of left singular
 		vectors.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1702,7 +1725,7 @@ plot_sv(A)
 		Let's now study the <m>48^{th}</m> case, which is
 		represented by the column of <m>A</m> indexed by
 		<c>47</c>.  Describe the voting pattern in this case.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1716,7 +1739,7 @@ plot_sv(A)
 		and the vector 
 		of coefficients that express the <m>48^{th}</m> case as
 		a linear combination of left singular vectors.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1778,10 +1801,10 @@ plot_sv(A)
 		reason, we will now focus on the 5-4 decisions.
 		Evaluating the next cell forms the <m>9\times188</m>
 		matrix <m>B</m> consisting of 5-4 decisions.
-		<sage>
+		<sage language="python">
 		  <input>
-B = matrix(RDF, fivefour.values)
-display_matrix(B.matrix_from_columns(range(50)))
+B = sympy.Matrix(fivefour.values)
+display_matrix(B[:, range(50)]))
 
 		  </input>
 		</sage>
@@ -1793,7 +1816,7 @@ display_matrix(B.matrix_from_columns(range(50)))
 		<m>7^{th}</m> case, indexed by <c>6</c>, is
 		constructed as a linear 
 		combination of left singular vectors.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
@@ -1810,7 +1833,7 @@ display_matrix(B.matrix_from_columns(range(50)))
 		<m>\uvec_2</m> and study how the <m>6^{th}</m> case,
 		indexed by <c>5</c>, is constructed as a linear
 		combination of left singular vectors.
-		<sage>
+		<sage language="python">
 		  <input>
 
 		  </input>
