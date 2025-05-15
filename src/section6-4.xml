@@ -564,7 +564,7 @@ exec(response.text, globals())
 		Given a collection of vectors, say, <c>v1</c> and
 		<c>v2</c>, we can form the matrix whose columns are
 		<c>v1</c> and <c>v2</c> using
-		<c>sympy.Matrix([v1, v2]).T</c>.  When given a <c>list</c> of
+		<c>sp.Matrix([v1, v2]).T</c>.  When given a <c>list</c> of
 		vectors, Python constructs a matrix whose <em>rows</em>
 		are the given vectors.  For this reason, we need to apply
 		the transpose.

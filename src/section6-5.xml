@@ -570,6 +570,8 @@
 	  following cell to load the data:
 	  <sage language="python">
 	    <input>
+import numpy as np
+import sympy as sp
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -579,9 +581,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/crickets.csv')
-data = [vector(row) for row in df.values]
-chirps = sympy.Matrix(df['Chirps'])
-temps = sympy.Matrix(df['Temperature'])
+data = [sp.Matrix(row) for row in df.values]
+chirps = sp.Matrix(df['Chirps'])
+temps = sp.Matrix(df['Temperature'])
 print(df)
 list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 	    </input>

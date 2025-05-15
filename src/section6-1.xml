@@ -331,8 +331,9 @@
 	    
 	    <li><p> Python can be used to find lengths of vectors and their
 	    dot products.  For instance, if <c>v</c> and <c>w</c> are
-	    vectors defined in <c>{sympy}</c>, then <c>v.norm()</c> gives the length of <c>v</c> and
-	    <c>v.dot(w)</c> gives <m>\vvec\cdot\wvec</m>.</p>
+	    vectors defined in <c>{sympy}</c>, then <c>v.norm()</c> gives the 
+		length of <c>v</c> and <c>v.dot(w)</c> gives <m>\vvec\cdot\wvec</m>.
+		</p>
 	    
 	    <p> Suppose that
 	    <me>

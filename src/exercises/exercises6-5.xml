@@ -698,6 +698,8 @@ exec(response.text, globals())
 	dataset, and <c>people</c>, which records the number of people.
 	<sage language="python">
 	  <input>
+import numpy as np
+import sympy as sp
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -707,9 +709,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/bangladesh.csv')
-data = [sympy.Matrix(row) for row in df.values]
-year = sympy.Matrix(df['Year'])
-people = sympy.Matrix(df['People'])
+data = [sp.Matrix(row) for row in df.values]
+year = sp.Matrix(df['Year'])
+people = sp.Matrix(df['People'])
 print(df)
 list_plot(data, size=40, color='blue')
 
@@ -865,7 +867,8 @@ list_plot(data, size=40, color='blue')
 	components are <m>\ln(P)</m>.	
 	<sage language="python">
 	  <input>
-import numpy as np	    
+import numpy as np	
+import sympy as sp    
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -875,8 +878,8 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/planets.csv',index_col=0)
-logaxis = sympy.Matrix(np.log(df['Semi-major axis']))
-logperiod = sympy.Matrix(np.log(df['Period']))
+logaxis = sp.Matrix(np.log(df['Semi-major axis']))
+logperiod = sp.Matrix(np.log(df['Period']))
 print(df)
 
 	  </input>
@@ -1008,6 +1011,8 @@ print(df)
 	and <c>temperature</c>, in degrees Celsius.
 	<sage language="python">
 	  <input>
+import numpy as np
+import sympy as sp
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -1017,9 +1022,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/altitude-temps.csv')
-data = [sympy.Matrix(row) for row in df.values]
-altitude = sympy.Matrix(df['Altitude'])
-temperature = sympy.Matrix(df['Temperature'])
+data = [sp.Matrix(row) for row in df.values]
+altitude = sp.Matrix(df['Altitude'])
+temperature = sp.Matrix(df['Temperature'])
 print(df)
 list_plot(data, size=40, color='blue')
 
@@ -1171,6 +1176,8 @@ list_plot(data, size=40, color='blue')
 
 	<sage language="python">
 	  <input>
+import numpy as np
+import sympy as sp
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -1181,10 +1188,10 @@ exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/housing.csv',index_col=0)
 df = df.fillna(df.mean())
-area = sympy.Matrix(df['Living.Area'])
-size = sympy.Matrix(df['Lot.Size'])
-age = sympy.Matrix(df['Age'])
-price = sympy.Matrix(df['Price'])
+area = sp.Matrix(df['Living.Area'])
+size = sp.Matrix(df['Lot.Size'])
+age = sp.Matrix(df['Age'])
+price = sp.Matrix(df['Price'])
 df
 
 
