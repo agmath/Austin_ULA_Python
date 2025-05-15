@@ -765,10 +765,12 @@ Q^T\xvec = \twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}.
 <article class="activity project-like" id="sec-pca-4-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">7.3.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-pca-4-3-1-1">The next cell will load a dataset describing the average consumption of various food groups for citizens in each of the four nations of the United Kingdom.  The units for each entry are grams per person per week. <div id="sec-pca-4-3-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import pandas as pd
+<div class="para" id="sec-pca-4-3-1-1">The next cell will load a dataset describing the average consumption of various food groups for citizens in each of the four nations of the United Kingdom.  The units for each entry are grams per person per week. <div id="sec-pca-4-3-1-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
+import pandas as pd
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/uk-diet.csv', index_col=0)
-data_mean = sympy.Matrix(df.T.mean())
-A = matrix([sympy.Matrix(row) for row in (df.T-df.T.mean()).values]).T
+data_mean = sp.Matrix(df.T.mean())
+A = matrix([sp.Matrix(row) for row in (df.T-df.T.mean()).values]).T
 df
 </script></div> We will view this as a dataset consisting of four points in <span class="process-math">\(\real^{17}\text{.}\)</span>  As such, it is impossible to visualize and studying the numbers themselves doesn’t lead to much insight.</div> <div class="para logical" id="sec-pca-4-3-1-2">
 <div class="para">In addition to loading the data, evaluating the cell above created a vector <code class="code-inline tex2jax_ignore">data_mean</code>, which is the mean of the four data points, and <code class="code-inline tex2jax_ignore">A</code>, the <span class="process-math">\(17\times4\)</span> matrix of demeaned data.</div>

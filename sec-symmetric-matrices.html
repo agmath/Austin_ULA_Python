@@ -1106,10 +1106,12 @@ V_{\uvec} = \uvec\cdot C\uvec.
 </h4>
 <div class="para logical" id="sec-symmetric-matrices-4-15-1-1"><ol class="lower-alpha ol-marker-1" id="sec-symmetric-matrices-4-15-1-1-1">
 <li id="sec-symmetric-matrices-4-15-1-1-1-1">
-<div class="para" id="sec-symmetric-matrices-4-15-1-1-1-1-1">Evaluating the following Python cell loads a dataset consisting of 100 demeaned data points and provides a plot of them.  It also provides the demeaned data matrix <span class="process-math">\(A\text{.}\)</span> <div id="sec-symmetric-matrices-4-15-1-1-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import pandas as pd
+<div class="para" id="sec-symmetric-matrices-4-15-1-1-1-1-1">Evaluating the following Python cell loads a dataset consisting of 100 demeaned data points and provides a plot of them.  It also provides the demeaned data matrix <span class="process-math">\(A\text{.}\)</span> <div id="sec-symmetric-matrices-4-15-1-1-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
+import pandas as pd
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/variance-data.csv', header=None)
-data = [sympy.Matrix(row) for row in df.values]
-A = sympy.Matrix(data).T
+data = [sp.Matrix(row) for row in df.values]
+A = sp.Matrix(data).T
 
 #Next line is unlikely to work, as it is sage-specific
 list_plot(data, size=20, color='blue', aspect_ratio=1)

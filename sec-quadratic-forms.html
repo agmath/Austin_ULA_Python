@@ -756,7 +756,8 @@ q_A(\xvec) = \xvec\cdot(A\xvec) = \lambda\xvec\cdot\xvec =
 <li id="sec-quadratic-forms-3-12-1-1-1-1"><div class="para" id="sec-quadratic-forms-3-12-1-1-1-1-1">Evaluating the following cell defines the matrix <span class="process-math">\(D = \begin{bmatrix}
 3 \amp 0 \\
 0 \amp -1
-\end{bmatrix}\)</span> and displays the graph of the associated quadratic form <span class="process-math">\(q_D(\xvec)\text{.}\)</span>  In addition, the points corresponding to vectors <span class="process-math">\(\uvec\)</span> with unit length are displayed as a curve. <div id="sec-quadratic-forms-3-12-1-1-1-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+\end{bmatrix}\)</span> and displays the graph of the associated quadratic form <span class="process-math">\(q_D(\xvec)\text{.}\)</span>  In addition, the points corresponding to vectors <span class="process-math">\(\uvec\)</span> with unit length are displayed as a curve. <div id="sec-quadratic-forms-3-12-1-1-1-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
+import requests
 
 url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
 response = requests.get(url)
@@ -765,7 +766,7 @@ response = requests.get(url)
 exec(response.text, globals())
 
 ## We define our matrix here
-A = sympy.Matrix([[3.0, 0], [0, -1]])
+A = sp.Matrix([[3.0, 0], [0, -1]])
 
 quad_plot(A)
 </script></div> Notice that the matrix <span class="process-math">\(D\)</span> is diagonal.  In which directions does the quadratic form have its maximum and minimum values?</div></li>
