@@ -240,25 +240,28 @@ print(average)
 		To keep Python lightweight, not all of Python's functionality is 
 		made available to you by default. You'll need to import <em>modules</em>
 		in order to complete many specialized tasks. For the most part, we'll 
-		be making use of two modules -- <c>{numpy}</c> (numerical python) and 
-		<c>{sympy}</c> (symbolic mathematics in python). I'll use these curly-braces 
-		<c>{}</c> to indicate that I'm referencing a full <em>module</em>
+		be making use of the <c>{sympy}</c> (SYmbolic Mathematics in Python) module
+		since it does nearly everything we encounter in an introduction to 
+		Linear Algebra. It is also worth knowing, however, the existence of the 
+		<c>{numpy}</c> (NUMerical PYthon) module which handles numerical operations 
+		on vectors and matrices very well. Throughout the text we'll use these curly-braces 
+		<c>{}</c> to indicate that we are referencing a full <em>module</em>
 		rather than just a Python <em>function/method</em>. When importing modules, we 
-		can either load the entire module (ie. <c>import numpy</c>) or we can just load 
+		can either load the entire module (ie. <c>import sympy</c>) or we can just load 
 		a single function from that module (ie. <c>from numpy.linalg import inv</c>).  
 	</p>
 	<p>
-		With <c>{numpy}</c> imported, we can call and utilize functionality from that 
-		module. For example, <c>{numpy}</c> includes a <c>mean()</c> function which can be 
-		called using <c>numpy.mean()</c>, which tells Python to go to the <c>{numpy}</c> 
-		module and find the <c>mean()</c> function. Because we need to reference the module 
+		With <c>{sympy}</c> imported, we can call and utilize functionality from that 
+		module. For example, <c>{sympy}</c> includes a <c>Matrix()</c> function which can be 
+		called using <c>sympy.Matrix()</c>, which tells Python to go to the <c>{sympy}</c> 
+		module and find the <c>Matrix()</c> function. Because we need to reference the module 
 		name when calling functionality from it, Python users often <em>alias</em> their 
 		module names when importing in order to reduce typing. We can see this below. 
 	</p>
 	<sage language="python">
 		<input>
-		  import numpy as np
-		  np.mean([1, 5, 9, 22])
+		  import sympy as sp
+		  sp.Matrix([[1.0, 5, 9, 22], [0, 2, 17, -11]])
 		</input>
 	</sage>
 </subsection>
@@ -317,19 +320,19 @@ print(average)
     by entering
     <sage language="python">
       <input>
-		import numpy as np
+		import sympy as sp
 		
-		A = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+		A = sp.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
 		A
       </input>
     </sage>
     When evaluated, Python will confirm that we've defined the matrix by 
 	writing out its rows, each inside square brackets.  Notice that there 
-	the entire matrix is defined as a list (indicated by the use of the 
+	the entire matrix is defined as a <em>list</em> (indicated by the use of the 
 	square brackets <c>[]</c>), and the elements of the list are also lists! 
 	These are the rows of the matrix. If we think about this, what we are 
 	declaring is quite intuitive -- a matrix is a list of rows. Items passed 
-	to a Python function are called <em>arguments</em> and the <c>np.array()</c>
+	to a Python function are called <em>arguments</em> and the <c>sp.Matrix()</c>
 	function takes just a single argument; the matrix in list form. Later, we'll 
 	encounter functions taking multiple arguments. In these cases, we'll separate
 	the arguments by commas.
@@ -347,17 +350,19 @@ print(average)
 	<p>
 		If we intend to just do numeric computatons like adding, subtracting, 
 		multiplying, finding inverses or determinants, etc. with our matrices, 
-		then using <c>{numpy}</c> will be perfect. If, however, we want to 
-		perform manipulations like <em>row-reduction</em>, then we'll need to 
-		use <c>{sympy}</c> instead. We define a matrix in <c>{sympy}</c> 
-		slightly differently from the way we defined one using <c>{numpy}</c>.
+		then the <c>{numpy}</c> module has functionality that suits these needs 
+		perfectly. If, however, we want to perform manipulations like <em>row-reduction</em>, then we'll need to 
+		use <c>{sympy}</c> instead. Since <c>{sympy}</c> includes all of the functionality 
+		we'll need (including for those arithmetic operations), we'll stick to the 
+		<c>{sympy}</c> module throughout the text, for simplicity's sake. However, 
+		the Python cell below shows how you can define a matrix using <c>{numpy}</c>.
 	</p>
 	<sage language="python">
 		<input>
-			import sympy
+			import numpy as np
 
-			A = sympy.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
-			A
+			B = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+			B
 		</input>
 	</sage>
 
@@ -373,7 +378,7 @@ print(average)
 		<em>functions</em> and <em>methods</em> in Python. Having completed
 		previous math coursework, you are familiar with the notion of <em>functions</em>
 		and their arguments. For example, if <m>f(x) = x^2 - 5x</m>, then the 
-		expression <m>f(5)</m> asks us to use <m>5</m> as an input for the 
+		expression <m>f(5)</m> asks us to use <m>5</m> as an input (argument) for the 
 		function <m>f</m> and then to evaluate it. In Python, some types of 
 		objects have special functions, called <em>methods</em>, which can be 
 		applied directly to them. In this case, the format for calling the 
@@ -406,7 +411,7 @@ print(average)
 	</p></li>
 	<li> <p>
 	  to omit the parentheses around
-	  the arguments after <c>np.array</c> or 
+	  the arguments after <c>np.array()</c> or 
 	  <c>sympy.Matrix()</c>,
 	</p></li>
 	<li> <p>
@@ -416,7 +421,7 @@ print(average)
 	</p></li>
 	<li> <p>
 		forgetting to include the function <em>namespace</em>, for example
-		using <c>array()</c> instead of <c>np.array()</c>, and
+		using <c>Matrix()</c> instead of <c>sp.Matrix()</c>, and
 	</p></li>
 	<li> <p>
 		attempting to apply a <em>function</em> like a <em>method</em> 
@@ -436,7 +441,8 @@ print(average)
 	  <ol marker="a.">
 	    <li xml:id = "li-example-rref">
 	      <p>
-		Enter the following matrix into Python.
+		Enter the following matrix into Python using <c>{sympy}</c> 
+		and <c>sp.Matrix()</c>.
 		<me>
 		  \left[
 		  \begin{array}{rrrr}
@@ -557,7 +563,7 @@ print(average)
 	    <li>
 	      <p>
 		<cd>
-sympy.Matrix([[-1.0,-2, 2,-1],
+sp.Matrix([[-1.0,-2, 2,-1],
                [2, 4,-1, 5],
                [1, 2, 0, 3]])
 		</cd>
@@ -622,7 +628,7 @@ sympy.Matrix([[-1.0,-2, 2,-1],
 	    <li>
 	      <p>
 		<cd>
-sympy.Matrix([[-1.0,-2, 2,-1],
+sp.Matrix([[-1.0,-2, 2,-1],
                [2, 4,-1, 5],
                [1, 2, 0, 3]])
 		</cd>
@@ -681,9 +687,9 @@ sympy.Matrix([[-1.0,-2, 2,-1],
 	<li> <p> Break the matrix entries across lines, one for each row,
 	for better readability by pressing <em>Enter</em> between rows.
 	<cd>
-#A = sympy.Matrix([[1.0, 2, -1, 0],
+#A = np.array([[1.0, 2, -1, 0],
 #    			[-3, 0,  4, 3 ]])
-A = np.array([[1.0, 2, -1, 0],
+A = sp.Matrix([[1.0, 2, -1, 0],
 			[-3, 0,  4, 3 ]])
 	</cd>
 	</p></li>
@@ -691,9 +697,9 @@ A = np.array([[1.0, 2, -1, 0],
 	entered it correctly.  You may want to also print a dividing
 	line to separate matrices.
 	<cd>
-#A = sympy.Matrix([[ 1.0, 2],
+#A = np.array([[ 1.0, 2],
 #                   [2, 2]])
-A = np.array([[ 1.0, 2],
+A = sp.Matrix([[ 1.0, 2],
             [2, 2]])
 print (A)
 print ("---------")
@@ -916,11 +922,11 @@ A.rref()
 	  <li> <p> In order to do specialized analyses (such as working with
 		matrices), we'll need to extend Python's base functionality with 
 		modules like <c>{numpy}</c> and <c>{sympy}</c>. We load these modules
-		with the command <c>import MODULE_NAME</c>.
+		with the command <c>import MODULE_NAME</c>. 
 	  </p></li>
 
-      <li> <p> We may define matrices in Python using either <c>np.array()</c> or 
-		<c>sympy.Matrix()</c>, and can find the reduced row
+      <li> <p> We may define matrices in Python using either <c>sp.Matrix()</c> (or 
+		<c>np.array()</c>, and can find the reduced row
       echelon form of a <c>{sympy}</c> matrix using the <c>.rref()</c> method. Note 
 	  that <c>.rref()</c> will <em>not</em> work with a <c>{numpy}</c> array.
       </p></li>
