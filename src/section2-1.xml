@@ -313,20 +313,27 @@
 
     <p>
       We can perform scalar multiplication and vector addition with 
-	  <c>{numpy}</c> arrays.  We define a vector using <c>np.array()</c> 
+	  <c>{sympy}</c> matrices.  We define a vector using <c>sp.Matrix()</c> 
 	  with either a single row or a single column (our choice will matter!);  
 	  then <c>*</c> and <c>+</c> denote scalar multiplication and vector 
 	  addition.
       <sage language="python">
 	<input>
-	  import numpy as np
+	  import sympy as sp
 	  
-	  v = np.array([3,1])
-	  w = np.array([-1,2])
+	  v = sp.Matrix([3,1])
+	  w = sp.Matrix([-1,2])
 	  print (2*v)
 	  print (v + w)
 	</input>
       </sage>
+
+	  Note that the vectors <c>v</c> and <c>w</c> defined above are 
+	  <em>column</em> vectors. That is, <c>v</c><m>=\twoarray{3}{1}</m> and 
+	  <c>w</c><m>=\twoarray{-1}{2}</m>. In order to define a <em>row</em> 
+	  vector we can use <c>x = sp.Matrix([[5, -8]])</c>. Notice that we could 
+	  not compute the sum <c>v + x</c>. Verify this using the Python code cell
+	  above and convince yourself why taking such a sum is not permissible.
     </p>
 	
   </subsection>
@@ -586,8 +593,8 @@
 	<p>
 	  The previous activity also shows that questions about linear
 	  combinations lead naturally to linear systems.  Suppose we
-	  have vectors <m>\vec{v} = \twovec3{-1}</m> and
-	  <m>\vec{w}=\twovec43</m>.  Let's determine whether we can
+	  have vectors <m>\vec{v} = \twovec{3}{-1}</m> and
+	  <m>\vec{w}=\twovec{4}{3}</m>.  Let's determine whether we can
 	  describe the vector <m>\vec{b}=\twovec{-11}{-18}</m> as a linear
 	  combination of <m>\vec{v}</m> and <m>\vec{w}</m>.  In other
 	  words, we would like to know whether there are weights

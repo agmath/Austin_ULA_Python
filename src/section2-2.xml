@@ -622,17 +622,18 @@
     <activity>
       <statement>
       <p>
-	In Python we can use <c>{numpy}</c>'s <c>matmul()</c> function 
-	to find the product of a matrix and vector.  For 
+	In Python we can use <c>*</c> to find the product between two 
+	compatible matrices or a matrix and compatible vector.  For 
 	example, we can compute the product <m>\left[\begin{array}{ll} 1 \amp 2\\ 2 \amp 1\end{array}\right]\left[\begin{array}{l} 3\\ -1\end{array}\right]</m>
 	as follows.
 	<sage language="python">
 	  <input>
-import numpy as np
+import sympy as sp
 
-A = np.array([[1.0,2], [2,1]])
-v = np.array([[3.0], [-1]])
-np.matmul(A, v)
+A = sp.Matrix([[1.0,2], [2,1]])
+v = sp.Matrix([[3.0], [-1]])
+
+A*v
 	  </input>
 	</sage>
 	<ol marker="a.">
@@ -702,20 +703,23 @@ np.matmul(A, v)
 	<p><ol marker="a.">
 	  <li><p> We define
 	    <cd>
-A = np.array([[1.0, 2, 0, -1],
+A = sp.Matrix([[1.0, 2, 0, -1],
             [2, 4, -3, -2],
             [-1, -2, 6, 1]])
-v = np.array([[3.0], [1], [-1], [1]])
+v = sp.Matrix([[3.0], [1], [-1], [1]])
 A*v		  
 	    </cd>
 	  </p></li>
 
 	  <li><p> We define
 	    <cd>
-A = np.array([[-2.0, 0, 3], [1, 4, 2]])
-zero = np.array([[0.0], [0]])
-v = np.array([[-2.0], [3]])
-w = np.array([[1.0], [2]])
+A = sp.Matrix([[-2.0, 0, 3], [1, 4, 2]])
+zero = sp.Matrix([0.0, 0])
+#alternatively...
+#zero = sp.zeros((2, 1))
+
+v = sp.Matrix([-2.0, 3])
+w = sp.Matrix([1.0, 2])
 	    </cd>
 	  </p></li>
 
@@ -738,20 +742,21 @@ w = np.array([[1.0], [2]])
 	<p><ol marker="a.">
 	  <li><p> We define
 	    <cd>
-A = np.array([[1.0, 2, 0, -1],
+A = sp.Matrix([[1.0, 2, 0, -1],
             [2, 4, -3, -2],
             [-1, -2, 6, 1]])
-v = np.array([[3.0], [1], [-1], [1]])
-np.matmul(A, v)		  
+v = sp.Matrix([3.0, 1, -1, 1])
+
+A*v
 	    </cd>
 	  </p></li>
 
 	  <li><p> We define
 	    <cd>
-A = np.array([[-2.0, 0, 3], [1, 4, 2]])
-zero = np.array([[0.0], [0]])
-v = np.array([[-2.0], [3]])
-w = np.array([[1.0], [2]])
+A = sp.Matrix([[-2.0, 0, 3], [1, 4, 2]])
+zero = sp.Matrix([0.0, 0])
+v = sp.Matrix([-2.0, 3])
+w = sp.Matrix([1.0, 2])
 	    </cd>
 	  </p></li>
 
@@ -1266,8 +1271,7 @@ w = np.array([[1.0], [2]])
 
 	  <li><p> Compute the product <m>AB</m>. </p></li>
 
-	  <li><p> Like with matrix-vector multiplication, we can use 
-		<c>{numpy}</c>'s <c>matmul()</c> function 
+	  <li><p> Like with matrix-vector multiplication, we can use <c>*</c>
 		to find the product of two compatible matrices. Define the 
 		matrices <m>A</m> and <m>B</m> in the Python cell below and
 	  check your work by computing <m>AB</m>.
