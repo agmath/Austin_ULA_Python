@@ -49,8 +49,10 @@
 	is incorrect.
 	<sage language="python">
 	  <input>
-A = sympy.Matrix([[0.8, 0.4], [0.2, 0.6]])
-I = sympy.Matrix([[1, 0], [0, 1]])	  
+import sympy as sp
+
+A = sp.Matrix([[0.8, 0.4], [0.2, 0.6]])
+I = sp.Matrix([[1, 0], [0, 1]])	  
 (A-I).rref()
 	  </input>
 	</sage>
@@ -601,7 +603,7 @@ inverse_power(A, x0, 20)
 	<sage language="python">
 	  <input>
 def find_closest_eigenvalue(A, s, x, N):
-    B = A-s*sympy.eye(A.shape()[0])
+    B = A-s*sp.eye(A.rows)
     for i in range(N):
         x = B \ x
         m = max([comp for comp in x], key=abs).evalf(14)
