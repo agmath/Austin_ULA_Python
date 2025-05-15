@@ -668,10 +668,10 @@ print(taxes)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="space"> </span><span class="title">Importing and using Python modules</span>
 </h3>
 <div class="para" id="sec-sage-introduction-4-2">Python is a <em class="emphasis">general purpose</em> programming language. This means that Python is designed to do lots of things, not just mathematics -- you can build websites, design databases, construct and deploy machine learning models, and much more with Python.</div>
-<div class="para" id="sec-sage-introduction-4-3">To keep Python lightweight, not all of Python’s functionality is made available to you by default. You’ll need to import <em class="emphasis">modules</em> in order to complete many specialized tasks. For the most part, we’ll be making use of two modules -- <code class="code-inline tex2jax_ignore">{numpy}</code> (numerical python) and <code class="code-inline tex2jax_ignore">{sympy}</code> (symbolic mathematics in python). I’ll use these curly-braces <code class="code-inline tex2jax_ignore">{}</code> to indicate that I’m referencing a full <em class="emphasis">module</em> rather than just a Python <em class="emphasis">function/method</em>. When importing modules, we can either load the entire module (ie. <code class="code-inline tex2jax_ignore">import numpy</code>) or we can just load a single function from that module (ie. <code class="code-inline tex2jax_ignore">from numpy.linalg import inv</code>).</div>
-<div class="para" id="sec-sage-introduction-4-4">With <code class="code-inline tex2jax_ignore">{numpy}</code> imported, we can call and utilize functionality from that module. For example, <code class="code-inline tex2jax_ignore">{numpy}</code> includes a <code class="code-inline tex2jax_ignore">mean()</code> function which can be called using <code class="code-inline tex2jax_ignore">numpy.mean()</code>, which tells Python to go to the <code class="code-inline tex2jax_ignore">{numpy}</code> module and find the <code class="code-inline tex2jax_ignore">mean()</code> function. Because we need to reference the module name when calling functionality from it, Python users often <em class="emphasis">alias</em> their module names when importing in order to reduce typing. We can see this below.</div>
-<div id="sec-sage-introduction-4-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
-np.mean([1, 5, 9, 22])
+<div class="para" id="sec-sage-introduction-4-3">To keep Python lightweight, not all of Python’s functionality is made available to you by default. You’ll need to import <em class="emphasis">modules</em> in order to complete many specialized tasks. For the most part, we’ll be making use of the <code class="code-inline tex2jax_ignore">{sympy}</code> (SYmbolic Mathematics in Python) module since it does nearly everything we encounter in an introduction to Linear Algebra. It is also worth knowing, however, the existence of the <code class="code-inline tex2jax_ignore">{numpy}</code> (NUMerical PYthon) module which handles numerical operations on vectors and matrices very well. Throughout the text we’ll use these curly-braces <code class="code-inline tex2jax_ignore">{}</code> to indicate that we are referencing a full <em class="emphasis">module</em> rather than just a Python <em class="emphasis">function/method</em>. When importing modules, we can either load the entire module (ie. <code class="code-inline tex2jax_ignore">import sympy</code>) or we can just load a single function from that module (ie. <code class="code-inline tex2jax_ignore">from numpy.linalg import inv</code>).</div>
+<div class="para" id="sec-sage-introduction-4-4">With <code class="code-inline tex2jax_ignore">{sympy}</code> imported, we can call and utilize functionality from that module. For example, <code class="code-inline tex2jax_ignore">{sympy}</code> includes a <code class="code-inline tex2jax_ignore">Matrix()</code> function which can be called using <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>, which tells Python to go to the <code class="code-inline tex2jax_ignore">{sympy}</code> module and find the <code class="code-inline tex2jax_ignore">Matrix()</code> function. Because we need to reference the module name when calling functionality from it, Python users often <em class="emphasis">alias</em> their module names when importing in order to reduce typing. We can see this below.</div>
+<div id="sec-sage-introduction-4-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
+sp.Matrix([[1.0, 5, 9, 22], [0, 2, 17, -11]])
 </script></div></section><section class="subsection" id="sec-sage-introduction-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="space"> </span><span class="title">Working with Matrices in Python</span>
 </h3>
@@ -705,21 +705,21 @@ np.mean([1, 5, 9, 22])
 \right]
 \end{equation*}
 </div>
-<div class="para">by entering <div id="sec-sage-introduction-5-6-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+<div class="para">by entering <div id="sec-sage-introduction-5-6-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
 
-A = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+A = sp.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
 A
-</script></div> When evaluated, Python will confirm that we’ve defined the matrix by writing out its rows, each inside square brackets.  Notice that there the entire matrix is defined as a list (indicated by the use of the square brackets <code class="code-inline tex2jax_ignore">[]</code>), and the elements of the list are also lists! These are the rows of the matrix. If we think about this, what we are declaring is quite intuitive -- a matrix is a list of rows. Items passed to a Python function are called <em class="emphasis">arguments</em> and the <code class="code-inline tex2jax_ignore">np.array()</code> function takes just a single argument; the matrix in list form. Later, we’ll encounter functions taking multiple arguments. In these cases, we’ll separate the arguments by commas.</div>
+</script></div> When evaluated, Python will confirm that we’ve defined the matrix by writing out its rows, each inside square brackets.  Notice that there the entire matrix is defined as a <em class="emphasis">list</em> (indicated by the use of the square brackets <code class="code-inline tex2jax_ignore">[]</code>), and the elements of the list are also lists! These are the rows of the matrix. If we think about this, what we are declaring is quite intuitive -- a matrix is a list of rows. Items passed to a Python function are called <em class="emphasis">arguments</em> and the <code class="code-inline tex2jax_ignore">sp.Matrix()</code> function takes just a single argument; the matrix in list form. Later, we’ll encounter functions taking multiple arguments. In these cases, we’ll separate the arguments by commas.</div>
 </div>
 <div class="para" id="sec-sage-introduction-5-7">A very important thing to notice about our matrix definition above is that we wrote the top-left element of the matrix as <code class="code-inline tex2jax_ignore">-1.0</code> rather than <code class="code-inline tex2jax_ignore">-1</code>. This is to clarify to Python that we expect to be working within the realm of <em class="emphasis">real numbers</em> (approximated in computers using <em class="emphasis">floats</em>). Without explicitly indicating that decimal values are permissible, Python would store the matrix as an <em class="emphasis">integer</em> array/matrix, which would damage our calculations, resuling in incorrect conclusions. This is something we’ll need to pay careful attention to!</div>
-<div class="para" id="sec-sage-introduction-5-8">If we intend to just do numeric computatons like adding, subtracting, multiplying, finding inverses or determinants, etc. with our matrices, then using <code class="code-inline tex2jax_ignore">{numpy}</code> will be perfect. If, however, we want to perform manipulations like <em class="emphasis">row-reduction</em>, then we’ll need to use <code class="code-inline tex2jax_ignore">{sympy}</code> instead. We define a matrix in <code class="code-inline tex2jax_ignore">{sympy}</code> slightly differently from the way we defined one using <code class="code-inline tex2jax_ignore">{numpy}</code>.</div>
-<div id="sec-sage-introduction-5-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy
+<div class="para" id="sec-sage-introduction-5-8">If we intend to just do numeric computatons like adding, subtracting, multiplying, finding inverses or determinants, etc. with our matrices, then the <code class="code-inline tex2jax_ignore">{numpy}</code> module has functionality that suits these needs perfectly. If, however, we want to perform manipulations like <em class="emphasis">row-reduction</em>, then we’ll need to use <code class="code-inline tex2jax_ignore">{sympy}</code> instead. Since <code class="code-inline tex2jax_ignore">{sympy}</code> includes all of the functionality we’ll need (including for those arithmetic operations), we’ll stick to the <code class="code-inline tex2jax_ignore">{sympy}</code> module throughout the text, for simplicity’s sake. However, the Python cell below shows how you can define a matrix using <code class="code-inline tex2jax_ignore">{numpy}</code>.</div>
+<div id="sec-sage-introduction-5-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
 
-A = sympy.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
-A
+B = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
+B
 </script></div>
 <div class="para" id="sec-sage-introduction-5-10">Regardless of whether we are using <code class="code-inline tex2jax_ignore">{numpy}</code> or <code class="code-inline tex2jax_ignore">{sympy}</code>, there is no way of specifying whether our matrix is an augmented or coefficient matrix so it will be up to us to use our objects and interpret our results appropriately.</div>
-<div class="para" id="sec-sage-introduction-5-11">One additional item worth pointing out is the difference between <em class="emphasis">functions</em> and <em class="emphasis">methods</em> in Python. Having completed previous math coursework, you are familiar with the notion of <em class="emphasis">functions</em> and their arguments. For example, if <span class="process-math">\(f(x) = x^2 - 5x\text{,}\)</span> then the expression <span class="process-math">\(f(5)\)</span> asks us to use <span class="process-math">\(5\)</span> as an input for the function <span class="process-math">\(f\)</span> and then to evaluate it. In Python, some types of objects have special functions, called <em class="emphasis">methods</em>, which can be applied directly to them. In this case, the format for calling the method on the object is <code class="code-inline tex2jax_ignore">object.method()</code>. For example, we defined the matrix <code class="code-inline tex2jax_ignore">A</code> above as a <code class="code-inline tex2jax_ignore">{sympy}</code> matrix. These matrices have a <code class="code-inline tex2jax_ignore">.rref()</code> method which can be applied to them in order to transform the matrix into its <em class="emphasis">reduced row-echelon</em> form. We apply that method to our matrix below to illustrate this point.</div>
+<div class="para" id="sec-sage-introduction-5-11">One additional item worth pointing out is the difference between <em class="emphasis">functions</em> and <em class="emphasis">methods</em> in Python. Having completed previous math coursework, you are familiar with the notion of <em class="emphasis">functions</em> and their arguments. For example, if <span class="process-math">\(f(x) = x^2 - 5x\text{,}\)</span> then the expression <span class="process-math">\(f(5)\)</span> asks us to use <span class="process-math">\(5\)</span> as an input (argument) for the function <span class="process-math">\(f\)</span> and then to evaluate it. In Python, some types of objects have special functions, called <em class="emphasis">methods</em>, which can be applied directly to them. In this case, the format for calling the method on the object is <code class="code-inline tex2jax_ignore">object.method()</code>. For example, we defined the matrix <code class="code-inline tex2jax_ignore">A</code> above as a <code class="code-inline tex2jax_ignore">{sympy}</code> matrix. These matrices have a <code class="code-inline tex2jax_ignore">.rref()</code> method which can be applied to them in order to transform the matrix into its <em class="emphasis">reduced row-echelon</em> form. We apply that method to our matrix below to illustrate this point.</div>
 <div id="sec-sage-introduction-5-12" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A.rref()
 </script></div>
 <article class="assemblage assemblage-like" id="sec-sage-introduction-5-13"><h4 class="heading"><span class="title">Python syntax.</span></h4>
@@ -729,9 +729,9 @@ A
 <li id="sec-sage-introduction-5-13-2-1-1"><div class="para" id="sec-sage-introduction-5-13-2-1-1-1">to forget the square brackets around the list of entries,</div></li>
 <li id="sec-sage-introduction-5-13-2-1-2"><div class="para" id="sec-sage-introduction-5-13-2-1-2-1">to omit an entry from the list or to add an extra one,</div></li>
 <li id="sec-sage-introduction-5-13-2-1-3"><div class="para" id="sec-sage-introduction-5-13-2-1-3-1">to forget to separate the rows, columns, and entries by commas,</div></li>
-<li id="sec-sage-introduction-5-13-2-1-4"><div class="para" id="sec-sage-introduction-5-13-2-1-4-1">to omit the parentheses around the arguments after <code class="code-inline tex2jax_ignore">np.array</code> or <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>,</div></li>
+<li id="sec-sage-introduction-5-13-2-1-4"><div class="para" id="sec-sage-introduction-5-13-2-1-4-1">to omit the parentheses around the arguments after <code class="code-inline tex2jax_ignore">np.array()</code> or <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>,</div></li>
 <li id="sec-sage-introduction-5-13-2-1-5"><div class="para" id="sec-sage-introduction-5-13-2-1-5-1">spelling or capitalization errors like using a capital “<code class="code-inline tex2jax_ignore">A</code>” in <code class="code-inline tex2jax_ignore">np.array</code> or a lowercase “<code class="code-inline tex2jax_ignore">m</code>” in <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>,</div></li>
-<li id="sec-sage-introduction-5-13-2-1-6"><div class="para" id="sec-sage-introduction-5-13-2-1-6-1">forgetting to include the function <em class="emphasis">namespace</em>, for example using <code class="code-inline tex2jax_ignore">array()</code> instead of <code class="code-inline tex2jax_ignore">np.array()</code>, and</div></li>
+<li id="sec-sage-introduction-5-13-2-1-6"><div class="para" id="sec-sage-introduction-5-13-2-1-6-1">forgetting to include the function <em class="emphasis">namespace</em>, for example using <code class="code-inline tex2jax_ignore">Matrix()</code> instead of <code class="code-inline tex2jax_ignore">sp.Matrix()</code>, and</div></li>
 <li id="sec-sage-introduction-5-13-2-1-7"><div class="para" id="sec-sage-introduction-5-13-2-1-7-1">attempting to apply a <em class="emphasis">function</em> like a <em class="emphasis">method</em> and vice-versa.</div></li>
 </ul>
 <div class="para">If you see an error message, carefully proofread your input and try again.</div>
@@ -740,7 +740,7 @@ A
 </h4>
 <div class="para logical" id="sec-sage-introduction-5-14-2-1"><ol class="lower-alpha ol-marker-1" id="sec-sage-introduction-5-14-2-1-1">
 <li id="li-example-rref"><div class="para logical" id="li-example-rref-1">
-<div class="para">Enter the following matrix into Python.</div>
+<div class="para">Enter the following matrix into Python using <code class="code-inline tex2jax_ignore">{sympy}</code> and <code class="code-inline tex2jax_ignore">sp.Matrix()</code>.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[
@@ -752,7 +752,7 @@ A
 \right]
 \end{equation*}
 </div>
-<div class="para"><div id="li-example-rref-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<div class="para"><div id="li-example-rref-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
 <li id="sec-sage-introduction-5-14-2-1-1-2">
@@ -830,18 +830,18 @@ B \amp = \amp \left[
 <li id="sec-sage-introduction-5-15-2-1-1"><div class="para logical" id="sec-sage-introduction-5-15-2-1-1-1">
 <div class="para">Break the matrix entries across lines, one for each row, for better readability by pressing <em class="emphasis">Enter</em> between rows.</div>
 <pre class="code-display tex2jax_ignore">
-#A = sympy.Matrix([[1.0, 2, -1, 0],
+#A = np.array([[1.0, 2, -1, 0],
 #    			[-3, 0,  4, 3 ]])
-A = np.array([[1.0, 2, -1, 0],
+A = sp.Matrix([[1.0, 2, -1, 0],
 			[-3, 0,  4, 3 ]])
 	</pre>
 </div></li>
 <li id="sec-sage-introduction-5-15-2-1-2"><div class="para logical" id="sec-sage-introduction-5-15-2-1-2-1">
 <div class="para">Print your original matrix to check that you have entered it correctly.  You may want to also print a dividing line to separate matrices.</div>
 <pre class="code-display tex2jax_ignore">
-#A = sympy.Matrix([[ 1.0, 2],
+#A = np.array([[ 1.0, 2],
 #                   [2, 2]])
-A = np.array([[ 1.0, 2],
+A = sp.Matrix([[ 1.0, 2],
             [2, 2]])
 print (A)
 print ("---------")
@@ -964,7 +964,7 @@ n^3\text{.}\)</span>  As we have seen, some matrices require more effort than ot
 <ul class="disc" id="sec-sage-introduction-7-2-1">
 <li id="sec-sage-introduction-7-2-1-1"><div class="para" id="sec-sage-introduction-7-2-1-1-1">Python can perform basic arithmetic using standard operators.  Python can also save results from one command to be reused in a later command.</div></li>
 <li id="sec-sage-introduction-7-2-1-2"><div class="para" id="sec-sage-introduction-7-2-1-2-1">In order to do specialized analyses (such as working with matrices), we’ll need to extend Python’s base functionality with modules like <code class="code-inline tex2jax_ignore">{numpy}</code> and <code class="code-inline tex2jax_ignore">{sympy}</code>. We load these modules with the command <code class="code-inline tex2jax_ignore">import MODULE_NAME</code>.</div></li>
-<li id="sec-sage-introduction-7-2-1-3"><div class="para" id="sec-sage-introduction-7-2-1-3-1">We may define matrices in Python using either <code class="code-inline tex2jax_ignore">np.array()</code> or <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>, and can find the reduced row echelon form of a <code class="code-inline tex2jax_ignore">{sympy}</code> matrix using the <code class="code-inline tex2jax_ignore">.rref()</code> method. Note that <code class="code-inline tex2jax_ignore">.rref()</code> will <em class="emphasis">not</em> work with a <code class="code-inline tex2jax_ignore">{numpy}</code> array.</div></li>
+<li id="sec-sage-introduction-7-2-1-3"><div class="para" id="sec-sage-introduction-7-2-1-3-1">We may define matrices in Python using either <code class="code-inline tex2jax_ignore">sp.Matrix()</code> (or <code class="code-inline tex2jax_ignore">np.array()</code>, and can find the reduced row echelon form of a <code class="code-inline tex2jax_ignore">{sympy}</code> matrix using the <code class="code-inline tex2jax_ignore">.rref()</code> method. Note that <code class="code-inline tex2jax_ignore">.rref()</code> will <em class="emphasis">not</em> work with a <code class="code-inline tex2jax_ignore">{numpy}</code> array.</div></li>
 <li id="sec-sage-introduction-7-2-1-4"><div class="para" id="sec-sage-introduction-7-2-1-4-1">We saw an example of the <a href="sec-sage-introduction.html#principle-augmentation-principle" class="xref" data-knowl="./knowl/xref/principle-augmentation-principle.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.3.1: Augmentation Principle">Augmentation Principle</a>, which we then stated as a general principle.</div></li>
 <li id="sec-sage-introduction-7-2-1-5"><div class="para" id="sec-sage-introduction-7-2-1-5-1">We saw that the computational effort required to find the reduced row echelon form of an <span class="process-math">\(n\times n\)</span> matrix is proportional to <span class="process-math">\(n^3\text{.}\)</span>
 </div></li>
