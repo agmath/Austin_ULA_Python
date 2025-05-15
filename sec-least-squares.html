@@ -753,7 +753,9 @@ A^TA\xhat = \begin{bmatrix} 9 \amp -1 \\ -1 \amp 10 \\
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">6.5.3</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-least-squares-4-8-1-1">
-<div class="para">The rate at which a cricket chirps is related to the outdoor temperature, as reflected in some experimental data that we’ll study in this activity.  The chirp rate <span class="process-math">\(C\)</span> is expressed in chirps per second while the temperature <span class="process-math">\(T\)</span> is in degrees Fahrenheit.  Evaluate the following cell to load the data: <div id="sec-least-squares-4-8-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+<div class="para">The rate at which a cricket chirps is related to the outdoor temperature, as reflected in some experimental data that we’ll study in this activity.  The chirp rate <span class="process-math">\(C\)</span> is expressed in chirps per second while the temperature <span class="process-math">\(T\)</span> is in degrees Fahrenheit.  Evaluate the following cell to load the data: <div id="sec-least-squares-4-8-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
 response = requests.get(url)
@@ -762,9 +764,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/crickets.csv')
-data = [vector(row) for row in df.values]
-chirps = sympy.Matrix(df['Chirps'])
-temps = sympy.Matrix(df['Temperature'])
+data = [sp.Matrix(row) for row in df.values]
+chirps = sp.Matrix(df['Chirps'])
+temps = sp.Matrix(df['Temperature'])
 print(df)
 list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
 </script></div> Evaluating this cell also provides:</div>
@@ -1279,7 +1281,9 @@ exec(response.text, globals())
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-least-squares-8-8"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-least-squares-8-8-1-1">
-<div class="para">The following cell loads in some data showing the number of people in Bangladesh living without electricity over 27 years. It also defines vectors <code class="code-inline tex2jax_ignore">year</code>, which records the years in the dataset, and <code class="code-inline tex2jax_ignore">people</code>, which records the number of people. <div id="sec-least-squares-8-8-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+<div class="para">The following cell loads in some data showing the number of people in Bangladesh living without electricity over 27 years. It also defines vectors <code class="code-inline tex2jax_ignore">year</code>, which records the years in the dataset, and <code class="code-inline tex2jax_ignore">people</code>, which records the number of people. <div id="sec-least-squares-8-8-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
 response = requests.get(url)
@@ -1288,9 +1292,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/bangladesh.csv')
-data = [sympy.Matrix(row) for row in df.values]
-year = sympy.Matrix(df['Year'])
-people = sympy.Matrix(df['People'])
+data = [sp.Matrix(row) for row in df.values]
+year = sp.Matrix(df['Year'])
+people = sp.Matrix(df['People'])
 print(df)
 list_plot(data, size=40, color='blue')
 </script></div>
@@ -1321,7 +1325,8 @@ N = \beta_0 + \beta_1 t
 \end{equation*}
 </div>
 </div> <div class="para logical" id="sec-least-squares-8-9-1-3">
-<div class="para">Evaluating the following cell loads the dataset and defines two vectors <code class="code-inline tex2jax_ignore">logaxis</code>, whose components are <span class="process-math">\(\ln(L)\text{,}\)</span> and <code class="code-inline tex2jax_ignore">logperiod</code>, whose components are <span class="process-math">\(\ln(P)\text{.}\)</span> <div id="sec-least-squares-8-9-1-3-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np	    
+<div class="para">Evaluating the following cell loads the dataset and defines two vectors <code class="code-inline tex2jax_ignore">logaxis</code>, whose components are <span class="process-math">\(\ln(L)\text{,}\)</span> and <code class="code-inline tex2jax_ignore">logperiod</code>, whose components are <span class="process-math">\(\ln(P)\text{.}\)</span> <div id="sec-least-squares-8-9-1-3-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np	
+import sympy as sp    
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
@@ -1331,8 +1336,8 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/planets.csv',index_col=0)
-logaxis = sympy.Matrix(np.log(df['Semi-major axis']))
-logperiod = sympy.Matrix(np.log(df['Period']))
+logaxis = sp.Matrix(np.log(df['Semi-major axis']))
+logperiod = sp.Matrix(np.log(df['Period']))
 print(df)
 </script></div>
 </div>
@@ -1347,7 +1352,9 @@ print(df)
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-least-squares-8-10"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-least-squares-8-10-1-1">
-<div class="para">Evaluating the following cell loads a dataset describing the temperature in the Earth’s atmosphere at various altitudes. There are also two vectors <code class="code-inline tex2jax_ignore">altitude</code>, expressed in kilometers, and <code class="code-inline tex2jax_ignore">temperature</code>, in degrees Celsius. <div id="sec-least-squares-8-10-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+<div class="para">Evaluating the following cell loads a dataset describing the temperature in the Earth’s atmosphere at various altitudes. There are also two vectors <code class="code-inline tex2jax_ignore">altitude</code>, expressed in kilometers, and <code class="code-inline tex2jax_ignore">temperature</code>, in degrees Celsius. <div id="sec-least-squares-8-10-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
 response = requests.get(url)
@@ -1356,9 +1363,9 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/altitude-temps.csv')
-data = [sympy.Matrix(row) for row in df.values]
-altitude = sympy.Matrix(df['Altitude'])
-temperature = sympy.Matrix(df['Temperature'])
+data = [sp.Matrix(row) for row in df.values]
+altitude = sp.Matrix(df['Altitude'])
+temperature = sp.Matrix(df['Temperature'])
 print(df)
 list_plot(data, size=40, color='blue')
 </script></div>
@@ -1373,7 +1380,9 @@ list_plot(data, size=40, color='blue')
 </ol>
 </div></article><article class="exercise exercise-like" id="sec-least-squares-8-11"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-least-squares-8-11-1-1">
-<div class="para">The following cell loads some data describing 1057 houses in a particular real estate market.  For each house, we record the living area in square feet, the lot size in acres, the age in years, and the price in dollars.  The cell also defines variables <code class="code-inline tex2jax_ignore">area</code>, <code class="code-inline tex2jax_ignore">size</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">price</code>. <div id="sec-least-squares-8-11-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import requests
+<div class="para">The following cell loads some data describing 1057 houses in a particular real estate market.  For each house, we record the living area in square feet, the lot size in acres, the age in years, and the price in dollars.  The cell also defines variables <code class="code-inline tex2jax_ignore">area</code>, <code class="code-inline tex2jax_ignore">size</code>, <code class="code-inline tex2jax_ignore">age</code>, and <code class="code-inline tex2jax_ignore">price</code>. <div id="sec-least-squares-8-11-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_orthogonality.py"
 response = requests.get(url)
@@ -1383,10 +1392,10 @@ exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/housing.csv',index_col=0)
 df = df.fillna(df.mean())
-area = sympy.Matrix(df['Living.Area'])
-size = sympy.Matrix(df['Lot.Size'])
-age = sympy.Matrix(df['Age'])
-price = sympy.Matrix(df['Price'])
+area = sp.Matrix(df['Living.Area'])
+size = sp.Matrix(df['Lot.Size'])
+age = sp.Matrix(df['Age'])
+price = sp.Matrix(df['Price'])
 df
 </script></div> We will use linear regression to predict the price of a house given its living area, lot size, and age:</div>
 <div class="displaymath process-math">

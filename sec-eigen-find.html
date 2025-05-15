@@ -1166,7 +1166,7 @@ A-(-1)I = \begin{bmatrix}
 </ol></div></article></section><section class="subsection" id="sec-eigen-find-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="space"> </span><span class="title">Using Python to find eigenvalues and eigenvectors</span>
 </h3>
-<div class="para" id="sec-eigen-find-6-2">We can use Python to find the characteristic polynomial, eigenvalues, and eigenvectors of a matrix defined using either <code class="code-inline tex2jax_ignore">{numpy}</code> or <code class="code-inline tex2jax_ignore">{sympy}</code>. For a matrix <code class="code-inline tex2jax_ignore">A</code> defined using <code class="code-inline tex2jax_ignore">np.array()</code>, we can use <code class="code-inline tex2jax_ignore">np.linalg.eig(A)</code>. If <code class="code-inline tex2jax_ignore">A</code> is defined using <code class="code-inline tex2jax_ignore">{sympy}</code>, then we can use <code class="code-inline tex2jax_ignore">A.eigenvals()</code> and <code class="code-inline tex2jax_ignore">A.eigenvects()</code>. As we will see, some care is required when dealing with matrices whose entries include decimals.</div>
+<div class="para" id="sec-eigen-find-6-2">We can use Python to find the characteristic polynomial, eigenvalues, and eigenvectors of a matrix defined using either <code class="code-inline tex2jax_ignore">{numpy}</code> or <code class="code-inline tex2jax_ignore">{sympy}</code>. For a matrix <code class="code-inline tex2jax_ignore">A</code> defined using <code class="code-inline tex2jax_ignore">{sympy}</code>, we can use <code class="code-inline tex2jax_ignore">A.eigenvals()</code> and <code class="code-inline tex2jax_ignore">A.eigenvects()</code>. If <span class="process-math">\(A\)</span> is defined using <code class="code-inline tex2jax_ignore">np.array()</code>, we can use <code class="code-inline tex2jax_ignore">np.linalg.eig(A)</code>. As we will see, some care is required when dealing with matrices whose entries include decimals.</div>
 <article class="activity project-like" id="sec-eigen-find-6-3"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
 </h4>
@@ -1180,26 +1180,28 @@ A-(-1)I = \begin{bmatrix}
 <ol class="lower-alpha ol-marker-1" id="sec-eigen-find-6-3-1-1-2">
 <li id="sec-eigen-find-6-3-1-1-2-1">
 <div class="para" id="sec-eigen-find-6-3-1-1-2-1-1">We can find the characteristic polynomial of <span class="process-math">\(A\)</span> by writing <code class="code-inline tex2jax_ignore">A.charpoly()</code>.</div>
-<div id="sec-eigen-find-6-3-1-1-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3,1], [0,-3]])
+<div id="sec-eigen-find-6-3-1-1-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
+
+A = sp.Matrix([[-3,1], [0,-3]])
 A.charpoly()
 </script></div>
-<div class="para" id="sec-eigen-find-6-3-1-1-2-1-3">The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities. Obtaining the factored form of the characteristic polynomial is a multistep process. First, we obtain the characteristic polynomial and store it. Then, we’ll convert the polynomial to an expression using the <code class="code-inline tex2jax_ignore">.as_expr()</code> method, and finally use <code class="code-inline tex2jax_ignore">sympy.factor()</code> to obtain the factored polynomial.</div>
-<div id="sec-eigen-find-6-3-1-1-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+<div class="para" id="sec-eigen-find-6-3-1-1-2-1-3">The factored form of the characteristic polynomial may be more useful since it will tell us the eigenvalues and their multiplicities. Obtaining the factored form of the characteristic polynomial is a multistep process. First, we obtain the characteristic polynomial and store it. Then, we’ll convert the polynomial to an expression using the <code class="code-inline tex2jax_ignore">.as_expr()</code> method, and finally use <code class="code-inline tex2jax_ignore">sp.factor()</code> to obtain the factored polynomial.</div>
+<div id="sec-eigen-find-6-3-1-1-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sp.Matrix([[-3.0,1], [0,-3]])
 A_char_poly = A.charpoly()
 A_char_poly = A_char_poly.as_expr()
-sympy.factor(A_char_poly)
+sp.factor(A_char_poly)
 </script></div>
 </li>
 <li id="sec-eigen-find-6-3-1-1-2-2">
 <div class="para" id="sec-eigen-find-6-3-1-1-2-2-1">If we only want the eigenvalues, we can use <code class="code-inline tex2jax_ignore">A.eigenvals()</code>.</div>
-<div id="sec-eigen-find-6-3-1-1-2-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+<div id="sec-eigen-find-6-3-1-1-2-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sp.Matrix([[-3.0,1], [0,-3]])
 A.eigenvals()
 </script></div>
 <div class="para" id="sec-eigen-find-6-3-1-1-2-2-3">Notice that the multiplicity of an eigenvalue is the number of times it is repeated in the list of eigenvalues.</div>
 </li>
 <li id="sec-eigen-find-6-3-1-1-2-3">
 <div class="para" id="sec-eigen-find-6-3-1-1-2-3-1">Finally, we can find eigenvectors by <code class="code-inline tex2jax_ignore">A.eigenvects()</code>.</div>
-<div id="sec-eigen-find-6-3-1-1-2-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[-3.0,1], [0,-3]])
+<div id="sec-eigen-find-6-3-1-1-2-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sp.Matrix([[-3.0,1], [0,-3]])
 A.eigenvects()
 </script></div>
 <div class="para" id="sec-eigen-find-6-3-1-1-2-3-3">At first glance, the result of this command can be a little confusing to interpret.  What we see is a list with one entry for each eigenvalue.  For each eigenvalue, there is a triple consisting of (i) the eigenvalue <span class="process-math">\(\lambda\text{,}\)</span> (ii) the multiplicity of <span class="process-math">\(\lambda\text{,}\)</span> and (iii) a basis for <span class="process-math">\(E_\lambda\text{.}\)</span>
@@ -1217,9 +1219,9 @@ A.eigenvects()
 <li id="sec-eigen-find-6-3-1-1-2-4-1-3-2"><div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-2-1">What do you find for the reduced row echelon form of <span class="process-math">\(A-I\text{?}\)</span>
 </div></li>
 <li id="sec-eigen-find-6-3-1-1-2-4-1-3-3">
-<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-1">Let’s now use Python to determine the reduced row echelon form of <span class="process-math">\(A-I\)</span> (note that you can create an <span class="process-math">\(n\times n\)</span> identify matrix in Python using <code class="code-inline tex2jax_ignore">np.eye(n)</code>):</div>
-<div id="sec-eigen-find-6-3-1-1-2-4-1-3-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sympy.Matrix([[0.4,0.3], [0.6,0.7]])
-(A-eye(2)).rref()
+<div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-1">Let’s now use Python to determine the reduced row echelon form of <span class="process-math">\(A-I\)</span> (note that you can create an <span class="process-math">\(n\times n\)</span> identify matrix in Python using <code class="code-inline tex2jax_ignore">sp.eye(n)</code>):</div>
+<div id="sec-eigen-find-6-3-1-1-2-4-1-3-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">A = sp.Matrix([[0.4,0.3], [0.6,0.7]])
+(A-sp.eye(2)).rref()
 </script></div>
 <div class="para" id="sec-eigen-find-6-3-1-1-2-4-1-3-3-3">What result does Python report for the reduced row echelon form?  Why is this result not correct?</div>
 </li>

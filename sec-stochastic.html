@@ -1003,7 +1003,10 @@ G' = 0.85 G + 0.15H_n\text{.}
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.5.7</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-google-14-1-1">
-<div class="para">The following Python cell will generate the Markov chain for the modified Google matrix <span class="process-math">\(G\)</span> if you simply enter the original Google matrix <span class="process-math">\(G\)</span> in the appropriate line. <div id="subsec-google-14-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+<div class="para">The following Python cell will generate the Markov chain for the modified Google matrix <span class="process-math">\(G\)</span> if you simply enter the original Google matrix <span class="process-math">\(G\)</span> in the appropriate line. <div id="subsec-google-14-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+
+def modified_markov_chain(A, x0, N):
     r = A.nrows()
     #A = 0.85*A + 0.15*matrix(r,r,[1.0/r]*(r*r))
 	A = 0.85*A + 0.15*(1.0/r)*np.ones_like(A)	      
@@ -1191,7 +1194,10 @@ G' = \alpha G + (1-\alpha)H_n\text{.}
 </div>
 <div class="para">Since <span class="process-math">\(G'\)</span> is positive, the Markov chain is guaranteed to converge to a unique steady-state vector.</div>
 </div> <div class="para logical" id="sec-stochastic-7-10-1-2">
-<div class="para">We said that Google chooses <span class="process-math">\(\alpha = 0.85\)</span> so we might wonder why this is a good choice.  We will explore the role of <span class="process-math">\(\alpha\)</span> in this exercise.  Let’s consider the model Internet described in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix <span class="process-math">\(G\text{.}\)</span>  In the Python cell below, you can enter the matrix <span class="process-math">\(G\)</span> and choose a value for <span class="process-math">\(\alpha\text{.}\)</span> <div id="sec-stochastic-7-10-1-2-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">def modified_markov_chain(A, x0, N):
+<div class="para">We said that Google chooses <span class="process-math">\(\alpha = 0.85\)</span> so we might wonder why this is a good choice.  We will explore the role of <span class="process-math">\(\alpha\)</span> in this exercise.  Let’s consider the model Internet described in <a href="sec-stochastic.html#fig-google-cyclic" class="xref" data-knowl="./knowl/xref/fig-google-cyclic.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 4.5.9">Figure 4.5.9</a> and construct the Google matrix <span class="process-math">\(G\text{.}\)</span>  In the Python cell below, you can enter the matrix <span class="process-math">\(G\)</span> and choose a value for <span class="process-math">\(\alpha\text{.}\)</span> <div id="sec-stochastic-7-10-1-2-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import sympy as sp
+
+def modified_markov_chain(A, x0, N):
     r = A.nrows()
     #A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
     A = alpha*A + (1 - alpha)*(1.0/r)*np.ones_like(A)
@@ -1203,7 +1209,7 @@ G' = \alpha G + (1-\alpha)H_n\text{.}
 ## and resulting Markov chain
 alpha = 0
 G =
-x0 = np.array([1.0,0,0,0,0])
+x0 = sp.Matrix([1.0,0,0,0,0])
 modified_markov_chain(G, x0, 20)
 </script></div>
 </div>
