@@ -1057,10 +1057,10 @@
     <p> We can use Python to find the characteristic polynomial,
     eigenvalues, and eigenvectors of a matrix defined using either 
 	<c>{numpy}</c> or <c>{sympy}</c>. For a matrix <c>A</c> defined using 
-	<c>np.array()</c>, we can use <c>np.linalg.eig(A)</c>. If <c>A</c> is
-	defined using <c>{sympy}</c>, then we can use <c>A.eigenvals()</c> and
-	<c>A.eigenvects()</c>. As we will see, some care is required when 
-	dealing with matrices whose entries include decimals.  
+	<c>{sympy}</c>, we can use <c>A.eigenvals()</c> and
+	<c>A.eigenvects()</c>. If <m>A</m> is defined using <c>np.array()</c>, 
+	we can use <c>np.linalg.eig(A)</c>. As we will see, some care is 
+	required when dealing with matrices whose entries include decimals.  
     </p>
 
     <activity>
@@ -1079,7 +1079,9 @@
 
 	  <sage language="python">
 	    <input>
-A = sympy.Matrix([[-3,1], [0,-3]])
+import sympy as sp
+
+A = sp.Matrix([[-3,1], [0,-3]])
 A.charpoly()
 	    </input>
 	  </sage>
@@ -1090,14 +1092,14 @@ A.charpoly()
 	  characteristic polynomial is a multistep process. First, we 
 	obtain the characteristic polynomial and store it. Then, we'll 
 	convert the polynomial to an expression using the <c>.as_expr()</c> 
-	method, and finally use <c>sympy.factor()</c> to obtain the factored polynomial. </p>
+	method, and finally use <c>sp.factor()</c> to obtain the factored polynomial. </p>
 	  
 	  <sage language="python">
 	    <input>
-A = sympy.Matrix([[-3.0,1], [0,-3]])
+A = sp.Matrix([[-3.0,1], [0,-3]])
 A_char_poly = A.charpoly()
 A_char_poly = A_char_poly.as_expr()
-sympy.factor(A_char_poly)
+sp.factor(A_char_poly)
 	    </input>
 	  </sage>
 	</li>
@@ -1107,7 +1109,7 @@ sympy.factor(A_char_poly)
 
 	  <sage language="python">
 	    <input>
-A = sympy.Matrix([[-3.0,1], [0,-3]])
+A = sp.Matrix([[-3.0,1], [0,-3]])
 A.eigenvals()
 	    </input>
 	  </sage>
@@ -1122,7 +1124,7 @@ A.eigenvals()
 	  
 	  <sage language="python">
 	    <input>
-A = sympy.Matrix([[-3.0,1], [0,-3]])
+A = sp.Matrix([[-3.0,1], [0,-3]])
 A.eigenvects()
 	    </input>
 	  </sage>
@@ -1154,12 +1156,13 @@ A.eigenvects()
 
 	    <li><p> Let's now use Python to determine the reduced row
 	    echelon form of <m>A-I</m> (note that you can create an 
-		<m>n\times n</m> identify matrix in Python using <c>np.eye(n)</c>): </p>
+		<m>n\times n</m> identify matrix in Python using 
+		<c>sp.eye(n)</c>): </p>
 	      
 	    <sage language="python">
 	      <input>
-A = sympy.Matrix([[0.4,0.3], [0.6,0.7]])
-(A-eye(2)).rref()
+A = sp.Matrix([[0.4,0.3], [0.6,0.7]])
+(A-sp.eye(2)).rref()
 	      </input>
 	    </sage>
 

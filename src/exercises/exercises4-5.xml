@@ -680,6 +680,9 @@ markov_chain(A, x0, 20)
       <m>G</m> and choose a value for <m>\alpha</m>.
       <sage language="python">
 	<input>
+import numpy as np
+import sympy as sp
+
 def modified_markov_chain(A, x0, N):
     r = A.nrows()
     #A = alpha*A + (1-alpha)*matrix(r,r,[1.0/r]*(r*r))	      
@@ -692,7 +695,7 @@ def modified_markov_chain(A, x0, N):
 ## and resulting Markov chain
 alpha = 0
 G =
-x0 = np.array([1.0,0,0,0,0])
+x0 = sp.Matrix([1.0,0,0,0,0])
 modified_markov_chain(G, x0, 20)		
 	</input>
       </sage>
