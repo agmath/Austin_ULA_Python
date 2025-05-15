@@ -499,6 +499,7 @@ df.T
 	5-4 vote and store them in the matrix <m>A</m>.
 	<sage language="python">
 	  <input>
+import sympy as sp
 import requests
 
 url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_svd_supreme.py"
@@ -507,8 +508,8 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = sympy.Matrix(fivefour.values)
-v = sympy.Matrix(188*[1])
+A = sp.Matrix(fivefour.values)
+v = sp.Matrix(188*[1])
 fivefour
 
 	  </input>
@@ -661,7 +662,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = 1/100*sympy.Matrix(agreement.values)
+A = 1/100*sp.Matrix(agreement.values)
 agreement
 
 	  </input>

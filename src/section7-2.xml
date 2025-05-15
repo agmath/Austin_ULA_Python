@@ -441,6 +441,7 @@ graph = plot3d(q(x,y), (x,-1.2,1.2), (y,-1.2,1.2), color='orange', opacity=0.9, 
 curve = parametric_plot3d([cos(t), sin(t), q(cos(t), sin(t))], (t,0,2*pi), thickness=3)   
 graph + curve
 		    -->
+import sympy as sp
 import requests
 
 url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
@@ -450,7 +451,7 @@ response = requests.get(url)
 exec(response.text, globals())
 
 ## We define our matrix here
-A = sympy.Matrix([[3.0, 0], [0, -1]])
+A = sp.Matrix([[3.0, 0], [0, -1]])
 
 quad_plot(A)
 

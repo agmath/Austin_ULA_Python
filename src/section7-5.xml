@@ -163,7 +163,9 @@
 	  is a diagonal matrix containing the singular values of <m>A</m>.
       <sage language="python">
 	<input>
-A = sympy.Matrix([[1.0,0,-1], [1,1,1]])
+import sympy as sp
+
+A = sp.Matrix([[1.0,0,-1], [1,1,1]])
 U, Sigma, V = A.singular_value_decomposition()	  
 print(U)
 print('---------')
@@ -536,9 +538,9 @@ print(V)
 	  <sage language="python">
 	    <input>
 h = 1/2
-U = sympy.Matrix([[h,h,h,h], [h,h,-h,-h], [h,-h,h,-h], [h,-h,-h,h]])	    
-V = sympy.Matrix(4[[h,h,h,h], [h,-h,-h,h], [-h,-h,h,h], [-h,h,-h,h]])
-Sigma = sympy.diag([500, 100, 20, 4])
+U = sp.Matrix([[h,h,h,h], [h,h,-h,-h], [h,-h,h,-h], [h,-h,-h,h]])	    
+V = sp.Matrix(4[[h,h,h,h], [h,-h,-h,h], [-h,-h,h,h], [-h,h,-h,h]])
+Sigma = sp.diag([500, 100, 20, 4])
 	    </input>
 	  </sage>
 	  <ol marker="a.">
@@ -1288,7 +1290,7 @@ display_matrix(approximate(A, k))
 		      matrix <m>A</m>.
 		      <sage language="python">
 			<input>
-A = sympy.Matrix(image)
+A = sp.Matrix(image)
 display_image(A)
 
 			</input>
@@ -1338,7 +1340,7 @@ display_image(approximate(A, k))
 		represented by the matrix <m>A</m> below.
 		<sage language="python">
 		  <input>
-A = sympy.Matrix(noise.values)		    
+A = sp.Matrix(noise.values)		    
 display_matrix(A)		
 		  </input>
 		</sage>
@@ -1633,7 +1635,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = sympy.Matrix(cases.values)
+A = sp.Matrix(cases.values)
 cases
 
 	    </input>
@@ -1803,7 +1805,7 @@ plot_sv(A)
 		matrix <m>B</m> consisting of 5-4 decisions.
 		<sage language="python">
 		  <input>
-B = sympy.Matrix(fivefour.values)
+B = sp.Matrix(fivefour.values)
 display_matrix(B[:, range(50)]))
 
 		  </input>

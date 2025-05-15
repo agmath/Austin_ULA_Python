@@ -1695,10 +1695,12 @@
 		<m>A</m>.
 		<sage language="python">
 		  <input>
+import sympy as sp
 import pandas as pd
+
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/variance-data.csv', header=None)
-data = [sympy.Matrix(row) for row in df.values]
-A = sympy.Matrix(data).T
+data = [sp.Matrix(row) for row in df.values]
+A = sp.Matrix(data).T
 
 #Next line is unlikely to work, as it is sage-specific
 list_plot(data, size=20, color='blue', aspect_ratio=1)
