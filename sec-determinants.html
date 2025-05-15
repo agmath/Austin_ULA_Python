@@ -1194,7 +1194,7 @@ A =
 </div>
 </div></li>
 <li id="sec-determinants-5-6-1-1-1-4"><div class="para logical" id="sec-determinants-5-6-1-1-1-4-1">
-<div class="para">We can use Python to compute the determinant of a matrix, but the commands required depend on whether you’ve defined the matrix using <code class="code-inline tex2jax_ignore">{numpy}</code> or <code class="code-inline tex2jax_ignore">sympy</code>. If the matrix <code class="code-inline tex2jax_ignore">A</code> has been defined using <code class="code-inline tex2jax_ignore">np.array()</code>, then we can calculate <span class="process-math">\(\det(A)\)</span> with the command <code class="code-inline tex2jax_ignore">np.linalg.det(A)</code>. Otherwise, if the matrix has been defined using <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>, we’ll use <code class="code-inline tex2jax_ignore">A.det()</code>.</div>
+<div class="para">We can use Python to compute the determinant of a matrix, but the commands required depend on whether you’ve defined the matrix using <code class="code-inline tex2jax_ignore">{sympy}</code> or <code class="code-inline tex2jax_ignore">{numpy}</code>. If the matrix <code class="code-inline tex2jax_ignore">A</code> has been defined using <code class="code-inline tex2jax_ignore">sp.Matrix()</code>, then we can calculate <span class="process-math">\(\det(A)\)</span> with the command <code class="code-inline tex2jax_ignore">A.det()</code>. Otherwise, if the matrix has been defined using <code class="code-inline tex2jax_ignore">np.array()</code>, we’ll use <code class="code-inline tex2jax_ignore">np.linalg.det(A)</code>.</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \left[\begin{array}{rrrr}
