@@ -329,8 +329,8 @@
       </sage>
 
 	  Note that the vectors <c>v</c> and <c>w</c> defined above are 
-	  <em>column</em> vectors. That is, <c>v</c><m>=\twoarray{3}{1}</m> and 
-	  <c>w</c><m>=\twoarray{-1}{2}</m>. In order to define a <em>row</em> 
+	  <em>column</em> vectors. That is, <c>v</c><m>=\twovec{3}{1}</m> and 
+	  <c>w</c><m>=\twovec{-1}{2}</m>. In order to define a <em>row</em> 
 	  vector we can use <c>x = sp.Matrix([[5, -8]])</c>. Notice that we could 
 	  not compute the sum <c>v + x</c>. Verify this using the Python code cell
 	  above and convince yourself why taking such a sum is not permissible.
