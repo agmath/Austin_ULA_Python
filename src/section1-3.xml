@@ -53,9 +53,16 @@
 	    
 	    <sage language="python">
 	      <input>
-		5 * 3
+		print(5 * 3)
 	      </input>
 	    </sage>
+
+		Note that, within the online textbook environment, 
+		explicitly calling <c>print()</c> on output you'd 
+		like to see is required. In a notebook environment 
+		like Google Colab (see below), the output from the 
+		last line in a code cell will automatically be printed
+		out if any output exists.
 	    </p>
 	  </li>
 
@@ -117,6 +124,8 @@
 		<input>
 		</input>
 	      </sage>
+		  Remember to call <c>print()</c> so that your result is 
+		  displayed.
 	      </p>
 	    </li>
 	    <li>
@@ -133,9 +142,13 @@
 	      </p>
 	      
 	      <p>
-		Notice that we only see the result from the last command.
+		Nothing! That's because we forgot to explicitly call <c>print()</c>,
+		but even in the Jupyter Notebook environment at Google Colab, only the 
+		result from the last command is printed out.
 		By explicitly using the <c>print()</c> function, we may see 
-		results from additional lines, if we wish. 
+		results from additional lines, if we wish. Remember that, in our 
+		textbook environment, we'll always need to call <c>print()</c> in order
+		to display our results.
 		<sage language="python">
 		  <input>
 		    print(5 * 3)
@@ -240,8 +253,8 @@ print(average)
 		To keep Python lightweight, not all of Python's functionality is 
 		made available to you by default. You'll need to import <em>modules</em>
 		in order to complete many specialized tasks. For the most part, we'll 
-		be making use of the <c>{sympy}</c> (SYmbolic Mathematics in Python) module
-		since it does nearly everything we encounter in an introduction to 
+		be making use of the <c>{sympy}</c> (SYmbolic Mathematics in PYthon) module
+		since it has functionality for nearly everything we encounter in an introduction to 
 		Linear Algebra. It is also worth knowing, however, the existence of the 
 		<c>{numpy}</c> (NUMerical PYthon) module which handles numerical operations 
 		on vectors and matrices very well. Throughout the text we'll use these curly-braces 
@@ -342,17 +355,23 @@ print(average)
 	that we wrote the top-left element of the matrix as <c>-1.0</c> rather 
 	than <c>-1</c>. This is to clarify to Python that we expect to be working 
 	within the realm of <em>real numbers</em> (approximated in computers using 
-	<em>floats</em>). Without explicitly indicating that decimal values are 
-	permissible, Python would store the matrix as an <em>integer</em> array/matrix, 
-	which would damage our calculations, resuling in incorrect conclusions. 
-	This is something we'll need to pay careful attention to!
+	<em>floats</em>). While this isn't a requirement for working with <c>{sympy}</c> 
+	matrices, it is a requirement for <c>{numpy}</c>. Without explicitly indicating 
+	that decimal values are permissible, Python would store the matrix as an 
+	<em>integer</em> array/matrix, which would damage our calculations, resuling 
+	in incorrect conclusions. This is something we'll need to pay careful attention 
+	to! Because the difference between float and integer arrays is so important to 
+	remember when working with <c>{numpy}</c>, I'll continue to explicitly identify 
+	that our matrices contain floats even when working with <c>{sympy}</c> -- this way
+	you won't forget if and when you switch over to using <c>{numpy}</c> for something.
     </p>
 	<p>
-		If we intend to just do numeric computatons like adding, subtracting, 
-		multiplying, finding inverses or determinants, etc. with our matrices, 
-		then the <c>{numpy}</c> module has functionality that suits these needs 
-		perfectly. If, however, we want to perform manipulations like <em>row-reduction</em>, then we'll need to 
-		use <c>{sympy}</c> instead. Since <c>{sympy}</c> includes all of the functionality 
+		As a reminder, if we intend to just do numeric computatons like adding, 
+		subtracting, multiplying, finding inverses or determinants, etc. with our 
+		matrices, then the <c>{numpy}</c> module has functionality that suits these 
+		needs perfectly. If, however, we want to perform manipulations like 
+		<em>row-reduction</em>, then we'll need to use <c>{sympy}</c> instead. 
+		Since <c>{sympy}</c> includes all of the functionality 
 		we'll need (including for those arithmetic operations), we'll stick to the 
 		<c>{sympy}</c> module throughout the text, for simplicity's sake. However, 
 		the Python cell below shows how you can define a matrix using <c>{numpy}</c>.
@@ -701,9 +720,10 @@ A = sp.Matrix([[1.0, 2, -1, 0],
 #                   [2, 2]])
 A = sp.Matrix([[ 1.0, 2],
             [2, 2]])
-print (A)
-print ("---------")
-A.rref()
+print(A)
+print("---------")
+A_reduced = A.rref()
+print(A_reduced)
 	</cd>
       </p>
 	</li>
