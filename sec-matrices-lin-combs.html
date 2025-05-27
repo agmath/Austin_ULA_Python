@@ -123,18 +123,6 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.cf591bce111c14c1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.472f5a2f0bfe3571.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
-// Their results will be linked, only within language type
-sagecell.makeSagecell({
-  "inputLocation": "div.sagecell-sage",
-  "linked": true,
-  "linkKey": "linked-sage",
-  "autoeval": false,
-  "languages": [
-    "sage"
-  ],
-  "evalButtonText": "Evaluate (Sage)"
-});
 </script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
@@ -950,7 +938,9 @@ A = \left[
 A = sp.Matrix([[1.0,2], [2,1]])
 v = sp.Matrix([[3.0], [-1]])
 
-A*v
+Av = A*v
+
+print(Av)
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-11-1-1-4">
@@ -1349,7 +1339,7 @@ B = \left[\begin{array}{rr}
 </div></li>
 <li id="sec-matrices-lin-combs-6-6-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-2-1">Compute the product <span class="process-math">\(AB\text{.}\)</span>
 </div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Like with matrix-vector multiplication, we can use <code class="code-inline tex2jax_ignore">*</code> to find the product of two compatible matrices. Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Python cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-6-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Like with matrix-vector multiplication, we can use <code class="code-inline tex2jax_ignore">*</code> to find the product of two compatible matrices (as long as they are defined with <code class="code-inline tex2jax_ignore">{sympy}</code>). Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Python cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
 <li id="sec-matrices-lin-combs-6-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-4-1">Are we able to form the matrix product <span class="process-math">\(BA\text{?}\)</span>  If so, use the Python cell above to find <span class="process-math">\(BA\text{.}\)</span>  Is it generally true that <span class="process-math">\(AB = BA\text{?}\)</span>
@@ -1668,7 +1658,7 @@ AB = I =
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-8-8-1-1-5-1-1-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-8-8-1-1-5-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 </div></li>
 <li id="sec-matrices-lin-combs-8-8-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-2-1">In general, it is not true that <span class="process-math">\(AB = BA\text{.}\)</span>  Check that it is true, however, for the specific <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> that appear in this problem. <div id="sec-matrices-lin-combs-8-8-1-1-5-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
@@ -1791,7 +1781,7 @@ A = \left[\begin{array}{rr}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-<div class="para"><div id="sec-matrices-lin-combs-8-12-1-2-10" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div class="para"><div id="sec-matrices-lin-combs-8-12-1-2-10" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-12-1-2-11">
 <li id="sec-matrices-lin-combs-8-12-1-2-11-1"><div class="para logical" id="sec-matrices-lin-combs-8-12-1-2-11-1-1">
