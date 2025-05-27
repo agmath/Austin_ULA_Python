@@ -113,14 +113,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.5';
+eBookConfig.runestone_version = '7.7.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.cf591bce111c14c1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.472f5a2f0bfe3571.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
@@ -618,9 +618,8 @@ sagecell.makeSagecell({
 <ul class="disc" id="sec-sage-introduction-3-2-1">
 <li id="sec-sage-introduction-3-2-1-1">
 <div class="para" id="sec-sage-introduction-3-2-1-1-1">If you are reading this book online, there will be embedded “Python cells” at appropriate places in the text.  You have the opportunity to type Python commands into these cells and execute them, provided you are connected to the Internet.  Please be aware that your work will be lost if you reload the page.</div>
-<div class="para" id="sec-sage-introduction-3-2-1-1-2">Here is a Python cell containing a command that asks Python to multiply 5 and 3.  You may execute the command by pressing the <em class="emphasis">Evaluate</em> button. <div id="sec-sage-introduction-3-2-1-1-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">5 * 3
-</script></div>
-</div>
+<div class="para" id="sec-sage-introduction-3-2-1-1-2">Here is a Python cell containing a command that asks Python to multiply 5 and 3.  You may execute the command by pressing the <em class="emphasis">Evaluate</em> button. <div id="sec-sage-introduction-3-2-1-1-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">print(5 * 3)
+</script></div> Note that, within the online textbook environment, explicitly calling <code class="code-inline tex2jax_ignore">print()</code> on output you’d like to see is required. In a notebook environment like Google Colab (see below), the output from the last line in a code cell will automatically be printed out if any output exists.</div>
 </li>
 <li id="sec-sage-introduction-3-2-1-2"><div class="para" id="sec-sage-introduction-3-2-1-2-1">You may also go to <a class="external" href="https://colab.research.google.com" target="_blank"><code class="code-inline tex2jax_ignore">Google Colab</code></a>, either sign up or sign-in to your Google account, and create a “New Notebook.” For those familiar with Python, Colab Notebooks are Jupyter Notebooks which can be run from your web-browser, inside of your Google Drive. Once inside the notebook, you may enter commands into code cells as shown here, and evaluate them by pressing <em class="emphasis">Enter</em> on your keyboard while holding down the <em class="emphasis">Shift</em> key.</div></li>
 <li id="sec-sage-introduction-3-2-1-3">
@@ -641,15 +640,16 @@ sagecell.makeSagecell({
 3 + 4(2^4 - 1)
 \end{equation*}
 </div>
-<div class="para"><div id="sec-sage-introduction-3-4-2-1-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
-</script></div></div>
+<div class="para">
+<div id="sec-sage-introduction-3-4-2-1-1-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+</script></div> Remember to call <code class="code-inline tex2jax_ignore">print()</code> so that your result is displayed.</div>
 </div></li>
 <li id="sec-sage-introduction-3-4-2-1-1-2">
 <div class="para" id="sec-sage-introduction-3-4-2-1-1-2-1">Notice that we can create new lines in a Python cell by pressing <em class="emphasis">Enter</em> and writing additional commands on them. What happens when you evaluate this Python cell? <div id="sec-sage-introduction-3-4-2-1-1-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">5 * 3
 10 - 4
 </script></div>
 </div>
-<div class="para" id="sec-sage-introduction-3-4-2-1-1-2-2">Notice that we only see the result from the last command. By explicitly using the <code class="code-inline tex2jax_ignore">print()</code> function, we may see results from additional lines, if we wish. <div id="sec-sage-introduction-3-4-2-1-1-2-2-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">print(5 * 3)
+<div class="para" id="sec-sage-introduction-3-4-2-1-1-2-2">Nothing! That’s because we forgot to explicitly call <code class="code-inline tex2jax_ignore">print()</code>, but even in the Jupyter Notebook environment at Google Colab, only the result from the last command is printed out. By explicitly using the <code class="code-inline tex2jax_ignore">print()</code> function, we may see results from additional lines, if we wish. Remember that, in our textbook environment, we’ll always need to call <code class="code-inline tex2jax_ignore">print()</code> in order to display our results. <div id="sec-sage-introduction-3-4-2-1-1-2-2-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">print(5 * 3)
 print(10 - 4)
 </script></div>
 </div>
@@ -668,7 +668,7 @@ print(taxes)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.3.2</span><span class="space"> </span><span class="title">Importing and using Python modules</span>
 </h3>
 <div class="para" id="sec-sage-introduction-4-2">Python is a <em class="emphasis">general purpose</em> programming language. This means that Python is designed to do lots of things, not just mathematics -- you can build websites, design databases, construct and deploy machine learning models, and much more with Python.</div>
-<div class="para" id="sec-sage-introduction-4-3">To keep Python lightweight, not all of Python’s functionality is made available to you by default. You’ll need to import <em class="emphasis">modules</em> in order to complete many specialized tasks. For the most part, we’ll be making use of the <code class="code-inline tex2jax_ignore">{sympy}</code> (SYmbolic Mathematics in Python) module since it does nearly everything we encounter in an introduction to Linear Algebra. It is also worth knowing, however, the existence of the <code class="code-inline tex2jax_ignore">{numpy}</code> (NUMerical PYthon) module which handles numerical operations on vectors and matrices very well. Throughout the text we’ll use these curly-braces <code class="code-inline tex2jax_ignore">{}</code> to indicate that we are referencing a full <em class="emphasis">module</em> rather than just a Python <em class="emphasis">function/method</em>. When importing modules, we can either load the entire module (ie. <code class="code-inline tex2jax_ignore">import sympy</code>) or we can just load a single function from that module (ie. <code class="code-inline tex2jax_ignore">from numpy.linalg import inv</code>).</div>
+<div class="para" id="sec-sage-introduction-4-3">To keep Python lightweight, not all of Python’s functionality is made available to you by default. You’ll need to import <em class="emphasis">modules</em> in order to complete many specialized tasks. For the most part, we’ll be making use of the <code class="code-inline tex2jax_ignore">{sympy}</code> (SYmbolic Mathematics in PYthon) module since it has functionality for nearly everything we encounter in an introduction to Linear Algebra. It is also worth knowing, however, the existence of the <code class="code-inline tex2jax_ignore">{numpy}</code> (NUMerical PYthon) module which handles numerical operations on vectors and matrices very well. Throughout the text we’ll use these curly-braces <code class="code-inline tex2jax_ignore">{}</code> to indicate that we are referencing a full <em class="emphasis">module</em> rather than just a Python <em class="emphasis">function/method</em>. When importing modules, we can either load the entire module (ie. <code class="code-inline tex2jax_ignore">import sympy</code>) or we can just load a single function from that module (ie. <code class="code-inline tex2jax_ignore">from numpy.linalg import inv</code>).</div>
 <div class="para" id="sec-sage-introduction-4-4">With <code class="code-inline tex2jax_ignore">{sympy}</code> imported, we can call and utilize functionality from that module. For example, <code class="code-inline tex2jax_ignore">{sympy}</code> includes a <code class="code-inline tex2jax_ignore">Matrix()</code> function which can be called using <code class="code-inline tex2jax_ignore">sympy.Matrix()</code>, which tells Python to go to the <code class="code-inline tex2jax_ignore">{sympy}</code> module and find the <code class="code-inline tex2jax_ignore">Matrix()</code> function. Because we need to reference the module name when calling functionality from it, Python users often <em class="emphasis">alias</em> their module names when importing in order to reduce typing. We can see this below.</div>
 <div id="sec-sage-introduction-4-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
 sp.Matrix([[1.0, 5, 9, 22], [0, 2, 17, -11]])
@@ -711,8 +711,8 @@ A = sp.Matrix([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
 A
 </script></div> When evaluated, Python will confirm that we’ve defined the matrix by writing out its rows, each inside square brackets.  Notice that there the entire matrix is defined as a <em class="emphasis">list</em> (indicated by the use of the square brackets <code class="code-inline tex2jax_ignore">[]</code>), and the elements of the list are also lists! These are the rows of the matrix. If we think about this, what we are declaring is quite intuitive -- a matrix is a list of rows. Items passed to a Python function are called <em class="emphasis">arguments</em> and the <code class="code-inline tex2jax_ignore">sp.Matrix()</code> function takes just a single argument; the matrix in list form. Later, we’ll encounter functions taking multiple arguments. In these cases, we’ll separate the arguments by commas.</div>
 </div>
-<div class="para" id="sec-sage-introduction-5-7">A very important thing to notice about our matrix definition above is that we wrote the top-left element of the matrix as <code class="code-inline tex2jax_ignore">-1.0</code> rather than <code class="code-inline tex2jax_ignore">-1</code>. This is to clarify to Python that we expect to be working within the realm of <em class="emphasis">real numbers</em> (approximated in computers using <em class="emphasis">floats</em>). Without explicitly indicating that decimal values are permissible, Python would store the matrix as an <em class="emphasis">integer</em> array/matrix, which would damage our calculations, resuling in incorrect conclusions. This is something we’ll need to pay careful attention to!</div>
-<div class="para" id="sec-sage-introduction-5-8">If we intend to just do numeric computatons like adding, subtracting, multiplying, finding inverses or determinants, etc. with our matrices, then the <code class="code-inline tex2jax_ignore">{numpy}</code> module has functionality that suits these needs perfectly. If, however, we want to perform manipulations like <em class="emphasis">row-reduction</em>, then we’ll need to use <code class="code-inline tex2jax_ignore">{sympy}</code> instead. Since <code class="code-inline tex2jax_ignore">{sympy}</code> includes all of the functionality we’ll need (including for those arithmetic operations), we’ll stick to the <code class="code-inline tex2jax_ignore">{sympy}</code> module throughout the text, for simplicity’s sake. However, the Python cell below shows how you can define a matrix using <code class="code-inline tex2jax_ignore">{numpy}</code>.</div>
+<div class="para" id="sec-sage-introduction-5-7">A very important thing to notice about our matrix definition above is that we wrote the top-left element of the matrix as <code class="code-inline tex2jax_ignore">-1.0</code> rather than <code class="code-inline tex2jax_ignore">-1</code>. This is to clarify to Python that we expect to be working within the realm of <em class="emphasis">real numbers</em> (approximated in computers using <em class="emphasis">floats</em>). While this isn’t a requirement for working with <code class="code-inline tex2jax_ignore">{sympy}</code> matrices, it is a requirement for <code class="code-inline tex2jax_ignore">{numpy}</code>. Without explicitly indicating that decimal values are permissible, Python would store the matrix as an <em class="emphasis">integer</em> array/matrix, which would damage our calculations, resuling in incorrect conclusions. This is something we’ll need to pay careful attention to! Because the difference between float and integer arrays is so important to remember when working with <code class="code-inline tex2jax_ignore">{numpy}</code>, I’ll continue to explicitly identify that our matrices contain floats even when working with <code class="code-inline tex2jax_ignore">{sympy}</code> -- this way you won’t forget if and when you switch over to using <code class="code-inline tex2jax_ignore">{numpy}</code> for something.</div>
+<div class="para" id="sec-sage-introduction-5-8">As a reminder, if we intend to just do numeric computatons like adding, subtracting, multiplying, finding inverses or determinants, etc. with our matrices, then the <code class="code-inline tex2jax_ignore">{numpy}</code> module has functionality that suits these needs perfectly. If, however, we want to perform manipulations like <em class="emphasis">row-reduction</em>, then we’ll need to use <code class="code-inline tex2jax_ignore">{sympy}</code> instead. Since <code class="code-inline tex2jax_ignore">{sympy}</code> includes all of the functionality we’ll need (including for those arithmetic operations), we’ll stick to the <code class="code-inline tex2jax_ignore">{sympy}</code> module throughout the text, for simplicity’s sake. However, the Python cell below shows how you can define a matrix using <code class="code-inline tex2jax_ignore">{numpy}</code>.</div>
 <div id="sec-sage-introduction-5-9" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
 
 B = np.array([[-1.0, 0, 2, 7], [2, 1, -3, -1]])
@@ -843,9 +843,10 @@ A = sp.Matrix([[1.0, 2, -1, 0],
 #                   [2, 2]])
 A = sp.Matrix([[ 1.0, 2],
             [2, 2]])
-print (A)
-print ("---------")
-A.rref()
+print(A)
+print("---------")
+A_reduced = A.rref()
+print(A_reduced)
 	</pre>
 </div></li>
 </ul>
