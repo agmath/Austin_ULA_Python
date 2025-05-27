@@ -751,7 +751,7 @@
 	    0 \amp 1 \\
 	    \end{array}\right]
 	  </me>.
-	  <sage langugae="python">
+	  <sage language="python">
 	    <input>
 	    </input>
 	  </sage>
@@ -1201,7 +1201,7 @@
 	\end{array}\right]
 	</me>.
 
-	<sage langugae="python">
+	<sage language="python">
 	  <input>
 	  </input>
 	</sage>

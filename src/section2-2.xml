@@ -633,7 +633,9 @@ import sympy as sp
 A = sp.Matrix([[1.0,2], [2,1]])
 v = sp.Matrix([[3.0], [-1]])
 
-A*v
+Av = A*v
+
+print(Av)
 	  </input>
 	</sage>
 	<ol marker="a.">
@@ -1272,7 +1274,8 @@ w = sp.Matrix([1.0, 2])
 	  <li><p> Compute the product <m>AB</m>. </p></li>
 
 	  <li><p> Like with matrix-vector multiplication, we can use <c>*</c>
-		to find the product of two compatible matrices. Define the 
+		to find the product of two compatible matrices (as long as they are 
+		defined with <c>{sympy}</c>). Define the 
 		matrices <m>A</m> and <m>B</m> in the Python cell below and
 	  check your work by computing <m>AB</m>.
 	  <sage language="python">
