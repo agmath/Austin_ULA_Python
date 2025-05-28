@@ -37,7 +37,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-df.T
+print(df.T)
 </script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div id="activity-pca-iris-1-3-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">sepal_plot()
 </script></div>
 </div>

@@ -759,7 +759,7 @@ q_A(\xvec) = \xvec\cdot(A\xvec) = \lambda\xvec\cdot\xvec =
 \end{bmatrix}\)</span> and displays the graph of the associated quadratic form <span class="process-math">\(q_D(\xvec)\text{.}\)</span>  In addition, the points corresponding to vectors <span class="process-math">\(\uvec\)</span> with unit length are displayed as a curve. <div id="sec-quadratic-forms-3-12-1-1-1-1-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import sympy as sp
 import requests
 
-url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_quad_plot.py"
 response = requests.get(url)
 
 # Make the script's contents available in your current environment
@@ -1059,9 +1059,29 @@ f(x,y) \approx f(1,1) + q_A(\wvec)
 </div></li>
 <li id="sec-quadratic-forms-4-12-1-1-2-5"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-5-1">Find the eigenvalues of <span class="process-math">\(A\text{.}\)</span>  What can you conclude about the definiteness of <span class="process-math">\(A\text{?}\)</span>
 </div></li>
-<li id="sec-quadratic-forms-4-12-1-1-2-6"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-6-1">Recall that <span class="process-math">\((x_0,y_0)\)</span> is a local minimum for <span class="process-math">\(f\)</span> if <span class="process-math">\(f(x,y) \gt f(x_0,y_0)\)</span> for nearby points <span class="process-math">\((x,y)\text{.}\)</span> Explain why our understanding of the eigenvalues of <span class="process-math">\(A\)</span> shows that <span class="process-math">\((1,1)\)</span> is a local minimum for <span class="process-math">\(f\text{.}\)</span> <div id="sec-quadratic-forms-4-12-1-1-2-6-1-8" class="ptx-sagecell sagecell-python"><script type="text/x-sage">#Maybe sage-specific...check and change to matplotlib...
-x, y = var('x', 'y')		    
-plot3d(2*x^3 - 6*x*y + 3*y^2, (x, 0.75,1.25), (y,0.75,1.25))
+<li id="sec-quadratic-forms-4-12-1-1-2-6"><div class="para" id="sec-quadratic-forms-4-12-1-1-2-6-1">Recall that <span class="process-math">\((x_0,y_0)\)</span> is a local minimum for <span class="process-math">\(f\)</span> if <span class="process-math">\(f(x,y) \gt f(x_0,y_0)\)</span> for nearby points <span class="process-math">\((x,y)\text{.}\)</span> Explain why our understanding of the eigenvalues of <span class="process-math">\(A\)</span> shows that <span class="process-math">\((1,1)\)</span> is a local minimum for <span class="process-math">\(f\text{.}\)</span> <div id="sec-quadratic-forms-4-12-1-1-2-6-1-8" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+
+def my_func(x_vals, y_vals):
+    return 2*x_vals**3 - 6*x_vals*y_vals + 3*y_vals**2
+
+x_vals = np.linspace(0.75, 1.25, 50)
+y_vals = np.linspace(0.75, 1.25, 50)
+
+X, Y = np.meshgrid(x_vals, y_vals)
+
+Z = my_func(X, Y)
+
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis', edgecolor='none')
+
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('f(x, y)')
+ax.set_title('3D Plot of $f(x, y) = 2x^3 - 6xy + 3y^2$')
+plt.tight_layout()
+plt.show()
 </script></div>
 </div></li>
 </ol>

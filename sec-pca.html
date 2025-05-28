@@ -769,9 +769,12 @@ Q^T\xvec = \twovec{\uvec_1\cdot\xvec}{\uvec_2\cdot\xvec}.
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/uk-diet.csv', index_col=0)
+
 data_mean = sp.Matrix(df.T.mean())
-A = matrix([sp.Matrix(row) for row in (df.T-df.T.mean()).values]).T
-df
+
+A = sp.Matrix([sp.Matrix(row) for row in (df.T-df.T.mean()).values]).T
+
+print(df)
 </script></div> We will view this as a dataset consisting of four points in <span class="process-math">\(\real^{17}\text{.}\)</span>  As such, it is impossible to visualize and studying the numbers themselves doesn’t lead to much insight.</div> <div class="para logical" id="sec-pca-4-3-1-2">
 <div class="para">In addition to loading the data, evaluating the cell above created a vector <code class="code-inline tex2jax_ignore">data_mean</code>, which is the mean of the four data points, and <code class="code-inline tex2jax_ignore">A</code>, the <span class="process-math">\(17\times4\)</span> matrix of demeaned data.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-pca-4-3-1-2-4">
@@ -815,7 +818,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-df.T
+print(df.T)
 </script></div> Since the data is four-dimensional, we are not able to visualize it.  Of course, we could forget about two of the measurements and plot the 150 points represented by their, say, sepal length and sepal width. <div id="activity-pca-iris-1-3-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">sepal_plot()
 </script></div>
 </div>
@@ -940,7 +943,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-df.T
+print(df.T)
 </script></div> This dataset is a bit different from others that we’ve looked at because the scale of the measurements is significantly different.  For instance, the measurements for the body mass are roughly 100 times as large as those for the culmen length. For this reason, we will standardize the data by first demeaning it, as usual, and then rescaling each measurement by the reciprocal of its standard deviation.  The result is stored in the <span class="process-math">\(4\times333\)</span> matrix <code class="code-inline tex2jax_ignore">A</code>. <div id="sec-pca-6-6-1-3-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
