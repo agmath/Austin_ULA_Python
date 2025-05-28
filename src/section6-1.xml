@@ -561,7 +561,7 @@ response = requests.get(url)
 # Make the script's contents available in the current environment
 exec(response.text, globals())
 
-events.head(int(10))
+print(events.head(n = 10))
 		</input>
 	      </sage>
 	      For each of the five articles, we obtain 604-dimensional
@@ -633,7 +633,12 @@ import numpy as np
 
 	      <sage language="python">
 		<input>
-series_plot(s1, 'blue') + series_plot(s2, 'orange')		
+import matplotlib.pyplot as plt
+
+plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s2, color = "red", marker = "o")
+plt.show()
 		</input>
 	      </sage>
 
@@ -659,7 +664,11 @@ series_plot(s1, 'blue') + series_plot(s2, 'orange')
 		      <input>
 ds1 = demean(s1)
 ds2 = demean(s2)
-series_plot(ds1, 'blue') + series_plot(ds2, 'orange')		
+
+plt.cla()
+plt.plot(ds1, color = "blue", marker = "o")
+plt.plot(ds2, color = "red", marker = "o")
+plt.show()
 		      </input>
 		    </sage>
 		  </p>
@@ -742,7 +751,10 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 		    correlation. 
 		    <sage language="python">
 		      <input>
-series_plot(s1, 'blue') + series_plot(s3, 'orange')		
+plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s3, color = "red", marker = "o")
+plt.show()	
 		      </input>
 		    </sage>
 		  </p>
@@ -755,7 +767,10 @@ series_plot(s1, 'blue') + series_plot(s3, 'orange')
 		    correlation. 
 		    <sage language="python">
 		      <input>
-series_plot(s1, 'blue') + series_plot(s4, 'orange')		
+plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s4, color = "red", marker = "o")
+plt.show()		
 		      </input>
 		    </sage>
 		  </p>
@@ -1382,7 +1397,11 @@ response = requests.get(url)
 # Make the script's contents available in the current environment
 exec(response.text, globals())
 
-list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color="blue", marker="o")
+#list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.grid()
+plt.show()
 		  </input>
 		</sage>
 		Given this plot of the data, what would seem like a
