@@ -507,7 +507,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-df.T
+print(df.T)
 
 
 	  </input>
