@@ -1699,11 +1699,16 @@ import sympy as sp
 import pandas as pd
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/variance-data.csv', header=None)
-data = [sp.Matrix(row) for row in df.values]
+
+data = [row for row in df.values]
+data = np.array(data)
+
 A = sp.Matrix(data).T
 
-#Next line is unlikely to work, as it is sage-specific
-list_plot(data, size=20, color='blue', aspect_ratio=1)
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 		  </input>
 		</sage>
 	      </p>
