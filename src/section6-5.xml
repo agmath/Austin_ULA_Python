@@ -581,11 +581,19 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/crickets.csv')
+
 data = [sp.Matrix(row) for row in df.values]
+data = np.array(data)
+
 chirps = sp.Matrix(df['Chirps'])
 temps = sp.Matrix(df['Temperature'])
+
 print(df)
-list_plot(data, color='blue', size=40, xmin=12, xmax=22, ymin=60, ymax=100)
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 	    </input>
 	  </sage>
 	  Evaluating this cell also provides:
@@ -1257,7 +1265,12 @@ response = requests.get(url)
 exec(response.text, globals())
 
 data = [[0, 2], [1, 1], [2, 3], [3, 3]]
-list_plot(data, color='blue', size=40)		  
+data = np.array(data)
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 		  </input>
 		</sage>
 		In addition to loading and plotting the data, evaluating
@@ -1316,13 +1329,22 @@ list_plot(data, color='blue', size=40)
 	      <p>
 		Use the parameters <m>\beta_0</m>,
 		<m>\beta_1</m>, and <m>\beta_2</m> that you found to
-		write the quadratic function that fits the data.  You
+		write the quadratic function (<c>my_quad</c>) that fits the data.  You
 		can plot this function, along with the data, by entering
 		your function in the place indicated below.
 		<sage language="python">
 		  <input>
-list_plot(data, color='blue', size=40) + plot( **your function here**,
-0, 3, color='red')
+def my_quad(x_vals):
+    return ________
+
+x_vals = np.linspace(0, 3, 50)
+y_vals = my_quad(x_vals)
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.plot(x_vals, y_vals, color = "red")
+plt.grid()
+plt.show()
 		  </input>
 		</sage>
 	      </p>
@@ -1372,8 +1394,17 @@ list_plot(data, color='blue', size=40) + plot( **your function here**,
 		<m>R^2</m> that you found?
 		<sage language="python">
 		  <input>
-list_plot(data, color='blue', size=40) + plot( **your function here**,
-0, 3, color='red')
+def my_cubic(x_vals):
+    return ________
+
+x_vals = np.linspace(0, 3, 50)
+y_vals = my_cubic(x_vals)
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.plot(x_vals, y_vals, color = "red")
+plt.grid()
+plt.show()
 		  </input>
 		</sage>
 	      </p>
@@ -1561,11 +1592,18 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/sea_ice.csv')
+
 data = [vector([row[0], row[2]]) for row in df.values]
+data = np.array(data)
+
 month = vector(df['Month'])
 ice = vector(df['2012'])
 print(df[['Month', '2012']])
-list_plot(data, color='blue', size=40)
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 	    </input>
 	  </sage>
 	  In addition, you have access to a few special variables and

@@ -390,7 +390,7 @@
 
     <p>
       As this activity illustrates, Gram-Schmidt orthogonalization
-      begins with a basis <m>\vvec_1\vvec_2,\ldots,\vvec_n</m> for a
+      begins with a basis <m>\vvec_1, \vvec_2, \ldots, \vvec_n</m> for a
       subspace <m>W</m> of <m>\real^m</m> and creates an orthogonal
       basis for <m>W</m>.  Let's work through a second example.
     </p>
