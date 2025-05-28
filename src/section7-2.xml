@@ -444,7 +444,7 @@ graph + curve
 import sympy as sp
 import requests
 
-url = "https://github.com/agmath/agmath.github.io/blob/master/scripts/ULA_quad_plot.py"
+url = "https://raw.githubusercontent.com/agmath/agmath.github.io/refs/heads/master/scripts/ULA_quad_plot.py"
 response = requests.get(url)
 
 # Make the script's contents available in your current environment
@@ -1383,9 +1383,29 @@ quad_plot(A)
 		minimum for <m>f</m>.
 		<sage language="python">
 		  <input>
-#Maybe sage-specific...check and change to matplotlib...
-x, y = var('x', 'y')		    
-plot3d(2*x^3 - 6*x*y + 3*y^2, (x, 0.75,1.25), (y,0.75,1.25))
+import numpy as np
+import matplotlib.pyplot as plt
+
+def my_func(x_vals, y_vals):
+    return 2*x_vals**3 - 6*x_vals*y_vals + 3*y_vals**2
+
+x_vals = np.linspace(0.75, 1.25, 50)
+y_vals = np.linspace(0.75, 1.25, 50)
+
+X, Y = np.meshgrid(x_vals, y_vals)
+
+Z = my_func(X, Y)
+
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot_surface(X, Y, Z, cmap='viridis', edgecolor='none')
+
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('f(x, y)')
+ax.set_title('3D Plot of $f(x, y) = 2x^3 - 6xy + 3y^2$')
+plt.tight_layout()
+plt.show()
 		  </input>
 		</sage>
 	      </p>
