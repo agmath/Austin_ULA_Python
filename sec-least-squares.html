@@ -1330,11 +1330,18 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/bangladesh.csv')
+
 data = [sp.Matrix(row) for row in df.values]
+data = np.array(data)
+
 year = sp.Matrix(df['Year'])
 people = sp.Matrix(df['People'])
 print(df)
-list_plot(data, size=40, color='blue')
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-least-squares-8-8-1-1-4">
@@ -1401,11 +1408,18 @@ response = requests.get(url)
 exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/altitude-temps.csv')
+
 data = [sp.Matrix(row) for row in df.values]
+data = np.array(data)
+
 altitude = sp.Matrix(df['Altitude'])
 temperature = sp.Matrix(df['Temperature'])
 print(df)
-list_plot(data, size=40, color='blue')
+
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color = "blue")
+plt.grid()
+plt.show()
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-least-squares-8-10-1-1-4">
@@ -1430,11 +1444,13 @@ exec(response.text, globals())
 
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/housing.csv',index_col=0)
 df = df.fillna(df.mean())
+
 area = sp.Matrix(df['Living.Area'])
 size = sp.Matrix(df['Lot.Size'])
 age = sp.Matrix(df['Age'])
 price = sp.Matrix(df['Price'])
-df
+
+print(df)
 </script></div> We will use linear regression to predict the price of a house given its living area, lot size, and age:</div>
 <div class="displaymath process-math">
 \begin{equation*}
