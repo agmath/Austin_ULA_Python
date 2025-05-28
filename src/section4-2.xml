@@ -1082,7 +1082,8 @@
 import sympy as sp
 
 A = sp.Matrix([[-3,1], [0,-3]])
-A.charpoly()
+A_char_poly = A.charpoly()
+print(A_char_poly)
 	    </input>
 	  </sage>
 
@@ -1099,7 +1100,8 @@ A.charpoly()
 A = sp.Matrix([[-3.0,1], [0,-3]])
 A_char_poly = A.charpoly()
 A_char_poly = A_char_poly.as_expr()
-sp.factor(A_char_poly)
+A_char_poly_factored = sp.factor(A_char_poly)
+print(A_char_poly_factored)
 	    </input>
 	  </sage>
 	</li>
@@ -1110,7 +1112,8 @@ sp.factor(A_char_poly)
 	  <sage language="python">
 	    <input>
 A = sp.Matrix([[-3.0,1], [0,-3]])
-A.eigenvals()
+A_eig_vals = A.eigenvals()
+print(A_eig_vals)
 	    </input>
 	  </sage>
 
@@ -1125,7 +1128,8 @@ A.eigenvals()
 	  <sage language="python">
 	    <input>
 A = sp.Matrix([[-3.0,1], [0,-3]])
-A.eigenvects()
+A_eig_vects = A.eigenvects()
+print(A_eig_vects)
 	    </input>
 	  </sage>
 
@@ -1162,7 +1166,9 @@ A.eigenvects()
 	    <sage language="python">
 	      <input>
 A = sp.Matrix([[0.4,0.3], [0.6,0.7]])
-(A-sp.eye(2)).rref()
+A_minus_I_rref = (A-sp.eye(2)).rref()
+print(A_minus_I_rref)
+
 	      </input>
 	    </sage>
 
