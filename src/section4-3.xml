@@ -242,7 +242,8 @@
 # enter the matrices P and D below	    
 P =
 D =	    
-P*D*P.inv()
+PDP_inv = P*D*P.inv()
+print(PDP_inv)
 	  </input>
 	</sage>
 	</li>
@@ -1070,7 +1071,8 @@ P*D*P.inv()
 	      <input>
 C = 
 P = 
-P*C*P.inv()
+PCP_inv = P*C*P.inv()
+print(PCP_inv)
 	      </input>
 	    </sage>
 	    </li>
