@@ -840,7 +840,7 @@ response = requests.get(url)
 # Make the script's contents available in the current environment
 exec(response.text, globals())
 
-events.head(int(10))
+print(events.head(n = 10))
 </script></div> For each of the five articles, we obtain 604-dimensional vectors, which are named <code class="code-inline tex2jax_ignore">veterans</code>, <code class="code-inline tex2jax_ignore">memorial</code>, <code class="code-inline tex2jax_ignore">labor</code>, <code class="code-inline tex2jax_ignore">golden</code>, and <code class="code-inline tex2jax_ignore">super</code>.</div>
 <div class="para logical" id="sec-dot-product-3-20-1-1-1-1-3"><ol class="decimal ol-marker-2" id="sec-dot-product-3-20-1-1-1-1-3-1">
 <li id="sec-dot-product-3-20-1-1-1-1-3-1-1"><div class="para" id="sec-dot-product-3-20-1-1-1-1-3-1-1-1">Suppose that two articles have no words in common.  What is the value of the dot product between their corresponding vectors?  What does this say about the angle between these vectors?</div></li>
@@ -852,12 +852,21 @@ events.head(int(10))
 </ol></div>
 </li>
 <li id="sec-dot-product-3-20-1-1-1-2"><div class="para logical" id="sec-dot-product-3-20-1-1-1-2-1">
-<div class="para">Vectors are often used to represent how a quantity changes over time.  For instance, the vector <span class="process-math">\(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\)</span> might represent the value of a company’s stock on four consecutive days.  When interpreted in this way, we call the vector a <em class="emphasis">time series.</em> Evaluate the Python cell below to see a representation of two time series <span class="process-math">\(\svec_1\text{,}\)</span> in blue, and <span class="process-math">\(\svec_2\text{,}\)</span> in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <div id="sec-dot-product-3-20-1-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s2, 'orange')
+<div class="para">Vectors are often used to represent how a quantity changes over time.  For instance, the vector <span class="process-math">\(\svec=\fourvec{78.3}{81.2}{82.1}{79.0}\)</span> might represent the value of a company’s stock on four consecutive days.  When interpreted in this way, we call the vector a <em class="emphasis">time series.</em> Evaluate the Python cell below to see a representation of two time series <span class="process-math">\(\svec_1\text{,}\)</span> in blue, and <span class="process-math">\(\svec_2\text{,}\)</span> in orange, which we imagine represent the value of two stocks over a period of time.  (This cell relies on some data loaded by the first cell in this activity.) <div id="sec-dot-product-3-20-1-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import matplotlib.pyplot as plt
+
+plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s2, color = "red", marker = "o")
+plt.show()
 </script></div> Even though one stock has a higher value than the other, the two appear to be related since they seem to rise and fall at roughly similar ways.  We often say that they are <em class="emphasis">correlated</em>, and we would like to measure the degree to which they are correlated.</div>
 <ol class="decimal ol-marker-2" id="sec-dot-product-3-20-1-1-1-2-1-7">
 <li id="sec-dot-product-3-20-1-1-1-2-1-7-1"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-1-1">In order to compare the ways in which they rise and fall, we will first <em class="emphasis">demean</em> the time series;  that is, for each time series, we will subtract its average value to obtain a new time series.  There is a command, <code class="code-inline tex2jax_ignore">demean(s)</code>, that returns the demeaned time series of <code class="code-inline tex2jax_ignore">s</code>.  Use the Python cell below to demean the series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_2\)</span> and plot. <div id="sec-dot-product-3-20-1-1-1-2-1-7-1-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">ds1 = demean(s1)
 ds2 = demean(s2)
-series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
+
+plt.cla()
+plt.plot(ds1, color = "blue", marker = "o")
+plt.plot(ds2, color = "red", marker = "o")
+plt.show()
 </script></div>
 </div></li>
 <li id="sec-dot-product-3-20-1-1-1-2-1-7-2">
@@ -888,10 +897,16 @@ series_plot(ds1, 'blue') + series_plot(ds2, 'orange')
 </li>
 <li id="sec-dot-product-3-20-1-1-1-2-1-7-4"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-4-1">Suppose the demeaned time series <span class="process-math">\(\tilde{\tvec}_1\)</span> and <span class="process-math">\(\tilde{\tvec}_2\)</span> are negative scalar multiples of one another, what is the angle between the demeaned vectors?  What does this say about the correlation <span class="process-math">\(\corr(\tvec_1, \tvec_2)\text{?}\)</span>
 </div></li>
-<li id="sec-dot-product-3-20-1-1-1-2-1-7-5"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-5-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_3\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s3, 'orange')
+<li id="sec-dot-product-3-20-1-1-1-2-1-7-5"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-5-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_3\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-5-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s3, color = "red", marker = "o")
+plt.show()
 </script></div>
 </div></li>
-<li id="sec-dot-product-3-20-1-1-1-2-1-7-6"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-6-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_4\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-6-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">series_plot(s1, 'blue') + series_plot(s4, 'orange')
+<li id="sec-dot-product-3-20-1-1-1-2-1-7-6"><div class="para" id="sec-dot-product-3-20-1-1-1-2-1-7-6-1">Use the Python cell below to plot the time series <span class="process-math">\(\svec_1\)</span> and <span class="process-math">\(\svec_4\)</span> and find their correlation. <div id="sec-dot-product-3-20-1-1-1-2-1-7-6-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">plt.cla()
+plt.plot(s1, color = "blue", marker = "o")
+plt.plot(s4, color = "red", marker = "o")
+plt.show()
 </script></div>
 </div></li>
 </ol>
@@ -1053,7 +1068,11 @@ response = requests.get(url)
 # Make the script's contents available in the current environment
 exec(response.text, globals())
 
-list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color="blue", marker="o")
+#list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.grid()
+plt.show()
 </script></div> Given this plot of the data, what would seem like a reasonable number of clusters?</div></li>
 <li id="sec-dot-product-4-13-1-1-2-4"><div class="para" id="sec-dot-product-4-13-1-1-2-4-1">In the following cell, you may choose a value of <span class="process-math">\(k\)</span> and then run the algorithm to determine and display a clustering and its objective.  If you run the algorithm a few times with the same value of <span class="process-math">\(k\text{,}\)</span> you will likely see different clusterings having different objectives. This is natural since our algorithm starts by making a random choice of points <span class="process-math">\(c_1,c_2,\ldots,c_k\text{,}\)</span> and a different choices may lead to different clusterings. Choose a value of <span class="process-math">\(k\)</span> and run the algorithm a few times.  Notice that clusterings having lower objectives seem to fit the data better.  Repeat this experiment with a few different values of <span class="process-math">\(k\text{.}\)</span> <div id="sec-dot-product-4-13-1-1-2-4-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">k = 2  # you may change the value of k here
 clusters, centroids, objective = kmeans(data, k)

@@ -35,7 +35,11 @@ response = requests.get(url)
 # Make the script's contents available in the current environment
 exec(response.text, globals())
 
-list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.cla()
+plt.scatter(x = data[:, 0], y = data[:, 1], color="blue", marker="o")
+#list_plot(data, color='blue', size=20, aspect_ratio=1)
+plt.grid()
+plt.show()
 </script></div> Given this plot of the data, what would seem like a reasonable number of clusters?</div></article><span class="incontext"><a class="internal" href="sec-dot-product.html#li-guess-clusters">in-context</a></span>
 </body>
 </html>

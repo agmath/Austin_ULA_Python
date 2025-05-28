@@ -678,7 +678,8 @@ AP = A\begin{bmatrix}
 <div id="sec-eigen-diag-3-3-1-1-9-6-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage"># enter the matrices P and D below	    
 P =
 D =	    
-P*D*P.inv()
+PDP_inv = P*D*P.inv()
+print(PDP_inv)
 </script></div>
 </li>
 </ol>
@@ -1226,7 +1227,8 @@ A = \left[\begin{array}{rr}
 </div>
 <div id="sec-eigen-diag-5-8-1-1-5-3-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">C = 
 P = 
-P*C*P.inv()
+PCP_inv = P*C*P.inv()
+print(PCP_inv)
 </script></div>
 </li>
 <li id="sec-eigen-diag-5-8-1-1-5-4"><div class="para" id="sec-eigen-diag-5-8-1-1-5-4-1">Explain why <span class="process-math">\(A^k = PC^kP^{-1}\text{.}\)</span>

@@ -620,7 +620,8 @@ I\text{?}\)</span>
 
 A = sp.Matrix([[0.8, 0.4], [0.2, 0.6]])
 I = sp.Matrix([[1, 0], [0, 1]])	  
-(A-I).rref()
+A_minus_I_rref = (A-I).rref()
+print(A_minus_I_rref)
 </script></div>
 </div></li>
 <li id="sec-power-method-2-3-1-1-1-5"><div class="para" id="sec-power-method-2-3-1-1-1-5-1">Suppose that <span class="process-math">\(\xvec_0 = \twovec{1}{0}\text{,}\)</span> and we define a sequence <span class="process-math">\(\xvec_{k+1} = A\xvec_k\text{;}\)</span>  in other words, <span class="process-math">\(\xvec_{k} = A^k\xvec_0\text{.}\)</span>  What happens to <span class="process-math">\(\xvec_k\)</span> as <span class="process-math">\(k\)</span> grows increasingly large?</div></li>
