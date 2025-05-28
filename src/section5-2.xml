@@ -53,7 +53,8 @@ import sympy as sp
 
 A = sp.Matrix([[0.8, 0.4], [0.2, 0.6]])
 I = sp.Matrix([[1, 0], [0, 1]])	  
-(A-I).rref()
+A_minus_I_rref = (A-I).rref()
+print(A_minus_I_rref)
 	  </input>
 	</sage>
 	</p></li>
