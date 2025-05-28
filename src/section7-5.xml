@@ -539,8 +539,8 @@ print(V)
 	    <input>
 h = 1/2
 U = sp.Matrix([[h,h,h,h], [h,h,-h,-h], [h,-h,h,-h], [h,-h,-h,h]])	    
-V = sp.Matrix(4[[h,h,h,h], [h,-h,-h,h], [-h,-h,h,h], [-h,h,-h,h]])
-Sigma = sp.diag([500, 100, 20, 4])
+V = sp.Matrix([[h,h,h,h], [h,-h,-h,h], [-h,-h,h,h], [-h,h,-h,h]])
+Sigma = sp.diag(500, 100, 20, 4)
 	    </input>
 	  </sage>
 	  <ol marker="a.">
@@ -930,7 +930,7 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-df.T
+print(df.T)
 
 	    </input>
 	  </sage>
@@ -1021,9 +1021,13 @@ Gamma2 =
 
 # The following will plot the projected demeaned data points
 data = Gamma2.columns()
-(list_plot(data[:50], color='blue', aspect_ratio=1) +
- list_plot(data[50:100], color='orange') +
- list_plot(data[100:], color='green'))
+
+plt.cla()
+plt.plot(data[:50], color = "blue", marker = "o")
+plt.plot(data[50:100], color = "organge", marker = "o")
+plt.plot(data[100:], color = "green", marker = "o")
+plt.grid() 
+plt.show()
 		  </input>
 		</sage>
 	      </p>
@@ -1290,8 +1294,14 @@ display_matrix(approximate(A, k))
 		      matrix <m>A</m>.
 		      <sage language="python">
 			<input>
-A = sp.Matrix(image)
-display_image(A)
+A = np.array(image)
+print(A)
+
+plt.cla()
+img = display_image(A)
+plt.imshow(img, cmap='gray')
+plt.axis('off')
+plt.show()
 
 			</input>
 		      </sage>
@@ -1340,7 +1350,7 @@ display_image(approximate(A, k))
 		represented by the matrix <m>A</m> below.
 		<sage language="python">
 		  <input>
-A = sp.Matrix(noise.values)		    
+A = np.array(noise)		    
 display_matrix(A)		
 		  </input>
 		</sage>
@@ -1360,8 +1370,9 @@ display_matrix(A)
 		      considered earlier and how are they different?
 		      <sage language="python">
 			<input>
+plt.cla()
 plot_sv(A)
-
+plt.show()
 			</input>
 		      </sage>
 		    </p>
@@ -1635,8 +1646,8 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = sp.Matrix(cases.values)
-cases
+A = np.array(cases)
+print(cases)
 
 	    </input>
 	  </sage>
@@ -1652,7 +1663,7 @@ cases
 	  black representing 0.
 	  <sage language="python">
 	    <input>
-display_matrix(A.matrix_from_columns(range(50)))
+display_matrix(A[:, :50])
 
 
 	    </input>
@@ -1666,6 +1677,7 @@ display_matrix(A.matrix_from_columns(range(50)))
 		as <m>k</m> increases.
 		<sage language="python">
 		  <input>
+plt.cla()
 plot_sv(A)
 		  </input>
 		</sage>
@@ -1805,8 +1817,8 @@ plot_sv(A)
 		matrix <m>B</m> consisting of 5-4 decisions.
 		<sage language="python">
 		  <input>
-B = sp.Matrix(fivefour.values)
-display_matrix(B[:, range(50)]))
+B = np.array(fivefour)
+display_matrix(B[:, :50]))
 
 		  </input>
 		</sage>

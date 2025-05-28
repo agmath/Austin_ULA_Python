@@ -338,8 +338,9 @@ import pandas as pd
 df = pd.read_csv('https://raw.githubusercontent.com/davidaustinm/ula_modules/master/data/housing.csv', index_col=0)
 df = df.fillna(df.mean())
 std = (df-df.mean())/df.std()
-A = matrix(std.values).T
-df.T
+A = np.array(std.values).T
+
+print(df.T)
 
 	  </input>
 	</sage>
@@ -508,8 +509,8 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = sp.Matrix(fivefour.values)
-v = sp.Matrix(188*[1])
+A = np.array(fivefour)
+v = np.array(188*[1])
 fivefour
 
 	  </input>
@@ -662,8 +663,8 @@ response = requests.get(url)
 # Make the script's contents available in your current environment
 exec(response.text, globals())
 
-A = 1/100*sp.Matrix(agreement.values)
-agreement
+A = 1/100*np.array(agreement)
+print(agreement)
 
 	  </input>
 	</sage>
@@ -682,6 +683,7 @@ agreement
 	      be a reasonable approximation of <m>A</m>?
 	      <sage language="python">
 		<input>
+plt.cla()
 plot_sv(A)
 
 		</input>
