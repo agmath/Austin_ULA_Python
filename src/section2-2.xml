@@ -890,7 +890,7 @@ w = sp.Matrix([1.0, 2])
 
     <p>
       When the matrix <m>A = \left[\begin{array}{rrrr}
-      \vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{_n}\end{array}\right]</m>,
+      \vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}\end{array}\right]</m>,
       we will frequently write
       <me>
 	\left[\begin{array}{rrrr|r}
