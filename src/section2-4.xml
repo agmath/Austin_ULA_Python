@@ -13,10 +13,10 @@
       solutions of a linear system led to the concept of the span of
       a set of vectors.  In particular, the span of a set of vectors
       <m>\vec{v_1},\vec{v_2},\ldots,\vec{v_n}</m> is the set of vectors
-      <m>\vec{v_b}</m> for which a solution to the linear system <m>
+      <m>\vec{b}</m> for which a solution to the linear system <m>
       \left[\begin{array}{rrrr}
       \vec{v_1}\amp\vec{v_2}\amp\ldots\amp\vec{v_n} \end{array}\right] ~\vec{x}
-      = \vec{v_b} </m> exists.
+      = \vec{b} </m> exists.
     </p>
 
     <p>
@@ -1001,7 +1001,7 @@
 	<row>
 	  <cell valign="top">
 	    <p>
-	      A vector <m>\vec{v_b}</m> is in the span of a set of vectors 
+	      A vector <m>\vec{b}</m> is in the span of a set of vectors 
 	      if it is a linear combination of those vectors.
 	    </p>
 	  </cell>
@@ -1015,9 +1015,9 @@
 	<row>
 	  <cell valign="top">
 	    <p>
-	      A vector <m>\vec{v_b}</m> is in the span of <m>\vec{v_1},
+	      A vector <m>\vec{b}</m> is in the span of <m>\vec{v_1},
 	      \vec{v_2}, \ldots, \vec{v_n}</m> if there exists a solution
-	      to <m>A\vec{x} = \vec{v_b}</m>.
+	      to <m>A\vec{x} = \vec{b}</m>.
 	    </p>
 	  </cell>
 	  <cell valign="top">
