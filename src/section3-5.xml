@@ -436,7 +436,7 @@
 	  \end{bmatrix}.
 	</me>
 	From the reduced row echelon form of the matrix, we see that
-	<m>\vec{v_2} = -\vec{v}</m>.  Therefore, any linear combination
+	<m>\vec{v_2} = -\vec{v_1}</m>.  Therefore, any linear combination
 	of <m>\vec{v_1}</m>, <m>\vec{v_2}</m>, and <m>\vec{v_3}</m> can be
 	rewritten 
 	<me>
