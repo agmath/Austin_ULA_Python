@@ -196,8 +196,7 @@
 	    <interactive xml:id="interactive-rgb"
 			 platform="javascript" width="100%"
 			 aspect="17:2"
-			 source="jslibrary/figures.js
-				 jslibrary/rgb.js"
+			 source="jslibrary/figures.js jslibrary/rgb.js"
 			 preview="preview/rgb-preview.png">
 	      <sbsgroup>
 		<sidebyside width="58%">
@@ -208,10 +207,12 @@
 	      </sbsgroup>
 	      <instructions>
 		<p>
-		  The diagram below enables you to create colors using
-		  various amounts of red, green, and blue.  For each
-		  of these three quantities, the slider varies between
-		  0 and 255.
+		  The interactive applet above enables you to create colors using
+		  various amounts of red, green, and blue. In each of the three 
+		  color bars, the grey slider can be moved from left to right, 
+		  varying the intensity between 0 and 255. The square to the right 
+		  simulates a pixel taking on the color defined by the mixture of 
+		  red, green, and blue selected via the sliders.
 		</p>
 	      </instructions>
 	    <static>
@@ -267,9 +268,9 @@
 	    </sbsgroup>
 	    <instructions>
 	      <p>
-		The diagram below enables you to create colors using
-		various amounts of luminance <m>Y</m>, blue
-		chrominance <m>C_b</m>, and red chrominance
+		Similar to the previous activity, the interactive applet above 
+		enables you to create colors using various amounts of 
+		luminance <m>Y</m>, blue chrominance <m>C_b</m>, and red chrominance
 		<m>C_r</m>.  The luminance slider moves between 0 and
 		255 while the chrominance sliders move between -127.5
 		and 127.5.
