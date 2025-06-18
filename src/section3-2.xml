@@ -388,7 +388,7 @@
 	using.  Because <m>\twovec{1}{-4} = 2\vec{v_1} - 3\vec{v_2}</m>, we
 	will write 
 	<me>
-	  \coords{\twovec{1}{-4}}{\bcal} =
+	  \twovec{1}{-4}_{\bcal} =
 	  \twovec{2}{-3} 
 	</me>.
 	More generally, <m>\coords{\vec{x}}{\bcal}</m> will denote the
@@ -412,7 +412,7 @@
 	</me>
 	and we conclude that
 	<me>
-	  \coords{\twovec{8}{3}}{\bcal} = \twovec{5}{-2}
+	  \twovec{8}{3}_{\bcal} = \twovec{5}{-2}
 	</me>.
 	This demonstrates how we can translate coordinates in the
 	basis <m>\bcal</m> into standard coordinates.
@@ -424,7 +424,7 @@
 	<m>\vec{x}=\twovec{-8}{2}</m> and that we would like to find
 	<m>\coords{\vec{x}}{\bcal}</m>.  We can write
 	<me>
-	  \coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2},
+	  \twovec{-8}{2}_{\bcal}=\twovec{c_1}{c_2},
 	</me>
 	which means that
 	<me>
@@ -448,7 +448,7 @@
 	</me>.
 	which means that
 	<me>
-	  \coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}
+	  \twovec{-8}{2}_{\bcal} = \twovec{-6}{4}
 	</me>.
 	</p>
       </statement>
