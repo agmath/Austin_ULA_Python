@@ -987,11 +987,32 @@
 
 	  <li> <p> Write the polynomial <m>p(x)</m> that you found and
 	  check your work by graphing it in the Python cell below and
-	  verifying that it passes through the four points.  To plot a
-	  function over a range, you may use a command like
-	  <c> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</c>.
+	  verifying that it passes through the four points. Partial 
+	  plotting code is provided to you -- you'll just want to change 
+	  the <c>return</c> statement at the end of the definition of 
+	  <c>p(x)</c> to match the polynomial you discovered rather than 
+	  <c>x**2 + 1</c> (the polynomial <m>x^2 + 1</m>).
 	  <sage language="python">
 	    <input>
+import numpy as np
+import matplotlib.pyplot as plt
+
+def p(x):
+	return x**2 + 1
+			
+x_vals = np.linspace(-0.25, 3.25, 250)
+y_vals = p(x_vals)
+
+x_pts = [0, 1, 2, 3]
+y_pts = [2, 3, 0, 1]
+
+plt.figure(figsize = (4, 4))
+plt.plot(x_vals, y_vals, color = "red")
+plt.scatter(x_pts, y_pts, color = "steelblue")
+plt.grid()
+plt.axhline(color = "black")
+plt.axvline(color = "black")
+plt.show()
 	    </input>
 	  </sage>
 	  </p></li>
