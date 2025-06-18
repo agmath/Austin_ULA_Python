@@ -51,7 +51,25 @@ p(3) = a + 3b + 9c + 27d = 1\text{.}
 <li><div class="para">Write the augmented matrix corresponding to this system of equations and use the Python cell below to solve for the coefficients. <div id="exercise-poly-fit-1-2-12-2-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div></li>
-<li><div class="para">Write the polynomial <span class="process-math">\(p(x)\)</span> that you found and check your work by graphing it in the Python cell below and verifying that it passes through the four points.  To plot a function over a range, you may use a command like <code class="code-inline tex2jax_ignore"> plot(1 + x- 2*x^2, xmin = -1, xmax = 4)</code>. <div id="exercise-poly-fit-1-2-12-3-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<li><div class="para">Write the polynomial <span class="process-math">\(p(x)\)</span> that you found and check your work by graphing it in the Python cell below and verifying that it passes through the four points. Partial plotting code is provided to you -- you’ll just want to change the <code class="code-inline tex2jax_ignore">return</code> statement at the end of the definition of <code class="code-inline tex2jax_ignore">p(x)</code> to match the polynomial you discovered rather than <code class="code-inline tex2jax_ignore">x**2 + 1</code> (the polynomial <span class="process-math">\(x^2 + 1\)</span>). <div id="exercise-poly-fit-1-2-12-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
+import matplotlib.pyplot as plt
+
+def p(x):
+	return x**2 + 1
+			
+x_vals = np.linspace(-0.25, 3.25, 250)
+y_vals = p(x_vals)
+
+x_pts = [0, 1, 2, 3]
+y_pts = [2, 3, 0, 1]
+
+plt.figure(figsize = (4, 4))
+plt.plot(x_vals, y_vals, color = "red")
+plt.scatter(x_pts, y_pts, color = "steelblue")
+plt.grid()
+plt.axhline(color = "black")
+plt.axvline(color = "black")
+plt.show()
 </script></div>
 </div></li>
 <li><div class="para logical">
