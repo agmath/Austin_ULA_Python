@@ -113,14 +113,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.0';
+eBookConfig.runestone_version = '7.8.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
@@ -203,7 +203,7 @@ sagecell.makeSagecell({
 \newcommand{\scal}{{\cal S}}
 \newcommand{\wcal}{{\cal W}}
 \newcommand{\ecal}{{\cal E}}
-\newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+\newcommand{\coords}[2]{\left[#1\right]_{#2}}
 \newcommand{\gray}[1]{\color{gray}{#1}}
 \newcommand{\lgray}[1]{\color{lightgray}{#1}}
 \newcommand{\rank}{\operatorname{rank}}
@@ -784,7 +784,7 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Since we now have two descriptions of the vector <span class="process-math">\(\vec{x}\text{,}\)</span> we need some notation to keep track of which coordinate system we are using.  Because <span class="process-math">\(\twovec{1}{-4} = 2\vec{v_1} - 3\vec{v_2}\text{,}\)</span> we will write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\twovec{1}{-4}}{\bcal} =
+\twovec{1}{-4}_{\bcal} =
 \twovec{2}{-3} \text{.}
 \end{equation*}
 </div>
@@ -811,7 +811,7 @@ A = \left[\begin{array}{rrrr}
 <div class="para">and we conclude that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\twovec{8}{3}}{\bcal} = \twovec{5}{-2}\text{.}
+\twovec{8}{3}_{\bcal} = \twovec{5}{-2}\text{.}
 \end{equation*}
 </div>
 <div class="para">This demonstrates how we can translate coordinates in the basis <span class="process-math">\(\bcal\)</span> into standard coordinates.</div>
@@ -819,7 +819,7 @@ A = \left[\begin{array}{rrrr}
 <div class="para">Suppose we know the expression of a vector <span class="process-math">\(\vec{x}\)</span> in standard coordinates.  How can we find its coordinates in the basis <span class="process-math">\(\bcal\text{?}\)</span>  For instance, suppose <span class="process-math">\(\vec{x}=\twovec{-8}{2}\)</span> and that we would like to find <span class="process-math">\(\coords{\vec{x}}{\bcal}\text{.}\)</span>  We can write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\twovec{-8}{2}}{\bcal}=\twovec{c_1}{c_2},
+\twovec{-8}{2}_{\bcal}=\twovec{c_1}{c_2},
 \end{equation*}
 </div>
 <div class="para">which means that</div>
@@ -851,7 +851,7 @@ c_1 \twovec{2}{1} + c_2 \twovec{1}{2} = \twovec{-8}{2}.
 <div class="para">which means that</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\coords{\twovec{-8}{2}}{\bcal} = \twovec{-6}{4}\text{.}
+\twovec{-8}{2}_{\bcal} = \twovec{-6}{4}\text{.}
 \end{equation*}
 </div>
 </div></article><div class="para" id="sec-bases-4-4">This example illustrates how a basis in <span class="process-math">\(\real^2\)</span> provides a new coordinate system for <span class="process-math">\(\real^2\)</span> and shows how we may translate between this coordinate system and the standard one.</div>
