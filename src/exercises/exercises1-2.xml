@@ -206,6 +206,18 @@
   </exercise>
 
   <exercise>
+    <myopenmath problem="1533917"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1163823"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171275"/>
+  </exercise>
+
+  <exercise>
     <statement>
       <p> Consider each matrix below and determine if it is in reduced
       row echelon form.  If not, indicate the reason and apply a
@@ -434,6 +446,18 @@
       </p>
     </answer>
     
+  </exercise>
+
+    <exercise>
+    <myopenmath problem="6358"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="641618"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="965887"/>
   </exercise>
 
   <exercise>
@@ -902,6 +926,62 @@
       </ol></p>
     </answer>
 	
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171348"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171349"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171352"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="6369"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="6371"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="869304"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171939"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171940"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171947"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171955"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171959"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171961"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171966"/>
+  </exercise>
+
+  <exercise>
+    <myopenmath problem="1171972"/>
   </exercise>
 
 </exercises>
