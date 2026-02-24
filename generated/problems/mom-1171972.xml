@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="1171972">
+<statement>
+<p>
+Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
+<p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccccc} {7}{x}\amp-\amp{56}{y}\amp-\amp{9}{z}\amp-\amp{2}{w}\amp-\amp{39}{v}\amp=\amp-{66}\\{5}{x}\amp-\amp{40}{y}\amp-\amp{2}{z}\amp-\amp{28}{w}\amp-\amp{19}{v}\amp=\amp-{25}\\{7}{x}\amp-\amp{56}{y}\amp-\amp{5}{z}\amp-\amp{26}{w}\amp-\amp{31}{v}\amp=\amp-{46}\end{array}\right.}</m></p>
+<p>
+x = <fillin characters="20"/>  
+</p>
+<p>
+y = <fillin characters="20"/>  
+</p>
+<p>
+z = <fillin characters="20"/>  
+</p>
+<p>
+w = <fillin characters="20"/>  
+</p>
+<p>
+v = <fillin characters="20"/>  
+
+</p>
+</statement>
+<answer>
+<p><ul><li><m>\displaystyle-{3}+{8}{y}+{8}{w}+{3}{v}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{5}+{6}{w}-{2}{v}</m></li><li><m>\displaystyle{w}</m></li><li><m>\displaystyle{v}</m></li></ul></p>
+</answer>
+
+</myopenmath>

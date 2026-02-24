@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="965887">
+<statement>
+<p class="seqsep" role="heading" tabindex="-1">Part 1 of 4</p>The augmented matrix for a linear system has been reduced to<p>
+<m>\displaystyle{\left[\begin{array}{ccccc} {0}\amp{1}\amp-{5}\amp{0}\amp-{11}\\{0}\amp{0}\amp{0}\amp{1}\amp-{8}\\{0}\amp{0}\amp{0}\amp{0}\amp{0}\\{0}\amp{0}\amp{0}\amp{0}\amp{0}\end{array}\right]}</m></p>
+<p>
+Is this matrix in reduced row echelon form? No</p>
+<p>
+Yes</p><p class="seqsep" role="heading" tabindex="-1">Part 2 of 4</p>
+Is the system consistent? No<p>
+Yes</p><p class="seqsep" role="heading" tabindex="-1">Part 3 of 4</p>
+How many free variables does the syatem have? <fillin characters="1"/><p class="seqsep" role="heading" tabindex="-1">Part 4 of 4</p>
+Give the general solution to the system of equations.<tabular><row><cell><m>\displaystyle{\left[\begin{array}{c} {x}_{{1}}\\{x}_{{2}}\\{x}_{{3}}\\{x}_{{4}}\end{array}\right]}=</m></cell><cell><fillin characters="20"/>   </cell><cell><m>\displaystyle+{r}</m></cell><cell><fillin characters="20"/>   </cell><cell><m>\displaystyle+{s}</m></cell><cell><fillin characters="20"/>   </cell></row></tabular>
+</statement>
+<answer>
+<p><ul><li>B: Yes</li><li>B: Yes</li><li>2</li><li><m>\displaystyle{\left[\begin{array}{c} {0}\\-{11}\\{0}\\-{8}\end{array}\right]}</m></li><li><m>\displaystyle{\left[\begin{array}{c} {1}\\{0}\\{0}\\{0}\end{array}\right]}</m></li><li><m>\displaystyle{\left[\begin{array}{c} {0}\\{5}\\{1}\\{0}\end{array}\right]}</m></li></ul></p>
+</answer>
+
+</myopenmath>

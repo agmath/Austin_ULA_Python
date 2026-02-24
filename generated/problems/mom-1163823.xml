@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="1163823">
+<statement>
+<p>
+Write the system of equations as an augmented matrix</p>
+<p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {6}{x}\amp-\amp{6}{y}\amp+\amp{4}{z}\amp=\amp{4}\\-{4}{x}\amp-\amp{y}\amp-\amp{4}{z}\amp=\amp{5}\\-{5}{x}\amp+\amp{3}{y}\amp+\amp{3}{z}\amp=\amp{2}\end{array}\right.}</m></p>
+<p><fillin characters="20"/>   </p>
+
+
+</statement>
+<answer>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{cccc} {6}\amp-{6}\amp{4}\amp{4}\\-{4}\amp-{1}\amp-{4}\amp{5}\\-{5}\amp{3}\amp{3}\amp{2}\end{array}\right]}</m></li></ul></p>
+</answer>
+
+</myopenmath>

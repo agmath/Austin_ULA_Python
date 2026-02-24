@@ -6,14 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>The geometry of matrix transformations</title>
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -86,11 +92,11 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra (with Python)">
+<meta property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -113,16 +119,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.1';
+eBookConfig.runestone_version = '7.11.15';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
@@ -143,7 +149,7 @@ sagecell.makeSagecell({
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
-</div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 <div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -157,7 +163,7 @@ sagecell.makeSagecell({
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-linear-trans.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chap3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\vec{a}}}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\vec{a}}}
 \newcommand{\bvec}{{\vec{b}}}
 \newcommand{\cvec}{{\vec{c}}}
 \newcommand{\dvec}{{\vec{d}}}
@@ -229,7 +235,7 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -594,75 +600,143 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-transforms-geom"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-transforms-geom"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.6</span><span class="space"> </span><span class="title">The geometry of matrix transformations</span>
 </h2>
-<section class="introduction" id="sec-transforms-geom-2"><div class="para" id="sec-transforms-geom-2-1">Matrix transformations, which we explored in the last section, allow us to describe certain functions <span class="process-math">\(T:\real^n\to\real^m\text{.}\)</span>  In this section, we will demonstrate how matrix transformations provide a convenient way to describe geometric operations, such as rotations, reflections, and scalings.  We will then explore how matrix transformations are used in computer animation.</div>
+<section class="introduction" id="sec-transforms-geom-2"><div class="para" id="sec-transforms-geom-2-1">Matrix transformations, which we explored in the last section, allow us to describe certain functions <span class="process-math">\(T:\real^n\to\real^m\text{.}\)</span>  In this section, we will demonstrate how matrix transformations provide a convenient way to describe geometric operations, such as rotations, reflections, and scalings.  We will then explore how matrix transformations are used in computer animation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="exploration project-like" id="sec-transforms-geom-2-2"><h3 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec-transforms-geom-2-2-1-1">We will describe the matrix transformation <span class="process-math">\(T\)</span> that reflects 2-dimensional vectors across the horizontal axis.  For instance, <a href="sec-transforms-geom.html#fig-reflect-intro" class="xref" data-knowl="./knowl/xref/fig-reflect-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.1">Figure 2.6.1</a> illustrates how a vector <span class="process-math">\(\vec{x}\)</span> is reflected onto the vector <span class="process-math">\(T(\vec{x})\text{.}\)</span>
+<div class="para" id="sec-transforms-geom-2-2-1-1">We will describe the matrix transformation <span class="process-math">\(T\)</span> that reflects 2-dimensional vectors across the horizontal axis.  For instance, <a href="sec-transforms-geom.html#fig-reflect-intro" class="xref" data-knowl="./knowl/xref/fig-reflect-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.1">Figure 2.6.1</a> illustrates how a vector <span class="process-math">\(\vec{x}\)</span> is reflected onto the vector <span class="process-math">\(T(\vec{x})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-reflect-intro"><div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/reflect-intro.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>A vector <span class="process-math">\(\vec{x}\)</span> and its reflection <span class="process-math">\(T(\vec{x})\)</span> across the horizontal axis.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-2-2-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-2-2-1-3-1">
-<li id="sec-transforms-geom-2-2-1-3-1-1"><div class="para" id="sec-transforms-geom-2-2-1-3-1-1-1">If <span class="process-math">\(\vec{x} = \twovec{2}{4}\text{,}\)</span> what is the vector <span class="process-math">\(T(\vec{x})\text{?}\)</span>  Sketch the vectors <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(T(\vec{x})\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-2"><div class="para" id="sec-transforms-geom-2-2-1-3-1-2-1">More generally, if <span class="process-math">\(\vec{x}=\twovec{x}{y}\text{,}\)</span> what is <span class="process-math">\(T(\vec{x})\text{?}\)</span>
-</div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-3"><div class="para" id="sec-transforms-geom-2-2-1-3-1-3-1">Find the vectors <span class="process-math">\(T\left(\twovec{1}{0}\right)\)</span> and <span class="process-math">\(T\left(\twovec{0}{1}\right)\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-4"><div class="para" id="sec-transforms-geom-2-2-1-3-1-4-1">Use your results to write the matrix <span class="process-math">\(A\)</span> so that <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span> Then verify that <span class="process-math">\(T\left(\twovec{x}{y}\right)\)</span> agrees with what you found in part b.</div></li>
-<li id="sec-transforms-geom-2-2-1-3-1-5"><div class="para" id="sec-transforms-geom-2-2-1-3-1-5-1">Describe the transformation that results from composing <span class="process-math">\(T\)</span> with itself;  that is, what is the transformation <span class="process-math">\(T\circ T\text{?}\)</span>  Explain how matrix multiplication can be used to justify your response.</div></li>
-</ol></div></article></section><section class="subsection" id="sec-transforms-geom-3"><h3 class="heading hide-type">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span>A vector <span class="process-math">\(\vec{x}\)</span> and its reflection <span class="process-math">\(T(\vec{x})\)</span> across the horizontal axis.<div class="autopermalink" data-description="Figure 2.6.1"><a href="#fig-reflect-intro" title="Copy permalink for Figure 2.6.1">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-2-2-1-3">
+<ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-2-2-1-3-1">
+<li id="sec-transforms-geom-2-2-1-3-1-1">
+<div class="para" id="sec-transforms-geom-2-2-1-3-1-1-1">If <span class="process-math">\(\vec{x} = \twovec{2}{4}\text{,}\)</span> what is the vector <span class="process-math">\(T(\vec{x})\text{?}\)</span>  Sketch the vectors <span class="process-math">\(\vec{x}\)</span> and <span class="process-math">\(T(\vec{x})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-transforms-geom-2-2-1-3-1-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-2-2-1-3-1-2">
+<div class="para" id="sec-transforms-geom-2-2-1-3-1-2-1">More generally, if <span class="process-math">\(\vec{x}=\twovec{x}{y}\text{,}\)</span> what is <span class="process-math">\(T(\vec{x})\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-transforms-geom-2-2-1-3-1-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-2-2-1-3-1-3">
+<div class="para" id="sec-transforms-geom-2-2-1-3-1-3-1">Find the vectors <span class="process-math">\(T\left(\twovec{1}{0}\right)\)</span> and <span class="process-math">\(T\left(\twovec{0}{1}\right)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-transforms-geom-2-2-1-3-1-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-2-2-1-3-1-4">
+<div class="para" id="sec-transforms-geom-2-2-1-3-1-4-1">Use your results to write the matrix <span class="process-math">\(A\)</span> so that <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span> Then verify that <span class="process-math">\(T\left(\twovec{x}{y}\right)\)</span> agrees with what you found in part b.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-transforms-geom-2-2-1-3-1-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-2-2-1-3-1-5">
+<div class="para" id="sec-transforms-geom-2-2-1-3-1-5-1">Describe the transformation that results from composing <span class="process-math">\(T\)</span> with itself;  that is, what is the transformation <span class="process-math">\(T\circ T\text{?}\)</span>  Explain how matrix multiplication can be used to justify your response.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-transforms-geom-2-2-1-3-1-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-2-2-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Preview Activity 2.6.1"><a href="#sec-transforms-geom-2-2" title="Copy permalink for Preview Activity 2.6.1">🔗</a></div></article></section><section class="subsection" id="sec-transforms-geom-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">The geometry of <span class="process-math">\(2\times2\)</span> matrix transformations</span>
 </h3>
-<div class="para" id="sec-transforms-geom-3-2">We have now seen how a few geometric operations, such as rotations and reflections, can be described using matrix transformations.  The following activity shows, more generally, that matrix transformations can perform a variety of important geometric operations.</div>
+<div class="para" id="sec-transforms-geom-3-2">We have now seen how a few geometric operations, such as rotations and reflections, can be described using matrix transformations.  The following activity shows, more generally, that matrix transformations can perform a variety of important geometric operations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="activity project-like" id="activity-linear-trans-geom"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Using matrix transformations to describe geometric operations.</span>
 </h4>
 <figure class="figure figure-like" id="js-matrix-mult"><iframe id="interactive-matrix-mult" width="600" height="386" src="interactive-matrix-mult-if.html"></iframe><div class="instructions"><details id="interactive-matrix-mult-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content">
 <div class="para" id="interactive-matrix-mult-2-1">The diagram below demonstrates the effect of a matrix transformation <span class="process-math">\(T\)</span> on the plane.  You may modify the matrix <span class="process-math">\(A=\begin{bmatrix} a \amp b \\ c \amp c
-\\ \end{bmatrix}\)</span> defining <span class="process-math">\(T\)</span> through the sliders at the top.</div>
-<div class="para" id="interactive-matrix-mult-2-2">Since a matrix transformation takes a vector as input and produces a vector as output, we will show the inputs and outputs on separate sets of axes.  In particular, the axes on the left represent the inputs while the axes on the right illustrate how input features are transformed by <span class="process-math">\(T\text{.}\)</span>
+\\ \end{bmatrix}\)</span> defining <span class="process-math">\(T\)</span> through the sliders at the top.<div class="autopermalink" data-description="Paragraph"><a href="#interactive-matrix-mult-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
+<div class="para" id="interactive-matrix-mult-2-2">Since a matrix transformation takes a vector as input and produces a vector as output, we will show the inputs and outputs on separate sets of axes.  In particular, the axes on the left represent the inputs while the axes on the right illustrate how input features are transformed by <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#interactive-matrix-mult-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#interactive-matrix-mult-2" title="Copy permalink for Instructions">🔗</a></div>
 </div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> transforms features shown on the left into features shown on the right.</figcaption></figure> <div class="para logical" id="activity-linear-trans-geom-2-2">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> transforms features shown on the left into features shown on the right.<div class="autopermalink" data-description="Figure 2.6.2"><a href="#js-matrix-mult" title="Copy permalink for Figure 2.6.2">🔗</a></div></figcaption></figure> <div class="para logical" id="activity-linear-trans-geom-2-2">
 <div class="para">For the following <span class="process-math">\(2\times2\)</span> matrices <span class="process-math">\(A\text{,}\)</span> use the diagram to study the effect of the corresponding matrix transformation <span class="process-math">\(T(\vec{x}) =
 A\vec{x}\text{.}\)</span>  For each transformation, describe the geometric effect the transformation has on the plane.</div>
 <ol class="lower-alpha ol-marker-1" id="activity-linear-trans-geom-2-2-4">
-<li id="activity-linear-trans-geom-2-2-4-1"><div class="para" id="activity-linear-trans-geom-2-2-4-1-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+<li id="activity-linear-trans-geom-2-2-4-1">
+<div class="para" id="activity-linear-trans-geom-2-2-4-1-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 2 \amp 0 \\
 0 \amp 1 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-2"><div class="para" id="activity-linear-trans-geom-2-2-4-2-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#activity-linear-trans-geom-2-2-4-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-2">
+<div class="para" id="activity-linear-trans-geom-2-2-4-2-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 2 \amp 0 \\
 0 \amp 2 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-3"><div class="para" id="activity-linear-trans-geom-2-2-4-3-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#activity-linear-trans-geom-2-2-4-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-3">
+<div class="para" id="activity-linear-trans-geom-2-2-4-3-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 0 \amp 1 \\
 -1 \amp 0 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-4"><div class="para" id="activity-linear-trans-geom-2-2-4-4-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#activity-linear-trans-geom-2-2-4-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-4">
+<div class="para" id="activity-linear-trans-geom-2-2-4-4-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 1 \amp 1 \\
 0 \amp 1 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-5"><div class="para" id="activity-linear-trans-geom-2-2-4-5-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#activity-linear-trans-geom-2-2-4-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-5">
+<div class="para" id="activity-linear-trans-geom-2-2-4-5-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 -1 \amp 0 \\
 0 \amp 1 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-6"><div class="para" id="activity-linear-trans-geom-2-2-4-6-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#activity-linear-trans-geom-2-2-4-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-6">
+<div class="para" id="activity-linear-trans-geom-2-2-4-6-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 1 \amp 0 \\
 0 \amp 0 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-7"><div class="para" id="activity-linear-trans-geom-2-2-4-7-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item f"><a href="#activity-linear-trans-geom-2-2-4-6" title="Copy permalink for Item f">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-7">
+<div class="para" id="activity-linear-trans-geom-2-2-4-7-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 1 \amp 0 \\
 0 \amp 1 \\
-\end{array}\right]\text{.}\)</span></div></li>
-<li id="activity-linear-trans-geom-2-2-4-8"><div class="para" id="activity-linear-trans-geom-2-2-4-8-1"><span class="process-math">\(A=\left[\begin{array}{rr}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item g"><a href="#activity-linear-trans-geom-2-2-4-7" title="Copy permalink for Item g">🔗</a></div>
+</li>
+<li id="activity-linear-trans-geom-2-2-4-8">
+<div class="para" id="activity-linear-trans-geom-2-2-4-8-1">
+<span class="process-math">\(A=\left[\begin{array}{rr}
 1 \amp -1 \\
 -2 \amp 2 \\
-\end{array}\right]\text{.}\)</span></div></li>
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2-4-8-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item h"><a href="#activity-linear-trans-geom-2-2-4-8" title="Copy permalink for Item h">🔗</a></div>
+</li>
 </ol>
-</div></article><div class="para" id="sec-transforms-geom-3-4">The previous activity presented some examples showing that matrix transformations can perform interesting geometric operations, such as rotations, scalings, and reflections. Before we go any further, we should explain why it is possible to represent these operations by matrix transformations.  In fact, we ask more generally: what types of functions <span class="process-math">\(T:\real^n\to\real^m\)</span> are represented as matrix transformations?</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#activity-linear-trans-geom-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.6.2: Using matrix transformations to describe geometric operations"><a href="#activity-linear-trans-geom" title="Copy permalink for Activity 2.6.2: Using matrix transformations to describe geometric operations">🔗</a></div></article><div class="para" id="sec-transforms-geom-3-4">The previous activity presented some examples showing that matrix transformations can perform interesting geometric operations, such as rotations, scalings, and reflections. Before we go any further, we should explain why it is possible to represent these operations by matrix transformations.  In fact, we ask more generally: what types of functions <span class="process-math">\(T:\real^n\to\real^m\)</span> are represented as matrix transformations?<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec-transforms-geom-3-5">
 <div class="para">The <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">linearity of matrix-vector multiplication</a> provides the key to answering this question.  Remember that if <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> vectors, and <span class="process-math">\(c\)</span> a scalar, then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-mult-prop.html">
@@ -674,15 +748,20 @@ A(\vec{v} + \vec{w}) \amp {}={} A\vec{v} + A\vec{w}\text{.}
 \end{equation*}
 </div>
 <div class="para">This means that a matrix transformation <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> satisfies the corresponding linearity property: <article class="assemblage assemblage-like" id="linearity-of-linear-transformations"><h4 class="heading"><span class="title">Linearity of Matrix Transformations.</span></h4>
-<div class="para logical" id="linearity-of-linear-transformations-2"><div class="displaymath process-math">
+<div class="para logical" id="linearity-of-linear-transformations-2">
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 T(c\vec{v}) \amp {}={} cT(\vec{v}) \\
 T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}
 \end{equation*}
-</div></div></article>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#linearity-of-linear-transformations-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assemblage: Linearity of Matrix Transformations"><a href="#linearity-of-linear-transformations" title="Copy permalink for Assemblage: Linearity of Matrix Transformations">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-5" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-transforms-geom-3-6">
 <div class="para">It turns out that, if <span class="process-math">\(T:\real^n\to\real^m\)</span> satisfies these two linearity properties, then we can find a matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\vec{x}) = A\vec{x}\text{.}\)</span>  In fact, <a href="sec-linear-trans.html#prop-linear-trans-columns" class="xref" data-knowl="./knowl/xref/prop-linear-trans-columns.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.5.6">Proposition 2.5.6</a> tells us how to form <span class="process-math">\(A\text{;}\)</span> we simply write</div>
@@ -714,8 +793,10 @@ A\vec{x}
 \end{aligned}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-6" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-transforms-geom-3-7">The result is the following proposition.</div>
+<div class="para" id="sec-transforms-geom-3-7">The result is the following proposition.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-linear-trans-characterization"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
 </h4>
@@ -737,12 +818,16 @@ T(\vec{e_1}) \amp T(\vec{e_2}) \amp \ldots \amp T(\vec{e_n})
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></article><div class="para" id="sec-transforms-geom-3-9">Said simply, this proposition means says that if have a function <span class="process-math">\(T:\real^n\to\real^m\)</span> and can verify the two linearity properties stated in the proposition, then we know that <span class="process-math">\(T\)</span> is a matrix transformation.  Let’s see how this works in practice.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-linear-trans-characterization-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.6.3"><a href="#prop-linear-trans-characterization" title="Copy permalink for Proposition 2.6.3">🔗</a></div></article><div class="para" id="sec-transforms-geom-3-9">Said simply, this proposition means says that if have a function <span class="process-math">\(T:\real^n\to\real^m\)</span> and can verify the two linearity properties stated in the proposition, then we know that <span class="process-math">\(T\)</span> is a matrix transformation.  Let’s see how this works in practice.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-9" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="example example-like" id="sec-transforms-geom-3-10"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-transforms-geom-3-10-1-1">We will consider the function <span class="process-math">\(T:\real^2\to\real^2\)</span> that rotates a vector <span class="process-math">\(\vec{x}\)</span> by <span class="process-math">\(45^\circ\)</span> in the counterclockwise direction to obtain <span class="process-math">\(T(\vec{x})\)</span> as seen in <a href="sec-transforms-geom.html#fig-45-rotation" class="xref" data-knowl="./knowl/xref/fig-45-rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.5">Figure 2.6.5</a>.</div> <figure class="figure figure-like" id="fig-45-rotation"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(T\)</span> rotates a vector counterclockwise by <span class="process-math">\(45^\circ\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-3">
+<div class="para" id="sec-transforms-geom-3-10-1-1">We will consider the function <span class="process-math">\(T:\real^2\to\real^2\)</span> that rotates a vector <span class="process-math">\(\vec{x}\)</span> by <span class="process-math">\(45^\circ\)</span> in the counterclockwise direction to obtain <span class="process-math">\(T(\vec{x})\)</span> as seen in <a href="sec-transforms-geom.html#fig-45-rotation" class="xref" data-knowl="./knowl/xref/fig-45-rotation.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.5">Figure 2.6.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-45-rotation"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span>The function <span class="process-math">\(T\)</span> rotates a vector counterclockwise by <span class="process-math">\(45^\circ\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.5"><a href="#fig-45-rotation" title="Copy permalink for Figure 2.6.5">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-3">
 <div class="para">We first need to know that <span class="process-math">\(T\)</span> can be represented by a matrix transformation, which means, by <a href="sec-transforms-geom.html#prop-linear-trans-characterization" class="xref" data-knowl="./knowl/xref/prop-linear-trans-characterization.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.6.3">Proposition 2.6.3</a>, that we need to verify the linearity properties:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-linear-trans-characterization.html">
 \begin{equation*}
@@ -752,17 +837,19 @@ T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{aligned}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="sec-transforms-geom-3-10-1-4">The next two figures illustrate why these properties hold. For instance, <a href="sec-transforms-geom.html#fig-45-rotation-linear-mult" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.6">Figure 2.6.6</a> shows the relationship between <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(c\vec{v})\)</span> when <span class="process-math">\(c\)</span> is a scalar.  In particular, scaling a vector and then rotating it is the same as rotating and then scaling it, which means that <span class="process-math">\(T(c\vec{v})
-= cT(\vec{v})\text{.}\)</span>
+= cT(\vec{v})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-45-rotation-linear-mult"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-linear-a.svg" role="img" class="contained"></div></div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(c\vec{v})\)</span> is a scalar multiple to <span class="process-math">\(T(\vec{v})\)</span> so that <span class="process-math">\(T(c\vec{v}) =
-cT(\vec{v})\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-6">Similarly, <a href="sec-transforms-geom.html#fig-45-rotation-linear-add" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-add.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.7">Figure 2.6.7</a> shows the relationship between <span class="process-math">\(T(\vec{v}+\vec{w})\text{,}\)</span> <span class="process-math">\(T(\vec{v})\text{,}\)</span> and <span class="process-math">\(T(\vec{w})\text{.}\)</span>  Remember that the sum of two vectors is represented by the diagonal of the parallelogram defined by the two vectors.  The rotation <span class="process-math">\(T\)</span> has the effect of rotating the parallelogram defined by <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> into the parallelogram defined by <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\text{,}\)</span> explaining why <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span>
+cT(\vec{v})\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.6"><a href="#fig-45-rotation-linear-mult" title="Copy permalink for Figure 2.6.6">🔗</a></div></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-6">Similarly, <a href="sec-transforms-geom.html#fig-45-rotation-linear-add" class="xref" data-knowl="./knowl/xref/fig-45-rotation-linear-add.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.7">Figure 2.6.7</a> shows the relationship between <span class="process-math">\(T(\vec{v}+\vec{w})\text{,}\)</span> <span class="process-math">\(T(\vec{v})\text{,}\)</span> and <span class="process-math">\(T(\vec{w})\text{.}\)</span>  Remember that the sum of two vectors is represented by the diagonal of the parallelogram defined by the two vectors.  The rotation <span class="process-math">\(T\)</span> has the effect of rotating the parallelogram defined by <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> into the parallelogram defined by <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\text{,}\)</span> explaining why <span class="process-math">\(T(\vec{v}+\vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-6" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-45-rotation-linear-add"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-linear-b.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(\vec{v}+\vec{w})\)</span> is the sum of <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\)</span> so that <span class="process-math">\(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-8">Having verified these two properties, we now know that the function <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(45^\circ\)</span> is a matrix transformation.  We may therefore write it as <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> where <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A=\left[\begin{array}{rr} T(\vec{e_1}) \amp T(\vec{e_2})
-\end{array}\right]\text{.}\)</span>  The columns of this matrix, <span class="process-math">\(T(\vec{e_1})\)</span> and <span class="process-math">\(T(\vec{e_2})\text{,}\)</span> are shown on the right of <a href="sec-transforms-geom.html#fig-45-rotation-basis" class="xref" data-knowl="./knowl/xref/fig-45-rotation-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.8">Figure 2.6.8</a>.</div> <figure class="figure figure-like" id="fig-45-rotation-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.8<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> rotates <span class="process-math">\(\vec{e_1}\)</span> and <span class="process-math">\(\vec{e_2}\)</span> by <span class="process-math">\(45^\circ\text{.}\)</span></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-10">Notice that <span class="process-math">\(T(\vec{e_1})\)</span> forms an isosceles right triangle, as shown in <a href="sec-transforms-geom.html#fig-45-rotation-e1" class="xref" data-knowl="./knowl/xref/fig-45-rotation-e1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.9">Figure 2.6.9</a>. Since the length of <span class="process-math">\(\vec{e_1}\)</span> is 1, the length of <span class="process-math">\(T(\vec{e_1})\text{,}\)</span> the hypotenuse of the triangle, is also 1, and by Pythagoras’ theorem, the lengths of its legs are <span class="process-math">\(1/\sqrt{2}\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.7<span class="period">.</span></span><span class="space"> </span>We see that the vector <span class="process-math">\(T(\vec{v}+\vec{w})\)</span> is the sum of <span class="process-math">\(T(\vec{v})\)</span> and <span class="process-math">\(T(\vec{w})\)</span> so that <span class="process-math">\(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.7"><a href="#fig-45-rotation-linear-add" title="Copy permalink for Figure 2.6.7">🔗</a></div></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-8">Having verified these two properties, we now know that the function <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(45^\circ\)</span> is a matrix transformation.  We may therefore write it as <span class="process-math">\(T(\vec{x}) = A\vec{x}\)</span> where <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A=\left[\begin{array}{rr} T(\vec{e_1}) \amp T(\vec{e_2})
+\end{array}\right]\text{.}\)</span>  The columns of this matrix, <span class="process-math">\(T(\vec{e_1})\)</span> and <span class="process-math">\(T(\vec{e_2})\text{,}\)</span> are shown on the right of <a href="sec-transforms-geom.html#fig-45-rotation-basis" class="xref" data-knowl="./knowl/xref/fig-45-rotation-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.8">Figure 2.6.8</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-45-rotation-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-basis.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.8<span class="period">.</span></span><span class="space"> </span>The matrix transformation <span class="process-math">\(T\)</span> rotates <span class="process-math">\(\vec{e_1}\)</span> and <span class="process-math">\(\vec{e_2}\)</span> by <span class="process-math">\(45^\circ\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.8"><a href="#fig-45-rotation-basis" title="Copy permalink for Figure 2.6.8">🔗</a></div></figcaption></figure> <div class="para" id="sec-transforms-geom-3-10-1-10">Notice that <span class="process-math">\(T(\vec{e_1})\)</span> forms an isosceles right triangle, as shown in <a href="sec-transforms-geom.html#fig-45-rotation-e1" class="xref" data-knowl="./knowl/xref/fig-45-rotation-e1.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.9">Figure 2.6.9</a>. Since the length of <span class="process-math">\(\vec{e_1}\)</span> is 1, the length of <span class="process-math">\(T(\vec{e_1})\text{,}\)</span> the hypotenuse of the triangle, is also 1, and by Pythagoras’ theorem, the lengths of its legs are <span class="process-math">\(1/\sqrt{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-10" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-45-rotation-e1"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/45-rotation-e1.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>The vector <span class="process-math">\(T(\vec{e_1})\)</span> has length 1 and is the hypotenuse of a right isosceles triangle.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-12">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.9<span class="period">.</span></span><span class="space"> </span>The vector <span class="process-math">\(T(\vec{e_1})\)</span> has length 1 and is the hypotenuse of a right isosceles triangle.<div class="autopermalink" data-description="Figure 2.6.9"><a href="#fig-45-rotation-e1" title="Copy permalink for Figure 2.6.9">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-3-10-1-12">
 <div class="para">This leads to <span class="process-math">\(T(\vec{e_1}) = \twovec{\frac1{\sqrt{2}}}
 {\frac1{\sqrt{2}}}\text{.}\)</span> In the same way, we find that <span class="process-math">\(T(\vec{e_2}) = \twovec{-\frac1{\sqrt{2}}}
 {\frac1{\sqrt{2}}}\)</span> so that the matrix <span class="process-math">\(A\)</span> is</div>
@@ -778,7 +865,9 @@ A = \left[\begin{array}{rr}
 </div>
 <div class="para">You may wish to check this using the interactive diagram in the previous activity using the approximation <span class="process-math">\(1/\sqrt{2} \approx 0.7\text{.}\)</span>
 </div>
-</div></article><div class="para logical" id="sec-transforms-geom-3-11">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-10-1-12" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.6.4"><a href="#sec-transforms-geom-3-10" title="Copy permalink for Example 2.6.4">🔗</a></div></article><div class="para logical" id="sec-transforms-geom-3-11">
 <div class="para">In this example, we found that <span class="process-math">\(T\text{,}\)</span> a function describing a rotation in the plane, was in fact a matrix transformation by checking that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/activity-mt-intro.html">
 \begin{equation*}
@@ -789,6 +878,7 @@ T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 \end{equation*}
 </div>
 <div class="para">The same kind of thinking applies more generally to show that rotations, reflections, and scalings are matrix transformations.  Similarly, we could revisit the functions in <a href="sec-linear-trans.html#activity-mt-intro" class="xref" data-knowl="./knowl/xref/activity-mt-intro.html" data-reveal-label="Reveal" data-close-label="Close" title="Activity 2.5.3">Activity 2.5.3</a> and verify that they are matrix transformations.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-11" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="activity project-like" id="sec-transforms-geom-3-12"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
@@ -797,18 +887,39 @@ T(\vec{v} + \vec{w}) \amp {}={} T(\vec{v}) + T(\vec{w})\text{.}
 <div class="para">In this activity, we seek to describe various matrix transformations by finding the matrix that gives the desired transformation.  All of the transformations that we study here have the form <span class="process-math">\(T:\real^2\to\real^2\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-3-12-1-1-2">
-<li id="sec-transforms-geom-3-12-1-1-2-1"><div class="para" id="sec-transforms-geom-3-12-1-1-2-1-1">Find the matrix of the transformation that has no effect on vectors;  that is, <span class="process-math">\(T(\vec{x}) = \vec{x}\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-2"><div class="para" id="sec-transforms-geom-3-12-1-1-2-2-1">Find the matrix of the transformation that reflects vectors in <span class="process-math">\(\real^2\)</span> across the line <span class="process-math">\(y=x\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-3"><div class="para" id="sec-transforms-geom-3-12-1-1-2-3-1">What is the result of composing the reflection you found in the previous part with itself;  that is, what is the effect of reflecting across the line <span class="process-math">\(y=x\)</span> and then reflecting across this line again?  Provide a geometric explanation for your result as well as an algebraic one obtained by multiplying matrices.</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-4"><div class="para" id="sec-transforms-geom-3-12-1-1-2-4-1">Find the matrix that rotates vectors counterclockwise in the plane by <span class="process-math">\(90^\circ\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-5"><div class="para" id="sec-transforms-geom-3-12-1-1-2-5-1">Compare the result of rotating by <span class="process-math">\(90^\circ\)</span> and then reflecting in the line <span class="process-math">\(y=x\)</span> to the result of first reflecting in <span class="process-math">\(y=x\)</span> and then rotating <span class="process-math">\(90^\circ\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-6"><div class="para" id="sec-transforms-geom-3-12-1-1-2-6-1">Find the matrix that results from composing a <span class="process-math">\(90^\circ\)</span> rotation with itself four times; that is, if <span class="process-math">\(T\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{,}\)</span> find the matrix for <span class="process-math">\(T\circ T\circ T \circ
-T\text{.}\)</span>  Explain why your result makes sense geometrically.</div></li>
-<li id="sec-transforms-geom-3-12-1-1-2-7"><div class="para logical" id="sec-transforms-geom-3-12-1-1-2-7-1">
+<li id="sec-transforms-geom-3-12-1-1-2-1">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-1-1">Find the matrix of the transformation that has no effect on vectors;  that is, <span class="process-math">\(T(\vec{x}) = \vec{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-transforms-geom-3-12-1-1-2-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-2">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-2-1">Find the matrix of the transformation that reflects vectors in <span class="process-math">\(\real^2\)</span> across the line <span class="process-math">\(y=x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-transforms-geom-3-12-1-1-2-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-3">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-3-1">What is the result of composing the reflection you found in the previous part with itself;  that is, what is the effect of reflecting across the line <span class="process-math">\(y=x\)</span> and then reflecting across this line again?  Provide a geometric explanation for your result as well as an algebraic one obtained by multiplying matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-transforms-geom-3-12-1-1-2-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-4">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-4-1">Find the matrix that rotates vectors counterclockwise in the plane by <span class="process-math">\(90^\circ\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-transforms-geom-3-12-1-1-2-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-5">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-5-1">Compare the result of rotating by <span class="process-math">\(90^\circ\)</span> and then reflecting in the line <span class="process-math">\(y=x\)</span> to the result of first reflecting in <span class="process-math">\(y=x\)</span> and then rotating <span class="process-math">\(90^\circ\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-transforms-geom-3-12-1-1-2-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-6">
+<div class="para" id="sec-transforms-geom-3-12-1-1-2-6-1">Find the matrix that results from composing a <span class="process-math">\(90^\circ\)</span> rotation with itself four times; that is, if <span class="process-math">\(T\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{,}\)</span> find the matrix for <span class="process-math">\(T\circ T\circ T \circ
+T\text{.}\)</span>  Explain why your result makes sense geometrically.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item f"><a href="#sec-transforms-geom-3-12-1-1-2-6" title="Copy permalink for Item f">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-3-12-1-1-2-7">
+<div class="para logical" id="sec-transforms-geom-3-12-1-1-2-7-1">
 <div class="para">Explain why the matrix that rotates vectors counterclockwise by an angle <span class="process-math">\(\theta\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -818,31 +929,44 @@ T\text{.}\)</span>  Explain why your result makes sense geometrically.</div></li
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1-2-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item g"><a href="#sec-transforms-geom-3-12-1-1-2-7" title="Copy permalink for Item g">🔗</a></div>
+</li>
 </ol>
-</div></article></section><section class="subsection" id="sec-transforms-geom-4"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-3-12-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.6.3"><a href="#sec-transforms-geom-3-12" title="Copy permalink for Activity 2.6.3">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.6.1: The geometry of 2\times2 matrix transformations"><a href="#sec-transforms-geom-3" title="Copy permalink for Subsection 2.6.1: The geometry of 2\times2 matrix transformations">🔗</a></div></section><section class="subsection" id="sec-transforms-geom-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="space"> </span><span class="title">Matrix transformations and computer animation</span>
 </h3>
-<div class="para" id="sec-transforms-geom-4-2">Linear algebra plays a significant role in computer animation. We will now illustrate how matrix transformations and some of the ideas we have developed in this section are used by computer animators to create the illusion of motion in their characters.</div>
+<div class="para" id="sec-transforms-geom-4-2">Linear algebra plays a significant role in computer animation. We will now illustrate how matrix transformations and some of the ideas we have developed in this section are used by computer animators to create the illusion of motion in their characters.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-transforms-geom-4-3">
-<a href="sec-transforms-geom.html#fig-blob-man" class="xref" data-knowl="./knowl/xref/fig-blob-man.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.10">Figure 2.6.10</a> shows a test character used by Pixar animators.  On the left is the original definition of the character; on the right, we see that the character has been moved into a different pose.  To make it appear that the character is moving, animators create a sequence of frames in which the character’s pose is modified slightly from one frame to the next often using matrix transformations.</div>
+<a href="sec-transforms-geom.html#fig-blob-man" class="xref" data-knowl="./knowl/xref/fig-blob-man.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.10">Figure 2.6.10</a> shows a test character used by Pixar animators.  On the left is the original definition of the character; on the right, we see that the character has been moved into a different pose.  To make it appear that the character is moving, animators create a sequence of frames in which the character’s pose is modified slightly from one frame to the next often using matrix transformations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-blob-man"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/char-bind.jpg" class="contained"></div>
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/char-mvt.jpg" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.10<span class="period">.</span></span><span class="space"> </span>Computer animators define a character and create motion by drawing it in a sequence of poses. © Disney/Pixar</figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel top" style="width:50%;"><div class="para" id="sec-transforms-geom-4-5-1">Of course, realistic characters will be drawn in three-dimensions.  To keep things a little more simple, however, we will look at this two-dimensional character and devise matrix transformations that move them into different poses.</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.10<span class="period">.</span></span><span class="space"> </span>Computer animators define a character and create motion by drawing it in a sequence of poses. © Disney/Pixar<div class="autopermalink" data-description="Figure 2.6.10"><a href="#fig-blob-man" title="Copy permalink for Figure 2.6.10">🔗</a></div></figcaption></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel top" style="width:50%;"><div class="para" id="sec-transforms-geom-4-5-1">Of course, realistic characters will be drawn in three-dimensions.  To keep things a little more simple, however, we will look at this two-dimensional character and devise matrix transformations that move them into different poses.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div></div>
 <div class="sbspanel top" style="width:38.8888888888889%;"><img src="external/images/animate-char.svg" role="img" class="contained"></div>
 </div></div>
-<div class="para" id="sec-transforms-geom-4-6">Of course, the first thing we may wish to do is simply move them to a different position in the plane, such as that shown in <a href="sec-transforms-geom.html#fig-animate-translate" class="xref" data-knowl="./knowl/xref/fig-animate-translate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.11">Figure 2.6.11</a>.  Motions like this are called <em class="emphasis">translations</em>.</div>
+<div class="para" id="sec-transforms-geom-4-6">Of course, the first thing we may wish to do is simply move them to a different position in the plane, such as that shown in <a href="sec-transforms-geom.html#fig-animate-translate" class="xref" data-knowl="./knowl/xref/fig-animate-translate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.11">Figure 2.6.11</a>.  Motions like this are called <em class="emphasis">translations</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-translate"><div class="sidebyside"><div class="sbsrow" style="margin-left:32.5%;margin-right:32.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/animate-translate.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.11<span class="period">.</span></span><span class="space"> </span>Translating our character to a new position in the plane.</figcaption></figure><div class="para" id="sec-transforms-geom-4-8">This presents a problem because a matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> has the property that <span class="process-math">\(T(\vec{0}) = A\vec{0} = \vec{0}\text{.}\)</span>  This means that a matrix transformation cannot move the origin of the coordinate plane.  To address this restriction, animators use <em class="emphasis">homogeneous coordinates</em>, which are formed by placing the two-dimensional coordinate plane inside <span class="process-math">\(\real^3\)</span> as the plane <span class="process-math">\(z=1\text{,}\)</span> as shown in <a href="sec-transforms-geom.html#fig-animate-homogeneous" class="xref" data-knowl="./knowl/xref/fig-animate-homogeneous.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.12">Figure 2.6.12</a>.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.11<span class="period">.</span></span><span class="space"> </span>Translating our character to a new position in the plane.<div class="autopermalink" data-description="Figure 2.6.11"><a href="#fig-animate-translate" title="Copy permalink for Figure 2.6.11">🔗</a></div></figcaption></figure><div class="para" id="sec-transforms-geom-4-8">This presents a problem because a matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> has the property that <span class="process-math">\(T(\vec{0}) = A\vec{0} = \vec{0}\text{.}\)</span>  This means that a matrix transformation cannot move the origin of the coordinate plane.  To address this restriction, animators use <em class="emphasis">homogeneous coordinates</em>, which are formed by placing the two-dimensional coordinate plane inside <span class="process-math">\(\real^3\)</span> as the plane <span class="process-math">\(z=1\text{,}\)</span> as shown in <a href="sec-transforms-geom.html#fig-animate-homogeneous" class="xref" data-knowl="./knowl/xref/fig-animate-homogeneous.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.12">Figure 2.6.12</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-homogeneous"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/animate-homogeneous.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.12<span class="period">.</span></span><span class="space"> </span>Include the two-dimensional coordinate plane in <span class="process-math">\(\real^3\)</span> as the plane <span class="process-math">\(z=1\)</span> so that we can translate the character.</figcaption></figure><div class="para" id="sec-transforms-geom-4-10">As a result, rather than describing points in the plane as vectors <span class="process-math">\(\twovec{x}{y}\text{,}\)</span> we describe them as three-dimensional vectors <span class="process-math">\(\threevec{x}{y}{1}\text{.}\)</span>  As we see in the next activity, this allows us to translate our character in the plane.</div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.12<span class="period">.</span></span><span class="space"> </span>Include the two-dimensional coordinate plane in <span class="process-math">\(\real^3\)</span> as the plane <span class="process-math">\(z=1\)</span> so that we can translate the character.<div class="autopermalink" data-description="Figure 2.6.12"><a href="#fig-animate-homogeneous" title="Copy permalink for Figure 2.6.12">🔗</a></div></figcaption></figure><div class="para" id="sec-transforms-geom-4-10">As a result, rather than describing points in the plane as vectors <span class="process-math">\(\twovec{x}{y}\text{,}\)</span> we describe them as three-dimensional vectors <span class="process-math">\(\threevec{x}{y}{1}\text{.}\)</span>  As we see in the next activity, this allows us to translate our character in the plane.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-10" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="activity project-like" id="sec-transforms-geom-4-11"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-transforms-geom-4-11-1-1">In this activity, we will use homogeneous coordinates and matrix transformations to move our character into a variety of poses.</div> <div class="para logical" id="sec-transforms-geom-4-11-1-2"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-4-11-1-2-1">
+<div class="para" id="sec-transforms-geom-4-11-1-1">In this activity, we will use homogeneous coordinates and matrix transformations to move our character into a variety of poses.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-transforms-geom-4-11-1-2">
+<ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-4-11-1-2-1">
 <li id="sec-transforms-geom-4-11-1-2-1-1">
 <div class="para logical" id="sec-transforms-geom-4-11-1-2-1-1-1">
 <div class="para">Since we regard our character as living in <span class="process-math">\(\real^3\text{,}\)</span> we will consider matrix transformations defined by matrices</div>
@@ -868,33 +992,40 @@ d \amp e \amp f \\
 </div>
 <div class="para">Express the coordinates of the resulting point <span class="process-math">\(x'\)</span> and <span class="process-math">\(y'\)</span> in terms of the coordinates of the original point <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="figure figure-like" id="figure-animation"><iframe id="interactive-animation" width="600" height="412" src="interactive-animation-if.html"></iframe><div class="instructions"><details id="interactive-animation-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content"><div class="para" id="interactive-animation-2-1">The diagram below allows you to choose parameters <span class="process-math">\(a, b, \ldots, f\)</span> to define the matrix associated to the matrix <span class="process-math">\(\begin{bmatrix}
+<figure class="figure figure-like" id="figure-animation"><iframe id="interactive-animation" width="600" height="412" src="interactive-animation-if.html"></iframe><div class="instructions"><details id="interactive-animation-2" class="solution-like born-hidden-knowl"><summary class="knowl__link"><h5 class="heading"><span class="type">Instructions<span class="period">.</span></span></h5></summary><div class="solution-like knowl__content">
+<div class="para" id="interactive-animation-2-1">The diagram below allows you to choose parameters <span class="process-math">\(a, b, \ldots, f\)</span> to define the matrix associated to the matrix <span class="process-math">\(\begin{bmatrix}
 a \amp b \amp c \\
 d \amp e \amp f \\
 0 \amp 0 \amp 1 \\
-\end{bmatrix}\text{.}\)</span> The transformation’s effect on our character is shown on the right.</div></div></details></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.13<span class="period">.</span></span><span class="space"> </span>An interactive diagram that allows us to move the character using homogeneous coordinates.</figcaption></figure>
+\end{bmatrix}\text{.}\)</span> The transformation’s effect on our character is shown on the right.<div class="autopermalink" data-description="Paragraph"><a href="#interactive-animation-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Instructions"><a href="#interactive-animation-2" title="Copy permalink for Instructions">🔗</a></div>
+</div></details></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.13<span class="period">.</span></span><span class="space"> </span>An interactive diagram that allows us to move the character using homogeneous coordinates.<div class="autopermalink" data-description="Figure 2.6.13"><a href="#figure-animation" title="Copy permalink for Figure 2.6.13">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item a"><a href="#sec-transforms-geom-4-11-1-2-1-1" title="Copy permalink for Item a">🔗</a></div>
 </li>
 <li id="sec-transforms-geom-4-11-1-2-1-2">
-<div class="para" id="sec-transforms-geom-4-11-1-2-1-2-1">Find the matrix transformation that translates our character to a new position in the plane, as shown in <a href="sec-transforms-geom.html#fig-animate-translate-2" class="xref" data-knowl="./knowl/xref/fig-animate-translate-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.14">Figure 2.6.14</a>
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-2-1">Find the matrix transformation that translates our character to a new position in the plane, as shown in <a href="sec-transforms-geom.html#fig-animate-translate-2" class="xref" data-knowl="./knowl/xref/fig-animate-translate-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.14">Figure 2.6.14</a><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-animate-translate-2"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-char.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-translate.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.14<span class="period">.</span></span><span class="space"> </span>Translating to a new position.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.14<span class="period">.</span></span><span class="space"> </span>Translating to a new position.<div class="autopermalink" data-description="Figure 2.6.14"><a href="#fig-animate-translate-2" title="Copy permalink for Figure 2.6.14">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item b"><a href="#sec-transforms-geom-4-11-1-2-1-2" title="Copy permalink for Item b">🔗</a></div>
 </li>
 <li id="sec-transforms-geom-4-11-1-2-1-3">
-<div class="para" id="sec-transforms-geom-4-11-1-2-1-3-1">As originally drawn, our character is waving with one of their hands. In one of the movie’s scenes, we would like them to wave with their other hand, as shown in <a href="sec-transforms-geom.html#fig-animate-reflect" class="xref" data-knowl="./knowl/xref/fig-animate-reflect.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.15">Figure 2.6.15</a>. Find the matrix transformation that moves them into this pose.</div>
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-3-1">As originally drawn, our character is waving with one of their hands. In one of the movie’s scenes, we would like them to wave with their other hand, as shown in <a href="sec-transforms-geom.html#fig-animate-reflect" class="xref" data-knowl="./knowl/xref/fig-animate-reflect.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.15">Figure 2.6.15</a>. Find the matrix transformation that moves them into this pose.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-reflect"><div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-char.svg" role="img" class="contained"></div>
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-reflect.svg" role="img" class="contained"></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.15<span class="period">.</span></span><span class="space"> </span>Waving with the other hand.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.15<span class="period">.</span></span><span class="space"> </span>Waving with the other hand.<div class="autopermalink" data-description="Figure 2.6.15"><a href="#fig-animate-reflect" title="Copy permalink for Figure 2.6.15">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item c"><a href="#sec-transforms-geom-4-11-1-2-1-3" title="Copy permalink for Item c">🔗</a></div>
 </li>
 <li id="sec-transforms-geom-4-11-1-2-1-4">
-<div class="para" id="sec-transforms-geom-4-11-1-2-1-4-1">Later, our character performs a cartwheel by moving through the sequence of poses shown in <a href="sec-transforms-geom.html#fig-animate-rotate" class="xref" data-knowl="./knowl/xref/fig-animate-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.16">Figure 2.6.16</a>. Find the matrix transformations that create these poses.</div>
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-4-1">Later, our character performs a cartwheel by moving through the sequence of poses shown in <a href="sec-transforms-geom.html#fig-animate-rotate" class="xref" data-knowl="./knowl/xref/fig-animate-rotate.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.16">Figure 2.6.16</a>. Find the matrix transformations that create these poses.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-rotate"><div class="sbsgroup">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-rotate-a.svg" role="img" class="contained"></div>
@@ -905,10 +1036,11 @@ d \amp e \amp f \\
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-rotate-d.svg" role="img" class="contained"></div>
 </div></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.16<span class="period">.</span></span><span class="space"> </span>Performing a cartwheel.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.16<span class="period">.</span></span><span class="space"> </span>Performing a cartwheel.<div class="autopermalink" data-description="Figure 2.6.16"><a href="#fig-animate-rotate" title="Copy permalink for Figure 2.6.16">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item d"><a href="#sec-transforms-geom-4-11-1-2-1-4" title="Copy permalink for Item d">🔗</a></div>
 </li>
 <li id="sec-transforms-geom-4-11-1-2-1-5">
-<div class="para" id="sec-transforms-geom-4-11-1-2-1-5-1">Next, we would like to find the transformations that zoom in on our character’s face, as shown in <a href="sec-transforms-geom.html#fig-animate-closeup" class="xref" data-knowl="./knowl/xref/fig-animate-closeup.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.17">Figure 2.6.17</a>. To do this, you should think about composing matrix transformations.  This can be accomplished in the diagram by using the <em class="emphasis">Compose</em> button, which makes the current pose, displayed on the right, the new beginning pose, displayed on the left.  What is the matrix transformation that moves the character from the original pose, shown in the upper left, to the final pose, shown in the lower right?</div>
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-5-1">Next, we would like to find the transformations that zoom in on our character’s face, as shown in <a href="sec-transforms-geom.html#fig-animate-closeup" class="xref" data-knowl="./knowl/xref/fig-animate-closeup.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.17">Figure 2.6.17</a>. To do this, you should think about composing matrix transformations.  This can be accomplished in the diagram by using the <em class="emphasis">Compose</em> button, which makes the current pose, displayed on the right, the new beginning pose, displayed on the left.  What is the matrix transformation that moves the character from the original pose, shown in the upper left, to the final pose, shown in the lower right?<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-closeup"><div class="sbsgroup">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-char.svg" role="img" class="contained"></div>
@@ -919,10 +1051,11 @@ d \amp e \amp f \\
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-closeup-c.svg" role="img" class="contained"></div>
 </div></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.17<span class="period">.</span></span><span class="space"> </span>Zooming in on our characters’ face.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.17<span class="period">.</span></span><span class="space"> </span>Zooming in on our characters’ face.<div class="autopermalink" data-description="Figure 2.6.17"><a href="#fig-animate-closeup" title="Copy permalink for Figure 2.6.17">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item e"><a href="#sec-transforms-geom-4-11-1-2-1-5" title="Copy permalink for Item e">🔗</a></div>
 </li>
 <li id="sec-transforms-geom-4-11-1-2-1-6">
-<div class="para" id="sec-transforms-geom-4-11-1-2-1-6-1">We would also like to create our character’s shadow, shown in the sequence of poses in <a href="sec-transforms-geom.html#fig-animate-shadow" class="xref" data-knowl="./knowl/xref/fig-animate-shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.18">Figure 2.6.18</a>. Find the sequence of matrix transformations that achieves this.  In particular, find the matrix transformation that takes our character from their original pose to their shadow in the lower right.</div>
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-6-1">We would also like to create our character’s shadow, shown in the sequence of poses in <a href="sec-transforms-geom.html#fig-animate-shadow" class="xref" data-knowl="./knowl/xref/fig-animate-shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.18">Figure 2.6.18</a>. Find the sequence of matrix transformations that achieves this.  In particular, find the matrix transformation that takes our character from their original pose to their shadow in the lower right.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <figure class="figure figure-like" id="fig-animate-shadow"><div class="sbsgroup">
 <div class="sidebyside"><div class="sbsrow" style="margin-left:15%;margin-right:15%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-char.svg" role="img" class="contained"></div>
@@ -933,16 +1066,24 @@ d \amp e \amp f \\
 <div class="sbspanel top" style="width:50%;"><img src="external/images/animate-shadow-c.svg" role="img" class="contained"></div>
 </div></div>
 </div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.18<span class="period">.</span></span><span class="space"> </span>Casting a shadow.</figcaption></figure>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.18<span class="period">.</span></span><span class="space"> </span>Casting a shadow.<div class="autopermalink" data-description="Figure 2.6.18"><a href="#fig-animate-shadow" title="Copy permalink for Figure 2.6.18">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Item f"><a href="#sec-transforms-geom-4-11-1-2-1-6" title="Copy permalink for Item f">🔗</a></div>
 </li>
-<li id="sec-transforms-geom-4-11-1-2-1-7"><div class="para" id="sec-transforms-geom-4-11-1-2-1-7-1">Write a final scene to the movie and describe how to construct a sequence of matrix transformations that create your scene.</div></li>
-</ol></div></article></section><section class="subsection" id="sec-transforms-geom-5"><h3 class="heading hide-type">
+<li id="sec-transforms-geom-4-11-1-2-1-7">
+<div class="para" id="sec-transforms-geom-4-11-1-2-1-7-1">Write a final scene to the movie and describe how to construct a sequence of matrix transformations that create your scene.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2-1-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item g"><a href="#sec-transforms-geom-4-11-1-2-1-7" title="Copy permalink for Item g">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-4-11-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.6.4"><a href="#sec-transforms-geom-4-11" title="Copy permalink for Activity 2.6.4">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.6.2: Matrix transformations and computer animation"><a href="#sec-transforms-geom-4" title="Copy permalink for Subsection 2.6.2: Matrix transformations and computer animation">🔗</a></div></section><section class="subsection" id="sec-transforms-geom-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <div class="para logical" id="sec-transforms-geom-5-2">
 <div class="para">This section explored how geometric operations are performed by matrix transformations.</div>
 <ul class="disc" id="sec-transforms-geom-5-2-1">
-<li id="sec-transforms-geom-5-2-1-1"><div class="para logical" id="sec-transforms-geom-5-2-1-1-1">
+<li id="sec-transforms-geom-5-2-1-1">
+<div class="para logical" id="sec-transforms-geom-5-2-1-1-1">
 <div class="para">A function <span class="process-math">\(T:\real^n\to\real^m\)</span> is a matrix transformation if and only if these properties are satisfied:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -952,62 +1093,138 @@ T(\vec{v}+\vec{w}) \amp = T(\vec{v})+T(\vec{w}). \\
 \end{aligned}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-transforms-geom-5-2-1-2"><div class="para" id="sec-transforms-geom-5-2-1-2-1">Geometric operations, such as rotations, reflections, and scalings, can be represented as matrix transformations.</div></li>
-<li id="sec-transforms-geom-5-2-1-3"><div class="para" id="sec-transforms-geom-5-2-1-3-1">Composing geometric operations corresponds to matrix multiplication.</div></li>
-<li id="sec-transforms-geom-5-2-1-4"><div class="para" id="sec-transforms-geom-5-2-1-4-1">Computer animators use homogeneous coordinates and matrix transformations to create the illusion of motion.</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-5-2-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-5-2-1-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-5-2-1-2">
+<div class="para" id="sec-transforms-geom-5-2-1-2-1">Geometric operations, such as rotations, reflections, and scalings, can be represented as matrix transformations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-5-2-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-5-2-1-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-5-2-1-3">
+<div class="para" id="sec-transforms-geom-5-2-1-3-1">Composing geometric operations corresponds to matrix multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-5-2-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-5-2-1-3" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-5-2-1-4">
+<div class="para" id="sec-transforms-geom-5-2-1-4-1">Computer animators use homogeneous coordinates and matrix transformations to create the illusion of motion.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-5-2-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-5-2-1-4" title="Copy permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></section><section class="exercises" id="sec-transforms-geom-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-5-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.6.3: Summary"><a href="#sec-transforms-geom-5" title="Copy permalink for Subsection 2.6.3: Summary">🔗</a></div></section><section class="exercises" id="sec-transforms-geom-6"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-transforms-geom-6-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-transforms-geom-6-1-1-1">
 <div class="para">For each of the following geometric operations in the plane, find a <span class="process-math">\(2\times 2\)</span> matrix that defines the matrix transformation performing the operation.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-1-1-1-2">
-<li id="sec-transforms-geom-6-1-1-1-2-1"><div class="para" id="sec-transforms-geom-6-1-1-1-2-1-1">Rotates vectors by <span class="process-math">\(180^\circ\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-1-1-1-2-2"><div class="para" id="sec-transforms-geom-6-1-1-1-2-2-1">Reflects vectors across the vertical axis.</div></li>
-<li id="sec-transforms-geom-6-1-1-1-2-3"><div class="para" id="sec-transforms-geom-6-1-1-1-2-3-1">Reflects vectors across the line <span class="process-math">\(y=-x\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-1-1-1-2-4"><div class="para" id="sec-transforms-geom-6-1-1-1-2-4-1">Rotates vectors counterclockwise by <span class="process-math">\(60^\circ\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-1-1-1-2-5"><div class="para" id="sec-transforms-geom-6-1-1-1-2-5-1">First rotates vectors counterclockwise by <span class="process-math">\(60^\circ\)</span> and then reflects in the line <span class="process-math">\(y=x\text{.}\)</span>
-</div></li>
+<li id="sec-transforms-geom-6-1-1-1-2-1">
+<div class="para" id="sec-transforms-geom-6-1-1-1-2-1-1">Rotates vectors by <span class="process-math">\(180^\circ\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.1.a"><a href="#sec-transforms-geom-6-1-1-1-2-1" title="Copy permalink for Item 2.6.4.1.a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-1-1-1-2-2">
+<div class="para" id="sec-transforms-geom-6-1-1-1-2-2-1">Reflects vectors across the vertical axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.1.b"><a href="#sec-transforms-geom-6-1-1-1-2-2" title="Copy permalink for Item 2.6.4.1.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-1-1-1-2-3">
+<div class="para" id="sec-transforms-geom-6-1-1-1-2-3-1">Reflects vectors across the line <span class="process-math">\(y=-x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.1.c"><a href="#sec-transforms-geom-6-1-1-1-2-3" title="Copy permalink for Item 2.6.4.1.c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-1-1-1-2-4">
+<div class="para" id="sec-transforms-geom-6-1-1-1-2-4-1">Rotates vectors counterclockwise by <span class="process-math">\(60^\circ\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.1.d"><a href="#sec-transforms-geom-6-1-1-1-2-4" title="Copy permalink for Item 2.6.4.1.d">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-1-1-1-2-5">
+<div class="para" id="sec-transforms-geom-6-1-1-1-2-5-1">First rotates vectors counterclockwise by <span class="process-math">\(60^\circ\)</span> and then reflects in the line <span class="process-math">\(y=x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.1.e"><a href="#sec-transforms-geom-6-1-1-1-2-5" title="Copy permalink for Item 2.6.4.1.e">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="ex-compose-reflections"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.1"><a href="#sec-transforms-geom-6-1" title="Copy permalink for Exercise 2.6.4.1">🔗</a></div></article><article class="exercise exercise-like" id="ex-compose-reflections"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
 <div class="para logical" id="ex-compose-reflections-1-1">
 <div class="para">This exercise investigates the composition of reflections in the plane.</div>
 <ol class="lower-alpha ol-marker-1" id="ex-compose-reflections-1-1-1">
-<li id="ex-compose-reflections-1-1-1-1"><div class="para" id="ex-compose-reflections-1-1-1-1-1">Find the result of first reflecting across the line <span class="process-math">\(y=0\)</span> and then <span class="process-math">\(y=x\text{.}\)</span>  What familiar operation is the cumulative effect of this composition?</div></li>
-<li id="ex-compose-reflections-1-1-1-2"><div class="para" id="ex-compose-reflections-1-1-1-2-1">What happens if you compose the operations in the opposite order;  that is, what happens if you first reflect across <span class="process-math">\(y=x\)</span> and then <span class="process-math">\(y=0\text{?}\)</span>  What familiar operation results?</div></li>
-<li id="ex-compose-reflections-1-1-1-3"><div class="para" id="ex-compose-reflections-1-1-1-3-1">What familiar geometric operation results if you first reflect across the line <span class="process-math">\(y=x\)</span> and then <span class="process-math">\(y=-x\text{?}\)</span>
-</div></li>
-<li id="ex-compose-reflections-1-1-1-4"><div class="para" id="ex-compose-reflections-1-1-1-4-1">What familiar geometric operation results if you first rotate by <span class="process-math">\(90^\circ\)</span> and then reflect across the line <span class="process-math">\(y=x\text{?}\)</span>
-</div></li>
+<li id="ex-compose-reflections-1-1-1-1">
+<div class="para" id="ex-compose-reflections-1-1-1-1-1">Find the result of first reflecting across the line <span class="process-math">\(y=0\)</span> and then <span class="process-math">\(y=x\text{.}\)</span>  What familiar operation is the cumulative effect of this composition?<div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.2.a"><a href="#ex-compose-reflections-1-1-1-1" title="Copy permalink for Item 2.6.4.2.a">🔗</a></div>
+</li>
+<li id="ex-compose-reflections-1-1-1-2">
+<div class="para" id="ex-compose-reflections-1-1-1-2-1">What happens if you compose the operations in the opposite order;  that is, what happens if you first reflect across <span class="process-math">\(y=x\)</span> and then <span class="process-math">\(y=0\text{?}\)</span>  What familiar operation results?<div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.2.b"><a href="#ex-compose-reflections-1-1-1-2" title="Copy permalink for Item 2.6.4.2.b">🔗</a></div>
+</li>
+<li id="ex-compose-reflections-1-1-1-3">
+<div class="para" id="ex-compose-reflections-1-1-1-3-1">What familiar geometric operation results if you first reflect across the line <span class="process-math">\(y=x\)</span> and then <span class="process-math">\(y=-x\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.2.c"><a href="#ex-compose-reflections-1-1-1-3" title="Copy permalink for Item 2.6.4.2.c">🔗</a></div>
+</li>
+<li id="ex-compose-reflections-1-1-1-4">
+<div class="para" id="ex-compose-reflections-1-1-1-4-1">What familiar geometric operation results if you first rotate by <span class="process-math">\(90^\circ\)</span> and then reflect across the line <span class="process-math">\(y=x\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.2.d"><a href="#ex-compose-reflections-1-1-1-4" title="Copy permalink for Item 2.6.4.2.d">🔗</a></div>
+</li>
 </ol>
-</div> <div class="para" id="ex-compose-reflections-1-2">It is a general fact that the composition of two reflections results in a rotation through twice the angle from the first line of reflection to the second.  We will investigate this more generally in <a href="sec-transforms-geom.html#ex-reflection-compose-general" class="xref" data-knowl="./knowl/xref/ex-reflection-compose-general.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.4.8">Exercise 2.6.4.8</a>
-</div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="sec-transforms-geom-6-3-1-1">Shown below in <a href="sec-transforms-geom.html#fig-3d-basis" class="xref" data-knowl="./knowl/xref/fig-3d-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.19">Figure 2.6.19</a> are the vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="ex-compose-reflections-1-2">It is a general fact that the composition of two reflections results in a rotation through twice the angle from the first line of reflection to the second.  We will investigate this more generally in <a href="sec-transforms-geom.html#ex-reflection-compose-general" class="xref" data-knowl="./knowl/xref/ex-reflection-compose-general.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.4.8">Exercise 2.6.4.8</a><div class="autopermalink" data-description="Paragraph"><a href="#ex-compose-reflections-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.2"><a href="#ex-compose-reflections" title="Copy permalink for Exercise 2.6.4.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para" id="sec-transforms-geom-6-3-1-1">Shown below in <a href="sec-transforms-geom.html#fig-3d-basis" class="xref" data-knowl="./knowl/xref/fig-3d-basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.19">Figure 2.6.19</a> are the vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-3d-basis"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/3d-basis.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.19<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-3-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-3-1-3-1">
-<li id="sec-transforms-geom-6-3-1-3-1-1"><div class="para" id="sec-transforms-geom-6-3-1-3-1-1-1">Imagine that the thumb of your right hand points in the direction of <span class="process-math">\(\vec{e_1}\text{.}\)</span>  A positive rotation about the <span class="process-math">\(x\)</span> axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(x\)</span>-axis.</div></li>
-<li id="sec-transforms-geom-6-3-1-3-1-2"><div class="para" id="sec-transforms-geom-6-3-1-3-1-2-1">In the same way, find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(y\)</span>-axis.</div></li>
-<li id="sec-transforms-geom-6-3-1-3-1-3"><div class="para" id="p-derived-sec-transforms-geom-6-3-1-3-1-3">Find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(z\)</span>-axis.</div></li>
-<li id="sec-transforms-geom-6-3-1-3-1-4"><div class="para" id="sec-transforms-geom-6-3-1-3-1-4-1">What is the cumulative effect of rotating by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\(x\)</span>-axis, followed by a <span class="process-math">\(90^\circ\)</span> rotation about the <span class="process-math">\(y\)</span>-axis, followed by a <span class="process-math">\(-90^\circ\)</span> rotation about the <span class="process-math">\(x\)</span>-axis. <div id="sec-transforms-geom-6-3-1-3-1-4-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.19<span class="period">.</span></span><span class="space"> </span>The vectors <span class="process-math">\(\vec{e_1}\text{,}\)</span> <span class="process-math">\(\vec{e_2}\text{,}\)</span> and <span class="process-math">\(\vec{e_3}\)</span> in <span class="process-math">\(\real^3\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.19"><a href="#fig-3d-basis" title="Copy permalink for Figure 2.6.19">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-3-1-3">
+<ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-3-1-3-1">
+<li id="sec-transforms-geom-6-3-1-3-1-1">
+<div class="para" id="sec-transforms-geom-6-3-1-3-1-1-1">Imagine that the thumb of your right hand points in the direction of <span class="process-math">\(\vec{e_1}\text{.}\)</span>  A positive rotation about the <span class="process-math">\(x\)</span> axis corresponds to a rotation in the direction in which your fingers point. Find the matrix definining the matrix transformation <span class="process-math">\(T\)</span> that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-3-1-3-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.3.a"><a href="#sec-transforms-geom-6-3-1-3-1-1" title="Copy permalink for Item 2.6.4.3.a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-3-1-3-1-2">
+<div class="para" id="sec-transforms-geom-6-3-1-3-1-2-1">In the same way, find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(y\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-3-1-3-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.3.b"><a href="#sec-transforms-geom-6-3-1-3-1-2" title="Copy permalink for Item 2.6.4.3.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-3-1-3-1-3">
+<div class="para" id="p-derived-sec-transforms-geom-6-3-1-3-1-3">Find the matrix that rotates vectors by <span class="process-math">\(90^\circ\)</span> around the <span class="process-math">\(z\)</span>-axis.</div>
+<div class="autopermalink" data-description="Item 2.6.4.3.c"><a href="#sec-transforms-geom-6-3-1-3-1-3" title="Copy permalink for Item 2.6.4.3.c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-3-1-3-1-4">
+<div class="para" id="sec-transforms-geom-6-3-1-3-1-4-1">What is the cumulative effect of rotating by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\(x\)</span>-axis, followed by a <span class="process-math">\(90^\circ\)</span> rotation about the <span class="process-math">\(y\)</span>-axis, followed by a <span class="process-math">\(-90^\circ\)</span> rotation about the <span class="process-math">\(x\)</span>-axis. <div id="sec-transforms-geom-6-3-1-3-1-4-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
-</ol></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-3-1-3-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.3.d"><a href="#sec-transforms-geom-6-3-1-3-1-4" title="Copy permalink for Item 2.6.4.3.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-3-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.3"><a href="#sec-transforms-geom-6-3" title="Copy permalink for Exercise 2.6.4.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-transforms-geom-6-4-1-1">
 <div class="para">If a matrix transformation performs a geometric operation, we would like to find a matrix transformation that undoes that operation.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-4-1-1-1">
 <li id="sec-transforms-geom-6-4-1-1-1-1">
-<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-1">Suppose that <span class="process-math">\(T:\real^2\to\real^2\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{.}\)</span> Find a matrix transformation <span class="process-math">\(S:\real^2\to\real^2\)</span> that undoes the rotation;  that is, <span class="process-math">\(S\)</span> takes <span class="process-math">\(T(\vec{x})\)</span> back into <span class="process-math">\(\vec{x}\)</span> so that <span class="process-math">\((S\circ T)(\vec{x}) = \vec{x}\text{.}\)</span>  Think geometrically about what the transformation <span class="process-math">\(S\)</span> should be and then verify it algebraically.</div>
-<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-2">We say that <span class="process-math">\(S\)</span> is the <em class="emphasis">inverse</em> of <span class="process-math">\(T\)</span> and we will write it as <span class="process-math">\(T^{-1}\text{.}\)</span>
+<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-1">Suppose that <span class="process-math">\(T:\real^2\to\real^2\)</span> is the matrix transformation that rotates vectors by <span class="process-math">\(90^\circ\text{.}\)</span> Find a matrix transformation <span class="process-math">\(S:\real^2\to\real^2\)</span> that undoes the rotation;  that is, <span class="process-math">\(S\)</span> takes <span class="process-math">\(T(\vec{x})\)</span> back into <span class="process-math">\(\vec{x}\)</span> so that <span class="process-math">\((S\circ T)(\vec{x}) = \vec{x}\text{.}\)</span>  Think geometrically about what the transformation <span class="process-math">\(S\)</span> should be and then verify it algebraically.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
+<div class="para" id="sec-transforms-geom-6-4-1-1-1-1-2">We say that <span class="process-math">\(S\)</span> is the <em class="emphasis">inverse</em> of <span class="process-math">\(T\)</span> and we will write it as <span class="process-math">\(T^{-1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1-1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.4.a"><a href="#sec-transforms-geom-6-4-1-1-1-1" title="Copy permalink for Item 2.6.4.4.a">🔗</a></div>
 </li>
-<li id="sec-transforms-geom-6-4-1-1-1-2"><div class="para" id="sec-transforms-geom-6-4-1-1-1-2-1">Verify algebraically that the reflection <span class="process-math">\(R:\real^2\to\real^2\)</span> across the line <span class="process-math">\(y=x\)</span> is its own inverse;  that is, <span class="process-math">\(R^{-1} = R\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-4-1-1-1-3"><div class="para logical" id="sec-transforms-geom-6-4-1-1-1-3-1">
+<li id="sec-transforms-geom-6-4-1-1-1-2">
+<div class="para" id="sec-transforms-geom-6-4-1-1-1-2-1">Verify algebraically that the reflection <span class="process-math">\(R:\real^2\to\real^2\)</span> across the line <span class="process-math">\(y=x\)</span> is its own inverse;  that is, <span class="process-math">\(R^{-1} = R\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.4.b"><a href="#sec-transforms-geom-6-4-1-1-1-2" title="Copy permalink for Item 2.6.4.4.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-4-1-1-1-3">
+<div class="para logical" id="sec-transforms-geom-6-4-1-1-1-3-1">
 <div class="para">The matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> defined by the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1020,8 +1237,12 @@ A=
 </div>
 <div class="para">is called a <em class="emphasis">shear</em>.  Find the inverse of <span class="process-math">\(T\text{.}\)</span>
 </div>
-</div></li>
-<li id="sec-transforms-geom-6-4-1-1-1-4"><div class="para logical" id="sec-transforms-geom-6-4-1-1-1-4-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.4.c"><a href="#sec-transforms-geom-6-4-1-1-1-3" title="Copy permalink for Item 2.6.4.4.c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-4-1-1-1-4">
+<div class="para logical" id="sec-transforms-geom-6-4-1-1-1-4-1">
 <div class="para">Describe the geometric effect of the matrix transformation defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1032,9 +1253,14 @@ A=\left[\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">and then find its inverse.</div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.4.d"><a href="#sec-transforms-geom-6-4-1-1-1-4" title="Copy permalink for Item 2.6.4.4.d">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.4"><a href="#sec-transforms-geom-6-4" title="Copy permalink for Exercise 2.6.4.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-transforms-geom-6-5-1-1">
 <div class="para">We have seen that the matrix</div>
 <div class="displaymath process-math">
@@ -1046,19 +1272,35 @@ A=\left[\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">performs a rotation through an angle <span class="process-math">\(\theta\)</span> about the origin.  Suppose instead that we would like to rotate by <span class="process-math">\(90^\circ\)</span> about the point <span class="process-math">\((1,2)\text{.}\)</span>  Using homogeneous coordinates, we will develop a matrix that performs this operation.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-transforms-geom-6-5-1-2">
 <div class="para">Our strategy is to</div>
 <ul class="disc" id="sec-transforms-geom-6-5-1-2-1">
-<li id="sec-transforms-geom-6-5-1-2-1-1"><div class="para" id="sec-transforms-geom-6-5-1-2-1-1-1">begin with a vector whose tail is at the point <span class="process-math">\((1,2)\text{,}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-5-1-2-1-2"><div class="para" id="sec-transforms-geom-6-5-1-2-1-2-1">translate the vector so that its tail is at the origin,</div></li>
-<li id="sec-transforms-geom-6-5-1-2-1-3"><div class="para" id="sec-transforms-geom-6-5-1-2-1-3-1">rotate by <span class="process-math">\(90^\circ\text{,}\)</span> and</div></li>
-<li id="sec-transforms-geom-6-5-1-2-1-4"><div class="para" id="sec-transforms-geom-6-5-1-2-1-4-1">translate the vector so that its tail is back at <span class="process-math">\((1,2)\text{.}\)</span>
-</div></li>
+<li id="sec-transforms-geom-6-5-1-2-1-1">
+<div class="para" id="sec-transforms-geom-6-5-1-2-1-1-1">begin with a vector whose tail is at the point <span class="process-math">\((1,2)\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-2-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-6-5-1-2-1-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-2-1-2">
+<div class="para" id="sec-transforms-geom-6-5-1-2-1-2-1">translate the vector so that its tail is at the origin,<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-2-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-6-5-1-2-1-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-2-1-3">
+<div class="para" id="sec-transforms-geom-6-5-1-2-1-3-1">rotate by <span class="process-math">\(90^\circ\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-2-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-6-5-1-2-1-3" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-2-1-4">
+<div class="para" id="sec-transforms-geom-6-5-1-2-1-4-1">translate the vector so that its tail is back at <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-2-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-transforms-geom-6-5-1-2-1-4" title="Copy permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para">This is shown in <a href="sec-transforms-geom.html#fig-ex-rotate-about-p" class="xref" data-knowl="./knowl/xref/fig-ex-rotate-about-p.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.20">Figure 2.6.20</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-ex-rotate-about-p"><div class="sidebyside"><div class="sbsrow" style="margin-left:17.5%;margin-right:17.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-rotate-about-p.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.20<span class="period">.</span></span><span class="space"> </span>A sequence of matrix transformations that, when read right to left and top to bottom, rotate a vector about the point <span class="process-math">\((1,2)\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-5-1-4">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.20<span class="period">.</span></span><span class="space"> </span>A sequence of matrix transformations that, when read right to left and top to bottom, rotate a vector about the point <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.20"><a href="#fig-ex-rotate-about-p" title="Copy permalink for Figure 2.6.20">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-5-1-4">
 <div class="para">Remember that, when working with homogeneous coordinates, we consider matrices of the form</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1070,25 +1312,64 @@ d \amp e \amp f \\
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-5-1-4-2">
-<li id="sec-transforms-geom-6-5-1-4-2-1"><div class="para" id="sec-transforms-geom-6-5-1-4-2-1-1">The first operation is a translation by <span class="process-math">\((-1,-2)\text{.}\)</span>  Find the matrix that performs this translation.</div></li>
-<li id="sec-transforms-geom-6-5-1-4-2-2"><div class="para" id="sec-transforms-geom-6-5-1-4-2-2-1">The second operation is a <span class="process-math">\(90^\circ\)</span> rotation about the origin.  Find the matrix that performs this rotation.</div></li>
-<li id="sec-transforms-geom-6-5-1-4-2-3"><div class="para" id="sec-transforms-geom-6-5-1-4-2-3-1">The third operation is a translation by <span class="process-math">\((1,2)\text{.}\)</span> Find the matrix that performs this translation.</div></li>
-<li id="sec-transforms-geom-6-5-1-4-2-4"><div class="para" id="sec-transforms-geom-6-5-1-4-2-4-1">Use these matrices to find the matrix that performs a <span class="process-math">\(90^\circ\)</span> rotation about <span class="process-math">\((1,2)\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-5-1-4-2-5"><div class="para" id="sec-transforms-geom-6-5-1-4-2-5-1">Use your matrix to determine where the point <span class="process-math">\((-10,
-5)\)</span> ends up if rotated by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\((1,2)\text{.}\)</span>
-</div></li>
+<li id="sec-transforms-geom-6-5-1-4-2-1">
+<div class="para" id="sec-transforms-geom-6-5-1-4-2-1-1">The first operation is a translation by <span class="process-math">\((-1,-2)\text{.}\)</span>  Find the matrix that performs this translation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.5.a"><a href="#sec-transforms-geom-6-5-1-4-2-1" title="Copy permalink for Item 2.6.4.5.a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-4-2-2">
+<div class="para" id="sec-transforms-geom-6-5-1-4-2-2-1">The second operation is a <span class="process-math">\(90^\circ\)</span> rotation about the origin.  Find the matrix that performs this rotation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.5.b"><a href="#sec-transforms-geom-6-5-1-4-2-2" title="Copy permalink for Item 2.6.4.5.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-4-2-3">
+<div class="para" id="sec-transforms-geom-6-5-1-4-2-3-1">The third operation is a translation by <span class="process-math">\((1,2)\text{.}\)</span> Find the matrix that performs this translation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.5.c"><a href="#sec-transforms-geom-6-5-1-4-2-3" title="Copy permalink for Item 2.6.4.5.c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-4-2-4">
+<div class="para" id="sec-transforms-geom-6-5-1-4-2-4-1">Use these matrices to find the matrix that performs a <span class="process-math">\(90^\circ\)</span> rotation about <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.5.d"><a href="#sec-transforms-geom-6-5-1-4-2-4" title="Copy permalink for Item 2.6.4.5.d">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-5-1-4-2-5">
+<div class="para" id="sec-transforms-geom-6-5-1-4-2-5-1">Use your matrix to determine where the point <span class="process-math">\((-10,
+5)\)</span> ends up if rotated by <span class="process-math">\(90^\circ\)</span> about the <span class="process-math">\((1,2)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.5.e"><a href="#sec-transforms-geom-6-5-1-4-2-5" title="Copy permalink for Item 2.6.4.5.e">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
-<div class="para" id="sec-transforms-geom-6-6-1-1">Consider the matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> that assigns to a vector <span class="process-math">\(\vec{x}\)</span> the closest vector on horizontal axis as illustrated in <a href="sec-transforms-geom.html#fig-ex-projection" class="xref" data-knowl="./knowl/xref/fig-ex-projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.21">Figure 2.6.21</a>.  This transformation is called the <em class="emphasis">projection</em> onto the horizontal axis.  You may imagine <span class="process-math">\(T(\vec{x})\)</span> as the shadow cast by <span class="process-math">\(\vec{x}\)</span> from a flashlight far up on the positive <span class="process-math">\(y\)</span>-axis.</div> <figure class="figure figure-like" id="fig-ex-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/v-projection.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.21<span class="period">.</span></span><span class="space"> </span>Projection onto the <span class="process-math">\(x\)</span>-axis.</figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-6-1-3"><ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-6-1-3-1">
-<li id="sec-transforms-geom-6-6-1-3-1-1"><div class="para" id="sec-transforms-geom-6-6-1-3-1-1-1">Find the matrix that defines this matrix transformation <span class="process-math">\(T\text{.}\)</span>
-</div></li>
-<li id="sec-transforms-geom-6-6-1-3-1-2"><div class="para" id="sec-transforms-geom-6-6-1-3-1-2-1">Find the matrix that defines projection on the vertical axis.</div></li>
-<li id="sec-transforms-geom-6-6-1-3-1-3"><div class="para" id="sec-transforms-geom-6-6-1-3-1-3-1">What is the result of composing the projection onto the horizontal axis with the projection onto the vertical axis?</div></li>
-<li id="sec-transforms-geom-6-6-1-3-1-4"><div class="para" id="sec-transforms-geom-6-6-1-3-1-4-1">Find the matrix that defines projection onto the line <span class="process-math">\(y=x\text{.}\)</span>
-</div></li>
-</ol></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-5-1-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.5"><a href="#sec-transforms-geom-6-5" title="Copy permalink for Exercise 2.6.4.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para" id="sec-transforms-geom-6-6-1-1">Consider the matrix transformation <span class="process-math">\(T:\real^2\to\real^2\)</span> that assigns to a vector <span class="process-math">\(\vec{x}\)</span> the closest vector on horizontal axis as illustrated in <a href="sec-transforms-geom.html#fig-ex-projection" class="xref" data-knowl="./knowl/xref/fig-ex-projection.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.21">Figure 2.6.21</a>.  This transformation is called the <em class="emphasis">projection</em> onto the horizontal axis.  You may imagine <span class="process-math">\(T(\vec{x})\)</span> as the shadow cast by <span class="process-math">\(\vec{x}\)</span> from a flashlight far up on the positive <span class="process-math">\(y\)</span>-axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="fig-ex-projection"><div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/v-projection.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.21<span class="period">.</span></span><span class="space"> </span>Projection onto the <span class="process-math">\(x\)</span>-axis.<div class="autopermalink" data-description="Figure 2.6.21"><a href="#fig-ex-projection" title="Copy permalink for Figure 2.6.21">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-transforms-geom-6-6-1-3">
+<ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-6-1-3-1">
+<li id="sec-transforms-geom-6-6-1-3-1-1">
+<div class="para" id="sec-transforms-geom-6-6-1-3-1-1-1">Find the matrix that defines this matrix transformation <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-3-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.6.a"><a href="#sec-transforms-geom-6-6-1-3-1-1" title="Copy permalink for Item 2.6.4.6.a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-6-1-3-1-2">
+<div class="para" id="sec-transforms-geom-6-6-1-3-1-2-1">Find the matrix that defines projection on the vertical axis.<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-3-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.6.b"><a href="#sec-transforms-geom-6-6-1-3-1-2" title="Copy permalink for Item 2.6.4.6.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-6-1-3-1-3">
+<div class="para" id="sec-transforms-geom-6-6-1-3-1-3-1">What is the result of composing the projection onto the horizontal axis with the projection onto the vertical axis?<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-3-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.6.c"><a href="#sec-transforms-geom-6-6-1-3-1-3" title="Copy permalink for Item 2.6.4.6.c">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-6-1-3-1-4">
+<div class="para" id="sec-transforms-geom-6-6-1-3-1-4-1">Find the matrix that defines projection onto the line <span class="process-math">\(y=x\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-3-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.6.d"><a href="#sec-transforms-geom-6-6-1-3-1-4" title="Copy permalink for Item 2.6.4.6.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-6-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.6"><a href="#sec-transforms-geom-6-6" title="Copy permalink for Exercise 2.6.4.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-transforms-geom-6-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-transforms-geom-6-7-1-1">
 <div class="para">This exercise concerns the matrix transformations defined by matrices of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-ex-complex-polar.html ./knowl/xref/sec-dynamical.html">
@@ -1101,7 +1382,8 @@ b \amp a \\
 </div>
 <div class="para">Let’s begin by looking at two special types of these matrices.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-transforms-geom-6-7-1-1-2">
-<li id="sec-transforms-geom-6-7-1-1-2-1"><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-1-1">
+<li id="sec-transforms-geom-6-7-1-1-2-1">
+<div class="para logical" id="sec-transforms-geom-6-7-1-1-2-1-1">
 <div class="para">First, consider the matrix where <span class="process-math">\(a = 2\)</span> and <span class="process-math">\(b=0\)</span> so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1121,8 +1403,12 @@ r \amp 0 \\
 \end{equation*}
 </div>
 <div class="para">where <span class="process-math">\(r\)</span> is a positive number.  What is the geometric effect of <span class="process-math">\(A\)</span> on vectors in the plane?</div>
-</div></li>
-<li id="sec-transforms-geom-6-7-1-1-2-2"><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.7.a"><a href="#sec-transforms-geom-6-7-1-1-2-1" title="Copy permalink for Item 2.6.4.7.a">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-7-1-1-2-2">
+<div class="para logical" id="sec-transforms-geom-6-7-1-1-2-2-1">
 <div class="para">Suppose now that <span class="process-math">\(a = 0\)</span> and <span class="process-math">\(b = 1\)</span> so that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1142,8 +1428,12 @@ A = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <div class="para">What is the geometric effect of <span class="process-math">\(A\)</span> on vectors in the plane?</div>
-</div></li>
-<li id="sec-transforms-geom-6-7-1-1-2-3"><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-3-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.7.b"><a href="#sec-transforms-geom-6-7-1-1-2-2" title="Copy permalink for Item 2.6.4.7.b">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-7-1-1-2-3">
+<div class="para logical" id="sec-transforms-geom-6-7-1-1-2-3-1">
 <div class="para">In general, the composition of matrix transformation depends on the order in which we compose them.  For these transformations, however, it is not the case.  Check this by verifying that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1166,7 +1456,10 @@ r \amp 0 \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.7.c"><a href="#sec-transforms-geom-6-7-1-1-2-3" title="Copy permalink for Item 2.6.4.7.c">🔗</a></div>
+</li>
 <li id="sec-transforms-geom-6-7-1-1-2-4">
 <div class="para logical" id="sec-transforms-geom-6-7-1-1-2-4-1">
 <div class="para">Let’s now look at the general case where</div>
@@ -1179,9 +1472,10 @@ b \amp a \\
 \end{equation*}
 </div>
 <div class="para">We will draw the vector <span class="process-math">\(\twovec{a}{b}\)</span> in the plane and express it using polar coordinates <span class="process-math">\(r\)</span> and <span class="process-math">\(\theta\)</span> as shown in <a href="sec-transforms-geom.html#fig-ex-complex-polar" class="xref" data-knowl="./knowl/xref/fig-ex-complex-polar.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.22">Figure 2.6.22</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-ex-complex-polar"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-complex-polar.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.22<span class="period">.</span></span><span class="space"> </span>A vector may be expressed in polar coordinates.</figcaption></figure><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-4-3">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.22<span class="period">.</span></span><span class="space"> </span>A vector may be expressed in polar coordinates.<div class="autopermalink" data-description="Figure 2.6.22"><a href="#fig-ex-complex-polar" title="Copy permalink for Figure 2.6.22">🔗</a></div></figcaption></figure><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-4-3">
 <div class="para">We then have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1206,9 +1500,12 @@ r \amp 0 \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-4-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item 2.6.4.7.d"><a href="#sec-transforms-geom-6-7-1-1-2-4" title="Copy permalink for Item 2.6.4.7.d">🔗</a></div>
 </li>
-<li id="sec-transforms-geom-6-7-1-1-2-5"><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-5-1">
+<li id="sec-transforms-geom-6-7-1-1-2-5">
+<div class="para logical" id="sec-transforms-geom-6-7-1-1-2-5-1">
 <div class="para">Using this description, describe the geometric effect on vectors in the plane of the matrix transformation defined by</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1218,8 +1515,12 @@ b \amp a \\
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-transforms-geom-6-7-1-1-2-6"><div class="para logical" id="sec-transforms-geom-6-7-1-1-2-6-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.7.e"><a href="#sec-transforms-geom-6-7-1-1-2-5" title="Copy permalink for Item 2.6.4.7.e">🔗</a></div>
+</li>
+<li id="sec-transforms-geom-6-7-1-1-2-6">
+<div class="para logical" id="sec-transforms-geom-6-7-1-1-2-6-1">
 <div class="para">Suppose we have a matrix transformation <span class="process-math">\(T\)</span> defined by a matrix <span class="process-math">\(A\)</span> and another transformation <span class="process-math">\(S\)</span> defined by <span class="process-math">\(B\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1236,10 +1537,15 @@ d \amp c \\
 <div class="para">Describe the geometric effect of the composition <span class="process-math">\(S\circ
 T\)</span> in terms of the <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> <span class="process-math">\(c\text{,}\)</span> and <span class="process-math">\(d\text{.}\)</span>
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.7.f"><a href="#sec-transforms-geom-6-7-1-1-2-6" title="Copy permalink for Item 2.6.4.7.f">🔗</a></div>
+</li>
 </ol>
 <div class="para">The matrices of this form give a model for the complex numbers and will play an important role in <a href="sec-dynamical.html" class="internal" title="Section 4.4: Dynamical systems">Section 4.4</a>.</div>
-</div></article><article class="exercise exercise-like" id="ex-reflection-compose-general"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-transforms-geom-6-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.6.4.7"><a href="#sec-transforms-geom-6-7" title="Copy permalink for Exercise 2.6.4.7">🔗</a></div></article><article class="exercise exercise-like" id="ex-reflection-compose-general"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="ex-reflection-compose-general-1-1">
 <div class="para">We saw earlier that the rotation in the plane through an angle <span class="process-math">\(\theta\)</span> is given by the matrix:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig-ex-reflection-def.html">
@@ -1251,13 +1557,14 @@ T\)</span> in terms of the <span class="process-math">\(a\text{,}\)</span> <span
 \end{equation*}
 </div>
 <div class="para">We would like to find a similar expression for the matrix that represents the reflection across <span class="process-math">\(L_\theta\text{,}\)</span> the line passing through the origin and making an angle of <span class="process-math">\(\theta\)</span> with the positive <span class="process-math">\(x\)</span>-axis, as shown in <a href="sec-transforms-geom.html#fig-ex-reflection-def" class="xref" data-knowl="./knowl/xref/fig-ex-reflection-def.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.23">Figure 2.6.23</a>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-reflection-compose-general-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <figure class="figure figure-like" id="fig-ex-reflection-def"><div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-reflection-def.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.23<span class="period">.</span></span><span class="space"> </span>The reflection across the line <span class="process-math">\(L_\theta\text{.}\)</span></figcaption></figure> <ol class="lower-alpha ol-marker-1" id="ex-reflection-compose-general-1-3">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.23<span class="period">.</span></span><span class="space"> </span>The reflection across the line <span class="process-math">\(L_\theta\text{.}\)</span><div class="autopermalink" data-description="Figure 2.6.23"><a href="#fig-ex-reflection-def" title="Copy permalink for Figure 2.6.23">🔗</a></div></figcaption></figure> <ol class="lower-alpha ol-marker-1" id="ex-reflection-compose-general-1-3">
 <li id="ex-reflection-compose-general-1-3-1">
-<div class="para" id="ex-reflection-compose-general-1-3-1-1">To do this, notice that this reflection can be obtained by composing three separate transformations as shown in <a href="sec-transforms-geom.html#fig-ex-reflection-compose" class="xref" data-knowl="./knowl/xref/fig-ex-reflection-compose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.24">Figure 2.6.24</a>.  Beginning with the vector <span class="process-math">\(\vec{x}\text{,}\)</span> we apply the transformation <span class="process-math">\(R\)</span> to rotate by <span class="process-math">\(-\theta\)</span> and obtain <span class="process-math">\(R(\vec{x})\text{.}\)</span>  Next, we apply <span class="process-math">\(S\text{,}\)</span> a reflection in the horizontal axis, followed by <span class="process-math">\(T\text{,}\)</span> a rotation by <span class="process-math">\(\theta\text{.}\)</span>  We see that <span class="process-math">\(T(S(R(\vec{x})))\)</span> is the same as the reflection of <span class="process-math">\(\vec{x}\)</span> in the original line <span class="process-math">\(L_\theta\text{.}\)</span>
+<div class="para" id="ex-reflection-compose-general-1-3-1-1">To do this, notice that this reflection can be obtained by composing three separate transformations as shown in <a href="sec-transforms-geom.html#fig-ex-reflection-compose" class="xref" data-knowl="./knowl/xref/fig-ex-reflection-compose.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.6.24">Figure 2.6.24</a>.  Beginning with the vector <span class="process-math">\(\vec{x}\text{,}\)</span> we apply the transformation <span class="process-math">\(R\)</span> to rotate by <span class="process-math">\(-\theta\)</span> and obtain <span class="process-math">\(R(\vec{x})\text{.}\)</span>  Next, we apply <span class="process-math">\(S\text{,}\)</span> a reflection in the horizontal axis, followed by <span class="process-math">\(T\text{,}\)</span> a rotation by <span class="process-math">\(\theta\text{.}\)</span>  We see that <span class="process-math">\(T(S(R(\vec{x})))\)</span> is the same as the reflection of <span class="process-math">\(\vec{x}\)</span> in the original line <span class="process-math">\(L_\theta\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-reflection-compose-general-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <figure class="figure figure-like" id="fig-ex-reflection-compose"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-reflection-compose.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Reflection in the line <span class="process-math">\(L_\theta\)</span> as a composition of three transformations.</figcaption></figure><div class="para logical" id="ex-reflection-compose-general-1-3-1-3">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.24<span class="period">.</span></span><span class="space"> </span>Reflection in the line <span class="process-math">\(L_\theta\)</span> as a composition of three transformations.<div class="autopermalink" data-description="Figure 2.6.24"><a href="#fig-ex-reflection-compose" title="Copy permalink for Figure 2.6.24">🔗</a></div></figcaption></figure><div class="para logical" id="ex-reflection-compose-general-1-3-1-3">
 <div class="para">Using this decomposition, show that the reflection in the line <span class="process-math">\(L_\theta\)</span> is described by the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1276,16 +1583,23 @@ T\)</span> in terms of the <span class="process-math">\(a\text{,}\)</span> <span
 \end{aligned}\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-reflection-compose-general-1-3-1-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item 2.6.4.8.a"><a href="#ex-reflection-compose-general-1-3-1" title="Copy permalink for Item 2.6.4.8.a">🔗</a></div>
 </li>
-<li id="ex-reflection-compose-general-1-3-2"><div class="para" id="ex-reflection-compose-general-1-3-2-1">Now that we have a matrix that describes the reflection in the line <span class="process-math">\(L_\theta\text{,}\)</span> show that the composition of the reflection in the horizontal axis followed by the reflection in <span class="process-math">\(L_\theta\)</span> is a counterclockwise rotation by an angle <span class="process-math">\(2\theta\text{.}\)</span>  We saw some examples of this earlier in <a href="sec-transforms-geom.html#ex-compose-reflections" class="xref" data-knowl="./knowl/xref/ex-compose-reflections.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.4.2">Exercise 2.6.4.2</a>.</div></li>
-</ol></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec-linear-trans.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<li id="ex-reflection-compose-general-1-3-2">
+<div class="para" id="ex-reflection-compose-general-1-3-2-1">Now that we have a matrix that describes the reflection in the line <span class="process-math">\(L_\theta\text{,}\)</span> show that the composition of the reflection in the horizontal axis followed by the reflection in <span class="process-math">\(L_\theta\)</span> is a counterclockwise rotation by an angle <span class="process-math">\(2\theta\text{.}\)</span>  We saw some examples of this earlier in <a href="sec-transforms-geom.html#ex-compose-reflections" class="xref" data-knowl="./knowl/xref/ex-compose-reflections.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 2.6.4.2">Exercise 2.6.4.2</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ex-reflection-compose-general-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.6.4.8.b"><a href="#ex-reflection-compose-general-1-3-2" title="Copy permalink for Item 2.6.4.8.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Exercise 2.6.4.8"><a href="#ex-reflection-compose-general" title="Copy permalink for Exercise 2.6.4.8">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.6.4"><a href="#sec-transforms-geom-6" title="Copy permalink for Exercises 2.6.4">🔗</a></div></section><div class="autopermalink" data-description="Section 2.6: The geometry of matrix transformations"><a href="#sec-transforms-geom" title="Copy permalink for Section 2.6: The geometry of matrix transformations">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-linear-trans.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="chap3.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

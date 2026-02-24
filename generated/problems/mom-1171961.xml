@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="1171961">
+<statement>
+<p>
+Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
+<p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccc} -{5}{x}\amp+\amp{20}{y}\amp-\amp{7}{z}\amp-\amp{13}{w}\amp=\amp-{53}\\{2}{x}\amp-\amp{8}{y}\amp+\amp{z}\amp-\amp{2}{w}\amp=\amp{5}\\-{9}{x}\amp+\amp{36}{y}\amp-\amp{2}{z}\amp+\amp{19}{w}\amp=\amp{0}\end{array}\right.}</m></p>
+<p>
+x = <fillin characters="20"/>  
+</p>
+<p>
+y = <fillin characters="20"/>  
+</p>
+<p>
+z = <fillin characters="20"/>  
+</p>
+<p>
+w = <fillin characters="20"/>  
+
+</p>
+</statement>
+<answer>
+<p><ul><li><m>\displaystyle-{2}+{4}{y}+{3}{w}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{9}-{4}{w}</m></li><li><m>\displaystyle{w}</m></li></ul></p>
+</answer>
+
+</myopenmath>

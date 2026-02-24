@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="869304">
+<statement>
+<p>Write the augmented matrix of the system and use it to solve the system. If the system has an infinite number of solutions, express them in terms of the parameter <m>\displaystyle{x}_{{4}}</m> . If there is no solution to the system, type "DNE" for each variable.</p>
+<p><m>\displaystyle{x}_{{1}}-{2}{x}_{{2}}-{x}_{{3}}+{3}{x}_{{4}}={0}</m> </p>
+<p><m>\displaystyle-{2}{x}_{{1}}+{4}{x}_{{2}}+{5}{x}_{{3}}-{5}{x}_{{4}}={3}</m></p>
+<p><m>\displaystyle{3}{x}_{{1}}-{6}{x}_{{2}}-{6}{x}_{{3}}+{8}{x}_{{4}}={2}</m></p>
+<p>  </p>
+<p><m>\displaystyle{x}_{{1}}</m>  = <fillin characters="20"/></p>
+<p><m>\displaystyle{x}_{{2}}</m>  = <fillin characters="20"/></p>
+<p><m>\displaystyle{x}_{{3}}</m>  = <fillin characters="20"/></p>
+<p> <m>\displaystyle{x}_{{4}}</m>  = <fillin characters="20"/></p>
+
+</statement>
+<answer>
+<p><ul><li>DNE</li><li>DNE</li><li>DNE</li><li>DNE</li></ul></p>
+</answer>
+
+</myopenmath>

@@ -6,14 +6,20 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Matrix multiplication and linear combinations</title>
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.googleapis.com">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
-<link xmlns:xlink="http://www.w3.org/1999/xlink" href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -86,11 +92,11 @@ window.MathJax = {
     )}
   }
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta xmlns:xlink="http://www.w3.org/1999/xlink" name="Keywords" content="Authored in PreTeXt">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="og:type" content="book">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:title" content="Understanding Linear Algebra (with Python)">
-<meta xmlns:xlink="http://www.w3.org/1999/xlink" property="book:author" content=" David Austin ">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Understanding Linear Algebra (with Python)">
+<meta property="book:author" content=" David Austin ">
 <script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -113,16 +119,16 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.8.1';
+eBookConfig.runestone_version = '7.11.15';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.242116c5bc6b6581.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
-<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script xmlns:xlink="http://www.w3.org/1999/xlink" src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.529fd9398bfbd03e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.1d6e4aba17c2c7f2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.6ec5960970d8b364.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script async="" src="https://cse.google.com/cse.js?cx=015103900096539427448:ngwuia10qci"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><script>// Make *any* div with class 'sagecell-python' an executable Sage cell
 // Their results will be linked, only within language type
 sagecell.makeSagecell({
@@ -143,7 +149,7 @@ sagecell.makeSagecell({
 <h1 class="heading"><a href="ula.html"><span class="title">Understanding Linear Algebra (with Python)</span></a></h1>
 <p class="byline">David Austin, Adam Gilbert (Editor), Corrie Spaulding (Editor)</p>
 </div>
-</div></header><nav xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-3.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchwrapper" role="search"><div class="gcse-search"></div></div>
 <div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -157,7 +163,7 @@ sagecell.makeSagecell({
 </div>
 </div>
 <span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-vectors-lin-combs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="chap2.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-span.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
-</div></nav><div xmlns:xlink="http://www.w3.org/1999/xlink" id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\vec{a}}}
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\vec{a}}}
 \newcommand{\bvec}{{\vec{b}}}
 \newcommand{\cvec}{{\vec{c}}}
 \newcommand{\dvec}{{\vec{d}}}
@@ -229,7 +235,7 @@ sagecell.makeSagecell({
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div xmlns:xlink="http://www.w3.org/1999/xlink" id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
 <ul class="structural toc-item-list">
@@ -594,7 +600,7 @@ sagecell.makeSagecell({
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section xmlns:xlink="http://www.w3.org/1999/xlink" class="section" id="sec-matrices-lin-combs"><h2 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-matrices-lin-combs"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">2.2</span><span class="space"> </span><span class="title">Matrix multiplication and linear combinations</span>
 </h2>
 <section class="introduction" id="sec-matrices-lin-combs-2"><div class="para logical" id="sec-matrices-lin-combs-2-1">
@@ -607,8 +613,10 @@ sagecell.makeSagecell({
 \end{equation*}
 </div>
 <div class="para">is consistent.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-2-2">Our goal in this section is to introduce matrix multiplication, another algebraic operation that deepens the connection between linear systems and linear combinations.</div></section><section class="subsection" id="sec-matrices-lin-combs-3"><h3 class="heading hide-type">
+<div class="para" id="sec-matrices-lin-combs-2-2">Our goal in this section is to introduce matrix multiplication, another algebraic operation that deepens the connection between linear systems and linear combinations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="sec-matrices-lin-combs-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="space"> </span><span class="title">Scalar multiplication and addition of matrices</span>
 </h3>
 <div class="para logical" id="sec-matrices-lin-combs-3-2">
@@ -626,6 +634,7 @@ n\text{,}\)</span> we mean that it has <span class="process-math">\(m\)</span> r
 \right]\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-matrices-lin-combs-3-3">
 <div class="para">We may also think of the columns of a matrix as a set of vectors.  For instance, the matrix above may be represented as</div>
@@ -649,6 +658,7 @@ n\text{,}\)</span> we mean that it has <span class="process-math">\(m\)</span> r
 </div>
 <div class="para">In this way, we see that the <span class="process-math">\(3\times 4\)</span> matrix is equivalent to an ordered set of 4 vectors in <span class="process-math">\(\real^3\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-matrices-lin-combs-3-4">
 <div class="para"> This means that we may define scalar multiplication and matrix addition operations using the corresponding column-wise vector operations. For instance,</div>
@@ -683,12 +693,15 @@ c\vec{v_1} \amp c\vec{v_2} \amp \cdots \amp c\vec{v_n}
 \end{aligned}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <article class="exploration project-like" id="sec-matrices-lin-combs-3-5"><h4 class="heading">
 <span class="type">Preview Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix operations.</span>
 </h4>
-<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-3-5-2-1-1">
-<li id="sec-matrices-lin-combs-3-5-2-1-1-1"><div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-1-1">
+<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1">
+<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-3-5-2-1-1">
+<li id="sec-matrices-lin-combs-3-5-2-1-1-1">
+<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-1-1">
 <div class="para">Compute the scalar multiple</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -700,8 +713,12 @@ c\vec{v_1} \amp c\vec{v_2} \amp \cdots \amp c\vec{v_n}
 \right]\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-3-5-2-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-matrices-lin-combs-3-5-2-1-1-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-3-5-2-1-1-2">
+<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-2-1">
 <div class="para">Find the sum</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -722,10 +739,17 @@ c\vec{v_1} \amp c\vec{v_2} \amp \cdots \amp c\vec{v_n}
 \right]\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-3-5-2-1-1-3"><div class="para" id="sec-matrices-lin-combs-3-5-2-1-1-3-1">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are two matrices. What do we need to know about their shapes before we can form the sum <span class="process-math">\(A+B\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-3-5-2-1-1-4"><div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-4-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-matrices-lin-combs-3-5-2-1-1-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-3-5-2-1-1-3">
+<div class="para" id="sec-matrices-lin-combs-3-5-2-1-1-3-1">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are two matrices. What do we need to know about their shapes before we can form the sum <span class="process-math">\(A+B\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-matrices-lin-combs-3-5-2-1-1-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-3-5-2-1-1-4">
+<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-4-2">
 <div class="para">The matrix <span class="process-math">\(I_n\text{,}\)</span> which we call the <em class="emphasis">identity</em> matrix, is the <span class="process-math">\(n\times n\)</span> matrix whose entries are zero except for the diagonal entries, all of which are 1.  For instance,</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -741,8 +765,12 @@ I_3 =
 </div>
 <div class="para">If we can form the sum <span class="process-math">\(A+I_n\text{,}\)</span> what must be true about the matrix <span class="process-math">\(A\text{?}\)</span>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-3-5-2-1-1-5"><div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-5-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1-1-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-matrices-lin-combs-3-5-2-1-1-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-3-5-2-1-1-5">
+<div class="para logical" id="sec-matrices-lin-combs-3-5-2-1-1-5-1">
 <div class="para">Find the matrix <span class="process-math">\(A - 2I_3\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -756,11 +784,20 @@ A =
 \right]\text{.}
 \end{equation*}
 </div>
-</div></li>
-</ol></div></article><div class="para" id="sec-matrices-lin-combs-3-6">As this preview activity shows, the operations of scalar multiplication and addition of matrices are natural extensions of their vector counterparts.  Some care, however, is required when adding matrices.  Since we need the same number of vectors to add and since those vectors must be of the same dimension, two matrices must have the same shape if we wish to form their sum.</div></section><section class="subsection" id="sec-matrices-lin-combs-4"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-matrices-lin-combs-3-5-2-1-1-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Preview Activity 2.2.1: Matrix operations"><a href="#sec-matrices-lin-combs-3-5" title="Copy permalink for Preview Activity 2.2.1: Matrix operations">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-3-6">As this preview activity shows, the operations of scalar multiplication and addition of matrices are natural extensions of their vector counterparts.  Some care, however, is required when adding matrices.  Since we need the same number of vectors to add and since those vectors must be of the same dimension, two matrices must have the same shape if we wish to form their sum.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-3-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.2.1: Scalar multiplication and addition of matrices"><a href="#sec-matrices-lin-combs-3" title="Copy permalink for Subsection 2.2.1: Scalar multiplication and addition of matrices">🔗</a></div></section><section class="subsection" id="sec-matrices-lin-combs-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="space"> </span><span class="title">Matrix-vector multiplication and linear combinations</span>
 </h3>
-<div class="para" id="sec-matrices-lin-combs-4-2">A more important operation will be matrix multiplication as it allows us to compactly express linear systems.  We now introduce the product of a matrix and a vector with an example.</div>
+<div class="para" id="sec-matrices-lin-combs-4-2">A more important operation will be matrix multiplication as it allows us to compactly express linear systems.  We now introduce the product of a matrix and a vector with an example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="example example-like" id="sec-matrices-lin-combs-4-3"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
@@ -801,8 +838,13 @@ A\vec{x} =
 \end{aligned}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-2">Because <span class="process-math">\(A\)</span> has two columns, we need two weights to form a linear combination of those columns, which means that <span class="process-math">\(\vec{x}\)</span> must have two components. In other words, the number of columns of <span class="process-math">\(A\)</span> must equal the dimension of the vector <span class="process-math">\(\vec{x}\text{.}\)</span>
-</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-3">Similarly, the columns of <span class="process-math">\(A\)</span> are 3-dimensional so any linear combination of them is 3-dimensional as well. Therefore, <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-4">We then see that if <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times2\)</span> matrix, <span class="process-math">\(\vec{x}\)</span> must be a 2-dimensional vector and <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.</div></article><div class="para" id="sec-matrices-lin-combs-4-4">More generally, we have the following definition.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-2">Because <span class="process-math">\(A\)</span> has two columns, we need two weights to form a linear combination of those columns, which means that <span class="process-math">\(\vec{x}\)</span> must have two components. In other words, the number of columns of <span class="process-math">\(A\)</span> must equal the dimension of the vector <span class="process-math">\(\vec{x}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-3-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-3">Similarly, the columns of <span class="process-math">\(A\)</span> are 3-dimensional so any linear combination of them is 3-dimensional as well. Therefore, <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-3-2-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-3-2-4">We then see that if <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times2\)</span> matrix, <span class="process-math">\(\vec{x}\)</span> must be a 2-dimensional vector and <span class="process-math">\(A\vec{x}\)</span> will be 3-dimensional.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-3-2-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.1: Matrix-vector multiplication"><a href="#sec-matrices-lin-combs-4-3" title="Copy permalink for Example 2.2.1: Matrix-vector multiplication">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-4-4">More generally, we have the following definition.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="sec-matrices-lin-combs-4-5"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
@@ -823,12 +865,18 @@ c_1 \\ c_2 \\ \vdots \\ c_n \end{array}\right],
 A\vec{x} = c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="sec-matrices-lin-combs-4-5-3-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then <span class="process-math">\(\vec{x}\)</span> must be an <span class="process-math">\(n\)</span>-dimensional vector, and the product <span class="process-math">\(A\vec{x}\)</span> will be an <span class="process-math">\(m\)</span>-dimensional vector.</div></article><div class="para" id="sec-matrices-lin-combs-4-6">The next activity explores some properties of matrix multiplication.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-matrices-lin-combs-4-5-3-2">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix, then <span class="process-math">\(\vec{x}\)</span> must be an <span class="process-math">\(n\)</span>-dimensional vector, and the product <span class="process-math">\(A\vec{x}\)</span> will be an <span class="process-math">\(m\)</span>-dimensional vector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-5-3-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.2: Matrix-vector multiplication"><a href="#sec-matrices-lin-combs-4-5" title="Copy permalink for Definition 2.2.2: Matrix-vector multiplication">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-4-6">The next activity explores some properties of matrix multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-6" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="activity project-like" id="sec-matrices-lin-combs-4-7"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-vector multiplication.</span>
 </h4>
-<div class="para logical" id="sec-matrices-lin-combs-4-7-2-1"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-7-2-1-1">
-<li id="li-example-product"><div class="para logical" id="li-example-product-1">
+<div class="para logical" id="sec-matrices-lin-combs-4-7-2-1">
+<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-7-2-1-1">
+<li id="li-example-product">
+<div class="para logical" id="li-example-product-1">
 <div class="para">Find the matrix product</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -846,8 +894,12 @@ A\vec{x} = c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}\text{.}
 \right]\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#li-example-product-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#li-example-product" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-2">
+<div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-2-1">
 <div class="para">Suppose that <span class="process-math">\(A\)</span> is the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -863,15 +915,26 @@ A\vec{x} = c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n}\text{.}
 </div>
 <div class="para">If <span class="process-math">\(A\vec{x}\)</span> is defined, what is the dimension of the vector <span class="process-math">\(\vec{x}\)</span> and what is the dimension of <span class="process-math">\(A\vec{x}\text{?}\)</span>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-3"><div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-3-1">A vector whose entries are all zero is denoted by <span class="process-math">\(\vec{0}\text{.}\)</span>  If <span class="process-math">\(A\)</span> is a matrix, what is the product <span class="process-math">\(A\vec{0}\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-4"><div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-4-1">Suppose that <span class="process-math">\(I = \left[\begin{array}{rrr}
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-matrices-lin-combs-4-7-2-1-1-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-3">
+<div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-3-1">A vector whose entries are all zero is denoted by <span class="process-math">\(\vec{0}\text{.}\)</span>  If <span class="process-math">\(A\)</span> is a matrix, what is the product <span class="process-math">\(A\vec{0}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-matrices-lin-combs-4-7-2-1-1-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-4">
+<div class="para" id="sec-matrices-lin-combs-4-7-2-1-1-4-1">Suppose that <span class="process-math">\(I = \left[\begin{array}{rrr}
 1 \amp 0 \amp 0 \\
 0 \amp 1 \amp 0 \\
 0 \amp 0 \amp 1 \\
-\end{array}\right]\)</span> is the identity matrix and <span class="process-math">\(\vec{x}=\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find the product <span class="process-math">\(I\vec{x}\)</span> and explain why <span class="process-math">\(I\)</span> is called the identity matrix.</div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-5"><div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-5-1">
+\end{array}\right]\)</span> is the identity matrix and <span class="process-math">\(\vec{x}=\threevec{x_1}{x_2}{x_3}\text{.}\)</span>  Find the product <span class="process-math">\(I\vec{x}\)</span> and explain why <span class="process-math">\(I\)</span> is called the identity matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-matrices-lin-combs-4-7-2-1-1-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-5">
+<div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-5-1">
 <div class="para">Suppose we write the matrix <span class="process-math">\(A\)</span> in terms of its columns as</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -885,8 +948,12 @@ A = \left[
 <div class="para">If the vector <span class="process-math">\(\vec{e_1} = \left[\begin{array}{c} 1 \\ 0 \\
 \vdots \\ 0 \end{array}\right]\text{,}\)</span> what is the product <span class="process-math">\(A\vec{e_1}\text{?}\)</span>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-4-7-2-1-1-6"><div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-6-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-matrices-lin-combs-4-7-2-1-1-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-7-2-1-1-6">
+<div class="para logical" id="sec-matrices-lin-combs-4-7-2-1-1-6-1">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -905,8 +972,14 @@ A = \left[
 </div>
 <div class="para">Is there a vector <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span>
 </div>
-</div></li>
-</ol></div></article><div class="para logical" id="sec-matrices-lin-combs-4-8">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1-1-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item f"><a href="#sec-matrices-lin-combs-4-7-2-1-1-6" title="Copy permalink for Item f">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-7-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.2.2: Matrix-vector multiplication"><a href="#sec-matrices-lin-combs-4-7" title="Copy permalink for Activity 2.2.2: Matrix-vector multiplication">🔗</a></div></article><div class="para logical" id="sec-matrices-lin-combs-4-8">
 <div class="para">Multiplication of a matrix <span class="process-math">\(A\)</span> and a vector is defined as a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span> However, there is a shortcut for computing such a product.  Let’s look at our previous example and focus on the first row of the product.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -925,10 +998,12 @@ A = \left[
 \left[\begin{array}{r} 5 \\ * \\ * \\ \end{array}\right]\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-8" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-4-9">To find the first component of the product, we consider the first row of the matrix.  We then multiply the first entry in that row by the first component of the vector, the second entry by the second component of the vector, and so on, and add the results.  In this way, we see that the third component of the product would be obtained from the third row of the matrix by computing <span class="process-math">\(2(3) + 3(1) = 9\text{.}\)</span>
+<div class="para" id="sec-matrices-lin-combs-4-9">To find the first component of the product, we consider the first row of the matrix.  We then multiply the first entry in that row by the first component of the vector, the second entry by the second component of the vector, and so on, and add the results.  In this way, we see that the third component of the product would be obtained from the third row of the matrix by computing <span class="process-math">\(2(3) + 3(1) = 9\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-9" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-4-10">You are encouraged to evaluate the product <a href="sec-matrices-lin-combs.html#li-example-product" class="xref" data-knowl="./knowl/xref/li-example-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a> of the previous activity using this shortcut and compare the result to what you found while completing that activity.</div>
+<div class="para" id="sec-matrices-lin-combs-4-10">You are encouraged to evaluate the product <a href="sec-matrices-lin-combs.html#li-example-product" class="xref" data-knowl="./knowl/xref/li-example-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a> of the previous activity using this shortcut and compare the result to what you found while completing that activity.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-10" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="activity project-like" id="sec-matrices-lin-combs-4-11"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h4>
@@ -944,7 +1019,8 @@ print(Av)
 </script></div>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-4-11-1-1-4">
-<li id="sec-matrices-lin-combs-4-11-1-1-4-1"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-4-1-1">
+<li id="sec-matrices-lin-combs-4-11-1-1-4-1">
+<div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-4-1-1">
 <div class="para">Use Python to evaluate the product</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/li-example-product.html">
 \begin{equation*}
@@ -965,8 +1041,12 @@ print(Av)
 <div class="para">from <a href="sec-matrices-lin-combs.html#li-example-product" class="xref" data-knowl="./knowl/xref/li-example-product.html" data-reveal-label="Reveal" data-close-label="Close" title="Item a">Item a</a> of the previous activity. <div id="sec-matrices-lin-combs-4-11-1-1-4-1-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-4-2"><div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-4-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-matrices-lin-combs-4-11-1-1-4-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-11-1-1-4-2">
+<div class="para logical" id="sec-matrices-lin-combs-4-11-1-1-4-2-1">
 <div class="para">In Python, define the matrix and vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -990,27 +1070,62 @@ A = \left[
 </div>
 <div class="para"><div id="sec-matrices-lin-combs-4-11-1-1-4-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-</div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-4-3"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-3-1">What do you find when you evaluate <span class="process-math">\(A\vec{0}\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-4-4"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-4-1">What do you find when you evaluate <span class="process-math">\(A(3\vec{v})\)</span> and <span class="process-math">\(3(A\vec{v})\)</span> and compare your results?</div></li>
-<li id="sec-matrices-lin-combs-4-11-1-1-4-5"><div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-5-1">What do you find when you evaluate <span class="process-math">\(A(\vec{v}+\vec{w})\)</span> and <span class="process-math">\(A\vec{v} + A\vec{w}\)</span> and compare your results?</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1-4-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-matrices-lin-combs-4-11-1-1-4-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-11-1-1-4-3">
+<div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-3-1">What do you find when you evaluate <span class="process-math">\(A\vec{0}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1-4-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-matrices-lin-combs-4-11-1-1-4-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-11-1-1-4-4">
+<div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-4-1">What do you find when you evaluate <span class="process-math">\(A(3\vec{v})\)</span> and <span class="process-math">\(3(A\vec{v})\)</span> and compare your results?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1-4-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-matrices-lin-combs-4-11-1-1-4-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-4-11-1-1-4-5">
+<div class="para" id="sec-matrices-lin-combs-4-11-1-1-4-5-1">What do you find when you evaluate <span class="process-math">\(A(\vec{v}+\vec{w})\)</span> and <span class="process-math">\(A\vec{v} + A\vec{w}\)</span> and compare your results?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1-4-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-matrices-lin-combs-4-11-1-1-4-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
 </ol>
-</div></article><div class="para" id="sec-matrices-lin-combs-4-12">This activity demonstrates several general properties satisfied by matrix multiplication that we record here.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.2.3"><a href="#sec-matrices-lin-combs-4-11" title="Copy permalink for Activity 2.2.3">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-4-12">This activity demonstrates several general properties satisfied by matrix multiplication that we record here.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-4-12" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-matrix-mult-prop"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of matrix multiplication.</span>
 </h4>
 <div class="para logical" id="prop-matrix-mult-prop-2-1">
 <div class="para">If <span class="process-math">\(A\)</span> is a matrix, <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\)</span> vectors of the appropriate dimensions, and <span class="process-math">\(c\)</span> a scalar, then</div>
 <ul class="disc" id="prop-matrix-mult-prop-2-1-5">
-<li id="prop-matrix-mult-prop-2-1-5-1"><div class="para" id="prop-matrix-mult-prop-2-1-5-1-1"><span class="process-math">\(A\vec{0} = \vec{0}\text{.}\)</span></div></li>
-<li id="prop-matrix-mult-prop-2-1-5-2"><div class="para" id="prop-matrix-mult-prop-2-1-5-2-1"><span class="process-math">\(A(c\vec{v}) = cA\vec{v}\text{.}\)</span></div></li>
-<li id="prop-matrix-mult-prop-2-1-5-3"><div class="para" id="prop-matrix-mult-prop-2-1-5-3-1"><span class="process-math">\(A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}\text{.}\)</span></div></li>
+<li id="prop-matrix-mult-prop-2-1-5-1">
+<div class="para" id="prop-matrix-mult-prop-2-1-5-1-1">
+<span class="process-math">\(A\vec{0} = \vec{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-mult-prop-2-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-mult-prop-2-1-5-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="prop-matrix-mult-prop-2-1-5-2">
+<div class="para" id="prop-matrix-mult-prop-2-1-5-2-1">
+<span class="process-math">\(A(c\vec{v}) = cA\vec{v}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-mult-prop-2-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-mult-prop-2-1-5-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="prop-matrix-mult-prop-2-1-5-3">
+<div class="para" id="prop-matrix-mult-prop-2-1-5-3-1">
+<span class="process-math">\(A(\vec{v}+\vec{w}) = A\vec{v} + A\vec{w}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-mult-prop-2-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-mult-prop-2-1-5-3" title="Copy permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></article></section><section class="subsection" id="sec-matrices-lin-combs-5"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-mult-prop-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.3: Linearity of matrix multiplication"><a href="#prop-matrix-mult-prop" title="Copy permalink for Proposition 2.2.3: Linearity of matrix multiplication">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.2.2: Matrix-vector multiplication and linear combinations"><a href="#sec-matrices-lin-combs-4" title="Copy permalink for Subsection 2.2.2: Matrix-vector multiplication and linear combinations">🔗</a></div></section><section class="subsection" id="sec-matrices-lin-combs-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="space"> </span><span class="title">Matrix-vector multiplication and linear systems</span>
 </h3>
-<div class="para" id="sec-matrices-lin-combs-5-2">So far, we have begun with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{x}\)</span> and formed their product <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  We would now like to turn this around:  beginning with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{b}\text{,}\)</span> we will ask if we can find a vector <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  This will naturally lead back to linear systems.</div>
+<div class="para" id="sec-matrices-lin-combs-5-2">So far, we have begun with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{x}\)</span> and formed their product <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  We would now like to turn this around:  beginning with a matrix <span class="process-math">\(A\)</span> and a vector <span class="process-math">\(\vec{b}\text{,}\)</span> we will ask if we can find a vector <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  This will naturally lead back to linear systems.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="sec-matrices-lin-combs-5-3">
 <div class="para">To see the connection between the matrix equation <span class="process-math">\(A\vec{x} =
 \vec{b}\)</span> and linear systems, let’s write the matrix <span class="process-math">\(A\)</span> in terms of its columns <span class="process-math">\(\vec{v_i}\)</span> and <span class="process-math">\(\vec{x}\)</span> in terms of its components.</div>
@@ -1028,6 +1143,7 @@ c_1 \\ c_2 \\ \vdots \\ c_n \\
 \right]\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-matrices-lin-combs-5-4">
 <div class="para">We know that the matrix product <span class="process-math">\(A\vec{x}\)</span> forms a linear combination of the columns of <span class="process-math">\(A\text{.}\)</span>  Therefore, the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is merely a compact way of writing the equation for the weights <span class="process-math">\(c_i\text{:}\)</span>
@@ -1045,8 +1161,10 @@ c_1\vec{v_1} + c_2\vec{v_2} + \ldots + c_n\vec{v_n} = \vec{b}\text{.}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-4" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-5-5">This gives us three different ways of looking at the same solution space.</div>
+<div class="para" id="sec-matrices-lin-combs-5-5">This gives us three different ways of looking at the same solution space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-5" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="proposition theorem-like" id="prop-matrix-eq-solution"><h4 class="heading">
 <span class="type">Proposition</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
 </h4>
@@ -1059,10 +1177,14 @@ x_1 \\ x_2 \\ \vdots \\ x_n \\
 \end{array}\right]
 \text{,}\)</span> then the following statements are equivalent.</div>
 <ul class="disc" id="prop-matrix-eq-solution-1-1-3">
-<li id="prop-matrix-eq-solution-1-1-3-1"><div class="para" id="prop-matrix-eq-solution-1-1-3-1-1">The vector <span class="process-math">\(\vec{x}\)</span> satisfies the equation <span class="process-math">\(A\vec{x} = \vec{b}
-\text{.}\)</span>
-</div></li>
-<li id="prop-matrix-eq-solution-1-1-3-2"><div class="para logical" id="prop-matrix-eq-solution-1-1-3-2-1">
+<li id="prop-matrix-eq-solution-1-1-3-1">
+<div class="para" id="prop-matrix-eq-solution-1-1-3-1-1">The vector <span class="process-math">\(\vec{x}\)</span> satisfies the equation <span class="process-math">\(A\vec{x} = \vec{b}
+\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-eq-solution-1-1-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-eq-solution-1-1-3-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="prop-matrix-eq-solution-1-1-3-2">
+<div class="para logical" id="prop-matrix-eq-solution-1-1-3-2-1">
 <div class="para">The vector <span class="process-math">\(\vec{b}\)</span> is a linear combination of the columns of <span class="process-math">\(A\)</span> with weights <span class="process-math">\(x_j\text{:}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -1070,8 +1192,12 @@ x_1 \\ x_2 \\ \vdots \\ x_n \\
 x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="prop-matrix-eq-solution-1-1-3-3"><div class="para logical" id="prop-matrix-eq-solution-1-1-3-3-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-eq-solution-1-1-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-eq-solution-1-1-3-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="prop-matrix-eq-solution-1-1-3-3">
+<div class="para logical" id="prop-matrix-eq-solution-1-1-3-3-1">
 <div class="para">The components of <span class="process-math">\(\vec{x}\)</span> form a solution to the linear system corresponding to the augmented matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1080,9 +1206,14 @@ x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}\text{.}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-eq-solution-1-1-3-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#prop-matrix-eq-solution-1-1-3-3" title="Copy permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></article><div class="para logical" id="sec-matrices-lin-combs-5-7">
+<div class="autopermalink" data-description="Paragraph"><a href="#prop-matrix-eq-solution-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proposition 2.2.4"><a href="#prop-matrix-eq-solution" title="Copy permalink for Proposition 2.2.4">🔗</a></div></article><div class="para logical" id="sec-matrices-lin-combs-5-7">
 <div class="para">When the matrix <span class="process-math">\(A = \left[\begin{array}{rrrr}
 \vec{v_1}\amp\vec{v_2}\amp\cdots\amp\vec{v_n}\end{array}\right]\text{,}\)</span> we will frequently write</div>
 <div class="displaymath process-math">
@@ -1094,8 +1225,10 @@ x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}\text{.}
 </div>
 <div class="para">and say that the matrix <span class="process-math">\(A\)</span> is augmented by the vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-7" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-5-8">The equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> gives a notationally compact way to write a linear system.  Moreover, this notation will allow us to focus on important features of the system that determine its solution space.</div>
+<div class="para" id="sec-matrices-lin-combs-5-8">The equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> gives a notationally compact way to write a linear system.  Moreover, this notation will allow us to focus on important features of the system that determine its solution space.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-8" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="example example-like" id="sec-matrices-lin-combs-5-9"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h4>
@@ -1115,6 +1248,7 @@ x_1\vec{v_1} + x_2\vec{v_2} + \ldots + x_n\vec{v_n} = \vec{b}\text{.}
 \end{array}\right].
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-matrices-lin-combs-5-9-1-2">
 <div class="para">By <a href="sec-matrices-lin-combs.html#prop-matrix-eq-solution" class="xref" data-knowl="./knowl/xref/prop-matrix-eq-solution.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.4">Proposition 2.2.4</a>, this equation may be equivalently expressed as</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-eq-solution.html">
@@ -1169,6 +1303,7 @@ x_2 \amp {}={} 5+2x_3. \\
 \end{aligned}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-9-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-matrices-lin-combs-5-9-1-3">
 <div class="para">Since we originally asked to describe the solutions to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we will express the solution in terms of the vector <span class="process-math">\(\vec{x}\text{:}\)</span>
 </div>
@@ -1191,12 +1326,16 @@ x_1 \\ x_2 \\ x_3
 \end{equation*}
 </div>
 <div class="para">As before, we call this a parametric description of the solution space.</div>
-</div> <div class="para" id="sec-matrices-lin-combs-5-9-1-4">This shows that the solutions <span class="process-math">\(\vec{x}\)</span> may be written in the form <span class="process-math">\(\vec{v} + x_3\vec{w}\text{,}\)</span> for appropriate vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>  Geometrically, the solution space is a line in <span class="process-math">\(\real^3\)</span> through <span class="process-math">\(\vec{v}\)</span> moving parallel to <span class="process-math">\(\vec{w}\text{.}\)</span>
-</div></article><article class="activity project-like" id="sec-matrices-lin-combs-5-10"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-9-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="sec-matrices-lin-combs-5-9-1-4">This shows that the solutions <span class="process-math">\(\vec{x}\)</span> may be written in the form <span class="process-math">\(\vec{v} + x_3\vec{w}\text{,}\)</span> for appropriate vectors <span class="process-math">\(\vec{v}\)</span> and <span class="process-math">\(\vec{w}\text{.}\)</span>  Geometrically, the solution space is a line in <span class="process-math">\(\real^3\)</span> through <span class="process-math">\(\vec{v}\)</span> moving parallel to <span class="process-math">\(\vec{w}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-9-1-4" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.5"><a href="#sec-matrices-lin-combs-5-9" title="Copy permalink for Example 2.2.5">🔗</a></div></article><article class="activity project-like" id="sec-matrices-lin-combs-5-10"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">The equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span>.</span>
 </h4>
-<div class="para logical" id="sec-matrices-lin-combs-5-10-2-1"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-5-10-2-1-1">
-<li id="sec-matrices-lin-combs-5-10-2-1-1-1"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-1-1">
+<div class="para logical" id="sec-matrices-lin-combs-5-10-2-1">
+<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-5-10-2-1-1">
+<li id="sec-matrices-lin-combs-5-10-2-1-1-1">
+<div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-1-1">
 <div class="para">Consider the linear system</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1209,8 +1348,12 @@ x_1 \\ x_2 \\ x_3
 </div>
 <div class="para">Identify the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{b}\)</span> to express this system in the form <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-5-10-2-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-10-2-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-matrices-lin-combs-5-10-2-1-1-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-5-10-2-1-1-2">
+<div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-2-1">
 <div class="para">If <span class="process-math">\(A\)</span> and <span class="process-math">\(\vec{b}\)</span> are as below, write the linear system corresponding to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> and describe its solution space, using a parametric description if appropriate:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1227,8 +1370,12 @@ A = \left[\begin{array}{rrr}
 </div>
 <div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-2-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-</div></li>
-<li id="sec-matrices-lin-combs-5-10-2-1-1-3"><div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-3-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-10-2-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-matrices-lin-combs-5-10-2-1-1-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-5-10-2-1-1-3">
+<div class="para logical" id="sec-matrices-lin-combs-5-10-2-1-1-3-1">
 <div class="para">Describe the solution space of the equation</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1249,14 +1396,24 @@ A = \left[\begin{array}{rrr}
 </div>
 <div class="para"><div id="sec-matrices-lin-combs-5-10-2-1-1-3-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-</div></li>
-<li id="sec-matrices-lin-combs-5-10-2-1-1-4"><div class="para" id="sec-matrices-lin-combs-5-10-2-1-1-4-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix.  What can you guarantee about the solution space of the equation <span class="process-math">\(A\vec{x}
-= \vec{0}\text{?}\)</span>
-</div></li>
-</ol></div></article></section><section class="subsection" id="sec-matrices-lin-combs-6"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-10-2-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-matrices-lin-combs-5-10-2-1-1-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-5-10-2-1-1-4">
+<div class="para" id="sec-matrices-lin-combs-5-10-2-1-1-4-1">Suppose <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix.  What can you guarantee about the solution space of the equation <span class="process-math">\(A\vec{x}
+= \vec{0}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-10-2-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-matrices-lin-combs-5-10-2-1-1-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-5-10-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.2.4: The equation A\vec{x} = \vec{b}"><a href="#sec-matrices-lin-combs-5-10" title="Copy permalink for Activity 2.2.4: The equation A\vec{x} = \vec{b}">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.2.3: Matrix-vector multiplication and linear systems"><a href="#sec-matrices-lin-combs-5" title="Copy permalink for Subsection 2.2.3: Matrix-vector multiplication and linear systems">🔗</a></div></section><section class="subsection" id="sec-matrices-lin-combs-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="space"> </span><span class="title">Matrix-matrix products</span>
 </h3>
-<div class="para" id="sec-matrices-lin-combs-6-2">In this section, we have developed some algebraic operations on matrices with the aim of simplifying our description of linear systems.  We now introduce a final operation, the product of two matrices, that will become important when we study linear transformations in <a href="sec-linear-trans.html" class="internal" title="Section 2.5: Matrix transformations">Section 2.5</a>.</div>
+<div class="para" id="sec-matrices-lin-combs-6-2">In this section, we have developed some algebraic operations on matrices with the aim of simplifying our description of linear systems.  We now introduce a final operation, the product of two matrices, that will become important when we study linear transformations in <a href="sec-linear-trans.html" class="internal" title="Section 2.5: Matrix transformations">Section 2.5</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="definition definition-like" id="sec-matrices-lin-combs-6-3"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Matrix-matrix multiplication.</span>
 </h4>
@@ -1277,7 +1434,9 @@ A\vec{v_1} \amp A\vec{v_2} \amp \cdots \amp A\vec{v_p}
 \end{array}\right].
 \end{equation*}
 </div>
-</div></article><article class="example example-like" id="sec-matrices-lin-combs-6-4"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-3-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.2.6: Matrix-matrix multiplication"><a href="#sec-matrices-lin-combs-6-3" title="Copy permalink for Definition 2.2.6: Matrix-matrix multiplication">🔗</a></div></article><article class="example example-like" id="sec-matrices-lin-combs-6-4"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-6-4-1-1">
@@ -1312,11 +1471,14 @@ A \twovec{0}{-2}
 \end{array}\right]\text{.}
 \end{equation*}
 </div>
-</div></article><article class="observation remark-like" id="sec-matrices-lin-combs-6-5"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.2.7"><a href="#sec-matrices-lin-combs-6-4" title="Copy permalink for Example 2.2.7">🔗</a></div></article><article class="observation remark-like" id="sec-matrices-lin-combs-6-5"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-matrices-lin-combs-6-5-1-1">It is important to note that we can only multiply matrices if the shapes of the matrices are compatible.  More specifically, when constructing the product <span class="process-math">\(AB\text{,}\)</span> the matrix <span class="process-math">\(A\)</span> multiplies the columns of <span class="process-math">\(B\text{.}\)</span>  Therefore, the number of columns of <span class="process-math">\(A\)</span> must equal the number of rows of <span class="process-math">\(B\text{.}\)</span>  When this condition is met, the number of rows of <span class="process-math">\(AB\)</span> is the number of rows of <span class="process-math">\(A\text{,}\)</span> and the number of columns of <span class="process-math">\(AB\)</span> is the number of columns of <span class="process-math">\(B\text{.}\)</span>
-</div></article><article class="activity project-like" id="sec-matrices-lin-combs-6-6"><h4 class="heading">
+<div class="para" id="sec-matrices-lin-combs-6-5-1-1">It is important to note that we can only multiply matrices if the shapes of the matrices are compatible.  More specifically, when constructing the product <span class="process-math">\(AB\text{,}\)</span> the matrix <span class="process-math">\(A\)</span> multiplies the columns of <span class="process-math">\(B\text{.}\)</span>  Therefore, the number of columns of <span class="process-math">\(A\)</span> must equal the number of rows of <span class="process-math">\(B\text{.}\)</span>  When this condition is met, the number of rows of <span class="process-math">\(AB\)</span> is the number of rows of <span class="process-math">\(A\text{,}\)</span> and the number of columns of <span class="process-math">\(AB\)</span> is the number of columns of <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Observation 2.2.8"><a href="#sec-matrices-lin-combs-6-5" title="Copy permalink for Observation 2.2.8">🔗</a></div></article><article class="activity project-like" id="sec-matrices-lin-combs-6-6"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="sec-matrices-lin-combs-6-6-1-1">
@@ -1335,16 +1497,30 @@ B = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-6-6-1-1-2">
-<li id="sec-matrices-lin-combs-6-6-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-1-1">Before computing, first explain why the shapes of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> enable us to form the product <span class="process-math">\(AB\text{.}\)</span> Then describe the shape of <span class="process-math">\(AB\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-2-1">Compute the product <span class="process-math">\(AB\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Like with matrix-vector multiplication, we can use <code class="code-inline tex2jax_ignore">*</code> to find the product of two compatible matrices (as long as they are defined with <code class="code-inline tex2jax_ignore">{sympy}</code>). Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Python cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-6-6-1-1-2-1">
+<div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-1-1">Before computing, first explain why the shapes of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> enable us to form the product <span class="process-math">\(AB\text{.}\)</span> Then describe the shape of <span class="process-math">\(AB\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#sec-matrices-lin-combs-6-6-1-1-2-1" title="Copy permalink for Item a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-2">
+<div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-2-1">Compute the product <span class="process-math">\(AB\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#sec-matrices-lin-combs-6-6-1-1-2-2" title="Copy permalink for Item b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-3">
+<div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-3-1">Like with matrix-vector multiplication, we can use <code class="code-inline tex2jax_ignore">*</code> to find the product of two compatible matrices (as long as they are defined with <code class="code-inline tex2jax_ignore">{sympy}</code>). Define the matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the Python cell below and check your work by computing <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-4-1">Are we able to form the matrix product <span class="process-math">\(BA\text{?}\)</span>  If so, use the Python cell above to find <span class="process-math">\(BA\text{.}\)</span>  Is it generally true that <span class="process-math">\(AB = BA\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-5"><div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-5-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#sec-matrices-lin-combs-6-6-1-1-2-3" title="Copy permalink for Item c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-4">
+<div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-4-1">Are we able to form the matrix product <span class="process-math">\(BA\text{?}\)</span>  If so, use the Python cell above to find <span class="process-math">\(BA\text{.}\)</span>  Is it generally true that <span class="process-math">\(AB = BA\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#sec-matrices-lin-combs-6-6-1-1-2-4" title="Copy permalink for Item d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-5">
+<div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-5-1">
 <div class="para">Suppose we form the three matrices.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1366,9 +1542,17 @@ C = \left[\begin{array}{rr}
 + AC\text{.}\)</span>  State your finding as a general principle. <div id="sec-matrices-lin-combs-6-6-1-1-2-5-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-6"><div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-6-1">Compare the results of evaluating <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> and state your finding as a general principle.</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-7"><div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-7-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#sec-matrices-lin-combs-6-6-1-1-2-5" title="Copy permalink for Item e">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-6">
+<div class="para" id="sec-matrices-lin-combs-6-6-1-1-2-6-1">Compare the results of evaluating <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> and state your finding as a general principle.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item f"><a href="#sec-matrices-lin-combs-6-6-1-1-2-6" title="Copy permalink for Item f">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-7">
+<div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-7-1">
 <div class="para">When we are dealing with real numbers, we know if <span class="process-math">\(a\neq 0\)</span> and <span class="process-math">\(ab = ac\text{,}\)</span> then <span class="process-math">\(b=c\text{.}\)</span>  Define matrices</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1389,8 +1573,12 @@ C = \left[\begin{array}{rr}
 <div class="para">and compute <span class="process-math">\(AB\)</span> and <span class="process-math">\(AC\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-7-1-7" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> If <span class="process-math">\(AB = AC\text{,}\)</span> is it necessarily true that <span class="process-math">\(B = C\text{?}\)</span>
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-6-6-1-1-2-8"><div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-8-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-7-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item g"><a href="#sec-matrices-lin-combs-6-6-1-1-2-7" title="Copy permalink for Item g">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-6-6-1-1-2-8">
+<div class="para logical" id="sec-matrices-lin-combs-6-6-1-1-2-8-1">
 <div class="para">Again, with real numbers, we know that if <span class="process-math">\(ab =
 0\text{,}\)</span> then either <span class="process-math">\(a = 0\)</span> or <span class="process-math">\(b=0\text{.}\)</span>  Define</div>
 <div class="displaymath process-math">
@@ -1408,50 +1596,84 @@ B = \left[\begin{array}{rr}
 <div class="para">and compute <span class="process-math">\(AB\text{.}\)</span> <div id="sec-matrices-lin-combs-6-6-1-1-2-8-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div> If <span class="process-math">\(AB = 0\text{,}\)</span> is it necessarily true that either <span class="process-math">\(A=0\)</span> or <span class="process-math">\(B=0\text{?}\)</span>
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1-2-8-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item h"><a href="#sec-matrices-lin-combs-6-6-1-1-2-8" title="Copy permalink for Item h">🔗</a></div>
+</li>
 </ol>
-</div></article><div class="para" id="sec-matrices-lin-combs-6-7">This activity demonstrated some general properties about products of matrices, which mirror some properties about operations with real numbers.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Activity 2.2.5"><a href="#sec-matrices-lin-combs-6-6" title="Copy permalink for Activity 2.2.5">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-6-7">This activity demonstrated some general properties about products of matrices, which mirror some properties about operations with real numbers.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-7" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="assemblage assemblage-like" id="sec-matrices-lin-combs-6-8"><h4 class="heading"><span class="title">Properties of Matrix-matrix Multiplication.</span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-6-8-2">
 <div class="para">If <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(C\)</span> are matrices such that the following operations are defined, it follows that</div>
 <dl class="description-list">
-<dt id="sec-matrices-lin-combs-6-8-2-4-1">Associativity:</dt>
-<dd><div class="para" id="sec-matrices-lin-combs-6-8-2-4-1-2"><span class="process-math">\(A(BC) =  (AB)C\text{.}\)</span></div></dd>
-<dt id="sec-matrices-lin-combs-6-8-2-4-2">Distributivity:</dt>
+<dt id="sec-matrices-lin-combs-6-8-2-4-1">Associativity:<div class="autopermalink" data-description="Item: Associativity:"><a href="#sec-matrices-lin-combs-6-8-2-4-1" title="Copy permalink for Item: Associativity:">🔗</a></div>
+</dt>
+<dd><div class="para" id="sec-matrices-lin-combs-6-8-2-4-1-2">
+<span class="process-math">\(A(BC) =  (AB)C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-8-2-4-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div></dd>
+<dt id="sec-matrices-lin-combs-6-8-2-4-2">Distributivity:<div class="autopermalink" data-description="Item: Distributivity:"><a href="#sec-matrices-lin-combs-6-8-2-4-2" title="Copy permalink for Item: Distributivity:">🔗</a></div>
+</dt>
 <dd>
-<div class="para" id="sec-matrices-lin-combs-6-8-2-4-2-2"><span class="process-math">\(A(B+C) = AB+AC\text{.}\)</span></div>
-<div class="para" id="sec-matrices-lin-combs-6-8-2-4-2-3"><span class="process-math">\((A+B)C = AC+BC\text{.}\)</span></div>
+<div class="para" id="sec-matrices-lin-combs-6-8-2-4-2-2">
+<span class="process-math">\(A(B+C) = AB+AC\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-8-2-4-2-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-matrices-lin-combs-6-8-2-4-2-3">
+<span class="process-math">\((A+B)C = AC+BC\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-8-2-4-2-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 </dd>
 </dl>
-</div></article><div class="para" id="sec-matrices-lin-combs-6-9">At the same time, there are a few properties that hold for real numbers that do not hold for matrices.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-8-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assemblage: Properties of Matrix-matrix Multiplication"><a href="#sec-matrices-lin-combs-6-8" title="Copy permalink for Assemblage: Properties of Matrix-matrix Multiplication">🔗</a></div></article><div class="para" id="sec-matrices-lin-combs-6-9">At the same time, there are a few properties that hold for real numbers that do not hold for matrices.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-9" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <article class="assemblage assemblage-like" id="sec-matrices-lin-combs-6-10"><h4 class="heading"><span class="title">Caution.</span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-6-10-2">
 <div class="para">The following properties hold for real numbers but not for matrices.</div>
 <dl class="description-list">
-<dt id="sec-matrices-lin-combs-6-10-2-1-1">Commutativity:</dt>
-<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-1-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = BA\text{.}\)</span>
+<dt id="sec-matrices-lin-combs-6-10-2-1-1">Commutativity:<div class="autopermalink" data-description="Item: Commutativity:"><a href="#sec-matrices-lin-combs-6-10-2-1-1" title="Copy permalink for Item: Commutativity:">🔗</a></div>
+</dt>
+<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-1-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = BA\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-10-2-1-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="sec-matrices-lin-combs-6-10-2-1-2">Cancellation:</dt>
-<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-2-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = AC\)</span> implies that <span class="process-math">\(B = C\text{.}\)</span>
+<dt id="sec-matrices-lin-combs-6-10-2-1-2">Cancellation:<div class="autopermalink" data-description="Item: Cancellation:"><a href="#sec-matrices-lin-combs-6-10-2-1-2" title="Copy permalink for Item: Cancellation:">🔗</a></div>
+</dt>
+<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-2-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = AC\)</span> implies that <span class="process-math">\(B = C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-10-2-1-2-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="sec-matrices-lin-combs-6-10-2-1-3">Zero divisors:</dt>
-<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-3-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = 0\)</span> implies that either <span class="process-math">\(A=0\)</span> or <span class="process-math">\(B=0\text{.}\)</span>
+<dt id="sec-matrices-lin-combs-6-10-2-1-3">Zero divisors:<div class="autopermalink" data-description="Item: Zero divisors:"><a href="#sec-matrices-lin-combs-6-10-2-1-3" title="Copy permalink for Item: Zero divisors:">🔗</a></div>
+</dt>
+<dd><div class="para" id="sec-matrices-lin-combs-6-10-2-1-3-2">It is <em class="emphasis">not</em> generally true that <span class="process-math">\(AB = 0\)</span> implies that either <span class="process-math">\(A=0\)</span> or <span class="process-math">\(B=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-10-2-1-3-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div></dd>
 </dl>
-</div></article></section><section class="subsection" id="sec-matrices-lin-combs-7"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-6-10-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Assemblage: Caution"><a href="#sec-matrices-lin-combs-6-10" title="Copy permalink for Assemblage: Caution">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.2.4: Matrix-matrix products"><a href="#sec-matrices-lin-combs-6" title="Copy permalink for Subsection 2.2.4: Matrix-matrix products">🔗</a></div></section><section class="subsection" id="sec-matrices-lin-combs-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="space"> </span><span class="title">Summary</span>
 </h3>
 <div class="para logical" id="sec-matrices-lin-combs-7-2">
 <div class="para">In this section, we have found an especially simple way to express linear systems using matrix multiplication.</div>
 <ul class="disc" id="sec-matrices-lin-combs-7-2-1">
-<li id="sec-matrices-lin-combs-7-2-1-1"><div class="para" id="sec-matrices-lin-combs-7-2-1-1-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(\vec{x}\)</span> an <span class="process-math">\(n\)</span>-dimensional vector, then <span class="process-math">\(A\vec{x}\)</span> is the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\vec{x}\)</span> as weights. The vector <span class="process-math">\(A\vec{x}\)</span> is <span class="process-math">\(m\)</span>-dimensional.</div></li>
-<li id="sec-matrices-lin-combs-7-2-1-2"><div class="para" id="sec-matrices-lin-combs-7-2-1-2-1">The solution space to the equation <span class="process-math">\(A\vec{x} =
-\vec{b}\)</span> is the same as the solution space to the linear system corresponding to the augmented matrix <span class="process-math">\(\left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-7-2-1-3"><div class="para" id="sec-matrices-lin-combs-7-2-1-3-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(B\)</span> is an <span class="process-math">\(n\times p\)</span> matrix, we can form the product <span class="process-math">\(AB\text{,}\)</span> which is an <span class="process-math">\(m\times p\)</span> matrix whose columns are the products of <span class="process-math">\(A\)</span> and the columns of <span class="process-math">\(B\text{.}\)</span>
-</div></li>
+<li id="sec-matrices-lin-combs-7-2-1-1">
+<div class="para" id="sec-matrices-lin-combs-7-2-1-1-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(\vec{x}\)</span> an <span class="process-math">\(n\)</span>-dimensional vector, then <span class="process-math">\(A\vec{x}\)</span> is the linear combination of the columns of <span class="process-math">\(A\)</span> using the components of <span class="process-math">\(\vec{x}\)</span> as weights. The vector <span class="process-math">\(A\vec{x}\)</span> is <span class="process-math">\(m\)</span>-dimensional.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-7-2-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-matrices-lin-combs-7-2-1-1" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-7-2-1-2">
+<div class="para" id="sec-matrices-lin-combs-7-2-1-2-1">The solution space to the equation <span class="process-math">\(A\vec{x} =
+\vec{b}\)</span> is the same as the solution space to the linear system corresponding to the augmented matrix <span class="process-math">\(\left[ \begin{array}{r|r} A \amp \vec{b} \end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-7-2-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-matrices-lin-combs-7-2-1-2" title="Copy permalink for Item">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-7-2-1-3">
+<div class="para" id="sec-matrices-lin-combs-7-2-1-3-1">If <span class="process-math">\(A\)</span> is an <span class="process-math">\(m\times n\)</span> matrix and <span class="process-math">\(B\)</span> is an <span class="process-math">\(n\times p\)</span> matrix, we can form the product <span class="process-math">\(AB\text{,}\)</span> which is an <span class="process-math">\(m\times p\)</span> matrix whose columns are the products of <span class="process-math">\(A\)</span> and the columns of <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-7-2-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-matrices-lin-combs-7-2-1-3" title="Copy permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></section><section class="exercises" id="sec-matrices-lin-combs-8"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-7-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.2.5: Summary"><a href="#sec-matrices-lin-combs-7" title="Copy permalink for Subsection 2.2.5: Summary">🔗</a></div></section><section class="exercises" id="sec-matrices-lin-combs-8"><h3 class="heading hide-type">
 <span class="type">Exercises</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="sec-matrices-lin-combs-8-1"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
@@ -1467,15 +1689,25 @@ x \amp {}+{} \amp 2y \amp {}-{} \amp z \amp {}={} \amp 1 \\
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-1-1-1-2">
-<li id="sec-matrices-lin-combs-8-1-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{b}\)</span> that expresses this linear system in the form <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-1-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-2-1">Give a description of the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span> <div id="sec-matrices-lin-combs-8-1-1-1-2-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-1-1-1-2-1">
+<div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-1-1">Find the matrix <span class="process-math">\(A\)</span> and vector <span class="process-math">\(\vec{b}\)</span> that expresses this linear system in the form <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-1-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.1.a"><a href="#sec-matrices-lin-combs-8-1-1-1-2-1" title="Copy permalink for Item 2.2.6.1.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-1-1-1-2-2">
+<div class="para" id="sec-matrices-lin-combs-8-1-1-1-2-2-1">Give a description of the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span> <div id="sec-matrices-lin-combs-8-1-1-1-2-2-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-1-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.1.b"><a href="#sec-matrices-lin-combs-8-1-1-1-2-2" title="Copy permalink for Item 2.2.6.1.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="sec-matrices-lin-combs-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(135\times2201\)</span> matrix, and that <span class="process-math">\(\vec{x}\)</span> is a vector.  If <span class="process-math">\(A\vec{x}\)</span> is defined, what is the dimension of <span class="process-math">\(\vec{x}\text{?}\)</span> What is the dimension of <span class="process-math">\(A\vec{x}\text{?}\)</span>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.1"><a href="#sec-matrices-lin-combs-8-1" title="Copy permalink for Exercise 2.2.6.1">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-2"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="sec-matrices-lin-combs-8-2-1-1">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(135\times2201\)</span> matrix, and that <span class="process-math">\(\vec{x}\)</span> is a vector.  If <span class="process-math">\(A\vec{x}\)</span> is defined, what is the dimension of <span class="process-math">\(\vec{x}\text{?}\)</span> What is the dimension of <span class="process-math">\(A\vec{x}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.2"><a href="#sec-matrices-lin-combs-8-2" title="Copy permalink for Exercise 2.2.6.2">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-3"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-3-1-1">
 <div class="para">Suppose that <span class="process-math">\(A \)</span> is a <span class="process-math">\(3\times2\)</span> matrix whose columns are <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{;}\)</span>  that is,</div>
 <div class="displaymath process-math">
@@ -1486,11 +1718,18 @@ A = \left[\begin{array}{rr} \vec{v_1} \amp \vec{v_2}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-3-1-1-6">
-<li id="sec-matrices-lin-combs-8-3-1-1-6-1"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-1-1">What is the dimension of the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-3-1-1-6-2"><div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-2-1">What is the product <span class="process-math">\(A\twovec{1}{0}\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>  What is the product <span class="process-math">\(A\twovec{0}{1}\text{?}\)</span> What is the product <span class="process-math">\(A\twovec{2}{3}\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-3-1-1-6-3"><div class="para logical" id="sec-matrices-lin-combs-8-3-1-1-6-3-1">
+<li id="sec-matrices-lin-combs-8-3-1-1-6-1">
+<div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-1-1">What is the dimension of the vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-3-1-1-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.3.a"><a href="#sec-matrices-lin-combs-8-3-1-1-6-1" title="Copy permalink for Item 2.2.6.3.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-3-1-1-6-2">
+<div class="para" id="sec-matrices-lin-combs-8-3-1-1-6-2-1">What is the product <span class="process-math">\(A\twovec{1}{0}\)</span> in terms of <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\text{?}\)</span>  What is the product <span class="process-math">\(A\twovec{0}{1}\text{?}\)</span> What is the product <span class="process-math">\(A\twovec{2}{3}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-3-1-1-6-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.3.b"><a href="#sec-matrices-lin-combs-8-3-1-1-6-2" title="Copy permalink for Item 2.2.6.3.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-3-1-1-6-3">
+<div class="para logical" id="sec-matrices-lin-combs-8-3-1-1-6-3-1">
 <div class="para">If we know that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1501,29 +1740,52 @@ A\twovec{0}{1} =
 </div>
 <div class="para">what is the matrix <span class="process-math">\(A\text{?}\)</span>
 </div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-3-1-1-6-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.3.c"><a href="#sec-matrices-lin-combs-8-3-1-1-6-3" title="Copy permalink for Item 2.2.6.3.c">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-3-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.3"><a href="#sec-matrices-lin-combs-8-3" title="Copy permalink for Exercise 2.2.6.3">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-4"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
 <div class="para" id="sec-matrices-lin-combs-8-4-1-1">Suppose that the matrix <span class="process-math">\(A = \left[\begin{array}{rr}
 \vec{v_1} \amp \vec{v_2}
-\end{array}\right]\)</span> where <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> are shown in <a href="sec-matrices-lin-combs.html#ex-eq-graphical" class="xref" data-knowl="./knowl/xref/ex-eq-graphical.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.9">Figure 2.2.9</a>.</div> <figure class="figure figure-like" id="ex-eq-graphical"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-matrix-cols.svg" role="img" class="contained"></div></div></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Two vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> that form the columns of the matrix <span class="process-math">\(A\text{.}\)</span></figcaption></figure> <div class="para logical" id="sec-matrices-lin-combs-8-4-1-3"><ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-4-1-3-1">
-<li id="sec-matrices-lin-combs-8-4-1-3-1-1"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-1-1">What is the shape of the matrix <span class="process-math">\(A\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-4-1-3-1-2"><div class="para logical" id="sec-matrices-lin-combs-8-4-1-3-1-2-1">
+\end{array}\right]\)</span> where <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> are shown in <a href="sec-matrices-lin-combs.html#ex-eq-graphical" class="xref" data-knowl="./knowl/xref/ex-eq-graphical.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.9">Figure 2.2.9</a>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="ex-eq-graphical"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/ex-matrix-cols.svg" role="img" class="contained"></div></div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Two vectors <span class="process-math">\(\vec{v_1}\)</span> and <span class="process-math">\(\vec{v_2}\)</span> that form the columns of the matrix <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Figure 2.2.9"><a href="#ex-eq-graphical" title="Copy permalink for Figure 2.2.9">🔗</a></div></figcaption></figure> <div class="para logical" id="sec-matrices-lin-combs-8-4-1-3">
+<ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-4-1-3-1">
+<li id="sec-matrices-lin-combs-8-4-1-3-1-1">
+<div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-1-1">What is the shape of the matrix <span class="process-math">\(A\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-3-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.4.a"><a href="#sec-matrices-lin-combs-8-4-1-3-1-1" title="Copy permalink for Item 2.2.6.4.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-4-1-3-1-2">
+<div class="para logical" id="sec-matrices-lin-combs-8-4-1-3-1-2-1">
 <div class="para">On <a href="sec-matrices-lin-combs.html#ex-eq-graphical" class="xref" data-knowl="./knowl/xref/ex-eq-graphical.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.9">Figure 2.2.9</a>, indicate the vectors</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-eq-graphical.html">
 \begin{equation*}
 A\twovec{1}{0}, ~~~A\twovec{2}{3}, ~~~A\twovec{0}{-3}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-4-1-3-1-3"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-3-1">Find all vectors <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-4-1-3-1-4"><div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-4-1">Find all vectors <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} =
-\vec{0}\text{.}\)</span>
-</div></li>
-</ol></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-3-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.4.b"><a href="#sec-matrices-lin-combs-8-4-1-3-1-2" title="Copy permalink for Item 2.2.6.4.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-4-1-3-1-3">
+<div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-3-1">Find all vectors <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x}=\vec{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-3-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.4.c"><a href="#sec-matrices-lin-combs-8-4-1-3-1-3" title="Copy permalink for Item 2.2.6.4.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-4-1-3-1-4">
+<div class="para" id="sec-matrices-lin-combs-8-4-1-3-1-4-1">Find all vectors <span class="process-math">\(\vec{x}\)</span> such that <span class="process-math">\(A\vec{x} =
+\vec{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-3-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.4.d"><a href="#sec-matrices-lin-combs-8-4-1-3-1-4" title="Copy permalink for Item 2.2.6.4.d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-4-1-3" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.4"><a href="#sec-matrices-lin-combs-8-4" title="Copy permalink for Exercise 2.2.6.4">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-5"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-5-1-1">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
@@ -1536,13 +1798,21 @@ A=\left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-5-1-1-2">
-<li id="sec-matrices-lin-combs-8-5-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-1-1">Describe the solution space to the equation <span class="process-math">\(A\vec{x}
-= \vec{0}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-5-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-2-1">Find a <span class="process-math">\(3\times2\)</span> matrix <span class="process-math">\(B\)</span> with no zero entries such that <span class="process-math">\(AB = 0\text{.}\)</span>
-</div></li>
+<li id="sec-matrices-lin-combs-8-5-1-1-2-1">
+<div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-1-1">Describe the solution space to the equation <span class="process-math">\(A\vec{x}
+= \vec{0}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-5-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.5.a"><a href="#sec-matrices-lin-combs-8-5-1-1-2-1" title="Copy permalink for Item 2.2.6.5.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-5-1-1-2-2">
+<div class="para" id="sec-matrices-lin-combs-8-5-1-1-2-2-1">Find a <span class="process-math">\(3\times2\)</span> matrix <span class="process-math">\(B\)</span> with no zero entries such that <span class="process-math">\(AB = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-5-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.5.b"><a href="#sec-matrices-lin-combs-8-5-1-1-2-2" title="Copy permalink for Item 2.2.6.5.b">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.5"><a href="#sec-matrices-lin-combs-8-5" title="Copy permalink for Exercise 2.2.6.5">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-6"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-6-1-1">
 <div class="para">Consider the matrix</div>
 <div class="displaymath process-math">
@@ -1555,15 +1825,20 @@ A=\left[\begin{array}{rrrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-6-1-1-2">
-<li id="sec-matrices-lin-combs-8-6-1-1-2-1"><div class="para logical" id="sec-matrices-lin-combs-8-6-1-1-2-1-1">
+<li id="sec-matrices-lin-combs-8-6-1-1-2-1">
+<div class="para logical" id="sec-matrices-lin-combs-8-6-1-1-2-1-1">
 <div class="para">Find the product <span class="process-math">\(A\vec{x}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \vec{x} = \fourvec{1}{-2}{0}{2}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-2"><div class="para logical" id="sec-matrices-lin-combs-8-6-1-1-2-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.6.a"><a href="#sec-matrices-lin-combs-8-6-1-1-2-1" title="Copy permalink for Item 2.2.6.6.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-2">
+<div class="para logical" id="sec-matrices-lin-combs-8-6-1-1-2-2-1">
 <div class="para">Give a description of the vectors <span class="process-math">\(\vec{x}\)</span> such that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1572,14 +1847,31 @@ A\vec{x} = \threevec{-1}{15}{17}\text{.}
 </div>
 <div class="para"><div id="sec-matrices-lin-combs-8-6-1-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-3"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-3-1">Find the reduced row echelon form of <span class="process-math">\(A\)</span> and identify the pivot positions.</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-4"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-4-1">Can you find a vector <span class="process-math">\(\vec{b}\)</span> such that <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is inconsistent?</div></li>
-<li id="sec-matrices-lin-combs-8-6-1-1-2-5"><div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-5-1">For a general 3-dimensional vector <span class="process-math">\(\vec{b}\text{,}\)</span> what can you say about the solution space of the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.6.b"><a href="#sec-matrices-lin-combs-8-6-1-1-2-2" title="Copy permalink for Item 2.2.6.6.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-3">
+<div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-3-1">Find the reduced row echelon form of <span class="process-math">\(A\)</span> and identify the pivot positions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.6.c"><a href="#sec-matrices-lin-combs-8-6-1-1-2-3" title="Copy permalink for Item 2.2.6.6.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-4">
+<div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-4-1">Can you find a vector <span class="process-math">\(\vec{b}\)</span> such that <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is inconsistent?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.6.d"><a href="#sec-matrices-lin-combs-8-6-1-1-2-4" title="Copy permalink for Item 2.2.6.6.d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-6-1-1-2-5">
+<div class="para" id="sec-matrices-lin-combs-8-6-1-1-2-5-1">For a general 3-dimensional vector <span class="process-math">\(\vec{b}\text{,}\)</span> what can you say about the solution space of the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1-2-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.6.e"><a href="#sec-matrices-lin-combs-8-6-1-1-2-5" title="Copy permalink for Item 2.2.6.6.e">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
-<div class="para" id="sec-matrices-lin-combs-8-7-1-1">The operations that we perform in Gaussian elimination can be accomplished using matrix multiplication.  This observation is the basis of an important technique that we will investigate in a subsequent chapter.</div> <div class="para logical" id="sec-matrices-lin-combs-8-7-1-2">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-6-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.6"><a href="#sec-matrices-lin-combs-8-6" title="Copy permalink for Exercise 2.2.6.6">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-7"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="sec-matrices-lin-combs-8-7-1-1">The operations that we perform in Gaussian elimination can be accomplished using matrix multiplication.  This observation is the basis of an important technique that we will investigate in a subsequent chapter.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div> <div class="para logical" id="sec-matrices-lin-combs-8-7-1-2">
 <div class="para">Let’s consider the matrix</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1591,7 +1883,8 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-7-1-2-2">
-<li id="sec-matrices-lin-combs-8-7-1-2-2-1"><div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-1-1">
+<li id="sec-matrices-lin-combs-8-7-1-2-2-1">
+<div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-1-1">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1603,8 +1896,12 @@ S = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <div class="para">Verify that <span class="process-math">\(SA\)</span> is the matrix that results when the second row of <span class="process-math">\(A\)</span> is scaled by a factor of 7.  What matrix <span class="process-math">\(S\)</span> would scale the third row by -3?</div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-7-1-2-2-2"><div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-2-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.7.a"><a href="#sec-matrices-lin-combs-8-7-1-2-2-1" title="Copy permalink for Item 2.2.6.7.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-7-1-2-2-2">
+<div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-2-1">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1616,8 +1913,12 @@ P = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <div class="para">Verify that <span class="process-math">\(PA\)</span> is the matrix that results from interchanging the first and second rows.  What matrix <span class="process-math">\(P\)</span> would interchange the first and third rows?</div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-7-1-2-2-3"><div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-3-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-2-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.7.b"><a href="#sec-matrices-lin-combs-8-7-1-2-2-2" title="Copy permalink for Item 2.2.6.7.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-7-1-2-2-3">
+<div class="para logical" id="sec-matrices-lin-combs-8-7-1-2-2-3-1">
 <div class="para">Suppose that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1629,12 +1930,21 @@ L_1 = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <div class="para">Verify that <span class="process-math">\(L_1A\)</span> is the matrix that results from multiplying the first row of <span class="process-math">\(A\)</span> by <span class="process-math">\(-2\)</span> and adding it to the second row.  What matrix <span class="process-math">\(L_2\)</span> would multiply the first row by 3 and add it to the third row?</div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-7-1-2-2-4"><div class="para" id="sec-matrices-lin-combs-8-7-1-2-2-4-1">When we performed Gaussian elimination, our first goal was to perform row operations that brought the matrix into a triangular form.  For our matrix <span class="process-math">\(A\text{,}\)</span> find the row operations needed to find a row equivalent matrix <span class="process-math">\(U\)</span> in triangular form.  By expressing these row operations in terms of matrix multiplication, find a matrix <span class="process-math">\(L\)</span> such that <span class="process-math">\(LA = U\text{.}\)</span> <div id="sec-matrices-lin-combs-8-7-1-2-2-4-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-2-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.7.c"><a href="#sec-matrices-lin-combs-8-7-1-2-2-3" title="Copy permalink for Item 2.2.6.7.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-7-1-2-2-4">
+<div class="para" id="sec-matrices-lin-combs-8-7-1-2-2-4-1">When we performed Gaussian elimination, our first goal was to perform row operations that brought the matrix into a triangular form.  For our matrix <span class="process-math">\(A\text{,}\)</span> find the row operations needed to find a row equivalent matrix <span class="process-math">\(U\)</span> in triangular form.  By expressing these row operations in terms of matrix multiplication, find a matrix <span class="process-math">\(L\)</span> such that <span class="process-math">\(LA = U\text{.}\)</span> <div id="sec-matrices-lin-combs-8-7-1-2-2-4-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-2-2-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.7.d"><a href="#sec-matrices-lin-combs-8-7-1-2-2-4" title="Copy permalink for Item 2.2.6.7.d">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-7-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.7"><a href="#sec-matrices-lin-combs-8-7" title="Copy permalink for Exercise 2.2.6.7">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-8"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-8-1-1">
 <div class="para">In this exercise, you will construct the <em class="emphasis">inverse</em> of a matrix, a subject that we will investigate more fully in the next chapter. Suppose that <span class="process-math">\(A\)</span> is the <span class="process-math">\(2\times2\)</span> matrix:</div>
 <div class="displaymath process-math">
@@ -1646,7 +1956,8 @@ A = \left[\begin{array}{rr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-8-1-1-5">
-<li id="sec-matrices-lin-combs-8-8-1-1-5-1"><div class="para logical" id="sec-matrices-lin-combs-8-8-1-1-5-1-1">
+<li id="sec-matrices-lin-combs-8-8-1-1-5-1">
+<div class="para logical" id="sec-matrices-lin-combs-8-8-1-1-5-1-1">
 <div class="para">Find the vectors <span class="process-math">\(\vec{b}_1\)</span> and <span class="process-math">\(\vec{b}_2\)</span> such that the matrix <span class="process-math">\(B=\left[\begin{array}{rr} \vec{b}_1 \amp \vec{b}_2
 \end{array}\right]\)</span> satisfies</div>
 <div class="displaymath process-math">
@@ -1660,12 +1971,22 @@ AB = I =
 </div>
 <div class="para"><div id="sec-matrices-lin-combs-8-8-1-1-5-1-1-5" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-8-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-2-1">In general, it is not true that <span class="process-math">\(AB = BA\text{.}\)</span>  Check that it is true, however, for the specific <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> that appear in this problem. <div id="sec-matrices-lin-combs-8-8-1-1-5-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.8.a"><a href="#sec-matrices-lin-combs-8-8-1-1-5-1" title="Copy permalink for Item 2.2.6.8.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-8-1-1-5-2">
+<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-2-1">In general, it is not true that <span class="process-math">\(AB = BA\text{.}\)</span>  Check that it is true, however, for the specific <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> that appear in this problem. <div id="sec-matrices-lin-combs-8-8-1-1-5-2-1-4" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-8-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-3-1">Suppose that <span class="process-math">\(\vec{x} = \twovec{x_1}{x_2}\text{.}\)</span>  What do you find when you evaluate <span class="process-math">\(I\vec{x}\text{?}\)</span>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.8.b"><a href="#sec-matrices-lin-combs-8-8-1-1-5-2" title="Copy permalink for Item 2.2.6.8.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-8-1-1-5-3">
+<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-3-1">Suppose that <span class="process-math">\(\vec{x} = \twovec{x_1}{x_2}\text{.}\)</span>  What do you find when you evaluate <span class="process-math">\(I\vec{x}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.8.c"><a href="#sec-matrices-lin-combs-8-8-1-1-5-3" title="Copy permalink for Item 2.2.6.8.c">🔗</a></div>
+</li>
 <li id="sec-matrices-lin-combs-8-8-1-1-5-4">
 <div class="para logical" id="sec-matrices-lin-combs-8-8-1-1-5-4-1">
 <div class="para">Suppose that we want to solve the equation <span class="process-math">\(A\vec{x} =
@@ -1683,42 +2004,81 @@ I\vec{x} \amp {}={} B\vec{b} \\
 </div>
 <div class="para">In other words, the solution to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is <span class="process-math">\(\vec{x} = B\vec{b}\text{.}\)</span>
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1-5-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-4-2">Consider the equation <span class="process-math">\(A\vec{x} = \twovec{5}{-2}\text{.}\)</span> Find the solution in two different ways, first using Gaussian elimination and then as <span class="process-math">\(\vec{x} = B\vec{b}\text{,}\)</span> and verify that you have found the same result.</div>
+<div class="para" id="sec-matrices-lin-combs-8-8-1-1-5-4-2">Consider the equation <span class="process-math">\(A\vec{x} = \twovec{5}{-2}\text{.}\)</span> Find the solution in two different ways, first using Gaussian elimination and then as <span class="process-math">\(\vec{x} = B\vec{b}\text{,}\)</span> and verify that you have found the same result.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1-5-4-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
 <div id="sec-matrices-lin-combs-8-8-1-1-5-4-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
+<div class="autopermalink" data-description="Item 2.2.6.8.d"><a href="#sec-matrices-lin-combs-8-8-1-1-5-4" title="Copy permalink for Item 2.2.6.8.d">🔗</a></div>
 </li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-8-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.8"><a href="#sec-matrices-lin-combs-8-8" title="Copy permalink for Exercise 2.2.6.8">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-9"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-9-1-1">
 <div class="para">Determine whether the following statements are true or false and provide a justification for your response.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-9-1-1-1">
-<li id="sec-matrices-lin-combs-8-9-1-1-1-1"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-1-1">If <span class="process-math">\(A\vec{x}\)</span> is defined, then the number of components of <span class="process-math">\(\vec{x}\)</span> equals the number of rows of <span class="process-math">\(A\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-2"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-2-1">The solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is equivalent to the solution space to the linear system whose augmented matrix is <span class="process-math">\(\left[\begin{array}{r|r} A \amp \vec{b}
-\end{array}\right]\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-3"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-3-1">If a linear system of equations has 8 equations and 5 unknowns, then the shape of the matrix <span class="process-math">\(A\)</span> in the corresponding equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(5\times8\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-4-1">If <span class="process-math">\(A\)</span> has a pivot position in every row, then every equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent.</div></li>
-<li id="sec-matrices-lin-combs-8-9-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(9\times5\)</span> matrix, then <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is inconsistent for some vector <span class="process-math">\(\vec{b}\text{.}\)</span>
-</div></li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-1">
+<div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-1-1">If <span class="process-math">\(A\vec{x}\)</span> is defined, then the number of components of <span class="process-math">\(\vec{x}\)</span> equals the number of rows of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.9.a"><a href="#sec-matrices-lin-combs-8-9-1-1-1-1" title="Copy permalink for Item 2.2.6.9.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-2">
+<div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-2-1">The solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is equivalent to the solution space to the linear system whose augmented matrix is <span class="process-math">\(\left[\begin{array}{r|r} A \amp \vec{b}
+\end{array}\right]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.9.b"><a href="#sec-matrices-lin-combs-8-9-1-1-1-2" title="Copy permalink for Item 2.2.6.9.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-3">
+<div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-3-1">If a linear system of equations has 8 equations and 5 unknowns, then the shape of the matrix <span class="process-math">\(A\)</span> in the corresponding equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is <span class="process-math">\(5\times8\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.9.c"><a href="#sec-matrices-lin-combs-8-9-1-1-1-3" title="Copy permalink for Item 2.2.6.9.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-4">
+<div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-4-1">If <span class="process-math">\(A\)</span> has a pivot position in every row, then every equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is consistent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.9.d"><a href="#sec-matrices-lin-combs-8-9-1-1-1-4" title="Copy permalink for Item 2.2.6.9.d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-9-1-1-1-5">
+<div class="para" id="sec-matrices-lin-combs-8-9-1-1-1-5-1">If <span class="process-math">\(A\)</span> is a <span class="process-math">\(9\times5\)</span> matrix, then <span class="process-math">\(A\vec{x}=\vec{b}\)</span> is inconsistent for some vector <span class="process-math">\(\vec{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.9.e"><a href="#sec-matrices-lin-combs-8-9-1-1-1-5" title="Copy permalink for Item 2.2.6.9.e">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-9-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.9"><a href="#sec-matrices-lin-combs-8-9" title="Copy permalink for Exercise 2.2.6.9">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-10"><h4 class="heading"><span class="codenumber">10<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-10-1-1">
 <div class="para">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(4\times4\)</span> matrix and that the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> has a unique solution for some vector <span class="process-math">\(\vec{b}\text{.}\)</span>
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-10-1-1-5">
-<li id="sec-matrices-lin-combs-8-10-1-1-5-1"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-1-1">What does this say about the pivot positions of the matrix <span class="process-math">\(A\text{?}\)</span>  Write the reduced row echelon form of <span class="process-math">\(A\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-10-1-1-5-2"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-2-1">Can you find another vector <span class="process-math">\(\vec{c}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{c}\)</span> is inconsistent?</div></li>
-<li id="sec-matrices-lin-combs-8-10-1-1-5-3"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-3-1">What can you say about the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{0}\text{?}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-10-1-1-5-4"><div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-4-1">Suppose <span class="process-math">\(A=\left[\begin{array}{rrrr}
+<li id="sec-matrices-lin-combs-8-10-1-1-5-1">
+<div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-1-1">What does this say about the pivot positions of the matrix <span class="process-math">\(A\text{?}\)</span>  Write the reduced row echelon form of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-10-1-1-5-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.10.a"><a href="#sec-matrices-lin-combs-8-10-1-1-5-1" title="Copy permalink for Item 2.2.6.10.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-10-1-1-5-2">
+<div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-2-1">Can you find another vector <span class="process-math">\(\vec{c}\)</span> such that <span class="process-math">\(A\vec{x} = \vec{c}\)</span> is inconsistent?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-10-1-1-5-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.10.b"><a href="#sec-matrices-lin-combs-8-10-1-1-5-2" title="Copy permalink for Item 2.2.6.10.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-10-1-1-5-3">
+<div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-3-1">What can you say about the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{0}\text{?}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-10-1-1-5-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.10.c"><a href="#sec-matrices-lin-combs-8-10-1-1-5-3" title="Copy permalink for Item 2.2.6.10.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-10-1-1-5-4">
+<div class="para" id="sec-matrices-lin-combs-8-10-1-1-5-4-1">Suppose <span class="process-math">\(A=\left[\begin{array}{rrrr}
 \vec{v_1} \amp \vec{v_2} \amp \vec{v_3} \amp \vec{v_4}
-\end{array}\right]\text{.}\)</span>  Explain why every four-dimensional vector can be written as a linear combination of the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> in exactly one way.</div></li>
+\end{array}\right]\text{.}\)</span>  Explain why every four-dimensional vector can be written as a linear combination of the vectors <span class="process-math">\(\vec{v_1}\text{,}\)</span> <span class="process-math">\(\vec{v_2}\text{,}\)</span> <span class="process-math">\(\vec{v_3}\text{,}\)</span> and <span class="process-math">\(\vec{v_4}\)</span> in exactly one way.<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-10-1-1-5-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.10.d"><a href="#sec-matrices-lin-combs-8-10-1-1-5-4" title="Copy permalink for Item 2.2.6.10.d">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-10-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.10"><a href="#sec-matrices-lin-combs-8-10" title="Copy permalink for Exercise 2.2.6.10">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-11"><h4 class="heading"><span class="codenumber">11<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-11-1-1">
 <div class="para">Define the matrix</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-mult-prop.html">
@@ -1731,25 +2091,36 @@ A = \left[\begin{array}{rrr}
 \end{equation*}
 </div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-11-1-1-2">
-<li id="sec-matrices-lin-combs-8-11-1-1-2-1"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-1-1">Describe the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> using a parametric description, if appropriate.  What does this solution space represent geometrically? <div id="sec-matrices-lin-combs-8-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<li id="sec-matrices-lin-combs-8-11-1-1-2-1">
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-1-1">Describe the solution space to the homogeneous equation <span class="process-math">\(A\vec{x} = \vec{0}\)</span> using a parametric description, if appropriate.  What does this solution space represent geometrically? <div id="sec-matrices-lin-combs-8-11-1-1-2-1-1-2" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-11-1-1-2-2"><div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-2-1">Describe the solution space to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> where <span class="process-math">\(\vec{b} = \threevec{-3}{-4}{1}\text{.}\)</span> What does this solution space represent geometrically and how does it compare to the previous solution space? <div id="sec-matrices-lin-combs-8-11-1-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1-2-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.11.a"><a href="#sec-matrices-lin-combs-8-11-1-1-2-1" title="Copy permalink for Item 2.2.6.11.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-11-1-1-2-2">
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-2-1">Describe the solution space to the equation <span class="process-math">\(A\vec{x}=\vec{b}\)</span> where <span class="process-math">\(\vec{b} = \threevec{-3}{-4}{1}\text{.}\)</span> What does this solution space represent geometrically and how does it compare to the previous solution space? <div id="sec-matrices-lin-combs-8-11-1-1-2-2-1-3" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
-</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1-2-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.11.b"><a href="#sec-matrices-lin-combs-8-11-1-1-2-2" title="Copy permalink for Item 2.2.6.11.b">🔗</a></div>
+</li>
 <li id="sec-matrices-lin-combs-8-11-1-1-2-3">
 <div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-1">We will now explain the relationship between the previous two solution spaces.  Suppose that <span class="process-math">\(\vec{x_h}\)</span> is a solution to the homogeneous equation;  that is <span class="process-math">\(A\vec{x_h}=\vec{0}\text{.}\)</span>  Suppose also that <span class="process-math">\(\vec{x_p}\)</span> is a solution to the equation <span class="process-math">\(A\vec{x} =
-\vec{b}\text{;}\)</span>  that is, <span class="process-math">\(A\vec{x_p}=\vec{b}\text{.}\)</span>
+\vec{b}\text{;}\)</span>  that is, <span class="process-math">\(A\vec{x_p}=\vec{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1-2-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-2">Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why <span class="process-math">\(\vec{x_h}+\vec{x_p}\)</span> is a solution to the equation <span class="process-math">\(A\vec{x}
-= \vec{b}\text{.}\)</span>  You may do this by evaluating <span class="process-math">\(A(\vec{x_h}+\vec{x_p})\text{.}\)</span>
+= \vec{b}\text{.}\)</span>  You may do this by evaluating <span class="process-math">\(A(\vec{x_h}+\vec{x_p})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1-2-3-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-3">That is, if we find one solution <span class="process-math">\(\vec{x_p}\)</span> to an equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we may add any solution to the homogeneous equation to <span class="process-math">\(\vec{x_p}\)</span> and still have a solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  In other words, the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is given by translating the solution space to the homogeneous equation by the vector <span class="process-math">\(\vec{x_p}\text{.}\)</span>
+<div class="para" id="sec-matrices-lin-combs-8-11-1-1-2-3-3">That is, if we find one solution <span class="process-math">\(\vec{x_p}\)</span> to an equation <span class="process-math">\(A\vec{x} = \vec{b}\text{,}\)</span> we may add any solution to the homogeneous equation to <span class="process-math">\(\vec{x_p}\)</span> and still have a solution to the equation <span class="process-math">\(A\vec{x} = \vec{b}\text{.}\)</span>  In other words, the solution space to the equation <span class="process-math">\(A\vec{x} = \vec{b}\)</span> is given by translating the solution space to the homogeneous equation by the vector <span class="process-math">\(\vec{x_p}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1-2-3-3" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item 2.2.6.11.c"><a href="#sec-matrices-lin-combs-8-11-1-1-2-3" title="Copy permalink for Item 2.2.6.11.c">🔗</a></div>
 </li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
-<div class="para" id="sec-matrices-lin-combs-8-12-1-1">Suppose that a city is starting a bicycle sharing program with bicycles at locations <span class="process-math">\(B\)</span> and <span class="process-math">\(C\text{.}\)</span>  Bicycles that are rented at one location may be returned to either location at the end of the day.  Over time, the city finds that 80% of bicycles rented at location <span class="process-math">\(B\)</span> are returned to <span class="process-math">\(B\)</span> with the other 20% returned to <span class="process-math">\(C\text{.}\)</span>  Similarly, 50% of bicycles rented at location <span class="process-math">\(C\)</span> are returned to <span class="process-math">\(B\)</span> and 50% to <span class="process-math">\(C\text{.}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.11"><a href="#sec-matrices-lin-combs-8-11" title="Copy permalink for Exercise 2.2.6.11">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-12"><h4 class="heading"><span class="codenumber">12<span class="period">.</span></span></h4>
+<div class="para" id="sec-matrices-lin-combs-8-12-1-1">Suppose that a city is starting a bicycle sharing program with bicycles at locations <span class="process-math">\(B\)</span> and <span class="process-math">\(C\text{.}\)</span>  Bicycles that are rented at one location may be returned to either location at the end of the day.  Over time, the city finds that 80% of bicycles rented at location <span class="process-math">\(B\)</span> are returned to <span class="process-math">\(B\)</span> with the other 20% returned to <span class="process-math">\(C\text{.}\)</span>  Similarly, 50% of bicycles rented at location <span class="process-math">\(C\)</span> are returned to <span class="process-math">\(B\)</span> and 50% to <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="sec-matrices-lin-combs-8-12-1-2">
 <div class="para">To keep track of the bicycles, we form a vector</div>
 <div class="displaymath process-math">
@@ -1784,23 +2155,44 @@ A = \left[\begin{array}{rr}
 <div class="para"><div id="sec-matrices-lin-combs-8-12-1-2-10" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div></div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-12-1-2-11">
-<li id="sec-matrices-lin-combs-8-12-1-2-11-1"><div class="para logical" id="sec-matrices-lin-combs-8-12-1-2-11-1-1">
+<li id="sec-matrices-lin-combs-8-12-1-2-11-1">
+<div class="para logical" id="sec-matrices-lin-combs-8-12-1-2-11-1-1">
 <div class="para">Let’s check that this makes sense.</div>
 <ol class="decimal ol-marker-2" id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1">
-<li id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1"><div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1-1">Suppose that there are 1000 bicycles at location <span class="process-math">\(B\)</span> and none at <span class="process-math">\(C\)</span> on day 1.  This means we have <span class="process-math">\(\vec{x_1} = \twovec{1000}{0}\text{.}\)</span>  Find the number of bicycles at both locations on day 2 by evaluating <span class="process-math">\(\vec{x_2} = A\vec{x_1}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2"><div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2-1">Suppose that there are 1000 bicycles at location <span class="process-math">\(C\)</span> and none at <span class="process-math">\(B\)</span> on day 1.  Form the vector <span class="process-math">\(\vec{x_1}\)</span> and determine the number of bicycles at the two locations the next day by finding <span class="process-math">\(\vec{x_2} = A\vec{x_1}\text{.}\)</span>
-</div></li>
+<li id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1">
+<div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1-1">Suppose that there are 1000 bicycles at location <span class="process-math">\(B\)</span> and none at <span class="process-math">\(C\)</span> on day 1.  This means we have <span class="process-math">\(\vec{x_1} = \twovec{1000}{0}\text{.}\)</span>  Find the number of bicycles at both locations on day 2 by evaluating <span class="process-math">\(\vec{x_2} = A\vec{x_1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.12.a.1"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1-1-1-1" title="Copy permalink for Item 2.2.6.12.a.1">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2">
+<div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2-1">Suppose that there are 1000 bicycles at location <span class="process-math">\(C\)</span> and none at <span class="process-math">\(B\)</span> on day 1.  Form the vector <span class="process-math">\(\vec{x_1}\)</span> and determine the number of bicycles at the two locations the next day by finding <span class="process-math">\(\vec{x_2} = A\vec{x_1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.12.a.2"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1-1-1-2" title="Copy permalink for Item 2.2.6.12.a.2">🔗</a></div>
+</li>
 </ol>
-</div></li>
-<li id="sec-matrices-lin-combs-8-12-1-2-11-2"><div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-2-1">Suppose that one day there are 1050 bicycles at location <span class="process-math">\(B\)</span> and 450 at location <span class="process-math">\(C\text{.}\)</span>  How many bicycles were there at each location the previous day?</div></li>
-<li id="sec-matrices-lin-combs-8-12-1-2-11-3"><div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-3-1">Suppose that there are 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\)</span> on Monday.  How many bicycles are there at the two locations on Tuesday?  on Wednesday? on Thursday?</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.12.a"><a href="#sec-matrices-lin-combs-8-12-1-2-11-1" title="Copy permalink for Item 2.2.6.12.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-12-1-2-11-2">
+<div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-2-1">Suppose that one day there are 1050 bicycles at location <span class="process-math">\(B\)</span> and 450 at location <span class="process-math">\(C\text{.}\)</span>  How many bicycles were there at each location the previous day?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2-11-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.12.b"><a href="#sec-matrices-lin-combs-8-12-1-2-11-2" title="Copy permalink for Item 2.2.6.12.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-12-1-2-11-3">
+<div class="para" id="sec-matrices-lin-combs-8-12-1-2-11-3-1">Suppose that there are 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\)</span> on Monday.  How many bicycles are there at the two locations on Tuesday?  on Wednesday? on Thursday?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2-11-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.12.c"><a href="#sec-matrices-lin-combs-8-12-1-2-11-3" title="Copy permalink for Item 2.2.6.12.c">🔗</a></div>
+</li>
 </ol>
-</div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-12-1-2" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.12"><a href="#sec-matrices-lin-combs-8-12" title="Copy permalink for Exercise 2.2.6.12">🔗</a></div></article><article class="exercise exercise-like" id="sec-matrices-lin-combs-8-13"><h4 class="heading"><span class="codenumber">13<span class="period">.</span></span></h4>
 <div class="para logical" id="sec-matrices-lin-combs-8-13-1-1">
 <div class="para">This problem is a continuation of the previous problem.</div>
 <ol class="lower-alpha ol-marker-1" id="sec-matrices-lin-combs-8-13-1-1-1">
-<li id="sec-matrices-lin-combs-8-13-1-1-1-1"><div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-1-1">
+<li id="sec-matrices-lin-combs-8-13-1-1-1-1">
+<div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-1-1">
 <div class="para">Let us define vectors</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1814,16 +2206,24 @@ A = \left[\begin{array}{rr}
 A\vec{v_1} = \vec{v_1}, ~~~A\vec{v_2} = 0.3\vec{v_2}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-2"><div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-2-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.a"><a href="#sec-matrices-lin-combs-8-13-1-1-1-1" title="Copy permalink for Item 2.2.6.13.a">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-2">
+<div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-2-1">
 <div class="para">Suppose that <span class="process-math">\(\vec{x_1} = c_1 \vec{v_1} + c_2 \vec{v_2}\)</span> where <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> are scalars.  Use the Linearity Principle expressed in <a href="sec-matrices-lin-combs.html#prop-matrix-mult-prop" class="xref" data-knowl="./knowl/xref/prop-matrix-mult-prop.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 2.2.3: Linearity of matrix multiplication">Proposition 2.2.3</a> to explain why</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/prop-matrix-mult-prop.html">
 \begin{equation*}
 \vec{x_2} = A\vec{x_1} = c_1\vec{v_1} + 0.3c_2\vec{v_2}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-3"><div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-3-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-2-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.b"><a href="#sec-matrices-lin-combs-8-13-1-1-1-2" title="Copy permalink for Item 2.2.6.13.b">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-3">
+<div class="para logical" id="sec-matrices-lin-combs-8-13-1-1-1-3-1">
 <div class="para">Continuing in this way, explain why</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -1834,20 +2234,35 @@ A\vec{v_1} = \vec{v_1}, ~~~A\vec{v_2} = 0.3\vec{v_2}\text{.}
 \end{aligned}\text{.}
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-4"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-4-1">Suppose that there are initially 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\text{.}\)</span>  Write the vector <span class="process-math">\(\vec{x_1}\)</span> and find the scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> such that <span class="process-math">\(\vec{x_1}=c_1\vec{v_1} + c_2\vec{v_2}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-5"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-5-1">Use the previous part of this problem to determine <span class="process-math">\(\vec{x_2}\text{,}\)</span> <span class="process-math">\(\vec{x_3}\)</span> and <span class="process-math">\(\vec{x_4}\text{.}\)</span>
-</div></li>
-<li id="sec-matrices-lin-combs-8-13-1-1-1-6"><div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-6-1">After a very long time, how are all the bicycles distributed?</div></li>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-3-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.c"><a href="#sec-matrices-lin-combs-8-13-1-1-1-3" title="Copy permalink for Item 2.2.6.13.c">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-4">
+<div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-4-1">Suppose that there are initially 500 bicycles at location <span class="process-math">\(B\)</span> and 500 at location <span class="process-math">\(C\text{.}\)</span>  Write the vector <span class="process-math">\(\vec{x_1}\)</span> and find the scalars <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2\)</span> such that <span class="process-math">\(\vec{x_1}=c_1\vec{v_1} + c_2\vec{v_2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-4-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.d"><a href="#sec-matrices-lin-combs-8-13-1-1-1-4" title="Copy permalink for Item 2.2.6.13.d">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-5">
+<div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-5-1">Use the previous part of this problem to determine <span class="process-math">\(\vec{x_2}\text{,}\)</span> <span class="process-math">\(\vec{x_3}\)</span> and <span class="process-math">\(\vec{x_4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-5-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.e"><a href="#sec-matrices-lin-combs-8-13-1-1-1-5" title="Copy permalink for Item 2.2.6.13.e">🔗</a></div>
+</li>
+<li id="sec-matrices-lin-combs-8-13-1-1-1-6">
+<div class="para" id="sec-matrices-lin-combs-8-13-1-1-1-6-1">After a very long time, how are all the bicycles distributed?<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1-1-6-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.6.13.f"><a href="#sec-matrices-lin-combs-8-13-1-1-1-6" title="Copy permalink for Item 2.2.6.13.f">🔗</a></div>
+</li>
 </ol>
-</div></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="sec-vectors-lin-combs.html" title="Previous"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-span.html" title="Next"><span class="name">Next</span><span xmlns:xlink="http://www.w3.org/1999/xlink" class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-matrices-lin-combs-8-13-1-1" title="Copy permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.6.13"><a href="#sec-matrices-lin-combs-8-13" title="Copy permalink for Exercise 2.2.6.13">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.2.6"><a href="#sec-matrices-lin-combs-8" title="Copy permalink for Exercises 2.2.6">🔗</a></div></section><div class="autopermalink" data-description="Section 2.2: Matrix multiplication and linear combinations"><a href="#sec-matrices-lin-combs" title="Copy permalink for Section 2.2: Matrix multiplication and linear combinations">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-vectors-lin-combs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-span.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
-<a xmlns:xlink="http://www.w3.org/1999/xlink" class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a xmlns:xlink="http://www.w3.org/1999/xlink" class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
 </div>
 </body>
 </html>

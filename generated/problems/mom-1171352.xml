@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="1171352">
+<statement>
+<p>
+Find the reduced row echelon form (RREF) of the given matrix using row operations.</p>
+<p>
+<m>\displaystyle{\left[\begin{array}{ccccc} -{2}\amp{0}\amp{2}\amp{0}\amp{2}\\{0}\amp{4}\amp-{20}\amp-{4}\amp-{28}\\{0}\amp{3}\amp-{15}\amp{0}\amp-{12}\end{array}\right]}</m></p>
+<p>
+<fillin characters="20"/>   </p>
+</statement>
+<answer>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{ccccc} {1}\amp{0}\amp-{1}\amp{0}\amp-{1}\\{0}\amp{1}\amp-{5}\amp{0}\amp-{4}\\{0}\amp{0}\amp{0}\amp{1}\amp{3}\end{array}\right]}</m></li></ul></p>
+</answer>
+
+</myopenmath>

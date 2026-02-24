@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="1533917">
+<statement>
+<p>
+Write the augmented matrix for the system of equations.</p>
+<p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccc} {9}{r}\amp-\amp{4}{s}\amp=\amp{100}\\-{8}{r}\amp+\amp{4}{s}\amp=\amp{150}\\-{9}{r}\amp-\amp{3}{s}\amp=\amp{200}\end{array}\right.}</m></p>
+<p>
+<fillin characters="20"/>   </p>
+</statement>
+<answer>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{ccc} {9}\amp-{4}\amp{100}\\-{8}\amp{4}\amp{150}\\-{9}\amp-{3}\amp{200}\end{array}\right]}</m></li></ul></p>
+</answer>
+
+</myopenmath>
