@@ -4,7 +4,7 @@
 <p>
 Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {9}{x}\amp-\amp{45}{y}\amp+\amp{72}{z}\amp=\amp-{18}\\{8}{x}\amp-\amp{40}{y}\amp+\amp{64}{z}\amp=\amp-{16}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} -{7}{x}\amp-\amp{7}{y}\amp-\amp{63}{z}\amp=\amp-{7}\\-{x}\amp-\amp{y}\amp-\amp{9}{z}\amp=\amp-{1}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>  
 </p>
@@ -17,7 +17,7 @@ z = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle-{2}+{5}{y}-{8}{z}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{1}-{1}{y}-{9}{z}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
 </answer>
 
 </myopenmath>

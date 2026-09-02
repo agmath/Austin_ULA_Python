@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<myopenmath xmlns:pi="http://pretextbook.org/2020/pretext/internal" id="641570">
+<statement>
+<p>
+Below are augmented matrices (in reduced row echelon form) corresponding to systems of linear equations. If possible, determine if each system is consistent or inconsistent.</p>
+<p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{9}\amp-{7}\\{0}\amp{1}\amp{2}\amp-{5}\\{0}\amp{0}\amp{0}\amp{0}\end{array}\right]}</m> </p>
+<p><ol style="list-style-type:upper-alpha"><li>consistent</li> 
+<li>inconsistent</li> 
+<li>impossible to determine</li> 
+</ol></p>
+<p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{0}\amp{0}\\{0}\amp{1}\amp{0}\amp{0}\\{0}\amp{0}\amp{1}\amp{0}\end{array}\right]}</m> </p>
+<p><ol style="list-style-type:upper-alpha"><li>consistent</li> 
+<li>inconsistent</li> 
+<li>impossible to determine</li> 
+</ol></p>
+<p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{9}\amp{2}\\{0}\amp{1}\amp{7}\amp-{7}\\{0}\amp{0}\amp{0}\amp-{5}\end{array}\right]}</m> </p>
+<p><ol style="list-style-type:upper-alpha"><li>consistent</li> 
+<li>inconsistent</li> 
+<li>impossible to determine</li> 
+</ol></p>
+<p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{0}\amp{9}\\{0}\amp{1}\amp{0}\amp{7}\\{0}\amp{0}\amp{1}\amp-{7}\end{array}\right]}</m> </p>
+<p><ol style="list-style-type:upper-alpha"><li>consistent</li> 
+<li>inconsistent</li> 
+<li>impossible to determine</li> 
+</ol></p>
+
+
+</statement>
+<answer>
+<p><ul><li>A: consistent</li><li>A: consistent</li><li>B: inconsistent</li><li>A: consistent</li></ul></p>
+</answer>
+
+</myopenmath>

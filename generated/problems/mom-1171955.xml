@@ -4,7 +4,7 @@
 <p>
 Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {9}{x}\amp-\amp{81}{y}\amp-\amp{36}{z}\amp=\amp{9}\\-{9}{x}\amp+\amp{81}{y}\amp+\amp{36}{z}\amp=\amp-{9}\\{4}{x}\amp-\amp{36}{y}\amp-\amp{16}{z}\amp=\amp{4}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} -{9}{x}\amp-\amp{36}{y}\amp+\amp{9}{z}\amp=\amp{54}\\-{x}\amp-\amp{4}{y}\amp+\amp{z}\amp=\amp{6}\\{x}\amp+\amp{4}{y}\amp-\amp{z}\amp=\amp-{6}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>  
 </p>
@@ -17,7 +17,7 @@ z = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{1}+{9}{y}+{4}{z}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
+<p><ul><li><m>\displaystyle-{6}-{4}{y}+{1}{z}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
 </answer>
 
 </myopenmath>

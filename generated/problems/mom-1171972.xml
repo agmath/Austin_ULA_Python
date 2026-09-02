@@ -4,7 +4,7 @@
 <p>
 Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccccccc} {7}{x}\amp-\amp{56}{y}\amp-\amp{9}{z}\amp-\amp{2}{w}\amp-\amp{39}{v}\amp=\amp-{66}\\{5}{x}\amp-\amp{40}{y}\amp-\amp{2}{z}\amp-\amp{28}{w}\amp-\amp{19}{v}\amp=\amp-{25}\\{7}{x}\amp-\amp{56}{y}\amp-\amp{5}{z}\amp-\amp{26}{w}\amp-\amp{31}{v}\amp=\amp-{46}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccccc} -{3}{x}\amp-\amp{9}{y}\amp+\amp{5}{z}\amp-\amp{34}{w}\amp+\amp{25}{v}\amp=\amp-{60}\\-{4}{x}\amp-\amp{12}{y}\amp-\amp{5}{z}\amp-\amp{22}{w}\amp-\amp{60}{v}\amp=\amp{25}\\-{6}{x}\amp-\amp{18}{y}\amp+\amp{6}{z}\amp-\amp{60}{w}\amp+\amp{18}{v}\amp=\amp-{84}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>  
 </p>
@@ -23,7 +23,7 @@ v = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle-{3}+{8}{y}+{8}{w}+{3}{v}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle{5}+{6}{w}-{2}{v}</m></li><li><m>\displaystyle{w}</m></li><li><m>\displaystyle{v}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{5}-{3}{y}-{8}{w}-{5}{v}</m></li><li><m>\displaystyle{y}</m></li><li><m>\displaystyle-{9}+{2}{w}-{8}{v}</m></li><li><m>\displaystyle{w}</m></li><li><m>\displaystyle{v}</m></li></ul></p>
 </answer>
 
 </myopenmath>

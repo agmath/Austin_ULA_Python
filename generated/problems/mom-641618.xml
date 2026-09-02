@@ -4,7 +4,13 @@
 <p>
 Determine which matrices are in reduced row echelon form, which others are only in row echelon form, and which are not in row echelon form.</p>
 <p>
-<m>\displaystyle{\left[\begin{array}{ccccc} {1}\amp{1}\amp{0}\amp{1}\amp{1}\\{0}\amp{2}\amp{0}\amp{2}\amp{2}\\{0}\amp{0}\amp{0}\amp{3}\amp{3}\\{0}\amp{0}\amp{0}\amp{0}\amp{8}\end{array}\right]}</m> </p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{1}\amp{0}\\{0}\amp{1}\amp{1}\amp{0}\\{0}\amp{0}\amp{0}\amp{1}\end{array}\right]}</m> </p>
+<p><ol style="list-style-type:upper-alpha"><li>row echelon form</li> 
+<li>reduced row echelon form</li> 
+<li>not in row echelon form</li> 
+</ol></p>
+<p>
+<m>\displaystyle{\left[\begin{array}{ccccc} {1}\amp{1}\amp{0}\amp{1}\amp{1}\\{0}\amp{6}\amp{0}\amp{6}\amp{6}\\{0}\amp{0}\amp{0}\amp{2}\amp{2}\\{0}\amp{0}\amp{0}\amp{0}\amp{7}\end{array}\right]}</m> </p>
 <p><ol style="list-style-type:upper-alpha"><li>row echelon form</li> 
 <li>reduced row echelon form</li> 
 <li>not in row echelon form</li> 
@@ -15,16 +21,10 @@ Determine which matrices are in reduced row echelon form, which others are only 
 <li>reduced row echelon form</li> 
 <li>not in row echelon form</li> 
 </ol></p>
-<p>
-<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{1}\amp{0}\\{0}\amp{1}\amp{1}\amp{0}\\{0}\amp{0}\amp{0}\amp{1}\end{array}\right]}</m> </p>
-<p><ol style="list-style-type:upper-alpha"><li>row echelon form</li> 
-<li>reduced row echelon form</li> 
-<li>not in row echelon form</li> 
-</ol></p>
 
 </statement>
 <answer>
-<p><ul><li>C: not in row echelon form</li><li>B: reduced row echelon form</li><li>B: reduced row echelon form</li></ul></p>
+<p><ul><li>B: reduced row echelon form</li><li>C: not in row echelon form</li><li>B: reduced row echelon form</li></ul></p>
 </answer>
 
 </myopenmath>

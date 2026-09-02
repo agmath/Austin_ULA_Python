@@ -32,7 +32,7 @@ sagecell.makeSagecell({
 </head>
 <body class="ignore-math">
 <article class="exercise exercise-like"><h4 class="heading">
-<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">9<span class="period">.</span></span>
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">10<span class="period">.</span></span>
 </h4>
 <div class="para">In a previous math class, you have probably seen the fact that, if we are given two points in the plane, then there is a unique line passing through both of them.  In this problem, we will begin with the four points on the left below and ask to find a polynomial that passes through these four points as shown on the right. <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
 <div class="sbspanel top" style="width:47.3684210526316%;"><img src="external/images/interpolation-0.svg" role="img" class="contained"></div>
@@ -58,14 +58,14 @@ p(3) = a + 3b + 9c + 27d = 1\text{.}
 <li>
 <div class="para">Write the four linear equations for the coefficients obtained by requiring that the graph of the polynomial <span class="process-math">\(p(x)\)</span> passes through the four points above.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-1-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.a"><a href="#exercise-poly-fit-1-2-12-1" title="Copy permalink for Item 1.4.4.9.a">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.a"><a href="#exercise-poly-fit-1-2-12-1" title="Copy permalink for Item 1.4.4.10.a">🔗</a></div>
 </li>
 <li>
 <div class="para">Write the augmented matrix corresponding to this system of equations and use the Python cell below to solve for the coefficients. <div id="exercise-poly-fit-1-2-12-2-1-1" class="ptx-sagecell sagecell-python"><script type="text/x-sage">
 </script></div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-2-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.b"><a href="#exercise-poly-fit-1-2-12-2" title="Copy permalink for Item 1.4.4.9.b">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.b"><a href="#exercise-poly-fit-1-2-12-2" title="Copy permalink for Item 1.4.4.10.b">🔗</a></div>
 </li>
 <li>
 <div class="para">Write the polynomial <span class="process-math">\(p(x)\)</span> that you found and check your work by graphing it in the Python cell below and verifying that it passes through the four points. Partial plotting code is provided to you -- you’ll just want to change the <code class="code-inline tex2jax_ignore">return</code> statement at the end of the definition of <code class="code-inline tex2jax_ignore">p(x)</code> to match the polynomial you discovered rather than <code class="code-inline tex2jax_ignore">x**2 + 1</code> (the polynomial <span class="process-math">\(x^2 + 1\)</span>). <div id="exercise-poly-fit-1-2-12-3-1-6" class="ptx-sagecell sagecell-python"><script type="text/x-sage">import numpy as np
@@ -90,7 +90,7 @@ plt.show()
 </script></div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-3-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.c"><a href="#exercise-poly-fit-1-2-12-3" title="Copy permalink for Item 1.4.4.9.c">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.c"><a href="#exercise-poly-fit-1-2-12-3" title="Copy permalink for Item 1.4.4.10.c">🔗</a></div>
 </li>
 <li>
 <div class="para logical">
@@ -105,7 +105,7 @@ p(x) = a + bx + cx^2\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-4-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.d"><a href="#exercise-poly-fit-1-2-12-4" title="Copy permalink for Item 1.4.4.9.d">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.d"><a href="#exercise-poly-fit-1-2-12-4" title="Copy permalink for Item 1.4.4.10.d">🔗</a></div>
 </li>
 <li>
 <div class="para logical">
@@ -120,16 +120,16 @@ p(x) = a + bx + cx^2 + dx^3 + ex^4\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-5-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.e"><a href="#exercise-poly-fit-1-2-12-5" title="Copy permalink for Item 1.4.4.9.e">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.e"><a href="#exercise-poly-fit-1-2-12-5" title="Copy permalink for Item 1.4.4.10.e">🔗</a></div>
 </li>
 <li>
 <div class="para">Suppose you had 10 points and you wanted to find a polynomial passing through each of them.  What should the degree of the polynomial be to guarantee that there is exactly one such polynomial?  Explain your response.<div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2-12-6-1" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1.4.4.9.f"><a href="#exercise-poly-fit-1-2-12-6" title="Copy permalink for Item 1.4.4.9.f">🔗</a></div>
+<div class="autopermalink" data-description="Item 1.4.4.10.f"><a href="#exercise-poly-fit-1-2-12-6" title="Copy permalink for Item 1.4.4.10.f">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#exercise-poly-fit-1-2" title="Copy permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 1.4.4.9"><a href="#exercise-poly-fit" title="Copy permalink for Exercise 1.4.4.9">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-pivots.html#exercise-poly-fit">in-context</a></span>
+<div class="autopermalink" data-description="Exercise 1.4.4.10"><a href="#exercise-poly-fit" title="Copy permalink for Exercise 1.4.4.10">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-pivots.html#exercise-poly-fit">in-context</a></span>
 </body>
 </html>

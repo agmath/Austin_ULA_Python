@@ -4,7 +4,7 @@
 <p>
 Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccccc} {9}{x}\amp+\amp{8}{y}\amp-\amp{5}{z}\amp-\amp{67}{w}\amp=\amp{43}\\-{4}{x}\amp-\amp{2}{y}\amp+\amp{2}{z}\amp+\amp{20}{w}\amp=\amp-{28}\\{6}{x}\amp+\amp{5}{y}\amp-\amp{6}{z}\amp-\amp{67}{w}\amp=\amp{55}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccc} {3}{x}\amp-\amp{y}\amp-\amp{5}{z}\amp+\amp{26}{w}\amp=\amp-{57}\\-{7}{x}\amp-\amp{9}{y}\amp-\amp{8}{z}\amp+\amp{120}{w}\amp=\amp-{81}\\-{3}{x}\amp-\amp{4}{y}\amp-\amp{6}{z}\amp+\amp{63}{w}\amp=\amp-{56}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>  
 </p>
@@ -20,7 +20,7 @@ w = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{6}-{2}{w}</m></li><li><m>\displaystyle-{7}+{5}{w}</m></li><li><m>\displaystyle-{9}-{9}{w}</m></li><li><m>\displaystyle{w}</m></li></ul></p>
+<p><ul><li><m>\displaystyle-{4}+{1}{w}</m></li><li><m>\displaystyle{5}+{9}{w}</m></li><li><m>\displaystyle{8}+{4}{w}</m></li><li><m>\displaystyle{w}</m></li></ul></p>
 </answer>
 
 </myopenmath>

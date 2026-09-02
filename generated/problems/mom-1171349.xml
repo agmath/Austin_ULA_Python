@@ -4,12 +4,12 @@
 <p>
 Find the reduced row echelon form (RREF) of the given matrix using row operations.</p>
 <p>
-<m>\displaystyle{\left[\begin{array}{cccc} -{8}\amp{0}\amp{40}\amp{8}\\{0}\amp-{4}\amp-{8}\amp-{8}\\{3}\amp{0}\amp-{15}\amp-{3}\end{array}\right]}</m></p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{3}\amp-{5}\\{16}\amp{0}\amp{48}\amp-{80}\\{0}\amp-{2}\amp{8}\amp-{8}\end{array}\right]}</m></p>
 <p>
 <fillin characters="20"/>   </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp-{5}\amp-{1}\\{0}\amp{1}\amp{2}\amp{2}\\{0}\amp{0}\amp{0}\amp{0}\end{array}\right]}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{3}\amp-{5}\\{0}\amp{1}\amp-{4}\amp{4}\\{0}\amp{0}\amp{0}\amp{0}\end{array}\right]}</m></li></ul></p>
 </answer>
 
 </myopenmath>

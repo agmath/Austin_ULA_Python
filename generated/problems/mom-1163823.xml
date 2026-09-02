@@ -4,13 +4,13 @@
 <p>
 Write the system of equations as an augmented matrix</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {6}{x}\amp-\amp{6}{y}\amp+\amp{4}{z}\amp=\amp{4}\\-{4}{x}\amp-\amp{y}\amp-\amp{4}{z}\amp=\amp{5}\\-{5}{x}\amp+\amp{3}{y}\amp+\amp{3}{z}\amp=\amp{2}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {6}{x}\amp-\amp{3}{y}\amp-\amp{z}\amp=\amp{3}\\{6}{x}\amp-\amp{3}{y}\amp-\amp{6}{z}\amp=\amp{3}\\{6}{x}\amp+\amp{6}{y}\amp-\amp{4}{z}\amp=\amp{1}\end{array}\right.}</m></p>
 <p><fillin characters="20"/>   </p>
 
 
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{\left[\begin{array}{cccc} {6}\amp-{6}\amp{4}\amp{4}\\-{4}\amp-{1}\amp-{4}\amp{5}\\-{5}\amp{3}\amp{3}\amp{2}\end{array}\right]}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{cccc} {6}\amp-{3}\amp-{1}\amp{3}\\{6}\amp-{3}\amp-{6}\amp{3}\\{6}\amp{6}\amp-{4}\amp{1}\end{array}\right]}</m></li></ul></p>
 </answer>
 
 </myopenmath>

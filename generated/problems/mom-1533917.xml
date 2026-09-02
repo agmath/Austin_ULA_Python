@@ -4,12 +4,12 @@
 <p>
 Write the augmented matrix for the system of equations.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccc} {9}{r}\amp-\amp{4}{s}\amp=\amp{100}\\-{8}{r}\amp+\amp{4}{s}\amp=\amp{150}\\-{9}{r}\amp-\amp{3}{s}\amp=\amp{200}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccc} -{x}\amp+\amp{8}{y}\amp=\amp{100}\\{3}{x}\amp+\amp{9}{y}\amp=\amp{250}\\-{7}{x}\amp+\amp{8}{y}\amp=\amp{350}\end{array}\right.}</m></p>
 <p>
 <fillin characters="20"/>   </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{\left[\begin{array}{ccc} {9}\amp-{4}\amp{100}\\-{8}\amp{4}\amp{150}\\-{9}\amp-{3}\amp{200}\end{array}\right]}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{ccc} -{1}\amp{8}\amp{100}\\{3}\amp{9}\amp{250}\\-{7}\amp{8}\amp{350}\end{array}\right]}</m></li></ul></p>
 </answer>
 
 </myopenmath>

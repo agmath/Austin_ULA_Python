@@ -4,7 +4,7 @@
 <p>
 Solve the following linear system.  If the system has an infinite number of solutions, parameterize the solution set in terms of the free variables of the original system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} -{4}{x}\amp+\amp{3}{y}\amp+\amp{17}{z}\amp=\amp-{24}\\{5}{x}\amp-\amp{8}{y}\amp-\amp{17}{z}\amp=\amp{47}\\-{2}{x}\amp+\amp{4}{y}\amp+\amp{6}{z}\amp=\amp-{22}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccc} {3}{x}\amp+\amp{4}{y}\amp-\amp{25}{z}\amp=\amp-{23}\\-{2}{x}\amp+\amp{7}{y}\amp+\amp{7}{z}\amp=\amp-{62}\\{4}{x}\amp-\amp{3}{y}\amp-\amp{25}{z}\amp=\amp{36}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>  
 </p>
@@ -17,7 +17,7 @@ z = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{3}+{5}{z}</m></li><li><m>\displaystyle-{4}+{1}{z}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{3}+{7}{z}</m></li><li><m>\displaystyle-{8}+{1}{z}</m></li><li><m>\displaystyle{z}</m></li></ul></p>
 </answer>
 
 </myopenmath>

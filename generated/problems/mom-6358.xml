@@ -4,7 +4,7 @@
 <p>
 A system of equations was written as an augmented matrix, which was row reduced to:</p>
 <p>
-<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{0}\amp{2}\\{0}\amp{1}\amp{0}\amp{4}\\{0}\amp{0}\amp{1}\amp-{1}\end{array}\right]}</m></p>
+<m>\displaystyle{\left[\begin{array}{cccc} {1}\amp{0}\amp{0}\amp{2}\\{0}\amp{1}\amp{0}\amp-{3}\\{0}\amp{0}\amp{1}\amp-{1}\end{array}\right]}</m></p>
 <p>
 What is the solution to the original system of equations?</p>
 <p>
@@ -16,7 +16,7 @@ What is the solution to the original system of equations?</p>
 </p>
 </statement>
 <answer>
-<p><ul><li>2</li><li>4</li><li>-1</li></ul></p>
+<p><ul><li>2</li><li>-3</li><li>-1</li></ul></p>
 </answer>
 
 </myopenmath>

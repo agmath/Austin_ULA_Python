@@ -4,13 +4,13 @@
 <p>
 Write the system of equations as an augmented matrix</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccccccc} -{5}{x}\amp+\amp{3}{y}\amp-\amp{7}{z}\amp+\amp{2}{w}\amp+\amp{2}{v}\amp=\amp-{9}\\{5}{x}\amp-\amp{3}{y}\amp+\amp{6}{z}\amp+\amp{2}{w}\amp+\amp{6}{v}\amp=\amp-{4}\\{9}{x}\amp-\amp{8}{y}\amp-\amp{7}{z}\amp+\amp{6}{w}\amp+\amp{9}{v}\amp=\amp-{1}\\{4}{x}\amp+\amp{6}{y}\amp-\amp{8}{z}\amp-\amp{w}\amp-\amp{6}{v}\amp=\amp-{9}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccccc} {5}{x}\amp-\amp{6}{y}\amp-\amp{5}{z}\amp+\amp{2}{w}\amp-\amp{v}\amp=\amp-{4}\\{8}{x}\amp+\amp{2}{y}\amp+\amp{5}{z}\amp-\amp{w}\amp+\amp{3}{v}\amp=\amp{9}\\-{5}{x}\amp+\amp{3}{y}\amp+\amp{3}{z}\amp-\amp{4}{w}\amp+\amp{6}{v}\amp=\amp-{5}\\-{5}{x}\amp-\amp{y}\amp+\amp{9}{z}\amp+\amp{3}{w}\amp+\amp{4}{v}\amp=\amp{3}\end{array}\right.}</m></p>
 <p><fillin characters="20"/>   </p>
 
 
 </statement>
 <answer>
-<p><ul><li><m>\displaystyle{\left[\begin{array}{cccccc} -{5}\amp{3}\amp-{7}\amp{2}\amp{2}\amp-{9}\\{5}\amp-{3}\amp{6}\amp{2}\amp{6}\amp-{4}\\{9}\amp-{8}\amp-{7}\amp{6}\amp{9}\amp-{1}\\{4}\amp{6}\amp-{8}\amp-{1}\amp-{6}\amp-{9}\end{array}\right]}</m></li></ul></p>
+<p><ul><li><m>\displaystyle{\left[\begin{array}{cccccc} {5}\amp-{6}\amp-{5}\amp{2}\amp-{1}\amp-{4}\\{8}\amp{2}\amp{5}\amp-{1}\amp{3}\amp{9}\\-{5}\amp{3}\amp{3}\amp-{4}\amp{6}\amp-{5}\\-{5}\amp-{1}\amp{9}\amp{3}\amp{4}\amp{3}\end{array}\right]}</m></li></ul></p>
 </answer>
 
 </myopenmath>

@@ -4,7 +4,7 @@
 <p>
 Write the augmented matrix of the system and use it to solve the system.</p>
 <p>
-<m>\displaystyle{\left\lbrace\begin{array}{ccccccccc} {33}{x}\amp+\amp{33}{y}\amp+\amp{6}{z}\amp+\amp{22}{w}\amp=\amp-{245}\\{9}{x}\amp+\amp{11}{y}\amp+\amp{2}{z}\amp+\amp{6}{w}\amp=\amp-{69}\\{9}{x}\amp+\amp{9}{y}\amp+\amp{2}{z}\amp+\amp{6}{w}\amp=\amp-{65}\\-{66}{x}\amp-\amp{66}{y}\amp-\amp{12}{z}\amp-\amp{43}{w}\amp=\amp{485}\end{array}\right.}</m></p>
+<m>\displaystyle{\left\lbrace\begin{array}{ccccccccc} \amp\amp\amp\amp{z}\amp\amp\amp=\amp-{5}\\{12}{x}\amp+\amp{10}{y}\amp+\amp{2}{z}\amp+\amp{18}{w}\amp=\amp{38}\\{6}{x}\amp+\amp{6}{y}\amp+\amp{z}\amp+\amp{9}{w}\amp=\amp{16}\\\amp\amp\amp-\amp{z}\amp-\amp{2}{w}\amp=\amp-{5}\end{array}\right.}</m></p>
 <p>
 x = <fillin characters="20"/>   </p>
 <p>
@@ -16,7 +16,7 @@ w = <fillin characters="20"/>  
 </p>
 </statement>
 <answer>
-<p><ul><li>-3</li><li>-2</li><li>5</li><li>-5</li></ul></p>
+<p><ul><li>-1</li><li>-3</li><li>-5</li><li>5</li></ul></p>
 </answer>
 
 </myopenmath>
